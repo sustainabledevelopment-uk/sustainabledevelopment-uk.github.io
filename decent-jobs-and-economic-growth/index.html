@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -203,7 +199,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/8-2-1"><span>8.2.1<span class="status success">Reported online</span></span> Annual growth rate of real GDP per employed person </a>
+          <a href="/8-2-1"><span>8.2.1<span class="status success">Reported online</span></span> Annual growth rate of real GDP per employed person</a>
         </div>
     
     
@@ -212,7 +208,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/8-3-1"><span>8.3.1<span class="status danger">Exploring data sources</span></span> Proportion of informal employment in non-agriculture employment, by sex</a>
+          <a href="/8-3-1"><span>8.3.1<span class="status danger">Exploring data sources</span></span> Proportion of informal employment in non‑agriculture employment, by sex</a>
         </div>
     
     
@@ -266,7 +262,7 @@
 
     <div class="indicator-cards row no-gutters">
         <div class="col-md-6 col-lg-3">
-          <a href="/8-7-1"><span>8.7.1<span class="status danger">Exploring data sources</span></span> Proportion and number of children aged 5-17 years engaged in child labour, by sex and age</a>
+          <a href="/8-7-1"><span>8.7.1<span class="status danger">Exploring data sources</span></span> Proportion and number of children aged 5‑17 years engaged in child labour, by sex and age</a>
         </div>
     
     
@@ -284,7 +280,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/8-8-2"><span>8.8.2<span class="status danger">Exploring data sources</span></span> Increase in national compliance of labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status</a>
+          <a href="/8-8-2"><span>8.8.2<span class="status danger">Exploring data sources</span></span> Level of national compliance of labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status</a>
         </div>
     
     
@@ -302,7 +298,7 @@
 
     <div class="indicator-cards row no-gutters">
         <div class="col-md-6 col-lg-3">
-          <a href="/8-9-2"><span>8.9.2<span class="status danger">Exploring data sources</span></span> Number of jobs in tourism industries as a proportion of total jobs and growth rate of jobs, by sex</a>
+          <a href="/8-9-2"><span>8.9.2<span class="status danger">Exploring data sources</span></span> Proportion of jobs in sustainable tourism industries out of total tourism jobs</a>
         </div>
     
     
@@ -311,7 +307,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/8-10-1"><span>8.10.1<span class="status danger">Exploring data sources</span></span> Number of commercial bank branches and automated teller machines (ATMs) per 100,000 adults</a>
+          <a href="/8-10-1"><span>8.10.1<span class="status danger">Exploring data sources</span></span> (a) Number of commercial bank branches per 100,000 adults and (b) number of automated teller machines (ATMs) per 100,000 adults</a>
         </div>
     
     
@@ -338,7 +334,7 @@
 
     <div class="indicator-cards row no-gutters">
         <div class="col-md-6 col-lg-3">
-          <a href="/8-b-1"><span>8.b.1<span class="status danger">Exploring data sources</span></span> Total government spending in social protection and employment programmes as a proportion of the national budgets and GDP</a>
+          <a href="/8-b-1"><span>8.b.1<span class="status danger">Exploring data sources</span></span> Existence of a developed and operationalized national strategy for youth employment, as a distinct strategy or as part of a national employment strategy</a>
         </div>
     
     
@@ -357,7 +353,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -394,11 +390,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();

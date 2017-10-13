@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -275,7 +271,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/2-a-1"><span>2.a.1<span class="status warning">Statistics in progress</span></span> The agriculture orientation index for government expenditures</a>
+          <a href="/2-a-1"><span>2.a.1<span class="status success">Reported online</span></span> The agriculture orientation index for government expenditures</a>
         </div>
     
     
@@ -293,7 +289,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/2-b-1"><span>2.b.1<span class="status danger">Exploring data sources</span></span> Producer Support Estimate</a>
+          <a href="/2-b-1"><span>2.b.1<span class="status danger">Exploring data sources</span></span> Agricultural export subsidies</a>
         </div>
     </div>
     
@@ -301,15 +297,6 @@
     
 
     <div class="indicator-cards row no-gutters">
-        <div class="col-md-6 col-lg-3">
-          <a href="/2-b-2"><span>2.b.2<span class="status danger">Exploring data sources</span></span> Agricultural export subsidies</a>
-        </div>
-    
-    
-
-    
-
-    
         <div class="col-md-6 col-lg-3">
           <a href="/2-c-1"><span>2.c.1<span class="status danger">Exploring data sources</span></span> Indicator of food price anomalies</a>
         </div>
@@ -330,7 +317,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -367,11 +354,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();

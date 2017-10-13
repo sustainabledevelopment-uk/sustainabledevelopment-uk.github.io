@@ -24,7 +24,7 @@
           "id": "1.2.1",
           "title": "Proportion of population living below the national poverty line, by sex and age",
           "href": "/1-2-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -34,7 +34,7 @@
           "id": "1.2.2",
           "title": "Proportion of men, women and children of all ages living in poverty in all its dimensions according to national definitions",
           "href": "/1-2-2",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -64,7 +64,7 @@
           "id": "1.4.2",
           "title": "Proportion of total adult population with secure tenure rights to land, with legally recognized documentation and who perceive their rights to land as secure, by sex and by type of tenure",
           "href": "/1-4-2",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -72,7 +72,7 @@
         
         {
           "id": "1.5.1",
-          "title": "Number of deaths, missing persons and persons affected by disaster per 100,000 people",
+          "title": "Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population",
           "href": "/1-5-1",
           "status": "notstarted"
         }
@@ -82,7 +82,7 @@
         
         {
           "id": "1.5.2",
-          "title": "Direct disaster economic loss in relation to global gross domestic product (GDP)",
+          "title": "Direct economic loss attributed to disasters in relation to global gross domestic product (GDP)",
           "href": "/1-5-2",
           "status": "notstarted"
         }
@@ -92,7 +92,7 @@
         
         {
           "id": "1.5.3",
-          "title": "Number of countries with national and local disaster risk reduction strategies",
+          "title": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030",
           "href": "/1-5-3",
           "status": "notstarted"
         }
@@ -101,8 +101,18 @@
 
         
         {
+          "id": "1.5.4",
+          "title": "Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies",
+          "href": "/1-5-4",
+          "status": "notstarted"
+        }
+        ,
+        
+
+        
+        {
           "id": "1.a.1",
-          "title": "Proportion of resources allocated by the government directly to poverty reduction programmes",
+          "title": "Proportion of domestically generated resources allocated by the government directly to poverty reduction programmes",
           "href": "/1-a-1",
           "status": "notstarted"
         }
@@ -114,7 +124,17 @@
           "id": "1.a.2",
           "title": "Proportion of total government spending on essential services (education, health and social protection)",
           "href": "/1-a-2",
-          "status": "inprogress"
+          "status": "complete"
+        }
+        ,
+        
+
+        
+        {
+          "id": "1.a.3",
+          "title": "Sum of total grants and non-debt-creating inflows directly allocated to poverty reduction programmes as a proportion of GDP",
+          "href": "/1-a-3",
+          "status": "notstarted"
         }
         ,
         
@@ -236,7 +256,7 @@
           "id": "2.a.1",
           "title": "The agriculture orientation index for government expenditures",
           "href": "/2-a-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -254,18 +274,8 @@
         
         {
           "id": "2.b.1",
-          "title": "Producer Support Estimate",
-          "href": "/2-b-1",
-          "status": "notstarted"
-        }
-        ,
-        
-
-        
-        {
-          "id": "2.b.2",
           "title": "Agricultural export subsidies",
-          "href": "/2-b-2",
+          "href": "/2-b-1",
           "status": "notstarted"
         }
         ,
@@ -338,7 +348,7 @@
           "id": "3.3.1",
           "title": "Number of new HIV infections per 1,000 uninfected population, by sex, age and key populations",
           "href": "/3-3-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -346,7 +356,7 @@
         
         {
           "id": "3.3.2",
-          "title": "Tuberculosis incidence per 1,000 population ",
+          "title": "Tuberculosis incidence per 100,000 population",
           "href": "/3-3-2",
           "status": "notstarted"
         }
@@ -388,7 +398,7 @@
           "id": "3.4.1",
           "title": "Mortality rate attributed to cardiovascular disease, cancer, diabetes or chronic respiratory disease",
           "href": "/3-4-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -418,7 +428,7 @@
           "id": "3.5.2",
           "title": "Harmful use of alcohol, defined according to the national context as alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol",
           "href": "/3-5-2",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -428,7 +438,7 @@
           "id": "3.6.1",
           "title": "Death rate due to road traffic injuries",
           "href": "/3-6-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -448,7 +458,7 @@
           "id": "3.7.2",
           "title": "Adolescent birth rate (aged 10-14 years; aged 15-19 years) per 1,000 women in that age group",
           "href": "/3-7-2",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -466,7 +476,7 @@
         
         {
           "id": "3.8.2",
-          "title": "Number of people covered by health insurance or a public health system per 1,000 population",
+          "title": "Proportion of population with large household expenditures on health as a share of total household expenditure or income",
           "href": "/3-8-2",
           "status": "notstarted"
         }
@@ -488,7 +498,7 @@
           "id": "3.9.2",
           "title": "Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (exposure to unsafe Water, Sanitation and Hygiene for All (WASH) services)",
           "href": "/3-9-2",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -498,7 +508,7 @@
           "id": "3.9.3",
           "title": "Mortality rate attributed to unintentional poisoning",
           "href": "/3-9-3",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -516,9 +526,9 @@
         
         {
           "id": "3.b.1",
-          "title": "Proportion of the population with access to affordable medicines and vaccines on a sustainable basis",
+          "title": "Proportion of the target population covered by all vaccines included in their national programme",
           "href": "/3-b-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -529,6 +539,16 @@
           "title": "Total net official development assistance to medical research and basic health sectors",
           "href": "/3-b-2",
           "status": "complete"
+        }
+        ,
+        
+
+        
+        {
+          "id": "3.b.3",
+          "title": "Proportion of health facilities that have a core set of relevant essential medicines available and affordable on a sustainable basis",
+          "href": "/3-b-3",
+          "status": "notstarted"
         }
         ,
         
@@ -568,7 +588,7 @@
         
         {
           "id": "4.1.1",
-          "title": "Proportion of children and young people: (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex",
+          "title": "Proportion of children and young people: (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex",
           "href": "/4-1-1",
           "status": "notstarted"
         }
@@ -598,7 +618,7 @@
         
         {
           "id": "4.3.1",
-          "title": "Participation rate of youth and adults in formal and non-formal education and training in the last 12 months, by sex",
+          "title": "Participation rate of youth and adults in formal and non-formal education and training in the previous 12 months, by sex",
           "href": "/4-3-1",
           "status": "inprogress"
         }
@@ -628,7 +648,7 @@
         
         {
           "id": "4.6.1",
-          "title": "Percentage of population in a given age group achieving at least a fixed level of proficiency in functional (a) literacy and (b) numeracy skills, by sex",
+          "title": "Proportion of population in a given age group achieving at least a fixed level of proficiency in functional (a) literacy and (b) numeracy skills, by sex",
           "href": "/4-6-1",
           "status": "notstarted"
         }
@@ -638,7 +658,7 @@
         
         {
           "id": "4.7.1",
-          "title": "Extent to which (i) global citizenship education and (ii) education for sustainable development, including gender equality and human rights, are mainstreamed at all levels in: (a) national education policies, (b) curricula, (c) teacher education and (d) student assessment",
+          "title": "Extent to which (i) global citizenship education and (ii) education for sustainable development, including gender equality and human rights, are mainstreamed at all levels in: (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment",
           "href": "/4-7-1",
           "status": "notstarted"
         }
@@ -648,7 +668,7 @@
         
         {
           "id": "4.a.1",
-          "title": "Proportion of schools with access to: (a) electricity (b) the Internet for pedagogical purposes (c) computers for pedagogical purposes (d) adapted infrastructure and materials for students with disabilities (e) basic drinking water (f) single-sex basic sanitation facilities (g) basic handwashing facilities (as per the WASH indicator definitions)",
+          "title": "Proportion of schools with access to: (a) electricity; (b) the Internet for pedagogical purposes; (c) computers for pedagogical purposes; (d) adapted infrastructure and materials for students with disabilities; (e) basic drinking water; (f) single-sex basic sanitation facilities; and (g) basic handwashing facilities (as per the WASH indicator definitions)",
           "href": "/4-a-1",
           "status": "notstarted"
         }
@@ -660,7 +680,7 @@
           "id": "4.b.1",
           "title": "Volume of official development assistance flows for scholarships by sector and type of study",
           "href": "/4-b-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -668,7 +688,7 @@
         
         {
           "id": "4.c.1",
-          "title": "Percentage of teachers in: (a) pre-primary (b) primary (c) lower secondary and (d) upper secondary education who have received at least the minimum organized teacher training (i.e. pedagogical training) pre-service or in-service required for teaching at the relevant level in a given country",
+          "title": "Proportion of teachers in: (a) pre-primary; (b) primary; (c) lower secondary; and (d) upper secondary education who have received at least the minimum organized teacher training (e.g. pedagogical training) pre-service or in-service required for teaching at the relevant level in a given country",
           "href": "/4-c-1",
           "status": "notstarted"
         }
@@ -690,7 +710,7 @@
         
         {
           "id": "5.1.1",
-          "title": "Whether or not legal frameworks are in place to promote, enforce and monitor equality and non-discrimination on the basis of sex",
+          "title": "Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex",
           "href": "/5-1-1",
           "status": "notstarted"
         }
@@ -710,7 +730,7 @@
         
         {
           "id": "5.2.2",
-          "title": "Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence",
+          "title": "Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence",
           "href": "/5-2-2",
           "status": "complete"
         }
@@ -750,7 +770,7 @@
         
         {
           "id": "5.5.1",
-          "title": "Proportion of seats held by women in national parliaments and local governments",
+          "title": "Proportion of seats held by women in (a) national parliaments and (b) local governments",
           "href": "/5-5-1",
           "status": "complete"
         }
@@ -780,7 +800,7 @@
         
         {
           "id": "5.6.2",
-          "title": "Number of countries with laws and regulations that guarantee women aged 15-49 access to sexual and reproductive health care, information and education",
+          "title": "Number of countries with laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education",
           "href": "/5-6-2",
           "status": "notstarted"
         }
@@ -790,7 +810,7 @@
         
         {
           "id": "5.a.1",
-          "title": "(a) Proportion of total agricultural population with ownership or secure rights over agricultural land, by sex; and (b) share of women among owners or rightsbearers of agricultural land, type of tenure",
+          "title": "(a) Proportion of total agricultural population with ownership or secure rights over agricultural land, by sex; and (b) share of women among owners or rights-bearers of agricultural land, by type of tenure",
           "href": "/5-a-1",
           "status": "notstarted"
         }
@@ -800,7 +820,7 @@
         
         {
           "id": "5.a.2",
-          "title": "Proportion of countries where the legal framework (including customary law) guarantees women's equal rights to land ownership and/or control",
+          "title": "Proportion of countries where the legal framework (including customary law) guarantees women’s equal rights to land ownership and/or control",
           "href": "/5-a-2",
           "status": "notstarted"
         }
@@ -820,7 +840,7 @@
         
         {
           "id": "5.c.1",
-          "title": "Proportion of countries with systems to track and make public allocations for gender equality and women's empowerment",
+          "title": "Proportion of countries with systems to track and make public allocations for gender equality and women’s empowerment",
           "href": "/5-c-1",
           "status": "notstarted"
         }
@@ -902,7 +922,7 @@
         
         {
           "id": "6.5.1",
-          "title": "Degree of integrated water resources management implementation (0- 100)",
+          "title": "Degree of integrated water resources management implementation (0-100)",
           "href": "/6-5-1",
           "status": "inprogress"
         }
@@ -1004,9 +1024,9 @@
         
         {
           "id": "7.a.1",
-          "title": "Mobilized amount of United States dollars per year starting in 2020 accountable towards the $100 billion commitment",
+          "title": "International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems",
           "href": "/7-a-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -1014,7 +1034,7 @@
         
         {
           "id": "7.b.1",
-          "title": "Investments in energy efficiency as a percentage of GDP and the amount of foreign direct investment in financial transfer for infrastructure and technology to sustainable development services",
+          "title": "Investments in energy efficiency as a proportion of GDP and the amount of foreign direct investment in financial transfer for infrastructure and technology to sustainable development services",
           "href": "/7-b-1",
           "status": "notstarted"
         }
@@ -1046,7 +1066,7 @@
         
         {
           "id": "8.2.1",
-          "title": "Annual growth rate of real GDP per employed person ",
+          "title": "Annual growth rate of real GDP per employed person",
           "href": "/8-2-1",
           "status": "complete"
         }
@@ -1056,7 +1076,7 @@
         
         {
           "id": "8.3.1",
-          "title": "Proportion of informal employment in non-agriculture employment, by sex",
+          "title": "Proportion of informal employment in non‑agriculture employment, by sex",
           "href": "/8-3-1",
           "status": "notstarted"
         }
@@ -1116,7 +1136,7 @@
         
         {
           "id": "8.7.1",
-          "title": "Proportion and number of children aged 5-17 years engaged in child labour, by sex and age",
+          "title": "Proportion and number of children aged 5‑17 years engaged in child labour, by sex and age",
           "href": "/8-7-1",
           "status": "notstarted"
         }
@@ -1136,7 +1156,7 @@
         
         {
           "id": "8.8.2",
-          "title": "Increase in national compliance of labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status",
+          "title": "Level of national compliance of labour rights (freedom of association and collective bargaining) based on International Labour Organization (ILO) textual sources and national legislation, by sex and migrant status",
           "href": "/8-8-2",
           "status": "notstarted"
         }
@@ -1156,7 +1176,7 @@
         
         {
           "id": "8.9.2",
-          "title": "Number of jobs in tourism industries as a proportion of total jobs and growth rate of jobs, by sex",
+          "title": "Proportion of jobs in sustainable tourism industries out of total tourism jobs",
           "href": "/8-9-2",
           "status": "notstarted"
         }
@@ -1166,7 +1186,7 @@
         
         {
           "id": "8.10.1",
-          "title": "Number of commercial bank branches and automated teller machines (ATMs) per 100,000 adults",
+          "title": "(a) Number of commercial bank branches per 100,000 adults and (b) number of automated teller machines (ATMs) per 100,000 adults",
           "href": "/8-10-1",
           "status": "notstarted"
         }
@@ -1196,7 +1216,7 @@
         
         {
           "id": "8.b.1",
-          "title": "Total government spending in social protection and employment programmes as a proportion of the national budgets and GDP",
+          "title": "Existence of a developed and operationalized national strategy for youth employment, as a distinct strategy or as part of a national employment strategy",
           "href": "/8-b-1",
           "status": "notstarted"
         }
@@ -1218,7 +1238,7 @@
         
         {
           "id": "9.1.1",
-          "title": "Proportion of the rural population who live within 2 km of an all-season road",
+          "title": "Proportion of the rural population who live within 2 km of an all-season road",
           "href": "/9-1-1",
           "status": "notstarted"
         }
@@ -1360,9 +1380,9 @@
         
         {
           "id": "10.2.1",
-          "title": "Proportion of people living below 50 per cent of median income, by age, sex, and persons with disabilities",
+          "title": "Proportion of people living below 50 per cent of median income, by sex, age and persons with disabilities",
           "href": "/10-2-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -1370,7 +1390,7 @@
         
         {
           "id": "10.3.1",
-          "title": "Proportion of the population reporting having personally felt discriminated against or harassed within the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law",
+          "title": "Proportion of population reporting having personally felt discriminated against or harassed in the previous 12 months on the basis of a ground of discrimination prohibited under international human rights law",
           "href": "/10-3-1",
           "status": "notstarted"
         }
@@ -1399,9 +1419,9 @@
 
         
         {
-          "id": "10.6.4",
+          "id": "10.6.1",
           "title": "Proportion of members and voting rights of developing countries in international organizations",
-          "href": "/10-6-4",
+          "href": "/10-6-1",
           "status": "notstarted"
         }
         ,
@@ -1440,7 +1460,7 @@
         
         {
           "id": "10.b.1",
-          "title": "Total resources flows for development, by recipient and donor countries and type of flow (e.g. official development assistance, foreign direct investment and other flows)",
+          "title": "Total resource flows for development, by recipient and donor countries and type of flow (e.g. official development assistance, foreign direct investment and other flows)",
           "href": "/10-b-1",
           "status": "complete"
         }
@@ -1472,7 +1492,7 @@
         
         {
           "id": "11.1.1",
-          "title": "Proportion of urban population living in slums, informal settlements, or inadequate housing",
+          "title": "Proportion of urban population living in slums, informal settlements or inadequate housing",
           "href": "/11-1-1",
           "status": "notstarted"
         }
@@ -1512,7 +1532,7 @@
         
         {
           "id": "11.4.1",
-          "title": "Total expenditure (public and private) per capita spent on the preservation, protection and conservation of all cultural and natural heritage, by type of heritage (cultural, natural, mixed and World Heritage Centre designation), level of government (national, regional and local/municipal), type of expenditure (operating expenditure/investment) and type of private funding (donations in kind, private nonprofit sector and sponsorship)",
+          "title": "Total expenditure (public and private) per capita spent on the preservation, protection and conservation of all cultural and natural heritage, by type of heritage (cultural, natural, mixed and World Heritage Centre designation), level of government (national, regional and local/municipal), type of expenditure (operating expenditure/investment) and type of private funding (donations in kind, private non-profit sector and sponsorship)",
           "href": "/11-4-1",
           "status": "notstarted"
         }
@@ -1522,7 +1542,7 @@
         
         {
           "id": "11.5.1",
-          "title": "Number of deaths, missing persons and persons affected by disaster per 100,000 people",
+          "title": "Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population",
           "href": "/11-5-1",
           "status": "notstarted"
         }
@@ -1532,7 +1552,7 @@
         
         {
           "id": "11.5.2",
-          "title": "Direct disaster economic loss in relation to global GDP, including disaster damage to critical infrastructure and disruption of basic services",
+          "title": "Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters",
           "href": "/11-5-2",
           "status": "notstarted"
         }
@@ -1592,7 +1612,7 @@
         
         {
           "id": "11.b.1",
-          "title": "Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030",
+          "title": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030",
           "href": "/11-b-1",
           "status": "notstarted"
         }
@@ -1602,7 +1622,7 @@
         
         {
           "id": "11.b.2",
-          "title": "Number of countries with national and local disaster risk reduction strategies",
+          "title": "Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies",
           "href": "/11-b-2",
           "status": "notstarted"
         }
@@ -1724,7 +1744,7 @@
         
         {
           "id": "12.8.1",
-          "title": "Extent to which (i) global citizenship education and (ii) education for sustainable development (including climate change education) are mainstreamed in (a) national education policies (b) curricula  (c) teacher education and (d) student assessment",
+          "title": "Extent to which (i) global citizenship education and (ii) education for sustainable development (including climate change education) are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment",
           "href": "/12-8-1",
           "status": "notstarted"
         }
@@ -1754,7 +1774,7 @@
         
         {
           "id": "12.c.1",
-          "title": "Amount of fossil-fuel subsidies per unit of GDP (production and consumption) and as proportion of total national expenditure on fossil fuels",
+          "title": "Amount of fossil-fuel subsidies per unit of GDP (production and consumption) and as a proportion of total national expenditure on fossil fuels",
           "href": "/12-c-1",
           "status": "notstarted"
         }
@@ -1776,7 +1796,7 @@
         
         {
           "id": "13.1.1",
-          "title": "Number of countries with national and local disaster risk reduction strategies",
+          "title": "Number of deaths, missing persons and directly affected persons attributed to disasters per 100,000 population",
           "href": "/13-1-1",
           "status": "notstarted"
         }
@@ -1786,8 +1806,18 @@
         
         {
           "id": "13.1.2",
-          "title": "Number of deaths, missing persons and persons affected by disaster per 100,000 people",
+          "title": "Number of countries that adopt and implement national disaster risk reduction strategies in line with the Sendai Framework for Disaster Risk Reduction 2015-2030",
           "href": "/13-1-2",
+          "status": "notstarted"
+        }
+        ,
+        
+
+        
+        {
+          "id": "13.1.3",
+          "title": "Proportion of local governments that adopt and implement local disaster risk reduction strategies in line with national disaster risk reduction strategies",
+          "href": "/13-1-3",
           "status": "notstarted"
         }
         ,
@@ -1826,7 +1856,7 @@
         
         {
           "id": "13.a.1",
-          "title": "Mobilized amount of United States dollars per year starting in 2020 accountable towards the $100 billion commitment",
+          "title": "Mobilized amount of United States dollars per year between 2020 and 2025 accountable towards the $100 billion commitment",
           "href": "/13-a-1",
           "status": "notstarted"
         }
@@ -1918,7 +1948,7 @@
         
         {
           "id": "14.7.1",
-          "title": "Sustainable fisheries as a percentage of GDP in small island developing States, least developed countries and all countries",
+          "title": "Sustainable fisheries as a proportion of GDP in small island developing States, least developed countries and all countries",
           "href": "/14-7-1",
           "status": "notstarted"
         }
@@ -2142,7 +2172,7 @@
         
         {
           "id": "16.1.3",
-          "title": "Proportion of population subjected to physical, psychological or sexual violence in the previous 12 months",
+          "title": "Proportion of population subjected to physical, psychological or sexual violence in the previous 12 months",
           "href": "/16-1-3",
           "status": "inprogress"
         }
@@ -2152,7 +2182,7 @@
         
         {
           "id": "16.1.4",
-          "title": "Proportion of people that feel safe walking alone around the area they live",
+          "title": "Proportion of population that feel safe walking alone around the area they live",
           "href": "/16-1-4",
           "status": "inprogress"
         }
@@ -2162,7 +2192,7 @@
         
         {
           "id": "16.2.1",
-          "title": " Proportion of children aged 1-17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month",
+          "title": "Proportion of children aged 1-17 years who experienced any physical punishment and/or psychological aggression by caregivers in the past month",
           "href": "/16-2-1",
           "status": "notstarted"
         }
@@ -2182,7 +2212,7 @@
         
         {
           "id": "16.2.3",
-          "title": "Proportion of young women and men aged 18-29 years who experienced sexual violence by age 18",
+          "title": "Proportion of young women and men aged 18‑29 years who experienced sexual violence by age 18",
           "href": "/16-2-3",
           "status": "complete"
         }
@@ -2202,7 +2232,7 @@
         
         {
           "id": "16.3.2",
-          "title": "Unsentenced detainees as proportion of overall prison population",
+          "title": "Unsentenced detainees as a proportion of overall prison population",
           "href": "/16-3-2",
           "status": "inprogress"
         }
@@ -2212,7 +2242,7 @@
         
         {
           "id": "16.4.1",
-          "title": "Total value of inward and outward illicit financial flows (in current United States dollars).",
+          "title": "Total value of inward and outward illicit financial flows (in current United States dollars)",
           "href": "/16-4-1",
           "status": "notstarted"
         }
@@ -2222,7 +2252,7 @@
         
         {
           "id": "16.4.2",
-          "title": "Proportion of seized and small arms and light weapons that are recorded and traced, in accordance with international standards and legal instruments",
+          "title": "Proportion of seized, found or surrendered arms whose illicit origin or context has been traced or established by a competent authority in line with international instruments",
           "href": "/16-4-2",
           "status": "notstarted"
         }
@@ -2242,7 +2272,7 @@
         
         {
           "id": "16.5.2",
-          "title": "Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials, during the previous 12 months",
+          "title": "Proportion of businesses that had at least one contact with a public official and that paid a bribe to a public official, or were asked for a bribe by those public officials during the previous 12 months",
           "href": "/16-5-2",
           "status": "notstarted"
         }
@@ -2252,7 +2282,7 @@
         
         {
           "id": "16.6.1",
-          "title": "Primary government expenditures as a proportion of original approved budget, by sector (or by budget codes or similar)",
+          "title": "Primary government expenditures as a proportion of original approved budget, by sector (or by budget codes or similar)",
           "href": "/16-6-1",
           "status": "notstarted"
         }
@@ -2262,7 +2292,7 @@
         
         {
           "id": "16.6.2",
-          "title": "Proportion of the population satisfied with their last experience of public services",
+          "title": "Proportion of population satisfied with their last experience of public services",
           "href": "/16-6-2",
           "status": "notstarted"
         }
@@ -2384,7 +2414,7 @@
         
         {
           "id": "17.2.1",
-          "title": "Net official development assistance, total and to least developed countries, as a proportion of the Organization for Economic Cooperation and Development (OECD) Development Assistance Committee donors' gross national income (GNI)",
+          "title": "Net official development assistance, total and to least developed countries, as a proportion of the Organization for Economic Cooperation and Development (OECD) Development Assistance Committee donors’ gross national income (GNI)",
           "href": "/17-2-1",
           "status": "notstarted"
         }
@@ -2444,7 +2474,7 @@
         
         {
           "id": "17.6.2",
-          "title": "Fixed Internet broadband subscriptions per 100 inhabitants, by speed",
+          "title": "Fixed Internet broadband subscriptions per 100 inhabitants, by speed",
           "href": "/17-6-2",
           "status": "notstarted"
         }
@@ -2476,7 +2506,7 @@
           "id": "17.9.1",
           "title": "Dollar value of financial and technical assistance (including through North-South, South-South and triangular cooperation) committed to developing countries",
           "href": "/17-9-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -2494,7 +2524,7 @@
         
         {
           "id": "17.11.1",
-          "title": "Developing countries' and least developed countries' share of global exports",
+          "title": "Developing countries’ and least developed countries’ share of global exports",
           "href": "/17-11-1",
           "status": "notstarted"
         }
@@ -2574,7 +2604,7 @@
         
         {
           "id": "17.18.2",
-          "title": "Number of countries that have national statistical legislation that complies with the Fundamental Principles of Official statistics",
+          "title": "Number of countries that have national statistical legislation that complies with the Fundamental Principles of Official Statistics",
           "href": "/17-18-2",
           "status": "notstarted"
         }
@@ -2594,7 +2624,7 @@
         
         {
           "id": "17.19.1",
-          "title": "Dollar Value of all resources made available to strengthen statistical capacity in developing countries",
+          "title": "Dollar value of all resources made available to strengthen statistical capacity in developing countries",
           "href": "/17-19-1",
           "status": "notstarted"
         }
@@ -2604,7 +2634,7 @@
         
         {
           "id": "17.19.2",
-          "title": "Proportion of countries that (a) have conducted at least one population and housing census in the last 10 years and (b) have achieved 100 per cent birth registration and 80 per cent death registration",
+          "title": "Proportion of countries that (a) have conducted at least one population and housing census in the last 10 years; and (b) have achieved 100 per cent birth registration and 80 per cent death registration",
           "href": "/17-19-2",
           "status": "notstarted"
         }

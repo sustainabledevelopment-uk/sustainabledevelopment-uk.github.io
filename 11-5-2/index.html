@@ -10,7 +10,7 @@
         <meta name="MobileOptimized" content="320">
         <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
         ================================================== -->
-        <title>Direct disaster economic loss in relation to global GDP, including disaster damage to critical infrastructure and disruption of basic services - U.K. Indicators For The Sustainable Development Goals</title>
+        <title>Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters - U.K. Indicators For The Sustainable Development Goals</title>
         <meta property="og:title" content="U.S. Data Federation">
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -87,21 +83,15 @@
  
 
 
+
+
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
     <div class="variable-selector" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
-      <!--
-      <div class="bar">
-        <div class="default"></div><div class="possible"></div><div class="excluded"></div>
-      </div>
-      -->
-
       <div class="bar">
         <div class="selected"></div>
       </div>
-
-
       <div class="variable-options">
         <% _.each(seriesItem.values, function(item) { %>
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
@@ -126,7 +116,7 @@
             <span class="hidden-sm hidden-md hidden-lg">Goal 11: </span>Make cities and human settlements inclusive, safe, resilient and sustainable
           </a>
         </h2>
-        <h3>Indicator 11.5.2: Direct disaster economic loss in relation to global GDP, including disaster damage to critical infrastructure and disruption of basic services</h3>
+        <h3>Indicator 11.5.2: Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters</h3>
       </div>
     </div>
   </div>
@@ -148,27 +138,32 @@
   <li><a href="/">Home</a></li>
   
       <li><a href="/sustainable-cities-communities" title="Make cities and human settlements inclusive, safe, resilient and sustainable">Goal 11</a></li>
-      <li class="active">Direct disaster economic loss in relation to global GDP, including disaster damage to critical infrastructure and disruption of basic services</li>
+      <li class="active">Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters</li>
   
 </ol>
-  
 
+  <div id="page-content">
+  <p>We are still looking for a suitable data source for this indicator. Please contact us if you think you can help by emailing <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a>.</p>
+
+
+  
+    <hr/>
+  
+  </div>
 
   <section id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_11-5-2' data-country="UK"
-    data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="">
+    data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-showdata="false">
+
     
-
-
+    
     <div class="alert alert-warning" role="alert">
       <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
     </div>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="nav-item active">
-        <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-      </li>
-      <li role="presentation" class="nav-item">
+      
+      <li role="presentation" class="nav-item  active">
         <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
       </li>
       <li role="presentation" class="nav-item">
@@ -179,13 +174,8 @@
     
     <!-- Tab panes -->
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="data">
-        
-        <p>Unit of Measurement: </p>     
-        <a href="/data/indicator_11-5-2.csv" class="btn btn-primary btn-download">Download source CSV</a>
-        <div id="datatables"></div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="metadata">
+      
+      <div role="tabpanel" class="tab-pane active" id="metadata">
         <!-- National Metadata -->
         <div class="collapsible expanded">
           <h3>National Metadata<span> (Collapse)</span></h3>
@@ -194,6 +184,12 @@
                 SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
                 should be consulted for information on national methodology and other UK-specific metadata information.</p>
               <table class="table table-hover">
+  
+    
+  
+    
+  
+    
   
     
   
@@ -454,6 +450,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -463,6 +461,12 @@
           <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
           <article>
             <table class="table table-hover">
+  
+    
+  
+    
+  
+    
   
     
   
@@ -657,6 +661,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -682,7 +688,7 @@
         <th scope="row">Indicator Name </th>
         <td>
           
-            Direct disaster economic loss in relation to global GDP, including disaster damage to critical infrastructure and disruption of basic services
+            Direct economic loss in relation to global GDP, damage to critical infrastructure and number of disruptions to basic services, attributed to disasters
           
         </td>
         </tr>
@@ -708,7 +714,7 @@
         <th scope="row">Target Name </th>
         <td>
           
-            By 2030, significantly reduce the number of deaths and the number of people affected and substantially decrease the direct economic losses relative to global gross domestic product caused by disasters, including water-related disasters, with a focus on protecting the poor and people in vulnerable situations.
+            By 2030, significantly reduce the number of deaths and the number of people affected and substantially decrease the direct economic losses relative to global gross domestic product caused by disasters, including water-related disasters, with a focus on protecting the poor and people in vulnerable situations
           
         </td>
         </tr>
@@ -761,6 +767,45 @@
         <td>
           
             UNISDR
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Partner Agency </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UNSD Indicator Code </th>
+        <td>
+          
+            C110502
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Indicator Notes </th>
+        <td>
+          
+            Sendai modification; Reviewed at 5th IAEG-SDG meeting
           
         </td>
         </tr>
@@ -906,6 +951,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -935,7 +982,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -972,11 +1019,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();

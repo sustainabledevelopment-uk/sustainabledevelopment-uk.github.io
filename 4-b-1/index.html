@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -87,21 +83,15 @@
  
 
 
+
+
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
     <div class="variable-selector" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
-      <!--
-      <div class="bar">
-        <div class="default"></div><div class="possible"></div><div class="excluded"></div>
-      </div>
-      -->
-
       <div class="bar">
         <div class="selected"></div>
       </div>
-
-
       <div class="variable-options">
         <% _.each(seriesItem.values, function(item) { %>
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
@@ -151,24 +141,49 @@
       <li class="active">Volume of official development assistance flows for scholarships by sector and type of study</li>
   
 </ol>
-  
 
+  <div id="page-content">
+  <p>We have found a suitable source of data for this indicator or relevant proxy at national level. We are currently quality assuring the data and preparing it for publication.</p>
+
+  
+    <hr/>
+  
+  </div>
 
   <section id="indicatorData" data-indicatordata='[{"Year":"2009","Type of aid":null,"Value":"15458.77"},{"Year":"2010","Type of aid":null,"Value":"12554.13743"},{"Year":"2011","Type of aid":null,"Value":"8557.199422"},{"Year":"2012","Type of aid":null,"Value":"21928.57705"},{"Year":"2013","Type of aid":null,"Value":"16571.75442"},{"Year":"2014","Type of aid":null,"Value":"17590.2991"},{"Year":"2015","Type of aid":null,"Value":"71034.01759"},{"Year":"2009","Type of aid":"Scholarships/training in donor country (E01)","Value":"15458.77"},{"Year":"2010","Type of aid":"Scholarships/training in donor country (E01)","Value":"12554.13743"},{"Year":"2011","Type of aid":"Scholarships/training in donor country (E01)","Value":"8557.199422"},{"Year":"2012","Type of aid":"Scholarships/training in donor country (E01)","Value":"21928.57705"},{"Year":"2013","Type of aid":"Scholarships/training in donor country (E01)","Value":"16571.75442"},{"Year":"2014","Type of aid":"Scholarships/training in donor country (E01)","Value":"17590.2991"},{"Year":"2015","Type of aid":"Scholarships/training in donor country (E01)","Value":"70058.95959"},{"Year":"2009","Type of aid":"Imputed student costs (E02)","Value":"0"},{"Year":"2010","Type of aid":"Imputed student costs (E02)","Value":"0"},{"Year":"2011","Type of aid":"Imputed student costs (E02)","Value":"0"},{"Year":"2012","Type of aid":"Imputed student costs (E02)","Value":"0"},{"Year":"2013","Type of aid":"Imputed student costs (E02)","Value":"0"},{"Year":"2014","Type of aid":"Imputed student costs (E02)","Value":"0"},{"Year":"2015","Type of aid":"Imputed student costs (E02)","Value":"975.058"}]' data-indicatorid='indicator_4-b-1' data-country="UK"
-    data-charttitle="USAID assistance for education development assistance in UK dollars" data-measurementunit="" data-datasource="" data-geographicalarea="">
+    data-charttitle="Official development assistance flows for scholarships by sector and type of study (£000s)" data-measurementunit="£000s" data-datasource="Department for International Development" data-geographicalarea="UK" data-showdata="true">
+
+    
+      
+    
+    
+
+    
+    <div id="toolbar">
+
+    </div>
+    <div id="fields"></div>
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
     
 
 
+    
+    
     <div class="alert alert-warning" role="alert">
       <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
     </div>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="nav-item active">
-        <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-      </li>
-      <li role="presentation" class="nav-item">
+      
+        <li role="presentation" class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+        </li>
+      
+      <li role="presentation" class="nav-item  ">
         <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
       </li>
       <li role="presentation" class="nav-item">
@@ -179,15 +194,17 @@
     
     <!-- Tab panes -->
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="data">
-        
-          <h3>USAID assistance for education development assistance in UK dollars</h3>
-        
-        <p>Unit of Measurement: </p>     
-        <a href="/data/indicator_4-b-1.csv" class="btn btn-primary btn-download">Download source CSV</a>
-        <div id="datatables"></div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="metadata">
+      
+        <div role="tabpanel" class="tab-pane active" id="data">
+          
+            <h3>Official development assistance flows for scholarships by sector and type of study (£000s)</h3>
+          
+          <p>Unit of Measurement: £000s</p>     
+          <a href="/data/indicator_4-b-1.csv" class="btn btn-primary btn-download">Download source CSV</a>
+          <div id="datatables"></div>
+        </div>
+      
+      <div role="tabpanel" class="tab-pane " id="metadata">
         <!-- National Metadata -->
         <div class="collapsible expanded">
           <h3>National Metadata<span> (Collapse)</span></h3>
@@ -196,6 +213,12 @@
                 SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
                 should be consulted for information on national methodology and other UK-specific metadata information.</p>
               <table class="table table-hover">
+  
+    
+  
+    
+  
+    
   
     
   
@@ -255,7 +278,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            
+            Annually
           
         </td>
         </tr>
@@ -268,7 +291,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            
+            2009
           
         </td>
         </tr>
@@ -281,7 +304,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            UK
           
         </td>
         </tr>
@@ -456,6 +479,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -515,12 +540,18 @@
     
   
     
+  
+    
+  
+    
+  
+    
       
       <tr>
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            £000s
           
         </td>
         </tr>
@@ -659,6 +690,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -667,7 +700,7 @@
         <div class="collapsible collapsed">
           <h3>Global Metadata<span> (Expand)</span></h3>
           <article>
-            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-4.pdf">metadata</a> is provided by the UN Statistics Division.</p>
+            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-04-0A-01.pdf">metadata</a> is provided by the UN Statistics Division.</p>
             <table class="table table-hover">
   
     
@@ -710,7 +743,7 @@
         <th scope="row">Target Name </th>
         <td>
           
-            By 2020, substantially expand globally the number of scholarships available to developing countries, in particular least developed countries, small island developing States and African countries, for enrolment in higher education, including vocational training and information and communications technology, technical, engineering and scientific programmes, in developed countries and other developing countries.
+            By 2020, substantially expand globally the number of scholarships available to developing countries, in particular least developed countries, small island developing States and African countries, for enrolment in higher education, including vocational training and information and communications technology, technical, engineering and scientific programmes, in developed countries and other developing countries
           
         </td>
         </tr>
@@ -736,7 +769,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            Total net official development assistance (ODA
+            
           
         </td>
         </tr>
@@ -772,6 +805,45 @@
     
       
       <tr>
+        <th scope="row">UN Partner Agency </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UNSD Indicator Code </th>
+        <td>
+          
+            C040b01
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Indicator Notes </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
         <th scope="row">Link to UN Metadata </th>
         <td>
           
@@ -781,8 +853,8 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-4.pdf">
-                Link
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-04-0A-01.pdf">
+                UN Sustainable Development Goals Indicator Metadata 04-OA-01
               </a>
             
             
@@ -908,6 +980,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -918,6 +992,289 @@
 
 
 
+
+  <h3>UK Data Source Metadata</h3>
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      <h4>Source 1</h4>
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            Department for International Development
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            Annually
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest Available Data </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical Coverage </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to Data Source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www.gov.uk/government/statistics/statistics-on-international-development-2016">
+                Statistics on International Development 2016
+              </a>
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release Date </th>
+        <td>
+          
+            2017-03-29
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next Release </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical Classification </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact Details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other Information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+  </div>
 
 
       </div>
@@ -937,7 +1294,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -974,11 +1331,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();

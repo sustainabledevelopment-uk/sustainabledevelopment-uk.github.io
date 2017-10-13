@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -212,7 +208,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/17-2-1"><span>17.2.1<span class="status danger">Exploring data sources</span></span> Net official development assistance, total and to least developed countries, as a proportion of the Organization for Economic Cooperation and Development (OECD) Development Assistance Committee donors' gross national income (GNI)</a>
+          <a href="/17-2-1"><span>17.2.1<span class="status danger">Exploring data sources</span></span> Net official development assistance, total and to least developed countries, as a proportion of the Organization for Economic Cooperation and Development (OECD) Development Assistance Committee donors’ gross national income (GNI)</a>
         </div>
     
     
@@ -266,7 +262,7 @@
 
     <div class="indicator-cards row no-gutters">
         <div class="col-md-6 col-lg-3">
-          <a href="/17-6-2"><span>17.6.2<span class="status danger">Exploring data sources</span></span> Fixed Internet broadband subscriptions per 100 inhabitants, by speed</a>
+          <a href="/17-6-2"><span>17.6.2<span class="status danger">Exploring data sources</span></span> Fixed Internet broadband subscriptions per 100 inhabitants, by speed</a>
         </div>
     
     
@@ -293,7 +289,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/17-9-1"><span>17.9.1<span class="status danger">Exploring data sources</span></span> Dollar value of financial and technical assistance (including through North-South, South-South and triangular cooperation) committed to developing countries</a>
+          <a href="/17-9-1"><span>17.9.1<span class="status success">Reported online</span></span> Dollar value of financial and technical assistance (including through North-South, South-South and triangular cooperation) committed to developing countries</a>
         </div>
     </div>
     
@@ -311,7 +307,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/17-11-1"><span>17.11.1<span class="status danger">Exploring data sources</span></span> Developing countries' and least developed countries' share of global exports</a>
+          <a href="/17-11-1"><span>17.11.1<span class="status danger">Exploring data sources</span></span> Developing countries’ and least developed countries’ share of global exports</a>
         </div>
     
     
@@ -383,7 +379,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/17-18-2"><span>17.18.2<span class="status danger">Exploring data sources</span></span> Number of countries that have national statistical legislation that complies with the Fundamental Principles of Official statistics</a>
+          <a href="/17-18-2"><span>17.18.2<span class="status danger">Exploring data sources</span></span> Number of countries that have national statistical legislation that complies with the Fundamental Principles of Official Statistics</a>
         </div>
     
     
@@ -401,7 +397,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/17-19-1"><span>17.19.1<span class="status danger">Exploring data sources</span></span> Dollar Value of all resources made available to strengthen statistical capacity in developing countries</a>
+          <a href="/17-19-1"><span>17.19.1<span class="status danger">Exploring data sources</span></span> Dollar value of all resources made available to strengthen statistical capacity in developing countries</a>
         </div>
     </div>
     
@@ -410,7 +406,7 @@
 
     <div class="indicator-cards row no-gutters">
         <div class="col-md-6 col-lg-3">
-          <a href="/17-19-2"><span>17.19.2<span class="status danger">Exploring data sources</span></span> Proportion of countries that (a) have conducted at least one population and housing census in the last 10 years and (b) have achieved 100 per cent birth registration and 80 per cent death registration</a>
+          <a href="/17-19-2"><span>17.19.2<span class="status danger">Exploring data sources</span></span> Proportion of countries that (a) have conducted at least one population and housing census in the last 10 years; and (b) have achieved 100 per cent birth registration and 80 per cent death registration</a>
         </div>
     
     
@@ -429,7 +425,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -466,11 +462,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();

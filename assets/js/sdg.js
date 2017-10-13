@@ -118,6 +118,7 @@ var indicatorModel = function (options) {
   this.measurementUnit = options.measurementUnit;
   this.dataSource = options.dataSource;
   this.geographicalArea = options.geographicalArea;
+  this.showData = options.showData;
   this.selectedFields = [];
   this.fieldValueStatuses = [];
   this.userInteraction = {};
@@ -463,14 +464,19 @@ var indicatorView = function (model, options) {
   this._chartInstance = undefined;
   this._rootElement = options.rootElement;
   
+  var chartHeight = screen.height < options.maxChartHeight ? screen.height : options.maxChartHeight;
+
   $('.plot-container', this._rootElement) 
-    .css('height', Math.min(options.maxChartHeight, (screen.height - 450 /* 450px magic number, considering other design elements */)) + 'px'); 
+    .css('height', chartHeight + 'px'); 
 
   this._model.onDataComplete.attach(function (sender, args) {
-    if(!view_obj._chartInstance) {
-      view_obj.createPlot(args);
-    } else {
-      view_obj.updatePlot(args);
+
+    if(view_obj._model.showData) {
+      if(!view_obj._chartInstance) {
+        view_obj.createPlot(args);
+      } else {
+        view_obj.updatePlot(args);
+      }
     }
     
     view_obj.createTables(args);
@@ -594,6 +600,8 @@ var indicatorView = function (model, options) {
 
   this.initialiseSeries = function (args) {
     var template = _.template($("#item_template").html());
+
+    $('#toolbar').html('<button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>');
 
     $('#fields').html(template({
         series: args.series
@@ -811,8 +819,7 @@ indicatorController.prototype = {
 
 var indicatorSearch = function(inputElement, indicatorDataStore) {
   that = this;
-  this.inputElement = inputElement; //$('#indicator_search');
-  //this.dataUrl = this.inputElement.data('url');
+  this.inputElement = inputElement;
   this.indicatorDataStore = indicatorDataStore;
   this.indicatorData = [];
   this.hasErrored = false;
@@ -827,25 +834,6 @@ var indicatorSearch = function(inputElement, indicatorDataStore) {
       }
     }
   };
-
-  // this.getData = function() {
-
-  //   return new Promise(function(resolve, reject) {
-
-  //     // if(Modernizr.localStorage &&) {
-
-  //     // }
-
-  //     $.getJSON(that.dataUrl, function(data) {
-  //       that.processData(data);
-  //       resolve();
-  //     }).fail(function(err) {
-  //       that.hasErrored = true;
-  //       console.error(err);
-  //       reject(Error(err));
-  //     });      
-  //   });
-  // };
 
   this.inputElement.keyup(function(e) {
     var searchValue = that.inputElement.val();
@@ -924,6 +912,7 @@ indicatorSearch.prototype = {
 };
 
 $(function() {
+  $('#main-nav').append('<div id="search" class="menu-target"><label for="indicator_search"><i class="fa fa-search" aria-hidden="true"></i><span>Search:</span></label><input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" /></div>');
   var $el = $('#indicator_search');
   new indicatorSearch($el, new indicatorDataStore($el.data('url')));
 });

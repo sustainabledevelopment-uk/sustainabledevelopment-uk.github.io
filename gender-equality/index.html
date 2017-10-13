@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -194,7 +190,7 @@
 
     <div class="indicator-cards row no-gutters">
         <div class="col-md-6 col-lg-3">
-          <a href="/5-1-1"><span>5.1.1<span class="status danger">Exploring data sources</span></span> Whether or not legal frameworks are in place to promote, enforce and monitor equality and non-discrimination on the basis of sex</a>
+          <a href="/5-1-1"><span>5.1.1<span class="status danger">Exploring data sources</span></span> Whether or not legal frameworks are in place to promote, enforce and monitor equality and non‑discrimination on the basis of sex</a>
         </div>
     
     
@@ -212,7 +208,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/5-2-2"><span>5.2.2<span class="status success">Reported online</span></span> Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence</a>
+          <a href="/5-2-2"><span>5.2.2<span class="status success">Reported online</span></span> Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence</a>
         </div>
     
     
@@ -248,7 +244,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/5-5-1"><span>5.5.1<span class="status success">Reported online</span></span> Proportion of seats held by women in national parliaments and local governments</a>
+          <a href="/5-5-1"><span>5.5.1<span class="status success">Reported online</span></span> Proportion of seats held by women in (a) national parliaments and (b) local governments</a>
         </div>
     
     
@@ -275,7 +271,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/5-6-2"><span>5.6.2<span class="status danger">Exploring data sources</span></span> Number of countries with laws and regulations that guarantee women aged 15-49 access to sexual and reproductive health care, information and education</a>
+          <a href="/5-6-2"><span>5.6.2<span class="status danger">Exploring data sources</span></span> Number of countries with laws and regulations that guarantee full and equal access to women and men aged 15 years and older to sexual and reproductive health care, information and education</a>
         </div>
     
     
@@ -284,7 +280,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/5-a-1"><span>5.a.1<span class="status danger">Exploring data sources</span></span> (a) Proportion of total agricultural population with ownership or secure rights over agricultural land, by sex; and (b) share of women among owners or rightsbearers of agricultural land, type of tenure</a>
+          <a href="/5-a-1"><span>5.a.1<span class="status danger">Exploring data sources</span></span> (a) Proportion of total agricultural population with ownership or secure rights over agricultural land, by sex; and (b) share of women among owners or rights-bearers of agricultural land, by type of tenure</a>
         </div>
     
     
@@ -293,7 +289,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/5-a-2"><span>5.a.2<span class="status danger">Exploring data sources</span></span> Proportion of countries where the legal framework (including customary law) guarantees women's equal rights to land ownership and/or control</a>
+          <a href="/5-a-2"><span>5.a.2<span class="status danger">Exploring data sources</span></span> Proportion of countries where the legal framework (including customary law) guarantees women’s equal rights to land ownership and/or control</a>
         </div>
     </div>
     
@@ -311,7 +307,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/5-c-1"><span>5.c.1<span class="status danger">Exploring data sources</span></span> Proportion of countries with systems to track and make public allocations for gender equality and women's empowerment</a>
+          <a href="/5-c-1"><span>5.c.1<span class="status danger">Exploring data sources</span></span> Proportion of countries with systems to track and make public allocations for gender equality and women’s empowerment</a>
         </div>
     
     
@@ -330,7 +326,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -367,11 +363,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();

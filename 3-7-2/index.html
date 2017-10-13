@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -87,21 +83,15 @@
  
 
 
+
+
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
     <div class="variable-selector" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
-      <!--
-      <div class="bar">
-        <div class="default"></div><div class="possible"></div><div class="excluded"></div>
-      </div>
-      -->
-
       <div class="bar">
         <div class="selected"></div>
       </div>
-
-
       <div class="variable-options">
         <% _.each(seriesItem.values, function(item) { %>
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
@@ -151,18 +141,24 @@
       <li class="active">Adolescent birth rate (aged 10-14 years; aged 15-19 years) per 1,000 women in that age group</li>
   
 </ol>
+
+  <div id="page-content">
   
 
+  
+  </div>
 
-  <section id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_3-7-2' data-country="UK"
-    data-charttitle="US adolescent birth rate (aged 15-19 years) per 1,000 women in that age group" data-measurementunit="" data-datasource="" data-geographicalarea="">
+  <section id="indicatorData" data-indicatordata='[{"Year":"2016","Value":"13.7"},{"Year":"2015","Value":"14.5"},{"Year":"2014","Value":"15.6"},{"Year":"2013","Value":"17.4"},{"Year":"2012","Value":"19.9"},{"Year":"2011","Value":"21.2"},{"Year":"2010","Value":"23.4"},{"Year":"2009","Value":"24.8"},{"Year":"2008","Value":"25.7"},{"Year":"2007","Value":"25.9"},{"Year":"2006","Value":"26.6"},{"Year":"2005","Value":"26.4"},{"Year":"2004","Value":"26.9"},{"Year":"2003","Value":"26.9"},{"Year":"2002","Value":"27.1"},{"Year":"2001","Value":"28"},{"Year":"2000","Value":"29.3"}]' data-indicatorid='indicator_3-7-2' data-country="UK"
+    data-charttitle="UK adolescent birth rate (aged 15-19 years) per 1,000 women in that age group" data-measurementunit="" data-datasource="UK Office for National Statistics" data-geographicalarea="UK" data-showdata="true">
+
     
+      
     
     
 
     
     <div id="toolbar">
-      <button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>
+
     </div>
     <div id="fields"></div>
     <div class="plot-container">
@@ -172,17 +168,20 @@
     
 
 
-
+    
+    
     <div class="alert alert-warning" role="alert">
       <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
     </div>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="nav-item active">
-        <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-      </li>
-      <li role="presentation" class="nav-item">
+      
+        <li role="presentation" class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+        </li>
+      
+      <li role="presentation" class="nav-item  ">
         <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
       </li>
       <li role="presentation" class="nav-item">
@@ -193,15 +192,17 @@
     
     <!-- Tab panes -->
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="data">
-        
-          <h3>US adolescent birth rate (aged 15-19 years) per 1,000 women in that age group</h3>
-        
-        <p>Unit of Measurement: </p>     
-        <a href="/data/indicator_3-7-2.csv" class="btn btn-primary btn-download">Download source CSV</a>
-        <div id="datatables"></div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="metadata">
+      
+        <div role="tabpanel" class="tab-pane active" id="data">
+          
+            <h3>UK adolescent birth rate (aged 15-19 years) per 1,000 women in that age group</h3>
+          
+          <p>Unit of Measurement: </p>     
+          <a href="/data/indicator_3-7-2.csv" class="btn btn-primary btn-download">Download source CSV</a>
+          <div id="datatables"></div>
+        </div>
+      
+      <div role="tabpanel" class="tab-pane " id="metadata">
         <!-- National Metadata -->
         <div class="collapsible expanded">
           <h3>National Metadata<span> (Collapse)</span></h3>
@@ -238,12 +239,18 @@
     
   
     
+  
+    
+  
+    
+  
+    
       
       <tr>
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            Adolescent birth rate (age 15-19) per 1,000 women in that age group.
           
         </td>
         </tr>
@@ -269,7 +276,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            
+            Annually
           
         </td>
         </tr>
@@ -282,7 +289,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            
+            1695
           
         </td>
         </tr>
@@ -295,7 +302,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            UK
           
         </td>
         </tr>
@@ -470,6 +477,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -479,6 +488,12 @@
           <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
           <article>
             <table class="table table-hover">
+  
+    
+  
+    
+  
+    
   
     
   
@@ -673,6 +688,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -681,7 +698,7 @@
         <div class="collapsible collapsed">
           <h3>Global Metadata<span> (Expand)</span></h3>
           <article>
-            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-3.pdf">metadata</a> is provided by the UN Statistics Division.</p>
+            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://data.un.org/Data.aspx?q=births&d=WDI&f=Indicator_Code%3aSP.ADO.TFRT">metadata</a> is provided by the UN Statistics Division.</p>
             <table class="table table-hover">
   
     
@@ -724,7 +741,7 @@
         <th scope="row">Target Name </th>
         <td>
           
-            By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes.
+            By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes
           
         </td>
         </tr>
@@ -776,7 +793,46 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            DESA Population Division; UNFPA, WHO
+            DESA Population Division
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Partner Agency </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UNSD Indicator Code </th>
+        <td>
+          
+            C030702
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Indicator Notes </th>
+        <td>
+          
+            IAEG-SDG 3rd meeting: Lack of sufficient data coverage
           
         </td>
         </tr>
@@ -795,8 +851,8 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-3.pdf">
-                Link
+              <a href="http://data.un.org/Data.aspx?q=births&d=WDI&f=Indicator_Code%3aSP.ADO.TFRT">
+                UN Metadata
               </a>
             
             
@@ -922,6 +978,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -932,6 +990,289 @@
 
 
 
+
+  <h3>UK Data Source Metadata</h3>
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      <h4>Source 1</h4>
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            UK Office for National Statistics
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            Annually
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest Available Data </th>
+        <td>
+          
+            2000
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical Coverage </th>
+        <td>
+          
+            England and Wales
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to Data Source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/birthsdeathsandmarriages/livebirths/datasets/birthsummarytables">
+                Birth summary tables for England and Wales
+              </a>
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release Date </th>
+        <td>
+          
+            19 July 2017
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next Release </th>
+        <td>
+          
+            July to August 2018 (provisional)
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical Classification </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact Details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other Information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+  </div>
 
 
       </div>
@@ -951,7 +1292,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -988,11 +1329,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();

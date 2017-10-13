@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -87,21 +83,15 @@
  
 
 
+
+
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
     <div class="variable-selector" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
-      <!--
-      <div class="bar">
-        <div class="default"></div><div class="possible"></div><div class="excluded"></div>
-      </div>
-      -->
-
       <div class="bar">
         <div class="selected"></div>
       </div>
-
-
       <div class="variable-options">
         <% _.each(seriesItem.values, function(item) { %>
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
@@ -151,18 +141,24 @@
       <li class="active">Annual growth rate of real GDP per capita</li>
   
 </ol>
+
+  <div id="page-content">
   
 
+  
+  </div>
 
-  <section id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"3.4"},{"Year":"2001","Value":"2.3"},{"Year":"2002","Value":"2"},{"Year":"2003","Value":"3"},{"Year":"2004","Value":"2"},{"Year":"2005","Value":"2.2"},{"Year":"2006","Value":"1.8"},{"Year":"2007","Value":"1.7"},{"Year":"2008","Value":"-1.4"},{"Year":"2009","Value":"-5"},{"Year":"2010","Value":"1.1"},{"Year":"2011","Value":"0.7"},{"Year":"2012","Value":"0.6"},{"Year":"2013","Value":"1.3"},{"Year":"2014","Value":"2.3"},{"Year":"2015","Value":"1.4"},{"Year":"2016","Value":"1.1"}]' data-indicatorid='indicator_8-1-1' data-country="UK"
-    data-charttitle="Annual growth rate (%) of GDP per capita in chained 2009 GBP (£)" data-measurementunit="Percentage " data-datasource="Office for National Statistics" data-geographicalarea="UK">
+  <section id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"3.3"},{"Year":"2001","Value":"2.1"},{"Year":"2002","Value":"2"},{"Year":"2003","Value":"2.9"},{"Year":"2004","Value":"1.8"},{"Year":"2005","Value":"2.3"},{"Year":"2006","Value":"1.8"},{"Year":"2007","Value":"1.5"},{"Year":"2008","Value":"-1.3"},{"Year":"2009","Value":"-4.9"},{"Year":"2010","Value":"0.9"},{"Year":"2011","Value":"0.6"},{"Year":"2012","Value":"0.8"},{"Year":"2013","Value":"1.4"},{"Year":"2014","Value":"2.3"},{"Year":"2015","Value":"1.5"},{"Year":"2016","Value":"1"}]' data-indicatorid='indicator_8-1-1' data-country="UK"
+    data-charttitle="Annual growth rate (%) of GDP per capita in chained 2009 GBP (£)" data-measurementunit="Percentage " data-datasource="Office for National Statistics" data-geographicalarea="UK" data-showdata="true">
+
     
+      
     
     
 
     
     <div id="toolbar">
-      <button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>
+
     </div>
     <div id="fields"></div>
     <div class="plot-container">
@@ -172,17 +168,20 @@
     
 
 
-
+    
+    
     <div class="alert alert-warning" role="alert">
       <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
     </div>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="nav-item active">
-        <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-      </li>
-      <li role="presentation" class="nav-item">
+      
+        <li role="presentation" class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+        </li>
+      
+      <li role="presentation" class="nav-item  ">
         <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
       </li>
       <li role="presentation" class="nav-item">
@@ -193,15 +192,17 @@
     
     <!-- Tab panes -->
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="data">
-        
-          <h3>Annual growth rate (%) of GDP per capita in chained 2009 GBP (£)</h3>
-        
-        <p>Unit of Measurement: Percentage </p>     
-        <a href="/data/indicator_8-1-1.csv" class="btn btn-primary btn-download">Download source CSV</a>
-        <div id="datatables"></div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="metadata">
+      
+        <div role="tabpanel" class="tab-pane active" id="data">
+          
+            <h3>Annual growth rate (%) of GDP per capita in chained 2009 GBP (£)</h3>
+          
+          <p>Unit of Measurement: Percentage </p>     
+          <a href="/data/indicator_8-1-1.csv" class="btn btn-primary btn-download">Download source CSV</a>
+          <div id="datatables"></div>
+        </div>
+      
+      <div role="tabpanel" class="tab-pane " id="metadata">
         <!-- National Metadata -->
         <div class="collapsible expanded">
           <h3>National Metadata<span> (Collapse)</span></h3>
@@ -210,6 +211,12 @@
                 SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
                 should be consulted for information on national methodology and other UK-specific metadata information.</p>
               <table class="table table-hover">
+  
+    
+  
+    
+  
+    
   
     
   
@@ -269,7 +276,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Quarterly 
+            Annually
           
         </td>
         </tr>
@@ -282,7 +289,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            1956
+            2000
           
         </td>
         </tr>
@@ -470,6 +477,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -479,6 +488,12 @@
           <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
           <article>
             <table class="table table-hover">
+  
+    
+  
+    
+  
+    
   
     
   
@@ -673,6 +688,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -681,7 +698,7 @@
         <div class="collapsible collapsed">
           <h3>Global Metadata<span> (Expand)</span></h3>
           <article>
-            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-8.pdf">metadata</a> is provided by the UN Statistics Division.</p>
+            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-08-01-01.pdf">metadata</a> is provided by the UN Statistics Division.</p>
             <table class="table table-hover">
   
     
@@ -724,7 +741,7 @@
         <th scope="row">Target Name </th>
         <td>
           
-            Sustain per capita economic growth in accordance with national circumstances and, in particular, at least 7 per cent gross domestic product growth per annum in the least developed countries.
+            Sustain per capita economic growth in accordance with national circumstances and, in particular, at least 7 per cent gross domestic product growth per annum in the least developed countries
           
         </td>
         </tr>
@@ -776,7 +793,46 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            WB
+            UNSD
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Partner Agency </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UNSD Indicator Code </th>
+        <td>
+          
+            C080101
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Indicator Notes </th>
+        <td>
+          
+            
           
         </td>
         </tr>
@@ -795,8 +851,8 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-8.pdf">
-                UN Metadata
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-08-01-01.pdf">
+                UN Sustainable Development Goals Indicator Metadata 08-01-01
               </a>
             
             
@@ -809,6 +865,8 @@
     
       
       
+  
+    
   
     
   
@@ -1003,6 +1061,12 @@
     
   
     
+  
+    
+  
+    
+  
+    
       
       <tr>
         <th scope="row">Organisation </th>
@@ -1067,7 +1131,7 @@
 
             
               <a href="https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/n3y6/qna">
-                GDP (Average) per head, year on year growth rate CVM SA% 
+                GDP (Average) per head, year on year growth rate
               </a>
             
             
@@ -1087,7 +1151,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            31-03-2017
+            29-09-2017
           
         </td>
         </tr>
@@ -1145,6 +1209,8 @@
         </tr>
         
       
+  
+    
   
     
   
@@ -1297,6 +1363,12 @@
     
   
     
+  
+    
+  
+    
+  
+    
       
       <tr>
         <th scope="row">Organisation </th>
@@ -1435,6 +1507,8 @@
         </tr>
         
       
+  
+    
   
     
   
@@ -1587,6 +1661,12 @@
     
   
     
+  
+    
+  
+    
+  
+    
       
       <tr>
         <th scope="row">Organisation </th>
@@ -1734,6 +1814,8 @@
   
     
   
+    
+  
 </table>
 
     </div>
@@ -1758,7 +1840,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1795,11 +1877,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();

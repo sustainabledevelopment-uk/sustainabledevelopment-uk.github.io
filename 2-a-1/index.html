@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -87,21 +83,15 @@
  
 
 
+
+
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
     <div class="variable-selector" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
-      <!--
-      <div class="bar">
-        <div class="default"></div><div class="possible"></div><div class="excluded"></div>
-      </div>
-      -->
-
       <div class="bar">
         <div class="selected"></div>
       </div>
-
-
       <div class="variable-options">
         <% _.each(seriesItem.values, function(item) { %>
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
@@ -151,18 +141,24 @@
       <li class="active">The agriculture orientation index for government expenditures</li>
   
 </ol>
+
+  <div id="page-content">
   
 
+  
+  </div>
 
-  <section id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_2-a-1' data-country="UK"
-    data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="">
+  <section id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"0.895854088"},{"Year":"2001","Value":"1.280828203"},{"Year":"2002","Value":"0.67408268"},{"Year":"2003","Value":"0.720059924"},{"Year":"2004","Value":"0.78805838"},{"Year":"2005","Value":"0.811722615"},{"Year":"2006","Value":"0.827579761"},{"Year":"2007","Value":"0.784124993"},{"Year":"2008","Value":"0.583590061"},{"Year":"2009","Value":"0.56663505"},{"Year":"2010","Value":"0.580325611"},{"Year":"2011","Value":"0.549304338"},{"Year":"2012","Value":"0.507381298"},{"Year":"2013","Value":"0.502651513"},{"Year":"2014","Value":"0.452907296"},{"Year":"2015","Value":"0.436081619"}]' data-indicatorid='indicator_2-a-1' data-country="UK"
+    data-charttitle="Agriculture orientation index for UK government expenditures" data-measurementunit="Agriculture Orientation Index (AOI)" data-datasource="UK Office for National Statistics" data-geographicalarea="UK" data-showdata="true">
+
     
+      
     
     
 
     
     <div id="toolbar">
-      <button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>
+
     </div>
     <div id="fields"></div>
     <div class="plot-container">
@@ -172,17 +168,20 @@
     
 
 
-
+    
+    
     <div class="alert alert-warning" role="alert">
       <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
     </div>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="nav-item active">
-        <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-      </li>
-      <li role="presentation" class="nav-item">
+      
+        <li role="presentation" class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+        </li>
+      
+      <li role="presentation" class="nav-item  ">
         <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
       </li>
       <li role="presentation" class="nav-item">
@@ -193,13 +192,17 @@
     
     <!-- Tab panes -->
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="data">
-        
-        <p>Unit of Measurement: </p>     
-        <a href="/data/indicator_2-a-1.csv" class="btn btn-primary btn-download">Download source CSV</a>
-        <div id="datatables"></div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="metadata">
+      
+        <div role="tabpanel" class="tab-pane active" id="data">
+          
+            <h3>Agriculture orientation index for UK government expenditures</h3>
+          
+          <p>Unit of Measurement: Agriculture Orientation Index (AOI)</p>     
+          <a href="/data/indicator_2-a-1.csv" class="btn btn-primary btn-download">Download source CSV</a>
+          <div id="datatables"></div>
+        </div>
+      
+      <div role="tabpanel" class="tab-pane " id="metadata">
         <!-- National Metadata -->
         <div class="collapsible expanded">
           <h3>National Metadata<span> (Collapse)</span></h3>
@@ -236,12 +239,18 @@
     
   
     
+  
+    
+  
+    
+  
+    
       
       <tr>
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            The agriculture orientation index for UK government expenditures
           
         </td>
         </tr>
@@ -267,7 +276,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            
+            Annually
           
         </td>
         </tr>
@@ -280,7 +289,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            
+            2000
           
         </td>
         </tr>
@@ -293,7 +302,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            UK
           
         </td>
         </tr>
@@ -345,7 +354,7 @@
         <th scope="row">Disaggregation </th>
         <td>
           
-            
+            Since this indicator is based on national accounts data and total central government expenditures, it does not allow for disaggregation by demographic characteristics or geographic location.
           
         </td>
         </tr>
@@ -377,6 +386,8 @@
         </tr>
         
       
+  
+    
   
     
   
@@ -527,12 +538,18 @@
     
   
     
+  
+    
+  
+    
+  
+    
       
       <tr>
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            Agriculture Orientation Index (AOI)
           
         </td>
         </tr>
@@ -671,6 +688,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -679,7 +698,7 @@
         <div class="collapsible collapsed">
           <h3>Global Metadata<span> (Expand)</span></h3>
           <article>
-            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-2.pdf">metadata</a> is provided by the UN Statistics Division.</p>
+            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-02-0A-01.pdf">metadata</a> is provided by the UN Statistics Division.</p>
             <table class="table table-hover">
   
     
@@ -748,7 +767,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            The Agriculture Orientation Index (AOI) for Government Expenditures is defined as the Agriculture share of Government Expenditures, divided by the Agriculture Share of GDP, where Agriculture refers to the agriculture, forestry, fishing and hunting sector. An AOI greater than 1 reflects a higher orientation towards the agriculture sector, which receives a higher share of government spending relative to its contribution to economic value-added. An AOI less than 1 reflects a lower orientation to agriculture, while an AOI equal to 1 reflects neutrality in a government's orientation to the agriculture sector. Agriculture refers to the agriculture, forestry, fishing and hunting sector, based on the Classification of the Functions of Government (COFOG) developed by the OECD and published by the United Nations Statistics Division (UNSD), found at http://unstats.un.org/unsd/cr/registry/regcst.asp?Cl=4&Top=1&Lg=1. Government expenditures are all outlays or expenses associated with supporting a particular sector or purse, including compensation of employees, and subsidies and grants paid as transfers to individuals or corporations in that sector. For a full description, see the Government Finance Statistics Manual (GFSM) 2001, developed by the International Monetary Fund (IMF), found at http://www.imf.org/external/pubs/ft/gfs/manual/. The Agriculture Share of GDP is measured by the ratio of Agriculture Value Added over GDP, based on official data reported by countries to the United Nations Statistics Division or to the OECD. The annual data and indicator, collected and compiled by the Food and Agriculture Organization of the UN (FAO), can be found on the FAOSTAT domain at: http://faostat3.fao.org/download/I/IG/E, covering the periods 2001- 2012.
+            An Agriculture Orientation Index (AOI) greater than 1 reflects a higher orientation towards the agriculture sector, which receives a higher share of government spending relative to its contribution to economic value-added. An AOI less than 1 reflects a lower orientation to agriculture, while an AOI equal to 1 reflects neutrality in a government’s orientation to the agriculture sector.
           
         </td>
         </tr>
@@ -784,6 +803,45 @@
     
       
       <tr>
+        <th scope="row">UN Partner Agency </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UNSD Indicator Code </th>
+        <td>
+          
+            C020a01
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Indicator Notes </th>
+        <td>
+          
+            IAEG-SDG 3rd meeting: Lack of sufficient data coverage
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
         <th scope="row">Link to UN Metadata </th>
         <td>
           
@@ -793,8 +851,8 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-2.pdf">
-                Link
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-02-0A-01.pdf">
+                UN Metadata 02-OA-01
               </a>
             
             
@@ -920,6 +978,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -930,6 +990,289 @@
 
 
 
+
+  <h3>UK Data Source Metadata</h3>
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      <h4>Source 1</h4>
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            UK Office for National Statistics
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            Annually
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest Available Data </th>
+        <td>
+          
+            1995
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical Coverage </th>
+        <td>
+          
+            UK
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to Data Source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicspending/datasets/esatable11annualexpenditureofgeneralgovernment/current">
+                Annual Expenditure of UK General Government
+              </a>
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release Date </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next Release </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical Classification </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact Details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other Information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+  </div>
 
 
       </div>
@@ -949,7 +1292,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -986,11 +1329,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();

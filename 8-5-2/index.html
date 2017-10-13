@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -87,21 +83,15 @@
  
 
 
+
+
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
     <div class="variable-selector" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
-      <!--
-      <div class="bar">
-        <div class="default"></div><div class="possible"></div><div class="excluded"></div>
-      </div>
-      -->
-
       <div class="bar">
         <div class="selected"></div>
       </div>
-
-
       <div class="variable-options">
         <% _.each(seriesItem.values, function(item) { %>
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
@@ -151,18 +141,24 @@
       <li class="active">Unemployment rate, by sex, age and persons with disabilities</li>
   
 </ol>
+
+  <div id="page-content">
   
 
+  
+  </div>
 
   <section id="indicatorData" data-indicatordata='[{"Year":"2000","Age":null,"Value":"5.4"},{"Year":"2001","Age":null,"Value":"5.1"},{"Year":"2002","Age":null,"Value":"5.2"},{"Year":"2003","Age":null,"Value":"5.0"},{"Year":"2004","Age":null,"Value":"4.8"},{"Year":"2005","Age":null,"Value":"4.8"},{"Year":"2006","Age":null,"Value":"5.4"},{"Year":"2007","Age":null,"Value":"5.3"},{"Year":"2008","Age":null,"Value":"5.7"},{"Year":"2009","Age":null,"Value":"7.6"},{"Year":"2010","Age":null,"Value":"7.9"},{"Year":"2011","Age":null,"Value":"8.1"},{"Year":"2012","Age":null,"Value":"8.0"},{"Year":"2013","Age":null,"Value":"7.6"},{"Year":"2014","Age":null,"Value":"6.2"},{"Year":"2015","Age":null,"Value":"5.4"},{"Year":"2016","Age":null,"Value":"4.9"},{"Year":"2000","Age":"16-64","Value":"5.6"},{"Year":"2001","Age":"16-64","Value":"5.1"},{"Year":"2002","Age":"16-64","Value":"5.2"},{"Year":"2003","Age":"16-64","Value":"5.1"},{"Year":"2004","Age":"16-64","Value":"4.8"},{"Year":"2005","Age":"16-64","Value":"4.9"},{"Year":"2006","Age":"16-64","Value":"5.5"},{"Year":"2007","Age":"16-64","Value":"5.4"},{"Year":"2008","Age":"16-64","Value":"5.8"},{"Year":"2009","Age":"16-64","Value":"7.8"},{"Year":"2010","Age":"16-64","Value":"8.0"},{"Year":"2011","Age":"16-64","Value":"8.3"},{"Year":"2012","Age":"16-64","Value":"8.1"},{"Year":"2013","Age":"16-64","Value":"7.8"},{"Year":"2014","Age":"16-64","Value":"6.3"},{"Year":"2015","Age":"16-64","Value":"5.5"},{"Year":"2016","Age":"16-64","Value":"5.0"},{"Year":"2000","Age":"16-17","Value":"20.3"},{"Year":"2001","Age":"16-17","Value":"19.1"},{"Year":"2002","Age":"16-17","Value":"20.0"},{"Year":"2003","Age":"16-17","Value":"21.0"},{"Year":"2004","Age":"16-17","Value":"21.5"},{"Year":"2005","Age":"16-17","Value":"22.9"},{"Year":"2006","Age":"16-17","Value":"24.7"},{"Year":"2007","Age":"16-17","Value":"27.0"},{"Year":"2008","Age":"16-17","Value":"26.2"},{"Year":"2009","Age":"16-17","Value":"32.0"},{"Year":"2010","Age":"16-17","Value":"35.0"},{"Year":"2011","Age":"16-17","Value":"38.0"},{"Year":"2012","Age":"16-17","Value":"36.7"},{"Year":"2013","Age":"16-17","Value":"37.1"},{"Year":"2014","Age":"16-17","Value":"33.5"},{"Year":"2015","Age":"16-17","Value":"28.0"},{"Year":"2016","Age":"16-17","Value":"26.5"},{"Year":"2000","Age":"18-24","Value":"10.6"},{"Year":"2001","Age":"18-24","Value":"10.4"},{"Year":"2002","Age":"18-24","Value":"10.4"},{"Year":"2003","Age":"18-24","Value":"10.6"},{"Year":"2004","Age":"18-24","Value":"10.4"},{"Year":"2005","Age":"18-24","Value":"11.0"},{"Year":"2006","Age":"18-24","Value":"12.2"},{"Year":"2007","Age":"18-24","Value":"12.2"},{"Year":"2008","Age":"18-24","Value":"13.3"},{"Year":"2009","Age":"18-24","Value":"17.3"},{"Year":"2010","Age":"18-24","Value":"17.9"},{"Year":"2011","Age":"18-24","Value":"19.0"},{"Year":"2012","Age":"18-24","Value":"19.3"},{"Year":"2013","Age":"18-24","Value":"18.8"},{"Year":"2014","Age":"18-24","Value":"15.1"},{"Year":"2015","Age":"18-24","Value":"13.2"},{"Year":"2016","Age":"18-24","Value":"11.7"},{"Year":"2000","Age":"25-49","Value":"4.3"},{"Year":"2001","Age":"25-49","Value":"4.1"},{"Year":"2002","Age":"25-49","Value":"4.1"},{"Year":"2003","Age":"25-49","Value":"3.9"},{"Year":"2004","Age":"25-49","Value":"3.6"},{"Year":"2005","Age":"25-49","Value":"3.5"},{"Year":"2006","Age":"25-49","Value":"4.2"},{"Year":"2007","Age":"25-49","Value":"3.9"},{"Year":"2008","Age":"25-49","Value":"4.3"},{"Year":"2009","Age":"25-49","Value":"6.1"},{"Year":"2010","Age":"25-49","Value":"6.3"},{"Year":"2011","Age":"25-49","Value":"6.4"},{"Year":"2012","Age":"25-49","Value":"6.2"},{"Year":"2013","Age":"25-49","Value":"5.8"},{"Year":"2014","Age":"25-49","Value":"4.8"},{"Year":"2015","Age":"25-49","Value":"4.2"},{"Year":"2016","Age":"25-49","Value":"3.8"},{"Year":"2000","Age":"50 and over","Value":"3.9"},{"Year":"2001","Age":"50 and over","Value":"3.2"},{"Year":"2002","Age":"50 and over","Value":"3.3"},{"Year":"2003","Age":"50 and over","Value":"3.1"},{"Year":"2004","Age":"50 and over","Value":"2.8"},{"Year":"2005","Age":"50 and over","Value":"2.8"},{"Year":"2006","Age":"50 and over","Value":"3.0"},{"Year":"2007","Age":"50 and over","Value":"3.0"},{"Year":"2008","Age":"50 and over","Value":"3.2"},{"Year":"2009","Age":"50 and over","Value":"4.5"},{"Year":"2010","Age":"50 and over","Value":"4.6"},{"Year":"2011","Age":"50 and over","Value":"4.7"},{"Year":"2012","Age":"50 and over","Value":"4.6"},{"Year":"2013","Age":"50 and over","Value":"4.4"},{"Year":"2014","Age":"50 and over","Value":"3.7"},{"Year":"2015","Age":"50 and over","Value":"3.3"},{"Year":"2016","Age":"50 and over","Value":"3.2"}]' data-indicatorid='indicator_8-5-2' data-country="UK"
-    data-charttitle="Unemployment rate (%)" data-measurementunit="Percentage of economically active people that were unemployed" data-datasource="Office for National Statistics " data-geographicalarea="UK">
+    data-charttitle="Unemployment rate (%)" data-measurementunit="Percentage of economically active people that were unemployed" data-datasource="Office for National Statistics " data-geographicalarea="UK" data-showdata="true">
+
     
+      
     
     
 
     
     <div id="toolbar">
-      <button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>
+
     </div>
     <div id="fields"></div>
     <div class="plot-container">
@@ -172,17 +168,20 @@
     
 
 
-
+    
+    
     <div class="alert alert-warning" role="alert">
       <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
     </div>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="nav-item active">
-        <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-      </li>
-      <li role="presentation" class="nav-item">
+      
+        <li role="presentation" class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+        </li>
+      
+      <li role="presentation" class="nav-item  ">
         <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
       </li>
       <li role="presentation" class="nav-item">
@@ -193,15 +192,17 @@
     
     <!-- Tab panes -->
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="data">
-        
-          <h3>Unemployment rate (%)</h3>
-        
-        <p>Unit of Measurement: Percentage of economically active people that were unemployed</p>     
-        <a href="/data/indicator_8-5-2.csv" class="btn btn-primary btn-download">Download source CSV</a>
-        <div id="datatables"></div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="metadata">
+      
+        <div role="tabpanel" class="tab-pane active" id="data">
+          
+            <h3>Unemployment rate (%)</h3>
+          
+          <p>Unit of Measurement: Percentage of economically active people that were unemployed</p>     
+          <a href="/data/indicator_8-5-2.csv" class="btn btn-primary btn-download">Download source CSV</a>
+          <div id="datatables"></div>
+        </div>
+      
+      <div role="tabpanel" class="tab-pane " id="metadata">
         <!-- National Metadata -->
         <div class="collapsible expanded">
           <h3>National Metadata<span> (Collapse)</span></h3>
@@ -210,6 +211,12 @@
                 SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
                 should be consulted for information on national methodology and other UK-specific metadata information.</p>
               <table class="table table-hover">
+  
+    
+  
+    
+  
+    
   
     
   
@@ -470,6 +477,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -479,6 +488,12 @@
           <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
           <article>
             <table class="table table-hover">
+  
+    
+  
+    
+  
+    
   
     
   
@@ -674,6 +689,8 @@ Economically active individuals are defined as those that are in work plus those
   
     
   
+    
+  
 </table>
 
           </article>
@@ -725,7 +742,7 @@ Economically active individuals are defined as those that are in work plus those
         <th scope="row">Target Name </th>
         <td>
           
-            By 2030, achieve full and productive employment and decent work for all women and men, including for young people and persons with disabilities, and equal pay for work of equal value.
+            By 2030, achieve full and productive employment and decent work for all women and men, including for young people and persons with disabilities, and equal pay for work of equal value
           
         </td>
         </tr>
@@ -778,6 +795,45 @@ Economically active individuals are defined as those that are in work plus those
         <td>
           
             ILO
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Partner Agency </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UNSD Indicator Code </th>
+        <td>
+          
+            C080502
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Indicator Notes </th>
+        <td>
+          
+            
           
         </td>
         </tr>
@@ -923,6 +979,8 @@ Economically active individuals are defined as those that are in work plus those
   
     
   
+    
+  
 </table>
 
           </article>
@@ -942,6 +1000,12 @@ Economically active individuals are defined as those that are in work plus those
     <div class="col-md-6">
       <h4>Source 1</h4>
       <table class="table table-hover">
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1203,6 +1267,8 @@ Economically active individuals are defined as those that are in work plus those
   
     
   
+    
+  
 </table>
 
     </div>
@@ -1227,7 +1293,7 @@ Economically active individuals are defined as those that are in work plus those
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1264,11 +1330,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();

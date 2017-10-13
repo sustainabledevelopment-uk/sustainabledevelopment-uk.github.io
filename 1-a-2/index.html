@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20170927133735">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -68,17 +68,13 @@
           <a href="/reporting-status">Reporting Status</a>
         </li>
         <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
+          <a href="/about">About</a>
         </li>
+<!--        <li class="nav-link" >
+          <a href="/news">News &amp; Events</a>
+        </li> -->
       </ul>
 
-      <div id="search" class="menu-target">
-  <label for="indicator_search">
-    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
-  </label>
-  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
-</div>
- 
 
     </nav>
   </div>
@@ -87,21 +83,15 @@
  
 
 
+
+
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
     <div class="variable-selector" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
-      <!--
-      <div class="bar">
-        <div class="default"></div><div class="possible"></div><div class="excluded"></div>
-      </div>
-      -->
-
       <div class="bar">
         <div class="selected"></div>
       </div>
-
-
       <div class="variable-options">
         <% _.each(seriesItem.values, function(item) { %>
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
@@ -151,18 +141,24 @@
       <li class="active">Proportion of total government spending on essential services (education, health and social protection)</li>
   
 </ol>
+
+  <div id="page-content">
   
 
+  
+  </div>
 
-  <section id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_1-a-2' data-country="UK"
-    data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="">
+  <section id="indicatorData" data-indicatordata='[{"Year":"2000","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"14.29348403"},{"Year":"2001","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"14.63225988"},{"Year":"2002","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"14.90752479"},{"Year":"2003","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"14.92465135"},{"Year":"2004","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"15.36587128"},{"Year":"2005","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"15.48696049"},{"Year":"2006","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"15.83154679"},{"Year":"2007","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"15.82307645"},{"Year":"2008","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"15.45239939"},{"Year":"2009","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"16.24346563"},{"Year":"2010","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"16.02713196"},{"Year":"2011","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"16.10505018"},{"Year":"2012","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"16.03529042"},{"Year":"2013","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"16.70873472"},{"Year":"2014","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"17.29676359"},{"Year":"2015","Broad category area of spending":" Health","Lower level categories area of spending":null,"Value":"17.80501985"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.433259175"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.419122389"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.508060673"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.536606296"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.478386814"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.409825649"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.369521954"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.311266185"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.188448965"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.124990889"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.031348166"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.086470689"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.061984983"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.013235355"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.088474854"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Medical products, appliances and equipment","Value":"1.019914215"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.498266052"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.523865405"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.598647713"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.498124258"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.566580627"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.604180311"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.713907599"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.665645333"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.56148554"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.835605549"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.78351352"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.849486254"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.874674692"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.822048289"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.921569514"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Outpatient services","Value":"1.840835993"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"10.92944294"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"11.18446894"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"11.3000027"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"11.36660623"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"11.81302912"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"11.92982643"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"12.23195651"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"12.33217265"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"12.2011436"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"12.66962538"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"12.55991708"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"12.67491834"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"12.42637093"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"12.83101251"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"12.99059879"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Hospital services","Value":"13.38164878"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.037553773"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.040490934"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.039786367"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.040951474"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.042196178"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.05555526"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.046786987"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.040536667"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.040720786"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.055149309"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.071086377"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.066780392"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.068153592"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.358285991"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.474582573"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Public health services","Value":"0.518004137"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.219624825"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.287315912"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.310423579"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.319380336"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.282828436"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.285053505"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.297932851"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.308142011"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.344133359"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.355238565"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.428901047"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.253104296"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.182301195"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.166342473"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.193199576"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"R&D Health","Value":"0.37814801"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.175337272"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.1769963"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.150603764"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.162982749"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.182850105"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.202519333"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.171440889"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.165313597"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.116467144"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.202855937"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.152365773"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.17429021"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.421805027"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.517810094"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.628338283"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Health - not elsewhere classified.","Value":"0.666468714"},{"Year":"2000","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"13.07518783"},{"Year":"2001","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"13.67938939"},{"Year":"2002","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"14.70746905"},{"Year":"2003","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"13.8393344"},{"Year":"2004","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"13.52121403"},{"Year":"2005","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"13.70652978"},{"Year":"2006","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"14.09341022"},{"Year":"2007","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"13.97802469"},{"Year":"2008","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"13.34346132"},{"Year":"2009","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"13.51886973"},{"Year":"2010","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"13.58213124"},{"Year":"2011","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"12.94058529"},{"Year":"2012","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"12.36504558"},{"Year":"2013","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"12.02927525"},{"Year":"2014","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"12.26842431"},{"Year":"2015","Broad category area of spending":"Education","Lower level categories area of spending":null,"Value":"11.9515232"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"4.054253548"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"4.367201858"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"4.664221041"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"4.144330279"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"4.110515972"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"4.162739638"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"4.336151135"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"4.202829016"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"3.970561434"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"4.015034719"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"4.044113267"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"3.851178905"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"3.470422114"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"3.326592153"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"3.200731596"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Pre-primary and primary education","Value":"3.182631391"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"3.559320717"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"3.774385483"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"4.032584361"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"3.768770283"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"3.845744458"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"3.934128856"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"4.221690113"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"4.192536503"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"4.032639276"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"4.199874298"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"4.319192395"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"4.398645879"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"4.493627832"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"4.847217076"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"5.366626972"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Secondary education","Value":"5.177920448"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.478064712"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.612606016"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.644952751"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.560683293"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.540730716"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.85320277"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.585243384"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.600248287"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.294807103"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.393173313"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.484341802"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.376205022"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.378789675"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.23489667"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.112970249"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Post-secondary non-tertiary education","Value":"1.067572592"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.503704874"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.517561427"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.56335698"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.520760751"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.531227072"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.600807947"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.503533253"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.537859822"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.622139578"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.691474687"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.62426415"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.34830272"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.412286714"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.131206002"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"1.095132577"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Tertiary education","Value":"0.807073401"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.098642107"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.129381871"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.302834947"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.329173706"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.28964445"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.197899195"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.320061425"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.352277892"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.264907225"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.120865005"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"1.026714975"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"0.972877904"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"0.829953568"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"0.742430324"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"0.72883221"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Education not definable by level","Value":"0.741823844"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.055942172"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.051886587"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.090137477"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.090545972"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.080971044"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.097443571"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.097751384"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.067138856"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.117463807"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.167648398"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.175002217"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.12311395"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.074079991"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.066639908"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.075621681"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Subsidiary services to education","Value":"0.070614244"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.017870416"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.024973451"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.022478174"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.014610827"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.013685247"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.01189202"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.013033518"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.01171763"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.004840933"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.003300707"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.00211803"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.001322384"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.001932522"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.002444321"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.002386731"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"R&D Education","Value":"0.148464577"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"1.307389288"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"1.201392694"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"1.386903317"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"1.410459294"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"1.108695074"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"0.848415788"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"1.015946008"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"1.013416687"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"1.036101967"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"0.927498601"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"0.906384404"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"0.868938522"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"0.703953166"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"0.677848792"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"0.686122291"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Education - not elsewhere classified.","Value":"0.7554227"},{"Year":"2000","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"37.78764248"},{"Year":"2001","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"37.8815725"},{"Year":"2002","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"37.34478821"},{"Year":"2003","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"37.24608543"},{"Year":"2004","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"36.79810839"},{"Year":"2005","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"36.03282198"},{"Year":"2006","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"34.92665304"},{"Year":"2007","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"34.97760191"},{"Year":"2008","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"33.57642409"},{"Year":"2009","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"35.55438808"},{"Year":"2010","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"35.63691144"},{"Year":"2011","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"36.43419156"},{"Year":"2012","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"37.38527264"},{"Year":"2013","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"37.90717241"},{"Year":"2014","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"37.8246582"},{"Year":"2015","Broad category area of spending":"Social protection","Lower level categories area of spending":null,"Value":"38.38333304"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"6.217091888"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"6.407266062"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"6.215439808"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.929320638"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.724994963"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.597059299"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.246158036"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.186001549"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.096220655"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.267515407"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.140723228"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.038547493"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.427164553"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.68896402"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"5.818849646"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Sickness and disability","Value":"6.189600493"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"18.37674463"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"18.66462353"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"18.34578624"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"17.91102212"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"17.63496124"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"17.61350224"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"17.19755972"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"17.41509072"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"16.77554019"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"17.44932384"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"17.63445187"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"18.39079092"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"19.37262622"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"20.15599914"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"20.32112835"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Old age","Value":"20.62110592"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.419566293"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.434974469"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.427310082"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.382350944"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.352395108"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.274936413"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.284398044"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.287715331"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.259417038"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.367891275"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.283418871"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.168339482"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.138626209"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.143957639"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.143329464"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Survivors","Value":"0.141353248"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"4.650193078"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"4.727983357"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"4.826288674"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"5.830543214"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"6.446511593"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"6.326022403"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"6.390935355"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"5.774258266"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"4.939602246"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"5.046643112"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"4.80819254"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"4.734399175"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"4.122326034"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"3.710736487"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"3.624690353"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Family and children","Value":"3.46720929"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"1.121433363"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.799392878"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.854395382"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.867183465"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.76124186"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.750084753"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.775661409"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.725543009"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.700938571"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.94771543"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.89261721"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.768701816"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.764892011"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.644657486"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.511262857"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Unemployment","Value":"0.356190224"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"3.252156752"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"2.947109626"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"2.933401667"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"2.665344147"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"2.548307021"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"2.528030557"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"2.523990863"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"2.530849829"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"2.457912362"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"2.734635554"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"2.891243138"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"3.030507399"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"3.082629466"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"3.138250792"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"3.08076697"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Housing","Value":"3.053878918"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"2.87817297"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"2.788055417"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"2.64388279"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"2.515943294"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"2.308435054"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"2.033712991"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"1.793612574"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"2.489046391"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"2.857858827"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"3.246382632"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"3.442989917"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"3.636291506"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"3.733760378"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"3.806193652"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"3.692398137"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Social exclusion - not elsewhere classified.","Value":"3.801691249"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.002330924"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.007758742"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.00382129"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.001234718"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.001140437"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.001774928"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.000501289"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.000633385"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.001850945"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.000275059"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.000264754"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.001057907"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.000644174"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0.000257297"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"R&D Social protection","Value":"0"},{"Year":"2000","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.869952579"},{"Year":"2001","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"1.10440842"},{"Year":"2002","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"1.094462277"},{"Year":"2003","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"1.143142892"},{"Year":"2004","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"1.020121114"},{"Year":"2005","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.907698397"},{"Year":"2006","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.713835748"},{"Year":"2007","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.568463423"},{"Year":"2008","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.487083253"},{"Year":"2009","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.494005779"},{"Year":"2010","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.543009906"},{"Year":"2011","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.665555864"},{"Year":"2012","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.742603596"},{"Year":"2013","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.618155901"},{"Year":"2014","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.632232422"},{"Year":"2015","Broad category area of spending":null,"Lower level categories area of spending":"Social protection - not elsewhere classified.","Value":"0.752303696"}]' data-indicatorid='indicator_1-a-2' data-country="UK"
+    data-charttitle="Percentage (%) of total government spending on essential services " data-measurementunit="" data-datasource="Office for National Statistics " data-geographicalarea="United Kingdom" data-showdata="true">
+
     
+      
     
     
 
     
     <div id="toolbar">
-      <button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>
+
     </div>
     <div id="fields"></div>
     <div class="plot-container">
@@ -172,17 +168,20 @@
     
 
 
-
+    
+    
     <div class="alert alert-warning" role="alert">
       <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
     </div>
 
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="nav-item active">
-        <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-      </li>
-      <li role="presentation" class="nav-item">
+      
+        <li role="presentation" class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+        </li>
+      
+      <li role="presentation" class="nav-item  ">
         <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
       </li>
       <li role="presentation" class="nav-item">
@@ -193,13 +192,17 @@
     
     <!-- Tab panes -->
     <div class="tab-content">
-      <div role="tabpanel" class="tab-pane active" id="data">
-        
-        <p>Unit of Measurement: </p>     
-        <a href="/data/indicator_1-a-2.csv" class="btn btn-primary btn-download">Download source CSV</a>
-        <div id="datatables"></div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="metadata">
+      
+        <div role="tabpanel" class="tab-pane active" id="data">
+          
+            <h3>Percentage (%) of total government spending on essential services </h3>
+          
+          <p>Unit of Measurement: </p>     
+          <a href="/data/indicator_1-a-2.csv" class="btn btn-primary btn-download">Download source CSV</a>
+          <div id="datatables"></div>
+        </div>
+      
+      <div role="tabpanel" class="tab-pane " id="metadata">
         <!-- National Metadata -->
         <div class="collapsible expanded">
           <h3>National Metadata<span> (Collapse)</span></h3>
@@ -236,12 +239,18 @@
     
   
     
+  
+    
+  
+    
+  
+    
       
       <tr>
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            Percentage of total government spending on essential services (education, health and social protection) 
           
         </td>
         </tr>
@@ -267,7 +276,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            
+            Annually
           
         </td>
         </tr>
@@ -293,7 +302,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            United Kingdom
           
         </td>
         </tr>
@@ -468,6 +477,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -477,6 +488,12 @@
           <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
           <article>
             <table class="table table-hover">
+  
+    
+  
+    
+  
+    
   
     
   
@@ -671,6 +688,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -722,7 +741,7 @@
         <th scope="row">Target Name </th>
         <td>
           
-            Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programmes and policies to end poverty in all its dimensions.
+            Ensure significant mobilization of resources from a variety of sources, including through enhanced development cooperation, in order to provide adequate and predictable means for developing countries, in particular least developed countries, to implement programmes and policies to end poverty in all its dimensions
           
         </td>
         </tr>
@@ -761,7 +780,7 @@
         <th scope="row">UN Designated Tier </th>
         <td>
           
-            3
+            2
           
         </td>
         </tr>
@@ -774,7 +793,46 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
+            Under discussion among agencies (ILO, UNESCO-UIS, WHO)
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Partner Agency </th>
+        <td>
+          
             
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UNSD Indicator Code </th>
+        <td>
+          
+            C010a02
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">UN Indicator Notes </th>
+        <td>
+          
+            IAEG-SDG 3rd meeting: There is an established methodology for the indicator
           
         </td>
         </tr>
@@ -794,7 +852,7 @@
 
             
               <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-1.pdf">
-                Link
+                UN Metadata
               </a>
             
             
@@ -920,6 +978,8 @@
   
     
   
+    
+  
 </table>
 
           </article>
@@ -930,6 +990,289 @@
 
 
 
+
+  <h3>UK Data Source Metadata</h3>
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      <h4>Source 1</h4>
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            Office for National Statistics 
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            Annually 
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest Available Data </th>
+        <td>
+          
+            1995
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical Coverage </th>
+        <td>
+          
+            United Kingdom
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to Data Source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicspending/datasets/esatable11annualexpenditureofgeneralgovernment ">
+                Annual Expenditure of General Government
+              </a>
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release Date </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next Release </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical Classification </th>
+        <td>
+          
+            National Statistic 
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact Details </th>
+        <td>
+          
+            Ana Oliveira Public.sector.accounts@ons.gsi.gov.uk Telephone: +44 (0)1633 451792
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other Information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+  </div>
 
 
       </div>
@@ -949,7 +1292,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20170927133735'></script>
+<script src='/assets/js/sdg.js?v=20171013140301'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -986,11 +1329,12 @@ $(function() {
         chartTitle: $('#indicatorData').data('charttitle'),
         measurementUnit: $('#indicatorData').data('measurementunit'),
         dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea')
+        geographicalArea: $('#indicatorData').data('geographicalarea'),
+        showData: $('#indicatorData').data('showdata')
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
-        maxChartHeight: 750
+        maxChartHeight: 600
       }),
       controller = new indicatorController(model, view);
       controller.initialise();
