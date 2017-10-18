@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171018225121">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,11 +93,21 @@
         <div class="selected"></div>
       </div>
       <div class="variable-options">
+        <div>
+          <button data-type="select">Select all</button>
+          <button data-type="clear">Clear all</button>
+        </div>
         <% _.each(seriesItem.values, function(item) { %>
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
     </div>
+  <% }); %>
+</script>
+
+<script type="text/template" id="units_template">
+  <% _.each(units, function(unitsItem, index) { %>
+    <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
   <% }); %>
 </script>
 
@@ -158,9 +168,10 @@
 
     
     <div id="toolbar">
-
+      <div id="fields"></div>
     </div>
-    <div id="fields"></div>
+    
+    <div id="units"></div>
     <div class="plot-container">
         
 <canvas></canvas>
@@ -250,7 +261,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Aid for Trade commitments and disbursements
+            Aid for Trade commitments and disbursements (£000s)
           
         </td>
         </tr>
@@ -601,7 +612,9 @@
         <th scope="row">Definitions </th>
         <td>
           
-            
+            The DAC defines Official Development Assistance (ODA) as “those flows to countries and territories on the DAC List of ODA Recipients and to multilateral institutions which are i) provided by official agencies, including state and local governments, or by their executive agencies; and ii) each transaction is administered with the promotion of the economic development and welfare of developing countries as its main objective; and is concessional in character and conveys a grant element of at least 25 per cent (calculated at a rate of discount of 10 per cent). See http://www.oecd.org/dac/stats/officialdevelopmentassistancedefinitionandcoverage.htm
+Other official flows (OOF),excluding officially supported export credits, are defined as transactions by the official sector which do not meet the conditions for eligibility as ODA, either because they are not primarily aimed at development, or because they are not sufficiently concessional. See http://www.oecd.org/dac/stats/documentupload/DCDDAC(2016)3FINAL.pdf, Para 24.
+Aid for Trade is captured in the CRS through sector codes in the 331 series and the aid for trade marker. see here: http://www.oecd.org/dac/stats/purposecodessectorclassification.htm. ‘All donors’ refers to DAC donors, non-DAC donors and multilateral organisations.
           
         </td>
         </tr>
@@ -793,7 +806,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            OECD
+            Organisation for Economic Co-operation and Development (OECD)
           
         </td>
         </tr>
@@ -1098,7 +1111,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            
+            2010
           
         </td>
         </tr>
@@ -1111,7 +1124,7 @@
         <th scope="row">Geographical Coverage </th>
         <td>
           
-            
+            United Kingdom
           
         </td>
         </tr>
@@ -1151,7 +1164,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            2017-03-29
+            17/11/2016
           
         </td>
         </tr>
@@ -1177,7 +1190,7 @@
         <th scope="row">Statistical Classification </th>
         <td>
           
-            
+            National Statistic
           
         </td>
         </tr>
@@ -1190,7 +1203,7 @@
         <th scope="row">Contact Details </th>
         <td>
           
-            
+            statistics@dfid.gsx.gov.uk 
           
         </td>
         </tr>
@@ -1292,7 +1305,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171013140301'></script>
+<script src='/assets/js/sdg.js?v=20171018225121'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

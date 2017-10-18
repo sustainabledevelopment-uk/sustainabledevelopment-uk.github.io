@@ -495,9 +495,11 @@ h5 + .btn-download {
     position: relative;
     border: 1px solid #ccc;
     text-align: left;
-    padding: 10px 7px;
+    padding: 10px 7px 14px 7px;
     font-size: 14px;
-    font-family: 'Open Sans', sans-serif; }
+    font-family: 'Open Sans', sans-serif;
+    float: left;
+    margin-right: 8px; }
     #main-content #toolbar button i {
       position: absolute;
       top: 11px;
@@ -512,8 +514,9 @@ h5 + .btn-download {
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
-    padding-top: 14px;
-    padding-bottom: 14px; }
+    float: left;
+    padding-bottom: 14px;
+    font-size: 12px; }
     #main-content #fields label {
       background-color: #fff;
       padding: 7px;
@@ -543,11 +546,11 @@ h5 + .btn-download {
     #main-content #fields h5 {
       padding-left: 7px;
       position: relative;
-      padding-right: 25px; }
+      padding-right: 33px; }
       #main-content #fields h5 i {
         font-size: 14px;
         position: absolute;
-        top: 2px;
+        top: 0;
         right: 6px; }
     #main-content #fields .bar {
       height: 7px;
@@ -583,9 +586,47 @@ h5 + .btn-download {
         border-top: 0;
         right: -1px;
         left: -1px;
-        padding-top: 7px; }
+        max-height: 300px;
+        overflow: auto; }
+        #main-content #fields .variable-selector .variable-options > div {
+          text-align: left;
+          padding: 4px; }
+        #main-content #fields .variable-selector .variable-options button {
+          width: auto;
+          background-color: #fff;
+          border: 1px solid #555;
+          color: #000;
+          float: none;
+          position: static;
+          text-align: center;
+          width: 40%;
+          margin: 0;
+          font-size: 12px;
+          padding: inherit;
+          border-radius: 2px; }
+          #main-content #fields .variable-selector .variable-options button:hover {
+            background: #f5f3f3; }
         #main-content #fields .variable-selector .variable-options label {
-          padding-left: 7px; }
+          padding-left: 7px;
+          padding-right: 25px;
+          position: relative; }
+          #main-content #fields .variable-selector .variable-options label:not(:first-child) {
+            border-top: 1px solid #cdcdcd; }
+          #main-content #fields .variable-selector .variable-options label input {
+            position: absolute;
+            top: 4px;
+            right: 4px; }
+          #main-content #fields .variable-selector .variable-options label:hover {
+            background: #f5f3f3; }
+  #main-content #units {
+    clear: left; }
+    #main-content #units label {
+      font-family: 'Open Sans', sans-serif;
+      font-weight: normal;
+      border: 1px solid #ccc;
+      padding: 10px;
+      margin-right: 8px;
+      cursor: pointer; }
   #main-content .plot-container {
     margin-bottom: 4.5rem;
     padding: 10px; }

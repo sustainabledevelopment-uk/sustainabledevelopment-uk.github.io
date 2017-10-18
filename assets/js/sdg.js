@@ -99,6 +99,8 @@ var indicatorModel = function (options) {
   this.onDataComplete = new event(this);
   this.onSeriesComplete = new event(this);
   this.onSeriesSelectedChanged = new event(this);
+  this.onUnitsComplete = new event(this);
+  this.onUnitsSelectedChanged = new event(this);
   this.onFieldsStatusUpdated = new event(this);
   this.onFieldsCleared = new event(this);
   this.onSelectionUpdate = new event(this);
@@ -120,13 +122,15 @@ var indicatorModel = function (options) {
   this.geographicalArea = options.geographicalArea;
   this.showData = options.showData;
   this.selectedFields = [];
+  this.selectedUnit = undefined;
   this.fieldValueStatuses = [];
   this.userInteraction = {};
 
   // initialise the field information, unique fields and unique values for each field:
   (function initialise() {
     that.fieldItemStates = _.map(_.filter(Object.keys(that.data[0]), function (key) {
-        return ['Year', 'Value'].indexOf(key) === -1;
+        // 'Value' may not be present, but 'Year' and '
+        return ['Year', 'Value', 'Units'].indexOf(key) === -1;
       }), function(field) {
       return {
         field: field,
@@ -139,9 +143,18 @@ var indicatorModel = function (options) {
       };
     });
 
-    that.years = _.chain(that.data).pluck('Year').uniq().sortBy(function (year) {
-      return year;
-    }).value();
+    var extractUnique = function(prop) {
+      return _.chain(that.data).pluck(prop).uniq().sortBy(function(year) {
+        return year;
+      }).value();
+    };
+
+    that.years = extractUnique('Year');
+
+    if(that.data[0].hasOwnProperty('Units')) {
+      that.units = extractUnique('Units');
+      that.selectedUnit = that.units[0];
+    }
 
     that.selectableFields = _.pluck(that.fieldItemStates, 'field');
 
@@ -185,7 +198,7 @@ var indicatorModel = function (options) {
         return allUndefined(i);
       })
       .sortBy(function (i) {
-        return i.Year;
+        return that.selectedUnit ? i.Units : i.Year;
       })
       .map(function (d) {
         return _.pick(d, _.identity);
@@ -206,6 +219,12 @@ var indicatorModel = function (options) {
     this.userInteraction = userInteraction;
     this.getData();
     this.onSelectionUpdate.notify(fields);
+  };
+
+  this.updateSelectedUnit = function(selectedUnit) {
+    this.selectedUnit = selectedUnit;
+    this.getData();
+    this.onUnitsSelectedChanged.notify(selectedUnit);
   };
   
   this.getCombinationData = function(obj) {
@@ -276,7 +295,6 @@ var indicatorModel = function (options) {
         //   }) : undefined,
         var fieldIndex,
           ds = _.extend({
-            //label: field && fieldValue ? field + ' ' + fieldValue : that.country,
             label: combinationDescription ? combinationDescription : that.country,
             borderColor: '#' + colors[datasetIndex],
             backgroundColor: '#' + colors[datasetIndex],
@@ -287,16 +305,12 @@ var indicatorModel = function (options) {
               });
               return found ? found.Value : null;
             }),
-            borderWidth: /*field*/ combinationDescription ? 2 : 4,
-            // apply dash to secondary fields:
-            //borderDash: fieldIndex > 0 ? [((fieldIndex + 1) * 2), ((fieldIndex + 1) * 2)] : []
+            borderWidth: combinationDescription ? 2 : 4
           }, that.datasetObject);
         datasetIndex++;
         return ds;
       };
     
-    //console.log('Selected field types', this.selectedFields);
-
     if (fields && !_.isArray(fields)) {
       fields = [].concat(fields);
     }
@@ -306,16 +320,23 @@ var indicatorModel = function (options) {
 
     // filter the data:
     //if(!isSingleValueSelected()) {
-      matchedData =_.filter(that.data, function(rowItem) {
-        var matched = false;
-        for(var fieldLoop = 0; fieldLoop < that.selectedFields.length; fieldLoop++) {
-          if(that.selectedFields[fieldLoop].values.containsValue(rowItem[that.selectedFields[fieldLoop].field])) {
-            matched = true;
-            break;
-          }
-        }
-        return matched;
+    if(that.selectedUnit) {
+      matchedData = _.filter(matchedData, function(rowItem) {
+        return rowItem.Units == that.selectedUnit;
       });
+    }
+
+    matchedData = _.filter(matchedData, function(rowItem) {
+      var matched = false;
+      for(var fieldLoop = 0; fieldLoop < that.selectedFields.length; fieldLoop++) {
+        if(that.selectedFields[fieldLoop].values.containsValue(rowItem[that.selectedFields[fieldLoop].field])) {
+          matched = true;
+          break;
+        }
+      }
+      return matched;
+    });
+    
     //}
 /*
     console.table(matchedData);
@@ -380,21 +401,22 @@ var indicatorModel = function (options) {
 
     // headline:
     var headline = this.getHeadline();
-    datasets.push(convertToDataset(headline));
+
+    // headline plot should use the specific unit, if any
+    datasets.push(convertToDataset(that.selectedUnit ? _.filter(headline, function(item) { 
+      return item.Units === that.selectedUnit; }) : headline));
+    
+    // all units for headline data
     tableData.push({
       title: 'Headline for ' + this.country,
-      headings: ['Year', 'Value'],
+      headings: that.selectedUnit ? ['Year', 'Units', 'Value'] : ['Year', 'Value'],
       data: _.map(headline, function (d) {
-        return [d.Year, d.Value];
+        return that.selectedUnit ? [d.Year, d.Units, d.Value] : [d.Year, d.Value];
       })
     });
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     // extract the possible combinations for the selected field values:
-
-    // console.log('this.selectedFields', this.selectedFields);
-    // console.log('this.fieldItemStates', this.fieldItemStates);
-    
     var combinations = this.getCombinationData(this.selectedFields);
     var filteredDatasets = [];
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -428,12 +450,16 @@ var indicatorModel = function (options) {
       datasets: datasets,
       labels: this.years,
       tables: tableData,
-      indicatorId: this.indicatorId
+      indicatorId: this.indicatorId,
+      selectedUnit: this.selectedUnit
     });
 
     if (initial) {
       this.onSeriesComplete.notify({
         series: this.fieldItemStates
+      });
+      this.onUnitsComplete.notify({
+        units: this.units
       });
     } else {
       this.onSeriesSelectedChanged.notify({
@@ -499,6 +525,15 @@ var indicatorView = function (model, options) {
     // }
   });
 
+  this._model.onUnitsComplete.attach(function(sender, args) {
+    view_obj.initialiseUnits(args);
+  });
+
+  this._model.onUnitsSelectedChanged.attach(function(sender, args) {
+    // update the plot's y axis label
+    // update the data
+  });
+
   this._model.onFieldsCleared.attach(function(sender, args) {
     $(view_obj._rootElement).find(':checkbox').prop('checked', false);
     $(view_obj._rootElement).find('#clear').addClass('disabled');
@@ -509,17 +544,19 @@ var indicatorView = function (model, options) {
   });
 
   this._model.onSelectionUpdate.attach(function(sender, selectedFields) {
-    console.log('new: ', selectedFields);
     $(view_obj._rootElement).find('#clear')[selectedFields.length ? 'removeClass' : 'addClass']('disabled');
 
-    // to #246:
-    // how many inputs:
-    // find the appropriate 'bar'
-    _.each(selectedFields, function(sf) {
-      var element = $(view_obj._rootElement).find('.variable-selector[data-field="' + sf.field + '"]');
-      element.find('.bar .selected').css('width', (Number(sf.values.length / element.find('.variable-options label').length) * 100) + '%');
+    // loop through the available fields:
+    $('.variable-selector').each(function(index, element) {
+      var currentField = $(element).data('field');
+
+      // any info?
+      var match = _.findWhere(selectedFields, { field : currentField });
+      var element = $(view_obj._rootElement).find('.variable-selector[data-field="' + currentField + '"]');
+      var width = match ? (Number(match.values.length / element.find('.variable-options label').length) * 100) + '%' : '0';
+
+      $(element).find('.bar .selected').css('width', width);
     });
-    // end #246
   });
 
   this._model.onFieldsStatusUpdated.attach(function (sender, args) {
@@ -552,19 +589,18 @@ var indicatorView = function (model, options) {
     view_obj._model.clearSelectedFields();
   });
 
-  $(this._rootElement).on('click', 'label', function (e) {
+  $(this._rootElement).on('click', '#fields label', function (e) {
     $(this).find(':checkbox').trigger('click');
     e.preventDefault();
     e.stopPropagation();
   });
-  
-  $(this._rootElement).on('click', ':checkbox', function(e) {
 
-    // don't permit excluded selections:
-    if($(this).parent().hasClass('excluded')) {
-      return;
-    }
+  $(this._rootElement).on('change', '#units input', function() {
+    view_obj._model.updateSelectedUnit($(this).val());
+  });
 
+  // generic helper function, used by clear all/select all and individual checkbox changes:
+  var updateWithSelectedFields = function() {
     view_obj._model.updateSelectedFields(_.chain(_.map($('#fields input:checked'), function (fieldValue) {
       return {
         value: $(fieldValue).val(),
@@ -580,6 +616,27 @@ var indicatorView = function (model, options) {
       value: $(this).val(),
       selected: $(this).is(':checked')
     });
+  }
+
+  $(this._rootElement).on('click', '.variable-options button', function(e) {
+    var type = $(this).data('type');
+    var $options = $(this).closest('.variable-options').find(':checkbox');
+
+    $options.prop('checked', type == 'select');
+
+    updateWithSelectedFields();
+
+    e.stopPropagation();
+  });
+  
+  $(this._rootElement).on('click', ':checkbox', function(e) {
+
+    // don't permit excluded selections:
+    if($(this).parent().hasClass('excluded')) {
+      return;
+    }
+
+    updateWithSelectedFields();
 
     e.stopPropagation();
   });
@@ -601,15 +658,28 @@ var indicatorView = function (model, options) {
   this.initialiseSeries = function (args) {
     var template = _.template($("#item_template").html());
 
-    $('#toolbar').html('<button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>');
+    $('<button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>').insertBefore('#fields');
 
     $('#fields').html(template({
         series: args.series
     }));
   };
 
+  this.initialiseUnits = function(args) {
+    var template = _.template($('#units_template').html());
+
+    $('#units').html(template({
+      units: args.units
+    }));
+  };
+
   this.updatePlot = function(chartInfo) {
     view_obj._chartInstance.data.datasets = chartInfo.datasets;
+
+    if(chartInfo.selectedUnit) {
+      view_obj._chartInstance.options.scales.yAxes[0].scaleLabel.labelString = chartInfo.selectedUnit;
+    }
+
     view_obj._chartInstance.update(1000, true);
   };
 
@@ -634,8 +704,8 @@ var indicatorView = function (model, options) {
               suggestedMin: 0
             },
             scaleLabel: {
-              display: this._model.measurementUnit,
-              labelString: this._model.measurementUnit
+              display: this._model.selectedUnit ? this._model.selectedUnit : this._model.measurementUnit,
+              labelString: this._model.selectedUnit ? this._model.selectedUnit : this._model.measurementUnit
             }
           }]
         },
@@ -795,6 +865,8 @@ var indicatorView = function (model, options) {
             sWidth: (100 / tableData.headings.length) + '%'
           };
         });
+        datatables_options.aaSorting = [];
+
         currentTable.DataTable(datatables_options);
 
       } else {
@@ -843,7 +915,7 @@ var indicatorSearch = function(inputElement, indicatorDataStore) {
   });
 
   var escapeRegExp = function(str) {
-    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/g, "\\$&");
+    return str.replace(/[\-\[\]\/\{\}\(\)\*\+\?\.\\\^\$\|]/gi, "\\$&");
   };
 
   if($('#main-content').hasClass('search-results')) {
@@ -864,7 +936,7 @@ var indicatorSearch = function(inputElement, indicatorDataStore) {
       that.processData(data);
 
       var searchResults = _.filter(that.indicatorData, function(indicator) {
-        return indicator.title.indexOf(searchString) != -1; 
+        return indicator.title.toLowerCase().indexOf(searchString.toLowerCase()) != -1; 
       });
 
       // goal

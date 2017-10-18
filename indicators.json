@@ -206,7 +206,7 @@
           "id": "2.3.1",
           "title": "Volume of production per labour unit by classes of farming/pastoral/forestry enterprise size",
           "href": "/2-3-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -236,7 +236,7 @@
           "id": "2.5.1",
           "title": "Number of plant and animal genetic resources for food and agriculture secured in either medium or long-term conservation facilities",
           "href": "/2-5-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -318,7 +318,7 @@
           "id": "3.1.2",
           "title": "Proportion of births attended by skilled health personnel",
           "href": "/3-1-2",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -368,7 +368,7 @@
           "id": "3.3.3",
           "title": "Malaria incidence per 1,000 population",
           "href": "/3-3-3",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -408,7 +408,7 @@
           "id": "3.4.2",
           "title": "Suicide mortality rate",
           "href": "/3-4-2",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -558,7 +558,7 @@
           "id": "3.c.1",
           "title": "Health worker density and distribution",
           "href": "/3-c-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -610,7 +610,7 @@
           "id": "4.2.2",
           "title": "Participation rate in organized learning (one year before the official primary entry age), by sex",
           "href": "/4-2-2",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -620,7 +620,7 @@
           "id": "4.3.1",
           "title": "Participation rate of youth and adults in formal and non-formal education and training in the previous 12 months, by sex",
           "href": "/4-3-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -782,7 +782,7 @@
           "id": "5.5.2",
           "title": "Proportion of women in managerial positions",
           "href": "/5-5-2",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -1078,7 +1078,7 @@
           "id": "8.3.1",
           "title": "Proportion of informal employment in non‑agriculture employment, by sex",
           "href": "/8-3-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -1128,7 +1128,7 @@
           "id": "8.6.1",
           "title": "Proportion of youth (aged 15-24 years) not in education, employment or training",
           "href": "/8-6-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         

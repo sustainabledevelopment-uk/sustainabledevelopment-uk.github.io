@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171013140301">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171018225121">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,11 +93,21 @@
         <div class="selected"></div>
       </div>
       <div class="variable-options">
+        <div>
+          <button data-type="select">Select all</button>
+          <button data-type="clear">Clear all</button>
+        </div>
         <% _.each(seriesItem.values, function(item) { %>
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
     </div>
+  <% }); %>
+</script>
+
+<script type="text/template" id="units_template">
+  <% _.each(units, function(unitsItem, index) { %>
+    <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
   <% }); %>
 </script>
 
@@ -151,7 +161,25 @@
   </div>
 
   <section id="indicatorData" data-indicatordata='[{"Year":"2011","Age":"3 Year Olds","Geography":null,"Value":"92"},{"Year":"2011","Age":"3 Year Olds","Geography":"North East","Value":"96"},{"Year":"2011","Age":"3 Year Olds","Geography":"North West","Value":"93"},{"Year":"2011","Age":"3 Year Olds","Geography":"Yorkshire And The Humber","Value":"94"},{"Year":"2011","Age":"3 Year Olds","Geography":"East Midlands","Value":"95"},{"Year":"2011","Age":"3 Year Olds","Geography":"West Midlands","Value":"91"},{"Year":"2011","Age":"3 Year Olds","Geography":"East Of England","Value":"95"},{"Year":"2011","Age":"3 Year Olds","Geography":"London","Value":"85"},{"Year":"2011","Age":"3 Year Olds","Geography":"South East","Value":"93"},{"Year":"2011","Age":"3 Year Olds","Geography":"South West","Value":"95"},{"Year":"2011","Age":"4 Year Olds","Geography":null,"Value":"96"},{"Year":"2011","Age":"4 Year Olds","Geography":"North East","Value":"99"},{"Year":"2011","Age":"4 Year Olds","Geography":"North West","Value":"99"},{"Year":"2011","Age":"4 Year Olds","Geography":"Yorkshire And The Humber","Value":"98"},{"Year":"2011","Age":"4 Year Olds","Geography":"East Midlands","Value":"97"},{"Year":"2011","Age":"4 Year Olds","Geography":"West Midlands","Value":"97"},{"Year":"2011","Age":"4 Year Olds","Geography":"East Of England","Value":"97"},{"Year":"2011","Age":"4 Year Olds","Geography":"London","Value":"92"},{"Year":"2011","Age":"4 Year Olds","Geography":"South East","Value":"96"},{"Year":"2011","Age":"4 Year Olds","Geography":"South West","Value":"98"},{"Year":"2011","Age":null,"Geography":null,"Value":"94"},{"Year":"2011","Age":null,"Geography":"North East","Value":"98"},{"Year":"2011","Age":null,"Geography":"North West","Value":"96"},{"Year":"2011","Age":null,"Geography":"Yorkshire And The Humber","Value":"96"},{"Year":"2011","Age":null,"Geography":"East Midlands","Value":"96"},{"Year":"2011","Age":null,"Geography":"West Midlands","Value":"94"},{"Year":"2011","Age":null,"Geography":"East Of England","Value":"96"},{"Year":"2011","Age":null,"Geography":"London","Value":"88"},{"Year":"2011","Age":null,"Geography":"South East","Value":"95"},{"Year":"2011","Age":null,"Geography":"South West","Value":"97"},{"Year":"2012","Age":"3 Year Olds","Geography":null,"Value":"93"},{"Year":"2012","Age":"3 Year Olds","Geography":"North East","Value":"97"},{"Year":"2012","Age":"3 Year Olds","Geography":"North West","Value":"94"},{"Year":"2012","Age":"3 Year Olds","Geography":"Yorkshire And The Humber","Value":"96"},{"Year":"2012","Age":"3 Year Olds","Geography":"East Midlands","Value":"96"},{"Year":"2012","Age":"3 Year Olds","Geography":"West Midlands","Value":"92"},{"Year":"2012","Age":"3 Year Olds","Geography":"East Of England","Value":"95"},{"Year":"2012","Age":"3 Year Olds","Geography":"London","Value":"86"},{"Year":"2012","Age":"3 Year Olds","Geography":"South East","Value":"94"},{"Year":"2012","Age":"3 Year Olds","Geography":"South West","Value":"97"},{"Year":"2012","Age":"4 Year Olds","Geography":null,"Value":"97"},{"Year":"2012","Age":"4 Year Olds","Geography":"North East","Value":"99"},{"Year":"2012","Age":"4 Year Olds","Geography":"North West","Value":"98"},{"Year":"2012","Age":"4 Year Olds","Geography":"Yorkshire And The Humber","Value":"98"},{"Year":"2012","Age":"4 Year Olds","Geography":"East Midlands","Value":"98"},{"Year":"2012","Age":"4 Year Olds","Geography":"West Midlands","Value":"98"},{"Year":"2012","Age":"4 Year Olds","Geography":"East Of England","Value":"97"},{"Year":"2012","Age":"4 Year Olds","Geography":"London","Value":"93"},{"Year":"2012","Age":"4 Year Olds","Geography":"South East","Value":"96"},{"Year":"2012","Age":"4 Year Olds","Geography":"South West","Value":"98"},{"Year":"2012","Age":null,"Geography":null,"Value":"95"},{"Year":"2012","Age":null,"Geography":"North East","Value":"98"},{"Year":"2012","Age":null,"Geography":"North West","Value":"96"},{"Year":"2012","Age":null,"Geography":"Yorkshire And The Humber","Value":"97"},{"Year":"2012","Age":null,"Geography":"East Midlands","Value":"97"},{"Year":"2012","Age":null,"Geography":"West Midlands","Value":"95"},{"Year":"2012","Age":null,"Geography":"East Of England","Value":"96"},{"Year":"2012","Age":null,"Geography":"London","Value":"89"},{"Year":"2012","Age":null,"Geography":"South East","Value":"95"},{"Year":"2012","Age":null,"Geography":"South West","Value":"98"},{"Year":"2013","Age":"3 Year Olds","Geography":null,"Value":"93"},{"Year":"2013","Age":"3 Year Olds","Geography":"North East","Value":"96"},{"Year":"2013","Age":"3 Year Olds","Geography":"North West","Value":"95"},{"Year":"2013","Age":"3 Year Olds","Geography":"Yorkshire And The Humber","Value":"95"},{"Year":"2013","Age":"3 Year Olds","Geography":"East Midlands","Value":"95"},{"Year":"2013","Age":"3 Year Olds","Geography":"West Midlands","Value":"92"},{"Year":"2013","Age":"3 Year Olds","Geography":"East Of England","Value":"95"},{"Year":"2013","Age":"3 Year Olds","Geography":"London","Value":"87"},{"Year":"2013","Age":"3 Year Olds","Geography":"South East","Value":"94"},{"Year":"2013","Age":"3 Year Olds","Geography":"South West","Value":"96"},{"Year":"2013","Age":"4 Year Olds","Geography":null,"Value":"98"},{"Year":"2013","Age":"4 Year Olds","Geography":"North East","Value":"100"},{"Year":"2013","Age":"4 Year Olds","Geography":"North West","Value":"100"},{"Year":"2013","Age":"4 Year Olds","Geography":"Yorkshire And The Humber","Value":"99"},{"Year":"2013","Age":"4 Year Olds","Geography":"East Midlands","Value":"99"},{"Year":"2013","Age":"4 Year Olds","Geography":"West Midlands","Value":"98"},{"Year":"2013","Age":"4 Year Olds","Geography":"East Of England","Value":"98"},{"Year":"2013","Age":"4 Year Olds","Geography":"London","Value":"94"},{"Year":"2013","Age":"4 Year Olds","Geography":"South East","Value":"97"},{"Year":"2013","Age":"4 Year Olds","Geography":"South West","Value":"99"},{"Year":"2013","Age":null,"Geography":null,"Value":"95"},{"Year":"2013","Age":null,"Geography":"North East","Value":"98"},{"Year":"2013","Age":null,"Geography":"North West","Value":"97"},{"Year":"2013","Age":null,"Geography":"Yorkshire And The Humber","Value":"97"},{"Year":"2013","Age":null,"Geography":"East Midlands","Value":"97"},{"Year":"2013","Age":null,"Geography":"West Midlands","Value":"95"},{"Year":"2013","Age":null,"Geography":"East Of England","Value":"96"},{"Year":"2013","Age":null,"Geography":"London","Value":"90"},{"Year":"2013","Age":null,"Geography":"South East","Value":"95"},{"Year":"2013","Age":null,"Geography":"South West","Value":"98"},{"Year":"2014","Age":"3 Year Olds","Geography":null,"Value":"93"},{"Year":"2014","Age":"3 Year Olds","Geography":"North East","Value":"95"},{"Year":"2014","Age":"3 Year Olds","Geography":"North West","Value":"95"},{"Year":"2014","Age":"3 Year Olds","Geography":"Yorkshire And The Humber","Value":"96"},{"Year":"2014","Age":"3 Year Olds","Geography":"East Midlands","Value":"96"},{"Year":"2014","Age":"3 Year Olds","Geography":"West Midlands","Value":"92"},{"Year":"2014","Age":"3 Year Olds","Geography":"East Of England","Value":"95"},{"Year":"2014","Age":"3 Year Olds","Geography":"London","Value":"86"},{"Year":"2014","Age":"3 Year Olds","Geography":"South East","Value":"94"},{"Year":"2014","Age":"3 Year Olds","Geography":"South West","Value":"96"},{"Year":"2014","Age":"4 Year Olds","Geography":null,"Value":"98"},{"Year":"2014","Age":"4 Year Olds","Geography":"North East","Value":"99"},{"Year":"2014","Age":"4 Year Olds","Geography":"North West","Value":"100"},{"Year":"2014","Age":"4 Year Olds","Geography":"Yorkshire And The Humber","Value":"99"},{"Year":"2014","Age":"4 Year Olds","Geography":"East Midlands","Value":"99"},{"Year":"2014","Age":"4 Year Olds","Geography":"West Midlands","Value":"99"},{"Year":"2014","Age":"4 Year Olds","Geography":"East Of England","Value":"97"},{"Year":"2014","Age":"4 Year Olds","Geography":"London","Value":"94"},{"Year":"2014","Age":"4 Year Olds","Geography":"South East","Value":"96"},{"Year":"2014","Age":"4 Year Olds","Geography":"South West","Value":"99"},{"Year":"2014","Age":null,"Geography":null,"Value":"95"},{"Year":"2014","Age":null,"Geography":"North East","Value":"97"},{"Year":"2014","Age":null,"Geography":"North West","Value":"97"},{"Year":"2014","Age":null,"Geography":"Yorkshire And The Humber","Value":"98"},{"Year":"2014","Age":null,"Geography":"East Midlands","Value":"97"},{"Year":"2014","Age":null,"Geography":"West Midlands","Value":"96"},{"Year":"2014","Age":null,"Geography":"East Of England","Value":"96"},{"Year":"2014","Age":null,"Geography":"London","Value":"90"},{"Year":"2014","Age":null,"Geography":"South East","Value":"95"},{"Year":"2014","Age":null,"Geography":"South West","Value":"97"},{"Year":"2015","Age":"3 Year Olds","Geography":null,"Value":"93"},{"Year":"2015","Age":"3 Year Olds","Geography":"North East","Value":"96"},{"Year":"2015","Age":"3 Year Olds","Geography":"North West","Value":"95"},{"Year":"2015","Age":"3 Year Olds","Geography":"Yorkshire And The Humber","Value":"95"},{"Year":"2015","Age":"3 Year Olds","Geography":"East Midlands","Value":"95"},{"Year":"2015","Age":"3 Year Olds","Geography":"West Midlands","Value":"94"},{"Year":"2015","Age":"3 Year Olds","Geography":"East Of England","Value":"94"},{"Year":"2015","Age":"3 Year Olds","Geography":"London","Value":"83"},{"Year":"2015","Age":"3 Year Olds","Geography":"South East","Value":"93"},{"Year":"2015","Age":"3 Year Olds","Geography":"South West","Value":"96"},{"Year":"2015","Age":"4 Year Olds","Geography":null,"Value":"97"},{"Year":"2015","Age":"4 Year Olds","Geography":"North East","Value":"99"},{"Year":"2015","Age":"4 Year Olds","Geography":"North West","Value":"100"},{"Year":"2015","Age":"4 Year Olds","Geography":"Yorkshire And The Humber","Value":"99"},{"Year":"2015","Age":"4 Year Olds","Geography":"East Midlands","Value":"99"},{"Year":"2015","Age":"4 Year Olds","Geography":"West Midlands","Value":"99"},{"Year":"2015","Age":"4 Year Olds","Geography":"East Of England","Value":"97"},{"Year":"2015","Age":"4 Year Olds","Geography":"London","Value":"93"},{"Year":"2015","Age":"4 Year Olds","Geography":"South East","Value":"96"},{"Year":"2015","Age":"4 Year Olds","Geography":"South West","Value":"98"},{"Year":"2015","Age":null,"Geography":null,"Value":"95"},{"Year":"2015","Age":null,"Geography":"North East","Value":"97"},{"Year":"2015","Age":null,"Geography":"North West","Value":"97"},{"Year":"2015","Age":null,"Geography":"Yorkshire And The Humber","Value":"97"},{"Year":"2015","Age":null,"Geography":"East Midlands","Value":"97"},{"Year":"2015","Age":null,"Geography":"West Midlands","Value":"96"},{"Year":"2015","Age":null,"Geography":"East Of England","Value":"96"},{"Year":"2015","Age":null,"Geography":"London","Value":"88"},{"Year":"2015","Age":null,"Geography":"South East","Value":"94"},{"Year":"2015","Age":null,"Geography":"South West","Value":"97"},{"Year":"2016","Age":"3 Year Olds","Geography":null,"Value":"93"},{"Year":"2016","Age":"3 Year Olds","Geography":"North East","Value":"97"},{"Year":"2016","Age":"3 Year Olds","Geography":"North West","Value":"95"},{"Year":"2016","Age":"3 Year Olds","Geography":"Yorkshire And The Humber","Value":"96"},{"Year":"2016","Age":"3 Year Olds","Geography":"East Midlands","Value":"95"},{"Year":"2016","Age":"3 Year Olds","Geography":"West Midlands","Value":"94"},{"Year":"2016","Age":"3 Year Olds","Geography":"East Of England","Value":"95"},{"Year":"2016","Age":"3 Year Olds","Geography":"London","Value":"82"},{"Year":"2016","Age":"3 Year Olds","Geography":"South East","Value":"95"},{"Year":"2016","Age":"3 Year Olds","Geography":"South West","Value":"96"},{"Year":"2016","Age":"4 Year Olds","Geography":null,"Value":"97"},{"Year":"2016","Age":"4 Year Olds","Geography":"North East","Value":"99"},{"Year":"2016","Age":"4 Year Olds","Geography":"North West","Value":"99"},{"Year":"2016","Age":"4 Year Olds","Geography":"Yorkshire And The Humber","Value":"99"},{"Year":"2016","Age":"4 Year Olds","Geography":"East Midlands","Value":"98"},{"Year":"2016","Age":"4 Year Olds","Geography":"West Midlands","Value":"100"},{"Year":"2016","Age":"4 Year Olds","Geography":"East Of England","Value":"97"},{"Year":"2016","Age":"4 Year Olds","Geography":"London","Value":"90"},{"Year":"2016","Age":"4 Year Olds","Geography":"South East","Value":"97"},{"Year":"2016","Age":"4 Year Olds","Geography":"South West","Value":"99"},{"Year":"2016","Age":null,"Geography":null,"Value":"95"},{"Year":"2016","Age":null,"Geography":"North East","Value":"98"},{"Year":"2016","Age":null,"Geography":"North West","Value":"97"},{"Year":"2016","Age":null,"Geography":"Yorkshire And The Humber","Value":"97"},{"Year":"2016","Age":null,"Geography":"East Midlands","Value":"97"},{"Year":"2016","Age":null,"Geography":"West Midlands","Value":"97"},{"Year":"2016","Age":null,"Geography":"East Of England","Value":"96"},{"Year":"2016","Age":null,"Geography":"London","Value":"86"},{"Year":"2016","Age":null,"Geography":"South East","Value":"96"},{"Year":"2016","Age":null,"Geography":"South West","Value":"97"},{"Year":"2017","Age":"3 Year Olds","Geography":null,"Value":"93"},{"Year":"2017","Age":"3 Year Olds","Geography":"North East","Value":"98"},{"Year":"2017","Age":"3 Year Olds","Geography":"North West","Value":"97"},{"Year":"2017","Age":"3 Year Olds","Geography":"Yorkshire And The Humber","Value":"96"},{"Year":"2017","Age":"3 Year Olds","Geography":"East Midlands","Value":"97"},{"Year":"2017","Age":"3 Year Olds","Geography":"West Midlands","Value":"96"},{"Year":"2017","Age":"3 Year Olds","Geography":"East Of England","Value":"94"},{"Year":"2017","Age":"3 Year Olds","Geography":"London","Value":"82"},{"Year":"2017","Age":"3 Year Olds","Geography":"South East","Value":"94"},{"Year":"2017","Age":"3 Year Olds","Geography":"South West","Value":"97"},{"Year":"2017","Age":"4 Year Olds","Geography":null,"Value":"96"},{"Year":"2017","Age":"4 Year Olds","Geography":"North East","Value":"99"},{"Year":"2017","Age":"4 Year Olds","Geography":"North West","Value":"99"},{"Year":"2017","Age":"4 Year Olds","Geography":"Yorkshire And The Humber","Value":"98"},{"Year":"2017","Age":"4 Year Olds","Geography":"East Midlands","Value":"99"},{"Year":"2017","Age":"4 Year Olds","Geography":"West Midlands","Value":"99"},{"Year":"2017","Age":"4 Year Olds","Geography":"East Of England","Value":"97"},{"Year":"2017","Age":"4 Year Olds","Geography":"London","Value":"87"},{"Year":"2017","Age":"4 Year Olds","Geography":"South East","Value":"97"},{"Year":"2017","Age":"4 Year Olds","Geography":"South West","Value":"98"},{"Year":"2017","Age":null,"Geography":null,"Value":"95"},{"Year":"2017","Age":null,"Geography":"North East","Value":"98"},{"Year":"2017","Age":null,"Geography":"North West","Value":"98"},{"Year":"2017","Age":null,"Geography":"Yorkshire And The Humber","Value":"97"},{"Year":"2017","Age":null,"Geography":"East Midlands","Value":"98"},{"Year":"2017","Age":null,"Geography":"West Midlands","Value":"97"},{"Year":"2017","Age":null,"Geography":"East Of England","Value":"96"},{"Year":"2017","Age":null,"Geography":"London","Value":"84"},{"Year":"2017","Age":null,"Geography":"South East","Value":"96"},{"Year":"2017","Age":null,"Geography":"South West","Value":"97"}]' data-indicatorid='indicator_4-2-2' data-country="UK"
-    data-charttitle="Percentage of 5 years olds enrolled in prekindergarten, kindergarten, or first or higher grade in the US" data-measurementunit="" data-datasource="" data-geographicalarea="" data-showdata="false">
+    data-charttitle="Percentage of 5 years olds enrolled in prekindergarten, kindergarten, or first or higher grade in the US" data-measurementunit="" data-datasource="" data-geographicalarea="" data-showdata="true">
+
+    
+      
+    
+    
+
+    
+    <div id="toolbar">
+      <div id="fields"></div>
+    </div>
+    
+    <div id="units"></div>
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
+    
+
 
     
     
@@ -162,7 +190,11 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       
-      <li role="presentation" class="nav-item  active">
+        <li role="presentation" class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+        </li>
+      
+      <li role="presentation" class="nav-item  ">
         <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
       </li>
       <li role="presentation" class="nav-item">
@@ -174,7 +206,16 @@
     <!-- Tab panes -->
     <div class="tab-content">
       
-      <div role="tabpanel" class="tab-pane active" id="metadata">
+        <div role="tabpanel" class="tab-pane active" id="data">
+          
+            <h3>Percentage of 5 years olds enrolled in prekindergarten, kindergarten, or first or higher grade in the US</h3>
+          
+          <p>Unit of Measurement: </p>     
+          <a href="/data/indicator_4-2-2.csv" class="btn btn-primary btn-download">Download source CSV</a>
+          <div id="datatables"></div>
+        </div>
+      
+      <div role="tabpanel" class="tab-pane " id="metadata">
         <!-- National Metadata -->
         <div class="collapsible expanded">
           <h3>National Metadata<span> (Collapse)</span></h3>
@@ -824,7 +865,7 @@
 
             
               <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-4.pdf">
-                Link
+                UN Metadata
               </a>
             
             
@@ -963,6 +1004,285 @@
 
 
 
+  <h3>UK Data Source Metadata</h3>
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      <h4>Source 1</h4>
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest Available Data </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical Coverage </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to Data Source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release Date </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next Release </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical Classification </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact Details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other Information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+  </div>
+
 
       </div>
       
@@ -981,7 +1301,7 @@
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171013140301'></script>
+<script src='/assets/js/sdg.js?v=20171018225121'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
