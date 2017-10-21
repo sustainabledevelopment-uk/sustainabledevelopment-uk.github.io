@@ -219,9 +219,10 @@ ul {
 
 .btn-download {
   margin-top: 1.5rem;
-  background: #0F8243; }
-  .btn-download:hover, .btn-download:active {
-    background: #0b5d30; }
+  border: none !important;
+  background: #0F8243 !important; }
+  .btn-download:hover, .btn-download:active, .btn-download:focus {
+    background: #0b5d30 !important; }
 
 h5.download {
   font-weight: bold; }

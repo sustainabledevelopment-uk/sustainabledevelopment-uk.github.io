@@ -30,7 +30,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171018225121">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171021160411">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -153,16 +153,31 @@
 </ol>
 
   <div id="page-content">
-  <p>We are still looking for a suitable data source for this indicator. Please contact us if you think you can help by emailing <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a>.</p>
-
-
   
-    <hr/>
+
   
   </div>
 
-  <section id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_5-a-1' data-country="UK"
-    data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-showdata="false">
+  <section id="indicatorData" data-indicatordata='[{"Year":"2017","Occupation Category":null,"Value":"27.16659634"},{"Year":"2017","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"20.33297408"},{"Year":"2017","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"43.77283066"},{"Year":"2016","Occupation Category":null,"Value":"40.38863643"},{"Year":"2016","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"23.43346109"},{"Year":"2016","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"68.71416871"},{"Year":"2015","Occupation Category":null,"Value":"27.3813436"},{"Year":"2015","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"15.22340546"},{"Year":"2015","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"47.16620413"},{"Year":"2014","Occupation Category":null,"Value":"27.25996842"},{"Year":"2014","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"21.3182158"},{"Year":"2014","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"51.72502244"},{"Year":"2013","Occupation Category":null,"Value":"53.10836564"},{"Year":"2013","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"36.74530411"},{"Year":"2013","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"76.43870556"},{"Year":"2012","Occupation Category":null,"Value":"26.59864966"},{"Year":"2012","Occupation Category":"Managers and proprietors in agriculture and horticulture","Value":"24.02608772"},{"Year":"2012","Occupation Category":"Managers and proprietors in forestry, fishing and related services","Value":"32.20727169"}]' data-indicatorid='indicator_5-a-1' data-country="UK"
+    data-charttitle="Percentage of managers and proprietors in Agriculture Related Services who are women" data-measurementunit="Percentage" data-datasource="ONS" data-geographicalarea="United Kingdom" data-showdata="true">
+
+    
+      
+    
+    
+
+    
+    <div id="toolbar">
+      <div id="fields"></div>
+    </div>
+    
+    <div id="units"></div>
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
+    
+
 
     
     
@@ -173,7 +188,11 @@
     <!-- Nav tabs -->
     <ul class="nav nav-tabs" role="tablist">
       
-      <li role="presentation" class="nav-item  active">
+        <li role="presentation" class="nav-item active">
+          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+        </li>
+      
+      <li role="presentation" class="nav-item  ">
         <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
       </li>
       <li role="presentation" class="nav-item">
@@ -185,7 +204,16 @@
     <!-- Tab panes -->
     <div class="tab-content">
       
-      <div role="tabpanel" class="tab-pane active" id="metadata">
+        <div role="tabpanel" class="tab-pane active" id="data">
+          
+            <h3>Percentage of managers and proprietors in Agriculture Related Services who are women</h3>
+          
+          <p>Unit of Measurement: Percentage</p>     
+          <a href="/data/indicator_5-a-1.csv" class="btn btn-primary btn-download" download='indicator_5-a-1.csv'>Download source CSV</a>
+          <div id="datatables"></div>
+        </div>
+      
+      <div role="tabpanel" class="tab-pane " id="metadata">
         <!-- National Metadata -->
         <div class="collapsible expanded">
           <h3>National Metadata<span> (Collapse)</span></h3>
@@ -233,7 +261,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            Percentage of managers and proprietors in Agriculture Related Services who are women
           
         </td>
         </tr>
@@ -259,7 +287,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            
+            Annually
           
         </td>
         </tr>
@@ -272,7 +300,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            
+            2012
           
         </td>
         </tr>
@@ -285,7 +313,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            United Kingdom
           
         </td>
         </tr>
@@ -532,7 +560,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            Percentage
           
         </td>
         </tr>
@@ -681,7 +709,7 @@
         <div class="collapsible collapsed">
           <h3>Global Metadata<span> (Expand)</span></h3>
           <article>
-            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-5.pdf">metadata</a> is provided by the UN Statistics Division.</p>
+            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="https://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-5.pdf">metadata</a> is provided by the UN Statistics Division.</p>
             <table class="table table-hover">
   
     
@@ -698,7 +726,7 @@
         <th scope="row">Indicator Name </th>
         <td>
           
-            (a) Proportion of total agricultural population with ownership or secure rights over agricultural land, by sex; and (b) share of women among owners or rights-bearers of agricultural land, by type of tenure
+            (a) Proportion of total agricultural population with ownership or secure rights over agricultural land, by sex; and (b) share of women among owners or rightsbearers of agricultural land, type of tenure.
           
         </td>
         </tr>
@@ -776,9 +804,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            FAO,
-UN Women,
-UNSD 
+            FAO, UN Women, United Nations Statistics Division (UNSD)
           
         </td>
         </tr>
@@ -836,8 +862,8 @@ UNSD
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-5.pdf">
-                Link
+              <a href="https://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-5.pdf">
+                United Nations Sustainable Development Goals Metadata: 5.a.1
               </a>
             
             
@@ -976,6 +1002,289 @@ UNSD
 
 
 
+  <h3>UK Data Source Metadata</h3>
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      <h4>Source 1</h4>
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            ONS
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            Annually
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest Available Data </th>
+        <td>
+          
+            2012
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical Coverage </th>
+        <td>
+          
+            United Kingdom
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to Data Source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/employmentbyoccupationemp04">
+                EMP04: Employment by occupation
+              </a>
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release Date </th>
+        <td>
+          
+            2017-08-16
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next Release </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical Classification </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact Details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other Information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+  </div>
+
 
       </div>
       
@@ -994,7 +1303,7 @@ UNSD
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171018225121'></script>
+<script src='/assets/js/sdg.js?v=20171021160411'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
