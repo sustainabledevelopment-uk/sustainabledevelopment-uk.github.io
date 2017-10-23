@@ -1310,7 +1310,7 @@
           "id": "9.5.1",
           "title": "Research and development expenditure as a proportion of GDP",
           "href": "/9-5-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -1340,7 +1340,7 @@
           "id": "9.b.1",
           "title": "Proportion of medium and high-tech industry value added in total value added",
           "href": "/9-b-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -1402,7 +1402,7 @@
           "id": "10.4.1",
           "title": "Labour share of GDP, comprising wages and social protection transfers",
           "href": "/10-4-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -1920,7 +1920,7 @@
           "id": "14.4.1",
           "title": "Proportion of fish stocks within biologically sustainable levels",
           "href": "/14-4-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -1930,7 +1930,7 @@
           "id": "14.5.1",
           "title": "Coverage of protected areas in relation to marine areas",
           "href": "/14-5-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -2154,7 +2154,7 @@
           "id": "16.1.1",
           "title": "Number of victims of intentional homicide per 100,000 population, by sex and age",
           "href": "/16-1-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
@@ -2164,7 +2164,7 @@
           "id": "16.1.2",
           "title": "Conflict-related deaths per 100,000 population, by sex, age and cause",
           "href": "/16-1-2",
-          "status": "inprogress"
+          "status": "complete"
         }
         ,
         
