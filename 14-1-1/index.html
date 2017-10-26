@@ -31,7 +31,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171026093858">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171026230319">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,7 +93,7 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector" data-field="<%=seriesItem.field%>">
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
       <div class="bar">
         <div class="selected"></div>
@@ -110,11 +110,13 @@
     </div>
   <% }); %>
 </script>
-
 <script type="text/template" id="units_template">
-  <% _.each(units, function(unitsItem, index) { %>
-    <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
-  <% }); %>
+  <% if(units.length) { %>
+    <h5>Units type</h5>
+    <% _.each(units, function(unitsItem, index) { %>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+    <% }); %>
+  <% } %>
 </script>
 
 
@@ -145,10 +147,13 @@
    
    
 
+  
+  
+  
    
    
    
-   
+  
   
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
@@ -158,8 +163,18 @@
   
 </ol>
 
-  <div id="page-content">
-  <h1 id="test-indicator">Test Indicator</h1>
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2010","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"6.63"},{"Year":"2011","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"7.327"},{"Year":"2012","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"7.178"},{"Year":"2013","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"6.018"},{"Year":"2014","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"6.659"},{"Year":"2015","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"6.254"},{"Year":"2016","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"6.545"},{"Year":"2010","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"7.072"},{"Year":"2010","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"6.187"},{"Year":"2011","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"7.601"},{"Year":"2011","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"7.053"},{"Year":"2012","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"6.191"},{"Year":"2012","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"8.166"},{"Year":"2013","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"5.88"},{"Year":"2013","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"6.156"},{"Year":"2014","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"6.13"},{"Year":"2014","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"7.187"},{"Year":"2015","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"6.151"},{"Year":"2015","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"6.357"},{"Year":"2016","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"7.067"},{"Year":"2016","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"6.022"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.447"},{"Year":"2010","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"8.081"},{"Year":"2010","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"7.407"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.114"},{"Year":"2011","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"7.114"},{"Year":"2011","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"10.679"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.416"},{"Year":"2012","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"6.67"},{"Year":"2012","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"9.848"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.83"},{"Year":"2013","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"7.258"},{"Year":"2013","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"4.629"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.038"},{"Year":"2014","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"6.819"},{"Year":"2014","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"7.97"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.163"},{"Year":"2015","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.784"},{"Year":"2015","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"7.187"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.807"},{"Year":"2016","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"4.977"},{"Year":"2016","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"8.239"},{"Year":"2010","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"6.399"},{"Year":"2010","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"4.99"},{"Year":"2010","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"8.5"},{"Year":"2011","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"6.804"},{"Year":"2011","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"7.535"},{"Year":"2011","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"7.642"},{"Year":"2012","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"8.778"},{"Year":"2012","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"6.31"},{"Year":"2012","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"6.448"},{"Year":"2013","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"5.167"},{"Year":"2013","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"7.164"},{"Year":"2013","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"5.724"},{"Year":"2014","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"8.171"},{"Year":"2014","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"6.215"},{"Year":"2014","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"5.59"},{"Year":"2015","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"5.3"},{"Year":"2015","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"7.451"},{"Year":"2015","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"6.011"},{"Year":"2016","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"6.04"},{"Year":"2016","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"6.944"},{"Year":"2016","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"6.65"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.808"},{"Year":"2010","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"10.454"},{"Year":"2010","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"5.159"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.087"},{"Year":"2010","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.708"},{"Year":"2010","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"9.656"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"7.509"},{"Year":"2011","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"4.902"},{"Year":"2011","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"11.879"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"4.719"},{"Year":"2011","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"9.327"},{"Year":"2011","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"9.479"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.417"},{"Year":"2012","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"6.027"},{"Year":"2012","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"8.371"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"7.415"},{"Year":"2012","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"7.312"},{"Year":"2012","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"11.325"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.205"},{"Year":"2013","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.256"},{"Year":"2013","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"6.005"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.455"},{"Year":"2013","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"9.261"},{"Year":"2013","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"3.252"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.384"},{"Year":"2014","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"6.642"},{"Year":"2014","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"4.727"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.691"},{"Year":"2014","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"6.996"},{"Year":"2014","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"11.213"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.544"},{"Year":"2015","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.625"},{"Year":"2015","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"8.458"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.782"},{"Year":"2015","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.944"},{"Year":"2015","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"5.916"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.337"},{"Year":"2016","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.195"},{"Year":"2016","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"11.701"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"7.278"},{"Year":"2016","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"4.76"},{"Year":"2016","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"4.777"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"5.807"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"5.268"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"5.557"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"3.297"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"7.307"},{"Year":"2010","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"8.026"},{"Year":"2010","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"9.747"},{"Year":"2010","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"6.47"},{"Year":"2010","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"7.414"},{"Year":"2010","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"7.401"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"5.541"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"10.331"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"4.063"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.323"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.311"},{"Year":"2011","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"4.144"},{"Year":"2011","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"5.736"},{"Year":"2011","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"11.463"},{"Year":"2011","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"8.333"},{"Year":"2011","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"13.025"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"6.52"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"6.286"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"7.055"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.92"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"6.299"},{"Year":"2012","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"7.208"},{"Year":"2012","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"8.899"},{"Year":"2012","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"3.902"},{"Year":"2012","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"9.404"},{"Year":"2012","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"10.291"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.502"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"8.02"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"5.249"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.433"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"6.946"},{"Year":"2013","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"5.051"},{"Year":"2013","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"7.522"},{"Year":"2013","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"9.202"},{"Year":"2013","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"3.031"},{"Year":"2013","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"6.226"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"4.433"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"6.215"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"9.253"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.064"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.223"},{"Year":"2014","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"7.874"},{"Year":"2014","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"8.58"},{"Year":"2014","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"4.004"},{"Year":"2014","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"5.773"},{"Year":"2014","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"10.168"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"0.618"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"9.253"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"7.105"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.234"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"8.606"},{"Year":"2015","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"8.513"},{"Year":"2015","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"4.821"},{"Year":"2015","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"4.019"},{"Year":"2015","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"7.49"},{"Year":"2015","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"6.883"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.85"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"8.731"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"6.442"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"8.83"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"6.184"},{"Year":"2016","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"6.143"},{"Year":"2016","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"2.478"},{"Year":"2016","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"6.311"},{"Year":"2016","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"11.232"},{"Year":"2016","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"5.246"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"7.806"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"3.836"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"7.367"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"4.303"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.728"},{"Year":"2010","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"7.968"},{"Year":"2010","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"13.268"},{"Year":"2010","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"10.126"},{"Year":"2010","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"3.432"},{"Year":"2010","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"6.885"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.808"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"6.701"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"3.748"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"2.292"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"8.886"},{"Year":"2010","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"8.085"},{"Year":"2010","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"6.226"},{"Year":"2010","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"2.813"},{"Year":"2010","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"11.396"},{"Year":"2010","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"7.917"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"5.264"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"10.742"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"7.961"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"8.748"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"4.828"},{"Year":"2011","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"2.028"},{"Year":"2011","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"2.616"},{"Year":"2011","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"10.062"},{"Year":"2011","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"8.429"},{"Year":"2011","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"15.328"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"5.818"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"9.921"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"0.165"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"1.897"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.794"},{"Year":"2011","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"6.26"},{"Year":"2011","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"8.856"},{"Year":"2011","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"12.864"},{"Year":"2011","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"8.237"},{"Year":"2011","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"10.721"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"6.197"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"5.395"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"3.987"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.532"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.973"},{"Year":"2012","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"5.053"},{"Year":"2012","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"7.035"},{"Year":"2012","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"5.993"},{"Year":"2012","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"7.151"},{"Year":"2012","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"9.59"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"6.844"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"7.177"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"10.122"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"6.309"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"6.625"},{"Year":"2012","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"9.363"},{"Year":"2012","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"10.763"},{"Year":"2012","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"1.81"},{"Year":"2012","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"11.658"},{"Year":"2012","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"10.993"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.854"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"5.782"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"7.12"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"6.714"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"7.553"},{"Year":"2013","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"1.342"},{"Year":"2013","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"6.523"},{"Year":"2013","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"7.904"},{"Year":"2013","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"2.915"},{"Year":"2013","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"9.095"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.15"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"10.257"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"3.379"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"4.153"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"6.338"},{"Year":"2013","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"8.76"},{"Year":"2013","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"8.521"},{"Year":"2013","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"10.5"},{"Year":"2013","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"3.147"},{"Year":"2013","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"3.358"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"6.999"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"4.621"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"9.501"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.731"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.069"},{"Year":"2014","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"6.224"},{"Year":"2014","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"11.624"},{"Year":"2014","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"2.077"},{"Year":"2014","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"2.039"},{"Year":"2014","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"7.416"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"1.866"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"7.809"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"9.005"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"4.397"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.378"},{"Year":"2014","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"9.523"},{"Year":"2014","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"5.536"},{"Year":"2014","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"5.931"},{"Year":"2014","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"9.507"},{"Year":"2014","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"12.92"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"-0.167"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"8.651"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"2.681"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"8.909"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"7.646"},{"Year":"2015","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"7.856"},{"Year":"2015","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"5.392"},{"Year":"2015","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"3.628"},{"Year":"2015","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"11.043"},{"Year":"2015","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"5.872"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"1.403"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"9.855"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"11.529"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"1.559"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"9.566"},{"Year":"2015","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"9.171"},{"Year":"2015","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"4.25"},{"Year":"2015","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"4.41"},{"Year":"2015","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"3.938"},{"Year":"2015","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"7.894"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"4.37"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"8.253"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"6.312"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"8.027"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"4.724"},{"Year":"2016","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"5.042"},{"Year":"2016","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"2.387"},{"Year":"2016","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"8.156"},{"Year":"2016","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"13.576"},{"Year":"2016","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"9.825"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.331"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"9.208"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"6.573"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"9.633"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"7.644"},{"Year":"2016","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"7.244"},{"Year":"2016","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"2.569"},{"Year":"2016","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"4.466"},{"Year":"2016","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"8.887"},{"Year":"2016","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"0.668"}]' data-indicatorid='indicator_14-1-1' data-country="UK"
+  data-edgesdata='[{"From":"Planet","To":"Continent"}]' data-charttitle="Test Graph Title" data-measurementunit="Percentage" data-datasource="Test Organisation" data-geographicalarea="Inner Solar System" data-showdata="true">
+    <div class="col-md-3">
+      <div id="toolbar">
+        <h5>Sub-categories</h5>
+        <div id="fields"></div>
+      </div>
+      <div id="units"></div>
+    </div>
+    <div class="col-md-9">
+      <div id="page-content">
+        <h1 id="test-indicator">Test Indicator</h1>
 
 <p>The data for this indicator is test data for demonstration purposes only. This notice is part of a free text field where extra information can be added, styled using <a href="https://guides.github.com/features/mastering-markdown/">Markdown</a>, which allows basic things such as <strong>bold</strong>, <em>italic</em>, and includes <a href="https://guides.github.com/features/mastering-markdown/">hyperlinks</a>.</p>
 
@@ -189,25 +204,19 @@
 
 <p>Althought the above is not a proper data format.</p>
 
-  
-    <hr/>
-  
-  </div>
+        
+        <hr/>
+        
+      </div>
+    
+      <section>
+    
+        
+          
+    
+    
 
-  <section id="indicatorData" data-indicatordata='[{"Year":"2010","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"6.63"},{"Year":"2011","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"7.327"},{"Year":"2012","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"7.178"},{"Year":"2013","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"6.018"},{"Year":"2014","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"6.659"},{"Year":"2015","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"6.254"},{"Year":"2016","Grade":null,"Planet":null,"Continent":null,"Fruit":null,"Value":"6.545"},{"Year":"2010","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"7.072"},{"Year":"2010","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"6.187"},{"Year":"2011","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"7.601"},{"Year":"2011","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"7.053"},{"Year":"2012","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"6.191"},{"Year":"2012","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"8.166"},{"Year":"2013","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"5.88"},{"Year":"2013","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"6.156"},{"Year":"2014","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"6.13"},{"Year":"2014","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"7.187"},{"Year":"2015","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"6.151"},{"Year":"2015","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"6.357"},{"Year":"2016","Grade":"A","Planet":null,"Continent":null,"Fruit":null,"Value":"7.067"},{"Year":"2016","Grade":"B","Planet":null,"Continent":null,"Fruit":null,"Value":"6.022"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.447"},{"Year":"2010","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"8.081"},{"Year":"2010","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"7.407"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.114"},{"Year":"2011","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"7.114"},{"Year":"2011","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"10.679"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.416"},{"Year":"2012","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"6.67"},{"Year":"2012","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"9.848"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.83"},{"Year":"2013","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"7.258"},{"Year":"2013","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"4.629"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.038"},{"Year":"2014","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"6.819"},{"Year":"2014","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"7.97"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.163"},{"Year":"2015","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.784"},{"Year":"2015","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"7.187"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.807"},{"Year":"2016","Grade":null,"Planet":"Mars","Continent":null,"Fruit":null,"Value":"4.977"},{"Year":"2016","Grade":null,"Planet":"Venus","Continent":null,"Fruit":null,"Value":"8.239"},{"Year":"2010","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"6.399"},{"Year":"2010","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"4.99"},{"Year":"2010","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"8.5"},{"Year":"2011","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"6.804"},{"Year":"2011","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"7.535"},{"Year":"2011","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"7.642"},{"Year":"2012","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"8.778"},{"Year":"2012","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"6.31"},{"Year":"2012","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"6.448"},{"Year":"2013","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"5.167"},{"Year":"2013","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"7.164"},{"Year":"2013","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"5.724"},{"Year":"2014","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"8.171"},{"Year":"2014","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"6.215"},{"Year":"2014","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"5.59"},{"Year":"2015","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"5.3"},{"Year":"2015","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"7.451"},{"Year":"2015","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"6.011"},{"Year":"2016","Grade":null,"Planet":null,"Continent":null,"Fruit":"Apples","Value":"6.04"},{"Year":"2016","Grade":null,"Planet":null,"Continent":null,"Fruit":"Lemons","Value":"6.944"},{"Year":"2016","Grade":null,"Planet":null,"Continent":null,"Fruit":"Oranges","Value":"6.65"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.808"},{"Year":"2010","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"10.454"},{"Year":"2010","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"5.159"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.087"},{"Year":"2010","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.708"},{"Year":"2010","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"9.656"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"7.509"},{"Year":"2011","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"4.902"},{"Year":"2011","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"11.879"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"4.719"},{"Year":"2011","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"9.327"},{"Year":"2011","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"9.479"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.417"},{"Year":"2012","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"6.027"},{"Year":"2012","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"8.371"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"7.415"},{"Year":"2012","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"7.312"},{"Year":"2012","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"11.325"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.205"},{"Year":"2013","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.256"},{"Year":"2013","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"6.005"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.455"},{"Year":"2013","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"9.261"},{"Year":"2013","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"3.252"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.384"},{"Year":"2014","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"6.642"},{"Year":"2014","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"4.727"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.691"},{"Year":"2014","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"6.996"},{"Year":"2014","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"11.213"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"5.544"},{"Year":"2015","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.625"},{"Year":"2015","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"8.458"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.782"},{"Year":"2015","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.944"},{"Year":"2015","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"5.916"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":null,"Fruit":null,"Value":"6.337"},{"Year":"2016","Grade":"A","Planet":"Mars","Continent":null,"Fruit":null,"Value":"5.195"},{"Year":"2016","Grade":"A","Planet":"Venus","Continent":null,"Fruit":null,"Value":"11.701"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":null,"Fruit":null,"Value":"7.278"},{"Year":"2016","Grade":"B","Planet":"Mars","Continent":null,"Fruit":null,"Value":"4.76"},{"Year":"2016","Grade":"B","Planet":"Venus","Continent":null,"Fruit":null,"Value":"4.777"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"5.807"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"5.268"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"5.557"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"3.297"},{"Year":"2010","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"7.307"},{"Year":"2010","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"8.026"},{"Year":"2010","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"9.747"},{"Year":"2010","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"6.47"},{"Year":"2010","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"7.414"},{"Year":"2010","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"7.401"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"5.541"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"10.331"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"4.063"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.323"},{"Year":"2011","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.311"},{"Year":"2011","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"4.144"},{"Year":"2011","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"5.736"},{"Year":"2011","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"11.463"},{"Year":"2011","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"8.333"},{"Year":"2011","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"13.025"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"6.52"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"6.286"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"7.055"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.92"},{"Year":"2012","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"6.299"},{"Year":"2012","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"7.208"},{"Year":"2012","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"8.899"},{"Year":"2012","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"3.902"},{"Year":"2012","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"9.404"},{"Year":"2012","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"10.291"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.502"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"8.02"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"5.249"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.433"},{"Year":"2013","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"6.946"},{"Year":"2013","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"5.051"},{"Year":"2013","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"7.522"},{"Year":"2013","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"9.202"},{"Year":"2013","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"3.031"},{"Year":"2013","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"6.226"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"4.433"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"6.215"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"9.253"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.064"},{"Year":"2014","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.223"},{"Year":"2014","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"7.874"},{"Year":"2014","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"8.58"},{"Year":"2014","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"4.004"},{"Year":"2014","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"5.773"},{"Year":"2014","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"10.168"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"0.618"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"9.253"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"7.105"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.234"},{"Year":"2015","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"8.606"},{"Year":"2015","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"8.513"},{"Year":"2015","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"4.821"},{"Year":"2015","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"4.019"},{"Year":"2015","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"7.49"},{"Year":"2015","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"6.883"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.85"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":"America","Fruit":null,"Value":"8.731"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"6.442"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"8.83"},{"Year":"2016","Grade":null,"Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"6.184"},{"Year":"2016","Grade":null,"Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"6.143"},{"Year":"2016","Grade":null,"Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"2.478"},{"Year":"2016","Grade":null,"Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"6.311"},{"Year":"2016","Grade":null,"Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"11.232"},{"Year":"2016","Grade":null,"Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"5.246"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"7.806"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"3.836"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"7.367"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"4.303"},{"Year":"2010","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.728"},{"Year":"2010","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"7.968"},{"Year":"2010","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"13.268"},{"Year":"2010","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"10.126"},{"Year":"2010","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"3.432"},{"Year":"2010","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"6.885"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.808"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"6.701"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"3.748"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"2.292"},{"Year":"2010","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"8.886"},{"Year":"2010","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"8.085"},{"Year":"2010","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"6.226"},{"Year":"2010","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"2.813"},{"Year":"2010","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"11.396"},{"Year":"2010","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"7.917"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"5.264"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"10.742"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"7.961"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"8.748"},{"Year":"2011","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"4.828"},{"Year":"2011","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"2.028"},{"Year":"2011","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"2.616"},{"Year":"2011","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"10.062"},{"Year":"2011","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"8.429"},{"Year":"2011","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"15.328"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"5.818"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"9.921"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"0.165"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"1.897"},{"Year":"2011","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.794"},{"Year":"2011","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"6.26"},{"Year":"2011","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"8.856"},{"Year":"2011","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"12.864"},{"Year":"2011","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"8.237"},{"Year":"2011","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"10.721"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"6.197"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"5.395"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"3.987"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.532"},{"Year":"2012","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.973"},{"Year":"2012","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"5.053"},{"Year":"2012","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"7.035"},{"Year":"2012","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"5.993"},{"Year":"2012","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"7.151"},{"Year":"2012","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"9.59"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"6.844"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"7.177"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"10.122"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"6.309"},{"Year":"2012","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"6.625"},{"Year":"2012","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"9.363"},{"Year":"2012","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"10.763"},{"Year":"2012","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"1.81"},{"Year":"2012","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"11.658"},{"Year":"2012","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"10.993"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.854"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"5.782"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"7.12"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"6.714"},{"Year":"2013","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"7.553"},{"Year":"2013","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"1.342"},{"Year":"2013","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"6.523"},{"Year":"2013","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"7.904"},{"Year":"2013","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"2.915"},{"Year":"2013","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"9.095"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.15"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"10.257"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"3.379"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"4.153"},{"Year":"2013","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"6.338"},{"Year":"2013","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"8.76"},{"Year":"2013","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"8.521"},{"Year":"2013","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"10.5"},{"Year":"2013","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"3.147"},{"Year":"2013","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"3.358"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"6.999"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"4.621"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"9.501"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"5.731"},{"Year":"2014","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.069"},{"Year":"2014","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"6.224"},{"Year":"2014","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"11.624"},{"Year":"2014","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"2.077"},{"Year":"2014","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"2.039"},{"Year":"2014","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"7.416"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"1.866"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"7.809"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"9.005"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"4.397"},{"Year":"2014","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"5.378"},{"Year":"2014","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"9.523"},{"Year":"2014","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"5.536"},{"Year":"2014","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"5.931"},{"Year":"2014","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"9.507"},{"Year":"2014","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"12.92"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"-0.167"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"8.651"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"2.681"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"8.909"},{"Year":"2015","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"7.646"},{"Year":"2015","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"7.856"},{"Year":"2015","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"5.392"},{"Year":"2015","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"3.628"},{"Year":"2015","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"11.043"},{"Year":"2015","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"5.872"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"1.403"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"9.855"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"11.529"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"1.559"},{"Year":"2015","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"9.566"},{"Year":"2015","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"9.171"},{"Year":"2015","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"4.25"},{"Year":"2015","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"4.41"},{"Year":"2015","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"3.938"},{"Year":"2015","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"7.894"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"4.37"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":"America","Fruit":null,"Value":"8.253"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"6.312"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"8.027"},{"Year":"2016","Grade":"A","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"4.724"},{"Year":"2016","Grade":"A","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"5.042"},{"Year":"2016","Grade":"A","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"2.387"},{"Year":"2016","Grade":"A","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"8.156"},{"Year":"2016","Grade":"A","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"13.576"},{"Year":"2016","Grade":"A","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"9.825"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":"Africa","Fruit":null,"Value":"3.331"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":"America","Fruit":null,"Value":"9.208"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":"Asia","Fruit":null,"Value":"6.573"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":"Australia","Fruit":null,"Value":"9.633"},{"Year":"2016","Grade":"B","Planet":"Earth","Continent":"Europe","Fruit":null,"Value":"7.644"},{"Year":"2016","Grade":"B","Planet":"Mars","Continent":"MarsDawes","Fruit":null,"Value":"7.244"},{"Year":"2016","Grade":"B","Planet":"Mars","Continent":"MarsHerschel I","Fruit":null,"Value":"2.569"},{"Year":"2016","Grade":"B","Planet":"Mars","Continent":"MarsMadler","Fruit":null,"Value":"4.466"},{"Year":"2016","Grade":"B","Planet":"Venus","Continent":"VenusAphrodite Terra","Fruit":null,"Value":"8.887"},{"Year":"2016","Grade":"B","Planet":"Venus","Continent":"VenusIshtar Terra","Fruit":null,"Value":"0.668"}]' data-indicatorid='indicator_14-1-1' data-country="UK"
-    data-charttitle="Test Graph Title" data-measurementunit="Percentage" data-datasource="Test Organisation" data-geographicalarea="Inner Solar System" data-showdata="true">
-
     
-      
-    
-    
-
-    
-    <div id="toolbar">
-      <div id="fields"></div>
-    </div>
-    
-    <div id="units"></div>
     <div class="plot-container">
         
 <canvas></canvas>
@@ -215,49 +224,125 @@
     
 
 
-    
-    
-    <div class="alert alert-warning" role="alert">
-      <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
-    </div>
-
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-      
-        <li role="presentation" class="nav-item active">
-          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-        </li>
-      
-      <li role="presentation" class="nav-item  ">
-        <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
-      </li>
-      <li role="presentation" class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab">Sources</a>
-      </li>
-      
-    </ul>
-    
-    <!-- Tab panes -->
-    <div class="tab-content">
-      
-        <div role="tabpanel" class="tab-pane active" id="data">
-          
-            <h3>Test Graph Title</h3>
-          
-          <p>Unit of Measurement: Percentage</p>     
-          <a href="/data/indicator_14-1-1.csv" class="btn btn-primary btn-download" download='indicator_14-1-1.csv'>Download source CSV</a>
-          <div id="datatables"></div>
+        
+        
+        <div class="alert alert-warning" role="alert">
+          <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
         </div>
+    
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+            </li>
+          
+          <li role="presentation" class="nav-item  ">
+            <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab">Sources</a>
+          </li>
+          
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          
+            <div role="tabpanel" class="tab-pane active" id="data">
+              
+                <h3>Test Graph Title</h3>
+              
+              <p>Unit of Measurement: Percentage</p>     
+              <a href="/data/indicator_14-1-1.csv" class="btn btn-primary btn-download" download='indicator_14-1-1.csv'>Download source CSV</a>
+              <div id="datatables"> 
+ 
+
+<h3>Headline data</h3>
+
+<a href="/data/headlines/headlines_14-1-1.csv" class="btn btn-primary btn-download" download='indicator_14-1-1.csv'>Download headline CSV</a>
+
+<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+  <!-- <caption>Headline data</caption> -->
+  <thead>
+  
+      <th scope="col">Year</th>
+  
+      <th scope="col">Value</th>
+  
+  </thead>
+  <tbody>
+  
+      <tr>
       
-      <div role="tabpanel" class="tab-pane " id="metadata">
-        <!-- National Metadata -->
-        <div class="collapsible expanded">
-          <h3>National Metadata<span> (Collapse)</span></h3>
-          <article>
-            <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                should be consulted for information on national methodology and other UK-specific metadata information.</p>
-              <table class="table table-hover">
+          <td>2010</td>
+      
+          <td>6.63</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2011</td>
+      
+          <td>7.327000000000001</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2012</td>
+      
+          <td>7.178</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2013</td>
+      
+          <td>6.018</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2014</td>
+      
+          <td>6.659</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2015</td>
+      
+          <td>6.254</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2016</td>
+      
+          <td>6.545</td>
+      
+      </tr>
+  
+  </tbody>
+</table>
+</div>
+            </div>
+          
+          <div role="tabpanel" class="tab-pane " id="metadata">
+            <!-- National Metadata -->
+            <div class="collapsible expanded">
+              <h3>National Metadata<span> (Collapse)</span></h3>
+              <article>
+                <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
+                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  <table class="table table-hover">
   
     
   
@@ -526,15 +611,17 @@
   
     
   
+    
+  
 </table>
 
-          </article>
-        </div>
-        <!-- Method of Computation -->
-        <div class="collapsible collapsed">
-          <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
-          <article>
-            <table class="table table-hover">
+              </article>
+            </div>
+            <!-- Method of Computation -->
+            <div class="collapsible collapsed">
+              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <article>
+                <table class="table table-hover">
   
     
   
@@ -737,16 +824,18 @@
   
     
   
+    
+  
 </table>
 
-          </article>
-        </div>
-        <!-- Global Metadata -->
-        <div class="collapsible collapsed">
-          <h3>Global Metadata<span> (Expand)</span></h3>
-          <article>
-            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-14.pdf">metadata</a> is provided by the UN Statistics Division.</p>
-            <table class="table table-hover">
+              </article>
+            </div>
+            <!-- Global Metadata -->
+            <div class="collapsible collapsed">
+              <h3>Global Metadata<span> (Expand)</span></h3>
+              <article>
+                <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-14.pdf">metadata</a> is provided by the UN Statistics Division.</p>
+                <table class="table table-hover">
   
     
   
@@ -1027,13 +1116,15 @@
   
     
   
+    
+  
 </table>
 
-          </article>
-        </div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="sources">
-        <!-- Count the non-empty sources (up to 5) -->
+              </article>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="sources">
+            <!-- Count the non-empty sources (up to 5) -->
 
 
 
@@ -1311,6 +1402,8 @@
   
     
   
+    
+  
 </table>
 
     </div>
@@ -1318,19 +1411,27 @@
   </div>
 
 
-      </div>
-      
+          </div>
+          
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
+
+
+
+
+
+  
 </div>
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-md-6">
         We welcome your feedback. Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-6">
+      <div class="col-md-6">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1364,7 +1465,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171026093858'></script>
+<script src='/assets/js/sdg.js?v=20171026230319'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1394,15 +1495,19 @@ $(function() {
     });
 
     if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+
       var model = new indicatorModel({
-        data: $('#indicatorData').data('indicatordata'),
-        country: $('#indicatorData').data('country'),
-        indicatorId: $('#indicatorData').data('indicatorid'),
-        chartTitle: $('#indicatorData').data('charttitle'),
-        measurementUnit: $('#indicatorData').data('measurementunit'),
-        dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea'),
-        showData: $('#indicatorData').data('showdata')
+        data: domData.indicatordata,
+        country: domData.country,
+        indicatorId: domData.indicatorid,
+        chartTitle: domData.charttitle,
+        edgesData: domData.edgesdata,
+        measurementUnit: domData.measurementunit,
+        dataSource: domData.datasource,
+        geographicalArea: domData.geographicalarea,
+        showData: domData.showdata,
+        footnote: domData.footnote,
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',

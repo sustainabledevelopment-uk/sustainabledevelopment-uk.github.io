@@ -31,7 +31,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171026093858">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171026230319">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -250,7 +250,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/6-5-1"><span>6.5.1<span class="status warning">Statistics in progress</span></span> Degree of integrated water resources management implementation (0-100)</a>
+          <a href="/6-5-1"><span>6.5.1<span class="status success">Reported online</span></span> Degree of integrated water resources management implementation (0-100)</a>
         </div>
     
     
@@ -296,11 +296,11 @@
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-md-6">
         We welcome your feedback. Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-6">
+      <div class="col-md-6">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -334,7 +334,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171026093858'></script>
+<script src='/assets/js/sdg.js?v=20171026230319'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -364,15 +364,19 @@ $(function() {
     });
 
     if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+
       var model = new indicatorModel({
-        data: $('#indicatorData').data('indicatordata'),
-        country: $('#indicatorData').data('country'),
-        indicatorId: $('#indicatorData').data('indicatorid'),
-        chartTitle: $('#indicatorData').data('charttitle'),
-        measurementUnit: $('#indicatorData').data('measurementunit'),
-        dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea'),
-        showData: $('#indicatorData').data('showdata')
+        data: domData.indicatordata,
+        country: domData.country,
+        indicatorId: domData.indicatorid,
+        chartTitle: domData.charttitle,
+        edgesData: domData.edgesdata,
+        measurementUnit: domData.measurementunit,
+        dataSource: domData.datasource,
+        geographicalArea: domData.geographicalarea,
+        showData: domData.showdata,
+        footnote: domData.footnote,
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',

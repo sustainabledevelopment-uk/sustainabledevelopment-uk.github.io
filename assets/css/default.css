@@ -491,7 +491,7 @@ h5 + .btn-download {
   #main-content h4 {
     margin-bottom: 1.5rem; }
   #main-content #toolbar button {
-    width: 160px;
+    width: 100%;
     background-color: #fff;
     position: relative;
     border: 1px solid #ccc;
@@ -499,7 +499,6 @@ h5 + .btn-download {
     padding: 10px 7px 14px 7px;
     font-size: 0.875em;
     font-family: 'Open Sans', sans-serif;
-    float: left;
     margin-right: 8px; }
     #main-content #toolbar button i {
       position: absolute;
@@ -515,9 +514,9 @@ h5 + .btn-download {
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
-    float: left;
     padding-bottom: 14px;
-    font-size: 0.75em; }
+    font-size: 0.75em;
+    margin-top: 10px; }
     #main-content #fields label {
       background-color: #fff;
       padding: 7px;
@@ -573,21 +572,23 @@ h5 + .btn-download {
     #main-content #fields .variable-selector {
       position: relative;
       cursor: pointer;
-      min-width: 160px;
+      width: 100%;
       border: 1px solid #ccc;
       display: inline-block;
       margin-right: 8px;
       margin-bottom: 10px; }
+      #main-content #fields .variable-selector.disallowed {
+        display: none; }
+      #main-content #fields .variable-selector:hover {
+        border-color: #555; }
       #main-content #fields .variable-selector .variable-options {
         background-color: white;
         display: none;
-        position: absolute;
+        position: static;
         z-index: 100;
-        border: 1px solid #ccc;
         border-top: 0;
         right: -1px;
         left: -1px;
-        max-height: 300px;
         overflow: auto; }
         #main-content #fields .variable-selector .variable-options > div {
           text-align: left;
@@ -602,15 +603,16 @@ h5 + .btn-download {
           text-align: center;
           width: 40%;
           margin: 0;
-          font-size: 0.75em;
+          font-size: 1.2em;
           padding: inherit;
-          border-radius: 2px; }
+          border-radius: 4px; }
           #main-content #fields .variable-selector .variable-options button:hover {
             background: #f5f3f3; }
         #main-content #fields .variable-selector .variable-options label {
           padding-left: 7px;
           padding-right: 25px;
-          position: relative; }
+          position: relative;
+          font-size: 1.3em; }
           #main-content #fields .variable-selector .variable-options label:not(:first-child) {
             border-top: 1px solid #cdcdcd; }
           #main-content #fields .variable-selector .variable-options label input {
@@ -627,7 +629,8 @@ h5 + .btn-download {
       border: 1px solid #ccc;
       padding: 10px;
       margin-right: 8px;
-      cursor: pointer; }
+      cursor: pointer;
+      width: 100%; }
   #main-content .plot-container {
     margin-bottom: 4.5rem;
     padding: 10px; }

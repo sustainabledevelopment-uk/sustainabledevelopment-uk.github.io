@@ -31,7 +31,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171026093858">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171026230319">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,7 +93,7 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector" data-field="<%=seriesItem.field%>">
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
       <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
       <div class="bar">
         <div class="selected"></div>
@@ -110,11 +110,13 @@
     </div>
   <% }); %>
 </script>
-
 <script type="text/template" id="units_template">
-  <% _.each(units, function(unitsItem, index) { %>
-    <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
-  <% }); %>
+  <% if(units.length) { %>
+    <h5>Units type</h5>
+    <% _.each(units, function(unitsItem, index) { %>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+    <% }); %>
+  <% } %>
 </script>
 
 
@@ -145,10 +147,13 @@
    
    
 
+  
+  
+  
    
    
    
-   
+  
   
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
@@ -158,26 +163,30 @@
   
 </ol>
 
-  <div id="page-content">
-  
-
-  
-  </div>
-
-  <section id="indicatorData" data-indicatordata='[{"Year":"2016","Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":"4.020190605"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual Assualt Category":null,"Value":"2.970786554"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual Assualt Category":null,"Value":"4.875560487"},{"Year":"2016","Sex":null,"Age":null,"Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"1.347804186"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.845915624"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"1.757334976"},{"Year":"2016","Sex":null,"Age":null,"Sexual Assualt Category":"Other sexual assault","Value":"3.844227552"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual Assualt Category":"Other sexual assault","Value":"2.901875199"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual Assualt Category":"Other sexual assault","Value":"4.614672242"},{"Year":"2016","Sex":"Male","Age":null,"Sexual Assualt Category":null,"Value":"1.334661575"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual Assualt Category":null,"Value":"0.940970021"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual Assualt Category":null,"Value":"1.664044305"},{"Year":"2016","Sex":"Male","Age":null,"Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.389457068"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.209502652"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.539945976"},{"Year":"2016","Sex":"Male","Age":null,"Sexual Assualt Category":"Other sexual assault","Value":"1.264253875"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual Assualt Category":"Other sexual assault","Value":"0.9338694"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual Assualt Category":"Other sexual assault","Value":"1.542277698"},{"Year":"2016","Sex":"Female","Age":null,"Sexual Assualt Category":null,"Value":"6.75248204"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual Assualt Category":null,"Value":"5.096815727"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual Assualt Category":null,"Value":"8.066563071"},{"Year":"2016","Sex":"Female","Age":null,"Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"2.319017369"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"1.50869462"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"2.96393503"},{"Year":"2016","Sex":"Female","Age":null,"Sexual Assualt Category":"Other sexual assault","Value":"6.462897179"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual Assualt Category":"Other sexual assault","Value":"4.964449169"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual Assualt Category":"Other sexual assault","Value":"7.652522856"},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null}]' data-indicatorid='indicator_16-2-3' data-country="UK"
-    data-charttitle="Percentage of adults, aged 16-34, who experienced sexual assault before the age of 16 " data-measurementunit="Percentage" data-datasource="Office for National Statistics" data-geographicalarea="England and Wales" data-showdata="true">
-
-    
-      
-    
-    
-
-    
-    <div id="toolbar">
-      <div id="fields"></div>
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":"4.020190605"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual Assualt Category":null,"Value":"2.970786554"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual Assualt Category":null,"Value":"4.875560487"},{"Year":"2016","Sex":null,"Age":null,"Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"1.347804186"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.845915624"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"1.757334976"},{"Year":"2016","Sex":null,"Age":null,"Sexual Assualt Category":"Other sexual assault","Value":"3.844227552"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual Assualt Category":"Other sexual assault","Value":"2.901875199"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual Assualt Category":"Other sexual assault","Value":"4.614672242"},{"Year":"2016","Sex":"Male","Age":null,"Sexual Assualt Category":null,"Value":"1.334661575"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual Assualt Category":null,"Value":"0.940970021"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual Assualt Category":null,"Value":"1.664044305"},{"Year":"2016","Sex":"Male","Age":null,"Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.389457068"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.209502652"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.539945976"},{"Year":"2016","Sex":"Male","Age":null,"Sexual Assualt Category":"Other sexual assault","Value":"1.264253875"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual Assualt Category":"Other sexual assault","Value":"0.9338694"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual Assualt Category":"Other sexual assault","Value":"1.542277698"},{"Year":"2016","Sex":"Female","Age":null,"Sexual Assualt Category":null,"Value":"6.75248204"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual Assualt Category":null,"Value":"5.096815727"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual Assualt Category":null,"Value":"8.066563071"},{"Year":"2016","Sex":"Female","Age":null,"Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"2.319017369"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"1.50869462"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"2.96393503"},{"Year":"2016","Sex":"Female","Age":null,"Sexual Assualt Category":"Other sexual assault","Value":"6.462897179"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual Assualt Category":"Other sexual assault","Value":"4.964449169"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual Assualt Category":"Other sexual assault","Value":"7.652522856"},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null}]' data-indicatorid='indicator_16-2-3' data-country="UK"
+  data-edgesdata='[]' data-charttitle="Percentage of adults, aged 16-34, who experienced sexual assault before the age of 16 " data-measurementunit="Percentage" data-datasource="Office for National Statistics" data-geographicalarea="England and Wales" data-showdata="true">
+    <div class="col-md-3">
+      <div id="toolbar">
+        <h5>Sub-categories</h5>
+        <div id="fields"></div>
+      </div>
+      <div id="units"></div>
     </div>
+    <div class="col-md-9">
+      <div id="page-content">
+        
+
+        
+      </div>
     
-    <div id="units"></div>
+      <section>
+    
+        
+          
+    
+    
+
+    
     <div class="plot-container">
         
 <canvas></canvas>
@@ -185,49 +194,109 @@
     
 
 
-    
-    
-    <div class="alert alert-warning" role="alert">
-      <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
-    </div>
-
-    <!-- Nav tabs -->
-    <ul class="nav nav-tabs" role="tablist">
-      
-        <li role="presentation" class="nav-item active">
-          <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-        </li>
-      
-      <li role="presentation" class="nav-item  ">
-        <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
-      </li>
-      <li role="presentation" class="nav-item">
-        <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab">Sources</a>
-      </li>
-      
-    </ul>
-    
-    <!-- Tab panes -->
-    <div class="tab-content">
-      
-        <div role="tabpanel" class="tab-pane active" id="data">
-          
-            <h3>Percentage of adults, aged 16-34, who experienced sexual assault before the age of 16 </h3>
-          
-          <p>Unit of Measurement: Percentage</p>     
-          <a href="/data/indicator_16-2-3.csv" class="btn btn-primary btn-download" download='indicator_16-2-3.csv'>Download source CSV</a>
-          <div id="datatables"></div>
+        
+        
+        <div class="alert alert-warning" role="alert">
+          <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for sources, definitions, and methodology information
         </div>
+    
+        <!-- Nav tabs -->
+        <ul class="nav nav-tabs" role="tablist">
+          
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+            </li>
+          
+          <li role="presentation" class="nav-item  ">
+            <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab">Sources</a>
+          </li>
+          
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content">
+          
+            <div role="tabpanel" class="tab-pane active" id="data">
+              
+                <h3>Percentage of adults, aged 16-34, who experienced sexual assault before the age of 16 </h3>
+              
+              <p>Unit of Measurement: Percentage</p>     
+              <a href="/data/indicator_16-2-3.csv" class="btn btn-primary btn-download" download='indicator_16-2-3.csv'>Download source CSV</a>
+              <div id="datatables"> 
+ 
+
+<h3>Headline data</h3>
+
+<a href="/data/headlines/headlines_16-2-3.csv" class="btn btn-primary btn-download" download='indicator_16-2-3.csv'>Download headline CSV</a>
+
+<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+  <!-- <caption>Headline data</caption> -->
+  <thead>
+  
+      <th scope="col">Year</th>
+  
+      <th scope="col">Value</th>
+  
+  </thead>
+  <tbody>
+  
+      <tr>
       
-      <div role="tabpanel" class="tab-pane " id="metadata">
-        <!-- National Metadata -->
-        <div class="collapsible expanded">
-          <h3>National Metadata<span> (Collapse)</span></h3>
-          <article>
-            <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                should be consulted for information on national methodology and other UK-specific metadata information.</p>
-              <table class="table table-hover">
+          <td>2016.0</td>
+      
+          <td>4.020190605</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td></td>
+      
+          <td></td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td></td>
+      
+          <td></td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td></td>
+      
+          <td></td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td></td>
+      
+          <td></td>
+      
+      </tr>
+  
+  </tbody>
+</table>
+</div>
+            </div>
+          
+          <div role="tabpanel" class="tab-pane " id="metadata">
+            <!-- National Metadata -->
+            <div class="collapsible expanded">
+              <h3>National Metadata<span> (Collapse)</span></h3>
+              <article>
+                <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
+                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  <table class="table table-hover">
   
     
   
@@ -496,15 +565,17 @@
   
     
   
+    
+  
 </table>
 
-          </article>
-        </div>
-        <!-- Method of Computation -->
-        <div class="collapsible collapsed">
-          <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
-          <article>
-            <table class="table table-hover">
+              </article>
+            </div>
+            <!-- Method of Computation -->
+            <div class="collapsible collapsed">
+              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <article>
+                <table class="table table-hover">
   
     
   
@@ -707,16 +778,18 @@
   
     
   
+    
+  
 </table>
 
-          </article>
-        </div>
-        <!-- Global Metadata -->
-        <div class="collapsible collapsed">
-          <h3>Global Metadata<span> (Expand)</span></h3>
-          <article>
-            <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-02-03.pdf">metadata</a> is provided by the UN Statistics Division.</p>
-            <table class="table table-hover">
+              </article>
+            </div>
+            <!-- Global Metadata -->
+            <div class="collapsible collapsed">
+              <h3>Global Metadata<span> (Expand)</span></h3>
+              <article>
+                <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-16-02-03.pdf">metadata</a> is provided by the UN Statistics Division.</p>
+                <table class="table table-hover">
   
     
   
@@ -997,13 +1070,15 @@
   
     
   
+    
+  
 </table>
 
-          </article>
-        </div>
-      </div>
-      <div role="tabpanel" class="tab-pane" id="sources">
-        <!-- Count the non-empty sources (up to 5) -->
+              </article>
+            </div>
+          </div>
+          <div role="tabpanel" class="tab-pane" id="sources">
+            <!-- Count the non-empty sources (up to 5) -->
 
 
 
@@ -1285,6 +1360,8 @@
   
     
   
+    
+  
 </table>
 
     </div>
@@ -1292,19 +1369,27 @@
   </div>
 
 
-      </div>
-      
+          </div>
+          
+        </div>
+      </section>
     </div>
-  </section>
+  </div>
+
+
+
+
+
+  
 </div>
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-6">
+      <div class="col-md-6">
         We welcome your feedback. Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-6">
+      <div class="col-md-6">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1338,7 +1423,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171026093858'></script>
+<script src='/assets/js/sdg.js?v=20171026230319'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1368,15 +1453,19 @@ $(function() {
     });
 
     if($('#indicatorData').length) {
+      var domData = $('#indicatorData').data();
+
       var model = new indicatorModel({
-        data: $('#indicatorData').data('indicatordata'),
-        country: $('#indicatorData').data('country'),
-        indicatorId: $('#indicatorData').data('indicatorid'),
-        chartTitle: $('#indicatorData').data('charttitle'),
-        measurementUnit: $('#indicatorData').data('measurementunit'),
-        dataSource: $('#indicatorData').data('datasource'),
-        geographicalArea: $('#indicatorData').data('geographicalarea'),
-        showData: $('#indicatorData').data('showdata')
+        data: domData.indicatordata,
+        country: domData.country,
+        indicatorId: domData.indicatorid,
+        chartTitle: domData.charttitle,
+        edgesData: domData.edgesdata,
+        measurementUnit: domData.measurementunit,
+        dataSource: domData.datasource,
+        geographicalArea: domData.geographicalarea,
+        showData: domData.showdata,
+        footnote: domData.footnote,
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
