@@ -75,10 +75,11 @@ header {
       text-decoration: underline; }
     @media only screen and (max-width: 680px) {
       #disclaimer .alert-danger {
-        font-size: 12px; } }
+        font-size: 0.75em; } }
 
 .navbar-brand {
-  display: block; }
+  display: block;
+  padding-right: 0; }
   .navbar-brand img {
     width: 300px; }
 
@@ -104,19 +105,18 @@ header {
   .navbar.navbar-default {
     background: transparent;
     border: none;
-    width: 380px;
     float: right; }
   .navbar .top-level {
     display: none; }
   .navbar #search {
     position: relative;
-    clear: left;
+    clear: both;
     float: right; }
     .navbar #search label {
       position: absolute;
       top: 8px;
       left: 7px;
-      font-size: 20px; }
+      font-size: 1.25em; }
       .navbar #search label span {
         display: none; }
     .navbar #search input {
@@ -146,7 +146,7 @@ header {
       float: none; }
     .navbar .top-level {
       display: block;
-      font-size: 16px;
+      font-size: 1em;
       user-select: none;
       -moz-user-select: none;
       -khtml-user-select: none;
@@ -171,7 +171,7 @@ header {
       display: none;
       clear: left;
       margin: 0;
-      font-size: 15px; }
+      font-size: 0.938em; }
       .navbar ul.navbar-nav li a {
         display: block;
         background: #58595B;
@@ -428,20 +428,20 @@ h5 + .btn-download {
   margin-top: 12px; }
   @media only screen and (max-width: 480px) {
     .heading h2 {
-      font-size: 15px; } }
+      font-size: 0.938em; } }
 @media only screen and (max-width: 480px) {
   .heading h3 {
-    font-size: 13px; } }
+    font-size: 0.813em; } }
 .heading.indicator h2 {
   font-size: 24px; }
   @media only screen and (max-width: 480px) {
     .heading.indicator h2 {
-      font-size: 13px; } }
+      font-size: 0.813em; } }
 .heading.indicator h3 {
   font-size: 30px; }
   @media only screen and (max-width: 480px) {
     .heading.indicator h3 {
-      font-size: 15px; } }
+      font-size: 0.938em; } }
 .heading img {
   max-width: 100%;
   margin-top: 10px; }
@@ -497,7 +497,7 @@ h5 + .btn-download {
     border: 1px solid #ccc;
     text-align: left;
     padding: 10px 7px 14px 7px;
-    font-size: 14px;
+    font-size: 0.875em;
     font-family: 'Open Sans', sans-serif;
     float: left;
     margin-right: 8px; }
@@ -505,7 +505,7 @@ h5 + .btn-download {
       position: absolute;
       top: 11px;
       right: 6px;
-      font-size: 17px; }
+      font-size: 1.063em; }
     #main-content #toolbar button.disabled {
       color: #777;
       background: #ccc; }
@@ -517,7 +517,7 @@ h5 + .btn-download {
     -o-user-select: none;
     float: left;
     padding-bottom: 14px;
-    font-size: 12px; }
+    font-size: 0.75em; }
     #main-content #fields label {
       background-color: #fff;
       padding: 7px;
@@ -549,7 +549,7 @@ h5 + .btn-download {
       position: relative;
       padding-right: 33px; }
       #main-content #fields h5 i {
-        font-size: 14px;
+        font-size: 0.875em;
         position: absolute;
         top: 0;
         right: 6px; }
@@ -602,7 +602,7 @@ h5 + .btn-download {
           text-align: center;
           width: 40%;
           margin: 0;
-          font-size: 12px;
+          font-size: 0.75em;
           padding: inherit;
           border-radius: 2px; }
           #main-content #fields .variable-selector .variable-options button:hover {
@@ -739,7 +739,7 @@ h5 + .btn-download {
       #main-content .details h3 .total {
         line-height: 24px;
         vertical-align: middle;
-        font-size: 13px;
+        font-size: 0.65em;
         width: 110px;
         text-align: center;
         display: inline-block;
