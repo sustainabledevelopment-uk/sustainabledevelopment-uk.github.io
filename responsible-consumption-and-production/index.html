@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -91,10 +96,10 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <img src="/assets/img/goals/12.png" alt="icon for Goal 12" />
+        <img src="/assets/img/goals/12.png" alt=" - Goal " />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
         
         
           
@@ -169,7 +174,7 @@
           
         
         
-        </h2>
+        </h1>
       </div>
     </div>
   </div>
@@ -196,7 +201,7 @@
 
     <div class="indicator-cards row no-gutters">
         <div class="col-md-6 col-lg-3">
-          <a href="/12-1-1"><span>12.1.1<span class="status danger">Exploring data sources</span></span> Number of countries with sustainable consumption and production (SCP) national action plans or SCP mainstreamed as a priority or a target into national policies</a>
+          <a href="/12-1-1"><span>12.1.1<span class="status warning">Statistics in progress</span></span> Number of countries with sustainable consumption and production (SCP) national action plans or SCP mainstreamed as a priority or a target into national policies</a>
         </div>
     
     
@@ -268,7 +273,7 @@
 
     <div class="indicator-cards row no-gutters">
         <div class="col-md-6 col-lg-3">
-          <a href="/12-7-1"><span>12.7.1<span class="status danger">Exploring data sources</span></span> Number of countries implementing sustainable public procurement policies and action plans</a>
+          <a href="/12-7-1"><span>12.7.1<span class="status warning">Statistics in progress</span></span> Number of countries implementing sustainable public procurement policies and action plans</a>
         </div>
     
     
@@ -277,7 +282,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/12-8-1"><span>12.8.1<span class="status danger">Exploring data sources</span></span> Extent to which (i) global citizenship education and (ii) education for sustainable development (including climate change education) are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment</a>
+          <a href="/12-8-1"><span>12.8.1<span class="status warning">Statistics in progress</span></span> Extent to which (i) global citizenship education and (ii) education for sustainable development (including climate change education) are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment</a>
         </div>
     
     
@@ -295,7 +300,7 @@
 
     
         <div class="col-md-6 col-lg-3">
-          <a href="/12-b-1"><span>12.b.1<span class="status danger">Exploring data sources</span></span> Number of sustainable tourism strategies or policies and implemented action plans with agreed monitoring and evaluation tools</a>
+          <a href="/12-b-1"><span>12.b.1<span class="status warning">Statistics in progress</span></span> Number of sustainable tourism strategies or policies and implemented action plans with agreed monitoring and evaluation tools</a>
         </div>
     </div>
     
@@ -308,17 +313,20 @@
         </div>
     
     
-  </div>
+	 	
+		
+			</div>
+		
 </div>
 
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -348,11 +356,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

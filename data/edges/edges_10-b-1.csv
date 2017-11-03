@@ -1,5 +1,5 @@
 From,To
-Aid Sector (DAC 5 Code),Aid Category (DAC 5 Code)
-Aid Sector (DAC 5 Code),Aid Subcategory (DAC 5 Code)
-Aid Sector (DAC 5 Code),Aid Description (CRS Code)
-Recipient Region,Recipient Country
+Aid sector (Development Assistance Committee code),Aid category (Development Assistance Committee code)
+Aid sector (Development Assistance Committee code),Aid subcategory (Development Assistance Committee code)
+Aid sector (Development Assistance Committee code),Aid description (creditor reporting system code)
+Recipient region,Recipient country

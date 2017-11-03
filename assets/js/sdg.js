@@ -1,6 +1,3 @@
-/*! modernizr 3.5.0 (Custom Build) | MIT *
- * https://modernizr.com/download/?-blobconstructor-localstorage-opacity-setclasses !*/
- !function(e,n,t){function o(e,n){return typeof e===n}function s(){var e,n,t,s,a,r,l;for(var f in c)if(c.hasOwnProperty(f)){if(e=[],n=c[f],n.name&&(e.push(n.name.toLowerCase()),n.options&&n.options.aliases&&n.options.aliases.length))for(t=0;t<n.options.aliases.length;t++)e.push(n.options.aliases[t].toLowerCase());for(s=o(n.fn,"function")?n.fn():n.fn,a=0;a<e.length;a++)r=e[a],l=r.split("."),1===l.length?Modernizr[l[0]]=s:(!Modernizr[l[0]]||Modernizr[l[0]]instanceof Boolean||(Modernizr[l[0]]=new Boolean(Modernizr[l[0]])),Modernizr[l[0]][l[1]]=s),i.push((s?"":"no-")+l.join("-"))}}function a(e){var n=f.className,t=Modernizr._config.classPrefix||"";if(u&&(n=n.baseVal),Modernizr._config.enableJSClass){var o=new RegExp("(^|\\s)"+t+"no-js(\\s|$)");n=n.replace(o,"$1"+t+"js$2")}Modernizr._config.enableClasses&&(n+=" "+t+e.join(" "+t),u?f.className.baseVal=n:f.className=n)}function r(){return"function"!=typeof n.createElement?n.createElement(arguments[0]):u?n.createElementNS.call(n,"http://www.w3.org/2000/svg",arguments[0]):n.createElement.apply(n,arguments)}var i=[],c=[],l={_version:"3.5.0",_config:{classPrefix:"",enableClasses:!0,enableJSClass:!0,usePrefixes:!0},_q:[],on:function(e,n){var t=this;setTimeout(function(){n(t[e])},0)},addTest:function(e,n,t){c.push({name:e,fn:n,options:t})},addAsyncTest:function(e){c.push({name:null,fn:e})}},Modernizr=function(){};Modernizr.prototype=l,Modernizr=new Modernizr,Modernizr.addTest("blobconstructor",function(){try{return!!new Blob}catch(e){return!1}},{aliases:["blob-constructor"]}),Modernizr.addTest("localstorage",function(){var e="modernizr";try{return localStorage.setItem(e,e),localStorage.removeItem(e),!0}catch(n){return!1}});var f=n.documentElement,u="svg"===f.nodeName.toLowerCase(),p=l._config.usePrefixes?" -webkit- -moz- -o- -ms- ".split(" "):["",""];l._prefixes=p,Modernizr.addTest("opacity",function(){var e=r("a").style;return e.cssText=p.join("opacity:.55;"),/^0.55$/.test(e.opacity)}),s(),a(i),delete l.addTest,delete l.addAsyncTest;for(var m=0;m<Modernizr._q.length;m++)Modernizr._q[m]();e.Modernizr=Modernizr}(window,document);
 Chart.plugins.register({
   id: 'rescaler',
   beforeInit: function (chart, options) {
@@ -492,9 +489,27 @@ var indicatorModel = function (options) {
     });
 
     if (initial) {
+
+      // order the fields based on the edge data, if any:
+      if(this.edgesData.length) {
+        var orderedEdges = _.chain(this.edgesData)
+          .groupBy('From')
+          .map(function(value, key) { return [key].concat(_.pluck(value, 'To')); })
+          .flatten()
+          .value();
+
+        var customOrder = orderedEdges.concat(_.difference(_.pluck(this.fieldItemStates, 'field'), orderedEdges))
+
+        // now order the fields:
+        this.fieldItemStates = _.sortBy(this.fieldItemStates, function(item) {
+          return customOrder.indexOf(item.field);
+        });
+      }
+
       this.onSeriesComplete.notify({
         series: this.fieldItemStates,
-        allowedFields: this.allowedFields
+        allowedFields: this.allowedFields,
+        edges: this.edgesData
       });
       this.onUnitsComplete.notify({
         units: this.units
@@ -630,7 +645,11 @@ var indicatorView = function (model, options) {
   });
 
   $(this._rootElement).on('click', '#fields label', function (e) {
-    $(this).find(':checkbox').trigger('click');
+
+    if(!$(this).closest('.variable-options').hasClass('disallowed')) {
+      $(this).find(':checkbox').trigger('click');      
+    }
+
     e.preventDefault();
     e.stopPropagation();
   });
@@ -672,10 +691,10 @@ var indicatorView = function (model, options) {
   $(this._rootElement).on('click', ':checkbox', function(e) {
 
     // don't permit excluded selections:
-    if($(this).parent().hasClass('excluded')) {
+    if($(this).parent().hasClass('excluded') || $(this).closest('.variable-selector').hasClass('disallowed')) {
       return;
     }
-
+    
     updateWithSelectedFields();
 
     e.stopPropagation();
@@ -696,14 +715,19 @@ var indicatorView = function (model, options) {
   });
 
   this.initialiseSeries = function (args) {
-    var template = _.template($("#item_template").html());
-
-    $('<button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>').insertBefore('#fields');
-
-    $('#fields').html(template({
-        series: args.series,
-        allowedFields: args.allowedFields
-    }));
+    if(args.series.length) {
+      var template = _.template($("#item_template").html());
+      
+        $('<button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>').insertBefore('#fields');
+    
+        $('#fields').html(template({
+            series: args.series,
+            allowedFields: args.allowedFields,
+            edges: args.edges
+        }));
+    } else {
+      $(this._rootElement).addClass('no-series');
+    }
   };
 
   this.initialiseUnits = function(args) {
@@ -860,6 +884,19 @@ var indicatorView = function (model, options) {
     // loop through chartInfo.
     chartInfo.tables.forEach(function (tableData, index) {
 
+//        if(window.Modernizr && window.Modernizr.blobconstructor) {
+          $(el).append($('<a />').text('Download headline CSV')
+          .attr({
+            'href': URL.createObjectURL(new Blob([that.toCsv(tableData)], {
+              type: 'text/csv'
+            })),
+            'download': chartInfo.indicatorId + tableData.title + '.csv',
+            'title': 'Download as CSV',
+            'class': 'btn btn-primary btn-download'
+          })
+          .data('csvdata', that.toCsv(tableData)));
+//        }
+
       $(el).append($('<h3 />').text(tableData.title));
 
       if (tableData.data.length) {
@@ -888,23 +925,6 @@ var indicatorView = function (model, options) {
           row_html += '</tr>';
           currentTable.find('tbody').append(row_html);
         });
-
-        if(window.Modernizr && window.Modernizr.blobconstructor) {
-          //          $(el).append($('<h5 />').text('Download Headline Data')
-          //            .attr({
-          //              'class': 'download'
-          //            }));
-          $(el).append($('<a />').text('Download Headline Data')
-          .attr({
-            'href': URL.createObjectURL(new Blob([that.toCsv(tableData)], {
-              type: 'text/csv'
-            })),
-            'download': chartInfo.indicatorId + tableData.title + '.csv',
-            'title': 'Download as CSV',
-            'class': 'btn btn-primary btn-download'
-          })
-          .data('csvdata', that.toCsv(tableData)));
-        }
 
         $(el).append(currentTable);
 

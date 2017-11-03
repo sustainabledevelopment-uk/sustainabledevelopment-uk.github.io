@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/clean-water-and-sanitation" title="View this goal's indicator list">
-          <img src="/assets/img/goals/6.png" alt="icon for Goal 6" />
+          <img src="/assets/img/goals/6.png" alt="Clean water and sanitation - Goal 6" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/clean-water-and-sanitation">
             <span class="hidden-sm hidden-md hidden-lg">Goal 6: </span>Ensure availability and sustainable management of water and sanitation for all
           </a>
-        </h2>
-        <h3>Indicator 6.3.2: Proportion of bodies of water with good ambient water quality</h3>
+        </h1>
+        <h2>Indicator 6.3.2: Proportion of bodies of water with good ambient water quality</h2>
       </div>
     </div>
   </div>
@@ -163,11 +176,11 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2008","Water body type":"Rivers and canals","Value":"32.24476148"},{"Year":"2008","Water body type":"Lakes","Value":"42.98724954"},{"Year":"2008","Water body type":"Estuaries and Coastal","Value":"70.07874016"},{"Year":"2009","Water body type":null,"Value":"35.99519941"},{"Year":"2009","Water body type":"Rivers and canals","Value":"32.20262833"},{"Year":"2009","Water body type":"Lakes","Value":"43.15693431"},{"Year":"2009","Water body type":"Estuaries and Coastal","Value":"72.70341207"},{"Year":"2010","Water body type":null,"Value":"36.18622805"},{"Year":"2010","Water body type":"Rivers and canals","Value":"32.73195876"},{"Year":"2010","Water body type":"Lakes","Value":"43.15693431"},{"Year":"2010","Water body type":"Estuaries and Coastal","Value":"73.49081365"},{"Year":"2011","Water body type":null,"Value":"36.6722315"},{"Year":"2011","Water body type":"Rivers and canals","Value":"33.03187882"},{"Year":"2011","Water body type":"Lakes","Value":"37.8649635"},{"Year":"2011","Water body type":"Estuaries and Coastal","Value":"74.54068241"},{"Year":"2012","Water body type":null,"Value":"36.48168909"},{"Year":"2012","Water body type":"Rivers and canals","Value":"33.20606401"},{"Year":"2012","Water body type":"Lakes","Value":"37.55697356"},{"Year":"2012","Water body type":"Estuaries and Coastal","Value":"74.77003942"},{"Year":"2013","Water body type":null,"Value":"36.58831181"},{"Year":"2013","Water body type":"Rivers and canals","Value":"31.65777828"},{"Year":"2013","Water body type":"Lakes","Value":"38.01276208"},{"Year":"2013","Water body type":"Estuaries and Coastal","Value":"74.77003942"},{"Year":"2014","Water body type":null,"Value":"34.72543754"},{"Year":"2014","Water body type":"Rivers and canals","Value":"30.9361369"},{"Year":"2014","Water body type":"Lakes","Value":"37.83044667"},{"Year":"2014","Water body type":"Estuaries and Coastal","Value":"74.77003942"},{"Year":"2015","Water body type":null,"Value":"35.16716447"},{"Year":"2015","Water body type":"Rivers and canals","Value":"22.63286999"},{"Year":"2015","Water body type":"Lakes","Value":"24.5751634"},{"Year":"2015","Water body type":"Estuaries and Coastal","Value":"29.36507937"},{"Year":"2016","Water body type":null,"Value":"34.94675702"},{"Year":"2016","Water body type":"Rivers and canals","Value":"31.60358433"},{"Year":"2016","Water body type":"Lakes","Value":"30.80524345"},{"Year":"2016","Water body type":"Estuaries and Coastal","Value":"74.86702128"}]' data-indicatorid='indicator_6-3-2' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Percentage of UK surface water bodies awarded ‘Good’ or ‘High’, by water body type, under the Water Framework Directive." data-measurementunit="Percentage" data-datasource="Defra" data-geographicalarea="United Kingdom" data-showdata="true">
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2008","Water body type":"Rivers and canals","Value":"32.24476148"},{"Year":"2008","Water body type":"Lakes","Value":"42.98724954"},{"Year":"2008","Water body type":"Estuaries and coastal","Value":"70.07874016"},{"Year":"2009","Water body type":null,"Value":"35.99519941"},{"Year":"2009","Water body type":"Rivers and canals","Value":"32.20262833"},{"Year":"2009","Water body type":"Lakes","Value":"43.15693431"},{"Year":"2009","Water body type":"Estuaries and coastal","Value":"72.70341207"},{"Year":"2010","Water body type":null,"Value":"36.18622805"},{"Year":"2010","Water body type":"Rivers and canals","Value":"32.73195876"},{"Year":"2010","Water body type":"Lakes","Value":"43.15693431"},{"Year":"2010","Water body type":"Estuaries and coastal","Value":"73.49081365"},{"Year":"2011","Water body type":null,"Value":"36.6722315"},{"Year":"2011","Water body type":"Rivers and canals","Value":"33.03187882"},{"Year":"2011","Water body type":"Lakes","Value":"37.8649635"},{"Year":"2011","Water body type":"Estuaries and coastal","Value":"74.54068241"},{"Year":"2012","Water body type":null,"Value":"36.48168909"},{"Year":"2012","Water body type":"Rivers and canals","Value":"33.20606401"},{"Year":"2012","Water body type":"Lakes","Value":"37.55697356"},{"Year":"2012","Water body type":"Estuaries and coastal","Value":"74.77003942"},{"Year":"2013","Water body type":null,"Value":"36.58831181"},{"Year":"2013","Water body type":"Rivers and canals","Value":"31.65777828"},{"Year":"2013","Water body type":"Lakes","Value":"38.01276208"},{"Year":"2013","Water body type":"Estuaries and coastal","Value":"74.77003942"},{"Year":"2014","Water body type":null,"Value":"34.72543754"},{"Year":"2014","Water body type":"Rivers and canals","Value":"30.9361369"},{"Year":"2014","Water body type":"Lakes","Value":"37.83044667"},{"Year":"2014","Water body type":"Estuaries and coastal","Value":"74.77003942"},{"Year":"2015","Water body type":null,"Value":"35.16716447"},{"Year":"2015","Water body type":"Rivers and canals","Value":"22.63286999"},{"Year":"2015","Water body type":"Lakes","Value":"24.5751634"},{"Year":"2015","Water body type":"Estuaries and coastal","Value":"29.36507937"},{"Year":"2016","Water body type":null,"Value":"34.94675702"},{"Year":"2016","Water body type":"Rivers and canals","Value":"31.60358433"},{"Year":"2016","Water body type":"Lakes","Value":"30.80524345"},{"Year":"2016","Water body type":"Estuaries and coastal","Value":"74.86702128"}]' data-indicatorid='indicator_6-3-2' data-country="UK"
+  data-edgesdata='[]' data-charttitle="Percentage of water bodies awarded ‘Good’ or ‘High' under the Water Framework Directive" data-measurementunit="Percentage (%)" data-datasource="Joint Nature Conservation Committee (JNCC)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -221,18 +234,18 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Percentage of UK surface water bodies awarded ‘Good’ or ‘High’, by water body type, under the Water Framework Directive.</h3>
+                <h3>Percentage of water bodies awarded ‘Good’ or ‘High' under the Water Framework Directive</h3>
               
-              <p>Unit of Measurement: Percentage</p>     
-              <a href="/data/indicator_6-3-2.csv" class="btn btn-primary btn-download" download='indicator_6-3-2.csv'>Download source CSV</a>
+              <p>Unit of Measurement: Percentage (%)</p>     
+              <a href="/data/indicator_6-3-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_6-3-2.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_6-3-2.csv' class='btn btn-primary btn-download' download='indicator_6-3-2.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_6-3-2.csv" class="btn btn-primary btn-download" download='indicator_6-3-2.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -310,11 +323,12 @@
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -360,7 +374,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Percentage of UK surface water bodies awarded ‘Good’ or ‘High’, by water body type, under the Water Framework Directive.
+            Percentage of UK surface water bodies awarded ‘Good’ or ‘High’, by water body type, under the Water Framework Directive
           
         </td>
         </tr>
@@ -386,7 +400,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -661,7 +675,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            Percentage
+            Percentage (%)
           
         </td>
         </tr>
@@ -829,7 +843,7 @@
         <th scope="row">Indicator Name </th>
         <td>
           
-            Proportion of water bodies (area) in a country with good ambient water quality compared to all water bodies in the country.
+            Proportion of water bodies (area) in a country with good ambient water quality compared to all water bodies in the country
           
         </td>
         </tr>
@@ -881,7 +895,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            Proportion of water bodies (area) in a country with good ambient water quality compared to all water bodies in the country. 'Good' indicates an ambient water quality that does not damage ecosystem function and human health according to core ambient water quality indicators. Concept: Water quality is estimated based on a core set of five determinands that inform on major water quality impairments present in many parts of the world: total dissolved solids (TDS); percentage dissolved oxygen (% DO); dissolved inorganic nitrogen (DIN); dissolved inorganic phosphorus (DIP); and Escherichia coli (E. coli). As monitoring capacities and coverage vary between countries, a monitoring ladder is proposed. On the first rung, the number of determinands not meeting national water quality guidelines based on the existing monitoring sites are used to estimate the water quality. On the second rung, a water quality index is used to combine the determinand values in a statistically more robust manner, and the monitoring coverage increased. On consecutive rungs, the monitoring coverage can be step-wise increased and complementary determinands covering additional aspects of ambient water quality can be included depending on the national capacities and requirements enabling the indicator to inform on the status of ambient water quality in a more comprehensive way.
+            
           
         </td>
         </tr>
@@ -907,7 +921,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            UNEP (GEMS/Water)
+            United Nations Environment Programme (UNEP)
           
         </td>
         </tr>
@@ -933,7 +947,7 @@
         <th scope="row">UNSD Indicator Code </th>
         <td>
           
-            C060302
+            
           
         </td>
         </tr>
@@ -1188,7 +1202,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            Defra
+            Joint Nature Conservation Committee (JNCC)
           
         </td>
         </tr>
@@ -1201,7 +1215,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -1247,7 +1261,7 @@
 
             
               <a href="http://jncc.defra.gov.uk/page-4250-theme=default">
-                Joint Nature Conservation Committee (B7. Surface water status)
+                Surface water status
               </a>
             
             
@@ -1267,7 +1281,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            2017-08-01
+            01-08-2017
           
         </td>
         </tr>
@@ -1410,10 +1424,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1443,11 +1457,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

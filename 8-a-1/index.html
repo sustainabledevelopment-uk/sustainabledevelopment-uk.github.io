@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/decent-jobs-and-economic-growth" title="View this goal's indicator list">
-          <img src="/assets/img/goals/8.png" alt="icon for Goal 8" />
+          <img src="/assets/img/goals/8.png" alt="Decent jobs and economic growth - Goal 8" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/decent-jobs-and-economic-growth">
             <span class="hidden-sm hidden-md hidden-lg">Goal 8: </span>Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all
           </a>
-        </h2>
-        <h3>Indicator 8.a.1: Aid for Trade commitments and disbursements</h3>
+        </h1>
+        <h2>Indicator 8.a.1: Aid for Trade commitments and disbursements</h2>
       </div>
     </div>
   </div>
@@ -164,10 +177,10 @@
 </ol>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2009","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":null,"Value":"47321.46"},{"Year":"2009","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"32947.61"},{"Year":"2009","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"2942.29"},{"Year":"2009","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"10128.86"},{"Year":"2009","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"884.02"},{"Year":"2009","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"0"},{"Year":"2009","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"418.68"},{"Year":"2010","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":null,"Value":"169865.2489"},{"Year":"2010","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"51689.48545"},{"Year":"2010","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"97446.01612"},{"Year":"2010","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"10918.40829"},{"Year":"2010","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"1534.026646"},{"Year":"2010","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"7292.431121"},{"Year":"2010","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"984.8812682"},{"Year":"2010","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":null,"Value":"134969.9537"},{"Year":"2010","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"38440.01464"},{"Year":"2010","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"86682.34385"},{"Year":"2010","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"9180.79395"},{"Year":"2010","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"318.29261"},{"Year":"2010","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"0"},{"Year":"2010","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"348.50865"},{"Year":"2010","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":null,"Value":"34895.2952"},{"Year":"2010","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"13249.47081"},{"Year":"2010","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"10763.67227"},{"Year":"2010","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"1737.614345"},{"Year":"2010","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"1215.734036"},{"Year":"2010","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"7292.431121"},{"Year":"2010","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"636.3726182"},{"Year":"2011","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":null,"Value":"71552.95062"},{"Year":"2011","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"30533.27585"},{"Year":"2011","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"32160.46205"},{"Year":"2011","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"6013.228673"},{"Year":"2011","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"981.8124684"},{"Year":"2011","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"857.7072955"},{"Year":"2011","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"1006.464272"},{"Year":"2011","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":null,"Value":"45952.71384"},{"Year":"2011","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"20773.91915"},{"Year":"2011","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"22153.99873"},{"Year":"2011","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"2290.92942"},{"Year":"2011","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"52.106769"},{"Year":"2011","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"0"},{"Year":"2011","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"681.759776"},{"Year":"2011","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":null,"Value":"25600.23677"},{"Year":"2011","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"9759.356707"},{"Year":"2011","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"10006.46332"},{"Year":"2011","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"3722.299253"},{"Year":"2011","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"929.7056994"},{"Year":"2011","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"857.7072955"},{"Year":"2011","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"324.7044955"},{"Year":"2012","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":null,"Value":"63305.52158"},{"Year":"2012","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"29235.24154"},{"Year":"2012","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"27580.22827"},{"Year":"2012","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"4132.900565"},{"Year":"2012","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"1695.796143"},{"Year":"2012","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"310.759272"},{"Year":"2012","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"350.5957925"},{"Year":"2012","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":null,"Value":"45473.59417"},{"Year":"2012","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"24051.71187"},{"Year":"2012","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"20240.37988"},{"Year":"2012","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"78.71998"},{"Year":"2012","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"906.430051"},{"Year":"2012","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"0"},{"Year":"2012","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"196.352395"},{"Year":"2012","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":null,"Value":"17831.92741"},{"Year":"2012","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"5183.529674"},{"Year":"2012","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"7339.848394"},{"Year":"2012","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"4054.180585"},{"Year":"2012","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"789.3660915"},{"Year":"2012","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"310.759272"},{"Year":"2012","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"154.2433975"},{"Year":"2013","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":null,"Value":"95959.45937"},{"Year":"2013","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"33730.0947"},{"Year":"2013","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"48273.79092"},{"Year":"2013","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"9661.073923"},{"Year":"2013","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"3030.96598"},{"Year":"2013","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"959.5346314"},{"Year":"2013","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"303.9992104"},{"Year":"2013","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":null,"Value":"61873.58992"},{"Year":"2013","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"26943.67732"},{"Year":"2013","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"32171.66628"},{"Year":"2013","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"95.08293"},{"Year":"2013","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"2592.56476"},{"Year":"2013","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"0"},{"Year":"2013","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"70.59863"},{"Year":"2013","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":null,"Value":"34085.86945"},{"Year":"2013","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"6786.417384"},{"Year":"2013","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"16102.12464"},{"Year":"2013","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"9565.990993"},{"Year":"2013","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"438.4012199"},{"Year":"2013","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"959.5346314"},{"Year":"2013","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"233.4005804"},{"Year":"2014","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":null,"Value":"45310.4493"},{"Year":"2014","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"29309.77922"},{"Year":"2014","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"2241.884541"},{"Year":"2014","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"7180.855482"},{"Year":"2014","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"4195.086423"},{"Year":"2014","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"1756.041796"},{"Year":"2014","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"626.801837"},{"Year":"2014","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":null,"Value":"15207.13681"},{"Year":"2014","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"21519.62264"},{"Year":"2014","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"-12320.38517"},{"Year":"2014","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"1407.84134"},{"Year":"2014","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"4106.13378"},{"Year":"2014","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"0"},{"Year":"2014","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"493.92422"},{"Year":"2014","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":null,"Value":"30103.31249"},{"Year":"2014","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"7790.156579"},{"Year":"2014","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"14562.26972"},{"Year":"2014","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"5773.014142"},{"Year":"2014","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"88.95264325"},{"Year":"2014","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"1756.041796"},{"Year":"2014","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"132.877617"},{"Year":"2015","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":null,"Value":"81993.2527"},{"Year":"2015","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"29319.03529"},{"Year":"2015","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"37689.38865"},{"Year":"2015","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"6493.482302"},{"Year":"2015","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"4424.834782"},{"Year":"2015","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"999.0414359"},{"Year":"2015","Flow of Overseas Development Assistance":null,"Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"3067.470239"},{"Year":"2015","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":null,"Value":"53730.41791"},{"Year":"2015","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"21329.44583"},{"Year":"2015","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"22113.35671"},{"Year":"2015","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"3183.26988"},{"Year":"2015","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"4076.67504"},{"Year":"2015","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"0"},{"Year":"2015","Flow of Overseas Development Assistance":"Bilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"3027.67045"},{"Year":"2015","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":null,"Value":"28262.83479"},{"Year":"2015","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade policy and administrative Management (33110)","Value":"7989.589458"},{"Year":"2015","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade facilitation (33120)","Value":"15576.03194"},{"Year":"2015","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Regional trade agreements (RTAs) (33130)","Value":"3310.212422"},{"Year":"2015","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Multilateral trade negotiations (33140)","Value":"348.159742"},{"Year":"2015","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade-related adjustment (33150)","Value":"999.0414359"},{"Year":"2015","Flow of Overseas Development Assistance":"Multilateral","Aid Descrition (CRS Code)":"Trade education/training (33181)","Value":"39.79978937"}]' data-indicatorid='indicator_8-a-1' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Aid for Trade commitments and disbursements (£000s)" data-measurementunit="£000s" data-datasource="Department for International Development" data-geographicalarea="UK" data-showdata="true">
+  data-edgesdata='[]' data-charttitle="Aid for Trade commitments and disbursements (£000s)" data-measurementunit="GBP (£000s)" data-datasource="Department for International Development (DFID)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -223,16 +236,16 @@
               
                 <h3>Aid for Trade commitments and disbursements (£000s)</h3>
               
-              <p>Unit of Measurement: £000s</p>     
-              <a href="/data/indicator_8-a-1.csv" class="btn btn-primary btn-download" download='indicator_8-a-1.csv'>Download source CSV</a>
+              <p>Unit of Measurement: GBP (£000s)</p>     
+              <a href="/data/indicator_8-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_8-a-1.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_8-a-1.csv' class='btn btn-primary btn-download' download='indicator_8-a-1.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_8-a-1.csv" class="btn btn-primary btn-download" download='indicator_8-a-1.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -294,11 +307,12 @@
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -344,7 +358,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Aid for Trade commitments and disbursements (£000s)
+            Aid for trade commitments and disbursements
           
         </td>
         </tr>
@@ -396,7 +410,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            UK
+            United Kingdom
           
         </td>
         </tr>
@@ -645,7 +659,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            £000s
+            GBP (£000s)
           
         </td>
         </tr>
@@ -697,9 +711,7 @@
         <th scope="row">Definitions </th>
         <td>
           
-            The DAC defines Official Development Assistance (ODA) as “those flows to countries and territories on the DAC List of ODA Recipients and to multilateral institutions which are i) provided by official agencies, including state and local governments, or by their executive agencies; and ii) each transaction is administered with the promotion of the economic development and welfare of developing countries as its main objective; and is concessional in character and conveys a grant element of at least 25 per cent (calculated at a rate of discount of 10 per cent). See http://www.oecd.org/dac/stats/officialdevelopmentassistancedefinitionandcoverage.htm
-Other official flows (OOF),excluding officially supported export credits, are defined as transactions by the official sector which do not meet the conditions for eligibility as ODA, either because they are not primarily aimed at development, or because they are not sufficiently concessional. See http://www.oecd.org/dac/stats/documentupload/DCDDAC(2016)3FINAL.pdf, Para 24.
-Aid for Trade is captured in the CRS through sector codes in the 331 series and the aid for trade marker. see here: http://www.oecd.org/dac/stats/purposecodessectorclassification.htm. ‘All donors’ refers to DAC donors, non-DAC donors and multilateral organisations.
+            
           
         </td>
         </tr>
@@ -867,7 +879,7 @@ Aid for Trade is captured in the CRS through sector codes in the 331 series and 
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            Total official development assistance (ODA) commitments and disbursements that support aid for trade. Data expressed in UK millions of dollars.
+            
           
         </td>
         </tr>
@@ -952,7 +964,7 @@ Aid for Trade is captured in the CRS through sector codes in the 331 series and 
 
             
               <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-08-0A-01.pdf">
-                UN Sustainable Development Goals Indicator Metadata 08-OA-01
+                United Nations Sustainable Development Goals Metadata: 8.a.1
               </a>
             
             
@@ -1174,7 +1186,7 @@ Aid for Trade is captured in the CRS through sector codes in the 331 series and 
         <th scope="row">Organisation </th>
         <td>
           
-            Department for International Development
+            Department for International Development (DFID)
           
         </td>
         </tr>
@@ -1279,7 +1291,7 @@ Aid for Trade is captured in the CRS through sector codes in the 331 series and 
         <th scope="row">Statistical Classification </th>
         <td>
           
-            National Statistic
+            
           
         </td>
         </tr>
@@ -1292,7 +1304,7 @@ Aid for Trade is captured in the CRS through sector codes in the 331 series and 
         <th scope="row">Contact Details </th>
         <td>
           
-            statistics@dfid.gsx.gov.uk 
+            
           
         </td>
         </tr>
@@ -1396,10 +1408,10 @@ Aid for Trade is captured in the CRS through sector codes in the 331 series and 
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1429,11 +1441,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

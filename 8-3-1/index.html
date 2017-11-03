@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/decent-jobs-and-economic-growth" title="View this goal's indicator list">
-          <img src="/assets/img/goals/8.png" alt="icon for Goal 8" />
+          <img src="/assets/img/goals/8.png" alt="Decent jobs and economic growth - Goal 8" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/decent-jobs-and-economic-growth">
             <span class="hidden-sm hidden-md hidden-lg">Goal 8: </span>Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all
           </a>
-        </h2>
-        <h3>Indicator 8.3.1: Proportion of informal employment in non‑agriculture employment, by sex</h3>
+        </h1>
+        <h2>Indicator 8.3.1: Proportion of informal employment in non‑agriculture employment, by sex</h2>
       </div>
     </div>
   </div>
@@ -164,10 +177,10 @@
 </ol>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Sex":null,"Value":"98.79878354"},{"Year":"2000","Sex":"Male","Value":"98.36943286"},{"Year":"2000","Sex":"Female","Value":"99.3079914"},{"Year":"2001","Sex":null,"Value":"98.9155769"},{"Year":"2001","Sex":"Male","Value":"98.54036892"},{"Year":"2001","Sex":"Female","Value":"99.36008175"},{"Year":"2002","Sex":null,"Value":"99.02199372"},{"Year":"2002","Sex":"Male","Value":"98.66530911"},{"Year":"2002","Sex":"Female","Value":"99.44171403"},{"Year":"2003","Sex":null,"Value":"99.04331161"},{"Year":"2003","Sex":"Male","Value":"98.66390543"},{"Year":"2003","Sex":"Female","Value":"99.49068483"},{"Year":"2004","Sex":null,"Value":"99.06319955"},{"Year":"2004","Sex":"Male","Value":"98.7105753"},{"Year":"2004","Sex":"Female","Value":"99.47745916"},{"Year":"2005","Sex":null,"Value":"99.00970322"},{"Year":"2005","Sex":"Male","Value":"98.67468751"},{"Year":"2005","Sex":"Female","Value":"99.40135191"},{"Year":"2006","Sex":null,"Value":"99.02483518"},{"Year":"2006","Sex":"Male","Value":"98.66410324"},{"Year":"2006","Sex":"Female","Value":"99.44553879"},{"Year":"2007","Sex":null,"Value":"98.98995298"},{"Year":"2007","Sex":"Male","Value":"98.68396106"},{"Year":"2007","Sex":"Female","Value":"99.3488219"},{"Year":"2008","Sex":null,"Value":"98.92432198"},{"Year":"2008","Sex":"Male","Value":"98.61845353"},{"Year":"2008","Sex":"Female","Value":"99.2810301"},{"Year":"2009","Sex":null,"Value":"98.89798451"},{"Year":"2009","Sex":"Male","Value":"98.4139999"},{"Year":"2010","Sex":"Female","Value":"99.45000448"},{"Year":"2010","Sex":null,"Value":"98.79151859"},{"Year":"2010","Sex":"Male","Value":"98.26356172"},{"Year":"2010","Sex":"Female","Value":"99.39412511"},{"Year":"2011","Sex":null,"Value":"98.78705169"},{"Year":"2011","Sex":"Male","Value":"98.30021087"},{"Year":"2011","Sex":"Female","Value":"99.34299754"},{"Year":"2012","Sex":null,"Value":"98.82257285"},{"Year":"2012","Sex":"Male","Value":"98.3941591"},{"Year":"2012","Sex":"Female","Value":"99.31343973"},{"Year":"2013","Sex":null,"Value":"98.95360176"},{"Year":"2013","Sex":"Male","Value":"98.55822111"},{"Year":"2013","Sex":"Female","Value":"99.40386403"},{"Year":"2014","Sex":null,"Value":"98.75293518"},{"Year":"2014","Sex":"Male","Value":"98.27825579"},{"Year":"2014","Sex":"Female","Value":"99.29251685"},{"Year":"2015","Sex":null,"Value":"98.86638431"},{"Year":"2015","Sex":"Male","Value":"98.43422535"},{"Year":"2015","Sex":"Female","Value":"99.35835049"},{"Year":"2016","Sex":null,"Value":"98.88334398"},{"Year":"2016","Sex":"Male","Value":"98.44915775"},{"Year":"2016","Sex":"Female","Value":"99.37728404"}]' data-indicatorid='indicator_8-3-1' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Percentage of people not employed in agriculture, forestry or fishing" data-measurementunit="Percentage (%)" data-datasource="Office of National Statistics" data-geographicalarea="United Kingdom" data-showdata="true">
+  data-edgesdata='[]' data-charttitle="Percentage of people not employed in agriculture, forestry or fishing" data-measurementunit="Percentage (%)" data-datasource="Office of National Statistics" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -224,15 +237,15 @@
                 <h3>Percentage of people not employed in agriculture, forestry or fishing</h3>
               
               <p>Unit of Measurement: Percentage (%)</p>     
-              <a href="/data/indicator_8-3-1.csv" class="btn btn-primary btn-download" download='indicator_8-3-1.csv'>Download source CSV</a>
+              <a href="/data/indicator_8-3-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_8-3-1.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_8-3-1.csv' class='btn btn-primary btn-download' download='indicator_8-3-1.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_8-3-1.csv" class="btn btn-primary btn-download" download='indicator_8-3-1.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -382,11 +395,12 @@
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -1482,10 +1496,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1515,11 +1529,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

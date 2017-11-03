@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/good-health-and-well-being" title="View this goal's indicator list">
-          <img src="/assets/img/goals/3.png" alt="icon for Goal 3" />
+          <img src="/assets/img/goals/3.png" alt="Good Health and Well-being - Goal 3" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/good-health-and-well-being">
             <span class="hidden-sm hidden-md hidden-lg">Goal 3: </span>Ensure healthy lives and promote well-being for all at all ages
           </a>
-        </h2>
-        <h3>Indicator 3.b.2: Total net official development assistance to medical research and basic health sectors</h3>
+        </h1>
+        <h2>Indicator 3.b.2: Total net official development assistance to medical research and basic health sectors</h2>
       </div>
     </div>
   </div>
@@ -163,11 +176,11 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"273706.16"},{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"20989.18"},{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"252716.98"},{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"58976.49"},{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"0"},{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"12419.67"},{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"118305.99"},{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"666.58"},{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"42243.5"},{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"18346.57"},{"Year":"2009","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"1758.18"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"557366.9698"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"56221.50573"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"501145.464"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"119110.0385"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"2654.219109"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"29889.85632"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"80565.20262"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"2049.219646"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"187590.0476"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"73588.91329"},{"Year":"2010","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"5697.967002"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"324857.4027"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"55607.68739"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"269249.7153"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"64840.53884"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"0"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"24688.3754"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"63523.59023"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"709.729"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"90481.61482"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"21407.73111"},{"Year":"2010","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"3598.13591"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"232509.5671"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"613.8183407"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"231895.7487"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"54269.49962"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"2654.219109"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"5201.480919"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"17041.61239"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"1339.490646"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"97108.43277"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"52181.18218"},{"Year":"2010","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"2099.831092"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"706506.8969"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"68483.1629"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"638023.734"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"225271.3278"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"6941.348811"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"37409.70421"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"187033.5562"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"3904.384996"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"126915.3782"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"47049.15513"},{"Year":"2011","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"3498.878674"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"490791.7551"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"67975.67052"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"422816.0846"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"138703.3964"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"4002.99916"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"28402.90591"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"157545.3229"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"1947.94"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"75657.77398"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"14601.9035"},{"Year":"2011","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"1953.8427"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"215715.1418"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"507.4923797"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"215207.6494"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"86567.93133"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"2938.349651"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"9006.798302"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"29488.23334"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"1956.444996"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"51257.6042"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"32447.25163"},{"Year":"2011","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"1545.035974"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"799361.742"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"84163.13544"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"715198.6066"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"348535.5481"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"2119.189607"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"46763.08645"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"133273.4687"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"18519.68419"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"135057.8024"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"26918.53546"},{"Year":"2012","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"4011.291713"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"557455.1557"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"83954.07367"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"473501.082"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"203576.2414"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"0"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"40390.09455"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"111346.5383"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"16836.427"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"92566.90632"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"6876"},{"Year":"2012","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"1908.87446"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"241906.5864"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"209.0617706"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"241697.5246"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"144959.3067"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"2119.189607"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"6372.991901"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"21926.93041"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"1683.257186"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"42490.89609"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"20042.53546"},{"Year":"2012","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"2102.417253"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"1450685.608"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"78140.60966"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"1372544.998"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"528294.708"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"7240.71025"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"79054.22616"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"278341.7043"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"29870.26492"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"325694.2606"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"120678.7079"},{"Year":"2013","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"3370.41638"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"817519.8378"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"77971.6937"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"739548.1441"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"231259.3714"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"0"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"66711.63067"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"224005.8562"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"27758.31464"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"175888.7767"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"11747.8639"},{"Year":"2013","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"2176.33061"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"633165.7703"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"168.9159554"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"632996.8544"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"297035.3367"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"7240.71025"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"12342.5955"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"54335.84802"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"2111.950275"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"149805.4839"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"108930.844"},{"Year":"2013","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"1194.08577"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"1154229.863"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"67495.02564"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"1086734.838"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"495019.782"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"6107.567305"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"78094.47363"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"160423.6289"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"29131.92475"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"243177.5118"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"66424.03555"},{"Year":"2014","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"8355.913676"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"652950.0299"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"65927.24054"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"587022.7893"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"213535.5422"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"0"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"56217.93983"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"110386.616"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"26897.41192"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"152460.4986"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"21255.74676"},{"Year":"2014","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"6269.03408"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"501279.8335"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"1567.785108"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"499712.0484"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"281484.2398"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"6107.567305"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"21876.53379"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"50037.01298"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"2234.512833"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"90717.01328"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"45168.28879"},{"Year":"2014","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"2086.879596"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"960912.2836"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"87302.2315"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"873610.0521"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"407953.6882"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"5604.820468"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"88260.72278"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"209459.9303"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"6660.457294"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"118435.9421"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"30468.13412"},{"Year":"2015","Flow of Official Development Assistance":null,"Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"6766.356912"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"525954.938"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"85626.42072"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"440328.5173"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"140931.6606"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"7.953"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"69424.44412"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"119103.0491"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"4513.6095"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"88027.33172"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"14232.01489"},{"Year":"2015","Flow of Official Development Assistance":"Bilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"4088.45425"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":null,"Aid Description (CRS Code)":null,"Value":"434957.3456"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Health, General (121)","Aid Description (CRS Code)":"Medical research (12182)","Value":"1675.810783"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":null,"Value":"433281.5348"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health care (12220)","Value":"267022.0275"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic health infrastructure (12230)","Value":"5596.867468"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Basic nutrition (12240)","Value":"18836.27866"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Infectious disease control (12250)","Value":"90356.88115"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health education (12261)","Value":"2146.847794"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Malaria control (12262)","Value":"30408.61035"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Tuberculosis control (12263)","Value":"16236.11923"},{"Year":"2015","Flow of Official Development Assistance":"Multilateral","Aid Broad Category Description (DAC 5 Code)":"Basic health (122)","Aid Description (CRS Code)":"Health personnel development (12281)","Value":"2677.902662"}]' data-indicatorid='indicator_3-b-2' data-country="UK"
-  data-edgesdata='[{"From":"Aid Broad Category Description (DAC 5 Code)","To":"Aid Description (CRS Code)"}]' data-charttitle="Net Official Development Assistance (ODA) to medical research and basic health sectors £ 000’s" data-measurementunit="GBP (£000s) " data-datasource="Department for International Development" data-geographicalarea="United Kingdom" data-showdata="true">
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"273706.16"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"20989.18"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"252716.98"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"58976.49"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"0"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"12419.67"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"118305.99"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"666.58"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"42243.5"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"18346.57"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"1758.18"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"557366.9698"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"56221.50573"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"501145.464"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"119110.0385"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"2654.219109"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"29889.85632"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"80565.20262"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"2049.219646"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"187590.0476"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"73588.91329"},{"Year":"2010","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"5697.967002"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"324857.4027"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"55607.68739"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"269249.7153"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"64840.53884"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"24688.3754"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"63523.59023"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"709.729"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"90481.61482"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"21407.73111"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"3598.13591"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"232509.5671"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"613.8183407"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"231895.7487"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"54269.49962"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"2654.219109"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"5201.480919"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"17041.61239"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"1339.490646"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"97108.43277"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"52181.18218"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"2099.831092"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"706506.8969"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"68483.1629"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"638023.734"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"225271.3278"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"6941.348811"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"37409.70421"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"187033.5562"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"3904.384996"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"126915.3782"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"47049.15513"},{"Year":"2011","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"3498.878674"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"490791.7551"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"67975.67052"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"422816.0846"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"138703.3964"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"4002.99916"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"28402.90591"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"157545.3229"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"1947.94"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"75657.77398"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"14601.9035"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"1953.8427"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"215715.1418"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"507.4923797"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"215207.6494"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"86567.93133"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"2938.349651"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"9006.798302"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"29488.23334"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"1956.444996"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"51257.6042"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"32447.25163"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"1545.035974"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"799361.742"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"84163.13544"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"715198.6066"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"348535.5481"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"2119.189607"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"46763.08645"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"133273.4687"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"18519.68419"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"135057.8024"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"26918.53546"},{"Year":"2012","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"4011.291713"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"557455.1557"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"83954.07367"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"473501.082"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"203576.2414"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"0"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"40390.09455"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"111346.5383"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"16836.427"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"92566.90632"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"6876"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"1908.87446"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"241906.5864"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"209.0617706"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"241697.5246"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"144959.3067"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"2119.189607"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"6372.991901"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"21926.93041"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"1683.257186"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"42490.89609"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"20042.53546"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"2102.417253"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"1450685.608"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"78140.60966"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"1372544.998"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"528294.708"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"7240.71025"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"79054.22616"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"278341.7043"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"29870.26492"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"325694.2606"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"120678.7079"},{"Year":"2013","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"3370.41638"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"817519.8378"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"77971.6937"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"739548.1441"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"231259.3714"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"0"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"66711.63067"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"224005.8562"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"27758.31464"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"175888.7767"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"11747.8639"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"2176.33061"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"633165.7703"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"168.9159554"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"632996.8544"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"297035.3367"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"7240.71025"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"12342.5955"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"54335.84802"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"2111.950275"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"149805.4839"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"108930.844"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"1194.08577"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"1154229.863"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"67495.02564"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"1086734.838"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"495019.782"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"6107.567305"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"78094.47363"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"160423.6289"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"29131.92475"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"243177.5118"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"66424.03555"},{"Year":"2014","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"8355.913676"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"652950.0299"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"65927.24054"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"587022.7893"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"213535.5422"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"0"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"56217.93983"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"110386.616"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"26897.41192"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"152460.4986"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"21255.74676"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"6269.03408"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"501279.8335"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"1567.785108"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"499712.0484"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"281484.2398"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"6107.567305"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"21876.53379"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"50037.01298"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"2234.512833"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"90717.01328"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"45168.28879"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"2086.879596"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"960912.2836"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"87302.2315"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"873610.0521"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"407953.6882"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"5604.820468"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"88260.72278"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"209459.9303"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"6660.457294"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"118435.9421"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"30468.13412"},{"Year":"2015","Flow of official development assistance":null,"Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"6766.356912"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"525954.938"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"85626.42072"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"440328.5173"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"140931.6606"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"7.953"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"69424.44412"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"119103.0491"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"4513.6095"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"88027.33172"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"14232.01489"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"4088.45425"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":null,"Aid description (CRS code)":null,"Value":"434957.3456"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"General health (121)","Aid description (CRS code)":"Medical research (12182)","Value":"1675.810783"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":null,"Value":"433281.5348"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health care (12220)","Value":"267022.0275"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic health infrastructure (12230)","Value":"5596.867468"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Basic nutrition (12240)","Value":"18836.27866"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Infectious disease control (12250)","Value":"90356.88115"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health education (12261)","Value":"2146.847794"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Malaria control (12262)","Value":"30408.61035"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Tuberculosis control (12263)","Value":"16236.11923"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid broad category description (DAC 5 code)":"Basic health (122)","Aid description (CRS code)":"Health personnel development (12281)","Value":"2677.902662"}]' data-indicatorid='indicator_3-b-2' data-country="UK"
+  data-edgesdata='[{"From":"Aid broad category description (DAC 5 code)","To":"Aid description (CRS code)"}]' data-charttitle="Net official development assistance to medical research and basic health sectors" data-measurementunit="GBP (£000s)" data-datasource="Department for International Development" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -221,18 +234,18 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Net Official Development Assistance (ODA) to medical research and basic health sectors £ 000’s</h3>
+                <h3>Net official development assistance to medical research and basic health sectors</h3>
               
-              <p>Unit of Measurement: GBP (£000s) </p>     
-              <a href="/data/indicator_3-b-2.csv" class="btn btn-primary btn-download" download='indicator_3-b-2.csv'>Download source CSV</a>
+              <p>Unit of Measurement: GBP (£000s)</p>     
+              <a href="/data/indicator_3-b-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-b-2.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_3-b-2.csv' class='btn btn-primary btn-download' download='indicator_3-b-2.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_3-b-2.csv" class="btn btn-primary btn-download" download='indicator_3-b-2.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -294,11 +307,12 @@
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -357,7 +371,7 @@
         <th scope="row">Actual Indicator Description </th>
         <td>
           
-            Total ODA flows to developing countries quantify the public effort that donors provide to developing countries for medical research and basic health.
+            
           
         </td>
         </tr>
@@ -370,7 +384,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -448,7 +462,7 @@
         <th scope="row">Disaggregation </th>
         <td>
           
-            This data can be disaggregated by Flow of Aid (Bilateral/Multilateral) and Aid Category/Description (DAC 5/CRS Code). Flow of Aid (Bilateral/Multilateral) can be disaggregated by other disaggregation.
+            
           
         </td>
         </tr>
@@ -461,7 +475,7 @@
         <th scope="row">Comments and Limitations </th>
         <td>
           
-            Figures may not sum due to rounding.   In the CRS (Creditor Reporting System), data on the sector of destination are recorded using 5-digit purpose codes.  The first three digits of the code refer to the corresponding DAC5 sector or category.  Each CRS code belongs to one and only one DAC5 category.  Generally, the last two digits of the CRS purpose code are sequential and not hierarchical i.e., each CRS code stands for itself and can be selected individually or grouped to create sub-sectors. The Governance and civil society, general sector is an exception where purpose codes are hierarchically structured.   It is not possible to track directly the destination or purpose of UK funding to the general core budgets of the multilateral organisations. However a good indication of where UK funding goes is provided by OECD DAC data where the multilaterals report aid spend by country and sector. Therefore the multilateral data are estimates which have been calculated on the basis of the UK's share of the multilaterals' reported aid spending to the OECD.  The OECD data cover most of the main multilaterals the UK funds.  About 15% of the UK's core multilateral funding is not covered by the OECD data, and this unreported spending is allocated to the developing countries unspecified category.   More details on the estimates' quality are found in the Imputed multilateral share quality report (Statistics on International Development 2016).
+            
           
         </td>
         </tr>
@@ -474,7 +488,7 @@
         <th scope="row">Contact Details </th>
         <td>
           
-            Sustainabledevelopment@ons.gov.uk
+            
           
         </td>
         </tr>
@@ -645,7 +659,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            GBP (£000s) 
+            GBP (£000s)
           
         </td>
         </tr>
@@ -658,7 +672,7 @@
         <th scope="row">Calculations </th>
         <td>
           
-            The raw data underlying the United Kingdom Statistics on International Development was summed around appropriate aid description CRS codes, bilateral and multilateral classification, donor recipient countries, and type of aid codes.   The codes used to measure net ODA to the medical research and basic health sectors were those that sit under DAC 5 CODE’s 121 and 122 which are the purpose codes for the medical research and health sectors.
+            
           
         </td>
         </tr>
@@ -671,7 +685,7 @@
         <th scope="row">Numerator </th>
         <td>
           
-            Net Overseas Development Aid to the medical research and basic health sectors (£ 000’s)
+            
           
         </td>
         </tr>
@@ -684,7 +698,7 @@
         <th scope="row">Denominator </th>
         <td>
           
-            Not applicable 
+            
           
         </td>
         </tr>
@@ -697,7 +711,7 @@
         <th scope="row">Definitions </th>
         <td>
           
-            Bilateral Aid: Bilateral aid covers all aid provided by donor countries when the recipient country, sector or project is known. Bilateral aid also includes aid that is channelled through a multilateral organisation where the government department determines the country, sector or theme that the funds will be spent on. Multilateral Aid: This is aid delivered in the form of core contributions to organisations on the DAC List of Multilateral Organisations. Purpose Codes: The DAC (Development Assistance Committee) Secretariat maintains various code lists which are used by donors to report on their aid flows to the DAC databases.  In addition, these codes are used to classify information in the DAC databases. The sector classification codes used can be found on the OECD website (http://www.oecd.org/dac/stats/purposecodessectorclassification.htm).
+            
           
         </td>
         </tr>
@@ -865,7 +879,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            Total ODA flows to developing countries quantify the public effort that donors provide to developing countries for medical research and basic health.
+            
           
         </td>
         </tr>
@@ -891,7 +905,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            OECD
+            Organisation for Economic Co-operation and Development (OECD)
           
         </td>
         </tr>
@@ -917,7 +931,7 @@
         <th scope="row">UNSD Indicator Code </th>
         <td>
           
-            C030b02
+            
           
         </td>
         </tr>
@@ -1091,7 +1105,7 @@
 
 
 
-  <h3>UK Data Sources Metadata</h3>
+  <h3>UK Data Source Metadata</h3>
   <div class="row no-gutters">
   
    
@@ -1185,7 +1199,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -1251,307 +1265,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            2017-03-29
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Next Release </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Statistical Classification </th>
-        <td>
-          
-            National Statistic
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Contact Details </th>
-        <td>
-          
-            statistics@dfid.gsx.gov.uk
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Other Information </th>
-        <td>
-          
-            Source metadata: https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/570157/annexes.pdf
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</table>
-
-    </div>
-    
-   
-    
-    <div class="col-md-6">
-      <h4>Source 2</h4>
-      <table class="table table-hover">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      
-      <tr>
-        <th scope="row">Organisation </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Periodicity </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Earliest Available Data </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Geographical Coverage </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Link to Data Source </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Release Date </th>
-        <td>
-          
-            
+            29-03-2017
           
         </td>
         </tr>
@@ -1646,269 +1360,17 @@
   
     
   
-</table>
-
-    </div>
     
-   
-    
-    <div class="col-md-6">
-      <h4>Source 3</h4>
-      <table class="table table-hover">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      
-      <tr>
-        <th scope="row">Organisation </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Periodicity </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Earliest Available Data </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Geographical Coverage </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Link to Data Source </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      
   
     
-      
-      <tr>
-        <th scope="row">Release Date </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
   
     
-      
-      <tr>
-        <th scope="row">Next Release </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
   
     
-      
-      <tr>
-        <th scope="row">Statistical Classification </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
   
     
-      
-      <tr>
-        <th scope="row">Contact Details </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
   
     
-      
-      <tr>
-        <th scope="row">Other Information </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
   
     
   
@@ -1946,10 +1408,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1979,11 +1441,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/peace-and-justice-strong-institutions" title="View this goal's indicator list">
-          <img src="/assets/img/goals/16.png" alt="icon for Goal 16" />
+          <img src="/assets/img/goals/16.png" alt="Peace and justice - strong institutions - Goal 16" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/peace-and-justice-strong-institutions">
             <span class="hidden-sm hidden-md hidden-lg">Goal 16: </span>Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels
           </a>
-        </h2>
-        <h3>Indicator 16.2.3: Proportion of young women and men aged 18‑29 years who experienced sexual violence by age 18</h3>
+        </h1>
+        <h2>Indicator 16.2.3: Proportion of young women and men aged 18‑29 years who experienced sexual violence by age 18</h2>
       </div>
     </div>
   </div>
@@ -163,11 +176,11 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":"4.020190605"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual Assualt Category":null,"Value":"2.970786554"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual Assualt Category":null,"Value":"4.875560487"},{"Year":"2016","Sex":null,"Age":null,"Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"1.347804186"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.845915624"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"1.757334976"},{"Year":"2016","Sex":null,"Age":null,"Sexual Assualt Category":"Other sexual assault","Value":"3.844227552"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual Assualt Category":"Other sexual assault","Value":"2.901875199"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual Assualt Category":"Other sexual assault","Value":"4.614672242"},{"Year":"2016","Sex":"Male","Age":null,"Sexual Assualt Category":null,"Value":"1.334661575"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual Assualt Category":null,"Value":"0.940970021"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual Assualt Category":null,"Value":"1.664044305"},{"Year":"2016","Sex":"Male","Age":null,"Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.389457068"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.209502652"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"0.539945976"},{"Year":"2016","Sex":"Male","Age":null,"Sexual Assualt Category":"Other sexual assault","Value":"1.264253875"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual Assualt Category":"Other sexual assault","Value":"0.9338694"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual Assualt Category":"Other sexual assault","Value":"1.542277698"},{"Year":"2016","Sex":"Female","Age":null,"Sexual Assualt Category":null,"Value":"6.75248204"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual Assualt Category":null,"Value":"5.096815727"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual Assualt Category":null,"Value":"8.066563071"},{"Year":"2016","Sex":"Female","Age":null,"Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"2.319017369"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"1.50869462"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual Assualt Category":"Sexual assault by rape or penetration (including attempts)","Value":"2.96393503"},{"Year":"2016","Sex":"Female","Age":null,"Sexual Assualt Category":"Other sexual assault","Value":"6.462897179"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual Assualt Category":"Other sexual assault","Value":"4.964449169"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual Assualt Category":"Other sexual assault","Value":"7.652522856"},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null},{"Year":null,"Sex":null,"Age":null,"Sexual Assualt Category":null,"Value":null}]' data-indicatorid='indicator_16-2-3' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Percentage of adults, aged 16-34, who experienced sexual assault before the age of 16 " data-measurementunit="Percentage" data-datasource="Office for National Statistics" data-geographicalarea="England and Wales" data-showdata="true">
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Sex":null,"Age":null,"Sexual assualt category":null,"Value":"4.020190605"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual assualt category":null,"Value":"2.970786554"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual assualt category":null,"Value":"4.875560487"},{"Year":"2016","Sex":null,"Age":null,"Sexual assualt category":"Sexual assault by rape or penetration (including attempts)","Value":"1.347804186"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual assualt category":"Sexual assault by rape or penetration (including attempts)","Value":"0.845915624"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual assualt category":"Sexual assault by rape or penetration (including attempts)","Value":"1.757334976"},{"Year":"2016","Sex":null,"Age":null,"Sexual assualt category":"Other sexual assault","Value":"3.844227552"},{"Year":"2016","Sex":null,"Age":"16 to 24","Sexual assualt category":"Other sexual assault","Value":"2.901875199"},{"Year":"2016","Sex":null,"Age":"25 to 34","Sexual assualt category":"Other sexual assault","Value":"4.614672242"},{"Year":"2016","Sex":"Male","Age":null,"Sexual assualt category":null,"Value":"1.334661575"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual assualt category":null,"Value":"0.940970021"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual assualt category":null,"Value":"1.664044305"},{"Year":"2016","Sex":"Male","Age":null,"Sexual assualt category":"Sexual assault by rape or penetration (including attempts)","Value":"0.389457068"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual assualt category":"Sexual assault by rape or penetration (including attempts)","Value":"0.209502652"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual assualt category":"Sexual assault by rape or penetration (including attempts)","Value":"0.539945976"},{"Year":"2016","Sex":"Male","Age":null,"Sexual assualt category":"Other sexual assault","Value":"1.264253875"},{"Year":"2016","Sex":"Male","Age":"16 to 24","Sexual assualt category":"Other sexual assault","Value":"0.9338694"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Sexual assualt category":"Other sexual assault","Value":"1.542277698"},{"Year":"2016","Sex":"Female","Age":null,"Sexual assualt category":null,"Value":"6.75248204"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual assualt category":null,"Value":"5.096815727"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual assualt category":null,"Value":"8.066563071"},{"Year":"2016","Sex":"Female","Age":null,"Sexual assualt category":"Sexual assault by rape or penetration (including attempts)","Value":"2.319017369"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual assualt category":"Sexual assault by rape or penetration (including attempts)","Value":"1.50869462"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual assualt category":"Sexual assault by rape or penetration (including attempts)","Value":"2.96393503"},{"Year":"2016","Sex":"Female","Age":null,"Sexual assualt category":"Other sexual assault","Value":"6.462897179"},{"Year":"2016","Sex":"Female","Age":"16 to 24","Sexual assualt category":"Other sexual assault","Value":"4.964449169"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Sexual assualt category":"Other sexual assault","Value":"7.652522856"}]' data-indicatorid='indicator_16-2-3' data-country="UK"
+  data-edgesdata='[]' data-charttitle="Percentage of adults, aged 16-34, who experienced sexual assault before the age of 16" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -221,18 +234,18 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Percentage of adults, aged 16-34, who experienced sexual assault before the age of 16 </h3>
+                <h3>Percentage of adults, aged 16-34, who experienced sexual assault before the age of 16</h3>
               
-              <p>Unit of Measurement: Percentage</p>     
-              <a href="/data/indicator_16-2-3.csv" class="btn btn-primary btn-download" download='indicator_16-2-3.csv'>Download source CSV</a>
+              <p>Unit of Measurement: Percentage (%)</p>     
+              <a href="/data/indicator_16-2-3.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_16-2-3.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_16-2-3.csv' class='btn btn-primary btn-download' download='indicator_16-2-3.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_16-2-3.csv" class="btn btn-primary btn-download" download='indicator_16-2-3.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -245,52 +258,21 @@
   
       <tr>
       
-          <td>2016.0</td>
+          <td>2016</td>
       
           <td>4.020190605</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
       
       </tr>
   
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -349,7 +331,7 @@
         <th scope="row">Actual Indicator Description </th>
         <td>
           
-            Percentage of adults, aged 16-34, who experienced sexual assault before the age of 16
+            
           
         </td>
         </tr>
@@ -427,7 +409,7 @@
         <th scope="row">Statistical Classification </th>
         <td>
           
-            National Statistic
+            
           
         </td>
         </tr>
@@ -440,7 +422,7 @@
         <th scope="row">Disaggregation </th>
         <td>
           
-            The data can be disaggregated by: Sex (Male and Female), Age Category (16-24 and 25-34), and Sexual Assault Category. This disaggregation can be further disaggregated amongst each other (e.g. Sex by Age Category by Sexual Assault Category).
+            
           
         </td>
         </tr>
@@ -453,7 +435,7 @@
         <th scope="row">Comments and Limitations </th>
         <td>
           
-            The original figures refer to data that runs from April of that year to March the following year. For example, 2015 data date range is from April 2015 to March 2016.   Coverage is limited to England and Wales.   The headline data are published in July, however the specific disaggregations (i.e. age, gender, etc.) are published in February.   The 2015 to 2016 Crime Survey for England and Wales (CSEW) ran for the first time a module of questions asking adults whether they were abused as a child. The module on abuse during childhood was added to the self completion section of the CSEW in place of the follow-up questions on serious sexual assault for survey year ending March 2016.  
+            
           
         </td>
         </tr>
@@ -637,7 +619,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            Percentage
+            Percentage (%)
           
         </td>
         </tr>
@@ -676,7 +658,7 @@
         <th scope="row">Denominator </th>
         <td>
           
-            Number of adults aged 16-24 in England and Wales
+            
           
         </td>
         </tr>
@@ -689,7 +671,7 @@
         <th scope="row">Definitions </th>
         <td>
           
-            Sexual assault by rape or penetration (including attempts): sexual assault by penetration of a [mouth, vagina or anus; or mouth or anus] with a penis, or penetrated their [vagina or anus; or anus] with an object (including fingers) Other sexual assaults including indecent exposure or unwanted touching: the category includes indecent exposure (as in, flashing), or being touched sexually whether it was agreed to or not (for example, groping, touching of breasts or bottom, kissing)
+            
           
         </td>
         </tr>
@@ -857,7 +839,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            This indicator provides the proportion of young women and men aged 18-24 years who report having experienced any sexual violence by age 18. It is calculated by dividing the number of young women and men aged 18-24 years who report having experienced any sexual violence by age 18 by the total number of young women and men aged 18-24 years, respectively, in the population.
+            
           
         </td>
         </tr>
@@ -883,7 +865,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            UNICEF
+            United Nations Children's Fund (UNICEF)
           
         </td>
         </tr>
@@ -909,7 +891,7 @@
         <th scope="row">UNSD Indicator Code </th>
         <td>
           
-            C160203
+            
           
         </td>
         </tr>
@@ -1164,7 +1146,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            Office for National Statistics
+            Office for National Statistics (ONS)
           
         </td>
         </tr>
@@ -1177,7 +1159,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -1223,7 +1205,7 @@
 
             
               <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/datasets/abuseduringchildhoodappendixtables">
-                Abuse during childhood
+                Abuse during childhood - Appendix tables
               </a>
             
             
@@ -1243,7 +1225,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            4 August 2016
+            04-08-2016
           
         </td>
         </tr>
@@ -1269,7 +1251,7 @@
         <th scope="row">Statistical Classification </th>
         <td>
           
-            National Statistic
+            
           
         </td>
         </tr>
@@ -1282,7 +1264,7 @@
         <th scope="row">Contact Details </th>
         <td>
           
-            crimestatistics@ons.gsi.gov.uk
+            
           
         </td>
         </tr>
@@ -1386,10 +1368,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1419,11 +1401,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

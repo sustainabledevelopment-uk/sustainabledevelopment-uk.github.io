@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -90,28 +95,43 @@
 <div id="main-content" class="container" role="main">
     <div>
         <h1>FAQ</h1>
-        <h3 id="how-do-i-suggest-new-or-different-data-sources">How do I suggest new or different data sources?</h3>
+        <h2 id="how-do-i-suggest-new-or-different-data-sources">How do I suggest new or different data sources?</h2>
 
 <p>If you have feedback on the data sources we have used or have suggestions for new data sources then please email us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a>.</p>
 
-<h3 id="what-do-the-different-reporting-status-mean">What do the different reporting status mean?</h3>
+<h2 id="what-does-the-reporting-status-mean">What does the reporting status mean?</h2>
 
 <p>There are currently three different types of reporting status for an indicator:</p>
 
 <ul>
-  <li>Exploring data sources – we are still looking for a suitable data source for this indicator.</li>
-  <li>Statistics in progress – we have found a suitable source of data for this indicator or relevant proxy at national level. We are currently quality assuring the data and preparing it for publication.</li>
   <li>Reported online – this means as a minimum the headline national data for this indicator is available on this website. For some indicators not all disaggregated data will be available yet.</li>
+  <li>Statistics in progress – we have found a suitable source of data for this indicator or relevant proxy at national level. We are currently quality assuring the data and preparing it for publication.</li>
+  <li>Exploring data sources – we are still looking for a suitable data source for this indicator.</li>
 </ul>
 
-<h3 id="how-accessible-is-this-website">How accessible is this website?</h3>
-<p>Our aim is to make this website as accessible and usable as possible for every user. We’re working towards meeting AA level of the <a href="https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag-20">Web Content Accessibility Guidelines (WCAG 2.0)</a> as a minimum. We’re currently undertaking an accessibility audit by the <a href="http://digitalaccessibilitycentre.org/">Digital Accessibility Centre</a> and will use the recommendations from this review to help us improve our website.</p>
+<h2 id="how-accessible-is-this-website">How accessible is this website?</h2>
+<p>Our aim is to make this website as accessible and usable as possible for every user. We are working towards meeting AA level of the <a href="https://www.gov.uk/service-manual/helping-people-to-use-your-service/understanding-wcag-20">Web Content Accessibility Guidelines (WCAG 2.0)</a>. We have recently undertaken an accessibility audit by the <a href="http://digitalaccessibilitycentre.org/">Digital Accessibility Centre</a> and are using the recommendations from this review to help us improve our website.</p>
 
-<h3 id="what-browsers-can-i-use-to-view-this-website">What browsers can I use to view this website?</h3>
-<p>We are developing and testing our site in line with the Government Digital Service <a href="https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices">guidance on designing for different browsers and devices</a>. Our website works well with the majority of the latest versions of the commonly used browsers listed in the ‘Browsers to test in’ section of this guidance. There are currently some issues when using older versions of browsers eg IE 8-9 and we are working to improve this.</p>
+<h2 id="what-browsers-can-i-use-to-view-this-website">What browsers can I use to view this website?</h2>
+<p>We are developing and testing our site in line with the Government Digital Service (GDS) <a href="https://www.gov.uk/service-manual/technology/designing-for-different-browsers-and-devices">guidance on designing for different browsers and devices</a>. Our website works well with the majority of the latest versions of the commonly used browsers listed in the ‘Browsers to test in’ section of the GDS guidance. There are currently some issues when using older versions of browsers eg IE8 and we are working to improve this.</p>
 
-<h3 id="can-other-countries-copy-this-website">Can other countries copy this website?</h3>
+<h2 id="can-other-countries-copy-this-website">Can other countries copy this website?</h2>
 <p>Yes. We have deliberately developed an open source solution to reporting UK SDGs data and so other countries can freely reuse our code. Technical guidance on copying our site is available in our <a href="https://github.com/datasciencecampus/sdg-indicators/wiki">wiki</a>. Countries exploring how to report their own SDGs national data can also get support from the <a href="http://www.opendataenterprise.org/">Center for Open Data Enterprise (CODE)</a> through their <a href="https://www.sdgreporting.org/">SDG National Reporting Initiative</a>.</p>
+
+<!-- DO NOT EDIT ANYTHING BELOW THIS LINE -->
+<script>
+	document.addEventListener("DOMContentLoaded", function(){
+  	$('#main-content h2').addClass('collapsible');
+		$('.collapsible').click(function(){
+			$(this).nextUntil('h2').stop(true, true).slideToggle();
+		}).nextUntil('h2').hide();
+	})
+</script>
+
+<style>
+	h3.collapsible { cursor: pointer }
+</style>
+
 
     </div>
 </div>
@@ -120,10 +140,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -153,11 +173,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/life-on-land" title="View this goal's indicator list">
-          <img src="/assets/img/goals/15.png" alt="icon for Goal 15" />
+          <img src="/assets/img/goals/15.png" alt="Life on land - Goal 15" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/life-on-land">
             <span class="hidden-sm hidden-md hidden-lg">Goal 15: </span>Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss
           </a>
-        </h2>
-        <h3>Indicator 15.2.1: Progress towards sustainable forest management</h3>
+        </h1>
+        <h2>Indicator 15.2.1: Progress towards sustainable forest management</h2>
       </div>
     </div>
   </div>
@@ -163,11 +176,11 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2001","Units":"Certified woodland area (ha)","Country":null,"Value":"1061062"},{"Year":"2001","Units":"Total woodland area (ha)","Country":null,"Value":"2971294"},{"Year":"2002","Units":"Certified woodland area (ha)","Country":null,"Value":"1075356"},{"Year":"2002","Units":"Total woodland area (ha)","Country":null,"Value":"2985421"},{"Year":"2004","Units":"Certified woodland area (ha)","Country":null,"Value":"1159944"},{"Year":"2004","Units":"Total woodland area (ha)","Country":null,"Value":"3011040"},{"Year":"2005","Units":"Certified woodland area (ha)","Country":null,"Value":"1257091"},{"Year":"2005","Units":"Total woodland area (ha)","Country":null,"Value":"3021344"},{"Year":"2006","Units":"Certified woodland area (ha)","Country":null,"Value":"1272510"},{"Year":"2006","Units":"Total woodland area (ha)","Country":null,"Value":"3029699"},{"Year":"2007","Units":"Certified woodland area (ha)","Country":null,"Value":"1324920"},{"Year":"2007","Units":"Total woodland area (ha)","Country":null,"Value":"3040799"},{"Year":"2008","Units":"Certified woodland area (ha)","Country":null,"Value":"1309680"},{"Year":"2008","Units":"Total woodland area (ha)","Country":null,"Value":"3047972"},{"Year":"2009","Units":"Certified woodland area (ha)","Country":null,"Value":"1332050"},{"Year":"2009","Units":"Total woodland area (ha)","Country":null,"Value":"3054145"},{"Year":"2010","Units":"Certified woodland area (ha)","Country":null,"Value":"1347258"},{"Year":"2010","Units":"Total woodland area (ha)","Country":null,"Value":"3059238"},{"Year":"2011","Units":"Certified woodland area (ha)","Country":null,"Value":"1324053"},{"Year":"2011","Units":"Total woodland area (ha)","Country":null,"Value":"3067314"},{"Year":"2012","Units":"Certified woodland area (ha)","Country":null,"Value":"1365560"},{"Year":"2012","Units":"Total woodland area (ha)","Country":null,"Value":"3110493"},{"Year":"2013","Units":"Certified woodland area (ha)","Country":null,"Value":"1362561"},{"Year":"2013","Units":"Total woodland area (ha)","Country":null,"Value":"3125310"},{"Year":"2014","Units":"Certified woodland area (ha)","Country":null,"Value":"1376970"},{"Year":"2014","Units":"Total woodland area (ha)","Country":null,"Value":"3143463"},{"Year":"2015","Units":"Certified woodland area (ha)","Country":null,"Value":"1375504"},{"Year":"2015","Units":"Total woodland area (ha)","Country":null,"Value":"3154000"},{"Year":"2016","Units":"Certified woodland area (ha)","Country":null,"Value":"1350488"},{"Year":"2016","Units":"Total woodland area (ha)","Country":null,"Value":"3160242"},{"Year":"2017","Units":"Certified woodland area (ha)","Country":null,"Value":"1388225"},{"Year":"2017","Units":"Total woodland area (ha)","Country":null,"Value":"3165978"},{"Year":"2001","Units":"Certified woodland area (ha)","Country":"England","Value":"289527"},{"Year":"2001","Units":"Total woodland area (ha)","Country":"England","Value":"1257011"},{"Year":"2002","Units":"Certified woodland area (ha)","Country":"England","Value":"296576"},{"Year":"2002","Units":"Total woodland area (ha)","Country":"England","Value":"1261985"},{"Year":"2004","Units":"Certified woodland area (ha)","Country":"England","Value":"298263"},{"Year":"2004","Units":"Total woodland area (ha)","Country":"England","Value":"1271746"},{"Year":"2005","Units":"Certified woodland area (ha)","Country":"England","Value":"343700"},{"Year":"2005","Units":"Total woodland area (ha)","Country":"England","Value":"1276695"},{"Year":"2006","Units":"Certified woodland area (ha)","Country":"England","Value":"353577"},{"Year":"2006","Units":"Total woodland area (ha)","Country":"England","Value":"1280081"},{"Year":"2007","Units":"Certified woodland area (ha)","Country":"England","Value":"363862"},{"Year":"2007","Units":"Total woodland area (ha)","Country":"England","Value":"1283020"},{"Year":"2008","Units":"Certified woodland area (ha)","Country":"England","Value":"345266"},{"Year":"2008","Units":"Total woodland area (ha)","Country":"England","Value":"1285414"},{"Year":"2009","Units":"Certified woodland area (ha)","Country":"England","Value":"352498"},{"Year":"2009","Units":"Total woodland area (ha)","Country":"England","Value":"1287738"},{"Year":"2010","Units":"Certified woodland area (ha)","Country":"England","Value":"357170"},{"Year":"2010","Units":"Total woodland area (ha)","Country":"England","Value":"1289853"},{"Year":"2011","Units":"Certified woodland area (ha)","Country":"England","Value":"335219"},{"Year":"2011","Units":"Total woodland area (ha)","Country":"England","Value":"1292385"},{"Year":"2012","Units":"Certified woodland area (ha)","Country":"England","Value":"354974"},{"Year":"2012","Units":"Total woodland area (ha)","Country":"England","Value":"1297684"},{"Year":"2013","Units":"Certified woodland area (ha)","Country":"England","Value":"354739"},{"Year":"2013","Units":"Total woodland area (ha)","Country":"England","Value":"1298224"},{"Year":"2014","Units":"Certified woodland area (ha)","Country":"England","Value":"349241"},{"Year":"2014","Units":"Total woodland area (ha)","Country":"England","Value":"1301913"},{"Year":"2015","Units":"Certified woodland area (ha)","Country":"England","Value":"355668"},{"Year":"2015","Units":"Total woodland area (ha)","Country":"England","Value":"1304339"},{"Year":"2016","Units":"Certified woodland area (ha)","Country":"England","Value":"337106"},{"Year":"2016","Units":"Total woodland area (ha)","Country":"England","Value":"1305749"},{"Year":"2017","Units":"Certified woodland area (ha)","Country":"England","Value":"336753"},{"Year":"2017","Units":"Total woodland area (ha)","Country":"England","Value":"1306733"},{"Year":"2001","Units":"Certified woodland area (ha)","Country":"Wales","Value":"124344"},{"Year":"2001","Units":"Total woodland area (ha)","Country":"Wales","Value":"300230"},{"Year":"2002","Units":"Certified woodland area (ha)","Country":"Wales","Value":"123941"},{"Year":"2002","Units":"Total woodland area (ha)","Country":"Wales","Value":"300501"},{"Year":"2004","Units":"Certified woodland area (ha)","Country":"Wales","Value":"126653"},{"Year":"2004","Units":"Total woodland area (ha)","Country":"Wales","Value":"301288"},{"Year":"2005","Units":"Certified woodland area (ha)","Country":"Wales","Value":"131241"},{"Year":"2005","Units":"Total woodland area (ha)","Country":"Wales","Value":"301804"},{"Year":"2006","Units":"Certified woodland area (ha)","Country":"Wales","Value":"131132"},{"Year":"2006","Units":"Total woodland area (ha)","Country":"Wales","Value":"302276"},{"Year":"2007","Units":"Certified woodland area (ha)","Country":"Wales","Value":"132588"},{"Year":"2007","Units":"Total woodland area (ha)","Country":"Wales","Value":"302771"},{"Year":"2008","Units":"Certified woodland area (ha)","Country":"Wales","Value":"129963"},{"Year":"2008","Units":"Total woodland area (ha)","Country":"Wales","Value":"302931"},{"Year":"2009","Units":"Certified woodland area (ha)","Country":"Wales","Value":"133738"},{"Year":"2009","Units":"Total woodland area (ha)","Country":"Wales","Value":"303088"},{"Year":"2010","Units":"Certified woodland area (ha)","Country":"Wales","Value":"133474"},{"Year":"2010","Units":"Total woodland area (ha)","Country":"Wales","Value":"303269"},{"Year":"2011","Units":"Certified woodland area (ha)","Country":"Wales","Value":"133604"},{"Year":"2011","Units":"Total woodland area (ha)","Country":"Wales","Value":"303566"},{"Year":"2012","Units":"Certified woodland area (ha)","Country":"Wales","Value":"138295"},{"Year":"2012","Units":"Total woodland area (ha)","Country":"Wales","Value":"304564"},{"Year":"2013","Units":"Certified woodland area (ha)","Country":"Wales","Value":"139441"},{"Year":"2013","Units":"Total woodland area (ha)","Country":"Wales","Value":"305406"},{"Year":"2014","Units":"Certified woodland area (ha)","Country":"Wales","Value":"141121"},{"Year":"2014","Units":"Total woodland area (ha)","Country":"Wales","Value":"305832"},{"Year":"2015","Units":"Certified woodland area (ha)","Country":"Wales","Value":"141347"},{"Year":"2015","Units":"Total woodland area (ha)","Country":"Wales","Value":"305935"},{"Year":"2016","Units":"Certified woodland area (ha)","Country":"Wales","Value":"141224"},{"Year":"2016","Units":"Total woodland area (ha)","Country":"Wales","Value":"306135"},{"Year":"2017","Units":"Certified woodland area (ha)","Country":"Wales","Value":"145112"},{"Year":"2017","Units":"Total woodland area (ha)","Country":"Wales","Value":"307008"},{"Year":"2001","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"584719"},{"Year":"2001","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1331053"},{"Year":"2002","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"592366"},{"Year":"2002","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1338934"},{"Year":"2004","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"669909"},{"Year":"2004","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1352206"},{"Year":"2005","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"718699"},{"Year":"2005","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1357784"},{"Year":"2006","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"724370"},{"Year":"2006","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1361701"},{"Year":"2007","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"764314"},{"Year":"2007","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1368168"},{"Year":"2008","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"770012"},{"Year":"2008","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1372272"},{"Year":"2009","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"780754"},{"Year":"2009","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1375642"},{"Year":"2010","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"792465"},{"Year":"2010","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1378304"},{"Year":"2011","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"791775"},{"Year":"2011","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1383406"},{"Year":"2012","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"807737"},{"Year":"2012","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1403026"},{"Year":"2013","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"803698"},{"Year":"2013","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1410663"},{"Year":"2014","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"821769"},{"Year":"2014","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1424255"},{"Year":"2015","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"813368"},{"Year":"2015","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1431814"},{"Year":"2016","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"806897"},{"Year":"2016","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1436270"},{"Year":"2017","Units":"Certified woodland area (ha)","Country":"Scotland","Value":"841015"},{"Year":"2017","Units":"Total woodland area (ha)","Country":"Scotland","Value":"1439858"},{"Year":"2001","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"62472"},{"Year":"2001","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"83000"},{"Year":"2002","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"62472"},{"Year":"2002","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"84000"},{"Year":"2004","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"65120"},{"Year":"2004","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"85800"},{"Year":"2005","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"63451"},{"Year":"2005","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"85060"},{"Year":"2006","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"63431"},{"Year":"2006","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"85640"},{"Year":"2007","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"64156"},{"Year":"2007","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"86840"},{"Year":"2008","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"64439"},{"Year":"2008","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"87355"},{"Year":"2009","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"65060"},{"Year":"2009","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"87677"},{"Year":"2010","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"64150"},{"Year":"2010","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"87812"},{"Year":"2011","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"63456"},{"Year":"2011","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"87957"},{"Year":"2012","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"64555"},{"Year":"2012","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"105218"},{"Year":"2013","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"64683"},{"Year":"2013","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"111016"},{"Year":"2014","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"64839"},{"Year":"2014","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"111463"},{"Year":"2015","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"65121"},{"Year":"2015","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"111912"},{"Year":"2016","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"65261"},{"Year":"2016","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"112087"},{"Year":"2017","Units":"Certified woodland area (ha)","Country":"Northern Ireland","Value":"65345"},{"Year":"2017","Units":"Total woodland area (ha)","Country":"Northern Ireland","Value":"112378"},{"Year":"2001","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"35.7"},{"Year":"2002","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"36"},{"Year":"2004","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"38.5"},{"Year":"2005","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"41.6"},{"Year":"2006","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"42"},{"Year":"2007","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"43.6"},{"Year":"2008","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"43"},{"Year":"2009","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"43.6"},{"Year":"2010","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"44"},{"Year":"2011","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"43.2"},{"Year":"2012","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"43.9"},{"Year":"2013","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"43.6"},{"Year":"2014","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"43.8"},{"Year":"2015","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"43.6"},{"Year":"2016","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"42.7"},{"Year":"2017","Units":"Percentage of woodland area certified (%)","Country":null,"Value":"44"},{"Year":"2001","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"23"},{"Year":"2002","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"23.5"},{"Year":"2004","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"23.5"},{"Year":"2005","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"26.9"},{"Year":"2006","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"27.6"},{"Year":"2007","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"28.4"},{"Year":"2008","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"26.9"},{"Year":"2009","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"27.4"},{"Year":"2010","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"27.7"},{"Year":"2011","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"25.9"},{"Year":"2012","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"27.4"},{"Year":"2013","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"27.3"},{"Year":"2014","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"26.8"},{"Year":"2015","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"27.3"},{"Year":"2016","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"25.8"},{"Year":"2017","Units":"Percentage of woodland area certified (%)","Country":"England","Value":"26"},{"Year":"2001","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"41.4"},{"Year":"2002","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"41.2"},{"Year":"2004","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"42"},{"Year":"2005","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"43.5"},{"Year":"2006","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"43.38"},{"Year":"2007","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"43.8"},{"Year":"2008","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"42.9"},{"Year":"2009","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"44.1"},{"Year":"2010","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"44"},{"Year":"2011","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"44"},{"Year":"2012","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"45.4"},{"Year":"2013","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"45.7"},{"Year":"2014","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"46.1"},{"Year":"2015","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"46.2"},{"Year":"2016","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"46.1"},{"Year":"2017","Units":"Percentage of woodland area certified (%)","Country":"Wales","Value":"47"},{"Year":"2001","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"43.9"},{"Year":"2002","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"44.2"},{"Year":"2004","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"49.5"},{"Year":"2005","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"52.9"},{"Year":"2006","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"53.2"},{"Year":"2007","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"55.9"},{"Year":"2008","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"56.1"},{"Year":"2009","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"56.8"},{"Year":"2010","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"57.5"},{"Year":"2011","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"57.2"},{"Year":"2012","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"57.6"},{"Year":"2013","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"57"},{"Year":"2014","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"57.7"},{"Year":"2015","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"56.8"},{"Year":"2016","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"56.2"},{"Year":"2017","Units":"Percentage of woodland area certified (%)","Country":"Scotland","Value":"58"},{"Year":"2001","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"75.3"},{"Year":"2002","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"74.4"},{"Year":"2004","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"75.9"},{"Year":"2005","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"74.6"},{"Year":"2006","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"74.1"},{"Year":"2007","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"73.9"},{"Year":"2008","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"73.8"},{"Year":"2009","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"74.2"},{"Year":"2010","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"73.1"},{"Year":"2011","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"72.1"},{"Year":"2012","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"61.4"},{"Year":"2013","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"58.3"},{"Year":"2014","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"58.2"},{"Year":"2015","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"58.2"},{"Year":"2016","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"58.2"},{"Year":"2017","Units":"Percentage of woodland area certified (%)","Country":"Northern Ireland","Value":"58"},{"Year":"2005","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"8.375108052"},{"Year":"2005","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.342205052"},{"Year":"2006","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"1.226564111"},{"Year":"2006","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.276528216"},{"Year":"2007","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"4.118652198"},{"Year":"2007","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.366399534"},{"Year":"2008","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"-1.15031279"},{"Year":"2008","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.235884875"},{"Year":"2009","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"1.708058208"},{"Year":"2009","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.202531754"},{"Year":"2010","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"1.141729664"},{"Year":"2010","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.166756495"},{"Year":"2011","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"-1.722387083"},{"Year":"2011","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.26397813"},{"Year":"2012","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"3.134825866"},{"Year":"2012","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"1.407703287"},{"Year":"2013","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"-0.219576654"},{"Year":"2013","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.476364014"},{"Year":"2014","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"1.057461186"},{"Year":"2014","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.58082906"},{"Year":"2015","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"-0.106452269"},{"Year":"2015","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.335201809"},{"Year":"2016","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"-1.818721613"},{"Year":"2016","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.197917913"},{"Year":"2017","Units":"Annual certified woodland area growth rate (%)","Country":null,"Value":"2.794334399"},{"Year":"2017","Units":"Annual total woodland area growth rate (%)","Country":null,"Value":"0.181493989"},{"Year":"2005","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"15.23410459"},{"Year":"2005","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.389209374"},{"Year":"2006","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"2.87379879"},{"Year":"2006","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.26521798"},{"Year":"2007","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"2.908834345"},{"Year":"2007","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.229596214"},{"Year":"2008","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"-5.110829804"},{"Year":"2008","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.186594452"},{"Year":"2009","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"2.094614417"},{"Year":"2009","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.180765749"},{"Year":"2010","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"1.325300629"},{"Year":"2010","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.164243121"},{"Year":"2011","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"-6.145845562"},{"Year":"2011","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.196301439"},{"Year":"2012","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"5.89319275"},{"Year":"2012","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.410041899"},{"Year":"2013","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"-0.066071829"},{"Year":"2013","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.041602583"},{"Year":"2014","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"-1.549830712"},{"Year":"2014","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.284153295"},{"Year":"2015","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"1.840319778"},{"Year":"2015","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.186292766"},{"Year":"2016","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"-5.219150464"},{"Year":"2016","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.108156972"},{"Year":"2017","Units":"Annual certified woodland area growth rate (%)","Country":"England","Value":"-0.10468108"},{"Year":"2017","Units":"Annual total woodland area growth rate (%)","Country":"England","Value":"0.075376125"},{"Year":"2005","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"3.622196661"},{"Year":"2005","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.171352622"},{"Year":"2006","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"-0.082962124"},{"Year":"2006","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.156448561"},{"Year":"2007","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"1.110430081"},{"Year":"2007","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.16356385"},{"Year":"2008","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"-1.980026572"},{"Year":"2008","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.052994665"},{"Year":"2009","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"2.904927555"},{"Year":"2009","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.051753304"},{"Year":"2010","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"-0.197617885"},{"Year":"2010","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.059825499"},{"Year":"2011","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"0.097697223"},{"Year":"2011","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.097840441"},{"Year":"2012","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"3.511070028"},{"Year":"2012","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.328739055"},{"Year":"2013","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"0.828689526"},{"Year":"2013","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.276609759"},{"Year":"2014","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"1.204728748"},{"Year":"2014","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.139348981"},{"Year":"2015","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"0.160309712"},{"Year":"2015","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.033714591"},{"Year":"2016","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"-0.086971324"},{"Year":"2016","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.065460201"},{"Year":"2017","Units":"Annual certified woodland area growth rate (%)","Country":"Wales","Value":"2.753264748"},{"Year":"2017","Units":"Annual total woodland area growth rate (%)","Country":"Wales","Value":"0.285158983"},{"Year":"2005","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"7.283131659"},{"Year":"2005","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.412504547"},{"Year":"2006","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"0.789016387"},{"Year":"2006","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.288460709"},{"Year":"2007","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"5.514272734"},{"Year":"2007","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.474947783"},{"Year":"2008","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"0.74556671"},{"Year":"2008","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.299911106"},{"Year":"2009","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"1.395065496"},{"Year":"2009","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.245632543"},{"Year":"2010","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"1.499964616"},{"Year":"2010","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.193483481"},{"Year":"2011","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"-0.087107915"},{"Year":"2011","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.370165072"},{"Year":"2012","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"2.015945186"},{"Year":"2012","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"1.418269113"},{"Year":"2013","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"-0.499960995"},{"Year":"2013","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.544319329"},{"Year":"2014","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"2.248411845"},{"Year":"2014","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.963460258"},{"Year":"2015","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"-1.022331699"},{"Year":"2015","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.530766337"},{"Year":"2016","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"-0.795596904"},{"Year":"2016","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.311236753"},{"Year":"2017","Units":"Annual certified woodland area growth rate (%)","Country":"Scotland","Value":"4.228327962"},{"Year":"2017","Units":"Annual total woodland area growth rate (%)","Country":"Scotland","Value":"0.249775646"},{"Year":"2005","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"-2.562960688"},{"Year":"2005","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"-0.862470862"},{"Year":"2006","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"-0.031520386"},{"Year":"2006","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.68187162"},{"Year":"2007","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"1.143643157"},{"Year":"2007","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"1.401214386"},{"Year":"2008","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.440282974"},{"Year":"2008","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.59304468"},{"Year":"2009","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.963092096"},{"Year":"2009","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.368610841"},{"Year":"2010","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"-1.398719634"},{"Year":"2010","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.153974246"},{"Year":"2011","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"-1.081847871"},{"Year":"2011","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.165125495"},{"Year":"2012","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"1.731922371"},{"Year":"2012","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"19.6243619"},{"Year":"2013","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.198932685"},{"Year":"2013","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"5.510463989"},{"Year":"2014","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.241300176"},{"Year":"2014","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.402644664"},{"Year":"2015","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.434923426"},{"Year":"2015","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.402824256"},{"Year":"2016","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.215506519"},{"Year":"2016","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.156372864"},{"Year":"2017","Units":"Annual certified woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.127977758"},{"Year":"2017","Units":"Annual total woodland area growth rate (%)","Country":"Northern Ireland","Value":"0.25961976"}]' data-indicatorid='indicator_15-2-1' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Progress towards sustainable forest management" data-measurementunit="Area (Ha)/ Percentage (%)/ Percentage growth rate (%)" data-datasource="Department for Environment, Food and Rural Affairs" data-geographicalarea="United Kingdom" data-showdata="true">
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2001","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1061062"},{"Year":"2001","Units":"Total woodland area (hectares)","Geography":null,"Value":"2971294"},{"Year":"2002","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1075356"},{"Year":"2002","Units":"Total woodland area (hectares)","Geography":null,"Value":"2985421"},{"Year":"2004","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1159944"},{"Year":"2004","Units":"Total woodland area (hectares)","Geography":null,"Value":"3011040"},{"Year":"2005","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1257091"},{"Year":"2005","Units":"Total woodland area (hectares)","Geography":null,"Value":"3021344"},{"Year":"2006","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1272510"},{"Year":"2006","Units":"Total woodland area (hectares)","Geography":null,"Value":"3029699"},{"Year":"2007","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1324920"},{"Year":"2007","Units":"Total woodland area (hectares)","Geography":null,"Value":"3040799"},{"Year":"2008","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1309680"},{"Year":"2008","Units":"Total woodland area (hectares)","Geography":null,"Value":"3047972"},{"Year":"2009","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1332050"},{"Year":"2009","Units":"Total woodland area (hectares)","Geography":null,"Value":"3054145"},{"Year":"2010","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1347258"},{"Year":"2010","Units":"Total woodland area (hectares)","Geography":null,"Value":"3059238"},{"Year":"2011","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1324053"},{"Year":"2011","Units":"Total woodland area (hectares)","Geography":null,"Value":"3067314"},{"Year":"2012","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1365560"},{"Year":"2012","Units":"Total woodland area (hectares)","Geography":null,"Value":"3110493"},{"Year":"2013","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1362561"},{"Year":"2013","Units":"Total woodland area (hectares)","Geography":null,"Value":"3125310"},{"Year":"2014","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1376970"},{"Year":"2014","Units":"Total woodland area (hectares)","Geography":null,"Value":"3143463"},{"Year":"2015","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1375504"},{"Year":"2015","Units":"Total woodland area (hectares)","Geography":null,"Value":"3154000"},{"Year":"2016","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1350488"},{"Year":"2016","Units":"Total woodland area (hectares)","Geography":null,"Value":"3160242"},{"Year":"2017","Units":"Certified woodland area (hectares)","Geography":null,"Value":"1388225"},{"Year":"2017","Units":"Total woodland area (hectares)","Geography":null,"Value":"3165978"},{"Year":"2001","Units":"Certified woodland area (hectares)","Geography":"England","Value":"289527"},{"Year":"2001","Units":"Total woodland area (hectares)","Geography":"England","Value":"1257011"},{"Year":"2002","Units":"Certified woodland area (hectares)","Geography":"England","Value":"296576"},{"Year":"2002","Units":"Total woodland area (hectares)","Geography":"England","Value":"1261985"},{"Year":"2004","Units":"Certified woodland area (hectares)","Geography":"England","Value":"298263"},{"Year":"2004","Units":"Total woodland area (hectares)","Geography":"England","Value":"1271746"},{"Year":"2005","Units":"Certified woodland area (hectares)","Geography":"England","Value":"343700"},{"Year":"2005","Units":"Total woodland area (hectares)","Geography":"England","Value":"1276695"},{"Year":"2006","Units":"Certified woodland area (hectares)","Geography":"England","Value":"353577"},{"Year":"2006","Units":"Total woodland area (hectares)","Geography":"England","Value":"1280081"},{"Year":"2007","Units":"Certified woodland area (hectares)","Geography":"England","Value":"363862"},{"Year":"2007","Units":"Total woodland area (hectares)","Geography":"England","Value":"1283020"},{"Year":"2008","Units":"Certified woodland area (hectares)","Geography":"England","Value":"345266"},{"Year":"2008","Units":"Total woodland area (hectares)","Geography":"England","Value":"1285414"},{"Year":"2009","Units":"Certified woodland area (hectares)","Geography":"England","Value":"352498"},{"Year":"2009","Units":"Total woodland area (hectares)","Geography":"England","Value":"1287738"},{"Year":"2010","Units":"Certified woodland area (hectares)","Geography":"England","Value":"357170"},{"Year":"2010","Units":"Total woodland area (hectares)","Geography":"England","Value":"1289853"},{"Year":"2011","Units":"Certified woodland area (hectares)","Geography":"England","Value":"335219"},{"Year":"2011","Units":"Total woodland area (hectares)","Geography":"England","Value":"1292385"},{"Year":"2012","Units":"Certified woodland area (hectares)","Geography":"England","Value":"354974"},{"Year":"2012","Units":"Total woodland area (hectares)","Geography":"England","Value":"1297684"},{"Year":"2013","Units":"Certified woodland area (hectares)","Geography":"England","Value":"354739"},{"Year":"2013","Units":"Total woodland area (hectares)","Geography":"England","Value":"1298224"},{"Year":"2014","Units":"Certified woodland area (hectares)","Geography":"England","Value":"349241"},{"Year":"2014","Units":"Total woodland area (hectares)","Geography":"England","Value":"1301913"},{"Year":"2015","Units":"Certified woodland area (hectares)","Geography":"England","Value":"355668"},{"Year":"2015","Units":"Total woodland area (hectares)","Geography":"England","Value":"1304339"},{"Year":"2016","Units":"Certified woodland area (hectares)","Geography":"England","Value":"337106"},{"Year":"2016","Units":"Total woodland area (hectares)","Geography":"England","Value":"1305749"},{"Year":"2017","Units":"Certified woodland area (hectares)","Geography":"England","Value":"336753"},{"Year":"2017","Units":"Total woodland area (hectares)","Geography":"England","Value":"1306733"},{"Year":"2001","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"124344"},{"Year":"2001","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"300230"},{"Year":"2002","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"123941"},{"Year":"2002","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"300501"},{"Year":"2004","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"126653"},{"Year":"2004","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"301288"},{"Year":"2005","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"131241"},{"Year":"2005","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"301804"},{"Year":"2006","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"131132"},{"Year":"2006","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"302276"},{"Year":"2007","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"132588"},{"Year":"2007","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"302771"},{"Year":"2008","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"129963"},{"Year":"2008","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"302931"},{"Year":"2009","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"133738"},{"Year":"2009","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"303088"},{"Year":"2010","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"133474"},{"Year":"2010","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"303269"},{"Year":"2011","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"133604"},{"Year":"2011","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"303566"},{"Year":"2012","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"138295"},{"Year":"2012","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"304564"},{"Year":"2013","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"139441"},{"Year":"2013","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"305406"},{"Year":"2014","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"141121"},{"Year":"2014","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"305832"},{"Year":"2015","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"141347"},{"Year":"2015","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"305935"},{"Year":"2016","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"141224"},{"Year":"2016","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"306135"},{"Year":"2017","Units":"Certified woodland area (hectares)","Geography":"Wales","Value":"145112"},{"Year":"2017","Units":"Total woodland area (hectares)","Geography":"Wales","Value":"307008"},{"Year":"2001","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"584719"},{"Year":"2001","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1331053"},{"Year":"2002","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"592366"},{"Year":"2002","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1338934"},{"Year":"2004","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"669909"},{"Year":"2004","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1352206"},{"Year":"2005","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"718699"},{"Year":"2005","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1357784"},{"Year":"2006","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"724370"},{"Year":"2006","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1361701"},{"Year":"2007","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"764314"},{"Year":"2007","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1368168"},{"Year":"2008","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"770012"},{"Year":"2008","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1372272"},{"Year":"2009","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"780754"},{"Year":"2009","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1375642"},{"Year":"2010","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"792465"},{"Year":"2010","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1378304"},{"Year":"2011","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"791775"},{"Year":"2011","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1383406"},{"Year":"2012","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"807737"},{"Year":"2012","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1403026"},{"Year":"2013","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"803698"},{"Year":"2013","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1410663"},{"Year":"2014","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"821769"},{"Year":"2014","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1424255"},{"Year":"2015","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"813368"},{"Year":"2015","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1431814"},{"Year":"2016","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"806897"},{"Year":"2016","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1436270"},{"Year":"2017","Units":"Certified woodland area (hectares)","Geography":"Scotland","Value":"841015"},{"Year":"2017","Units":"Total woodland area (hectares)","Geography":"Scotland","Value":"1439858"},{"Year":"2001","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"62472"},{"Year":"2001","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"83000"},{"Year":"2002","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"62472"},{"Year":"2002","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"84000"},{"Year":"2004","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"65120"},{"Year":"2004","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"85800"},{"Year":"2005","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"63451"},{"Year":"2005","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"85060"},{"Year":"2006","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"63431"},{"Year":"2006","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"85640"},{"Year":"2007","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"64156"},{"Year":"2007","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"86840"},{"Year":"2008","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"64439"},{"Year":"2008","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"87355"},{"Year":"2009","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"65060"},{"Year":"2009","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"87677"},{"Year":"2010","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"64150"},{"Year":"2010","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"87812"},{"Year":"2011","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"63456"},{"Year":"2011","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"87957"},{"Year":"2012","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"64555"},{"Year":"2012","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"105218"},{"Year":"2013","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"64683"},{"Year":"2013","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"111016"},{"Year":"2014","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"64839"},{"Year":"2014","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"111463"},{"Year":"2015","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"65121"},{"Year":"2015","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"111912"},{"Year":"2016","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"65261"},{"Year":"2016","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"112087"},{"Year":"2017","Units":"Certified woodland area (hectares)","Geography":"Northern Ireland","Value":"65345"},{"Year":"2017","Units":"Total woodland area (hectares)","Geography":"Northern Ireland","Value":"112378"},{"Year":"2001","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"35.7"},{"Year":"2002","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"36"},{"Year":"2004","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"38.5"},{"Year":"2005","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"41.6"},{"Year":"2006","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"42"},{"Year":"2007","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"43.6"},{"Year":"2008","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"43"},{"Year":"2009","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"43.6"},{"Year":"2010","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"44"},{"Year":"2011","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"43.2"},{"Year":"2012","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"43.9"},{"Year":"2013","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"43.6"},{"Year":"2014","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"43.8"},{"Year":"2015","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"43.6"},{"Year":"2016","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"42.7"},{"Year":"2017","Units":"Percentage of woodland area certified (%)","Geography":null,"Value":"44"},{"Year":"2001","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"23"},{"Year":"2002","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"23.5"},{"Year":"2004","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"23.5"},{"Year":"2005","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"26.9"},{"Year":"2006","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"27.6"},{"Year":"2007","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"28.4"},{"Year":"2008","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"26.9"},{"Year":"2009","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"27.4"},{"Year":"2010","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"27.7"},{"Year":"2011","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"25.9"},{"Year":"2012","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"27.4"},{"Year":"2013","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"27.3"},{"Year":"2014","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"26.8"},{"Year":"2015","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"27.3"},{"Year":"2016","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"25.8"},{"Year":"2017","Units":"Percentage of woodland area certified (%)","Geography":"England","Value":"26"},{"Year":"2001","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"41.4"},{"Year":"2002","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"41.2"},{"Year":"2004","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"42"},{"Year":"2005","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"43.5"},{"Year":"2006","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"43.38"},{"Year":"2007","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"43.8"},{"Year":"2008","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"42.9"},{"Year":"2009","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"44.1"},{"Year":"2010","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"44"},{"Year":"2011","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"44"},{"Year":"2012","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"45.4"},{"Year":"2013","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"45.7"},{"Year":"2014","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"46.1"},{"Year":"2015","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"46.2"},{"Year":"2016","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"46.1"},{"Year":"2017","Units":"Percentage of woodland area certified (%)","Geography":"Wales","Value":"47"},{"Year":"2001","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"43.9"},{"Year":"2002","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"44.2"},{"Year":"2004","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"49.5"},{"Year":"2005","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"52.9"},{"Year":"2006","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"53.2"},{"Year":"2007","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"55.9"},{"Year":"2008","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"56.1"},{"Year":"2009","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"56.8"},{"Year":"2010","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"57.5"},{"Year":"2011","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"57.2"},{"Year":"2012","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"57.6"},{"Year":"2013","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"57"},{"Year":"2014","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"57.7"},{"Year":"2015","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"56.8"},{"Year":"2016","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"56.2"},{"Year":"2017","Units":"Percentage of woodland area certified (%)","Geography":"Scotland","Value":"58"},{"Year":"2001","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"75.3"},{"Year":"2002","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"74.4"},{"Year":"2004","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"75.9"},{"Year":"2005","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"74.6"},{"Year":"2006","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"74.1"},{"Year":"2007","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"73.9"},{"Year":"2008","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"73.8"},{"Year":"2009","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"74.2"},{"Year":"2010","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"73.1"},{"Year":"2011","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"72.1"},{"Year":"2012","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"61.4"},{"Year":"2013","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"58.3"},{"Year":"2014","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"58.2"},{"Year":"2015","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"58.2"},{"Year":"2016","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"58.2"},{"Year":"2017","Units":"Percentage of woodland area certified (%)","Geography":"Northern Ireland","Value":"58"},{"Year":"2005","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"8.375108052"},{"Year":"2005","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.342205052"},{"Year":"2006","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"1.226564111"},{"Year":"2006","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.276528216"},{"Year":"2007","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"4.118652198"},{"Year":"2007","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.366399534"},{"Year":"2008","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"-1.15031279"},{"Year":"2008","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.235884875"},{"Year":"2009","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"1.708058208"},{"Year":"2009","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.202531754"},{"Year":"2010","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"1.141729664"},{"Year":"2010","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.166756495"},{"Year":"2011","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"-1.722387083"},{"Year":"2011","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.26397813"},{"Year":"2012","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"3.134825866"},{"Year":"2012","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"1.407703287"},{"Year":"2013","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"-0.219576654"},{"Year":"2013","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.476364014"},{"Year":"2014","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"1.057461186"},{"Year":"2014","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.58082906"},{"Year":"2015","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"-0.106452269"},{"Year":"2015","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.335201809"},{"Year":"2016","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"-1.818721613"},{"Year":"2016","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.197917913"},{"Year":"2017","Units":"Annual certified woodland area growth rate (%)","Geography":null,"Value":"2.794334399"},{"Year":"2017","Units":"Annual total woodland area growth rate (%)","Geography":null,"Value":"0.181493989"},{"Year":"2005","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"15.23410459"},{"Year":"2005","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.389209374"},{"Year":"2006","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"2.87379879"},{"Year":"2006","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.26521798"},{"Year":"2007","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"2.908834345"},{"Year":"2007","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.229596214"},{"Year":"2008","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"-5.110829804"},{"Year":"2008","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.186594452"},{"Year":"2009","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"2.094614417"},{"Year":"2009","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.180765749"},{"Year":"2010","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"1.325300629"},{"Year":"2010","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.164243121"},{"Year":"2011","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"-6.145845562"},{"Year":"2011","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.196301439"},{"Year":"2012","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"5.89319275"},{"Year":"2012","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.410041899"},{"Year":"2013","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"-0.066071829"},{"Year":"2013","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.041602583"},{"Year":"2014","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"-1.549830712"},{"Year":"2014","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.284153295"},{"Year":"2015","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"1.840319778"},{"Year":"2015","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.186292766"},{"Year":"2016","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"-5.219150464"},{"Year":"2016","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.108156972"},{"Year":"2017","Units":"Annual certified woodland area growth rate (%)","Geography":"England","Value":"-0.10468108"},{"Year":"2017","Units":"Annual total woodland area growth rate (%)","Geography":"England","Value":"0.075376125"},{"Year":"2005","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"3.622196661"},{"Year":"2005","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.171352622"},{"Year":"2006","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"-0.082962124"},{"Year":"2006","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.156448561"},{"Year":"2007","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"1.110430081"},{"Year":"2007","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.16356385"},{"Year":"2008","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"-1.980026572"},{"Year":"2008","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.052994665"},{"Year":"2009","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"2.904927555"},{"Year":"2009","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.051753304"},{"Year":"2010","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"-0.197617885"},{"Year":"2010","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.059825499"},{"Year":"2011","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"0.097697223"},{"Year":"2011","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.097840441"},{"Year":"2012","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"3.511070028"},{"Year":"2012","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.328739055"},{"Year":"2013","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"0.828689526"},{"Year":"2013","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.276609759"},{"Year":"2014","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"1.204728748"},{"Year":"2014","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.139348981"},{"Year":"2015","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"0.160309712"},{"Year":"2015","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.033714591"},{"Year":"2016","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"-0.086971324"},{"Year":"2016","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.065460201"},{"Year":"2017","Units":"Annual certified woodland area growth rate (%)","Geography":"Wales","Value":"2.753264748"},{"Year":"2017","Units":"Annual total woodland area growth rate (%)","Geography":"Wales","Value":"0.285158983"},{"Year":"2005","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"7.283131659"},{"Year":"2005","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.412504547"},{"Year":"2006","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"0.789016387"},{"Year":"2006","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.288460709"},{"Year":"2007","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"5.514272734"},{"Year":"2007","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.474947783"},{"Year":"2008","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"0.74556671"},{"Year":"2008","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.299911106"},{"Year":"2009","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"1.395065496"},{"Year":"2009","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.245632543"},{"Year":"2010","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"1.499964616"},{"Year":"2010","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.193483481"},{"Year":"2011","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"-0.087107915"},{"Year":"2011","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.370165072"},{"Year":"2012","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"2.015945186"},{"Year":"2012","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"1.418269113"},{"Year":"2013","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"-0.499960995"},{"Year":"2013","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.544319329"},{"Year":"2014","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"2.248411845"},{"Year":"2014","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.963460258"},{"Year":"2015","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"-1.022331699"},{"Year":"2015","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.530766337"},{"Year":"2016","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"-0.795596904"},{"Year":"2016","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.311236753"},{"Year":"2017","Units":"Annual certified woodland area growth rate (%)","Geography":"Scotland","Value":"4.228327962"},{"Year":"2017","Units":"Annual total woodland area growth rate (%)","Geography":"Scotland","Value":"0.249775646"},{"Year":"2005","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"-2.562960688"},{"Year":"2005","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"-0.862470862"},{"Year":"2006","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"-0.031520386"},{"Year":"2006","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.68187162"},{"Year":"2007","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"1.143643157"},{"Year":"2007","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"1.401214386"},{"Year":"2008","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.440282974"},{"Year":"2008","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.59304468"},{"Year":"2009","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.963092096"},{"Year":"2009","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.368610841"},{"Year":"2010","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"-1.398719634"},{"Year":"2010","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.153974246"},{"Year":"2011","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"-1.081847871"},{"Year":"2011","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.165125495"},{"Year":"2012","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"1.731922371"},{"Year":"2012","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"19.6243619"},{"Year":"2013","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.198932685"},{"Year":"2013","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"5.510463989"},{"Year":"2014","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.241300176"},{"Year":"2014","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.402644664"},{"Year":"2015","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.434923426"},{"Year":"2015","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.402824256"},{"Year":"2016","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.215506519"},{"Year":"2016","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.156372864"},{"Year":"2017","Units":"Annual certified woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.127977758"},{"Year":"2017","Units":"Annual total woodland area growth rate (%)","Geography":"Northern Ireland","Value":"0.25961976"}]' data-indicatorid='indicator_15-2-1' data-country="UK"
+  data-edgesdata='[]' data-charttitle="Measures of sustainable forest management" data-measurementunit="Area (hectares), percentage (%) and percentage growth rate (%)" data-datasource="Department for Environment, Food and Rural Affairs (DEFRA)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -221,18 +234,18 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Progress towards sustainable forest management</h3>
+                <h3>Measures of sustainable forest management</h3>
               
-              <p>Unit of Measurement: Area (Ha)/ Percentage (%)/ Percentage growth rate (%)</p>     
-              <a href="/data/indicator_15-2-1.csv" class="btn btn-primary btn-download" download='indicator_15-2-1.csv'>Download source CSV</a>
+              <p>Unit of Measurement: Area (hectares), percentage (%) and percentage growth rate (%)</p>     
+              <a href="/data/indicator_15-2-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_15-2-1.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_15-2-1.csv' class='btn btn-primary btn-download' download='indicator_15-2-1.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_15-2-1.csv" class="btn btn-primary btn-download" download='indicator_15-2-1.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -249,7 +262,7 @@
       
           <td>2001</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1061062.0</td>
       
@@ -259,7 +272,7 @@
       
           <td>2001</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>2971294.0</td>
       
@@ -269,7 +282,7 @@
       
           <td>2002</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1075356.0</td>
       
@@ -279,7 +292,7 @@
       
           <td>2002</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>2985421.0</td>
       
@@ -289,7 +302,7 @@
       
           <td>2004</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1159944.0</td>
       
@@ -299,7 +312,7 @@
       
           <td>2004</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3011040.0</td>
       
@@ -309,7 +322,7 @@
       
           <td>2005</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1257091.0</td>
       
@@ -319,7 +332,7 @@
       
           <td>2005</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3021344.0</td>
       
@@ -329,7 +342,7 @@
       
           <td>2006</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1272510.0</td>
       
@@ -339,7 +352,7 @@
       
           <td>2006</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3029699.0</td>
       
@@ -349,7 +362,7 @@
       
           <td>2007</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1324920.0</td>
       
@@ -359,7 +372,7 @@
       
           <td>2007</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3040799.0</td>
       
@@ -369,7 +382,7 @@
       
           <td>2008</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1309680.0</td>
       
@@ -379,7 +392,7 @@
       
           <td>2008</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3047972.0</td>
       
@@ -389,7 +402,7 @@
       
           <td>2009</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1332050.0</td>
       
@@ -399,7 +412,7 @@
       
           <td>2009</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3054145.0</td>
       
@@ -409,7 +422,7 @@
       
           <td>2010</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1347258.0</td>
       
@@ -419,7 +432,7 @@
       
           <td>2010</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3059238.0</td>
       
@@ -429,7 +442,7 @@
       
           <td>2011</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1324053.0</td>
       
@@ -439,7 +452,7 @@
       
           <td>2011</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3067314.0</td>
       
@@ -449,7 +462,7 @@
       
           <td>2012</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1365560.0</td>
       
@@ -459,7 +472,7 @@
       
           <td>2012</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3110493.0</td>
       
@@ -469,7 +482,7 @@
       
           <td>2013</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1362561.0</td>
       
@@ -479,7 +492,7 @@
       
           <td>2013</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3125310.0</td>
       
@@ -489,7 +502,7 @@
       
           <td>2014</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1376970.0</td>
       
@@ -499,7 +512,7 @@
       
           <td>2014</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3143463.0</td>
       
@@ -509,7 +522,7 @@
       
           <td>2015</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1375504.0</td>
       
@@ -519,7 +532,7 @@
       
           <td>2015</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3154000.0</td>
       
@@ -529,7 +542,7 @@
       
           <td>2016</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1350488.0</td>
       
@@ -539,7 +552,7 @@
       
           <td>2016</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3160242.0</td>
       
@@ -549,7 +562,7 @@
       
           <td>2017</td>
       
-          <td>Certified woodland area (ha)</td>
+          <td>Certified woodland area (hectares)</td>
       
           <td>1388225.0</td>
       
@@ -559,7 +572,7 @@
       
           <td>2017</td>
       
-          <td>Total woodland area (ha)</td>
+          <td>Total woodland area (hectares)</td>
       
           <td>3165978.0</td>
       
@@ -988,11 +1001,12 @@
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -1339,7 +1353,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            Area (Ha)/ Percentage (%)/ Percentage growth rate (%)
+            Area (hectares), percentage (%) and percentage growth rate (%)
           
         </td>
         </tr>
@@ -1866,7 +1880,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            Department for Environment, Food and Rural Affairs
+            Department for Environment, Food and Rural Affairs (DEFRA)
           
         </td>
         </tr>
@@ -1925,7 +1939,7 @@
 
             
               <a href="http://jncc.defra.gov.uk/page-4243">
-                Link to Data Source Text (33. Link to Data Source Text)	B1b. Area of forestry land certified as sustainably managed
+                B1b. Area of forestry land certified as sustainably managed
               </a>
             
             
@@ -1945,7 +1959,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            
+            01-08-2017
           
         </td>
         </tr>
@@ -2088,10 +2102,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -2121,11 +2135,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

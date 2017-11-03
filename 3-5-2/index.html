@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/good-health-and-well-being" title="View this goal's indicator list">
-          <img src="/assets/img/goals/3.png" alt="icon for Goal 3" />
+          <img src="/assets/img/goals/3.png" alt="Good Health and Well-being - Goal 3" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/good-health-and-well-being">
             <span class="hidden-sm hidden-md hidden-lg">Goal 3: </span>Ensure healthy lives and promote well-being for all at all ages
           </a>
-        </h2>
-        <h3>Indicator 3.5.2: Harmful use of alcohol, defined according to the national context as alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol</h3>
+        </h1>
+        <h2>Indicator 3.5.2: Harmful use of alcohol, defined according to the national context as alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol</h2>
       </div>
     </div>
   </div>
@@ -164,10 +177,10 @@
 </ol>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Beverage":null,"Value":"10.66"},{"Year":"2014","Beverage":null,"Value":"10.37"},{"Year":"2013","Beverage":null,"Value":"10.32"},{"Year":"2012","Beverage":null,"Value":"10.42"},{"Year":"2011","Beverage":null,"Value":"10.68"},{"Year":"2010","Beverage":null,"Value":"10.88"},{"Year":"2009","Beverage":null,"Value":"10.79"},{"Year":"2008","Beverage":null,"Value":"11.47"},{"Year":"2007","Beverage":null,"Value":"11.84"},{"Year":"2006","Beverage":null,"Value":"11.61"},{"Year":"2005","Beverage":null,"Value":"12.05"},{"Year":"2004","Beverage":null,"Value":"12.22"},{"Year":"2003","Beverage":null,"Value":"11.85"},{"Year":"2002","Beverage":null,"Value":"11.44"},{"Year":"2001","Beverage":null,"Value":"10.91"},{"Year":"2000","Beverage":null,"Value":"10.59"},{"Year":"2015","Beverage":"Beer","Value":"3.49"},{"Year":"2014","Beverage":"Beer","Value":"3.48"},{"Year":"2013","Beverage":"Beer","Value":"3.38"},{"Year":"2012","Beverage":"Beer","Value":"3.46"},{"Year":"2011","Beverage":"Beer","Value":"3.65"},{"Year":"2010","Beverage":"Beer","Value":"3.76"},{"Year":"2009","Beverage":"Beer","Value":"3.84"},{"Year":"2008","Beverage":"Beer","Value":"4.22"},{"Year":"2007","Beverage":"Beer","Value":"4.45"},{"Year":"2006","Beverage":"Beer","Value":"4.7"},{"Year":"2005","Beverage":"Beer","Value":"4.85"},{"Year":"2004","Beverage":"Beer","Value":"5.09"},{"Year":"2003","Beverage":"Beer","Value":"5.16"},{"Year":"2002","Beverage":"Beer","Value":"5.11"},{"Year":"2001","Beverage":"Beer","Value":"5.06"},{"Year":"2000","Beverage":"Beer","Value":"4.98"},{"Year":"2015","Beverage":"Wine","Value":"4.17"},{"Year":"2014","Beverage":"Wine","Value":"4.06"},{"Year":"2013","Beverage":"Wine","Value":"4.03"},{"Year":"2012","Beverage":"Wine","Value":"3.96"},{"Year":"2011","Beverage":"Wine","Value":"3.95"},{"Year":"2010","Beverage":"Wine","Value":"3.96"},{"Year":"2009","Beverage":"Wine","Value":"3.87"},{"Year":"2008","Beverage":"Wine","Value":"4.13"},{"Year":"2007","Beverage":"Wine","Value":"4.24"},{"Year":"2006","Beverage":"Wine","Value":"3.9"},{"Year":"2005","Beverage":"Wine","Value":"4.1"},{"Year":"2004","Beverage":"Wine","Value":"3.98"},{"Year":"2003","Beverage":"Wine","Value":"3.65"},{"Year":"2002","Beverage":"Wine","Value":"3.4"},{"Year":"2001","Beverage":"Wine","Value":"3.22"},{"Year":"2000","Beverage":"Wine","Value":"3.02"},{"Year":"2015","Beverage":"Spirits","Value":"2.27"},{"Year":"2014","Beverage":"Spirits","Value":"2.07"},{"Year":"2013","Beverage":"Spirits","Value":"2.09"},{"Year":"2012","Beverage":"Spirits","Value":"2.16"},{"Year":"2011","Beverage":"Spirits","Value":"2.17"},{"Year":"2010","Beverage":"Spirits","Value":"2.25"},{"Year":"2009","Beverage":"Spirits","Value":"2.16"},{"Year":"2008","Beverage":"Spirits","Value":"2.28"},{"Year":"2007","Beverage":"Spirits","Value":"2.35"},{"Year":"2006","Beverage":"Spirits","Value":"2.25"},{"Year":"2005","Beverage":"Spirits","Value":"2.45"},{"Year":"2004","Beverage":"Spirits","Value":"2.51"},{"Year":"2003","Beverage":"Spirits","Value":"2.45"},{"Year":"2002","Beverage":"Spirits","Value":"2.32"},{"Year":"2001","Beverage":"Spirits","Value":"2.03"},{"Year":"2000","Beverage":"Spirits","Value":"1.96"},{"Year":"2015","Beverage":"Other alcoholic beverages","Value":"0.73"},{"Year":"2014","Beverage":"Other alcoholic beverages","Value":"0.76"},{"Year":"2013","Beverage":"Other alcoholic beverages","Value":"0.83"},{"Year":"2012","Beverage":"Other alcoholic beverages","Value":"0.84"},{"Year":"2011","Beverage":"Other alcoholic beverages","Value":"0.9"},{"Year":"2010","Beverage":"Other alcoholic beverages","Value":"0.91"},{"Year":"2009","Beverage":"Other alcoholic beverages","Value":"0.92"},{"Year":"2008","Beverage":"Other alcoholic beverages","Value":"0.83"},{"Year":"2007","Beverage":"Other alcoholic beverages","Value":"0.8"},{"Year":"2006","Beverage":"Other alcoholic beverages","Value":"0.75"},{"Year":"2005","Beverage":"Other alcoholic beverages","Value":"0.65"},{"Year":"2004","Beverage":"Other alcoholic beverages","Value":"0.62"},{"Year":"2003","Beverage":"Other alcoholic beverages","Value":"0.6"},{"Year":"2002","Beverage":"Other alcoholic beverages","Value":"0.61"},{"Year":"2001","Beverage":"Other alcoholic beverages","Value":"0.61"},{"Year":"2000","Beverage":"Other alcoholic beverages","Value":"0.63"}]' data-indicatorid='indicator_3-5-2' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol" data-measurementunit="Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol" data-datasource="World Health Organization (WHO)" data-geographicalarea="United Kingdom" data-showdata="true">
+  data-edgesdata='[]' data-charttitle="Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol" data-measurementunit="Litres" data-datasource="World Health Organization (WHO)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -223,16 +236,16 @@
               
                 <h3>Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol</h3>
               
-              <p>Unit of Measurement: Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol</p>     
-              <a href="/data/indicator_3-5-2.csv" class="btn btn-primary btn-download" download='indicator_3-5-2.csv'>Download source CSV</a>
+              <p>Unit of Measurement: Litres</p>     
+              <a href="/data/indicator_3-5-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-5-2.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_3-5-2.csv' class='btn btn-primary btn-download' download='indicator_3-5-2.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_3-5-2.csv" class="btn btn-primary btn-download" download='indicator_3-5-2.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -374,11 +387,12 @@
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -424,7 +438,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Harmful use of alcohol, defined according to the national context as alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol
+            Harmful use of alcohol, defined as the annual alcohol consumption per capita (aged 15 years and older) in litres of pure alcohol
           
         </td>
         </tr>
@@ -450,7 +464,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -725,7 +739,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            Alcohol per capita consumption (aged 15 years and older) within a calendar year in litres of pure alcohol
+            Litres
           
         </td>
         </tr>
@@ -971,7 +985,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            WHO
+            World Health Organisation (WHO)
           
         </td>
         </tr>
@@ -997,7 +1011,7 @@
         <th scope="row">UNSD Indicator Code </th>
         <td>
           
-            C030502
+            
           
         </td>
         </tr>
@@ -1030,7 +1044,7 @@
 
             
               <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-3.pdf">
-                UN Metadata
+                United Nations Sustainable Development Goals Metadata: Goal 3
               </a>
             
             
@@ -1265,7 +1279,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            
+            Annual
           
         </td>
         </tr>
@@ -1311,7 +1325,7 @@
 
             
               <a href="http://apps.who.int/gho/data/node.main.A1026?lang=en">
-                Global Health Observatory data repository
+                Recorded alcohol per capita consumption, from 2000
               </a>
             
             
@@ -1331,7 +1345,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            
+            01-05-2016
           
         </td>
         </tr>
@@ -1474,10 +1488,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1507,11 +1521,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

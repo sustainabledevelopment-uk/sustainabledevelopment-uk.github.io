@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/gender-equality" title="View this goal's indicator list">
-          <img src="/assets/img/goals/5.png" alt="icon for Goal 5" />
+          <img src="/assets/img/goals/5.png" alt="Gender Equality - Goal 5" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/gender-equality">
             <span class="hidden-sm hidden-md hidden-lg">Goal 5: </span>Achieve gender equality and empower all women and girls
           </a>
-        </h2>
-        <h3>Indicator 5.3.2: Proportion of girls and women aged 15-49 years who have undergone female genital mutilation/cutting, by age</h3>
+        </h1>
+        <h2>Indicator 5.3.2: Proportion of girls and women aged 15-49 years who have undergone female genital mutilation/cutting, by age</h2>
       </div>
     </div>
   </div>
@@ -163,11 +176,11 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Age at which female genital mutilation occurred":"Not recorded","Value":"93.77800753"},{"Year":"2015","Age at which female genital mutilation occurred":"Did not say","Value":"40.16998786"},{"Year":"2015","Age at which female genital mutilation occurred":"Under 1","Value":"10.77204159"},{"Year":"2015","Age at which female genital mutilation occurred":"1 to 4","Value":"12.7895477"},{"Year":"2015","Age at which female genital mutilation occurred":"5 to 10","Value":"26.62387536"},{"Year":"2015","Age at which female genital mutilation occurred":"10 to 15","Value":"6.232652825"},{"Year":"2015","Age at which female genital mutilation occurred":"15 to 18","Value":"0.756564794"},{"Year":"2015","Age at which female genital mutilation occurred":"18 and over","Value":"3.098312965"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Value":"194.2209906"},{"Year":"2016","Age at which female genital mutilation occurred":"Not recorded","Value":"119.6403766"},{"Year":"2016","Age at which female genital mutilation occurred":"Did not say","Value":"35.89926423"},{"Year":"2016","Age at which female genital mutilation occurred":"Under 1","Value":"8.40271623"},{"Year":"2016","Age at which female genital mutilation occurred":"1 to 4","Value":"12.19287759"},{"Year":"2016","Age at which female genital mutilation occurred":"5 to 10","Value":"20.81013126"},{"Year":"2016","Age at which female genital mutilation occurred":"10 to 15","Value":"4.755579824"},{"Year":"2016","Age at which female genital mutilation occurred":"15 to 18","Value":"0.464831111"},{"Year":"2016","Age at which female genital mutilation occurred":"18 and over","Value":"1.716299485"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Value":"203.8820764"}]' data-indicatorid='indicator_5-3-2' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Newly recorded cases of  female genital mutilation/cutting per 1,000,000 population" data-measurementunit="Newly recorded cases per 1,000,000 population" data-datasource="National Health Service (NHS)" data-geographicalarea="England" data-showdata="true">
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Age at which female genital mutilation occurred":"Not recorded","Value":"93.77800753"},{"Year":"2015","Age at which female genital mutilation occurred":"Did not say","Value":"40.16998786"},{"Year":"2015","Age at which female genital mutilation occurred":"1 and under","Value":"10.77204159"},{"Year":"2015","Age at which female genital mutilation occurred":"1 to 4","Value":"12.7895477"},{"Year":"2015","Age at which female genital mutilation occurred":"5 to 10","Value":"26.62387536"},{"Year":"2015","Age at which female genital mutilation occurred":"10 to 15","Value":"6.232652825"},{"Year":"2015","Age at which female genital mutilation occurred":"15 to 18","Value":"0.756564794"},{"Year":"2015","Age at which female genital mutilation occurred":"18 and over","Value":"3.098312965"},{"Year":"2015","Age at which female genital mutilation occurred":"Total","Value":"194.2209906"},{"Year":"2016","Age at which female genital mutilation occurred":"Not recorded","Value":"119.6403766"},{"Year":"2016","Age at which female genital mutilation occurred":"Did not say","Value":"35.89926423"},{"Year":"2016","Age at which female genital mutilation occurred":"1 and under","Value":"8.40271623"},{"Year":"2016","Age at which female genital mutilation occurred":"1 to 4","Value":"12.19287759"},{"Year":"2016","Age at which female genital mutilation occurred":"5 to 10","Value":"20.81013126"},{"Year":"2016","Age at which female genital mutilation occurred":"10 to 15","Value":"4.755579824"},{"Year":"2016","Age at which female genital mutilation occurred":"15 to 18","Value":"0.464831111"},{"Year":"2016","Age at which female genital mutilation occurred":"18 and over","Value":"1.716299485"},{"Year":"2016","Age at which female genital mutilation occurred":"Total","Value":"203.8820764"}]' data-indicatorid='indicator_5-3-2' data-country="UK"
+  data-edgesdata='[]' data-charttitle="Newly recorded cases of  female genital mutilation or cutting per million population" data-measurementunit="Newly recorded cases per million population" data-datasource="National Health Service (NHS)" data-geographicalarea="England" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -221,52 +234,33 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Newly recorded cases of  female genital mutilation/cutting per 1,000,000 population</h3>
+                <h3>Newly recorded cases of  female genital mutilation or cutting per million population</h3>
               
-              <p>Unit of Measurement: Newly recorded cases per 1,000,000 population</p>     
-              <a href="/data/indicator_5-3-2.csv" class="btn btn-primary btn-download" download='indicator_5-3-2.csv'>Download source CSV</a>
+              <p>Unit of Measurement: Newly recorded cases per million population</p>     
+              <a href="/data/indicator_5-3-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_5-3-2.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_5-3-2.csv' class='btn btn-primary btn-download' download='indicator_5-3-2.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_5-3-2.csv" class="btn btn-primary btn-download" download='indicator_5-3-2.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
   
   </thead>
   <tbody>
   
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>194.2209906</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2016</td>
-      
-          <td>203.8820764</td>
-      
-      </tr>
-  
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -312,7 +306,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Proportion of girls and women who have undergone female genital mutilation/cutting by age at which mutilation/cutting occurred. 
+            Number of newly recorded cases of  female genital mutilation or cutting, by age at which this occurred, per million population
           
         </td>
         </tr>
@@ -325,7 +319,7 @@
         <th scope="row">Actual Indicator Description </th>
         <td>
           
-            Number of newly recorded cases of  female genital mutilation/cutting per 1,000,000 population
+            
           
         </td>
         </tr>
@@ -338,7 +332,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -613,7 +607,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            Newly recorded cases per 1,000,000 population
+            Newly recorded cases per million population
           
         </td>
         </tr>
@@ -833,7 +827,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            From UNICEF: This indicator provides the proportion of girls and women aged 15 to 49 years who have undergone female genital mutilation/cutting (FGM/C). It is calculated by dividing the number of girls and women aged 15-49 who have undergone FGM/C by the total number of girls and women aged 15-49 in the population From WHO: The numerator is the number of women and girls who have undergone a FGM procedure (Type 1 to IV). The denominator is the number of women and girls in the same population
+            
           
         </td>
         </tr>
@@ -885,7 +879,7 @@
         <th scope="row">UNSD Indicator Code </th>
         <td>
           
-            C050302
+            
           
         </td>
         </tr>
@@ -898,7 +892,7 @@
         <th scope="row">UN Indicator Notes </th>
         <td>
           
-            IAEG-SDG 3rd meeting: Lack of sufficient data coverage
+            
           
         </td>
         </tr>
@@ -918,7 +912,7 @@
 
             
               <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-03-02.pdf">
-                United Nations Sustainable Development Goals Metadata Indicator 05-03-02
+                United Nations Sustainable Development Goals Metadata: 5.3.2
               </a>
             
             
@@ -1153,7 +1147,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -1362,10 +1356,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1395,11 +1389,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

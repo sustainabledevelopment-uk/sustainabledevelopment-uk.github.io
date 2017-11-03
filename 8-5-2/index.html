@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/decent-jobs-and-economic-growth" title="View this goal's indicator list">
-          <img src="/assets/img/goals/8.png" alt="icon for Goal 8" />
+          <img src="/assets/img/goals/8.png" alt="Decent jobs and economic growth - Goal 8" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/decent-jobs-and-economic-growth">
             <span class="hidden-sm hidden-md hidden-lg">Goal 8: </span>Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all
           </a>
-        </h2>
-        <h3>Indicator 8.5.2: Unemployment rate, by sex, age and persons with disabilities</h3>
+        </h1>
+        <h2>Indicator 8.5.2: Unemployment rate, by sex, age and persons with disabilities</h2>
       </div>
     </div>
   </div>
@@ -163,11 +176,11 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"5.45"},{"Year":"2001","Value":"5.06"},{"Year":"2002","Value":"5.20"},{"Year":"2003","Value":"5.02"},{"Year":"2004","Value":"4.74"},{"Year":"2005","Value":"4.81"},{"Year":"2006","Value":"5.43"},{"Year":"2007","Value":"5.33"},{"Year":"2008","Value":"5.66"},{"Year":"2009","Value":"7.67"},{"Year":"2010","Value":"7.87"},{"Year":"2011","Value":"8.10"},{"Year":"2012","Value":"7.97"},{"Year":"2013","Value":"7.59"},{"Year":"2014","Value":"6.17"},{"Year":"2015","Value":"5.38"},{"Year":"2016","Value":"4.90"},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null},{"Year":null,"Value":null}]' data-indicatorid='indicator_8-5-2' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Unemployment rate (%)" data-measurementunit="Percentage of economically active people that were unemployed" data-datasource="Office for National Statistics " data-geographicalarea="UK" data-showdata="true">
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"5.45"},{"Year":"2001","Value":"5.06"},{"Year":"2002","Value":"5.2"},{"Year":"2003","Value":"5.02"},{"Year":"2004","Value":"4.74"},{"Year":"2005","Value":"4.81"},{"Year":"2006","Value":"5.43"},{"Year":"2007","Value":"5.33"},{"Year":"2008","Value":"5.66"},{"Year":"2009","Value":"7.67"},{"Year":"2010","Value":"7.87"},{"Year":"2011","Value":"8.1"},{"Year":"2012","Value":"7.97"},{"Year":"2013","Value":"7.59"},{"Year":"2014","Value":"6.17"},{"Year":"2015","Value":"5.38"},{"Year":"2016","Value":"4.9"}]' data-indicatorid='indicator_8-5-2' data-country="UK"
+  data-edgesdata='[]' data-charttitle="Unemployment rate" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -221,18 +234,18 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Unemployment rate (%)</h3>
+                <h3>Unemployment rate</h3>
               
-              <p>Unit of Measurement: Percentage of economically active people that were unemployed</p>     
-              <a href="/data/indicator_8-5-2.csv" class="btn btn-primary btn-download" download='indicator_8-5-2.csv'>Download source CSV</a>
+              <p>Unit of Measurement: Percentage (%)</p>     
+              <a href="/data/indicator_8-5-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_8-5-2.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_8-5-2.csv' class='btn btn-primary btn-download' download='indicator_8-5-2.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_8-5-2.csv" class="btn btn-primary btn-download" download='indicator_8-5-2.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -245,7 +258,7 @@
   
       <tr>
       
-          <td>2000.0</td>
+          <td>2000</td>
       
           <td>5.45</td>
       
@@ -253,7 +266,7 @@
   
       <tr>
       
-          <td>2001.0</td>
+          <td>2001</td>
       
           <td>5.06</td>
       
@@ -261,7 +274,7 @@
   
       <tr>
       
-          <td>2002.0</td>
+          <td>2002</td>
       
           <td>5.2</td>
       
@@ -269,7 +282,7 @@
   
       <tr>
       
-          <td>2003.0</td>
+          <td>2003</td>
       
           <td>5.02</td>
       
@@ -277,7 +290,7 @@
   
       <tr>
       
-          <td>2004.0</td>
+          <td>2004</td>
       
           <td>4.74</td>
       
@@ -285,7 +298,7 @@
   
       <tr>
       
-          <td>2005.0</td>
+          <td>2005</td>
       
           <td>4.81</td>
       
@@ -293,7 +306,7 @@
   
       <tr>
       
-          <td>2006.0</td>
+          <td>2006</td>
       
           <td>5.43</td>
       
@@ -301,7 +314,7 @@
   
       <tr>
       
-          <td>2007.0</td>
+          <td>2007</td>
       
           <td>5.33</td>
       
@@ -309,7 +322,7 @@
   
       <tr>
       
-          <td>2008.0</td>
+          <td>2008</td>
       
           <td>5.66</td>
       
@@ -317,7 +330,7 @@
   
       <tr>
       
-          <td>2009.0</td>
+          <td>2009</td>
       
           <td>7.67</td>
       
@@ -325,7 +338,7 @@
   
       <tr>
       
-          <td>2010.0</td>
+          <td>2010</td>
       
           <td>7.87</td>
       
@@ -333,7 +346,7 @@
   
       <tr>
       
-          <td>2011.0</td>
+          <td>2011</td>
       
           <td>8.1</td>
       
@@ -341,7 +354,7 @@
   
       <tr>
       
-          <td>2012.0</td>
+          <td>2012</td>
       
           <td>7.97</td>
       
@@ -349,7 +362,7 @@
   
       <tr>
       
-          <td>2013.0</td>
+          <td>2013</td>
       
           <td>7.59</td>
       
@@ -357,7 +370,7 @@
   
       <tr>
       
-          <td>2014.0</td>
+          <td>2014</td>
       
           <td>6.17</td>
       
@@ -365,7 +378,7 @@
   
       <tr>
       
-          <td>2015.0</td>
+          <td>2015</td>
       
           <td>5.38</td>
       
@@ -373,700 +386,21 @@
   
       <tr>
       
-          <td>2016.0</td>
+          <td>2016</td>
       
           <td>4.9</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td></td>
-      
-          <td></td>
       
       </tr>
   
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -1112,7 +446,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Unemployment rate by age 
+            Unemployment rate by age
           
         </td>
         </tr>
@@ -1125,7 +459,7 @@
         <th scope="row">Actual Indicator Description </th>
         <td>
           
-            The unemployment rate is a useful measure of the underutilization of the labour supply. It reflects the inability of an economy to generate employment for those persons who want to work but are not doing so, even though they are available for employment and actively seeking work. It is thus seen as an indicator of the efficiency and effectiveness of an economy to absorb its labour force and of the performance of the labour market. Short-term time series of the unemployment rate can be used to signal changes in the business cycle; upward movements in the indicator often coincide with recessionary periods or in some cases with the beginning of an expansionary period as persons previously not in the labour market begin to test conditions through an active job search.
+            
           
         </td>
         </tr>
@@ -1138,7 +472,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Monthly
+            Anually
           
         </td>
         </tr>
@@ -1164,7 +498,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            UK
+            United Kingdom
           
         </td>
         </tr>
@@ -1413,7 +747,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            Percentage of economically active people that were unemployed
+            Percentage (%)
           
         </td>
         </tr>
@@ -1426,7 +760,7 @@
         <th scope="row">Calculations </th>
         <td>
           
-            No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator. For insight into the details of potential calculations please refer to the original source metadata or source contact. A basic summary of the concept  behind the formation of the indicator is as follows:  The unemployment rate is calculated by dividing total unemployment by the total of economically active individuals and multiplying this by 100 to get a percentage.
+            
           
         </td>
         </tr>
@@ -1439,7 +773,7 @@
         <th scope="row">Numerator </th>
         <td>
           
-            Total unemployment × 100
+            
           
         </td>
         </tr>
@@ -1452,7 +786,7 @@
         <th scope="row">Denominator </th>
         <td>
           
-            Total number of economically active individuals 
+            
           
         </td>
         </tr>
@@ -1465,7 +799,7 @@
         <th scope="row">Definitions </th>
         <td>
           
-            The definition for unemployment is as follows; persons without a job, have been actively seeking work in the past 4 weeks and are available to start work in the next 2 weeks. Or out of work, have found a job and are waiting to start it in the next 2 weeks. Economically active individuals are defined as those that are in work plus those that are unemployed.
+            
           
         </td>
         </tr>
@@ -1633,7 +967,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            The unemployment rate is calculated by dividing the total number of unemployed (for a country or a specific group of workers) by the corresponding labour force, which itself is the sum of the total persons employed and unemployed in the group. Persons in unemployment are defined as all those of working age who were not in employment, carried out activities to seek employment during a specified recent period and were currently available to take up employment given a job opportunity.
+            
           
         </td>
         </tr>
@@ -1659,7 +993,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            ILO
+            International Labour Organization (ILO)
           
         </td>
         </tr>
@@ -1718,7 +1052,7 @@
 
             
               <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-08-05-02.pdf">
-                UN metadata 
+                United Nations Sustainable Development Goals Metadata: 8.5.2
               </a>
             
             
@@ -1940,7 +1274,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            Office for National Statistics 
+            Office for National Statistics (ONS)
           
         </td>
         </tr>
@@ -1953,7 +1287,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            Monthly 
+            Annually
           
         </td>
         </tr>
@@ -1979,7 +1313,7 @@
         <th scope="row">Geographical Coverage </th>
         <td>
           
-            UK
+            United Kingdom
           
         </td>
         </tr>
@@ -2019,7 +1353,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            13 September 2017
+            13-09-2017
           
         </td>
         </tr>
@@ -2032,7 +1366,7 @@
         <th scope="row">Next Release </th>
         <td>
           
-            18 October 2017
+            
           
         </td>
         </tr>
@@ -2045,7 +1379,7 @@
         <th scope="row">Statistical Classification </th>
         <td>
           
-            National Statistic 
+            
           
         </td>
         </tr>
@@ -2058,7 +1392,7 @@
         <th scope="row">Contact Details </th>
         <td>
           
-            Richard Clegg labour.market@ons.gsi.gov.uk 
+            
           
         </td>
         </tr>
@@ -2071,7 +1405,7 @@
         <th scope="row">Other Information </th>
         <td>
           
-            Labour force survey metadata https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/qmis/labourforcesurveylfsqmi
+            
           
         </td>
         </tr>
@@ -2162,10 +1496,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -2195,11 +1529,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

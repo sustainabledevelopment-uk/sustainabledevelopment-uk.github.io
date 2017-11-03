@@ -421,21 +421,23 @@ h5 + .btn-download {
   display: block; }
   .heading a:hover {
     text-decoration: none; }
+.heading h1,
 .heading h2,
 .heading h3 {
   color: white; }
-.heading h2 {
-  margin-top: 12px; }
+.heading h1 {
+  margin-top: 12px;
+  font-size: 2.2em; }
   @media only screen and (max-width: 480px) {
-    .heading h2 {
+    .heading h1 {
       font-size: 0.938em; } }
 @media only screen and (max-width: 480px) {
   .heading h3 {
     font-size: 0.813em; } }
-.heading.indicator h2 {
+.heading.indicator h1 {
   font-size: 24px; }
   @media only screen and (max-width: 480px) {
-    .heading.indicator h2 {
+    .heading.indicator h1 {
       font-size: 0.813em; } }
 .heading.indicator h3 {
   font-size: 30px; }
@@ -490,6 +492,10 @@ h5 + .btn-download {
       background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABYAAAAOCAYAAAArMezNAAAB10lEQVQ4jY2TS4vqQBCFTwWfBMWMJkYQRF1lqwYUwX/vJg8RV+4E0QhBY/ABGh91F3NtdEZHa9fVxddVp04TM+OTWCwWHEURKpUKfVIf+6RoPp+z67o4HA44n89cr9ffwt+Cb9DVagUAcF0XRMS1Wu1P+EswM7Pv+7AsC2EYivx+v4fruojFYlwulyFJ0tMHpFfgIAh+QW+x2+3gui5msxmu1+vTJT0F+77P/X4fy+VS5L6+vqBpmjiHYQjHcTCbzZ42Rj9d4Xke27aNIAhETlVVNJtNpNNpWJaF+Xwu7jKZDJrNJqrV6oMkDxp7nseO4zxANU1Do9FAsViEJElkmiYTkeh0u93Ctm1cr9cHt0j3UNu2xfYBQFEUmKYJXdfFknK5HFqtFkqlkqi7LXQymYjxJWbm1Wr1a3xZltFut6FpGhGR6ISISFEUMk3zQfP9fo/BYIDpdMrMzNLpdMJPaDabRa/Xg67rL72az+fp/8Mit9lsMBwOEYbhtxTFYhGpVAoAUCgU0O12/4TewzudjpAlkUhAVVXE4/FvV0RRxOPxGMvlEoZhQNd13I//LtbrNY9GI8iyDMMwIMsyCbtFUcSXywXJZPLlb3oVzMzH4xFEhGQySQDwD7dp8T14Um6/AAAAAElFTkSuQmCC"); }
   #main-content h4 {
     margin-bottom: 1.5rem; }
+  #main-content #indicatorData.no-series > .col-md-3 {
+    display: none; }
+  #main-content #indicatorData.no-series > .col-md-9 {
+    width: 100%; }
   #main-content #toolbar button {
     width: 100%;
     background-color: #fff;
@@ -543,11 +549,11 @@ h5 + .btn-download {
         color: white; }
         #main-content #fields label.excluded input {
           display: none; }
-    #main-content #fields h5 {
+    #main-content #fields h4 {
       padding-left: 7px;
       position: relative;
       padding-right: 33px; }
-      #main-content #fields h5 i {
+      #main-content #fields h4 i {
         font-size: 0.875em;
         position: absolute;
         top: 0;
@@ -577,10 +583,13 @@ h5 + .btn-download {
       display: inline-block;
       margin-right: 8px;
       margin-bottom: 10px; }
-      #main-content #fields .variable-selector.disallowed {
-        display: none; }
       #main-content #fields .variable-selector:hover {
         border-color: #555; }
+      #main-content #fields .variable-selector .variable-hint {
+        display: none;
+        padding-left: 7px;
+        margin-top: -7px;
+        color: #666; }
       #main-content #fields .variable-selector .variable-options {
         background-color: white;
         display: none;
@@ -621,6 +630,23 @@ h5 + .btn-download {
             right: 4px; }
           #main-content #fields .variable-selector .variable-options label:hover {
             background: #f5f3f3; }
+      #main-content #fields .variable-selector.child {
+        margin-left: 20px;
+        width: calc(100% - 20px); }
+      #main-content #fields .variable-selector.disallowed {
+        padding-bottom: 5px; }
+        #main-content #fields .variable-selector.disallowed .bar {
+          display: none; }
+        #main-content #fields .variable-selector.disallowed .variable-hint {
+          display: block; }
+        #main-content #fields .variable-selector.disallowed .variable-options > div {
+          display: none; }
+        #main-content #fields .variable-selector.disallowed .variable-options input {
+          display: none; }
+        #main-content #fields .variable-selector.disallowed .variable-options label {
+          cursor: default; }
+          #main-content #fields .variable-selector.disallowed .variable-options label:hover {
+            background: white; }
   #main-content #units {
     clear: left; }
     #main-content #units label {
@@ -723,6 +749,8 @@ h5 + .btn-download {
     margin-bottom: 4px;
     padding-bottom: 4px;
     border-bottom: 1px solid #ccc; }
+    #main-content .goal h2 {
+      font-size: 1.6em; }
   #main-content .frame {
     width: 115px;
     float: left;
@@ -822,3 +850,24 @@ footer {
 #page-content thead {
   padding-bottom: 10px;
   border-bottom: 1pt solid #E5E6E7; }
+
+.no-js #indicatorData > .col-md-3 {
+  display: none; }
+.no-js #indicatorData > .col-md-9 {
+  width: 100%; }
+.no-js .plot-container {
+  display: none; }
+.no-js .tab-pane {
+  display: block !important; }
+.no-js #main-content .collapsible {
+  border: 0; }
+  .no-js #main-content .collapsible:first-child {
+    border: none; }
+  .no-js #main-content .collapsible article {
+    display: block;
+    padding: 8px 0; }
+  .no-js #main-content .collapsible h3 {
+    padding: 0;
+    cursor: default; }
+  .no-js #main-content .collapsible h3 span {
+    display: none; }

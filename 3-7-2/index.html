@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/good-health-and-well-being" title="View this goal's indicator list">
-          <img src="/assets/img/goals/3.png" alt="icon for Goal 3" />
+          <img src="/assets/img/goals/3.png" alt="Good Health and Well-being - Goal 3" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/good-health-and-well-being">
             <span class="hidden-sm hidden-md hidden-lg">Goal 3: </span>Ensure healthy lives and promote well-being for all at all ages
           </a>
-        </h2>
-        <h3>Indicator 3.7.2: Adolescent birth rate (aged 10-14 years; aged 15-19 years) per 1,000 women in that age group</h3>
+        </h1>
+        <h2>Indicator 3.7.2: Adolescent birth rate (aged 10-14 years; aged 15-19 years) per 1,000 women in that age group</h2>
       </div>
     </div>
   </div>
@@ -164,10 +177,10 @@
 </ol>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Value":"13.7"},{"Year":"2015","Value":"14.5"},{"Year":"2014","Value":"15.6"},{"Year":"2013","Value":"17.4"},{"Year":"2012","Value":"19.9"},{"Year":"2011","Value":"21.2"},{"Year":"2010","Value":"23.4"},{"Year":"2009","Value":"24.8"},{"Year":"2008","Value":"25.7"},{"Year":"2007","Value":"25.9"},{"Year":"2006","Value":"26.6"},{"Year":"2005","Value":"26.4"},{"Year":"2004","Value":"26.9"},{"Year":"2003","Value":"26.9"},{"Year":"2002","Value":"27.1"},{"Year":"2001","Value":"28"},{"Year":"2000","Value":"29.3"}]' data-indicatorid='indicator_3-7-2' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Live births per 1,000 women aged 15 to 19" data-measurementunit="Birth rate per 1,000 women" data-datasource="Office for National Statistics" data-geographicalarea="United Kingdom" data-showdata="true">
+  data-edgesdata='[]' data-charttitle="Live births per 1,000 women aged 15 to 19" data-measurementunit="Birth rate per 1,000 women" data-datasource="Office for National Statistics" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -224,15 +237,15 @@
                 <h3>Live births per 1,000 women aged 15 to 19</h3>
               
               <p>Unit of Measurement: Birth rate per 1,000 women</p>     
-              <a href="/data/indicator_3-7-2.csv" class="btn btn-primary btn-download" download='indicator_3-7-2.csv'>Download source CSV</a>
+              <a href="/data/indicator_3-7-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-7-2.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_3-7-2.csv' class='btn btn-primary btn-download' download='indicator_3-7-2.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_3-7-2.csv" class="btn btn-primary btn-download" download='indicator_3-7-2.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -382,11 +395,12 @@
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -432,7 +446,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Adolescent birth rate (age 15-19) per 1,000 women in that age group.
+            Birth rate per 1,000 women in the age group 15 to 19
           
         </td>
         </tr>
@@ -884,7 +898,7 @@
             <div class="collapsible collapsed">
               <h3>Global Metadata<span> (Expand)</span></h3>
               <article>
-                <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="http://data.un.org/Data.aspx?q=births&d=WDI&f=Indicator_Code%3aSP.ADO.TFRT">metadata</a> is provided by the UN Statistics Division.</p>
+                <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. Complete global <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-03-07-02.pdf">metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
   
     
@@ -1037,8 +1051,8 @@
             
 
             
-              <a href="http://data.un.org/Data.aspx?q=births&d=WDI&f=Indicator_Code%3aSP.ADO.TFRT">
-                UN Metadata
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-03-07-02.pdf">
+                United Nations Sustainable Development Goals Metadata: 3.7.2
               </a>
             
             
@@ -1482,10 +1496,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1515,11 +1529,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

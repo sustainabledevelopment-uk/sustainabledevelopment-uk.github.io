@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -99,17 +104,17 @@
 
   <div class="goal goal-overall" data-goalid="">
       <div class="details">
-        <h3 class="status-goal">
+        <h2 class="status-goal">
           Overall Reporting Status
           <span class="total"><span>244</span> indicators</span> 
-        </h3>
+        </h2>
         <div class="summary">
           <div class="statuses">
             <div>
-              <span class="status danger">150</span><strong>Exploring data sources</strong><span class="value"></span>
+              <span class="status danger">100</span><strong>Exploring data sources</strong><span class="value"></span>
             </div>
             <div>
-              <span class="status warning">3</span><strong>Statistics in progress</strong><span class="value"></span>
+              <span class="status warning">53</span><strong>Statistics in progress</strong><span class="value"></span>
             </div>
             <div>
               <span class="status success">91</span><strong>Reported online</strong><span class="value"></span>
@@ -128,7 +133,7 @@
     <br style="clear:both;" />
   </div>
   
-  <h3>Status by Goal</h3>
+  <h2>Status by Goal</h2>
 
   
     <!--<ul style="list-style-type: decimal; margin-left: 50px;margin-bottom: 30px;margin-top:30px;">-->
@@ -146,7 +151,7 @@
         <div class="goal" data-goalid="1">
           <div class="frame">
             <a href="/no-poverty/">
-              <img src="/assets/img/goals/1.png" alt="icon for Goal 1" width="100" height="100" />
+              <img src="/assets/img/goals/1.png" alt="No Poverty - Goal 1" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -157,10 +162,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">10</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">8</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">2</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">4</span><strong>Reported online</strong><span class="value"></span>
@@ -194,7 +199,7 @@
         <div class="goal" data-goalid="2">
           <div class="frame">
             <a href="/zero-hunger/">
-              <img src="/assets/img/goals/2.png" alt="icon for Goal 2" width="100" height="100" />
+              <img src="/assets/img/goals/2.png" alt="Zero Hunger - Goal 2" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -205,10 +210,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">8</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">6</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">2</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">5</span><strong>Reported online</strong><span class="value"></span>
@@ -242,7 +247,7 @@
         <div class="goal" data-goalid="3">
           <div class="frame">
             <a href="/good-health-and-well-being/">
-              <img src="/assets/img/goals/3.png" alt="icon for Goal 3" width="100" height="100" />
+              <img src="/assets/img/goals/3.png" alt="Good Health and Well-being - Goal 3" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -253,10 +258,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">11</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">7</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">4</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">16</span><strong>Reported online</strong><span class="value"></span>
@@ -290,7 +295,7 @@
         <div class="goal" data-goalid="4">
           <div class="frame">
             <a href="/quality-education/">
-              <img src="/assets/img/goals/4.png" alt="icon for Goal 4" width="100" height="100" />
+              <img src="/assets/img/goals/4.png" alt="Quality Education - Goal 4" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -301,10 +306,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">5</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">4</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">1</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">6</span><strong>Reported online</strong><span class="value"></span>
@@ -338,7 +343,7 @@
         <div class="goal" data-goalid="5">
           <div class="frame">
             <a href="/gender-equality/">
-              <img src="/assets/img/goals/5.png" alt="icon for Goal 5" width="100" height="100" />
+              <img src="/assets/img/goals/5.png" alt="Gender Equality - Goal 5" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -349,10 +354,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">6</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">1</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">5</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">8</span><strong>Reported online</strong><span class="value"></span>
@@ -386,7 +391,7 @@
         <div class="goal" data-goalid="6">
           <div class="frame">
             <a href="/clean-water-and-sanitation/">
-              <img src="/assets/img/goals/6.png" alt="icon for Goal 6" width="100" height="100" />
+              <img src="/assets/img/goals/6.png" alt="Clean water and sanitation - Goal 6" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -397,10 +402,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">7</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">5</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">1</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">3</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">3</span><strong>Reported online</strong><span class="value"></span>
@@ -434,7 +439,7 @@
         <div class="goal" data-goalid="7">
           <div class="frame">
             <a href="/affordable-and-clean-energy/">
-              <img src="/assets/img/goals/7.png" alt="icon for Goal 7" width="100" height="100" />
+              <img src="/assets/img/goals/7.png" alt="Affordable and clean energy - Goal 7" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -445,10 +450,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">2</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">1</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">1</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">2</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">3</span><strong>Reported online</strong><span class="value"></span>
@@ -482,7 +487,7 @@
         <div class="goal" data-goalid="8">
           <div class="frame">
             <a href="/decent-jobs-and-economic-growth/">
-              <img src="/assets/img/goals/8.png" alt="icon for Goal 8" width="100" height="100" />
+              <img src="/assets/img/goals/8.png" alt="Decent jobs and economic growth - Goal 8" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -493,10 +498,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">4</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">3</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">1</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">13</span><strong>Reported online</strong><span class="value"></span>
@@ -530,7 +535,7 @@
         <div class="goal" data-goalid="9">
           <div class="frame">
             <a href="/industry-innovation-and-infrastructure/">
-              <img src="/assets/img/goals/9.png" alt="icon for Goal 9" width="100" height="100" />
+              <img src="/assets/img/goals/9.png" alt="Industry, innovation and infrastructure - Goal 9" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -578,7 +583,7 @@
         <div class="goal" data-goalid="10">
           <div class="frame">
             <a href="/reduced-inequalities/">
-              <img src="/assets/img/goals/10.png" alt="icon for Goal 10" width="100" height="100" />
+              <img src="/assets/img/goals/10.png" alt="Reduced inequalities - Goal 10" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -589,10 +594,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">8</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">6</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">2</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">3</span><strong>Reported online</strong><span class="value"></span>
@@ -626,7 +631,7 @@
         <div class="goal" data-goalid="11">
           <div class="frame">
             <a href="/sustainable-cities-communities/">
-              <img src="/assets/img/goals/11.png" alt="icon for Goal 11" width="100" height="100" />
+              <img src="/assets/img/goals/11.png" alt="Sustainable Cities & Communities - Goal 11" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -637,10 +642,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">11</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">9</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">2</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">4</span><strong>Reported online</strong><span class="value"></span>
@@ -674,7 +679,7 @@
         <div class="goal" data-goalid="12">
           <div class="frame">
             <a href="/responsible-consumption-and-production/">
-              <img src="/assets/img/goals/12.png" alt="icon for Goal 12" width="100" height="100" />
+              <img src="/assets/img/goals/12.png" alt="Responsible consumption and production - Goal 12" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -685,10 +690,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">11</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">7</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">4</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">2</span><strong>Reported online</strong><span class="value"></span>
@@ -722,7 +727,7 @@
         <div class="goal" data-goalid="13">
           <div class="frame">
             <a href="/climate-action/">
-              <img src="/assets/img/goals/13.png" alt="icon for Goal 13" width="100" height="100" />
+              <img src="/assets/img/goals/13.png" alt="Climate action - Goal 13" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -733,10 +738,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">8</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">4</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">4</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">0</span><strong>Reported online</strong><span class="value"></span>
@@ -770,7 +775,7 @@
         <div class="goal" data-goalid="14">
           <div class="frame">
             <a href="/life-below-water/">
-              <img src="/assets/img/goals/14.png" alt="icon for Goal 14" width="100" height="100" />
+              <img src="/assets/img/goals/14.png" alt="Life below water - Goal 14" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -781,10 +786,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">7</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">4</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">3</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">3</span><strong>Reported online</strong><span class="value"></span>
@@ -818,7 +823,7 @@
         <div class="goal" data-goalid="15">
           <div class="frame">
             <a href="/life-on-land/">
-              <img src="/assets/img/goals/15.png" alt="icon for Goal 15" width="100" height="100" />
+              <img src="/assets/img/goals/15.png" alt="Life on land - Goal 15" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -829,10 +834,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">11</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">7</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">4</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">3</span><strong>Reported online</strong><span class="value"></span>
@@ -866,7 +871,7 @@
         <div class="goal" data-goalid="16">
           <div class="frame">
             <a href="/peace-and-justice-strong-institutions/">
-              <img src="/assets/img/goals/16.png" alt="icon for Goal 16" width="100" height="100" />
+              <img src="/assets/img/goals/16.png" alt="Peace and justice - strong institutions - Goal 16" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -877,10 +882,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">17</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">12</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">5</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">6</span><strong>Reported online</strong><span class="value"></span>
@@ -914,7 +919,7 @@
         <div class="goal" data-goalid="17">
           <div class="frame">
             <a href="/partnerships-for-the-goals/">
-              <img src="/assets/img/goals/17.png" alt="icon for Goal 17" width="100" height="100" />
+              <img src="/assets/img/goals/17.png" alt="Partnerships for the goals - Goal 17" width="100" height="100" />
             </a>
           </div>
           <div class="details">
@@ -925,10 +930,10 @@
             <div class="summary">
               <div class="statuses">
                 <div>
-                  <span class="status danger">21</span><strong>Exploring data sources</strong><span class="value"></span>
+                  <span class="status danger">13</span><strong>Exploring data sources</strong><span class="value"></span>
                 </div>
                 <div>
-                  <span class="status warning">0</span><strong>Statistics in progress</strong><span class="value"></span>
+                  <span class="status warning">8</span><strong>Statistics in progress</strong><span class="value"></span>
                 </div>
                 <div>
                   <span class="status success">4</span><strong>Reported online</strong><span class="value"></span>
@@ -960,10 +965,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -993,11 +998,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/peace-and-justice-strong-institutions" title="View this goal's indicator list">
-          <img src="/assets/img/goals/16.png" alt="icon for Goal 16" />
+          <img src="/assets/img/goals/16.png" alt="Peace and justice - strong institutions - Goal 16" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/peace-and-justice-strong-institutions">
             <span class="hidden-sm hidden-md hidden-lg">Goal 16: </span>Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels
           </a>
-        </h2>
-        <h3>Indicator 16.1.4: Proportion of population that feel safe walking alone around the area they live</h3>
+        </h1>
+        <h2>Indicator 16.1.4: Proportion of population that feel safe walking alone around the area they live</h2>
       </div>
     </div>
   </div>
@@ -164,10 +177,10 @@
 </ol>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2012","Sex":null,"Region":null,"Value":"70.49394939"},{"Year":"2013","Sex":null,"Region":null,"Value":"71.24689955"},{"Year":"2014","Sex":null,"Region":null,"Value":"73.66671534"},{"Year":"2015","Sex":null,"Region":null,"Value":"74.74229571"},{"Year":"2006","Sex":"Male","Region":null,"Value":"82.88877601"},{"Year":"2007","Sex":"Male","Region":null,"Value":"83.06835828"},{"Year":"2008","Sex":"Male","Region":null,"Value":"83.44130917"},{"Year":"2009","Sex":"Male","Region":null,"Value":"84.80688286"},{"Year":"2010","Sex":"Male","Region":null,"Value":"86"},{"Year":"2011","Sex":"Male","Region":null,"Value":"87"},{"Year":"2012","Sex":"Male","Region":null,"Value":"84.7"},{"Year":"2013","Sex":"Male","Region":null,"Value":"85.1"},{"Year":"2014","Sex":"Male","Region":null,"Value":"85.8"},{"Year":"2015","Sex":"Male","Region":null,"Value":"87.9"},{"Year":"2006","Sex":"Female","Region":null,"Value":"56.04465894"},{"Year":"2007","Sex":"Female","Region":null,"Value":"56.33030281"},{"Year":"2008","Sex":"Female","Region":null,"Value":"57.3702004"},{"Year":"2009","Sex":"Female","Region":null,"Value":"61.04075977"},{"Year":"2010","Sex":"Female","Region":null,"Value":"63.5"},{"Year":"2011","Sex":"Female","Region":null,"Value":"64.6"},{"Year":"2012","Sex":"Female","Region":null,"Value":"56.7"},{"Year":"2013","Sex":"Female","Region":null,"Value":"58"},{"Year":"2014","Sex":"Female","Region":null,"Value":"61.7"},{"Year":"2015","Sex":"Female","Region":null,"Value":"61.7"},{"Year":"2013","Sex":"Male","Region":"England","Value":"84.74693333"},{"Year":"2013","Sex":"Male","Region":"North East","Value":"85.18920454"},{"Year":"2013","Sex":"Male","Region":"North West","Value":"85.78280906"},{"Year":"2013","Sex":"Male","Region":"Yorkshire and The Humber","Value":"87.41633469"},{"Year":"2013","Sex":"Male","Region":"EastMidlands","Value":"85.80203687"},{"Year":"2013","Sex":"Male","Region":"West Midlands","Value":"77.22885344"},{"Year":"2013","Sex":"Male","Region":"East","Value":"87.78145807"},{"Year":"2013","Sex":"Male","Region":"London","Value":"76.09350146"},{"Year":"2013","Sex":"Male","Region":"South East","Value":"89.31870096"},{"Year":"2013","Sex":"Male","Region":"South West","Value":"91.23471303"},{"Year":"2013","Sex":"Male","Region":"Wales","Value":"91.09952535"},{"Year":"2013","Sex":"Female","Region":"England","Value":"58.02044879"},{"Year":"2013","Sex":"Female","Region":"North East","Value":"54.88647575"},{"Year":"2013","Sex":"Female","Region":"North West","Value":"59.14656757"},{"Year":"2013","Sex":"Female","Region":"Yorkshire and The Humber","Value":"56.49837901"},{"Year":"2013","Sex":"Female","Region":"EastMidlands","Value":"57.07954559"},{"Year":"2013","Sex":"Female","Region":"West Midlands","Value":"52.60432372"},{"Year":"2013","Sex":"Female","Region":"East","Value":"57.23370446"},{"Year":"2013","Sex":"Female","Region":"London","Value":"54.95679341"},{"Year":"2013","Sex":"Female","Region":"South East","Value":"60.98069364"},{"Year":"2013","Sex":"Female","Region":"South West","Value":"66.09833645"},{"Year":"2013","Sex":"Female","Region":"Wales","Value":"56.87636573"},{"Year":"2014","Sex":"Male","Region":"England","Value":"85.5"},{"Year":"2014","Sex":"Male","Region":"North East","Value":"82"},{"Year":"2014","Sex":"Male","Region":"North West","Value":"84.7"},{"Year":"2014","Sex":"Male","Region":"Yorkshire and The Humber","Value":"83.7"},{"Year":"2014","Sex":"Male","Region":"EastMidlands","Value":"84.8"},{"Year":"2014","Sex":"Male","Region":"West Midlands","Value":"81.3"},{"Year":"2014","Sex":"Male","Region":"East","Value":"88.2"},{"Year":"2014","Sex":"Male","Region":"London","Value":"83.1"},{"Year":"2014","Sex":"Male","Region":"South East","Value":"88.1"},{"Year":"2014","Sex":"Male","Region":"South West","Value":"91"},{"Year":"2014","Sex":"Male","Region":"Wales","Value":"90.1"},{"Year":"2014","Sex":"Female","Region":"England","Value":"61.6"},{"Year":"2014","Sex":"Female","Region":"North East","Value":"58.9"},{"Year":"2014","Sex":"Female","Region":"North West","Value":"62.2"},{"Year":"2014","Sex":"Female","Region":"Yorkshire and The Humber","Value":"63"},{"Year":"2014","Sex":"Female","Region":"EastMidlands","Value":"59"},{"Year":"2014","Sex":"Female","Region":"West Midlands","Value":"57.7"},{"Year":"2014","Sex":"Female","Region":"East","Value":"58.1"},{"Year":"2014","Sex":"Female","Region":"London","Value":"60.9"},{"Year":"2014","Sex":"Female","Region":"South East","Value":"63.1"},{"Year":"2014","Sex":"Female","Region":"South West","Value":"69.4"},{"Year":"2014","Sex":"Female","Region":"Wales","Value":"64.2"},{"Year":"2015","Sex":"Male","Region":"England","Value":"87.7"},{"Year":"2015","Sex":"Male","Region":"North East","Value":"86.7"},{"Year":"2015","Sex":"Male","Region":"North West","Value":"86.3"},{"Year":"2015","Sex":"Male","Region":"Yorkshire and The Humber","Value":"85.5"},{"Year":"2015","Sex":"Male","Region":"EastMidlands","Value":"89.7"},{"Year":"2015","Sex":"Male","Region":"West Midlands","Value":"83.8"},{"Year":"2015","Sex":"Male","Region":"East","Value":"87.8"},{"Year":"2015","Sex":"Male","Region":"London","Value":"87"},{"Year":"2015","Sex":"Male","Region":"South East","Value":"88.9"},{"Year":"2015","Sex":"Male","Region":"South West","Value":"94.5"},{"Year":"2015","Sex":"Male","Region":"Wales","Value":"91"},{"Year":"2015","Sex":"Female","Region":"England","Value":"61.4"},{"Year":"2015","Sex":"Female","Region":"North East","Value":"60.1"},{"Year":"2015","Sex":"Female","Region":"North West","Value":"58.8"},{"Year":"2015","Sex":"Female","Region":"Yorkshire and The Humber","Value":"62.6"},{"Year":"2015","Sex":"Female","Region":"EastMidlands","Value":"63.7"},{"Year":"2015","Sex":"Female","Region":"West Midlands","Value":"54"},{"Year":"2015","Sex":"Female","Region":"East","Value":"61.3"},{"Year":"2015","Sex":"Female","Region":"London","Value":"62.6"},{"Year":"2015","Sex":"Female","Region":"South East","Value":"62.4"},{"Year":"2015","Sex":"Female","Region":"South West","Value":"66.7"},{"Year":"2015","Sex":"Female","Region":"Wales","Value":"66.7"}]' data-indicatorid='indicator_16-1-4' data-country="UK"
-  data-edgesdata='[{"From":"Sex","To":"Region"}]' data-charttitle="Percentage of adults who feel very safe/ fairly safe walking alone after dark" data-measurementunit="" data-datasource="Office for National Statistics" data-geographicalarea="England and Wales" data-showdata="true">
+  data-edgesdata='[{"From":"Sex","To":"Region"}]' data-charttitle="Percentage of adults who feel safe walking alone after dark" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -221,18 +234,18 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Percentage of adults who feel very safe/ fairly safe walking alone after dark</h3>
+                <h3>Percentage of adults who feel safe walking alone after dark</h3>
               
-              <p>Unit of Measurement: </p>     
-              <a href="/data/indicator_16-1-4.csv" class="btn btn-primary btn-download" download='indicator_16-1-4.csv'>Download source CSV</a>
+              <p>Unit of Measurement: Percentage (%)</p>     
+              <a href="/data/indicator_16-1-4.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_16-1-4.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_16-1-4.csv' class='btn btn-primary btn-download' download='indicator_16-1-4.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_16-1-4.csv" class="btn btn-primary btn-download" download='indicator_16-1-4.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -278,11 +291,12 @@
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -354,7 +368,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Annual
+            Annually
           
         </td>
         </tr>
@@ -629,7 +643,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            Percentage (%)
           
         </td>
         </tr>
@@ -849,7 +863,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            Adult U.S. residents who answer "yes" to the following: Is there any area near where you live - that is,within a mile - where you would be afraid to walk alone at night?
+            
           
         </td>
         </tr>
@@ -875,7 +889,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            UNODC
+            United Nations Office on Drugs and Crime (UNODC)
           
         </td>
         </tr>
@@ -934,7 +948,7 @@
 
             
               <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-16.pdf">
-                UN Metadata
+                United Nations Sustainable Development Goals Metadata; Goal 16
               </a>
             
             
@@ -1156,7 +1170,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            Office for National Statistics
+            Office for National Statistics (ONS)
           
         </td>
         </tr>
@@ -1169,7 +1183,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            Annually
           
         </td>
         </tr>
@@ -1215,7 +1229,7 @@
 
             
               <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/measuringnationalwellbeingdomainsandmeasures">
-                Link to Source - National Wellbeing
+                National Wellbeing
               </a>
             
             
@@ -1235,7 +1249,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            2017-04-06
+            06-04-2017
           
         </td>
         </tr>
@@ -1378,10 +1392,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1411,11 +1425,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

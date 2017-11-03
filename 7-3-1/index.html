@@ -1,6 +1,7 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
     <head>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
         <meta charset="utf-8">
@@ -19,6 +20,10 @@
 
         
 
+        <!--[if IE 9]>
+        <script src="/assets/js/lib/classList.js"></script>
+        <![endif]-->
+        
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -31,7 +36,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171027125832">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171103103003">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -93,8 +98,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed<% }%>" data-field="<%=seriesItem.field%>">
-      <h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
+      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -107,9 +112,17 @@
           <label><input type="checkbox" value="<%=item.value%>" data-field="<%=seriesItem.field%>" /><%=item.value%></label>
         <% }); %>
       </div>
+      
+      <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
+        <div class="variable-hint">
+          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        </div>
+      <% }%>
+
     </div>
   <% }); %>
 </script>
+
 <script type="text/template" id="units_template">
   <% if(units.length) { %>
     <h5>Units type</h5>
@@ -125,16 +138,16 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/affordable-and-clean-energy" title="View this goal's indicator list">
-          <img src="/assets/img/goals/7.png" alt="icon for Goal 7" />
+          <img src="/assets/img/goals/7.png" alt="Affordable and clean energy - Goal 7" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
-        <h2>
+        <h1>
           <a href="/affordable-and-clean-energy">
             <span class="hidden-sm hidden-md hidden-lg">Goal 7: </span>Ensure access to affordable, reliable, sustainable and modern energy for all
           </a>
-        </h2>
-        <h3>Indicator 7.3.1: Energy intensity measured in terms of primary energy and GDP</h3>
+        </h1>
+        <h2>Indicator 7.3.1: Energy intensity measured in terms of primary energy and GDP</h2>
       </div>
     </div>
   </div>
@@ -164,10 +177,10 @@
 </ol>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Industrial Sector Summary":null,"Value":"4.988226925"},{"Year":"2000","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"13.48080279"},{"Year":"2000","Industrial Sector Summary":"Mining and quarrying","Value":"8.082990308"},{"Year":"2000","Industrial Sector Summary":"Manufacturing","Value":"14.35690985"},{"Year":"2000","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.20151446"},{"Year":"2000","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"8.217075428"},{"Year":"2000","Industrial Sector Summary":"Construction","Value":"2.591661068"},{"Year":"2000","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.567584545"},{"Year":"2000","Industrial Sector Summary":"Transport and storage","Value":"18.55566441"},{"Year":"2000","Industrial Sector Summary":"Accommodation and food services","Value":"3.376292207"},{"Year":"2000","Industrial Sector Summary":"Information and communication","Value":"1.606538276"},{"Year":"2000","Industrial Sector Summary":"Financial and insurance activities","Value":"1.436491844"},{"Year":"2000","Industrial Sector Summary":"Real estate activities","Value":"0.134881605"},{"Year":"2000","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"1.428161214"},{"Year":"2000","Industrial Sector Summary":"Administrative and support service activities","Value":"1.672375785"},{"Year":"2000","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"2.623968203"},{"Year":"2000","Industrial Sector Summary":"Education","Value":"1.410645761"},{"Year":"2000","Industrial Sector Summary":"Human health and social work activities","Value":"1.776239548"},{"Year":"2000","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.552022492"},{"Year":"2000","Industrial Sector Summary":"Other service activities","Value":"1.313484027"},{"Year":"2000","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.418648208"},{"Year":"2001","Industrial Sector Summary":null,"Value":"4.934864695"},{"Year":"2001","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"14.28732594"},{"Year":"2001","Industrial Sector Summary":"Mining and quarrying","Value":"8.637482727"},{"Year":"2001","Industrial Sector Summary":"Manufacturing","Value":"14.08965576"},{"Year":"2001","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.84927027"},{"Year":"2001","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"10.00875639"},{"Year":"2001","Industrial Sector Summary":"Construction","Value":"2.676093527"},{"Year":"2001","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.541612068"},{"Year":"2001","Industrial Sector Summary":"Transport and storage","Value":"19.49938837"},{"Year":"2001","Industrial Sector Summary":"Accommodation and food services","Value":"3.344245038"},{"Year":"2001","Industrial Sector Summary":"Information and communication","Value":"1.6017569"},{"Year":"2001","Industrial Sector Summary":"Financial and insurance activities","Value":"1.409607493"},{"Year":"2001","Industrial Sector Summary":"Real estate activities","Value":"0.127074832"},{"Year":"2001","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"1.349296885"},{"Year":"2001","Industrial Sector Summary":"Administrative and support service activities","Value":"1.562917646"},{"Year":"2001","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"2.6811675"},{"Year":"2001","Industrial Sector Summary":"Education","Value":"1.378167258"},{"Year":"2001","Industrial Sector Summary":"Human health and social work activities","Value":"1.803235559"},{"Year":"2001","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.388455214"},{"Year":"2001","Industrial Sector Summary":"Other service activities","Value":"1.311918492"},{"Year":"2001","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.430559383"},{"Year":"2002","Industrial Sector Summary":null,"Value":"4.630201779"},{"Year":"2002","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"12.38759152"},{"Year":"2002","Industrial Sector Summary":"Mining and quarrying","Value":"8.542524328"},{"Year":"2002","Industrial Sector Summary":"Manufacturing","Value":"13.89854909"},{"Year":"2002","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.27654155"},{"Year":"2002","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"7.294330123"},{"Year":"2002","Industrial Sector Summary":"Construction","Value":"2.483489233"},{"Year":"2002","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.173381782"},{"Year":"2002","Industrial Sector Summary":"Transport and storage","Value":"19.28820634"},{"Year":"2002","Industrial Sector Summary":"Accommodation and food services","Value":"3.052408143"},{"Year":"2002","Industrial Sector Summary":"Information and communication","Value":"1.499645087"},{"Year":"2002","Industrial Sector Summary":"Financial and insurance activities","Value":"1.15030148"},{"Year":"2002","Industrial Sector Summary":"Real estate activities","Value":"0.111610632"},{"Year":"2002","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"1.261478135"},{"Year":"2002","Industrial Sector Summary":"Administrative and support service activities","Value":"1.51845801"},{"Year":"2002","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"2.447571877"},{"Year":"2002","Industrial Sector Summary":"Education","Value":"1.191429105"},{"Year":"2002","Industrial Sector Summary":"Human health and social work activities","Value":"1.409040056"},{"Year":"2002","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.244345337"},{"Year":"2002","Industrial Sector Summary":"Other service activities","Value":"1.171600682"},{"Year":"2002","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.428901891"},{"Year":"2003","Industrial Sector Summary":null,"Value":"4.565556789"},{"Year":"2003","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"12.94932154"},{"Year":"2003","Industrial Sector Summary":"Mining and quarrying","Value":"8.813476434"},{"Year":"2003","Industrial Sector Summary":"Manufacturing","Value":"14.2789841"},{"Year":"2003","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.94558828"},{"Year":"2003","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"3.969421717"},{"Year":"2003","Industrial Sector Summary":"Construction","Value":"2.390921632"},{"Year":"2003","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.228068202"},{"Year":"2003","Industrial Sector Summary":"Transport and storage","Value":"19.41499757"},{"Year":"2003","Industrial Sector Summary":"Accommodation and food services","Value":"3.011954222"},{"Year":"2003","Industrial Sector Summary":"Information and communication","Value":"1.49531184"},{"Year":"2003","Industrial Sector Summary":"Financial and insurance activities","Value":"1.041641788"},{"Year":"2003","Industrial Sector Summary":"Real estate activities","Value":"0.10824716"},{"Year":"2003","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"1.149291707"},{"Year":"2003","Industrial Sector Summary":"Administrative and support service activities","Value":"1.505053044"},{"Year":"2003","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"2.483899339"},{"Year":"2003","Industrial Sector Summary":"Education","Value":"1.133941565"},{"Year":"2003","Industrial Sector Summary":"Human health and social work activities","Value":"1.333635446"},{"Year":"2003","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.27637001"},{"Year":"2003","Industrial Sector Summary":"Other service activities","Value":"1.265155338"},{"Year":"2003","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.427547728"},{"Year":"2004","Industrial Sector Summary":null,"Value":"4.498914759"},{"Year":"2004","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"13.02549403"},{"Year":"2004","Industrial Sector Summary":"Mining and quarrying","Value":"9.543744023"},{"Year":"2004","Industrial Sector Summary":"Manufacturing","Value":"13.71048449"},{"Year":"2004","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.64272096"},{"Year":"2004","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"6.785479471"},{"Year":"2004","Industrial Sector Summary":"Construction","Value":"2.375561157"},{"Year":"2004","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.102126447"},{"Year":"2004","Industrial Sector Summary":"Transport and storage","Value":"19.70159854"},{"Year":"2004","Industrial Sector Summary":"Accommodation and food services","Value":"3.087504184"},{"Year":"2004","Industrial Sector Summary":"Information and communication","Value":"1.307255378"},{"Year":"2004","Industrial Sector Summary":"Financial and insurance activities","Value":"0.997950535"},{"Year":"2004","Industrial Sector Summary":"Real estate activities","Value":"0.105112823"},{"Year":"2004","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"1.076741787"},{"Year":"2004","Industrial Sector Summary":"Administrative and support service activities","Value":"1.38672373"},{"Year":"2004","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"2.52433487"},{"Year":"2004","Industrial Sector Summary":"Education","Value":"1.007657826"},{"Year":"2004","Industrial Sector Summary":"Human health and social work activities","Value":"1.470018241"},{"Year":"2004","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.08210936"},{"Year":"2004","Industrial Sector Summary":"Other service activities","Value":"1.253679873"},{"Year":"2004","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.468580193"},{"Year":"2005","Industrial Sector Summary":null,"Value":"4.422439318"},{"Year":"2005","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"11.94666667"},{"Year":"2005","Industrial Sector Summary":"Mining and quarrying","Value":"10.11911089"},{"Year":"2005","Industrial Sector Summary":"Manufacturing","Value":"13.8324578"},{"Year":"2005","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.66984931"},{"Year":"2005","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"7.1684238"},{"Year":"2005","Industrial Sector Summary":"Construction","Value":"2.496306994"},{"Year":"2005","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.175692576"},{"Year":"2005","Industrial Sector Summary":"Transport and storage","Value":"19.72251238"},{"Year":"2005","Industrial Sector Summary":"Accommodation and food services","Value":"2.960791599"},{"Year":"2005","Industrial Sector Summary":"Information and communication","Value":"1.269362593"},{"Year":"2005","Industrial Sector Summary":"Financial and insurance activities","Value":"0.979734121"},{"Year":"2005","Industrial Sector Summary":"Real estate activities","Value":"0.099363116"},{"Year":"2005","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"1.020881394"},{"Year":"2005","Industrial Sector Summary":"Administrative and support service activities","Value":"1.377148561"},{"Year":"2005","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"2.239941237"},{"Year":"2005","Industrial Sector Summary":"Education","Value":"0.920111056"},{"Year":"2005","Industrial Sector Summary":"Human health and social work activities","Value":"1.527628149"},{"Year":"2005","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.170014556"},{"Year":"2005","Industrial Sector Summary":"Other service activities","Value":"1.237326115"},{"Year":"2005","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.458990357"},{"Year":"2006","Industrial Sector Summary":null,"Value":"4.195140093"},{"Year":"2006","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"12.49419218"},{"Year":"2006","Industrial Sector Summary":"Mining and quarrying","Value":"9.868801283"},{"Year":"2006","Industrial Sector Summary":"Manufacturing","Value":"13.33844625"},{"Year":"2006","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"12.44569053"},{"Year":"2006","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"7.228830269"},{"Year":"2006","Industrial Sector Summary":"Construction","Value":"2.397071083"},{"Year":"2006","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.059451837"},{"Year":"2006","Industrial Sector Summary":"Transport and storage","Value":"18.29175843"},{"Year":"2006","Industrial Sector Summary":"Accommodation and food services","Value":"2.704459846"},{"Year":"2006","Industrial Sector Summary":"Information and communication","Value":"1.174569915"},{"Year":"2006","Industrial Sector Summary":"Financial and insurance activities","Value":"0.8496357"},{"Year":"2006","Industrial Sector Summary":"Real estate activities","Value":"0.094683114"},{"Year":"2006","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"0.921833987"},{"Year":"2006","Industrial Sector Summary":"Administrative and support service activities","Value":"1.289436521"},{"Year":"2006","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"2.208492564"},{"Year":"2006","Industrial Sector Summary":"Education","Value":"0.984291268"},{"Year":"2006","Industrial Sector Summary":"Human health and social work activities","Value":"1.364707569"},{"Year":"2006","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.258413695"},{"Year":"2006","Industrial Sector Summary":"Other service activities","Value":"1.097471723"},{"Year":"2006","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.475094614"},{"Year":"2007","Industrial Sector Summary":null,"Value":"4.023720542"},{"Year":"2007","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"12.58504368"},{"Year":"2007","Industrial Sector Summary":"Mining and quarrying","Value":"9.770994053"},{"Year":"2007","Industrial Sector Summary":"Manufacturing","Value":"12.99015939"},{"Year":"2007","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.68960875"},{"Year":"2007","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"6.643469375"},{"Year":"2007","Industrial Sector Summary":"Construction","Value":"2.401847461"},{"Year":"2007","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"2.898120897"},{"Year":"2007","Industrial Sector Summary":"Transport and storage","Value":"17.99229861"},{"Year":"2007","Industrial Sector Summary":"Accommodation and food services","Value":"2.535174419"},{"Year":"2007","Industrial Sector Summary":"Information and communication","Value":"1.081619248"},{"Year":"2007","Industrial Sector Summary":"Financial and insurance activities","Value":"0.788661861"},{"Year":"2007","Industrial Sector Summary":"Real estate activities","Value":"0.093761283"},{"Year":"2007","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"0.870022152"},{"Year":"2007","Industrial Sector Summary":"Administrative and support service activities","Value":"1.137026099"},{"Year":"2007","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"2.121463802"},{"Year":"2007","Industrial Sector Summary":"Education","Value":"0.959546463"},{"Year":"2007","Industrial Sector Summary":"Human health and social work activities","Value":"1.312789066"},{"Year":"2007","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.216382472"},{"Year":"2007","Industrial Sector Summary":"Other service activities","Value":"1.092706839"},{"Year":"2007","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.496544439"},{"Year":"2008","Industrial Sector Summary":null,"Value":"3.978181323"},{"Year":"2008","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"11.89654833"},{"Year":"2008","Industrial Sector Summary":"Mining and quarrying","Value":"10.35473353"},{"Year":"2008","Industrial Sector Summary":"Manufacturing","Value":"12.56302085"},{"Year":"2008","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.16914356"},{"Year":"2008","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"5.897938722"},{"Year":"2008","Industrial Sector Summary":"Construction","Value":"2.708742759"},{"Year":"2008","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.113071567"},{"Year":"2008","Industrial Sector Summary":"Transport and storage","Value":"17.81972194"},{"Year":"2008","Industrial Sector Summary":"Accommodation and food services","Value":"3.045950577"},{"Year":"2008","Industrial Sector Summary":"Information and communication","Value":"1.101235478"},{"Year":"2008","Industrial Sector Summary":"Financial and insurance activities","Value":"0.795783821"},{"Year":"2008","Industrial Sector Summary":"Real estate activities","Value":"0.110836039"},{"Year":"2008","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"0.975278031"},{"Year":"2008","Industrial Sector Summary":"Administrative and support service activities","Value":"1.179873329"},{"Year":"2008","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"1.969656303"},{"Year":"2008","Industrial Sector Summary":"Education","Value":"1.059401696"},{"Year":"2008","Industrial Sector Summary":"Human health and social work activities","Value":"1.41131995"},{"Year":"2008","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.387761272"},{"Year":"2008","Industrial Sector Summary":"Other service activities","Value":"1.277170503"},{"Year":"2008","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.482538529"},{"Year":"2009","Industrial Sector Summary":null,"Value":"3.798612266"},{"Year":"2009","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"12.14888633"},{"Year":"2009","Industrial Sector Summary":"Mining and quarrying","Value":"11.25008568"},{"Year":"2009","Industrial Sector Summary":"Manufacturing","Value":"12.02385583"},{"Year":"2009","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.80874146"},{"Year":"2009","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"6.113138937"},{"Year":"2009","Industrial Sector Summary":"Construction","Value":"2.875311167"},{"Year":"2009","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.200211753"},{"Year":"2009","Industrial Sector Summary":"Transport and storage","Value":"18.41117255"},{"Year":"2009","Industrial Sector Summary":"Accommodation and food services","Value":"2.854332961"},{"Year":"2009","Industrial Sector Summary":"Information and communication","Value":"1.056964281"},{"Year":"2009","Industrial Sector Summary":"Financial and insurance activities","Value":"0.773931213"},{"Year":"2009","Industrial Sector Summary":"Real estate activities","Value":"0.097535968"},{"Year":"2009","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"0.979143935"},{"Year":"2009","Industrial Sector Summary":"Administrative and support service activities","Value":"1.207514066"},{"Year":"2009","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"1.682480825"},{"Year":"2009","Industrial Sector Summary":"Education","Value":"0.929117079"},{"Year":"2009","Industrial Sector Summary":"Human health and social work activities","Value":"1.231002958"},{"Year":"2009","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.47488463"},{"Year":"2009","Industrial Sector Summary":"Other service activities","Value":"1.067161166"},{"Year":"2009","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.535291293"},{"Year":"2010","Industrial Sector Summary":null,"Value":"3.812937308"},{"Year":"2010","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"12.9872182"},{"Year":"2010","Industrial Sector Summary":"Mining and quarrying","Value":"11.77757459"},{"Year":"2010","Industrial Sector Summary":"Manufacturing","Value":"11.96306129"},{"Year":"2010","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.00100578"},{"Year":"2010","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"6.474700912"},{"Year":"2010","Industrial Sector Summary":"Construction","Value":"2.683678832"},{"Year":"2010","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.240160088"},{"Year":"2010","Industrial Sector Summary":"Transport and storage","Value":"18.49982002"},{"Year":"2010","Industrial Sector Summary":"Accommodation and food services","Value":"2.898930032"},{"Year":"2010","Industrial Sector Summary":"Information and communication","Value":"1.087208276"},{"Year":"2010","Industrial Sector Summary":"Financial and insurance activities","Value":"0.874628187"},{"Year":"2010","Industrial Sector Summary":"Real estate activities","Value":"0.101213647"},{"Year":"2010","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"0.948697271"},{"Year":"2010","Industrial Sector Summary":"Administrative and support service activities","Value":"1.09199877"},{"Year":"2010","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"1.602068742"},{"Year":"2010","Industrial Sector Summary":"Education","Value":"1.008132188"},{"Year":"2010","Industrial Sector Summary":"Human health and social work activities","Value":"1.228938394"},{"Year":"2010","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.440396115"},{"Year":"2010","Industrial Sector Summary":"Other service activities","Value":"1.108696515"},{"Year":"2010","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.484463926"},{"Year":"2011","Industrial Sector Summary":null,"Value":"3.684840507"},{"Year":"2011","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"11.29562873"},{"Year":"2011","Industrial Sector Summary":"Mining and quarrying","Value":"12.08907119"},{"Year":"2011","Industrial Sector Summary":"Manufacturing","Value":"11.37638507"},{"Year":"2011","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.52839416"},{"Year":"2011","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"6.02473627"},{"Year":"2011","Industrial Sector Summary":"Construction","Value":"2.587117508"},{"Year":"2011","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.122034367"},{"Year":"2011","Industrial Sector Summary":"Transport and storage","Value":"18.61258715"},{"Year":"2011","Industrial Sector Summary":"Accommodation and food services","Value":"2.730499289"},{"Year":"2011","Industrial Sector Summary":"Information and communication","Value":"1.01795618"},{"Year":"2011","Industrial Sector Summary":"Financial and insurance activities","Value":"0.934914888"},{"Year":"2011","Industrial Sector Summary":"Real estate activities","Value":"0.09638115"},{"Year":"2011","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"0.865758125"},{"Year":"2011","Industrial Sector Summary":"Administrative and support service activities","Value":"1.004249836"},{"Year":"2011","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"1.594539285"},{"Year":"2011","Industrial Sector Summary":"Education","Value":"0.887402301"},{"Year":"2011","Industrial Sector Summary":"Human health and social work activities","Value":"1.087487392"},{"Year":"2011","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.136793849"},{"Year":"2011","Industrial Sector Summary":"Other service activities","Value":"1.030830815"},{"Year":"2011","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.517604882"},{"Year":"2012","Industrial Sector Summary":null,"Value":"3.552730515"},{"Year":"2012","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"12.36278429"},{"Year":"2012","Industrial Sector Summary":"Mining and quarrying","Value":"12.62149788"},{"Year":"2012","Industrial Sector Summary":"Manufacturing","Value":"11.09874876"},{"Year":"2012","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.71130727"},{"Year":"2012","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"6.189172749"},{"Year":"2012","Industrial Sector Summary":"Construction","Value":"2.791902229"},{"Year":"2012","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"3.096392746"},{"Year":"2012","Industrial Sector Summary":"Transport and storage","Value":"17.64184925"},{"Year":"2012","Industrial Sector Summary":"Accommodation and food services","Value":"2.647119995"},{"Year":"2012","Industrial Sector Summary":"Information and communication","Value":"0.999402517"},{"Year":"2012","Industrial Sector Summary":"Financial and insurance activities","Value":"0.930361519"},{"Year":"2012","Industrial Sector Summary":"Real estate activities","Value":"0.101347056"},{"Year":"2012","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"0.842734073"},{"Year":"2012","Industrial Sector Summary":"Administrative and support service activities","Value":"0.958669292"},{"Year":"2012","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"1.638368068"},{"Year":"2012","Industrial Sector Summary":"Education","Value":"0.813695379"},{"Year":"2012","Industrial Sector Summary":"Human health and social work activities","Value":"1.125258573"},{"Year":"2012","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.12546591"},{"Year":"2012","Industrial Sector Summary":"Other service activities","Value":"1.096862998"},{"Year":"2012","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.495601215"},{"Year":"2013","Industrial Sector Summary":null,"Value":"3.449674213"},{"Year":"2013","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"12.3946733"},{"Year":"2013","Industrial Sector Summary":"Mining and quarrying","Value":"12.56384685"},{"Year":"2013","Industrial Sector Summary":"Manufacturing","Value":"11.21661786"},{"Year":"2013","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"11.72529083"},{"Year":"2013","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"6.03453317"},{"Year":"2013","Industrial Sector Summary":"Construction","Value":"2.666101147"},{"Year":"2013","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"2.932506473"},{"Year":"2013","Industrial Sector Summary":"Transport and storage","Value":"16.7803791"},{"Year":"2013","Industrial Sector Summary":"Accommodation and food services","Value":"2.748026345"},{"Year":"2013","Industrial Sector Summary":"Information and communication","Value":"1.008337135"},{"Year":"2013","Industrial Sector Summary":"Financial and insurance activities","Value":"0.840939665"},{"Year":"2013","Industrial Sector Summary":"Real estate activities","Value":"0.102862072"},{"Year":"2013","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"0.790324721"},{"Year":"2013","Industrial Sector Summary":"Administrative and support service activities","Value":"0.893509837"},{"Year":"2013","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"1.522390105"},{"Year":"2013","Industrial Sector Summary":"Education","Value":"0.770141789"},{"Year":"2013","Industrial Sector Summary":"Human health and social work activities","Value":"1.125270092"},{"Year":"2013","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"2.132641472"},{"Year":"2013","Industrial Sector Summary":"Other service activities","Value":"1.143469302"},{"Year":"2013","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.491769372"},{"Year":"2014","Industrial Sector Summary":null,"Value":"3.21913842"},{"Year":"2014","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"11.14782137"},{"Year":"2014","Industrial Sector Summary":"Mining and quarrying","Value":"12.2850301"},{"Year":"2014","Industrial Sector Summary":"Manufacturing","Value":"10.45161408"},{"Year":"2014","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"12.32876571"},{"Year":"2014","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"5.769708252"},{"Year":"2014","Industrial Sector Summary":"Construction","Value":"2.487792668"},{"Year":"2014","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"2.622540941"},{"Year":"2014","Industrial Sector Summary":"Transport and storage","Value":"16.40251282"},{"Year":"2014","Industrial Sector Summary":"Accommodation and food services","Value":"2.373162124"},{"Year":"2014","Industrial Sector Summary":"Information and communication","Value":"0.884852413"},{"Year":"2014","Industrial Sector Summary":"Financial and insurance activities","Value":"0.83925526"},{"Year":"2014","Industrial Sector Summary":"Real estate activities","Value":"0.089207347"},{"Year":"2014","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"0.688308562"},{"Year":"2014","Industrial Sector Summary":"Administrative and support service activities","Value":"0.79605172"},{"Year":"2014","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"1.253659288"},{"Year":"2014","Industrial Sector Summary":"Education","Value":"0.60000988"},{"Year":"2014","Industrial Sector Summary":"Human health and social work activities","Value":"0.900267288"},{"Year":"2014","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"1.713965585"},{"Year":"2014","Industrial Sector Summary":"Other service activities","Value":"0.914709117"},{"Year":"2014","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.527491769"},{"Year":"2015","Industrial Sector Summary":null,"Value":"3.148942303"},{"Year":"2015","Industrial Sector Summary":"Agriculture, forestry and fishing","Value":"11.35654581"},{"Year":"2015","Industrial Sector Summary":"Mining and quarrying","Value":"12.19225624"},{"Year":"2015","Industrial Sector Summary":"Manufacturing","Value":"10.26276178"},{"Year":"2015","Industrial Sector Summary":"Electricity, gas, steam and air conditioning supply","Value":"13.86547055"},{"Year":"2015","Industrial Sector Summary":"Water supply, sewerage, waste management activities and remediation services","Value":"5.807730438"},{"Year":"2015","Industrial Sector Summary":"Construction","Value":"2.388111271"},{"Year":"2015","Industrial Sector Summary":"Wholesale and retail trade; repair of motor vehicles and motorcycles","Value":"2.4755414"},{"Year":"2015","Industrial Sector Summary":"Transport and storage","Value":"16.673144"},{"Year":"2015","Industrial Sector Summary":"Accommodation and food services","Value":"2.247018126"},{"Year":"2015","Industrial Sector Summary":"Information and communication","Value":"0.815104368"},{"Year":"2015","Industrial Sector Summary":"Financial and insurance activities","Value":"0.834949723"},{"Year":"2015","Industrial Sector Summary":"Real estate activities","Value":"0.086843283"},{"Year":"2015","Industrial Sector Summary":"Professional, scientific and technical activities","Value":"0.638394943"},{"Year":"2015","Industrial Sector Summary":"Administrative and support service activities","Value":"0.757647573"},{"Year":"2015","Industrial Sector Summary":"Public administration and defence; compulsory social security","Value":"1.127841052"},{"Year":"2015","Industrial Sector Summary":"Education","Value":"0.484201839"},{"Year":"2015","Industrial Sector Summary":"Human health and social work activities","Value":"0.734092999"},{"Year":"2015","Industrial Sector Summary":"Arts, entertainment and recreation","Value":"1.477442169"},{"Year":"2015","Industrial Sector Summary":"Other service activities","Value":"0.8823188"},{"Year":"2015","Industrial Sector Summary":"Activities of households as employers; undifferentiated goods and services-producing activities of households for own use","Value":"0.542909146"}]' data-indicatorid='indicator_7-3-1' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Terajoules per GBP (£)" data-measurementunit="Terajoules per GBP (£)" data-datasource="Office For National Statistics" data-geographicalarea="United Kingdom" data-showdata="true">
+  data-edgesdata='[]' data-charttitle="Energy intensity" data-measurementunit="Terajoules per gross value added (£m)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
     <div class="col-md-3">
       <div id="toolbar">
-        <h5>Sub-categories</h5>
+        <h3>Sub-categories</h3>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
@@ -221,18 +234,18 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Terajoules per GBP (£)</h3>
+                <h3>Energy intensity</h3>
               
-              <p>Unit of Measurement: Terajoules per GBP (£)</p>     
-              <a href="/data/indicator_7-3-1.csv" class="btn btn-primary btn-download" download='indicator_7-3-1.csv'>Download source CSV</a>
+              <p>Unit of Measurement: Terajoules per gross value added (£m)</p>     
+              <a href="/data/indicator_7-3-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_7-3-1.csv'>Download source CSV</a>
               <div id="datatables"> 
  
 
+<a href='/data/headlines/headlines_7-3-1.csv' class='btn btn-primary btn-download' download='indicator_7-3-1.csv'>Download headline CSV</a>
+
 <h3>Headline data</h3>
 
-<a href="/data/headlines/headlines_7-3-1.csv" class="btn btn-primary btn-download" download='indicator_7-3-1.csv'>Download headline CSV</a>
-
-<table class="table-responsive table table-hover dataTable no-footer" role="grid">
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
   <!-- <caption>Headline data</caption> -->
   <thead>
   
@@ -374,11 +387,12 @@
   </tbody>
 </table>
 </div>
+              <p></p>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded">
+            <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
@@ -424,7 +438,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Reallocated energy use (in Terajoules) divided by gross value added (GVA) chained volume measure (CVM).
+            Reallocated energy use (in Terajoules) divided by gross value added (GVA) chained volume measure (CVM)
           
         </td>
         </tr>
@@ -437,7 +451,7 @@
         <th scope="row">Actual Indicator Description </th>
         <td>
           
-            Units of direct energy used per unit of GVA (CVM), as an indicator of energy efficiency by sector. The Chained Volume Measures are created from the short term measures of output. The majority of indicators in the short term measures are measuring changes in output as a proxy for changes in GVA. At the reference year (currently 2015) the values are set equal to current price GVA values.
+            
           
         </td>
         </tr>
@@ -450,7 +464,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -528,7 +542,7 @@
         <th scope="row">Disaggregation </th>
         <td>
           
-            Sector
+            
           
         </td>
         </tr>
@@ -725,7 +739,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            Terajoules per GBP (£)
+            Terajoules per gross value added (£m)
           
         </td>
         </tr>
@@ -945,7 +959,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            Primary energy intensity is obtained by dividing total primary energy supply over gross domestic product. Total primary energy supply, as defined by the IEA, is made up of production plus net imports minus international marine and aviation bunkers plus-stock changes. For international comparison purposes, GDP is measured in constant terms at purchasing power parity.
+            
           
         </td>
         </tr>
@@ -971,7 +985,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            International Energy Agency (IEA); United Nations Statistics Division (UNSD); United Nations' Inter-agency Mechanism on Energy (UN Energy); SE4ALL Global Tracking Framework Consortium (SE4ALL Global Tracking Framework Consortium).
+            International Energy Agency (IEA); United Nations Statistics Division (UNSD); United Nations' Inter-agency Mechanism on Energy (UN Energy); SE4ALL Global Tracking Framework Consortium (SE4ALL Global Tracking Framework Consortium)
           
         </td>
         </tr>
@@ -997,7 +1011,7 @@
         <th scope="row">UNSD Indicator Code </th>
         <td>
           
-            C070301
+            
           
         </td>
         </tr>
@@ -1252,7 +1266,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            Office For National Statistics
+            Office for National Statistics (ONS)
           
         </td>
         </tr>
@@ -1265,7 +1279,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -1311,7 +1325,7 @@
 
             
               <a href="https://www.ons.gov.uk/economy/environmentalaccounts/datasets/ukenvironmentalaccountsenergyreallocatedenergyconsumptionandenergyintensityunitedkingdom ">
-                Energy: Reallocated Energy Consumption and Energy Intensity, United Kingdom
+                Reallocated Energy Consumption and Energy Intensity, United Kingdom
               </a>
             
             
@@ -1331,7 +1345,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            2017-07-11
+            11-07-2017
           
         </td>
         </tr>
@@ -1357,7 +1371,7 @@
         <th scope="row">Statistical Classification </th>
         <td>
           
-            National Statistic
+            
           
         </td>
         </tr>
@@ -1370,7 +1384,7 @@
         <th scope="row">Contact Details </th>
         <td>
           
-            Gemma Thomas environment.accounts@ons.gsi.gov.uk Telephone: +44 (0)1633 455523/+44 (0)1633 456568
+            
           
         </td>
         </tr>
@@ -1556,7 +1570,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            Office For National Statistics
+            Office for National Statistics (ONS)
           
         </td>
         </tr>
@@ -1569,7 +1583,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -1635,7 +1649,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            2017-09-29
+            29-09-2017
           
         </td>
         </tr>
@@ -1648,7 +1662,7 @@
         <th scope="row">Next Release </th>
         <td>
           
-            2017-12-22
+            
           
         </td>
         </tr>
@@ -1661,7 +1675,7 @@
         <th scope="row">Statistical Classification </th>
         <td>
           
-            National Statistic
+            
           
         </td>
         </tr>
@@ -1674,7 +1688,7 @@
         <th scope="row">Contact Details </th>
         <td>
           
-            Robert Kent-Smith gdp@ons.gsi.gov.uk Telephone: +44(0)1633 651618
+            
           
         </td>
         </tr>
@@ -1754,10 +1768,10 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6">
-        We welcome your feedback. Contact us at
+        Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-md-6">
+      <div class="col-md-6 text-right">
         <a href="/faq/">Frequently Asked Questions</a>
       </div>
     </div>
@@ -1787,11 +1801,11 @@ ga('send', 'pageview');
 <script src="//code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/jquery.dataTables.min.js"></script>
-<script src="//cdn.datatables.net/1.10.13/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171027125832'></script>
+<script src='/assets/js/sdg.js?v=20171103103003'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
