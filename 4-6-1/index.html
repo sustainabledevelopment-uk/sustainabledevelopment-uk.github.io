@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Proportion of population in a given age group achieving at least a fixed level of proficiency in functional (a) literacy and (b) numeracy skills, by sex - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 4.6.1 - Goal 4 - Quality Education
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,48 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2007","Sex":null,"Subject":"English","Value":"64.6"},{"Year":"2007","Sex":"Female","Subject":"English","Value":"71.5"},{"Year":"2007","Sex":"Male","Subject":"English","Value":"57.8"},{"Year":"2007","Sex":null,"Subject":"Maths","Value":"59.3"},{"Year":"2007","Sex":"Female","Subject":"Maths","Value":"59.9"},{"Year":"2007","Sex":"Male","Subject":"Maths","Value":"58.6"},{"Year":"2008","Sex":null,"Subject":"English","Value":"66.1"},{"Year":"2008","Sex":"Female","Subject":"English","Value":"72.8"},{"Year":"2008","Sex":"Male","Subject":"English","Value":"59.5"},{"Year":"2008","Sex":null,"Subject":"Maths","Value":"61.4"},{"Year":"2008","Sex":"Female","Subject":"Maths","Value":"61.4"},{"Year":"2008","Sex":"Male","Subject":"Maths","Value":"61.3"},{"Year":"2009","Sex":null,"Subject":"English","Value":"69.8"},{"Year":"2009","Sex":"Female","Subject":"English","Value":"76.5"},{"Year":"2009","Sex":"Male","Subject":"English","Value":"63.1"},{"Year":"2009","Sex":null,"Subject":"Maths","Value":"64.6"},{"Year":"2009","Sex":"Female","Subject":"Maths","Value":"64.8"},{"Year":"2009","Sex":"Male","Subject":"Maths","Value":"64.5"},{"Year":"2010","Sex":null,"Subject":"English","Value":"72.3"},{"Year":"2010","Sex":"Female","Subject":"English","Value":"78.8"},{"Year":"2010","Sex":"Male","Subject":"English","Value":"65.8"},{"Year":"2010","Sex":null,"Subject":"Maths","Value":"67"},{"Year":"2010","Sex":"Female","Subject":"Maths","Value":"67.3"},{"Year":"2010","Sex":"Male","Subject":"Maths","Value":"66.8"},{"Year":"2011","Sex":null,"Subject":"English","Value":"69.3"},{"Year":"2011","Sex":"Female","Subject":"English","Value":"76.5"},{"Year":"2011","Sex":"Male","Subject":"English","Value":"62.2"},{"Year":"2011","Sex":null,"Subject":"Maths","Value":"70.9"},{"Year":"2011","Sex":"Female","Subject":"Maths","Value":"71.2"},{"Year":"2011","Sex":"Male","Subject":"Maths","Value":"70.6"},{"Year":"2012","Sex":null,"Subject":"English","Value":"70.7"},{"Year":"2012","Sex":"Female","Subject":"English","Value":"78"},{"Year":"2012","Sex":"Male","Subject":"English","Value":"63.4"},{"Year":"2012","Sex":null,"Subject":"Maths","Value":"72.8"},{"Year":"2012","Sex":"Female","Subject":"Maths","Value":"73.2"},{"Year":"2012","Sex":"Male","Subject":"Maths","Value":"72.3"},{"Year":"2013","Sex":null,"Subject":"English","Value":"72.4"},{"Year":"2013","Sex":"Female","Subject":"English","Value":"79.8"},{"Year":"2013","Sex":"Male","Subject":"English","Value":"64.7"},{"Year":"2013","Sex":null,"Subject":"Maths","Value":"68"},{"Year":"2013","Sex":"Female","Subject":"Maths","Value":"68.7"},{"Year":"2013","Sex":"Male","Subject":"Maths","Value":"67.3"},{"Year":"2014","Sex":null,"Subject":"English","Value":"74.77973568"},{"Year":"2014","Sex":"Female","Subject":"English","Value":"81.97424893"},{"Year":"2014","Sex":"Male","Subject":"English","Value":"67.19457014"},{"Year":"2014","Sex":null,"Subject":"Maths","Value":"70.49239033"},{"Year":"2014","Sex":"Female","Subject":"Maths","Value":"70.98765432"},{"Year":"2014","Sex":"Male","Subject":"Maths","Value":"70.03533569"},{"Year":"2015","Sex":null,"Subject":"English","Value":"72.81065089"},{"Year":"2015","Sex":"Female","Subject":"English","Value":"80.18486424"},{"Year":"2015","Sex":"Male","Subject":"English","Value":"65.03030303"},{"Year":"2015","Sex":null,"Subject":"Maths","Value":"71.86915888"},{"Year":"2015","Sex":"Female","Subject":"Maths","Value":"72.78576836"},{"Year":"2015","Sex":"Male","Subject":"Maths","Value":"70.97488922"},{"Year":"2016","Sex":null,"Subject":"English","Value":"69.6"},{"Year":"2016","Sex":"Female","Subject":"English","Value":"62.4"},{"Year":"2016","Sex":"Male","Subject":"English","Value":"61.3"},{"Year":"2016","Sex":null,"Subject":"Maths","Value":"70.4"},{"Year":"2016","Sex":"Female","Subject":"Maths","Value":"70.7"},{"Year":"2016","Sex":"Male","Subject":"Maths","Value":"70.1"},{"Year":"2015","Sex":null,"Subject":"English and Maths","Value":"61.1"},{"Year":"2015","Sex":"Female","Subject":"English and Maths","Value":"65.7"},{"Year":"2015","Sex":"Male","Subject":"English and Maths","Value":"56.6"}]' data-indicatorid='indicator_4-6-1' data-country="UK"
-  data-edgesdata='[{"From":"Subject","To":"Sex"}]' data-charttitle="Percentage of population at the end of Key Stage 4 achieving a pass grade at GCSE level in English and Mathematics" data-measurementunit="Percentage (%)" data-datasource="Department for Education (DfE)" data-geographicalarea="England" data-footnote="" data-showdata="true">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>This indicator is being used as an approximation of the UN SDG Indicator and has not been identified in collaboration with topic experts. We will work to identify or develop UK data to meet the global indicator specification.</p>
+
+<p>Data availability within the UK is limited to England for this indicator.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2007","Units":"Percentage (%) with English proficiency","Sex":null,"Value":"64.6"},{"Year":"2007","Units":"Percentage (%) with English proficiency","Sex":"Female","Value":"71.5"},{"Year":"2007","Units":"Percentage (%) with English proficiency","Sex":"Male","Value":"57.8"},{"Year":"2007","Units":"Percentage (%) with Maths proficiency","Sex":null,"Value":"59.3"},{"Year":"2007","Units":"Percentage (%) with Maths proficiency","Sex":"Female","Value":"59.9"},{"Year":"2007","Units":"Percentage (%) with Maths proficiency","Sex":"Male","Value":"58.6"},{"Year":"2008","Units":"Percentage (%) with English proficiency","Sex":null,"Value":"66.1"},{"Year":"2008","Units":"Percentage (%) with English proficiency","Sex":"Female","Value":"72.8"},{"Year":"2008","Units":"Percentage (%) with English proficiency","Sex":"Male","Value":"59.5"},{"Year":"2008","Units":"Percentage (%) with Maths proficiency","Sex":null,"Value":"61.4"},{"Year":"2008","Units":"Percentage (%) with Maths proficiency","Sex":"Female","Value":"61.4"},{"Year":"2008","Units":"Percentage (%) with Maths proficiency","Sex":"Male","Value":"61.3"},{"Year":"2009","Units":"Percentage (%) with English proficiency","Sex":null,"Value":"69.8"},{"Year":"2009","Units":"Percentage (%) with English proficiency","Sex":"Female","Value":"76.5"},{"Year":"2009","Units":"Percentage (%) with English proficiency","Sex":"Male","Value":"63.1"},{"Year":"2009","Units":"Percentage (%) with Maths proficiency","Sex":null,"Value":"64.6"},{"Year":"2009","Units":"Percentage (%) with Maths proficiency","Sex":"Female","Value":"64.8"},{"Year":"2009","Units":"Percentage (%) with Maths proficiency","Sex":"Male","Value":"64.5"},{"Year":"2010","Units":"Percentage (%) with English proficiency","Sex":null,"Value":"72.3"},{"Year":"2010","Units":"Percentage (%) with English proficiency","Sex":"Female","Value":"78.8"},{"Year":"2010","Units":"Percentage (%) with English proficiency","Sex":"Male","Value":"65.8"},{"Year":"2010","Units":"Percentage (%) with Maths proficiency","Sex":null,"Value":"67"},{"Year":"2010","Units":"Percentage (%) with Maths proficiency","Sex":"Female","Value":"67.3"},{"Year":"2010","Units":"Percentage (%) with Maths proficiency","Sex":"Male","Value":"66.8"},{"Year":"2011","Units":"Percentage (%) with English proficiency","Sex":null,"Value":"69.3"},{"Year":"2011","Units":"Percentage (%) with English proficiency","Sex":"Female","Value":"76.5"},{"Year":"2011","Units":"Percentage (%) with English proficiency","Sex":"Male","Value":"62.2"},{"Year":"2011","Units":"Percentage (%) with Maths proficiency","Sex":null,"Value":"70.9"},{"Year":"2011","Units":"Percentage (%) with Maths proficiency","Sex":"Female","Value":"71.2"},{"Year":"2011","Units":"Percentage (%) with Maths proficiency","Sex":"Male","Value":"70.6"},{"Year":"2012","Units":"Percentage (%) with English proficiency","Sex":null,"Value":"70.7"},{"Year":"2012","Units":"Percentage (%) with English proficiency","Sex":"Female","Value":"78"},{"Year":"2012","Units":"Percentage (%) with English proficiency","Sex":"Male","Value":"63.4"},{"Year":"2012","Units":"Percentage (%) with Maths proficiency","Sex":null,"Value":"72.8"},{"Year":"2012","Units":"Percentage (%) with Maths proficiency","Sex":"Female","Value":"73.2"},{"Year":"2012","Units":"Percentage (%) with Maths proficiency","Sex":"Male","Value":"72.3"},{"Year":"2013","Units":"Percentage (%) with English proficiency","Sex":null,"Value":"72.4"},{"Year":"2013","Units":"Percentage (%) with English proficiency","Sex":"Female","Value":"79.8"},{"Year":"2013","Units":"Percentage (%) with English proficiency","Sex":"Male","Value":"64.7"},{"Year":"2013","Units":"Percentage (%) with Maths proficiency","Sex":null,"Value":"68"},{"Year":"2013","Units":"Percentage (%) with Maths proficiency","Sex":"Female","Value":"68.7"},{"Year":"2013","Units":"Percentage (%) with Maths proficiency","Sex":"Male","Value":"67.3"},{"Year":"2014","Units":"Percentage (%) with English proficiency","Sex":null,"Value":"74.77973568"},{"Year":"2014","Units":"Percentage (%) with English proficiency","Sex":"Female","Value":"81.97424893"},{"Year":"2014","Units":"Percentage (%) with English proficiency","Sex":"Male","Value":"67.19457014"},{"Year":"2014","Units":"Percentage (%) with Maths proficiency","Sex":null,"Value":"70.49239033"},{"Year":"2014","Units":"Percentage (%) with Maths proficiency","Sex":"Female","Value":"70.98765432"},{"Year":"2014","Units":"Percentage (%) with Maths proficiency","Sex":"Male","Value":"70.03533569"},{"Year":"2015","Units":"Percentage (%) with English proficiency","Sex":null,"Value":"72.81065089"},{"Year":"2015","Units":"Percentage (%) with English proficiency","Sex":"Female","Value":"80.18486424"},{"Year":"2015","Units":"Percentage (%) with English proficiency","Sex":"Male","Value":"65.03030303"},{"Year":"2015","Units":"Percentage (%) with Maths proficiency","Sex":null,"Value":"71.86915888"},{"Year":"2015","Units":"Percentage (%) with Maths proficiency","Sex":"Female","Value":"72.78576836"},{"Year":"2015","Units":"Percentage (%) with Maths proficiency","Sex":"Male","Value":"70.97488922"},{"Year":"2016","Units":"Percentage (%) with English proficiency","Sex":null,"Value":"69.6"},{"Year":"2016","Units":"Percentage (%) with English proficiency","Sex":"Female","Value":"62.4"},{"Year":"2016","Units":"Percentage (%) with English proficiency","Sex":"Male","Value":"61.3"},{"Year":"2016","Units":"Percentage (%) with Maths proficiency","Sex":null,"Value":"70.4"},{"Year":"2016","Units":"Percentage (%) with Maths proficiency","Sex":"Female","Value":"70.7"},{"Year":"2016","Units":"Percentage (%) with Maths proficiency","Sex":"Male","Value":"70.1"}]' data-indicatorid='indicator_4-6-1' data-country="England"
+  data-edgesdata='[]' data-charttitle="Percentage of population at the end of Key Stage 4 achieving a pass grade at GCSE level in English and Mathematics" data-measurementunit="Percentage (%)" data-datasource="Department for Education (DfE)" data-geographicalarea="England" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Percentage of population at the end of Key Stage 4 achieving a pass grade at GCSE level in English and Mathematics<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -235,27 +260,237 @@
             <div role="tabpanel" class="tab-pane active" id="data">
               
                 <h3>Percentage of population at the end of Key Stage 4 achieving a pass grade at GCSE level in English and Mathematics</h3>
-              
-              <p>Unit of Measurement: Percentage (%)</p>     
-              <a href="/data/indicator_4-6-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_4-6-1.csv'>Download source CSV</a>
+                
+              <a href="/data/indicator_4-6-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_4-6-1.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_4-6-1.csv' class='btn btn-primary btn-download' download='indicator_4-6-1.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_4-6-1.csv' class='btn btn-primary btn-download' download='indicator_4-6-1.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Percentage of population at the end of Key Stage 4 achieving a pass grade at GCSE level in English and Mathematics</caption>
   <thead>
+  
+      <th scope="col">Year</th>
+  
+      <th scope="col">Units</th>
+  
+      <th scope="col">Value</th>
   
   </thead>
   <tbody>
   
+      <tr>
+      
+          <td>2007</td>
+      
+          <td>Percentage (%) with English proficiency</td>
+      
+          <td>64.6</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2007</td>
+      
+          <td>Percentage (%) with Maths proficiency</td>
+      
+          <td>59.3</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2008</td>
+      
+          <td>Percentage (%) with English proficiency</td>
+      
+          <td>66.1</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2008</td>
+      
+          <td>Percentage (%) with Maths proficiency</td>
+      
+          <td>61.4</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2009</td>
+      
+          <td>Percentage (%) with English proficiency</td>
+      
+          <td>69.8</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2009</td>
+      
+          <td>Percentage (%) with Maths proficiency</td>
+      
+          <td>64.6</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2010</td>
+      
+          <td>Percentage (%) with English proficiency</td>
+      
+          <td>72.3</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2010</td>
+      
+          <td>Percentage (%) with Maths proficiency</td>
+      
+          <td>67.0</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2011</td>
+      
+          <td>Percentage (%) with English proficiency</td>
+      
+          <td>69.3</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2011</td>
+      
+          <td>Percentage (%) with Maths proficiency</td>
+      
+          <td>70.9</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2012</td>
+      
+          <td>Percentage (%) with English proficiency</td>
+      
+          <td>70.7</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2012</td>
+      
+          <td>Percentage (%) with Maths proficiency</td>
+      
+          <td>72.8</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2013</td>
+      
+          <td>Percentage (%) with English proficiency</td>
+      
+          <td>72.4</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2013</td>
+      
+          <td>Percentage (%) with Maths proficiency</td>
+      
+          <td>68.0</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2014</td>
+      
+          <td>Percentage (%) with English proficiency</td>
+      
+          <td>74.77973568</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2014</td>
+      
+          <td>Percentage (%) with Maths proficiency</td>
+      
+          <td>70.49239033</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2015</td>
+      
+          <td>Percentage (%) with English proficiency</td>
+      
+          <td>72.81065089</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2015</td>
+      
+          <td>Percentage (%) with Maths proficiency</td>
+      
+          <td>71.86915888</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2016</td>
+      
+          <td>Percentage (%) with English proficiency</td>
+      
+          <td>69.6</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2016</td>
+      
+          <td>Percentage (%) with Maths proficiency</td>
+      
+          <td>70.4</td>
+      
+      </tr>
+  
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: Department for Education (DfE)</p>
+                <p>Geographical Area: England</p>
+                <p>Units of Measure: Percentage (%)</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -911,8 +1146,8 @@
             
 
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-04-06-01.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 57kB)
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-04-06-01.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 57kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1192,8 +1427,8 @@
             
 
             
-              <a href="https://www.gov.uk/government/statistics/gcse-and-equivalent-results-2016-to-2017-provisional">
-                GCSE and equivalent results: 2016 to 2017 (provisional)
+              <a href="https://www.gov.uk/government/statistics/gcse-and-equivalent-results-2016-to-2017-provisional" target="_blank">
+                GCSE and equivalent results: 2016 to 2017 (provisional) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1393,7 +1628,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

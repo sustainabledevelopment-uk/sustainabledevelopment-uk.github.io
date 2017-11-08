@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Coverage of protected areas in relation to marine areas - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 14.5.1 - Goal 14 - Life below water
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,46 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"1.549292728"},{"Year":"2001","Value":"1.583432331"},{"Year":"2002","Value":"1.594323645"},{"Year":"2003","Value":"1.67045529"},{"Year":"2004","Value":"1.670578308"},{"Year":"2005","Value":"1.670608898"},{"Year":"2006","Value":"1.729188434"},{"Year":"2007","Value":"1.779362388"},{"Year":"2008","Value":"2.047417518"},{"Year":"2009","Value":"2.208547336"},{"Year":"2010","Value":"4.047738918"},{"Year":"2011","Value":"5.2932187"},{"Year":"2012","Value":"7.753334452"},{"Year":"2013","Value":"8.656673812"},{"Year":"2014","Value":"14.66926213"},{"Year":"2015","Value":"14.68379914"},{"Year":"2016","Value":"16.7484321"},{"Year":"2017","Value":"20.65510873"}]' data-indicatorid='indicator_14-5-1' data-country="UK"
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>Data follows the UN specification for this indicator; however it has not been identified in collaboration with topic experts. As with all indicators, this will be reviewed.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"1.549292728"},{"Year":"2001","Value":"1.583432331"},{"Year":"2002","Value":"1.594323645"},{"Year":"2003","Value":"1.67045529"},{"Year":"2004","Value":"1.670578308"},{"Year":"2005","Value":"1.670608898"},{"Year":"2006","Value":"1.729188434"},{"Year":"2007","Value":"1.779362388"},{"Year":"2008","Value":"2.047417518"},{"Year":"2009","Value":"2.208547336"},{"Year":"2010","Value":"4.047738918"},{"Year":"2011","Value":"5.2932187"},{"Year":"2012","Value":"7.753334452"},{"Year":"2013","Value":"8.656673812"},{"Year":"2014","Value":"14.66926213"},{"Year":"2015","Value":"14.68379914"},{"Year":"2016","Value":"16.7484321"},{"Year":"2017","Value":"20.65510873"}]' data-indicatorid='indicator_14-5-1' data-country="United Kingdom"
   data-edgesdata='[]' data-charttitle="Total extent of protected areas at sea" data-measurementunit="Million hectares" data-datasource="Joint Nature Conservation Committee (JNCC)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Total extent of protected areas at sea<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -235,18 +258,17 @@
             <div role="tabpanel" class="tab-pane active" id="data">
               
                 <h3>Total extent of protected areas at sea</h3>
-              
-              <p>Unit of Measurement: Million hectares</p>     
-              <a href="/data/indicator_14-5-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_14-5-1.csv'>Download source CSV</a>
+                
+              <a href="/data/indicator_14-5-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_14-5-1.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_14-5-1.csv' class='btn btn-primary btn-download' download='indicator_14-5-1.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_14-5-1.csv' class='btn btn-primary btn-download' download='indicator_14-5-1.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Total extent of protected areas at sea</caption>
   <thead>
   
       <th scope="col">Year</th>
@@ -403,7 +425,12 @@
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: Joint Nature Conservation Committee (JNCC)</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Million hectares</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -1059,8 +1086,8 @@
             
 
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-14-05-01.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 293kB)
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-14-05-01.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 293kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1340,8 +1367,8 @@
             
 
             
-              <a href="http://jncc.defra.gov.uk/page-4241">
-                Protected areas
+              <a href="http://jncc.defra.gov.uk/page-4241" target="_blank">
+                Protected areas <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1541,7 +1568,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

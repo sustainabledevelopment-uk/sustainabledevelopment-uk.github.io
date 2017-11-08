@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>The agriculture orientation index for government expenditures - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 2.a.1 - Goal 2 - Zero Hunger
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,32 +181,46 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"0.895854088"},{"Year":"2001","Value":"1.280828203"},{"Year":"2002","Value":"0.67408268"},{"Year":"2003","Value":"0.720059924"},{"Year":"2004","Value":"0.78805838"},{"Year":"2005","Value":"0.811722615"},{"Year":"2006","Value":"0.827579761"},{"Year":"2007","Value":"0.784124993"},{"Year":"2008","Value":"0.583590061"},{"Year":"2009","Value":"0.56663505"},{"Year":"2010","Value":"0.580325611"},{"Year":"2011","Value":"0.549304338"},{"Year":"2012","Value":"0.507381298"},{"Year":"2013","Value":"0.502651513"},{"Year":"2014","Value":"0.452907296"},{"Year":"2015","Value":"0.436081619"}]' data-indicatorid='indicator_2-a-1' data-country="UK"
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>Data follows the UN specification for this indicator; however it has not been identified in collaboration with topic experts. As with all indicators, this will be reviewed.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"0.895854088"},{"Year":"2001","Value":"1.280828203"},{"Year":"2002","Value":"0.67408268"},{"Year":"2003","Value":"0.720059924"},{"Year":"2004","Value":"0.78805838"},{"Year":"2005","Value":"0.811722615"},{"Year":"2006","Value":"0.827579761"},{"Year":"2007","Value":"0.784124993"},{"Year":"2008","Value":"0.583590061"},{"Year":"2009","Value":"0.56663505"},{"Year":"2010","Value":"0.580325611"},{"Year":"2011","Value":"0.549304338"},{"Year":"2012","Value":"0.507381298"},{"Year":"2013","Value":"0.502651513"},{"Year":"2014","Value":"0.452907296"},{"Year":"2015","Value":"0.436081619"}]' data-indicatorid='indicator_2-a-1' data-country="United Kingdom"
   data-edgesdata='[]' data-charttitle="Agriculture orientation index of government expenditure" data-measurementunit="Agriculture orientation index" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Agriculture orientation index of government expenditure<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        <p>Data follows the UN specification for this indicator; however it has not been identified in collaboration with topic experts. As with all indicators, this will be reviewed.</p>
-
-<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
-
-        
-        <hr/>
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -239,18 +258,17 @@
             <div role="tabpanel" class="tab-pane active" id="data">
               
                 <h3>Agriculture orientation index of government expenditure</h3>
-              
-              <p>Unit of Measurement: Agriculture orientation index</p>     
-              <a href="/data/indicator_2-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_2-a-1.csv'>Download source CSV</a>
+                
+              <a href="/data/indicator_2-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_2-a-1.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_2-a-1.csv' class='btn btn-primary btn-download' download='indicator_2-a-1.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_2-a-1.csv' class='btn btn-primary btn-download' download='indicator_2-a-1.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Agriculture orientation index of government expenditure</caption>
   <thead>
   
       <th scope="col">Year</th>
@@ -391,7 +409,12 @@
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: Office for National Statistics (ONS)</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Agriculture orientation index</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -1047,8 +1070,8 @@
             
 
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-02-0A-01.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 223kB)
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-02-0A-01.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 223kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1328,8 +1351,8 @@
             
 
             
-              <a href="https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicspending/datasets/esatable11annualexpenditureofgeneralgovernment/current">
-                Annual Expenditure of UK General Government
+              <a href="https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicspending/datasets/esatable11annualexpenditureofgeneralgovernment/current" target="_blank">
+                Annual Expenditure of UK General Government <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1529,7 +1552,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

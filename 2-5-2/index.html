@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Proportion of local breeds classified as being at risk, not-at-risk or at unknown level of risk of extinction - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 2.5.2 - Goal 2 - Zero Hunger
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,25 +181,25 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_2-5-2' data-country="UK"
-  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false">
-    <div class="col-md-3">
-      <div id="toolbar">
-        <h3>Sub-categories</h3>
-        <div id="fields"></div>
-      </div>
-      <div id="units"></div>
-    </div>
-    <div class="col-md-9">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
       <div id="page-content">
-        <p>We are still looking for a suitable data source for this indicator. Please contact us if you think you can help by emailing <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a>.</p>
+          <p>We have not explored suitable data sources for this indicator.</p>
 
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
 
-        
-        <hr/>
-        
-      </div>
-    
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_2-5-2' data-country=""
+  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false">
+  
+    <div class="col-md-12">
+  
       <section>
     
         
@@ -787,7 +792,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            The indicator presents the percentage of livestock breeds classified as being at risk, not at risk or of unknown risk of extinctions at a certain moment in time, as well as the trends for those percentages. The indicator is based on the most up to date data contained in FAO's Global Databank for Animal Genetic Resources DAD-IS (http://dad.fao.org/) at the time of calculation. Risk classes are defined based population sizes of breeds reported to DAD-IS. The risk class is considered to be "unknown" if (i) no population sizes are reported or (ii) the most recent population size reported refers to a year more than 10- years before the year of calculation (10 year cut off point). Links to official definitions/descriptions of the indicator are reported below: The indicator is one out of a set of 3 sub-indicators which are defined in the document CGRFA/WG-AnGR-7/12/7 "Targets and indicators for animal genetic resources" (http://www.fao.org/docrep/meeting/026/me514e.pdf) and that are endorsed in their current form by Commission on Genetic Resources for Food and Agriculture at its the 14th Session (see par 28 CRRFA-14/13/Report at http://www.fao.org/docrep/meeting/028/mg538e.pdf). The indicator serves to monitor the implementation of the Global Plan of Action for Animal Genetic Resources. In this respect the indicator is presented in the "Status and Trends of Animal Genetic Rescources-2014" (see http://www.fao.org/3/a-mm278e.pdf). This indicator is also proposed for the Target 15.5 under SDG, and it serves also as an indicator for the Aichi Target 13 "Genetic Diversity of Terrestrial Domesticated Animals" under the Convention on Biological Diversity (CBD). It is described on the webpage of the Biodiversity Indicators Partnership (BIP), a network of organizations which have come together to provide the most up-to date biodiversity information possible for tracking progress towards the Aichi Targets (http://www.bipindicators.net/domesticatedanimals). Further, it is presented in the Global Biodiversity Outlook 4, page 91 (see http://www.cbd.int/gbo/gbo4/publication/gbo4-en-lr.pdf) which is an output of the processes under the CBD. Risk classes are defined as follows: 	extinct: a breed is categorized as extinct when there are no breeding males or breeding females remaining. Nevertheless, genetic material might have been cryo-conserved which would allow recreation of the breed. In reality, extinction may be realized well before the loss of the last animal or genetic material. 	critical: a breed is categorized as critical if the total number of breeding females is less than or equal to 100 or the total number of breeding males is less than or equal to five; or the overall population size is less than or equal to 120 and decreasing and the percentage of females being bred to males of the same breed is below 80 percent, and it is not classified as extinct. 	critical-maintained: are those critical populations for which active conservation programmes are in place or populations are maintained by commercial companies or research institutions. 	endangered: a breed is categorized as endangered if the total number of breeding females is greater than 100 and less than or equal to 1 000 or the total number of breeding males is less than or equal to 20 and greater than five; or the overall population size is greater than 80 and less than 100 and increasing and the percentage of females being bred to males of the same breed is above 80 percent; or the overall population size is greater than 1 000 and less than or equal to 1 200 and decreasing and the percentage of females being bred to males of the same breed is below 80 percent, and it is not assigned to any of above categories. 	endangered-maintained: are those endangered populations for which active conservation programmes are in place or populations are maintained by commercial companies or research institutions. 	breed at risk: a breed that has been classified as either critical, critical-maintained, endangered, or endangered-maintained.
+            
           
         </td>
         </tr>
@@ -871,8 +876,8 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-2.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 232kB)
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-02-05-02.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 232kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1013,6 +1018,287 @@
 
 
 
+  <h3>UK Data Source Metadata</h3>
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      <h4>Source 1</h4>
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest Available Data </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical Coverage </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to Data Source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release Date </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next Release </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical Classification </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact Details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other Information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+  </div>
+
 
           </div>
           
@@ -1068,7 +1354,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

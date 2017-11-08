@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Proportion of financial support to the least developed countries that is allocated to the construction and retrofitting of sustainable, resilient and resource-efficient buildings utilizing local materials - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 11.c.1 - Goal 11 - Sustainable Cities &amp; Communities
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,46 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":null,"Value":"18777.05"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"354.69"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"18422.36"},{"Year":"2010","Flow of official development assistance":null,"Aid description (creditor reporting system code)":null,"Value":"57244.59"},{"Year":"2010","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"999.93"},{"Year":"2010","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"56244.66"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":null,"Value":"35421.8"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"486.27"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"34935.52"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":null,"Value":"21822.8"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"513.66"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"21309.14"},{"Year":"2011","Flow of official development assistance":null,"Aid description (creditor reporting system code)":null,"Value":"84691.78"},{"Year":"2011","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"21258.97"},{"Year":"2011","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"63432.82"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":null,"Value":"59306.37"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"20856.15"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"38450.22"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":null,"Value":"25385.42"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"402.82"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"24982.6"},{"Year":"2012","Flow of official development assistance":null,"Aid description (creditor reporting system code)":null,"Value":"25349.17"},{"Year":"2012","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"-29869.89"},{"Year":"2012","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"55219.06"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":null,"Value":"-3888.56"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"-30549.29"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"26660.73"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":null,"Value":"29237.74"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"679.41"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"28558.33"},{"Year":"2013","Flow of official development assistance":null,"Aid description (creditor reporting system code)":null,"Value":"82200.63"},{"Year":"2013","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"-7605.01"},{"Year":"2013","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"89805.64"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":null,"Value":"34630.34"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"-9333.15"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"43963.49"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":null,"Value":"47570.29"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"1728.14"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"45842.15"},{"Year":"2014","Flow of official development assistance":null,"Aid description (creditor reporting system code)":null,"Value":"88748.13"},{"Year":"2014","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"9425.63"},{"Year":"2014","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"79322.5"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":null,"Value":"32762.27"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"7830.03"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"24932.24"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":null,"Value":"55985.86"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"1595.6"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"54390.26"},{"Year":"2015","Flow of official development assistance":null,"Aid description (creditor reporting system code)":null,"Value":"111499.75"},{"Year":"2015","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"2562.86"},{"Year":"2015","Flow of official development assistance":null,"Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"108936.9"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":null,"Value":"61567.21"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"1061.27"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"60505.95"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":null,"Value":"49932.54"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Construction policy and administrative management (32310)","Value":"1501.59"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (creditor reporting system code)":"Urban development and management (43030)","Value":"48430.95"}]' data-indicatorid='indicator_11-c-1' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Net official development assistance (ODA) to *construction policy and administrative management* and *urban development and management*" data-measurementunit="GBP (£000s) " data-datasource="Department for International Development (DFID)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>Data follows the UN specification for this indicator; however it has not been identified in collaboration with topic experts. As with all indicators, this will be reviewed.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2009","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"18777.05"},{"Year":"2009","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"354.69"},{"Year":"2009","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"18422.36"},{"Year":"2010","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"57244.59"},{"Year":"2010","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"999.93"},{"Year":"2010","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Urban development and management (43030)","Value":"56244.66"},{"Year":"2010","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"35421.8"},{"Year":"2010","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"486.27"},{"Year":"2010","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"34935.52"},{"Year":"2010","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"21822.8"},{"Year":"2010","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"513.66"},{"Year":"2010","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"21309.14"},{"Year":"2011","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"84691.78"},{"Year":"2011","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"21258.97"},{"Year":"2011","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Urban development and management (43030)","Value":"63432.82"},{"Year":"2011","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"59306.37"},{"Year":"2011","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"20856.15"},{"Year":"2011","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"38450.22"},{"Year":"2011","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"25385.42"},{"Year":"2011","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"402.82"},{"Year":"2011","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"24982.6"},{"Year":"2012","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"25349.17"},{"Year":"2012","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"-29869.89"},{"Year":"2012","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Urban development and management (43030)","Value":"55219.06"},{"Year":"2012","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"-3888.56"},{"Year":"2012","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"-30549.29"},{"Year":"2012","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"26660.73"},{"Year":"2012","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"29237.74"},{"Year":"2012","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"679.41"},{"Year":"2012","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"28558.33"},{"Year":"2013","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"82200.63"},{"Year":"2013","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"-7605.01"},{"Year":"2013","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Urban development and management (43030)","Value":"89805.64"},{"Year":"2013","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"34630.34"},{"Year":"2013","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"-9333.15"},{"Year":"2013","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"43963.49"},{"Year":"2013","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"47570.29"},{"Year":"2013","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"1728.14"},{"Year":"2013","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"45842.15"},{"Year":"2014","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"88748.13"},{"Year":"2014","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"9425.63"},{"Year":"2014","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Urban development and management (43030)","Value":"79322.5"},{"Year":"2014","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"32762.27"},{"Year":"2014","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"7830.03"},{"Year":"2014","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"24932.24"},{"Year":"2014","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"55985.86"},{"Year":"2014","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"1595.6"},{"Year":"2014","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"54390.26"},{"Year":"2015","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"111499.75"},{"Year":"2015","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"2562.86"},{"Year":"2015","Flow of official development assistance (ODA)":null,"Aid description (CRS code)":"Urban development and management (43030)","Value":"108936.9"},{"Year":"2015","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"61567.21"},{"Year":"2015","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"1061.27"},{"Year":"2015","Flow of official development assistance (ODA)":"Bilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"60505.95"},{"Year":"2015","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"49932.54"},{"Year":"2015","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Construction policy and administrative management (32310)","Value":"1501.59"},{"Year":"2015","Flow of official development assistance (ODA)":"Multilateral","Aid description (CRS code)":"Urban development and management (43030)","Value":"48430.95"}]' data-indicatorid='indicator_11-c-1' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Net official development assistance (ODA) to construction policy and administrative management, and urban development and management" data-measurementunit="GBP (£000s) " data-datasource="Department for International Development (DFID)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Net official development assistance (ODA) to construction policy and administrative management, and urban development and management<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -234,19 +257,18 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Net official development assistance (ODA) to *construction policy and administrative management* and *urban development and management*</h3>
-              
-              <p>Unit of Measurement: GBP (£000s) </p>     
-              <a href="/data/indicator_11-c-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_11-c-1.csv'>Download source CSV</a>
+                <h3>Net official development assistance (ODA) to construction policy and administrative management, and urban development and management</h3>
+                
+              <a href="/data/indicator_11-c-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_11-c-1.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_11-c-1.csv' class='btn btn-primary btn-download' download='indicator_11-c-1.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_11-c-1.csv' class='btn btn-primary btn-download' download='indicator_11-c-1.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Net official development assistance (ODA) to construction policy and administrative management, and urban development and management</caption>
   <thead>
   
       <th scope="col">Year</th>
@@ -307,7 +329,12 @@
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: Department for International Development (DFID)</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: GBP (£000s) </p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -358,7 +385,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Net official development assistance (ODA) to *construction policy and administrative management* and *urban development and management*
+            Net official development assistance (ODA) to construction policy and administrative management, and urban development and management
           
         </td>
         </tr>
@@ -963,8 +990,8 @@
             
 
             
-              <a href="https://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-11.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 2066kB)
+              <a href="https://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-11.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 2066kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1244,8 +1271,8 @@
             
 
             
-              <a href="https://www.gov.uk/government/statistics/statistics-on-international-development-2016">
-                Statistics on International Development 2016
+              <a href="https://www.gov.uk/government/statistics/statistics-on-international-development-2016" target="_blank">
+                Statistics on International Development 2016 <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1445,7 +1472,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

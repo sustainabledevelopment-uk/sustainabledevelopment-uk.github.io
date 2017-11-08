@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Proportion of population with primary reliance on clean fuels and technology - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 7.1.2 - Goal 7 - Affordable and clean energy
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,26 +181,56 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_7-1-2' data-country="UK"
-  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>Data for this indicator has been sourced from the UN SDG database. As with all indicators, this will be reviewed.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"100"},{"Year":"2001","Value":"100"},{"Year":"2002","Value":"100"},{"Year":"2003","Value":"100"},{"Year":"2004","Value":"100"},{"Year":"2005","Value":"100"},{"Year":"2006","Value":"100"},{"Year":"2007","Value":"100"},{"Year":"2008","Value":"100"},{"Year":"2009","Value":"100"},{"Year":"2010","Value":"100"},{"Year":"2011","Value":"100"},{"Year":"2012","Value":"100"},{"Year":"2013","Value":"100"},{"Year":"2014","Value":"100"},{"Year":"2015","Value":"100"},{"Year":"2016","Value":"100"},{"Year":"2017","Value":"100"}]' data-indicatorid='indicator_7-1-2' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Percentage of the population with access to clean fuels and technologies for cooking" data-measurementunit="Percentage (%)" data-datasource="World Bank" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Percentage of the population with access to clean fuels and technologies for cooking<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        <p>We have found a suitable source of data for this indicator or relevant proxy at national level. We are currently quality assuring the data and preparing it for publication.</p>
-
-        
-        <hr/>
-        
-      </div>
-    
+  
       <section>
     
+        
+          
+    
+    
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
+
+    
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
+    
+
+
         
         
         <div class="alert alert-warning" role="alert">
@@ -205,7 +240,11 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           
-          <li role="presentation" class="nav-item  active">
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+            </li>
+          
+          <li role="presentation" class="nav-item  ">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -217,7 +256,185 @@
         <!-- Tab panes -->
         <div class="tab-content">
           
-          <div role="tabpanel" class="tab-pane active" id="metadata">
+            <div role="tabpanel" class="tab-pane active" id="data">
+              
+                <h3>Percentage of the population with access to clean fuels and technologies for cooking</h3>
+                
+              <a href="/data/indicator_7-1-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_7-1-2.csv' tabindex='0' role='button'>Download source CSV</a>
+              <div id="datatables"> 
+ 
+
+<a href='/data/headlines/headlines_7-1-2.csv' class='btn btn-primary btn-download' download='indicator_7-1-2.csv' tabindex='0' role='button'>Download headline CSV</a>
+
+<h4>Headline data</h4>
+
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
+   <caption>Percentage of the population with access to clean fuels and technologies for cooking</caption>
+  <thead>
+  
+      <th scope="col">Year</th>
+  
+      <th scope="col">Value</th>
+  
+  </thead>
+  <tbody>
+  
+      <tr>
+      
+          <td>2000</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2001</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2002</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2003</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2004</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2005</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2006</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2007</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2008</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2009</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2010</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2011</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2012</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2013</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2014</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2015</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2016</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2017</td>
+      
+          <td>100</td>
+      
+      </tr>
+  
+  </tbody>
+</table>
+</div>
+              <div id="datatableFooter">
+                <p>Source: World Bank</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Percentage (%)</p>
+                <p></p>
+              </div>
+            </div>
+          
+          <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
             <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
@@ -265,7 +482,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            Percentage of the population with access to clean fuels and technologies for cooking
           
         </td>
         </tr>
@@ -291,7 +508,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            
+            Annual
           
         </td>
         </tr>
@@ -317,7 +534,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            United Kingdom
           
         </td>
         </tr>
@@ -566,7 +783,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            Percentage (%)
           
         </td>
         </tr>
@@ -579,7 +796,7 @@
         <th scope="row">Calculations </th>
         <td>
           
-            
+            Countries classified as high-income with a Gross National Income (GNI) of more than US$ 12,746 - per capita are assumed to have made a complete transition to using clean fuels and technologies as the primary domestic energy source for cooking and the primary reliance on polluting (unclean) fuels and technologies use is reported to be less than 5% and assumed as zero for regional and global estimates.
           
         </td>
         </tr>
@@ -786,7 +1003,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            The percentage of population with primary reliance on clean fuels and technology at the household level. From non-solid fuels to clean fuels Current global data collection focuses on the primary fuel used for cooking, categorized as solid or non-solid fuels, where solid fuels are considered polluting and non-modern, while non-solid fuels are considered clean. This single measure captures a good part of the lack of access to clean cooking fuels, but fails to collect data on type of device or technology is used for cooking, and also fails to capture other polluting forms of energy use in the home such as those used for lighting and heating. New evidence-based normative guidance from the WHO ( i.e. WHO Guidelines for indoor air quality guidelines: household fuel combustion), highlights the importance of addressing both fuel and the technology for adequately protecting public health. These guidelines provide technical recommendations in the form of emissions targets for as to what fuels and technology (stove, lamp, and so on) combinations in the home are clean. These guidelines also recommend against the use of unprocessed coal and discourage the use kerosene (a non-solid but highly polluting fuel) in the home. They also recommend that all major household energy end uses (e.g. cooking, space heating, lighting) use efficient fuels and technology combinations to ensure health benefits. For this reason, the technical recommendations in the WHO guidelines, access to modern cooking solution in the home will be defined as "access to clean fuels and technologies" rather than "access to non-solid fuels." This shift will help ensure that health and other "nexus" benefits are better counted, and thus realized. Definition Percent of population with primary reliance on clean* fuels and technologies at the household level. *"Clean" is defined by the emission rate targets and specific fuel recommendations (i.e. against unprocessed coal and kerosene) included in the normative guidance WHO guidelines for indoor air quality: household fuel combustion.
+            
           
         </td>
         </tr>
@@ -812,7 +1029,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            WHO
+            World Health Organization (WHO)
           
         </td>
         </tr>
@@ -870,8 +1087,8 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-7.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 110kB)
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-07-01-02.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata: 7.1.2 (pdf 231kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1012,6 +1229,291 @@
 
 
 
+  <h3>UK Data Source Metadata</h3>
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      <h4>Source 1</h4>
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            World Bank
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest Available Data </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical Coverage </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to Data Source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://data.worldbank.org/indicator/EG.CFT.ACCS.ZS" target="_blank">
+                Access to clean fuels and technologies for cooking (% of population) <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release Date </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next Release </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical Classification </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact Details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other Information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+  </div>
+
 
           </div>
           
@@ -1067,7 +1569,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

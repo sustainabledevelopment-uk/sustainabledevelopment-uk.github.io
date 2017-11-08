@@ -37,10 +37,12 @@ header {
   max-width: 250px; }
 .results p {
   border-bottom: 1px solid #cdcdcd;
+  padding: 4px 0;
   padding: 4px 0; }
-.results h4 {
+.results h2 {
+  font-size: 2rem;
   margin-bottom: 1.5rem;
-  margin-top: 1rem; }
+  margin-top: 1.5rem !important; }
 
 .breadcrumb {
   margin-bottom: 15px; }
@@ -514,6 +516,9 @@ h5 + .btn-download {
     #main-content #toolbar button.disabled {
       color: #777;
       background: #ccc; }
+  #main-content #toolbar .accessBtn {
+    padding: 0px !important;
+    border: none; }
   #main-content #fields {
     user-select: none;
     -moz-user-select: none;
@@ -549,11 +554,11 @@ h5 + .btn-download {
         color: white; }
         #main-content #fields label.excluded input {
           display: none; }
-    #main-content #fields h4 {
+    #main-content #fields h5 {
       padding-left: 7px;
       position: relative;
       padding-right: 33px; }
-      #main-content #fields h4 i {
+      #main-content #fields h5 i {
         font-size: 0.875em;
         position: absolute;
         top: 0;
@@ -588,7 +593,6 @@ h5 + .btn-download {
       #main-content #fields .variable-selector .variable-hint {
         display: none;
         padding-left: 7px;
-        margin-top: -7px;
         color: #666; }
       #main-content #fields .variable-selector .variable-options {
         background-color: white;
@@ -657,6 +661,16 @@ h5 + .btn-download {
       margin-right: 8px;
       cursor: pointer;
       width: 100%; }
+  #main-content #dataset-size-warning {
+    text-align: center;
+    font-size: 1.2em;
+    line-height: 1.2em;
+    vertical-align: middle;
+    background: #FFCC0B;
+    border-radius: 4px;
+    padding: 5px; }
+    #main-content #dataset-size-warning i {
+      font-size: 1.2em; }
   #main-content .plot-container {
     margin-bottom: 4.5rem;
     padding: 10px; }
@@ -719,6 +733,8 @@ h5 + .btn-download {
       width: 35%; }
     #main-content .tab-content .tab-pane #datatable {
       overflow-x: auto; }
+  #main-content .tab-content h4 {
+    margin-top: 2rem !important; }
   #main-content .statuses strong {
     font-weight: normal; }
   #main-content .statuses > div {
@@ -791,7 +807,7 @@ h5 + .btn-download {
     background: #108ffd;
     font-size: 3rem;
     padding: 0.5rem 1.0rem; }
-    #main-content #back-to-top:hover {
+    #main-content #back-to-top:hover, #main-content #back-to-top:focus {
       background: #0275d8; }
   #main-content .fa-info {
     margin-right: 5px; }
@@ -817,7 +833,7 @@ footer {
   footer a {
     color: #E5E6E7;
     text-decoration: underline; }
-    footer a:hover {
+    footer a:hover, footer a:focus {
       color: white; }
 
 .post-categories {
@@ -871,3 +887,16 @@ footer {
     cursor: default; }
   .no-js #main-content .collapsible h3 span {
     display: none; }
+
+.roleHeader {
+  cursor: pointer; }
+
+.visuallyhidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  border: 0; }

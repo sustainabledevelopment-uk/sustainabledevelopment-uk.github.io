@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Coverage of treatment interventions (pharmacological, psychosocial and rehabilitation and aftercare services) for substance use disorders - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 3.5.1 - Goal 3 - Good Health and Well-being
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,25 +181,25 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_3-5-1' data-country="UK"
-  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false">
-    <div class="col-md-3">
-      <div id="toolbar">
-        <h3>Sub-categories</h3>
-        <div id="fields"></div>
-      </div>
-      <div id="units"></div>
-    </div>
-    <div class="col-md-9">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
       <div id="page-content">
-        <p>We are still looking for a suitable data source for this indicator. Please contact us if you think you can help by emailing <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a>.</p>
+          <p>We have not explored suitable data sources for this indicator.</p>
 
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
 
-        
-        <hr/>
-        
-      </div>
-    
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_3-5-1' data-country=""
+  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false">
+  
+    <div class="col-md-12">
+  
       <section>
     
         
@@ -787,7 +792,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            Treatment of substance use disorder as defined by the Political Declaration and Plan of Action on International Cooperation Towards an integrated and Balanced Strategy to Counter the World Drug Problem, High Level Segment, Commission on Narcotic Drugs, Vienna 11- 12 March 2009. Comprehensive treatment system offering a wide range of integrated pharmacological (such as detoxification and opioid agonist and antagonist maintenance) and psychosocial (such as counselling, cognitive behavioural therapy and social support) interventions based on scientific evidence and focused on the process of rehabilitation, recovery and social reintegration (Plan of Action, Para 4:h) Services for the treatment of drug disorders' are part of clinical responses to substancerelated disorders. Such services are aimed at stopping or reducing the effects of acute intoxication, managing withdrawal symptoms during detoxification, preventing relapse and dealing with long-term psychological and behavioural symptoms.. (E/NR/2014/2)1 Substance use disorders, occur when the recurrent use of alcohol and/or drugs causes clinically and functionally significant impairment, such as health problems, disability, and failure to meet major responsibilities at work, school, or home. According to the DSM-5, a diagnosis of substance use disorder is based on evidence of impaired control, social impairment, risky use, and pharmacological criteria. (DSM V) Pharmacological Interventions include cluster of interventions such as detoxification, , opioid antagonist therapy, and opioid maintenance therapy (E/NR/2014/2) 	Detoxification refers to a process carried out in a safe and effective manner aimed at eliminating or minimizing withdrawal symptoms that occur after drugs are no longer taken (WHO). 	Opioid maintenance therapy refers to the regular administration of a long-acting opioid agonist to stabilize the patient without applying tapering dosage schedules. (WHO, UNODC, UNAIDS Technical Guide for Countries to Set Targets for Universal Access to HIV Prevention, Treatment and Care for Injecting Drug Users (WHO, Geneva, 2009) 	Opioid antagonist maintenance treatment refers to the regular administration of a long-acting opioid antagonist to block opioid receptors and avoid any opioid effect (adapted from WHO, 2009). Psychosocial cluster of interventions such as treatment planning, counselling, peer support groups, screening/brief intervention, contingency management, cognitive behavioural therapy, treatment of comorbidity, motivational interviewing. 	Treatment planning refers to the development of a written description of the treatment to be provided and its anticipated course. Such planning is done with the patient by establishing goals based on the patient's identified needs and setting interventions to meet those goals (UNODC, Principles of Drug Dependence Treatment: Discussion Paper, March 2008). 	Counselling refers to an intensive interpersonal process aimed at assisting individuals to achieve their goals or function more effectively (WHO). 	Peer support groups (self-help groups such as Narcotics Anonymous) refers to small groups of peers wishing to assist each other in their struggle with a particular problem (in the case of Narcotics Anonymous, with drug dependence) (WHO). 	Screening is aimed at detecting health problems or risk factors at an early stage before they have caused serious disease or other problems (WHO). A 'brief intervention' is a structured therapy of short duration aimed at assisting an individual to cease or reduce the use of a psychoactive substance or to deal with other life issues (WHO). 	Contingency management' refers to psychosocial interventions that provide a system of incentives and disincentives designed to make drug use less attractive and abstinence more attractive (NIDA). 	Cognitive behavioural therapy refers to psychosocial interventions aimed at helping patients recognize, avoid and cope with the situations in which they are most likely to use drugs (adapted from NIDA). 	Motivational interviewing refers to a counselling and assessment technique that follows a non-confrontational approach to questioning people about difficult issues like alcohol and drug use, assisting them to make positive decisions aimed at reducing or stopping such use (ODCCP). Social rehabilitation and aftercare include a cluster of interventions such as vocational training, social assistance, educational activities, rehabilitation and aftercare. 	Vocational training and income-generation support' refers to activities aimed at providing participants with the skills and opportunities to engage in meaningful employment and sustainably support themselves and their families. 	Social assistance refers to the many ways in which professionals and nonprofessionals can support the social and psychological well-being of drug users with a view to improving both the quality and duration of their lives (WHO, Guidelines for the Psychosocially Assisted Pharmacological Treatment of Opioid Dependence, 2009). 	Educational activities on the risks posed by drug use refer to sessions aimed at informing and counselling people about the consequences of drug use, in other words, the ways in which such use affects physical and mental health, behavioural control and interpersonal relationships. In particular, these educational sessions should focus on providing information about overdosing, contracting infectious diseases, developing cardiovascular, metabolic and psychiatric disorders etc. and the benefit of abstaining from drug use. Treatment methods and goals are also explained in detail. 	Rehabilitation and aftercare refers to the process aimed at achieving an optimal state of health, psychological functioning and social well-being for individuals with a drugrelated problem (WHO). Coverage Coverage describes the extent to which an intervention is delivered to the target population, that is, the proportion of the target population in need of an intervention that actually gets it. Coverage has to be determined relative to the national estimates of people in need, e.g., people with substance use disorders, or people vulnerable to substance use. (Economic and Social Council (E/NR/2014/2) Commission on Narcotics Drugs, Annual Report Questionnaire; Part 2:COMPREHENSIVE APPROACH TO DRUG DEMAND AND SUPPLY REDUCTION)
+            
           
         </td>
         </tr>
@@ -813,8 +818,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            WHO,
-UNODC
+            WHO,UNODC
           
         </td>
         </tr>
@@ -872,8 +876,8 @@ UNODC
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-3.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 865kB)
+              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-3.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 865kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1014,6 +1018,287 @@ UNODC
 
 
 
+  <h3>UK Data Source Metadata</h3>
+  <div class="row no-gutters">
+  
+   
+    
+    <div class="col-md-6">
+      <h4>Source 1</h4>
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest Available Data </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical Coverage </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to Data Source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release Date </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next Release </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical Classification </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact Details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other Information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+  </div>
+
 
           </div>
           
@@ -1069,7 +1354,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Proportion of transboundary basin area with an operational arrangement for water cooperation - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 6.5.2 - Goal 6 - Clean water and sanitation
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,26 +181,55 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_6-5-2' data-country="UK"
-  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>Data follows the UN specification for this indicator and has been indentified in collaboration with topic experts.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":"Neagh Bann","Transboundary aquifer":null,"Value":"6177.18"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":"North Western","Transboundary aquifer":null,"Value":"4895.74"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":null,"Value":"11072.92"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Anierin-Cuilcagh East","Value":"772"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Aughnacloy","Value":"634"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Ballinamore-Swanlinbar","Value":"34"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Ballintempo","Value":"98"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Ballybofey","Value":"17"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Ballyshannon East","Value":"40"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Ballyshannon South","Value":"5"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Bundoran","Value":"3"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Castlecaldwell Forest","Value":"53"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Castlederg","Value":"30"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Claddagh-Swanlinbar","Value":"14"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Clones","Value":"21"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Cooneen Water","Value":"16"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Crilly","Value":"8"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Crom Castle","Value":"76"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Derrylin","Value":"44"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Donagh","Value":"40"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Keady","Value":"21"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Kilcoo","Value":"29"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Knockatallon","Value":"4"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Lough Swilly","Value":"13"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Louth","Value":"303"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Magheraveely","Value":"122"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Marble Arch","Value":"25"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Monaghan Town","Value":"6"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Newtown-Ballyconnell","Value":"47"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Pettigo","Value":"15"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"River Foyle","Value":"35"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Rossinver","Value":"9"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Slieve Rushen","Value":"18"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Slieve Rushen South","Value":"3"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Tullaghan-Lough Melvin","Value":"23"},{"Year":"2016","Units":"Surfaca area of the basin within the UK (km²)","Transboundary basin":null,"Transboundary aquifer":"Total","Value":"2478"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":"Neagh Bann","Transboundary aquifer":null,"Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":"North Western","Transboundary aquifer":null,"Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":null,"Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Anierin-Cuilcagh East","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Aughnacloy","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Ballinamore-Swanlinbar","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Ballintempo","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Ballybofey","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Ballyshannon East","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Ballyshannon South","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Bundoran","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Castlecaldwell Forest","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Castlederg","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Claddagh-Swanlinbar","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Clones","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Cooneen Water","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Crilly","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Crom Castle","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Derrylin","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Donagh","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Keady","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Kilcoo","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Knockatallon","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Lough Swilly","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Louth","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Magheraveely","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Marble Arch","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Monaghan Town","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Newtown-Ballyconnell","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Pettigo","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"River Foyle","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Rossinver","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Slieve Rushen","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Slieve Rushen South","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Tullaghan-Lough Melvin","Value":"0"},{"Year":"2016","Units":"Percentage of the basin covered by an opperational arrangement (%)","Transboundary basin":null,"Transboundary aquifer":"Total","Value":"0"}]' data-indicatorid='indicator_6-5-2' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Surface area of the transboundry basin shared with Ireland and percentage of the basin area with an operational arrangement for water cooperation" data-measurementunit="Area (km2) or Percentage (%)" data-datasource="" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Surface area of the transboundry basin shared with Ireland and percentage of the basin area with an operational arrangement for water cooperation<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        <p>We have found a suitable source of data for this indicator or relevant proxy at national level. We are currently quality assuring the data and preparing it for publication.</p>
-
-        
-        <hr/>
-        
-      </div>
-    
+  
       <section>
     
+        
+          
+    
+    
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
+
+    
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
+    
+
+
         
         
         <div class="alert alert-warning" role="alert">
@@ -205,7 +239,11 @@
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           
-          <li role="presentation" class="nav-item  active">
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
+            </li>
+          
+          <li role="presentation" class="nav-item  ">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -217,7 +255,63 @@
         <!-- Tab panes -->
         <div class="tab-content">
           
-          <div role="tabpanel" class="tab-pane active" id="metadata">
+            <div role="tabpanel" class="tab-pane active" id="data">
+              
+                <h3>Surface area of the transboundry basin shared with Ireland and percentage of the basin area with an operational arrangement for water cooperation</h3>
+                
+              <a href="/data/indicator_6-5-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_6-5-2.csv' tabindex='0' role='button'>Download source CSV</a>
+              <div id="datatables"> 
+ 
+
+<a href='/data/headlines/headlines_6-5-2.csv' class='btn btn-primary btn-download' download='indicator_6-5-2.csv' tabindex='0' role='button'>Download headline CSV</a>
+
+<h4>Headline data</h4>
+
+<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
+   <caption>Surface area of the transboundry basin shared with Ireland and percentage of the basin area with an operational arrangement for water cooperation</caption>
+  <thead>
+  
+      <th scope="col">Year</th>
+  
+      <th scope="col">Units</th>
+  
+      <th scope="col">Value</th>
+  
+  </thead>
+  <tbody>
+  
+      <tr>
+      
+          <td>2016</td>
+      
+          <td>Surfaca area of the basin within the UK (km²)</td>
+      
+          <td>11072.92</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2016</td>
+      
+          <td>Percentage of the basin covered by an opperational arrangement (%)</td>
+      
+          <td>0.0</td>
+      
+      </tr>
+  
+  </tbody>
+</table>
+</div>
+              <div id="datatableFooter">
+                <p>Source: </p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Area (km2) or Percentage (%)</p>
+                <p></p>
+              </div>
+            </div>
+          
+          <div role="tabpanel" class="tab-pane " id="metadata">
             <!-- National Metadata -->
             <div class="collapsible expanded" tabindex='0'>
               <h3>National Metadata<span> (Collapse)</span></h3>
@@ -265,7 +359,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            Surface area of the transboundry basin and percentage of the basin area with an operational arrangement for water cooperation
           
         </td>
         </tr>
@@ -304,7 +398,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            
+            2016
           
         </td>
         </tr>
@@ -317,7 +411,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            United Kingdom
           
         </td>
         </tr>
@@ -566,7 +660,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            Area (km2) or Percentage (%)
           
         </td>
         </tr>
@@ -786,7 +880,7 @@
         <th scope="row">Global Indicator Description </th>
         <td>
           
-            Proportion of surface area of transboundary basins that have an operational arrangement for transboundary water cooperation. Regular meetings of the riparian countries to discuss IWRM and exchange of information are required for an arrangement to be defined as "operational".Concepts: Integrated Water Resources Management (IWRM) is an approach to managing water in a coordinated way. It takes into account the different water sources as well as various users and uses in a given situation, with the aim of maximizing positive social, economic and environmental benefits. It uses catchments and aquifers, as the principle unit of water management, and stresses decentralization of governance structures and active stakeholder participation in decision making. Transboundary basins are surface water or groundwater basins (aquifers) which cross or are located on boundaries between two or more States. An agreement, institutional arrangement and/or an established organization provides a framework for cooperation on transboundary water management. Such a framework is commonly based on an agreement covering different aspects of transboundary water management. Agreements may be interstate, intergovernmental, interministerial or interagency. In addition to an agreement (e.g. a treaty, convention, Memorandum of Understanding), such framework can be provided by a bilateral or multilateral commission or other appropriate institutional arrangements for cooperation. Furthermore, multi-sectoral cooperation institutions can cover for water issues. For a cooperation framework to be considered as "operational", it requires that there are regular meetings of the riparian countries to discuss the integrated management of the water resource and to exchange information.
+            
           
         </td>
         </tr>
@@ -812,8 +906,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            UNESCO-UIS, 
-UNECE
+            United Nations Education and Scientific Cultural Organisation - Institute for Statistics (UNESCO-UIS) and United Nations Economic Commission for Europe (UNECE)
           
         </td>
         </tr>
@@ -871,8 +964,8 @@ UNECE
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-6.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 428kB)
+              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-6.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata: Goal 6 (pdf 428kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1068,7 +1161,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

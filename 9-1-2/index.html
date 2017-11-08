@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Passenger and freight volumes, by mode of transport - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 9.1.2 - Goal 9 - Industry, innovation and infrastructure
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,46 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2005","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"177.977444"},{"Year":"2006","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"185.433831"},{"Year":"2007","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"191.975302"},{"Year":"2008","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"189.780208"},{"Year":"2009","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"176.385715"},{"Year":"2010","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"172.633854"},{"Year":"2011","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"181.472224"},{"Year":"2012","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"183.076598"},{"Year":"2013","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"189.997911"},{"Year":"2014","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"199.078859"},{"Year":"2015","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"International","Value":"210.271284"},{"Year":"2005","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"202.6967775"},{"Year":"2006","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"209.924958"},{"Year":"2007","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"215.971821"},{"Year":"2008","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"212.5696485"},{"Year":"2009","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"197.256014"},{"Year":"2010","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"191.64484"},{"Year":"2011","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"200.3808225"},{"Year":"2012","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"201.8601245"},{"Year":"2013","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"209.190171"},{"Year":"2014","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"218.730889"},{"Year":"2015","Units":"Passesngers (Millions)","Type":"Passenger","Segment":"Domestic","Value":"230.8749425"},{"Year":"2005","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"2226.455"},{"Year":"2006","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"2179.252"},{"Year":"2007","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"2219.666"},{"Year":"2008","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"2191.236"},{"Year":"2009","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"1963.02"},{"Year":"2010","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"2248.278253"},{"Year":"2011","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"2214.299623"},{"Year":"2012","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"2217.458412"},{"Year":"2013","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"2164.373"},{"Year":"2014","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"2206.244"},{"Year":"2015","Units":"Tonnes (000s)","Type":"Freight","Segment":"International","Value":"2200.546605"},{"Year":"2005","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2293.719"},{"Year":"2006","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2246.899"},{"Year":"2007","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2272.4515"},{"Year":"2008","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2236.6945"},{"Year":"2009","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2005.44"},{"Year":"2010","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2286.549993"},{"Year":"2011","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2255.950386"},{"Year":"2012","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2259.893183"},{"Year":"2013","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2213.38"},{"Year":"2014","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2255.365"},{"Year":"2015","Units":"Tonnes (000s)","Type":"Freight","Segment":"Domestic","Value":"2249.944692"}]' data-indicatorid='indicator_9-1-2' data-country="UK"
-  data-edgesdata='[{"From":"Type","To":"Segment"}]' data-charttitle="Air passenger and air freight volumes" data-measurementunit="Passengers (Millions) or Tonnes (000s)" data-datasource="Department for Transport (DfT)" data-geographicalarea="UK" data-footnote="" data-showdata="true">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>This indicator is being used as an approximation of the UN SDG Indicator and has not been identified in collaboration with topic experts. We will work to identify or develop UK data to meet the global indicator specification.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2005","Units":"Passengers (millions)","Segment":null,"Value":"202.6967775"},{"Year":"2006","Units":"Passengers (millions)","Segment":null,"Value":"209.924958"},{"Year":"2007","Units":"Passengers (millions)","Segment":null,"Value":"215.971821"},{"Year":"2008","Units":"Passengers (millions)","Segment":null,"Value":"212.5696485"},{"Year":"2009","Units":"Passengers (millions)","Segment":null,"Value":"197.256014"},{"Year":"2010","Units":"Passengers (millions)","Segment":null,"Value":"191.64484"},{"Year":"2011","Units":"Passengers (millions)","Segment":null,"Value":"200.3808225"},{"Year":"2012","Units":"Passengers (millions)","Segment":null,"Value":"201.8601245"},{"Year":"2013","Units":"Passengers (millions)","Segment":null,"Value":"209.190171"},{"Year":"2014","Units":"Passengers (millions)","Segment":null,"Value":"218.730889"},{"Year":"2015","Units":"Passengers (millions)","Segment":null,"Value":"230.8749425"},{"Year":"2005","Units":"Passengers (millions)","Segment":"International","Value":"177.977444"},{"Year":"2006","Units":"Passengers (millions)","Segment":"International","Value":"185.433831"},{"Year":"2007","Units":"Passengers (millions)","Segment":"International","Value":"191.975302"},{"Year":"2008","Units":"Passengers (millions)","Segment":"International","Value":"189.780208"},{"Year":"2009","Units":"Passengers (millions)","Segment":"International","Value":"176.385715"},{"Year":"2010","Units":"Passengers (millions)","Segment":"International","Value":"172.633854"},{"Year":"2011","Units":"Passengers (millions)","Segment":"International","Value":"181.472224"},{"Year":"2012","Units":"Passengers (millions)","Segment":"International","Value":"183.076598"},{"Year":"2013","Units":"Passengers (millions)","Segment":"International","Value":"189.997911"},{"Year":"2014","Units":"Passengers (millions)","Segment":"International","Value":"199.078859"},{"Year":"2015","Units":"Passengers (millions)","Segment":"International","Value":"210.271284"},{"Year":"2005","Units":"Passengers (millions)","Segment":"Domestic","Value":"24.7193335"},{"Year":"2006","Units":"Passengers (millions)","Segment":"Domestic","Value":"24.491127"},{"Year":"2007","Units":"Passengers (millions)","Segment":"Domestic","Value":"23.996519"},{"Year":"2008","Units":"Passengers (millions)","Segment":"Domestic","Value":"22.7894405"},{"Year":"2009","Units":"Passengers (millions)","Segment":"Domestic","Value":"20.870299"},{"Year":"2010","Units":"Passengers (millions)","Segment":"Domestic","Value":"19.010986"},{"Year":"2011","Units":"Passengers (millions)","Segment":"Domestic","Value":"18.9085985"},{"Year":"2012","Units":"Passengers (millions)","Segment":"Domestic","Value":"18.7835265"},{"Year":"2013","Units":"Passengers (millions)","Segment":"Domestic","Value":"19.19226"},{"Year":"2014","Units":"Passengers (millions)","Segment":"Domestic","Value":"19.65203"},{"Year":"2015","Units":"Passengers (millions)","Segment":"Domestic","Value":"20.6036585"},{"Year":"2005","Units":"Tonnes (000s)","Segment":null,"Value":"2293.719"},{"Year":"2006","Units":"Tonnes (000s)","Segment":null,"Value":"2246.899"},{"Year":"2007","Units":"Tonnes (000s)","Segment":null,"Value":"2272.4515"},{"Year":"2008","Units":"Tonnes (000s)","Segment":null,"Value":"2236.6945"},{"Year":"2009","Units":"Tonnes (000s)","Segment":null,"Value":"2005.44"},{"Year":"2010","Units":"Tonnes (000s)","Segment":null,"Value":"2286.549993"},{"Year":"2011","Units":"Tonnes (000s)","Segment":null,"Value":"2255.950386"},{"Year":"2012","Units":"Tonnes (000s)","Segment":null,"Value":"2259.893183"},{"Year":"2013","Units":"Tonnes (000s)","Segment":null,"Value":"2213.38"},{"Year":"2014","Units":"Tonnes (000s)","Segment":null,"Value":"2255.365"},{"Year":"2015","Units":"Tonnes (000s)","Segment":null,"Value":"2249.944692"},{"Year":"2005","Units":"Tonnes (000s)","Segment":"International","Value":"2226.455"},{"Year":"2006","Units":"Tonnes (000s)","Segment":"International","Value":"2179.252"},{"Year":"2007","Units":"Tonnes (000s)","Segment":"International","Value":"2219.666"},{"Year":"2008","Units":"Tonnes (000s)","Segment":"International","Value":"2191.236"},{"Year":"2009","Units":"Tonnes (000s)","Segment":"International","Value":"1963.02"},{"Year":"2010","Units":"Tonnes (000s)","Segment":"International","Value":"2248.278253"},{"Year":"2011","Units":"Tonnes (000s)","Segment":"International","Value":"2214.299623"},{"Year":"2012","Units":"Tonnes (000s)","Segment":"International","Value":"2217.458412"},{"Year":"2013","Units":"Tonnes (000s)","Segment":"International","Value":"2164.373"},{"Year":"2014","Units":"Tonnes (000s)","Segment":"International","Value":"2206.244"},{"Year":"2015","Units":"Tonnes (000s)","Segment":"International","Value":"2200.546605"},{"Year":"2005","Units":"Tonnes (000s)","Segment":"Domestic","Value":"67.264"},{"Year":"2006","Units":"Tonnes (000s)","Segment":"Domestic","Value":"67.647"},{"Year":"2007","Units":"Tonnes (000s)","Segment":"Domestic","Value":"52.7855"},{"Year":"2008","Units":"Tonnes (000s)","Segment":"Domestic","Value":"45.4585"},{"Year":"2009","Units":"Tonnes (000s)","Segment":"Domestic","Value":"42.42"},{"Year":"2010","Units":"Tonnes (000s)","Segment":"Domestic","Value":"38.27174"},{"Year":"2011","Units":"Tonnes (000s)","Segment":"Domestic","Value":"41.650763"},{"Year":"2012","Units":"Tonnes (000s)","Segment":"Domestic","Value":"42.4347705"},{"Year":"2013","Units":"Tonnes (000s)","Segment":"Domestic","Value":"49.007"},{"Year":"2014","Units":"Tonnes (000s)","Segment":"Domestic","Value":"49.121"},{"Year":"2015","Units":"Tonnes (000s)","Segment":"Domestic","Value":"49.3980865"}]' data-indicatorid='indicator_9-1-2' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Air passenger and air freight volumes" data-measurementunit="Passengers (Millions) or Tonnes (000s)" data-datasource="Department for Transport (DfT)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Air passenger and air freight volumes<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -235,27 +258,257 @@
             <div role="tabpanel" class="tab-pane active" id="data">
               
                 <h3>Air passenger and air freight volumes</h3>
-              
-              <p>Unit of Measurement: Passengers (Millions) or Tonnes (000s)</p>     
-              <a href="/data/indicator_9-1-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_9-1-2.csv'>Download source CSV</a>
+                
+              <a href="/data/indicator_9-1-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_9-1-2.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_9-1-2.csv' class='btn btn-primary btn-download' download='indicator_9-1-2.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_9-1-2.csv' class='btn btn-primary btn-download' download='indicator_9-1-2.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Air passenger and air freight volumes</caption>
   <thead>
+  
+      <th scope="col">Year</th>
+  
+      <th scope="col">Units</th>
+  
+      <th scope="col">Value</th>
   
   </thead>
   <tbody>
   
+      <tr>
+      
+          <td>2005</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>202.6967775</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2006</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>209.924958</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2007</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>215.971821</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2008</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>212.5696485</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2009</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>197.256014</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2010</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>191.64484</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2011</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>200.38082250000002</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2012</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>201.8601245</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2013</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>209.190171</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2014</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>218.73088900000002</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2015</td>
+      
+          <td>Passengers (millions)</td>
+      
+          <td>230.87494249999997</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2005</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2293.719</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2006</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2246.899</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2007</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2272.4515</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2008</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2236.6945</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2009</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2005.44</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2010</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2286.549993</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2011</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2255.950386</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2012</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2259.8931829999997</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2013</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2213.38</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2014</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2255.365</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2015</td>
+      
+          <td>Tonnes (000s)</td>
+      
+          <td>2249.944692</td>
+      
+      </tr>
+  
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: Department for Transport (DfT)</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Passengers (Millions) or Tonnes (000s)</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -332,7 +585,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -358,7 +611,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            UK
+            United Kingdom
           
         </td>
         </tr>
@@ -911,8 +1164,8 @@
             
 
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-09-01-02.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 375kB)
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-09-01-02.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 375kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1147,7 +1400,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -1173,7 +1426,7 @@
         <th scope="row">Geographical Coverage </th>
         <td>
           
-            UK
+            United Kingdom
           
         </td>
         </tr>
@@ -1192,8 +1445,8 @@
             
 
             
-              <a href="https://www.gov.uk/government/statistical-data-sets/avi01-traffic-passenger-numbers-mode-of-travel-to-airport">
-                Air traffic at UK airports
+              <a href="https://www.gov.uk/government/statistical-data-sets/avi01-traffic-passenger-numbers-mode-of-travel-to-airport" target="_blank">
+                Air traffic at UK airports <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1213,7 +1466,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            08/12/16
+            08-12-16
           
         </td>
         </tr>
@@ -1393,7 +1646,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

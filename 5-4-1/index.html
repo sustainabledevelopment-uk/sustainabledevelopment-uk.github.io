@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Proportion of time spent on unpaid domestic and care work, by sex, age and location - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 5.4.1 - Goal 5 - Gender Equality
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,46 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Sex":"Male","Value":"13.2"},{"Year":"2005","Sex":"Male","Value":"12.2"},{"Year":"2015","Sex":"Male","Value":"11.8"},{"Year":"2000","Sex":"Female","Value":"19.8"},{"Year":"2005","Sex":"Female","Value":"18.6"},{"Year":"2015","Sex":"Female","Value":"16.7"},{"Year":"2000","Sex":null,"Value":"15.9"},{"Year":"2005","Sex":null,"Value":"14.3"},{"Year":"2015","Sex":null,"Value":"13.8"}]' data-indicatorid='indicator_5-4-1' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Percentage of time spent on unpaid domestic and care work, by sex" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>Data follows the UN specification for this indicator and has been indentified in collaboration with topic experts.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Sex":"Male","Value":"13.2"},{"Year":"2005","Sex":"Male","Value":"12.2"},{"Year":"2015","Sex":"Male","Value":"11.8"},{"Year":"2000","Sex":"Female","Value":"19.8"},{"Year":"2005","Sex":"Female","Value":"18.6"},{"Year":"2015","Sex":"Female","Value":"16.7"},{"Year":"2000","Sex":null,"Value":"15.9"},{"Year":"2005","Sex":null,"Value":"14.3"},{"Year":"2015","Sex":null,"Value":"13.8"}]' data-indicatorid='indicator_5-4-1' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Percentage of time spent on unpaid domestic and care work" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Percentage of time spent on unpaid domestic and care work<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -234,19 +257,18 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Percentage of time spent on unpaid domestic and care work, by sex</h3>
-              
-              <p>Unit of Measurement: Percentage (%)</p>     
-              <a href="/data/indicator_5-4-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_5-4-1.csv'>Download source CSV</a>
+                <h3>Percentage of time spent on unpaid domestic and care work</h3>
+                
+              <a href="/data/indicator_5-4-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_5-4-1.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_5-4-1.csv' class='btn btn-primary btn-download' download='indicator_5-4-1.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_5-4-1.csv' class='btn btn-primary btn-download' download='indicator_5-4-1.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Percentage of time spent on unpaid domestic and care work</caption>
   <thead>
   
       <th scope="col">Year</th>
@@ -283,7 +305,12 @@
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: Office for National Statistics (ONS)</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Percentage (%)</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -939,8 +966,8 @@
             
 
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-04-01.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 526kB)
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-04-01.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 526kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1220,8 +1247,8 @@
             
 
             
-              <a href="https://discover.ukdataservice.ac.uk/catalogue/?sn=4504&type=Data%20catalogue">
-                United Kingdom Time Use Survey, 2000
+              <a href="https://discover.ukdataservice.ac.uk/catalogue/?sn=4504&type=Data%20catalogue" target="_blank">
+                United Kingdom Time Use Survey, 2000 <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1524,8 +1551,8 @@
             
 
             
-              <a href="https://discover.ukdataservice.ac.uk/catalogue/?sn=5592">
-                ONS Omnibus Survey, Time Use Module, February, June, September and November 2005
+              <a href="https://discover.ukdataservice.ac.uk/catalogue/?sn=5592" target="_blank">
+                ONS Omnibus Survey, Time Use Module, February, June, September and November 2005 <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1828,8 +1855,8 @@
             
 
             
-              <a href="https://discover.ukdataservice.ac.uk/catalogue/?sn=8128&type=Data%20catalogue">
-                United Kingdom Time Use Survey, 2014-2015
+              <a href="https://discover.ukdataservice.ac.uk/catalogue/?sn=8128&type=Data%20catalogue" target="_blank">
+                United Kingdom Time Use Survey, 2014-2015 <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1981,7 +2008,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

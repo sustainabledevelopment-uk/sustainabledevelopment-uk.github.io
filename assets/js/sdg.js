@@ -185,7 +185,11 @@ var indicatorModel = function (options) {
     };
   }());
 
-  var colors = ['777777', '0082e5', '79c3fc', '005da7', 'ff9c18', 'f47d00', 'ad8cf3', '9675e2'];
+  var headlineColor = '777777';
+  var colors = ['0082e5', '79c3fc', '005da7', 'ff9c18', 'f47d00', 'ad8cf3', '683ec9'];
+
+  // allow headline + (2 x others)
+  var maxDatasetCount = 2 * colors.length;
 
   this.getHeadline = function(fields) {
     var that = this, allUndefined = function (obj) {
@@ -323,6 +327,24 @@ var indicatorModel = function (options) {
           //return key + ' ' + combination[key];
         }).join(', ');
       },
+      getColor = function(datasetIndex) {
+        if(datasetIndex === 0) {
+          return headlineColor;
+        } else {
+          if(datasetIndex > colors.length) {
+            return colors[datasetIndex - 1 - colors.length];
+          } else {
+            return colors[datasetIndex - 1];
+          }
+        }
+
+        return datasetIndex === 0 ? headlineColor : colors[datasetIndex];
+      },
+      getBorderDash = function(datasetIndex) {
+        // 0 - 
+        // the first dataset is the headline:
+        return datasetIndex > colors.length ? [5, 5] : undefined;
+      },
       convertToDataset = function (data, combinationDescription /*field, fieldValue*/) {
         // var fieldIndex = field ? _.findIndex(that.selectedFields, function (f) {
         //     return f === field;
@@ -330,9 +352,10 @@ var indicatorModel = function (options) {
         var fieldIndex,
           ds = _.extend({
             label: combinationDescription ? combinationDescription : that.country,
-            borderColor: '#' + colors[datasetIndex],
-            backgroundColor: '#' + colors[datasetIndex],
-            pointBorderColor: '#' + colors[datasetIndex],
+            borderColor: '#' + getColor(datasetIndex),
+            backgroundColor: '#' + getColor(datasetIndex),
+            pointBorderColor: '#' + getColor(datasetIndex),
+            borderDash: getBorderDash(datasetIndex),            
             data: _.map(that.years, function (year) {
               var found = _.findWhere(data, {
                 Year: year
@@ -448,8 +471,9 @@ var indicatorModel = function (options) {
     });
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
-    // extract the possible combinations for the selected field values:
+    // extract the possible combinations for the selected field values
     var combinations = this.getCombinationData(this.selectedFields);
+
     var filteredDatasets = [];
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
     _.each(combinations, function(combination) {
@@ -471,14 +495,21 @@ var indicatorModel = function (options) {
       }
     });
 
+    var datasetCountExceedsMax = false;
+    // restrict count if it exceeds the limit:
+    if(filteredDatasets.length > maxDatasetCount) {
+      datasetCountExceedsMax = true;
+      filteredDatasets = filteredDatasets.slice(0, maxDatasetCount);
+    }
+    
     _.chain(filteredDatasets)
-      // TODO, probably best to sort on property count, ordered by selectableFields index:
       .sortBy(function(ds) { return ds.combinationDescription; })
       .each(function(ds) { datasets.push(convertToDataset(ds.data, ds.combinationDescription)); });
 
     /////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     this.onDataComplete.notify({
+      datasetCountExceedsMax: datasetCountExceedsMax,
       datasets: datasets,
       labels: this.years,
       tables: tableData,
@@ -548,6 +579,9 @@ var indicatorView = function (model, options) {
   this._model.onDataComplete.attach(function (sender, args) {
 
     if(view_obj._model.showData) {
+
+      $('#dataset-size-warning')[args.datasetCountExceedsMax ? 'show' : 'hide']();
+
       if(!view_obj._chartInstance) {
         view_obj.createPlot(args);
       } else {
@@ -890,12 +924,13 @@ var indicatorView = function (model, options) {
             })),
             'download': chartInfo.indicatorId + tableData.title + '.csv',
             'title': 'Download as CSV',
-            'class': 'btn btn-primary btn-download'
+            'class': 'btn btn-primary btn-download',
+						'tabindex': 0
           })
           .data('csvdata', that.toCsv(tableData)));
 //        }
 
-      $(el).append($('<h3 />').text(tableData.title));
+      $(el).append($('<h4 />').text(tableData.title));
 
       if (tableData.data.length) {
         var currentId = 'indicatortable' + index;
@@ -904,6 +939,8 @@ var indicatorView = function (model, options) {
           'class': 'table-responsive ' + table_class,
           'id': currentId
         });
+
+				currentTable.append('<caption>' + that._model.chartTitle + '</caption>');
 
         var table_head = '<thead><tr>';
 

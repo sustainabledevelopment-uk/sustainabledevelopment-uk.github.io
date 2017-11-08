@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Proportion of domestic budget funded by domestic taxes - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 17.1.2 - Goal 17 - Partnerships for the goals
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,42 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Branch of government":null,"Value":"77.76327083"},{"Year":"2001","Branch of government":null,"Value":"77.77899366"},{"Year":"2002","Branch of government":null,"Value":"78.20593126"},{"Year":"2003","Branch of government":null,"Value":"77.57799979"},{"Year":"2004","Branch of government":null,"Value":"77.22714751"},{"Year":"2005","Branch of government":null,"Value":"77.23573714"},{"Year":"2006","Branch of government":null,"Value":"77.99573577"},{"Year":"2007","Branch of government":null,"Value":"77.7456984"},{"Year":"2008","Branch of government":null,"Value":"76.22072301"},{"Year":"2009","Branch of government":null,"Value":"75.3866726"},{"Year":"2010","Branch of government":null,"Value":"77.28504915"},{"Year":"2011","Branch of government":null,"Value":"77.26711521"},{"Year":"2012","Branch of government":null,"Value":"76.73790646"},{"Year":"2013","Branch of government":null,"Value":"74.58281665"},{"Year":"2014","Branch of government":null,"Value":"76.22321817"},{"Year":"2015","Branch of government":null,"Value":"75.94990361"},{"Year":"2016","Branch of government":null,"Value":"75.39741128"},{"Year":"2000","Branch of government":"Central government","Value":"78.27571373"},{"Year":"2001","Branch of government":"Central government","Value":"77.79410468"},{"Year":"2002","Branch of government":"Central government","Value":"78.13375489"},{"Year":"2003","Branch of government":"Central government","Value":"76.94136927"},{"Year":"2004","Branch of government":"Central government","Value":"76.82339074"},{"Year":"2005","Branch of government":"Central government","Value":"77.07599336"},{"Year":"2006","Branch of government":"Central government","Value":"77.31339607"},{"Year":"2007","Branch of government":"Central government","Value":"77.46696477"},{"Year":"2008","Branch of government":"Central government","Value":"76.1628545"},{"Year":"2009","Branch of government":"Central government","Value":"75.44307941"},{"Year":"2010","Branch of government":"Central government","Value":"76.57076858"},{"Year":"2011","Branch of government":"Central government","Value":"76.92322967"},{"Year":"2012","Branch of government":"Central government","Value":"75.74248169"},{"Year":"2013","Branch of government":"Central government","Value":"74.14622447"},{"Year":"2014","Branch of government":"Central government","Value":"75.42398012"},{"Year":"2015","Branch of government":"Central government","Value":"75.47179101"},{"Year":"2016","Branch of government":"Central government","Value":"75.57497762"},{"Year":"2000","Branch of government":"Local government","Value":"68.19182149"},{"Year":"2001","Branch of government":"Local government","Value":"77.47573857"},{"Year":"2002","Branch of government":"Local government","Value":"79.57735849"},{"Year":"2003","Branch of government":"Local government","Value":"90.53179014"},{"Year":"2004","Branch of government":"Local government","Value":"84.9338777"},{"Year":"2005","Branch of government":"Local government","Value":"80.14338905"},{"Year":"2006","Branch of government":"Local government","Value":"92.3886219"},{"Year":"2007","Branch of government":"Local government","Value":"83.03195808"},{"Year":"2008","Branch of government":"Local government","Value":"77.20667826"},{"Year":"2009","Branch of government":"Local government","Value":"74.53693716"},{"Year":"2010","Branch of government":"Local government","Value":"90.98732879"},{"Year":"2011","Branch of government":"Local government","Value":"83.61606399"},{"Year":"2012","Branch of government":"Local government","Value":"98.37785521"},{"Year":"2013","Branch of government":"Local government","Value":"82.72593612"},{"Year":"2014","Branch of government":"Local government","Value":"92.61649714"},{"Year":"2015","Branch of government":"Local government","Value":"84.9790042"},{"Year":"2016","Branch of government":"Local government","Value":"72.51768724"}]' data-indicatorid='indicator_17-1-2' data-country="UK"
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          
+
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Branch of government":null,"Value":"77.76327083"},{"Year":"2001","Branch of government":null,"Value":"77.77899366"},{"Year":"2002","Branch of government":null,"Value":"78.20593126"},{"Year":"2003","Branch of government":null,"Value":"77.57799979"},{"Year":"2004","Branch of government":null,"Value":"77.22714751"},{"Year":"2005","Branch of government":null,"Value":"77.23573714"},{"Year":"2006","Branch of government":null,"Value":"77.99573577"},{"Year":"2007","Branch of government":null,"Value":"77.7456984"},{"Year":"2008","Branch of government":null,"Value":"76.22072301"},{"Year":"2009","Branch of government":null,"Value":"75.3866726"},{"Year":"2010","Branch of government":null,"Value":"77.28504915"},{"Year":"2011","Branch of government":null,"Value":"77.26711521"},{"Year":"2012","Branch of government":null,"Value":"76.73790646"},{"Year":"2013","Branch of government":null,"Value":"74.58281665"},{"Year":"2014","Branch of government":null,"Value":"76.22321817"},{"Year":"2015","Branch of government":null,"Value":"75.94990361"},{"Year":"2016","Branch of government":null,"Value":"75.39741128"},{"Year":"2000","Branch of government":"Central government","Value":"78.27571373"},{"Year":"2001","Branch of government":"Central government","Value":"77.79410468"},{"Year":"2002","Branch of government":"Central government","Value":"78.13375489"},{"Year":"2003","Branch of government":"Central government","Value":"76.94136927"},{"Year":"2004","Branch of government":"Central government","Value":"76.82339074"},{"Year":"2005","Branch of government":"Central government","Value":"77.07599336"},{"Year":"2006","Branch of government":"Central government","Value":"77.31339607"},{"Year":"2007","Branch of government":"Central government","Value":"77.46696477"},{"Year":"2008","Branch of government":"Central government","Value":"76.1628545"},{"Year":"2009","Branch of government":"Central government","Value":"75.44307941"},{"Year":"2010","Branch of government":"Central government","Value":"76.57076858"},{"Year":"2011","Branch of government":"Central government","Value":"76.92322967"},{"Year":"2012","Branch of government":"Central government","Value":"75.74248169"},{"Year":"2013","Branch of government":"Central government","Value":"74.14622447"},{"Year":"2014","Branch of government":"Central government","Value":"75.42398012"},{"Year":"2015","Branch of government":"Central government","Value":"75.47179101"},{"Year":"2016","Branch of government":"Central government","Value":"75.57497762"},{"Year":"2000","Branch of government":"Local government","Value":"68.19182149"},{"Year":"2001","Branch of government":"Local government","Value":"77.47573857"},{"Year":"2002","Branch of government":"Local government","Value":"79.57735849"},{"Year":"2003","Branch of government":"Local government","Value":"90.53179014"},{"Year":"2004","Branch of government":"Local government","Value":"84.9338777"},{"Year":"2005","Branch of government":"Local government","Value":"80.14338905"},{"Year":"2006","Branch of government":"Local government","Value":"92.3886219"},{"Year":"2007","Branch of government":"Local government","Value":"83.03195808"},{"Year":"2008","Branch of government":"Local government","Value":"77.20667826"},{"Year":"2009","Branch of government":"Local government","Value":"74.53693716"},{"Year":"2010","Branch of government":"Local government","Value":"90.98732879"},{"Year":"2011","Branch of government":"Local government","Value":"83.61606399"},{"Year":"2012","Branch of government":"Local government","Value":"98.37785521"},{"Year":"2013","Branch of government":"Local government","Value":"82.72593612"},{"Year":"2014","Branch of government":"Local government","Value":"92.61649714"},{"Year":"2015","Branch of government":"Local government","Value":"84.9790042"},{"Year":"2016","Branch of government":"Local government","Value":"72.51768724"}]' data-indicatorid='indicator_17-1-2' data-country="United Kingdom"
   data-edgesdata='[]' data-charttitle="Percentage of domestic budget funded by domestic taxes" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Percentage of domestic budget funded by domestic taxes<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -235,18 +254,17 @@
             <div role="tabpanel" class="tab-pane active" id="data">
               
                 <h3>Percentage of domestic budget funded by domestic taxes</h3>
-              
-              <p>Unit of Measurement: Percentage (%)</p>     
-              <a href="/data/indicator_17-1-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_17-1-2.csv'>Download source CSV</a>
+                
+              <a href="/data/indicator_17-1-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_17-1-2.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_17-1-2.csv' class='btn btn-primary btn-download' download='indicator_17-1-2.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_17-1-2.csv' class='btn btn-primary btn-download' download='indicator_17-1-2.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Percentage of domestic budget funded by domestic taxes</caption>
   <thead>
   
       <th scope="col">Year</th>
@@ -395,7 +413,12 @@
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: Office for National Statistics (ONS)</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Percentage (%)</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -1051,8 +1074,8 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-17.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 468kB)
+              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-17.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 468kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1332,8 +1355,8 @@
             
 
             
-              <a href="https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance/datasets/publicsectorfinancesappendixatables110/current">
-                Public sector finance tables
+              <a href="https://www.ons.gov.uk/economy/governmentpublicsectorandtaxes/publicsectorfinance/datasets/publicsectorfinancesappendixatables110/current" target="_blank">
+                Public sector finance tables <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1533,7 +1556,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

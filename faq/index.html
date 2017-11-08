@@ -9,9 +9,12 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>FAQ - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>U.K. Indicators For The Sustainable Development Goals</title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +39,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -96,11 +99,9 @@
     <div>
         <h1>FAQ</h1>
         <h2 id="how-do-i-suggest-new-or-different-data-sources">How do I suggest new or different data sources?</h2>
-
 <p>If you have feedback on the data sources we have used or have suggestions for new data sources then please email us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a>.</p>
 
 <h2 id="what-does-the-reporting-status-mean">What does the reporting status mean?</h2>
-
 <p>There are currently three different types of reporting status for an indicator:</p>
 
 <ul>
@@ -118,19 +119,24 @@
 <h2 id="can-other-countries-copy-this-website">Can other countries copy this website?</h2>
 <p>Yes. We have deliberately developed an open source solution to reporting UK SDGs data and so other countries can freely reuse our code. Technical guidance on copying our site is available in our <a href="https://github.com/datasciencecampus/sdg-indicators/wiki">wiki</a>. Countries exploring how to report their own SDGs national data can also get support from the <a href="http://www.opendataenterprise.org/">Center for Open Data Enterprise (CODE)</a> through their <a href="https://www.sdgreporting.org/">SDG National Reporting Initiative</a>.</p>
 
-<!-- DO NOT EDIT ANYTHING BELOW THIS LINE -->
-<script>
-	document.addEventListener("DOMContentLoaded", function(){
-  	$('#main-content h2').addClass('collapsible');
-		$('.collapsible').click(function(){
-			$(this).nextUntil('h2').stop(true, true).slideToggle();
-		}).nextUntil('h2').hide();
-	})
-</script>
-
-<style>
-	h3.collapsible { cursor: pointer }
-</style>
+<!-- DO NOT REMOVE ANYTHING BELOW THIS LINE -->
+<script type="text/javascript">
+document.addEventListener("DOMContentLoaded", function () {
+  $('#main-content h2').addClass('roleHeader');
+ 	$('#main-content h2').attr({
+ 	  'tabindex': 0,
+ 	  'role': 'button'
+ 	});
+ 	$('.roleHeader').click(function () {
+ 	  $(this).nextUntil('h2').stop(true, true).slideToggle();
+	 }).nextUntil('h2').hide();
+	 $('.roleHeader').keypress(function (e) {
+ 	  if (e.which == 13 || e.which == 32) { //Enter or space key pressed
+			   $(this).trigger('click');
+		  }
+	 });
+})
+ </script>
 
 
     </div>
@@ -177,7 +183,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

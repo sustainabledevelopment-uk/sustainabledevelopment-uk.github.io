@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>(a) Proportion of total agricultural population with ownership or secure rights over agricultural land, by sex; and (b) share of women among owners or rights-bearers of agricultural land, by type of tenure - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 5.a.1 - Goal 5 - Gender Equality
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,46 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2017","Occupation category":null,"Value":"27.16659634"},{"Year":"2017","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"20.33297408"},{"Year":"2017","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"43.77283066"},{"Year":"2016","Occupation category":null,"Value":"40.38863643"},{"Year":"2016","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"23.43346109"},{"Year":"2016","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"68.71416871"},{"Year":"2015","Occupation category":null,"Value":"27.3813436"},{"Year":"2015","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"15.22340546"},{"Year":"2015","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"47.16620413"},{"Year":"2014","Occupation category":null,"Value":"27.25996842"},{"Year":"2014","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"21.3182158"},{"Year":"2014","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"51.72502244"},{"Year":"2013","Occupation category":null,"Value":"53.10836564"},{"Year":"2013","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"36.74530411"},{"Year":"2013","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"76.43870556"},{"Year":"2012","Occupation category":null,"Value":"26.59864966"},{"Year":"2012","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"24.02608772"},{"Year":"2012","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"32.20727169"}]' data-indicatorid='indicator_5-a-1' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Percentage of managers and proprietors in agriculture related services who are women" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>This indicator is being used as an approximation of the UN SDG Indicator and has not been identified in collaboration with topic experts. We will work to identify or develop UK data to meet the global indicator specification.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2017","Occupation category":null,"Value":"27.16659634"},{"Year":"2017","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"20.33297408"},{"Year":"2017","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"43.77283066"},{"Year":"2016","Occupation category":null,"Value":"40.38863643"},{"Year":"2016","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"23.43346109"},{"Year":"2016","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"68.71416871"},{"Year":"2015","Occupation category":null,"Value":"27.3813436"},{"Year":"2015","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"15.22340546"},{"Year":"2015","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"47.16620413"},{"Year":"2014","Occupation category":null,"Value":"27.25996842"},{"Year":"2014","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"21.3182158"},{"Year":"2014","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"51.72502244"},{"Year":"2013","Occupation category":null,"Value":"53.10836564"},{"Year":"2013","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"36.74530411"},{"Year":"2013","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"76.43870556"},{"Year":"2012","Occupation category":null,"Value":"26.59864966"},{"Year":"2012","Occupation category":"Managers and proprietors in agriculture and horticulture","Value":"24.02608772"},{"Year":"2012","Occupation category":"Managers and proprietors in forestry, fishing and related services","Value":"32.20727169"}]' data-indicatorid='indicator_5-a-1' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Percentage of managers and proprietors in agriculture related services who are women" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Percentage of managers and proprietors in agriculture related services who are women<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -235,18 +258,17 @@
             <div role="tabpanel" class="tab-pane active" id="data">
               
                 <h3>Percentage of managers and proprietors in agriculture related services who are women</h3>
-              
-              <p>Unit of Measurement: Percentage (%)</p>     
-              <a href="/data/indicator_5-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_5-a-1.csv'>Download source CSV</a>
+                
+              <a href="/data/indicator_5-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_5-a-1.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_5-a-1.csv' class='btn btn-primary btn-download' download='indicator_5-a-1.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_5-a-1.csv' class='btn btn-primary btn-download' download='indicator_5-a-1.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Percentage of managers and proprietors in agriculture related services who are women</caption>
   <thead>
   
       <th scope="col">Year</th>
@@ -307,7 +329,12 @@
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: Office for National Statistics (ONS)</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Percentage (%)</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -963,8 +990,8 @@
             
 
             
-              <a href="https://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-5.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 634kB)
+              <a href="https://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-5.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 634kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1186,7 +1213,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            Office for National Statistics
+            Office for National Statistics (ONS)
           
         </td>
         </tr>
@@ -1244,8 +1271,8 @@
             
 
             
-              <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/employmentbyoccupationemp04">
-                EMP04: Employment by occupation
+              <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/employmentbyoccupationemp04" target="_blank">
+                EMP04: Employment by occupation <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1445,7 +1472,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

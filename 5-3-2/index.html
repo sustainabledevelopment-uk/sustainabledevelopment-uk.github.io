@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Proportion of girls and women aged 15-49 years who have undergone female genital mutilation/cutting, by age - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 5.3.2 - Goal 5 - Gender Equality
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,48 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Age at which female genital mutilation occurred":"Not recorded","Value":"93.77800753"},{"Year":"2015","Age at which female genital mutilation occurred":"Did not say","Value":"40.16998786"},{"Year":"2015","Age at which female genital mutilation occurred":"1 and under","Value":"10.77204159"},{"Year":"2015","Age at which female genital mutilation occurred":"1 to 4","Value":"12.7895477"},{"Year":"2015","Age at which female genital mutilation occurred":"5 to 10","Value":"26.62387536"},{"Year":"2015","Age at which female genital mutilation occurred":"10 to 15","Value":"6.232652825"},{"Year":"2015","Age at which female genital mutilation occurred":"15 to 18","Value":"0.756564794"},{"Year":"2015","Age at which female genital mutilation occurred":"18 and over","Value":"3.098312965"},{"Year":"2015","Age at which female genital mutilation occurred":"Total","Value":"194.2209906"},{"Year":"2016","Age at which female genital mutilation occurred":"Not recorded","Value":"119.6403766"},{"Year":"2016","Age at which female genital mutilation occurred":"Did not say","Value":"35.89926423"},{"Year":"2016","Age at which female genital mutilation occurred":"1 and under","Value":"8.40271623"},{"Year":"2016","Age at which female genital mutilation occurred":"1 to 4","Value":"12.19287759"},{"Year":"2016","Age at which female genital mutilation occurred":"5 to 10","Value":"20.81013126"},{"Year":"2016","Age at which female genital mutilation occurred":"10 to 15","Value":"4.755579824"},{"Year":"2016","Age at which female genital mutilation occurred":"15 to 18","Value":"0.464831111"},{"Year":"2016","Age at which female genital mutilation occurred":"18 and over","Value":"1.716299485"},{"Year":"2016","Age at which female genital mutilation occurred":"Total","Value":"203.8820764"}]' data-indicatorid='indicator_5-3-2' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Newly recorded cases of  female genital mutilation or cutting per million population" data-measurementunit="Newly recorded cases per million population" data-datasource="National Health Service (NHS)" data-geographicalarea="England" data-footnote="" data-showdata="true">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>This indicator is being used as an approximation of the UN SDG Indicator and has been identified in collaboration with topic experts. We will work to develop UK data to meet the global indicator specification.</p>
+
+<p>Data availability within the UK is limited to England and Wales for this indicator.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Age at which female genital mutilation occurred":"Not recorded","Country of birth":null,"FGM type":null,"Value":"93.77800753"},{"Year":"2015","Age at which female genital mutilation occurred":"Did not say","Country of birth":null,"FGM type":null,"Value":"40.16998786"},{"Year":"2015","Age at which female genital mutilation occurred":"1 and under","Country of birth":null,"FGM type":null,"Value":"10.77204159"},{"Year":"2015","Age at which female genital mutilation occurred":"1 to 4","Country of birth":null,"FGM type":null,"Value":"12.7895477"},{"Year":"2015","Age at which female genital mutilation occurred":"5 to 10","Country of birth":null,"FGM type":null,"Value":"26.62387536"},{"Year":"2015","Age at which female genital mutilation occurred":"10 to 15","Country of birth":null,"FGM type":null,"Value":"6.232652825"},{"Year":"2015","Age at which female genital mutilation occurred":"15 to 18","Country of birth":null,"FGM type":null,"Value":"0.756564794"},{"Year":"2015","Age at which female genital mutilation occurred":"18 and over","Country of birth":null,"FGM type":null,"Value":"3.098312965"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":null,"Value":"194.2209906"},{"Year":"2016","Age at which female genital mutilation occurred":"Not recorded","Country of birth":null,"FGM type":null,"Value":"119.6403766"},{"Year":"2016","Age at which female genital mutilation occurred":"Did not say","Country of birth":null,"FGM type":null,"Value":"35.89926423"},{"Year":"2016","Age at which female genital mutilation occurred":"1 and under","Country of birth":null,"FGM type":null,"Value":"8.40271623"},{"Year":"2016","Age at which female genital mutilation occurred":"1 to 4","Country of birth":null,"FGM type":null,"Value":"12.19287759"},{"Year":"2016","Age at which female genital mutilation occurred":"5 to 10","Country of birth":null,"FGM type":null,"Value":"20.81013126"},{"Year":"2016","Age at which female genital mutilation occurred":"10 to 15","Country of birth":null,"FGM type":null,"Value":"4.755579824"},{"Year":"2016","Age at which female genital mutilation occurred":"15 to 18","Country of birth":null,"FGM type":null,"Value":"0.464831111"},{"Year":"2016","Age at which female genital mutilation occurred":"18 and over","Country of birth":null,"FGM type":null,"Value":"1.716299485"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":null,"Value":"203.8820764"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":"Not recorded","FGM type":null,"Value":"85.41976791"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":"Not stated or unknown","FGM type":null,"Value":"40.99860644"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":"Eastern Africa","FGM type":null,"Value":"42.33160156"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":"Northern Africa","FGM type":null,"Value":"8.862616156"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":"Western Africa","FGM type":null,"Value":"20.21108806"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":"Rest of Africa","FGM type":null,"Value":"0.468349634"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":"United Kingdom","FGM type":null,"Value":"1.549156482"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":"Western Asia","FGM type":null,"Value":"3.962958444"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":"Rest of Asia","FGM type":null,"Value":"1.116833743"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":"Rest of world","FGM type":null,"Value":"0.504376529"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":"Not recorded","FGM type":null,"Value":"36.47136406"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":"Not stated or unknown","FGM type":null,"Value":"23.59911792"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":"Eastern Africa","FGM type":null,"Value":"24.6718051"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":"Northern Africa","FGM type":null,"Value":"1.96659316"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":"Western Africa","FGM type":null,"Value":"3.93318632"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":"United Kingdom","FGM type":null,"Value":"0.536343589"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":"Western Asia","FGM type":null,"Value":"0.715124786"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":"Rest of Asia","FGM type":null,"Value":"0.178781196"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Not recorded","Value":"4.863630817"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Type unknown","Value":"109.4857337"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Type 1","Value":"32.17201718"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Type 2","Value":"28.42522011"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Type 3","Value":"25.57909541"},{"Year":"2015","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Type 4","Value":"4.899657712"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Not recorded","Value":"7.508810248"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Type unknown","Value":"48.44970422"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Type 1","Value":"12.87224614"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Type 2","Value":"10.011747"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Type 3","Value":"11.62077776"},{"Year":"2016","Age at which female genital mutilation occurred":null,"Country of birth":null,"FGM type":"Type 4","Value":"1.609030767"}]' data-indicatorid='indicator_5-3-2' data-country="England"
+  data-edgesdata='[]' data-charttitle="Newly recorded cases of  female genital mutilation or cutting per million population" data-measurementunit="Rate per million population" data-datasource="National Health Service (NHS)" data-geographicalarea="England" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Newly recorded cases of  female genital mutilation or cutting per million population<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -235,27 +260,51 @@
             <div role="tabpanel" class="tab-pane active" id="data">
               
                 <h3>Newly recorded cases of  female genital mutilation or cutting per million population</h3>
-              
-              <p>Unit of Measurement: Newly recorded cases per million population</p>     
-              <a href="/data/indicator_5-3-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_5-3-2.csv'>Download source CSV</a>
+                
+              <a href="/data/indicator_5-3-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_5-3-2.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_5-3-2.csv' class='btn btn-primary btn-download' download='indicator_5-3-2.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_5-3-2.csv' class='btn btn-primary btn-download' download='indicator_5-3-2.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Newly recorded cases of  female genital mutilation or cutting per million population</caption>
   <thead>
+  
+      <th scope="col">Year</th>
+  
+      <th scope="col">Value</th>
   
   </thead>
   <tbody>
   
+      <tr>
+      
+          <td>2015</td>
+      
+          <td>194.2209906</td>
+      
+      </tr>
+  
+      <tr>
+      
+          <td>2016</td>
+      
+          <td>203.8820764</td>
+      
+      </tr>
+  
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: National Health Service (NHS)</p>
+                <p>Geographical Area: England</p>
+                <p>Units of Measure: Rate per million population</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -607,7 +656,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            Newly recorded cases per million population
+            Rate per million population
           
         </td>
         </tr>
@@ -911,8 +960,8 @@
             
 
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-03-02.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 206kB)
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-05-03-02.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 206kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1192,8 +1241,8 @@
             
 
             
-              <a href="http://content.digital.nhs.uk/fgm">
-                Female Genital Mutilation Datasets
+              <a href="http://content.digital.nhs.uk/fgm" target="_blank">
+                Female Genital Mutilation Datasets <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1393,7 +1442,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

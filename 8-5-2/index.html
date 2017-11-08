@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Unemployment rate, by sex, age and persons with disabilities - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 8.5.2 - Goal 8 - Decent jobs and economic growth
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,46 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"5.45"},{"Year":"2001","Value":"5.06"},{"Year":"2002","Value":"5.2"},{"Year":"2003","Value":"5.02"},{"Year":"2004","Value":"4.74"},{"Year":"2005","Value":"4.81"},{"Year":"2006","Value":"5.43"},{"Year":"2007","Value":"5.33"},{"Year":"2008","Value":"5.66"},{"Year":"2009","Value":"7.67"},{"Year":"2010","Value":"7.87"},{"Year":"2011","Value":"8.1"},{"Year":"2012","Value":"7.97"},{"Year":"2013","Value":"7.59"},{"Year":"2014","Value":"6.17"},{"Year":"2015","Value":"5.38"},{"Year":"2016","Value":"4.9"}]' data-indicatorid='indicator_8-5-2' data-country="UK"
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>Data follows the UN specification for this indicator and has been indentified in collaboration with topic experts.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Sex":null,"Age":null,"Value":"5.4"},{"Year":"2001","Sex":null,"Age":null,"Value":"5.1"},{"Year":"2002","Sex":null,"Age":null,"Value":"5.2"},{"Year":"2003","Sex":null,"Age":null,"Value":"5"},{"Year":"2004","Sex":null,"Age":null,"Value":"4.8"},{"Year":"2005","Sex":null,"Age":null,"Value":"4.8"},{"Year":"2006","Sex":null,"Age":null,"Value":"5.4"},{"Year":"2007","Sex":null,"Age":null,"Value":"5.3"},{"Year":"2008","Sex":null,"Age":null,"Value":"5.7"},{"Year":"2009","Sex":null,"Age":null,"Value":"7.6"},{"Year":"2010","Sex":null,"Age":null,"Value":"7.9"},{"Year":"2011","Sex":null,"Age":null,"Value":"8.1"},{"Year":"2012","Sex":null,"Age":null,"Value":"8"},{"Year":"2013","Sex":null,"Age":null,"Value":"7.6"},{"Year":"2014","Sex":null,"Age":null,"Value":"6.2"},{"Year":"2015","Sex":null,"Age":null,"Value":"5.4"},{"Year":"2016","Sex":null,"Age":null,"Value":"4.9"},{"Year":"2000","Sex":"Male","Age":null,"Value":"5.9"},{"Year":"2001","Sex":"Male","Age":null,"Value":"5.6"},{"Year":"2002","Sex":"Male","Age":null,"Value":"5.7"},{"Year":"2003","Sex":"Male","Age":null,"Value":"5.6"},{"Year":"2004","Sex":"Male","Age":null,"Value":"5.1"},{"Year":"2005","Sex":"Male","Age":null,"Value":"5.2"},{"Year":"2006","Sex":"Male","Age":null,"Value":"5.8"},{"Year":"2007","Sex":"Male","Age":null,"Value":"5.6"},{"Year":"2008","Sex":"Male","Age":null,"Value":"6.2"},{"Year":"2009","Sex":"Male","Age":null,"Value":"8.6"},{"Year":"2010","Sex":"Male","Age":null,"Value":"8.7"},{"Year":"2011","Sex":"Male","Age":null,"Value":"8.7"},{"Year":"2012","Sex":"Male","Age":null,"Value":"8.4"},{"Year":"2013","Sex":"Male","Age":null,"Value":"8.1"},{"Year":"2014","Sex":"Male","Age":null,"Value":"6.4"},{"Year":"2015","Sex":"Male","Age":null,"Value":"5.5"},{"Year":"2016","Sex":"Male","Age":null,"Value":"5"},{"Year":"2000","Sex":"Female","Age":null,"Value":"4.9"},{"Year":"2001","Sex":"Female","Age":null,"Value":"4.4"},{"Year":"2002","Sex":"Female","Age":null,"Value":"4.5"},{"Year":"2003","Sex":"Female","Age":null,"Value":"4.4"},{"Year":"2004","Sex":"Female","Age":null,"Value":"4.3"},{"Year":"2005","Sex":"Female","Age":null,"Value":"4.4"},{"Year":"2006","Sex":"Female","Age":null,"Value":"5.1"},{"Year":"2007","Sex":"Female","Age":null,"Value":"5"},{"Year":"2008","Sex":"Female","Age":null,"Value":"5.2"},{"Year":"2009","Sex":"Female","Age":null,"Value":"6.5"},{"Year":"2010","Sex":"Female","Age":null,"Value":"6.9"},{"Year":"2011","Sex":"Female","Age":null,"Value":"7.4"},{"Year":"2012","Sex":"Female","Age":null,"Value":"7.5"},{"Year":"2013","Sex":"Female","Age":null,"Value":"7.1"},{"Year":"2014","Sex":"Female","Age":null,"Value":"5.9"},{"Year":"2015","Sex":"Female","Age":null,"Value":"5.2"},{"Year":"2016","Sex":"Female","Age":null,"Value":"4.8"},{"Year":"2000","Sex":null,"Age":"16 and over","Value":"5.459821602"},{"Year":"2001","Sex":null,"Age":"16 and over","Value":"5.099012396"},{"Year":"2002","Sex":null,"Age":"16 and over","Value":"5.188219518"},{"Year":"2003","Sex":null,"Age":"16 and over","Value":"5.012749296"},{"Year":"2004","Sex":null,"Age":"16 and over","Value":"4.753823851"},{"Year":"2005","Sex":null,"Age":"16 and over","Value":"4.830367843"},{"Year":"2006","Sex":null,"Age":"16 and over","Value":"5.422897093"},{"Year":"2007","Sex":null,"Age":"16 and over","Value":"5.332776795"},{"Year":"2008","Sex":null,"Age":"16 and over","Value":"5.685386363"},{"Year":"2009","Sex":null,"Age":"16 and over","Value":"7.613899506"},{"Year":"2010","Sex":null,"Age":"16 and over","Value":"7.869963194"},{"Year":"2011","Sex":null,"Age":"16 and over","Value":"8.110431257"},{"Year":"2012","Sex":null,"Age":"16 and over","Value":"7.97124038"},{"Year":"2013","Sex":null,"Age":"16 and over","Value":"7.608024753"},{"Year":"2014","Sex":null,"Age":"16 and over","Value":"6.180410356"},{"Year":"2015","Sex":null,"Age":"16 and over","Value":"5.385683637"},{"Year":"2016","Sex":null,"Age":"16 and over","Value":"4.896501253"},{"Year":"2000","Sex":null,"Age":"16 to 64","Value":"5.512579378"},{"Year":"2001","Sex":null,"Age":"16 to 64","Value":"5.146816903"},{"Year":"2002","Sex":null,"Age":"16 to 64","Value":"5.236694882"},{"Year":"2003","Sex":null,"Age":"16 to 64","Value":"5.061378896"},{"Year":"2004","Sex":null,"Age":"16 to 64","Value":"4.802541004"},{"Year":"2005","Sex":null,"Age":"16 to 64","Value":"4.880593282"},{"Year":"2006","Sex":null,"Age":"16 to 64","Value":"5.491778398"},{"Year":"2007","Sex":null,"Age":"16 to 64","Value":"5.404916963"},{"Year":"2008","Sex":null,"Age":"16 to 64","Value":"5.766434979"},{"Year":"2009","Sex":null,"Age":"16 to 64","Value":"7.73155411"},{"Year":"2010","Sex":null,"Age":"16 to 64","Value":"8.019535592"},{"Year":"2011","Sex":null,"Age":"16 to 64","Value":"8.273695611"},{"Year":"2012","Sex":null,"Age":"16 to 64","Value":"8.144811252"},{"Year":"2013","Sex":null,"Age":"16 to 64","Value":"7.788695869"},{"Year":"2014","Sex":null,"Age":"16 to 64","Value":"6.329795903"},{"Year":"2015","Sex":null,"Age":"16 to 64","Value":"5.522198071"},{"Year":"2016","Sex":null,"Age":"16 to 64","Value":"5.025893181"},{"Year":"2000","Sex":null,"Age":"16 to 17","Value":"20.27428034"},{"Year":"2001","Sex":null,"Age":"16 to 17","Value":"19.05567905"},{"Year":"2002","Sex":null,"Age":"16 to 17","Value":"20.05297549"},{"Year":"2003","Sex":null,"Age":"16 to 17","Value":"20.93738676"},{"Year":"2004","Sex":null,"Age":"16 to 17","Value":"21.45675501"},{"Year":"2005","Sex":null,"Age":"16 to 17","Value":"22.88898712"},{"Year":"2006","Sex":null,"Age":"16 to 17","Value":"24.67323943"},{"Year":"2007","Sex":null,"Age":"16 to 17","Value":"26.97130301"},{"Year":"2008","Sex":null,"Age":"16 to 17","Value":"26.2289512"},{"Year":"2009","Sex":null,"Age":"16 to 17","Value":"32.0317049"},{"Year":"2010","Sex":null,"Age":"16 to 17","Value":"35.00400535"},{"Year":"2011","Sex":null,"Age":"16 to 17","Value":"37.94942787"},{"Year":"2012","Sex":null,"Age":"16 to 17","Value":"36.68951351"},{"Year":"2013","Sex":null,"Age":"16 to 17","Value":"37.11797572"},{"Year":"2014","Sex":null,"Age":"16 to 17","Value":"33.54661686"},{"Year":"2015","Sex":null,"Age":"16 to 17","Value":"28.02192509"},{"Year":"2016","Sex":null,"Age":"16 to 17","Value":"26.51738923"},{"Year":"2000","Sex":null,"Age":"18 to 24","Value":"10.6348159"},{"Year":"2001","Sex":null,"Age":"18 to 24","Value":"10.40410443"},{"Year":"2002","Sex":null,"Age":"18 to 24","Value":"10.45712868"},{"Year":"2003","Sex":null,"Age":"18 to 24","Value":"10.54369076"},{"Year":"2004","Sex":null,"Age":"18 to 24","Value":"10.39794806"},{"Year":"2005","Sex":null,"Age":"18 to 24","Value":"11.01613197"},{"Year":"2006","Sex":null,"Age":"18 to 24","Value":"12.22020936"},{"Year":"2007","Sex":null,"Age":"18 to 24","Value":"12.18286617"},{"Year":"2008","Sex":null,"Age":"18 to 24","Value":"13.26281527"},{"Year":"2009","Sex":null,"Age":"18 to 24","Value":"17.28365197"},{"Year":"2010","Sex":null,"Age":"18 to 24","Value":"17.87482196"},{"Year":"2011","Sex":null,"Age":"18 to 24","Value":"19.03919625"},{"Year":"2012","Sex":null,"Age":"18 to 24","Value":"19.33273397"},{"Year":"2013","Sex":null,"Age":"18 to 24","Value":"18.79155926"},{"Year":"2014","Sex":null,"Age":"18 to 24","Value":"15.09278733"},{"Year":"2015","Sex":null,"Age":"18 to 24","Value":"13.24082713"},{"Year":"2016","Sex":null,"Age":"18 to 24","Value":"11.6677399"},{"Year":"2000","Sex":null,"Age":"25 to 34","Value":"5.028211662"},{"Year":"2001","Sex":null,"Age":"25 to 34","Value":"4.905417678"},{"Year":"2002","Sex":null,"Age":"25 to 34","Value":"4.918722753"},{"Year":"2003","Sex":null,"Age":"25 to 34","Value":"4.819841868"},{"Year":"2004","Sex":null,"Age":"25 to 34","Value":"4.522405014"},{"Year":"2005","Sex":null,"Age":"25 to 34","Value":"4.356988978"},{"Year":"2006","Sex":null,"Age":"25 to 34","Value":"5.030004217"},{"Year":"2007","Sex":null,"Age":"25 to 34","Value":"4.692928162"},{"Year":"2008","Sex":null,"Age":"25 to 34","Value":"5.196283742"},{"Year":"2009","Sex":null,"Age":"25 to 34","Value":"7.594837447"},{"Year":"2010","Sex":null,"Age":"25 to 34","Value":"7.633321094"},{"Year":"2011","Sex":null,"Age":"25 to 34","Value":"7.925398233"},{"Year":"2012","Sex":null,"Age":"25 to 34","Value":"7.588568068"},{"Year":"2013","Sex":null,"Age":"25 to 34","Value":"7.010030378"},{"Year":"2014","Sex":null,"Age":"25 to 34","Value":"5.700862018"},{"Year":"2015","Sex":null,"Age":"25 to 34","Value":"5.040171297"},{"Year":"2016","Sex":null,"Age":"25 to 34","Value":"4.555798689"},{"Year":"2000","Sex":null,"Age":"35 to 49","Value":"3.819014255"},{"Year":"2001","Sex":null,"Age":"35 to 49","Value":"3.562335078"},{"Year":"2002","Sex":null,"Age":"35 to 49","Value":"3.613209561"},{"Year":"2003","Sex":null,"Age":"35 to 49","Value":"3.301895435"},{"Year":"2004","Sex":null,"Age":"35 to 49","Value":"3.001148327"},{"Year":"2005","Sex":null,"Age":"35 to 49","Value":"3.072542089"},{"Year":"2006","Sex":null,"Age":"35 to 49","Value":"3.657185761"},{"Year":"2007","Sex":null,"Age":"35 to 49","Value":"3.484015673"},{"Year":"2008","Sex":null,"Age":"35 to 49","Value":"3.762666215"},{"Year":"2009","Sex":null,"Age":"35 to 49","Value":"5.197147018"},{"Year":"2010","Sex":null,"Age":"35 to 49","Value":"5.539162401"},{"Year":"2011","Sex":null,"Age":"35 to 49","Value":"5.424931742"},{"Year":"2012","Sex":null,"Age":"35 to 49","Value":"5.351990301"},{"Year":"2013","Sex":null,"Age":"35 to 49","Value":"5.137649396"},{"Year":"2014","Sex":null,"Age":"35 to 49","Value":"4.14115613"},{"Year":"2015","Sex":null,"Age":"35 to 49","Value":"3.585904632"},{"Year":"2016","Sex":null,"Age":"35 to 49","Value":"3.257075386"},{"Year":"2000","Sex":null,"Age":"50 to 64","Value":"4.002903806"},{"Year":"2001","Sex":null,"Age":"50 to 64","Value":"3.253292083"},{"Year":"2002","Sex":null,"Age":"50 to 64","Value":"3.417606383"},{"Year":"2003","Sex":null,"Age":"50 to 64","Value":"3.166879302"},{"Year":"2004","Sex":null,"Age":"50 to 64","Value":"2.852141425"},{"Year":"2005","Sex":null,"Age":"50 to 64","Value":"2.86008259"},{"Year":"2006","Sex":null,"Age":"50 to 64","Value":"3.081303398"},{"Year":"2007","Sex":null,"Age":"50 to 64","Value":"3.14743662"},{"Year":"2008","Sex":null,"Age":"50 to 64","Value":"3.31527244"},{"Year":"2009","Sex":null,"Age":"50 to 64","Value":"4.617097644"},{"Year":"2010","Sex":null,"Age":"50 to 64","Value":"4.822830809"},{"Year":"2011","Sex":null,"Age":"50 to 64","Value":"4.967843842"},{"Year":"2012","Sex":null,"Age":"50 to 64","Value":"4.830275733"},{"Year":"2013","Sex":null,"Age":"50 to 64","Value":"4.749525043"},{"Year":"2014","Sex":null,"Age":"50 to 64","Value":"3.958919555"},{"Year":"2015","Sex":null,"Age":"50 to 64","Value":"3.457385835"},{"Year":"2016","Sex":null,"Age":"50 to 64","Value":"3.429964035"},{"Year":"2000","Sex":null,"Age":"65 and over","Value":"2.183634478"},{"Year":"2001","Sex":null,"Age":"65 and over","Value":"2.090374799"},{"Year":"2002","Sex":null,"Age":"65 and over","Value":"2.326846566"},{"Year":"2003","Sex":null,"Age":"65 and over","Value":"2.352927582"},{"Year":"2004","Sex":null,"Age":"65 and over","Value":"2.145788611"},{"Year":"2005","Sex":null,"Age":"65 and over","Value":"2.313345036"},{"Year":"2006","Sex":null,"Age":"65 and over","Value":"2.169289085"},{"Year":"2007","Sex":null,"Age":"65 and over","Value":"1.982870333"},{"Year":"2008","Sex":null,"Age":"65 and over","Value":"2.181028647"},{"Year":"2009","Sex":null,"Age":"65 and over","Value":"2.867183793"},{"Year":"2010","Sex":null,"Age":"65 and over","Value":"2.495374775"},{"Year":"2011","Sex":null,"Age":"65 and over","Value":"2.481018284"},{"Year":"2012","Sex":null,"Age":"65 and over","Value":"2.363460396"},{"Year":"2013","Sex":null,"Age":"65 and over","Value":"2.243576553"},{"Year":"2014","Sex":null,"Age":"65 and over","Value":"2.019740493"},{"Year":"2015","Sex":null,"Age":"65 and over","Value":"1.762762505"},{"Year":"2016","Sex":null,"Age":"65 and over","Value":"1.504297784"},{"Year":"2000","Sex":"Male","Age":"16 and over","Value":"5.947621885"},{"Year":"2001","Sex":"Male","Age":"16 and over","Value":"5.627624856"},{"Year":"2002","Sex":"Male","Age":"16 and over","Value":"5.735466588"},{"Year":"2003","Sex":"Male","Age":"16 and over","Value":"5.55179125"},{"Year":"2004","Sex":"Male","Age":"16 and over","Value":"5.124865633"},{"Year":"2005","Sex":"Male","Age":"16 and over","Value":"5.225594697"},{"Year":"2006","Sex":"Male","Age":"16 and over","Value":"5.770419502"},{"Year":"2007","Sex":"Male","Age":"16 and over","Value":"5.589081711"},{"Year":"2008","Sex":"Male","Age":"16 and over","Value":"6.147132371"},{"Year":"2009","Sex":"Male","Age":"16 and over","Value":"8.584667539"},{"Year":"2010","Sex":"Male","Age":"16 and over","Value":"8.660051108"},{"Year":"2011","Sex":"Male","Age":"16 and over","Value":"8.72281269"},{"Year":"2012","Sex":"Male","Age":"16 and over","Value":"8.397728269"},{"Year":"2013","Sex":"Male","Age":"16 and over","Value":"8.024912399"},{"Year":"2014","Sex":"Male","Age":"16 and over","Value":"6.431976734"},{"Year":"2015","Sex":"Male","Age":"16 and over","Value":"5.536265846"},{"Year":"2016","Sex":"Male","Age":"16 and over","Value":"5.01382569"},{"Year":"2000","Sex":"Male","Age":"16 to 64","Value":"6.01201771"},{"Year":"2001","Sex":"Male","Age":"16 to 64","Value":"5.683537578"},{"Year":"2002","Sex":"Male","Age":"16 to 64","Value":"5.791984006"},{"Year":"2003","Sex":"Male","Age":"16 to 64","Value":"5.615305933"},{"Year":"2004","Sex":"Male","Age":"16 to 64","Value":"5.178349003"},{"Year":"2005","Sex":"Male","Age":"16 to 64","Value":"5.286858743"},{"Year":"2006","Sex":"Male","Age":"16 to 64","Value":"5.849248194"},{"Year":"2007","Sex":"Male","Age":"16 to 64","Value":"5.673891403"},{"Year":"2008","Sex":"Male","Age":"16 to 64","Value":"6.247063817"},{"Year":"2009","Sex":"Male","Age":"16 to 64","Value":"8.728660894"},{"Year":"2010","Sex":"Male","Age":"16 to 64","Value":"8.834466435"},{"Year":"2011","Sex":"Male","Age":"16 to 64","Value":"8.923014883"},{"Year":"2012","Sex":"Male","Age":"16 to 64","Value":"8.598644968"},{"Year":"2013","Sex":"Male","Age":"16 to 64","Value":"8.234762685"},{"Year":"2014","Sex":"Male","Age":"16 to 64","Value":"6.594749097"},{"Year":"2015","Sex":"Male","Age":"16 to 64","Value":"5.696032454"},{"Year":"2016","Sex":"Male","Age":"16 to 64","Value":"5.183796142"},{"Year":"2000","Sex":"Male","Age":"16 to 17","Value":"22.0477629"},{"Year":"2001","Sex":"Male","Age":"16 to 17","Value":"21.06049592"},{"Year":"2002","Sex":"Male","Age":"16 to 17","Value":"23.03637219"},{"Year":"2003","Sex":"Male","Age":"16 to 17","Value":"24.06792442"},{"Year":"2004","Sex":"Male","Age":"16 to 17","Value":"24.35668622"},{"Year":"2005","Sex":"Male","Age":"16 to 17","Value":"25.69742408"},{"Year":"2006","Sex":"Male","Age":"16 to 17","Value":"29.12213238"},{"Year":"2007","Sex":"Male","Age":"16 to 17","Value":"30.04691297"},{"Year":"2008","Sex":"Male","Age":"16 to 17","Value":"28.10398428"},{"Year":"2009","Sex":"Male","Age":"16 to 17","Value":"36.350508"},{"Year":"2010","Sex":"Male","Age":"16 to 17","Value":"39.19195624"},{"Year":"2011","Sex":"Male","Age":"16 to 17","Value":"41.77989835"},{"Year":"2012","Sex":"Male","Age":"16 to 17","Value":"39.80616177"},{"Year":"2013","Sex":"Male","Age":"16 to 17","Value":"40.81981282"},{"Year":"2014","Sex":"Male","Age":"16 to 17","Value":"36.78408372"},{"Year":"2015","Sex":"Male","Age":"16 to 17","Value":"33.34177713"},{"Year":"2016","Sex":"Male","Age":"16 to 17","Value":"29.77345874"},{"Year":"2000","Sex":"Male","Age":"18 to 24","Value":"11.58013549"},{"Year":"2001","Sex":"Male","Age":"18 to 24","Value":"11.80330194"},{"Year":"2002","Sex":"Male","Age":"18 to 24","Value":"12.05199499"},{"Year":"2003","Sex":"Male","Age":"18 to 24","Value":"11.89743315"},{"Year":"2004","Sex":"Male","Age":"18 to 24","Value":"11.41092363"},{"Year":"2005","Sex":"Male","Age":"18 to 24","Value":"12.59439787"},{"Year":"2006","Sex":"Male","Age":"18 to 24","Value":"13.69131612"},{"Year":"2007","Sex":"Male","Age":"18 to 24","Value":"13.61914104"},{"Year":"2008","Sex":"Male","Age":"18 to 24","Value":"15.44107539"},{"Year":"2009","Sex":"Male","Age":"18 to 24","Value":"20.06164985"},{"Year":"2010","Sex":"Male","Age":"18 to 24","Value":"19.90533829"},{"Year":"2011","Sex":"Male","Age":"18 to 24","Value":"21.64051507"},{"Year":"2012","Sex":"Male","Age":"18 to 24","Value":"22.145994"},{"Year":"2013","Sex":"Male","Age":"18 to 24","Value":"21.0624362"},{"Year":"2014","Sex":"Male","Age":"18 to 24","Value":"17.19481845"},{"Year":"2015","Sex":"Male","Age":"18 to 24","Value":"14.52687871"},{"Year":"2016","Sex":"Male","Age":"18 to 24","Value":"13.40863703"},{"Year":"2000","Sex":"Male","Age":"25 to 34","Value":"5.359037322"},{"Year":"2001","Sex":"Male","Age":"25 to 34","Value":"5.287121304"},{"Year":"2002","Sex":"Male","Age":"25 to 34","Value":"5.165007359"},{"Year":"2003","Sex":"Male","Age":"25 to 34","Value":"5.198855545"},{"Year":"2004","Sex":"Male","Age":"25 to 34","Value":"4.873044516"},{"Year":"2005","Sex":"Male","Age":"25 to 34","Value":"4.442201666"},{"Year":"2006","Sex":"Male","Age":"25 to 34","Value":"5.047115784"},{"Year":"2007","Sex":"Male","Age":"25 to 34","Value":"4.666139886"},{"Year":"2008","Sex":"Male","Age":"25 to 34","Value":"5.261214574"},{"Year":"2009","Sex":"Male","Age":"25 to 34","Value":"8.433436555"},{"Year":"2010","Sex":"Male","Age":"25 to 34","Value":"8.203556796"},{"Year":"2011","Sex":"Male","Age":"25 to 34","Value":"8.084306762"},{"Year":"2012","Sex":"Male","Age":"25 to 34","Value":"7.32616778"},{"Year":"2013","Sex":"Male","Age":"25 to 34","Value":"7.393672066"},{"Year":"2014","Sex":"Male","Age":"25 to 34","Value":"5.574190139"},{"Year":"2015","Sex":"Male","Age":"25 to 34","Value":"5.023987643"},{"Year":"2016","Sex":"Male","Age":"25 to 34","Value":"4.171911401"},{"Year":"2000","Sex":"Male","Age":"35 to 49","Value":"4.040887864"},{"Year":"2001","Sex":"Male","Age":"35 to 49","Value":"3.750150168"},{"Year":"2002","Sex":"Male","Age":"35 to 49","Value":"3.91460131"},{"Year":"2003","Sex":"Male","Age":"35 to 49","Value":"3.59136243"},{"Year":"2004","Sex":"Male","Age":"35 to 49","Value":"3.025315034"},{"Year":"2005","Sex":"Male","Age":"35 to 49","Value":"3.184666391"},{"Year":"2006","Sex":"Male","Age":"35 to 49","Value":"3.729739505"},{"Year":"2007","Sex":"Male","Age":"35 to 49","Value":"3.357862945"},{"Year":"2008","Sex":"Male","Age":"35 to 49","Value":"3.851449435"},{"Year":"2009","Sex":"Male","Age":"35 to 49","Value":"5.548489668"},{"Year":"2010","Sex":"Male","Age":"35 to 49","Value":"5.855471884"},{"Year":"2011","Sex":"Male","Age":"35 to 49","Value":"5.428992291"},{"Year":"2012","Sex":"Male","Age":"35 to 49","Value":"5.110895728"},{"Year":"2013","Sex":"Male","Age":"35 to 49","Value":"4.912792978"},{"Year":"2014","Sex":"Male","Age":"35 to 49","Value":"3.952482423"},{"Year":"2015","Sex":"Male","Age":"35 to 49","Value":"3.252535183"},{"Year":"2016","Sex":"Male","Age":"35 to 49","Value":"3.031527422"},{"Year":"2000","Sex":"Male","Age":"50 to 64","Value":"4.943703336"},{"Year":"2001","Sex":"Male","Age":"50 to 64","Value":"4.022039056"},{"Year":"2002","Sex":"Male","Age":"50 to 64","Value":"4.04121245"},{"Year":"2003","Sex":"Male","Age":"50 to 64","Value":"3.809023515"},{"Year":"2004","Sex":"Male","Age":"50 to 64","Value":"3.434417215"},{"Year":"2005","Sex":"Male","Age":"50 to 64","Value":"3.371418621"},{"Year":"2006","Sex":"Male","Age":"50 to 64","Value":"3.483311583"},{"Year":"2007","Sex":"Male","Age":"50 to 64","Value":"3.653669529"},{"Year":"2008","Sex":"Male","Age":"50 to 64","Value":"3.948777702"},{"Year":"2009","Sex":"Male","Age":"50 to 64","Value":"5.895228642"},{"Year":"2010","Sex":"Male","Age":"50 to 64","Value":"6.025870811"},{"Year":"2011","Sex":"Male","Age":"50 to 64","Value":"6.066776792"},{"Year":"2012","Sex":"Male","Age":"50 to 64","Value":"5.786434989"},{"Year":"2013","Sex":"Male","Age":"50 to 64","Value":"5.321428799"},{"Year":"2014","Sex":"Male","Age":"50 to 64","Value":"4.398352621"},{"Year":"2015","Sex":"Male","Age":"50 to 64","Value":"3.832614111"},{"Year":"2016","Sex":"Male","Age":"50 to 64","Value":"3.835036407"},{"Year":"2000","Sex":"Male","Age":"65 and over","Value":"2.45416257"},{"Year":"2001","Sex":"Male","Age":"65 and over","Value":"2.598599902"},{"Year":"2002","Sex":"Male","Age":"65 and over","Value":"2.840121687"},{"Year":"2003","Sex":"Male","Age":"65 and over","Value":"2.575124703"},{"Year":"2004","Sex":"Male","Age":"65 and over","Value":"2.664216335"},{"Year":"2005","Sex":"Male","Age":"65 and over","Value":"2.567163382"},{"Year":"2006","Sex":"Male","Age":"65 and over","Value":"2.567450785"},{"Year":"2007","Sex":"Male","Age":"65 and over","Value":"2.24559613"},{"Year":"2008","Sex":"Male","Age":"65 and over","Value":"2.518967978"},{"Year":"2009","Sex":"Male","Age":"65 and over","Value":"3.425207395"},{"Year":"2010","Sex":"Male","Age":"65 and over","Value":"3.084075377"},{"Year":"2011","Sex":"Male","Age":"65 and over","Value":"2.600195143"},{"Year":"2012","Sex":"Male","Age":"65 and over","Value":"2.718622131"},{"Year":"2013","Sex":"Male","Age":"65 and over","Value":"2.60298006"},{"Year":"2014","Sex":"Male","Age":"65 and over","Value":"2.417981035"},{"Year":"2015","Sex":"Male","Age":"65 and over","Value":"1.842221651"},{"Year":"2016","Sex":"Male","Age":"65 and over","Value":"1.14066552"},{"Year":"2000","Sex":"Female","Age":"16 and over","Value":"4.874781768"},{"Year":"2001","Sex":"Female","Age":"16 and over","Value":"4.465216969"},{"Year":"2002","Sex":"Female","Age":"16 and over","Value":"4.53633156"},{"Year":"2003","Sex":"Female","Age":"16 and over","Value":"4.369251165"},{"Year":"2004","Sex":"Female","Age":"16 and over","Value":"4.314183174"},{"Year":"2005","Sex":"Female","Age":"16 and over","Value":"4.363995126"},{"Year":"2006","Sex":"Female","Age":"16 and over","Value":"5.014369672"},{"Year":"2007","Sex":"Female","Age":"16 and over","Value":"5.030378813"},{"Year":"2008","Sex":"Female","Age":"16 and over","Value":"5.141264058"},{"Year":"2009","Sex":"Female","Age":"16 and over","Value":"6.482068233"},{"Year":"2010","Sex":"Female","Age":"16 and over","Value":"6.95186874"},{"Year":"2011","Sex":"Female","Age":"16 and over","Value":"7.40118571"},{"Year":"2012","Sex":"Female","Age":"16 and over","Value":"7.477554522"},{"Year":"2013","Sex":"Female","Age":"16 and over","Value":"7.12859067"},{"Year":"2014","Sex":"Female","Age":"16 and over","Value":"5.892722691"},{"Year":"2015","Sex":"Female","Age":"16 and over","Value":"5.213727531"},{"Year":"2016","Sex":"Female","Age":"16 and over","Value":"4.762760621"},{"Year":"2000","Sex":"Female","Age":"16 to 64","Value":"4.916584318"},{"Year":"2001","Sex":"Female","Age":"16 to 64","Value":"4.506847514"},{"Year":"2002","Sex":"Female","Age":"16 to 64","Value":"4.578747822"},{"Year":"2003","Sex":"Female","Age":"16 to 64","Value":"4.40444593"},{"Year":"2004","Sex":"Female","Age":"16 to 64","Value":"4.360165416"},{"Year":"2005","Sex":"Female","Age":"16 to 64","Value":"4.404427279"},{"Year":"2006","Sex":"Female","Age":"16 to 64","Value":"5.074629104"},{"Year":"2007","Sex":"Female","Age":"16 to 64","Value":"5.090154575"},{"Year":"2008","Sex":"Female","Age":"16 to 64","Value":"5.205297429"},{"Year":"2009","Sex":"Female","Age":"16 to 64","Value":"6.576584449"},{"Year":"2010","Sex":"Female","Age":"16 to 64","Value":"7.079420932"},{"Year":"2011","Sex":"Female","Age":"16 to 64","Value":"7.527492278"},{"Year":"2012","Sex":"Female","Age":"16 to 64","Value":"7.624238683"},{"Year":"2013","Sex":"Female","Age":"16 to 64","Value":"7.281079034"},{"Year":"2014","Sex":"Female","Age":"16 to 64","Value":"6.029693351"},{"Year":"2015","Sex":"Female","Age":"16 to 64","Value":"5.325922553"},{"Year":"2016","Sex":"Female","Age":"16 to 64","Value":"4.847935953"},{"Year":"2000","Sex":"Female","Age":"16 to 17","Value":"18.44491473"},{"Year":"2001","Sex":"Female","Age":"16 to 17","Value":"16.9153771"},{"Year":"2002","Sex":"Female","Age":"16 to 17","Value":"17.0171495"},{"Year":"2003","Sex":"Female","Age":"16 to 17","Value":"17.80245092"},{"Year":"2004","Sex":"Female","Age":"16 to 17","Value":"18.62702264"},{"Year":"2005","Sex":"Female","Age":"16 to 17","Value":"20.15077284"},{"Year":"2006","Sex":"Female","Age":"16 to 17","Value":"20.36761089"},{"Year":"2007","Sex":"Female","Age":"16 to 17","Value":"23.90679118"},{"Year":"2008","Sex":"Female","Age":"16 to 17","Value":"24.32049501"},{"Year":"2009","Sex":"Female","Age":"16 to 17","Value":"28.07980558"},{"Year":"2010","Sex":"Female","Age":"16 to 17","Value":"31.13785636"},{"Year":"2011","Sex":"Female","Age":"16 to 17","Value":"34.39971423"},{"Year":"2012","Sex":"Female","Age":"16 to 17","Value":"33.84405802"},{"Year":"2013","Sex":"Female","Age":"16 to 17","Value":"33.72090348"},{"Year":"2014","Sex":"Female","Age":"16 to 17","Value":"30.83387517"},{"Year":"2015","Sex":"Female","Age":"16 to 17","Value":"23.29359466"},{"Year":"2016","Sex":"Female","Age":"16 to 17","Value":"23.51878816"},{"Year":"2000","Sex":"Female","Age":"18 to 24","Value":"9.561162984"},{"Year":"2001","Sex":"Female","Age":"18 to 24","Value":"8.807288879"},{"Year":"2002","Sex":"Female","Age":"18 to 24","Value":"8.64287747"},{"Year":"2003","Sex":"Female","Age":"18 to 24","Value":"8.998230003"},{"Year":"2004","Sex":"Female","Age":"18 to 24","Value":"9.252129073"},{"Year":"2005","Sex":"Female","Age":"18 to 24","Value":"9.212994912"},{"Year":"2006","Sex":"Female","Age":"18 to 24","Value":"10.57324072"},{"Year":"2007","Sex":"Female","Age":"18 to 24","Value":"10.56869587"},{"Year":"2008","Sex":"Female","Age":"18 to 24","Value":"10.81350374"},{"Year":"2009","Sex":"Female","Age":"18 to 24","Value":"14.20507556"},{"Year":"2010","Sex":"Female","Age":"18 to 24","Value":"15.60610966"},{"Year":"2011","Sex":"Female","Age":"18 to 24","Value":"16.10917913"},{"Year":"2012","Sex":"Female","Age":"18 to 24","Value":"16.15267812"},{"Year":"2013","Sex":"Female","Age":"18 to 24","Value":"16.26293076"},{"Year":"2014","Sex":"Female","Age":"18 to 24","Value":"12.7436116"},{"Year":"2015","Sex":"Female","Age":"18 to 24","Value":"11.81552749"},{"Year":"2016","Sex":"Female","Age":"18 to 24","Value":"9.773310614"},{"Year":"2000","Sex":"Female","Age":"25 to 34","Value":"4.626103207"},{"Year":"2001","Sex":"Female","Age":"25 to 34","Value":"4.438439866"},{"Year":"2002","Sex":"Female","Age":"25 to 34","Value":"4.618637019"},{"Year":"2003","Sex":"Female","Age":"25 to 34","Value":"4.361154756"},{"Year":"2004","Sex":"Female","Age":"25 to 34","Value":"4.10184818"},{"Year":"2005","Sex":"Female","Age":"25 to 34","Value":"4.255481325"},{"Year":"2006","Sex":"Female","Age":"25 to 34","Value":"5.009491863"},{"Year":"2007","Sex":"Female","Age":"25 to 34","Value":"4.725351393"},{"Year":"2008","Sex":"Female","Age":"25 to 34","Value":"5.118827479"},{"Year":"2009","Sex":"Female","Age":"25 to 34","Value":"6.58988738"},{"Year":"2010","Sex":"Female","Age":"25 to 34","Value":"6.953534786"},{"Year":"2011","Sex":"Female","Age":"25 to 34","Value":"7.738214417"},{"Year":"2012","Sex":"Female","Age":"25 to 34","Value":"7.899351774"},{"Year":"2013","Sex":"Female","Age":"25 to 34","Value":"6.555936442"},{"Year":"2014","Sex":"Female","Age":"25 to 34","Value":"5.849793131"},{"Year":"2015","Sex":"Female","Age":"25 to 34","Value":"5.059607257"},{"Year":"2016","Sex":"Female","Age":"25 to 34","Value":"5.009791454"},{"Year":"2000","Sex":"Female","Age":"35 to 49","Value":"3.562118884"},{"Year":"2001","Sex":"Female","Age":"35 to 49","Value":"3.346496621"},{"Year":"2002","Sex":"Female","Age":"35 to 49","Value":"3.266714843"},{"Year":"2003","Sex":"Female","Age":"35 to 49","Value":"2.967443873"},{"Year":"2004","Sex":"Female","Age":"35 to 49","Value":"2.973215086"},{"Year":"2005","Sex":"Female","Age":"35 to 49","Value":"2.945307698"},{"Year":"2006","Sex":"Female","Age":"35 to 49","Value":"3.57466484"},{"Year":"2007","Sex":"Female","Age":"35 to 49","Value":"3.627391746"},{"Year":"2008","Sex":"Female","Age":"35 to 49","Value":"3.661410443"},{"Year":"2009","Sex":"Female","Age":"35 to 49","Value":"4.803685628"},{"Year":"2010","Sex":"Female","Age":"35 to 49","Value":"5.185754462"},{"Year":"2011","Sex":"Female","Age":"35 to 49","Value":"5.420447166"},{"Year":"2012","Sex":"Female","Age":"35 to 49","Value":"5.621899448"},{"Year":"2013","Sex":"Female","Age":"35 to 49","Value":"5.388223479"},{"Year":"2014","Sex":"Female","Age":"35 to 49","Value":"4.351378935"},{"Year":"2015","Sex":"Female","Age":"35 to 49","Value":"3.957628274"},{"Year":"2016","Sex":"Female","Age":"35 to 49","Value":"3.508552937"},{"Year":"2000","Sex":"Female","Age":"50 to 64","Value":"2.787689933"},{"Year":"2001","Sex":"Female","Age":"50 to 64","Value":"2.267996669"},{"Year":"2002","Sex":"Female","Age":"50 to 64","Value":"2.630686205"},{"Year":"2003","Sex":"Female","Age":"50 to 64","Value":"2.355143459"},{"Year":"2004","Sex":"Female","Age":"50 to 64","Value":"2.12161769"},{"Year":"2005","Sex":"Female","Age":"50 to 64","Value":"2.220665406"},{"Year":"2006","Sex":"Female","Age":"50 to 64","Value":"2.587024538"},{"Year":"2007","Sex":"Female","Age":"50 to 64","Value":"2.523681396"},{"Year":"2008","Sex":"Female","Age":"50 to 64","Value":"2.533770721"},{"Year":"2009","Sex":"Female","Age":"50 to 64","Value":"3.041452073"},{"Year":"2010","Sex":"Female","Age":"50 to 64","Value":"3.363409884"},{"Year":"2011","Sex":"Female","Age":"50 to 64","Value":"3.660017618"},{"Year":"2012","Sex":"Female","Age":"50 to 64","Value":"3.704963141"},{"Year":"2013","Sex":"Female","Age":"50 to 64","Value":"4.086123828"},{"Year":"2014","Sex":"Female","Age":"50 to 64","Value":"3.453463429"},{"Year":"2015","Sex":"Female","Age":"50 to 64","Value":"3.030203194"},{"Year":"2016","Sex":"Female","Age":"50 to 64","Value":"2.972474018"},{"Year":"2009","Sex":"Female","Age":"65 and over","Value":"2.014236236"},{"Year":"2015","Sex":"Female","Age":"65 and over","Value":"1.641235827"},{"Year":"2016","Sex":"Female","Age":"65 and over","Value":"2.07515843"}]' data-indicatorid='indicator_8-5-2' data-country="United Kingdom"
   data-edgesdata='[]' data-charttitle="Unemployment rate" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Unemployment rate<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -235,18 +258,17 @@
             <div role="tabpanel" class="tab-pane active" id="data">
               
                 <h3>Unemployment rate</h3>
-              
-              <p>Unit of Measurement: Percentage (%)</p>     
-              <a href="/data/indicator_8-5-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_8-5-2.csv'>Download source CSV</a>
+                
+              <a href="/data/indicator_8-5-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_8-5-2.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_8-5-2.csv' class='btn btn-primary btn-download' download='indicator_8-5-2.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_8-5-2.csv' class='btn btn-primary btn-download' download='indicator_8-5-2.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Unemployment rate</caption>
   <thead>
   
       <th scope="col">Year</th>
@@ -260,7 +282,7 @@
       
           <td>2000</td>
       
-          <td>5.45</td>
+          <td>5.4</td>
       
       </tr>
   
@@ -268,7 +290,7 @@
       
           <td>2001</td>
       
-          <td>5.06</td>
+          <td>5.1</td>
       
       </tr>
   
@@ -284,7 +306,7 @@
       
           <td>2003</td>
       
-          <td>5.02</td>
+          <td>5.0</td>
       
       </tr>
   
@@ -292,7 +314,7 @@
       
           <td>2004</td>
       
-          <td>4.74</td>
+          <td>4.8</td>
       
       </tr>
   
@@ -300,7 +322,7 @@
       
           <td>2005</td>
       
-          <td>4.81</td>
+          <td>4.8</td>
       
       </tr>
   
@@ -308,7 +330,7 @@
       
           <td>2006</td>
       
-          <td>5.43</td>
+          <td>5.4</td>
       
       </tr>
   
@@ -316,7 +338,7 @@
       
           <td>2007</td>
       
-          <td>5.33</td>
+          <td>5.3</td>
       
       </tr>
   
@@ -324,7 +346,7 @@
       
           <td>2008</td>
       
-          <td>5.66</td>
+          <td>5.7</td>
       
       </tr>
   
@@ -332,7 +354,7 @@
       
           <td>2009</td>
       
-          <td>7.67</td>
+          <td>7.6</td>
       
       </tr>
   
@@ -340,7 +362,7 @@
       
           <td>2010</td>
       
-          <td>7.87</td>
+          <td>7.9</td>
       
       </tr>
   
@@ -356,7 +378,7 @@
       
           <td>2012</td>
       
-          <td>7.97</td>
+          <td>8.0</td>
       
       </tr>
   
@@ -364,7 +386,7 @@
       
           <td>2013</td>
       
-          <td>7.59</td>
+          <td>7.6</td>
       
       </tr>
   
@@ -372,7 +394,7 @@
       
           <td>2014</td>
       
-          <td>6.17</td>
+          <td>6.2</td>
       
       </tr>
   
@@ -380,7 +402,7 @@
       
           <td>2015</td>
       
-          <td>5.38</td>
+          <td>5.4</td>
       
       </tr>
   
@@ -395,7 +417,12 @@
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: Office for National Statistics (ONS)</p>
+                <p>Geographical Area: United Kingdom</p>
+                <p>Units of Measure: Percentage (%)</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -472,7 +499,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Anually
+            Anual
           
         </td>
         </tr>
@@ -1051,8 +1078,8 @@
             
 
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-08-05-02.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 383kB)
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-08-05-02.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 383kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1332,8 +1359,8 @@
             
 
             
-              <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/summaryoflabourmarketstatistics">
-                A01: Summary of labour market statistics
+              <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/datasets/summaryoflabourmarketstatistics" target="_blank">
+                A01: Summary of labour market statistics <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1533,7 +1560,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Proportion of urban population living in slums, informal settlements or inadequate housing - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 11.1.1 - Goal 11 - Sustainable Cities &amp; Communities
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,48 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2008","Area":"City centre","Fails decent homes criteria":null,"Value":"45.89786468"},{"Year":"2008","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"37.53985386"},{"Year":"2008","Area":null,"Fails decent homes criteria":null,"Value":"38.73383991"},{"Year":"2008","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"28.49278432"},{"Year":"2008","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"22.87285187"},{"Year":"2008","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"23.67568894"},{"Year":"2008","Area":"City centre","Fails decent homes criteria":"Repair","Value":"11.8813863"},{"Year":"2008","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"8.509467924"},{"Year":"2008","Area":null,"Fails decent homes criteria":"Repair","Value":"8.991164297"},{"Year":"2008","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"10.14681207"},{"Year":"2008","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"4.566502598"},{"Year":"2008","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"5.363679319"},{"Year":"2008","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"19.32561844"},{"Year":"2008","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"14.20770664"},{"Year":"2008","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"14.93882741"},{"Year":"2009","Area":"City centre","Fails decent homes criteria":null,"Value":"40.37118486"},{"Year":"2009","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"34.190303"},{"Year":"2009","Area":null,"Fails decent homes criteria":null,"Value":"35.18234277"},{"Year":"2009","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"25.76934397"},{"Year":"2009","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"20.93275085"},{"Year":"2009","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"21.70903048"},{"Year":"2009","Area":"City centre","Fails decent homes criteria":"Repair","Value":"9.699487546"},{"Year":"2009","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"8.657939032"},{"Year":"2009","Area":null,"Fails decent homes criteria":"Repair","Value":"8.825108955"},{"Year":"2009","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"10.2201518"},{"Year":"2009","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"4.240026854"},{"Year":"2009","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"5.199844867"},{"Year":"2009","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"15.99217362"},{"Year":"2009","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"11.25905909"},{"Year":"2009","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"12.01873027"},{"Year":"2010","Area":"City centre","Fails decent homes criteria":null,"Value":"34.814"},{"Year":"2010","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"30.523"},{"Year":"2010","Area":null,"Fails decent homes criteria":null,"Value":"31.233"},{"Year":"2010","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"20.73"},{"Year":"2010","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"17.652"},{"Year":"2010","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"18.161"},{"Year":"2010","Area":"City centre","Fails decent homes criteria":"Repair","Value":"9.682"},{"Year":"2010","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"8.496"},{"Year":"2010","Area":null,"Fails decent homes criteria":"Repair","Value":"8.693"},{"Year":"2010","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"6.621"},{"Year":"2010","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"3.093"},{"Year":"2010","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"3.677"},{"Year":"2010","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"14.132"},{"Year":"2010","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"11.374"},{"Year":"2010","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"11.83"},{"Year":"2011","Area":"City centre","Fails decent homes criteria":null,"Value":"32.34"},{"Year":"2011","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"29.003"},{"Year":"2011","Area":null,"Fails decent homes criteria":null,"Value":"29.55"},{"Year":"2011","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"17.862"},{"Year":"2011","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"17.471"},{"Year":"2011","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"17.535"},{"Year":"2011","Area":"City centre","Fails decent homes criteria":"Repair","Value":"8.641"},{"Year":"2011","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"8.034"},{"Year":"2011","Area":null,"Fails decent homes criteria":"Repair","Value":"8.133"},{"Year":"2011","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"2.829"},{"Year":"2011","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"2.902"},{"Year":"2011","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"14.164"},{"Year":"2011","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"9.973"},{"Year":"2011","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"10.66"},{"Year":"2012","Area":"City centre","Fails decent homes criteria":null,"Value":"30.393"},{"Year":"2012","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"28.388"},{"Year":"2012","Area":null,"Fails decent homes criteria":null,"Value":"28.693"},{"Year":"2012","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"17.574"},{"Year":"2012","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"17.656"},{"Year":"2012","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"17.643"},{"Year":"2012","Area":"City centre","Fails decent homes criteria":"Repair","Value":"5.802"},{"Year":"2012","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"6.985"},{"Year":"2012","Area":null,"Fails decent homes criteria":"Repair","Value":"6.805"},{"Year":"2012","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"3.157"},{"Year":"2012","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"3.102"},{"Year":"2012","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"3.11"},{"Year":"2012","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"15.206"},{"Year":"2012","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"9.133"},{"Year":"2012","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"10.058"},{"Year":"2013","Area":"City centre","Fails decent homes criteria":null,"Value":"35.88711918"},{"Year":"2013","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"26.28139529"},{"Year":"2013","Area":null,"Fails decent homes criteria":null,"Value":"27.66556603"},{"Year":"2013","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"17.53106557"},{"Year":"2013","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"15.92357135"},{"Year":"2013","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"16.15520891"},{"Year":"2013","Area":"City centre","Fails decent homes criteria":"Repair","Value":"5.162357871"},{"Year":"2013","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"6.172759516"},{"Year":"2013","Area":null,"Fails decent homes criteria":"Repair","Value":"6.02716212"},{"Year":"2013","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"5.927326583"},{"Year":"2013","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"3.578637085"},{"Year":"2013","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"3.917079799"},{"Year":"2013","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"21.23823232"},{"Year":"2013","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"8.027267945"},{"Year":"2013","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"9.930948548"},{"Year":"2014","Area":"City centre","Fails decent homes criteria":null,"Value":"33.47746689"},{"Year":"2014","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"24.04738636"},{"Year":"2014","Area":null,"Fails decent homes criteria":null,"Value":"25.45999225"},{"Year":"2014","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"16.34568964"},{"Year":"2014","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"14.44155155"},{"Year":"2014","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"14.72678736"},{"Year":"2014","Area":"City centre","Fails decent homes criteria":"Repair","Value":"5.795297118"},{"Year":"2014","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"5.516898011"},{"Year":"2014","Area":null,"Fails decent homes criteria":"Repair","Value":"5.558601602"},{"Year":"2014","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"5.401597364"},{"Year":"2014","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"3.734639328"},{"Year":"2014","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"3.984346075"},{"Year":"2014","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"17.83954472"},{"Year":"2014","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"6.468425272"},{"Year":"2014","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"8.171794636"},{"Year":"2015","Area":"City centre","Fails decent homes criteria":null,"Value":"26.48433619"},{"Year":"2015","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"22.27699332"},{"Year":"2015","Area":null,"Fails decent homes criteria":null,"Value":"23.004484"},{"Year":"2015","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"16.36041117"},{"Year":"2015","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"13.7575783"},{"Year":"2015","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"14.20763352"},{"Year":"2015","Area":"City centre","Fails decent homes criteria":"Repair","Value":"6.260277519"},{"Year":"2015","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"4.818074496"},{"Year":"2015","Area":null,"Fails decent homes criteria":"Repair","Value":"5.067445485"},{"Year":"2015","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"4.585668736"},{"Year":"2015","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"2.426104117"},{"Year":"2015","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"2.799513931"},{"Year":"2015","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"14.7922804"},{"Year":"2015","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"5.593836812"},{"Year":"2015","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"7.184337548"}]' data-indicatorid='indicator_11-1-1' data-country="UK"
-  data-edgesdata='[]' data-charttitle="Percentage of urban dwellings failing the Decent Homes Criteria" data-measurementunit="Percentage (%)" data-datasource="English Housing Survey" data-geographicalarea="England" data-footnote="" data-showdata="true">
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          <p>This indicator is being used as an approximation of the UN SDG Indicator and has not been identified in collaboration with topic experts. We will work to identify or develop UK data to meet the global indicator specification.</p>
+
+<p>Data availability within the UK is limited to England and Wales for this indicator.</p>
+
+<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
+          
+          <hr/>
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2008","Area":"City centre","Fails decent homes criteria":null,"Value":"45.89786468"},{"Year":"2008","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"37.53985386"},{"Year":"2008","Area":null,"Fails decent homes criteria":null,"Value":"38.73383991"},{"Year":"2008","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"28.49278432"},{"Year":"2008","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"22.87285187"},{"Year":"2008","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"23.67568894"},{"Year":"2008","Area":"City centre","Fails decent homes criteria":"Repair","Value":"11.8813863"},{"Year":"2008","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"8.509467924"},{"Year":"2008","Area":null,"Fails decent homes criteria":"Repair","Value":"8.991164297"},{"Year":"2008","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"10.14681207"},{"Year":"2008","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"4.566502598"},{"Year":"2008","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"5.363679319"},{"Year":"2008","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"19.32561844"},{"Year":"2008","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"14.20770664"},{"Year":"2008","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"14.93882741"},{"Year":"2009","Area":"City centre","Fails decent homes criteria":null,"Value":"40.37118486"},{"Year":"2009","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"34.190303"},{"Year":"2009","Area":null,"Fails decent homes criteria":null,"Value":"35.18234277"},{"Year":"2009","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"25.76934397"},{"Year":"2009","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"20.93275085"},{"Year":"2009","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"21.70903048"},{"Year":"2009","Area":"City centre","Fails decent homes criteria":"Repair","Value":"9.699487546"},{"Year":"2009","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"8.657939032"},{"Year":"2009","Area":null,"Fails decent homes criteria":"Repair","Value":"8.825108955"},{"Year":"2009","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"10.2201518"},{"Year":"2009","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"4.240026854"},{"Year":"2009","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"5.199844867"},{"Year":"2009","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"15.99217362"},{"Year":"2009","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"11.25905909"},{"Year":"2009","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"12.01873027"},{"Year":"2010","Area":"City centre","Fails decent homes criteria":null,"Value":"34.814"},{"Year":"2010","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"30.523"},{"Year":"2010","Area":null,"Fails decent homes criteria":null,"Value":"31.233"},{"Year":"2010","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"20.73"},{"Year":"2010","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"17.652"},{"Year":"2010","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"18.161"},{"Year":"2010","Area":"City centre","Fails decent homes criteria":"Repair","Value":"9.682"},{"Year":"2010","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"8.496"},{"Year":"2010","Area":null,"Fails decent homes criteria":"Repair","Value":"8.693"},{"Year":"2010","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"6.621"},{"Year":"2010","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"3.093"},{"Year":"2010","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"3.677"},{"Year":"2010","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"14.132"},{"Year":"2010","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"11.374"},{"Year":"2010","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"11.83"},{"Year":"2011","Area":"City centre","Fails decent homes criteria":null,"Value":"32.34"},{"Year":"2011","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"29.003"},{"Year":"2011","Area":null,"Fails decent homes criteria":null,"Value":"29.55"},{"Year":"2011","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"17.862"},{"Year":"2011","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"17.471"},{"Year":"2011","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"17.535"},{"Year":"2011","Area":"City centre","Fails decent homes criteria":"Repair","Value":"8.641"},{"Year":"2011","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"8.034"},{"Year":"2011","Area":null,"Fails decent homes criteria":"Repair","Value":"8.133"},{"Year":"2011","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"2.829"},{"Year":"2011","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"2.902"},{"Year":"2011","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"14.164"},{"Year":"2011","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"9.973"},{"Year":"2011","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"10.66"},{"Year":"2012","Area":"City centre","Fails decent homes criteria":null,"Value":"30.393"},{"Year":"2012","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"28.388"},{"Year":"2012","Area":null,"Fails decent homes criteria":null,"Value":"28.693"},{"Year":"2012","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"17.574"},{"Year":"2012","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"17.656"},{"Year":"2012","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"17.643"},{"Year":"2012","Area":"City centre","Fails decent homes criteria":"Repair","Value":"5.802"},{"Year":"2012","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"6.985"},{"Year":"2012","Area":null,"Fails decent homes criteria":"Repair","Value":"6.805"},{"Year":"2012","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"3.157"},{"Year":"2012","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"3.102"},{"Year":"2012","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"3.11"},{"Year":"2012","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"15.206"},{"Year":"2012","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"9.133"},{"Year":"2012","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"10.058"},{"Year":"2013","Area":"City centre","Fails decent homes criteria":null,"Value":"35.88711918"},{"Year":"2013","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"26.28139529"},{"Year":"2013","Area":null,"Fails decent homes criteria":null,"Value":"27.66556603"},{"Year":"2013","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"17.53106557"},{"Year":"2013","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"15.92357135"},{"Year":"2013","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"16.15520891"},{"Year":"2013","Area":"City centre","Fails decent homes criteria":"Repair","Value":"5.162357871"},{"Year":"2013","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"6.172759516"},{"Year":"2013","Area":null,"Fails decent homes criteria":"Repair","Value":"6.02716212"},{"Year":"2013","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"5.927326583"},{"Year":"2013","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"3.578637085"},{"Year":"2013","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"3.917079799"},{"Year":"2013","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"21.23823232"},{"Year":"2013","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"8.027267945"},{"Year":"2013","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"9.930948548"},{"Year":"2014","Area":"City centre","Fails decent homes criteria":null,"Value":"33.47746689"},{"Year":"2014","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"24.04738636"},{"Year":"2014","Area":null,"Fails decent homes criteria":null,"Value":"25.45999225"},{"Year":"2014","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"16.34568964"},{"Year":"2014","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"14.44155155"},{"Year":"2014","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"14.72678736"},{"Year":"2014","Area":"City centre","Fails decent homes criteria":"Repair","Value":"5.795297118"},{"Year":"2014","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"5.516898011"},{"Year":"2014","Area":null,"Fails decent homes criteria":"Repair","Value":"5.558601602"},{"Year":"2014","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"5.401597364"},{"Year":"2014","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"3.734639328"},{"Year":"2014","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"3.984346075"},{"Year":"2014","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"17.83954472"},{"Year":"2014","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"6.468425272"},{"Year":"2014","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"8.171794636"},{"Year":"2015","Area":"City centre","Fails decent homes criteria":null,"Value":"26.48433619"},{"Year":"2015","Area":"Other urban centre","Fails decent homes criteria":null,"Value":"22.27699332"},{"Year":"2015","Area":null,"Fails decent homes criteria":null,"Value":"23.004484"},{"Year":"2015","Area":"City centre","Fails decent homes criteria":"Minimum standard","Value":"16.36041117"},{"Year":"2015","Area":"Other urban centre","Fails decent homes criteria":"Minimum standard","Value":"13.7575783"},{"Year":"2015","Area":null,"Fails decent homes criteria":"Minimum standard","Value":"14.20763352"},{"Year":"2015","Area":"City centre","Fails decent homes criteria":"Repair","Value":"6.260277519"},{"Year":"2015","Area":"Other urban centre","Fails decent homes criteria":"Repair","Value":"4.818074496"},{"Year":"2015","Area":null,"Fails decent homes criteria":"Repair","Value":"5.067445485"},{"Year":"2015","Area":"City centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"4.585668736"},{"Year":"2015","Area":"Other urban centre","Fails decent homes criteria":"Modern facilities \nand services","Value":"2.426104117"},{"Year":"2015","Area":null,"Fails decent homes criteria":"Modern facilities \nand services","Value":"2.799513931"},{"Year":"2015","Area":"City centre","Fails decent homes criteria":"Thermal comfort","Value":"14.7922804"},{"Year":"2015","Area":"Other urban centre","Fails decent homes criteria":"Thermal comfort","Value":"5.593836812"},{"Year":"2015","Area":null,"Fails decent homes criteria":"Thermal comfort","Value":"7.184337548"}]' data-indicatorid='indicator_11-1-1' data-country="England"
+  data-edgesdata='[]' data-charttitle="Percentage of urban dwellings failing decent homes criteria" data-measurementunit="Percentage (%)" data-datasource="English Housing Survey" data-geographicalarea="England" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Percentage of urban dwellings failing decent homes criteria<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -234,19 +259,18 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Percentage of urban dwellings failing the Decent Homes Criteria</h3>
-              
-              <p>Unit of Measurement: Percentage (%)</p>     
-              <a href="/data/indicator_11-1-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_11-1-1.csv'>Download source CSV</a>
+                <h3>Percentage of urban dwellings failing decent homes criteria</h3>
+                
+              <a href="/data/indicator_11-1-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_11-1-1.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_11-1-1.csv' class='btn btn-primary btn-download' download='indicator_11-1-1.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_11-1-1.csv' class='btn btn-primary btn-download' download='indicator_11-1-1.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Percentage of urban dwellings failing decent homes criteria</caption>
   <thead>
   
       <th scope="col">Year</th>
@@ -323,7 +347,12 @@
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: English Housing Survey</p>
+                <p>Geographical Area: England</p>
+                <p>Units of Measure: Percentage (%)</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -374,7 +403,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Percentage of urban dwellings failing the Decent Homes Criteria
+            Percentage of urban dwellings failing decent homes criteria
           
         </td>
         </tr>
@@ -400,7 +429,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -979,8 +1008,8 @@
             
 
             
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-11-01-01.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 93kB)
+              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-11-01-01.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 93kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1215,7 +1244,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            Annually
+            Annual
           
         </td>
         </tr>
@@ -1260,8 +1289,8 @@
             
 
             
-              <a href="https://www.gov.uk/government/statistical-data-sets/dwelling-condition-and-safety">
-                DA3202: Decent Homes - areas
+              <a href="https://www.gov.uk/government/statistical-data-sets/dwelling-condition-and-safety" target="_blank">
+                DA3202: Decent Homes - areas <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1461,7 +1490,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {

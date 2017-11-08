@@ -9,9 +9,14 @@
         ================================================== -->
         <meta name="HandheldFriendly" content="True">
         <meta name="MobileOptimized" content="320">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- Title and meta description
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Title and meta description
         ================================================== -->
-        <title>Proportion of population that feel safe walking alone around the area they live - U.K. Indicators For The Sustainable Development Goals</title>
+        
+        
+        <title>
+        Indicator 16.1.4 - Goal 16 - Peace and justice - strong institutions
+        </title>
         <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -36,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171106092749">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171108075811">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -98,8 +103,8 @@
 
 <script type="text/template" id="item_template">
   <% _.each(series, function(seriesItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>" tabindex="0">
-      <h4><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h4>
+    <div class="variable-selector<% if(allowedFields.indexOf(seriesItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=seriesItem.field%>">
+      <button class='accessBtn' tabindex='0'><h5><%=seriesItem.field%><i class="fa fa-chevron-down"></i></h5></button>
       <div class="bar">
         <div class="selected"></div>
       </div>
@@ -115,7 +120,7 @@
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
         <div class="variable-hint">
-          Selectable when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
       <% }%>
 
@@ -176,28 +181,42 @@
   
 </ol>
 
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2012","Sex":null,"Region":null,"Value":"70.49394939"},{"Year":"2013","Sex":null,"Region":null,"Value":"71.24689955"},{"Year":"2014","Sex":null,"Region":null,"Value":"73.66671534"},{"Year":"2015","Sex":null,"Region":null,"Value":"74.74229571"},{"Year":"2006","Sex":"Male","Region":null,"Value":"82.88877601"},{"Year":"2007","Sex":"Male","Region":null,"Value":"83.06835828"},{"Year":"2008","Sex":"Male","Region":null,"Value":"83.44130917"},{"Year":"2009","Sex":"Male","Region":null,"Value":"84.80688286"},{"Year":"2010","Sex":"Male","Region":null,"Value":"86"},{"Year":"2011","Sex":"Male","Region":null,"Value":"87"},{"Year":"2012","Sex":"Male","Region":null,"Value":"84.7"},{"Year":"2013","Sex":"Male","Region":null,"Value":"85.1"},{"Year":"2014","Sex":"Male","Region":null,"Value":"85.8"},{"Year":"2015","Sex":"Male","Region":null,"Value":"87.9"},{"Year":"2006","Sex":"Female","Region":null,"Value":"56.04465894"},{"Year":"2007","Sex":"Female","Region":null,"Value":"56.33030281"},{"Year":"2008","Sex":"Female","Region":null,"Value":"57.3702004"},{"Year":"2009","Sex":"Female","Region":null,"Value":"61.04075977"},{"Year":"2010","Sex":"Female","Region":null,"Value":"63.5"},{"Year":"2011","Sex":"Female","Region":null,"Value":"64.6"},{"Year":"2012","Sex":"Female","Region":null,"Value":"56.7"},{"Year":"2013","Sex":"Female","Region":null,"Value":"58"},{"Year":"2014","Sex":"Female","Region":null,"Value":"61.7"},{"Year":"2015","Sex":"Female","Region":null,"Value":"61.7"},{"Year":"2013","Sex":"Male","Region":"England","Value":"84.74693333"},{"Year":"2013","Sex":"Male","Region":"North East","Value":"85.18920454"},{"Year":"2013","Sex":"Male","Region":"North West","Value":"85.78280906"},{"Year":"2013","Sex":"Male","Region":"Yorkshire and The Humber","Value":"87.41633469"},{"Year":"2013","Sex":"Male","Region":"EastMidlands","Value":"85.80203687"},{"Year":"2013","Sex":"Male","Region":"West Midlands","Value":"77.22885344"},{"Year":"2013","Sex":"Male","Region":"East","Value":"87.78145807"},{"Year":"2013","Sex":"Male","Region":"London","Value":"76.09350146"},{"Year":"2013","Sex":"Male","Region":"South East","Value":"89.31870096"},{"Year":"2013","Sex":"Male","Region":"South West","Value":"91.23471303"},{"Year":"2013","Sex":"Male","Region":"Wales","Value":"91.09952535"},{"Year":"2013","Sex":"Female","Region":"England","Value":"58.02044879"},{"Year":"2013","Sex":"Female","Region":"North East","Value":"54.88647575"},{"Year":"2013","Sex":"Female","Region":"North West","Value":"59.14656757"},{"Year":"2013","Sex":"Female","Region":"Yorkshire and The Humber","Value":"56.49837901"},{"Year":"2013","Sex":"Female","Region":"EastMidlands","Value":"57.07954559"},{"Year":"2013","Sex":"Female","Region":"West Midlands","Value":"52.60432372"},{"Year":"2013","Sex":"Female","Region":"East","Value":"57.23370446"},{"Year":"2013","Sex":"Female","Region":"London","Value":"54.95679341"},{"Year":"2013","Sex":"Female","Region":"South East","Value":"60.98069364"},{"Year":"2013","Sex":"Female","Region":"South West","Value":"66.09833645"},{"Year":"2013","Sex":"Female","Region":"Wales","Value":"56.87636573"},{"Year":"2014","Sex":"Male","Region":"England","Value":"85.5"},{"Year":"2014","Sex":"Male","Region":"North East","Value":"82"},{"Year":"2014","Sex":"Male","Region":"North West","Value":"84.7"},{"Year":"2014","Sex":"Male","Region":"Yorkshire and The Humber","Value":"83.7"},{"Year":"2014","Sex":"Male","Region":"EastMidlands","Value":"84.8"},{"Year":"2014","Sex":"Male","Region":"West Midlands","Value":"81.3"},{"Year":"2014","Sex":"Male","Region":"East","Value":"88.2"},{"Year":"2014","Sex":"Male","Region":"London","Value":"83.1"},{"Year":"2014","Sex":"Male","Region":"South East","Value":"88.1"},{"Year":"2014","Sex":"Male","Region":"South West","Value":"91"},{"Year":"2014","Sex":"Male","Region":"Wales","Value":"90.1"},{"Year":"2014","Sex":"Female","Region":"England","Value":"61.6"},{"Year":"2014","Sex":"Female","Region":"North East","Value":"58.9"},{"Year":"2014","Sex":"Female","Region":"North West","Value":"62.2"},{"Year":"2014","Sex":"Female","Region":"Yorkshire and The Humber","Value":"63"},{"Year":"2014","Sex":"Female","Region":"EastMidlands","Value":"59"},{"Year":"2014","Sex":"Female","Region":"West Midlands","Value":"57.7"},{"Year":"2014","Sex":"Female","Region":"East","Value":"58.1"},{"Year":"2014","Sex":"Female","Region":"London","Value":"60.9"},{"Year":"2014","Sex":"Female","Region":"South East","Value":"63.1"},{"Year":"2014","Sex":"Female","Region":"South West","Value":"69.4"},{"Year":"2014","Sex":"Female","Region":"Wales","Value":"64.2"},{"Year":"2015","Sex":"Male","Region":"England","Value":"87.7"},{"Year":"2015","Sex":"Male","Region":"North East","Value":"86.7"},{"Year":"2015","Sex":"Male","Region":"North West","Value":"86.3"},{"Year":"2015","Sex":"Male","Region":"Yorkshire and The Humber","Value":"85.5"},{"Year":"2015","Sex":"Male","Region":"EastMidlands","Value":"89.7"},{"Year":"2015","Sex":"Male","Region":"West Midlands","Value":"83.8"},{"Year":"2015","Sex":"Male","Region":"East","Value":"87.8"},{"Year":"2015","Sex":"Male","Region":"London","Value":"87"},{"Year":"2015","Sex":"Male","Region":"South East","Value":"88.9"},{"Year":"2015","Sex":"Male","Region":"South West","Value":"94.5"},{"Year":"2015","Sex":"Male","Region":"Wales","Value":"91"},{"Year":"2015","Sex":"Female","Region":"England","Value":"61.4"},{"Year":"2015","Sex":"Female","Region":"North East","Value":"60.1"},{"Year":"2015","Sex":"Female","Region":"North West","Value":"58.8"},{"Year":"2015","Sex":"Female","Region":"Yorkshire and The Humber","Value":"62.6"},{"Year":"2015","Sex":"Female","Region":"EastMidlands","Value":"63.7"},{"Year":"2015","Sex":"Female","Region":"West Midlands","Value":"54"},{"Year":"2015","Sex":"Female","Region":"East","Value":"61.3"},{"Year":"2015","Sex":"Female","Region":"London","Value":"62.6"},{"Year":"2015","Sex":"Female","Region":"South East","Value":"62.4"},{"Year":"2015","Sex":"Female","Region":"South West","Value":"66.7"},{"Year":"2015","Sex":"Female","Region":"Wales","Value":"66.7"}]' data-indicatorid='indicator_16-1-4' data-country="UK"
+  <div class="row" id="page-content-row">
+    <div class="col-md-12">
+      <div id="page-content">
+          
+
+          
+        </div>
+    </div>
+  </div>
+
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2012","Sex":null,"Region":null,"Value":"70.49394939"},{"Year":"2013","Sex":null,"Region":null,"Value":"71.24689955"},{"Year":"2014","Sex":null,"Region":null,"Value":"73.66671534"},{"Year":"2015","Sex":null,"Region":null,"Value":"74.74229571"},{"Year":"2006","Sex":"Male","Region":null,"Value":"82.88877601"},{"Year":"2007","Sex":"Male","Region":null,"Value":"83.06835828"},{"Year":"2008","Sex":"Male","Region":null,"Value":"83.44130917"},{"Year":"2009","Sex":"Male","Region":null,"Value":"84.80688286"},{"Year":"2010","Sex":"Male","Region":null,"Value":"86"},{"Year":"2011","Sex":"Male","Region":null,"Value":"87"},{"Year":"2012","Sex":"Male","Region":null,"Value":"84.7"},{"Year":"2013","Sex":"Male","Region":null,"Value":"85.1"},{"Year":"2014","Sex":"Male","Region":null,"Value":"85.8"},{"Year":"2015","Sex":"Male","Region":null,"Value":"87.9"},{"Year":"2006","Sex":"Female","Region":null,"Value":"56.04465894"},{"Year":"2007","Sex":"Female","Region":null,"Value":"56.33030281"},{"Year":"2008","Sex":"Female","Region":null,"Value":"57.3702004"},{"Year":"2009","Sex":"Female","Region":null,"Value":"61.04075977"},{"Year":"2010","Sex":"Female","Region":null,"Value":"63.5"},{"Year":"2011","Sex":"Female","Region":null,"Value":"64.6"},{"Year":"2012","Sex":"Female","Region":null,"Value":"56.7"},{"Year":"2013","Sex":"Female","Region":null,"Value":"58"},{"Year":"2014","Sex":"Female","Region":null,"Value":"61.7"},{"Year":"2015","Sex":"Female","Region":null,"Value":"61.7"},{"Year":"2013","Sex":"Male","Region":"England","Value":"84.74693333"},{"Year":"2013","Sex":"Male","Region":"North East","Value":"85.18920454"},{"Year":"2013","Sex":"Male","Region":"North West","Value":"85.78280906"},{"Year":"2013","Sex":"Male","Region":"Yorkshire and The Humber","Value":"87.41633469"},{"Year":"2013","Sex":"Male","Region":"EastMidlands","Value":"85.80203687"},{"Year":"2013","Sex":"Male","Region":"West Midlands","Value":"77.22885344"},{"Year":"2013","Sex":"Male","Region":"East","Value":"87.78145807"},{"Year":"2013","Sex":"Male","Region":"London","Value":"76.09350146"},{"Year":"2013","Sex":"Male","Region":"South East","Value":"89.31870096"},{"Year":"2013","Sex":"Male","Region":"South West","Value":"91.23471303"},{"Year":"2013","Sex":"Male","Region":"Wales","Value":"91.09952535"},{"Year":"2013","Sex":"Female","Region":"England","Value":"58.02044879"},{"Year":"2013","Sex":"Female","Region":"North East","Value":"54.88647575"},{"Year":"2013","Sex":"Female","Region":"North West","Value":"59.14656757"},{"Year":"2013","Sex":"Female","Region":"Yorkshire and The Humber","Value":"56.49837901"},{"Year":"2013","Sex":"Female","Region":"EastMidlands","Value":"57.07954559"},{"Year":"2013","Sex":"Female","Region":"West Midlands","Value":"52.60432372"},{"Year":"2013","Sex":"Female","Region":"East","Value":"57.23370446"},{"Year":"2013","Sex":"Female","Region":"London","Value":"54.95679341"},{"Year":"2013","Sex":"Female","Region":"South East","Value":"60.98069364"},{"Year":"2013","Sex":"Female","Region":"South West","Value":"66.09833645"},{"Year":"2013","Sex":"Female","Region":"Wales","Value":"56.87636573"},{"Year":"2014","Sex":"Male","Region":"England","Value":"85.5"},{"Year":"2014","Sex":"Male","Region":"North East","Value":"82"},{"Year":"2014","Sex":"Male","Region":"North West","Value":"84.7"},{"Year":"2014","Sex":"Male","Region":"Yorkshire and The Humber","Value":"83.7"},{"Year":"2014","Sex":"Male","Region":"EastMidlands","Value":"84.8"},{"Year":"2014","Sex":"Male","Region":"West Midlands","Value":"81.3"},{"Year":"2014","Sex":"Male","Region":"East","Value":"88.2"},{"Year":"2014","Sex":"Male","Region":"London","Value":"83.1"},{"Year":"2014","Sex":"Male","Region":"South East","Value":"88.1"},{"Year":"2014","Sex":"Male","Region":"South West","Value":"91"},{"Year":"2014","Sex":"Male","Region":"Wales","Value":"90.1"},{"Year":"2014","Sex":"Female","Region":"England","Value":"61.6"},{"Year":"2014","Sex":"Female","Region":"North East","Value":"58.9"},{"Year":"2014","Sex":"Female","Region":"North West","Value":"62.2"},{"Year":"2014","Sex":"Female","Region":"Yorkshire and The Humber","Value":"63"},{"Year":"2014","Sex":"Female","Region":"EastMidlands","Value":"59"},{"Year":"2014","Sex":"Female","Region":"West Midlands","Value":"57.7"},{"Year":"2014","Sex":"Female","Region":"East","Value":"58.1"},{"Year":"2014","Sex":"Female","Region":"London","Value":"60.9"},{"Year":"2014","Sex":"Female","Region":"South East","Value":"63.1"},{"Year":"2014","Sex":"Female","Region":"South West","Value":"69.4"},{"Year":"2014","Sex":"Female","Region":"Wales","Value":"64.2"},{"Year":"2015","Sex":"Male","Region":"England","Value":"87.7"},{"Year":"2015","Sex":"Male","Region":"North East","Value":"86.7"},{"Year":"2015","Sex":"Male","Region":"North West","Value":"86.3"},{"Year":"2015","Sex":"Male","Region":"Yorkshire and The Humber","Value":"85.5"},{"Year":"2015","Sex":"Male","Region":"EastMidlands","Value":"89.7"},{"Year":"2015","Sex":"Male","Region":"West Midlands","Value":"83.8"},{"Year":"2015","Sex":"Male","Region":"East","Value":"87.8"},{"Year":"2015","Sex":"Male","Region":"London","Value":"87"},{"Year":"2015","Sex":"Male","Region":"South East","Value":"88.9"},{"Year":"2015","Sex":"Male","Region":"South West","Value":"94.5"},{"Year":"2015","Sex":"Male","Region":"Wales","Value":"91"},{"Year":"2015","Sex":"Female","Region":"England","Value":"61.4"},{"Year":"2015","Sex":"Female","Region":"North East","Value":"60.1"},{"Year":"2015","Sex":"Female","Region":"North West","Value":"58.8"},{"Year":"2015","Sex":"Female","Region":"Yorkshire and The Humber","Value":"62.6"},{"Year":"2015","Sex":"Female","Region":"EastMidlands","Value":"63.7"},{"Year":"2015","Sex":"Female","Region":"West Midlands","Value":"54"},{"Year":"2015","Sex":"Female","Region":"East","Value":"61.3"},{"Year":"2015","Sex":"Female","Region":"London","Value":"62.6"},{"Year":"2015","Sex":"Female","Region":"South East","Value":"62.4"},{"Year":"2015","Sex":"Female","Region":"South West","Value":"66.7"},{"Year":"2015","Sex":"Female","Region":"Wales","Value":"66.7"}]' data-indicatorid='indicator_16-1-4' data-country="England and Wales"
   data-edgesdata='[{"From":"Sex","To":"Region"}]' data-charttitle="Percentage of adults who feel safe walking alone after dark" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="" data-showdata="true">
+  
+		<div class='col-xs-12'>
+			<h3>Percentage of adults who feel safe walking alone after dark<a role='button' class='btn btn-primary btn-download' href='#data' style='float:right;margin-top:0'>Accessible version</a></h3>
+		</div>
     <div class="col-md-3">
       <div id="toolbar">
-        <h3>Sub-categories</h3>
+        <h4>Sub-categories</h4>
+        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-      <div id="page-content">
-        
-
-        
-      </div>
-    
+  
       <section>
     
         
           
     
     
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
 
     
     <div class="plot-container">
@@ -235,18 +254,17 @@
             <div role="tabpanel" class="tab-pane active" id="data">
               
                 <h3>Percentage of adults who feel safe walking alone after dark</h3>
-              
-              <p>Unit of Measurement: Percentage (%)</p>     
-              <a href="/data/indicator_16-1-4.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_16-1-4.csv'>Download source CSV</a>
+                
+              <a href="/data/indicator_16-1-4.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_16-1-4.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
  
 
-<a href='/data/headlines/headlines_16-1-4.csv' class='btn btn-primary btn-download' download='indicator_16-1-4.csv'>Download headline CSV</a>
+<a href='/data/headlines/headlines_16-1-4.csv' class='btn btn-primary btn-download' download='indicator_16-1-4.csv' tabindex='0' role='button'>Download headline CSV</a>
 
-<h3>Headline data</h3>
+<h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-  <!-- <caption>Headline data</caption> -->
+   <caption>Percentage of adults who feel safe walking alone after dark</caption>
   <thead>
   
       <th scope="col">Year</th>
@@ -291,7 +309,12 @@
   </tbody>
 </table>
 </div>
-              <p></p>
+              <div id="datatableFooter">
+                <p>Source: Office for National Statistics (ONS)</p>
+                <p>Geographical Area: England and Wales</p>
+                <p>Units of Measure: Percentage (%)</p>
+                <p></p>
+              </div>
             </div>
           
           <div role="tabpanel" class="tab-pane " id="metadata">
@@ -947,8 +970,8 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-16.pdf">
-                United Nations Sustainable Development Goals Metadata (pdf 1361kB)
+              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-16.pdf" target="_blank">
+                United Nations Sustainable Development Goals Metadata (pdf 1361kB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1228,8 +1251,8 @@
             
 
             
-              <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/measuringnationalwellbeingdomainsandmeasures">
-                National Wellbeing
+              <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/measuringnationalwellbeingdomainsandmeasures" target="_blank">
+                National Wellbeing <span class="visuallyhidden">opens in a new window</span>
               </a>
             
             
@@ -1429,7 +1452,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171106092749'></script>
+<script src='/assets/js/sdg.js?v=20171108075811'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
