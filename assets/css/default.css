@@ -211,10 +211,13 @@ h5,
 h6 {
   font-family: 'Open Sans', sans-serif; }
 
-ul {
+header ul {
   margin: 0;
-  padding: 0;
+  padding-left: 0;
   list-style-type: none; }
+
+ul {
+  padding-left: 2rem; }
 
 .table-hover tbody tr:hover {
   background: #e0e0e0; }
@@ -519,6 +522,8 @@ h5 + .btn-download {
   #main-content #toolbar .accessBtn {
     padding: 0px !important;
     border: none; }
+  #main-content #toolbar > p {
+    font-size: 96%; }
   #main-content #fields {
     user-select: none;
     -moz-user-select: none;
@@ -854,18 +859,22 @@ footer {
   .newslist article time {
     margin: 0; }
 
-#page-content table {
-  margin-top: 5px;
-  margin-bottom: 5px;
-  border-style: solid;
-  border-color: #E5E6E7;
-  border-width: 1px; }
-#page-content td, #page-content th {
-  padding-right: 5px;
-  padding-left: 5px; }
-#page-content thead {
-  padding-bottom: 10px;
-  border-bottom: 1pt solid #E5E6E7; }
+#page-content {
+  border-top: 1px solid #faebcc;
+  border-bottom: 1px solid #faebcc;
+  padding-top: 10px; }
+  #page-content table {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-style: solid;
+    border-color: #E5E6E7;
+    border-width: 1px; }
+  #page-content td, #page-content th {
+    padding-right: 5px;
+    padding-left: 5px; }
+  #page-content thead {
+    padding-bottom: 10px;
+    border-bottom: 1pt solid #E5E6E7; }
 
 .no-js #indicatorData > .col-md-3 {
   display: none; }
