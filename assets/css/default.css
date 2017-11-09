@@ -11,10 +11,14 @@
   padding-left: 0;
   padding-right: 0; }
 
+html {
+  position: relative;
+  min-height: 100%; }
+
 body {
   background: #eaeaea;
   padding: 40px 0 0 0;
-  margin: 0; }
+  margin: 0 0 50px 0; }
 
 header {
   background: #fff url("../img/sdgbg.png") bottom left repeat-x; }
@@ -203,6 +207,15 @@ header {
         margin-top: 0; }
         .navbar #search input:focus {
           width: 100%; } }
+@media only screen and (min-width: 769px) and (max-width: 991px) {
+  .navbar {
+    width: 100%; }
+    .navbar ul.navbar-nav {
+      float: none;
+      margin-top: 40px; }
+
+  #search {
+    margin-top: -100px; } }
 h1,
 h2,
 h3,
@@ -828,13 +841,21 @@ h5 + .btn-download {
 footer {
   clear: left;
   background-color: #414042;
-  color: #E5E6E7; }
+  color: #E5E6E7;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  /* Set the fixed height of the footer here */ }
   footer img {
     float: left;
     margin-right: 12px;
     margin-top: 3px; }
   footer .row {
     padding: 15px 0; }
+    @media only screen and (max-width: 767px) {
+      footer .row {
+        padding: 5px 0; } }
   footer a {
     color: #E5E6E7;
     text-decoration: underline; }
