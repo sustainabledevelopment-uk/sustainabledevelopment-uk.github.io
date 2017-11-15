@@ -41,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171113145218">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171115080657">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -84,6 +84,9 @@
             <a href="/publications">Publications</a>
         </li>
         <li class="nav-link" >
+          <a href="/guidance">Guidance</a>
+        </li>
+        <li class="nav-link" >
           <a href="/faq">FAQ</a>
         </li>
 <!--        <li class="nav-link" >
@@ -96,6 +99,7 @@
   </div>
 
 </header>
+
 
 
 
@@ -195,7 +199,7 @@
   </div>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"3.513562623"},{"Year":"2001","Value":"3.467934295"},{"Year":"2002","Value":"3.276302646"},{"Year":"2003","Value":"2.887483714"},{"Year":"2004","Value":"2.76895567"},{"Year":"2005","Value":"2.9033342"},{"Year":"2006","Value":"2.890159156"},{"Year":"2007","Value":"2.524498892"},{"Year":"2008","Value":"2.215975078"},{"Year":"2009","Value":"2.401201404"},{"Year":"2010","Value":"2.805949697"},{"Year":"2011","Value":"2.649912855"},{"Year":"2012","Value":"2.163095518"},{"Year":"2013","Value":"2.341445456"},{"Year":"2014","Value":"2.45522998"},{"Year":"2015","Value":"2.150207341"},{"Year":"2016","Value":"2.464656251"}]' data-indicatorid='indicator_3-3-3' data-country="United Kingdom"
-  data-edgesdata='[]' data-charttitle="New cases of Malaria per 100,000 population" data-measurementunit="Rate per 100,000 population" data-datasource="Public Health England (PHE)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  data-edgesdata='[]' data-charttitle="New cases of Malaria per 100,000 population" data-measurementunit="Rate per 100,000 population" data-datasource="Public Health England (PHE)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
   
 <div class='row'>
   <div class='col-xs-12'>
@@ -1572,7 +1576,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171113145218'></script>
+<script src='/assets/js/sdg.js?v=20171115080657'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1615,6 +1619,7 @@ $(function() {
         geographicalArea: domData.geographicalarea,
         showData: domData.showdata,
         footnote: domData.footnote,
+        graphType: domData.graphtype
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
@@ -1624,7 +1629,7 @@ $(function() {
       controller.initialise();
     }
 
-    
+
 });
 </script>
 

@@ -41,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171113145218">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171115080657">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -84,6 +84,9 @@
             <a href="/publications">Publications</a>
         </li>
         <li class="nav-link" >
+          <a href="/guidance">Guidance</a>
+        </li>
+        <li class="nav-link" >
           <a href="/faq">FAQ</a>
         </li>
 <!--        <li class="nav-link" >
@@ -96,6 +99,7 @@
   </div>
 
 </header>
+
 
 
 
@@ -194,7 +198,7 @@
   </div>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_4-7-1' data-country=""
-  data-edgesdata='[]' data-charttitle="Percentage of UK 8th graders attending public or private schools that emphasize "world affairs" to a moderate or great extent" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false">
+  data-edgesdata='[]' data-charttitle="Percentage of UK 8th graders attending public or private schools that emphasize "world affairs" to a moderate or great extent" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false" data-graphtype="line">
   
     <div class="col-md-12">
   
@@ -1352,7 +1356,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171113145218'></script>
+<script src='/assets/js/sdg.js?v=20171115080657'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1395,6 +1399,7 @@ $(function() {
         geographicalArea: domData.geographicalarea,
         showData: domData.showdata,
         footnote: domData.footnote,
+        graphType: domData.graphtype
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
@@ -1404,7 +1409,7 @@ $(function() {
       controller.initialise();
     }
 
-    
+
 });
 </script>
 

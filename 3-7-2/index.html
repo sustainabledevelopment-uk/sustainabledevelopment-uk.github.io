@@ -41,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171113145218">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171115080657">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -84,6 +84,9 @@
             <a href="/publications">Publications</a>
         </li>
         <li class="nav-link" >
+          <a href="/guidance">Guidance</a>
+        </li>
+        <li class="nav-link" >
           <a href="/faq">FAQ</a>
         </li>
 <!--        <li class="nav-link" >
@@ -96,6 +99,7 @@
   </div>
 
 </header>
+
 
 
 
@@ -195,12 +199,12 @@
   </div>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Value":"13.7"},{"Year":"2015","Value":"14.5"},{"Year":"2014","Value":"15.6"},{"Year":"2013","Value":"17.4"},{"Year":"2012","Value":"19.9"},{"Year":"2011","Value":"21.2"},{"Year":"2010","Value":"23.4"},{"Year":"2009","Value":"24.8"},{"Year":"2008","Value":"25.7"},{"Year":"2007","Value":"25.9"},{"Year":"2006","Value":"26.6"},{"Year":"2005","Value":"26.4"},{"Year":"2004","Value":"26.9"},{"Year":"2003","Value":"26.9"},{"Year":"2002","Value":"27.1"},{"Year":"2001","Value":"28"},{"Year":"2000","Value":"29.3"}]' data-indicatorid='indicator_3-7-2' data-country="England and Wales"
-  data-edgesdata='[]' data-charttitle="Number of live births to adolescent mothers (aged 15 to 19) per 1,000 population" data-measurementunit="Rate per 1,000 population" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="" data-showdata="true">
+  data-edgesdata='[]' data-charttitle="Number of live births to young mothers (under 20 year olds) per 1,000 population" data-measurementunit="Rate per 1,000 population" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="The population denominator is the total number of females aged 15 to 19" data-showdata="true" data-graphtype="line">
   
 <div class='row'>
   <div class='col-xs-12'>
     <div class='col-sm-8 col-md-9'>
-      <h3>Number of live births to adolescent mothers (aged 15 to 19) per 1,000 population</h3>
+      <h3>Number of live births to young mothers (under 20 year olds) per 1,000 population</h3>
     </div>
     <div class='col-sm-4 col-md-3'>
       <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
@@ -263,7 +267,7 @@
           
             <div role="tabpanel" class="tab-pane active" id="data">
               
-                <h3>Number of live births to adolescent mothers (aged 15 to 19) per 1,000 population</h3>
+                <h3>Number of live births to young mothers (under 20 year olds) per 1,000 population</h3>
               
               <a href="/data/indicator_3-7-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-7-2.csv' tabindex='0' role='button'>Download source CSV</a>
               <div id="datatables"> 
@@ -274,7 +278,7 @@
 <h4>Headline data</h4>
 
 <table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Number of live births to adolescent mothers (aged 15 to 19) per 1,000 population</caption>
+   <caption>Number of live births to young mothers (under 20 year olds) per 1,000 population</caption>
   <thead>
   
       <th scope="col">Year</th>
@@ -434,6 +438,8 @@
                 <p>Units of Measure: Rate per 1,000 population</p>
                 
                 
+                <p>Footnote: The population denominator is the total number of females aged 15 to 19</p>
+                
               </div>
             </div>
           
@@ -485,7 +491,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            Number of live births to adolescent mothers (aged 15 to 19) per 1,000 population
+            Number of live births to young mothers (under 20 year olds) per 1,000 female population aged 15 to 19
           
         </td>
         </tr>
@@ -1572,7 +1578,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171113145218'></script>
+<script src='/assets/js/sdg.js?v=20171115080657'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1615,6 +1621,7 @@ $(function() {
         geographicalArea: domData.geographicalarea,
         showData: domData.showdata,
         footnote: domData.footnote,
+        graphType: domData.graphtype
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
@@ -1624,7 +1631,7 @@ $(function() {
       controller.initialise();
     }
 
-    
+
 });
 </script>
 

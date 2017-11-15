@@ -41,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171113145218">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171115080657">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -84,6 +84,9 @@
             <a href="/publications">Publications</a>
         </li>
         <li class="nav-link" >
+          <a href="/guidance">Guidance</a>
+        </li>
+        <li class="nav-link" >
           <a href="/faq">FAQ</a>
         </li>
 <!--        <li class="nav-link" >
@@ -96,6 +99,7 @@
   </div>
 
 </header>
+
 
 
 
@@ -193,7 +197,7 @@
   </div>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Value":"30160.99101"},{"Year":"2001","Value":"32744.91773"},{"Year":"2002","Value":"36692.1732"},{"Year":"2003","Value":"41374.72615"},{"Year":"2004","Value":"48528.74304"},{"Year":"2005","Value":"57919.5752"},{"Year":"2006","Value":"74162.29921"},{"Year":"2007","Value":"89418.38276"},{"Year":"2008","Value":"101113.5394"},{"Year":"2009","Value":"111858.6753"},{"Year":"2010","Value":"117330.5948"},{"Year":"2011","Value":"120386.2338"},{"Year":"2012","Value":"127127.1325"},{"Year":"2013","Value":"133737.8667"},{"Year":"2014","Value":"140659.4777"},{"Year":"2015","Value":"145065.1845"},{"Year":"2016","Value":"149917.0847"},{"Year":"2017","Value":"151259.8301"}]' data-indicatorid='indicator_2-5-1' data-country="United Kingdom"
-  data-edgesdata='[]' data-charttitle="Cumulative Enrichment Index of plant genetic resources" data-measurementunit="Cumulative Enrichment Index" data-datasource="Department for Environment, Food and Rural Affairs (Defra)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  data-edgesdata='[]' data-charttitle="Cumulative Enrichment Index of plant genetic resources" data-measurementunit="Cumulative Enrichment Index" data-datasource="Department for Environment, Food and Rural Affairs (Defra)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
   
 <div class='row'>
   <div class='col-xs-12'>
@@ -1578,7 +1582,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171113145218'></script>
+<script src='/assets/js/sdg.js?v=20171115080657'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1621,6 +1625,7 @@ $(function() {
         geographicalArea: domData.geographicalarea,
         showData: domData.showdata,
         footnote: domData.footnote,
+        graphType: domData.graphtype
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
@@ -1630,7 +1635,7 @@ $(function() {
       controller.initialise();
     }
 
-    
+
 });
 </script>
 

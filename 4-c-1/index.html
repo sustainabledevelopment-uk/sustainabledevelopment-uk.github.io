@@ -41,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171113145218">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171115080657">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -84,6 +84,9 @@
             <a href="/publications">Publications</a>
         </li>
         <li class="nav-link" >
+          <a href="/guidance">Guidance</a>
+        </li>
+        <li class="nav-link" >
           <a href="/faq">FAQ</a>
         </li>
 <!--        <li class="nav-link" >
@@ -96,6 +99,7 @@
   </div>
 
 </header>
+
 
 
 
@@ -195,7 +199,7 @@
   </div>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Sex":"Male","Value":"93.05"},{"Year":"2016","Sex":"Female","Value":"94.92"},{"Year":"2016","Sex":null,"Value":"94.44"},{"Year":"2015","Sex":"Male","Value":"93.23"},{"Year":"2015","Sex":"Female","Value":"95.19"},{"Year":"2015","Sex":null,"Value":"94.71"},{"Year":"2014","Sex":"Male","Value":"93.87"},{"Year":"2014","Sex":"Female","Value":"95.59"},{"Year":"2014","Sex":null,"Value":"95.17"},{"Year":"2013","Sex":"Male","Value":"94.45"},{"Year":"2013","Sex":"Female","Value":"96.16"},{"Year":"2013","Sex":null,"Value":"95.72"},{"Year":"2012","Sex":"Male","Value":"95.1"},{"Year":"2012","Sex":"Female","Value":"96.47"},{"Year":"2012","Sex":null,"Value":"96.12"}]' data-indicatorid='indicator_4-c-1' data-country="England"
-  data-edgesdata='[]' data-charttitle="Percentage of teachers in state funded schools with teacher training qualifications at the relevant level" data-measurementunit="Percentage (%)" data-datasource="United Nations Educational, Scientific and Cultural Organization (UNESCO)" data-geographicalarea="England" data-footnote="The annual data are being recorded as a headcount every November. The date on the x axis is the year of the headcount." data-showdata="true">
+  data-edgesdata='[]' data-charttitle="Percentage of teachers in state funded schools with teacher training qualifications at the relevant level" data-measurementunit="Percentage (%)" data-datasource="United Nations Educational, Scientific and Cultural Organization (UNESCO)" data-geographicalarea="England" data-footnote="The annual data are being recorded as a headcount every November. The date on the x axis is the year of the headcount." data-showdata="true" data-graphtype="line">
   
 <div class='row'>
   <div class='col-xs-12'>
@@ -1478,7 +1482,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171113145218'></script>
+<script src='/assets/js/sdg.js?v=20171115080657'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1521,6 +1525,7 @@ $(function() {
         geographicalArea: domData.geographicalarea,
         showData: domData.showdata,
         footnote: domData.footnote,
+        graphType: domData.graphtype
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
@@ -1530,7 +1535,7 @@ $(function() {
       controller.initialise();
     }
 
-    
+
 });
 </script>
 

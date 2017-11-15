@@ -101,7 +101,7 @@ var indicatorModel = function (options) {
   this.onFieldsCleared = new event(this);
   this.onSelectionUpdate = new event(this);
   this.onNoHeadlineData = new event(this);
-  
+
   // data rounding:
   this.roundingFunc = options.roundingFunc || function(value) {
     var to = 3, mult = Math.pow(10, to - Math.floor(Math.log(Math.abs(value)) / Math.LN10) - 1);
@@ -116,6 +116,7 @@ var indicatorModel = function (options) {
   this.country = options.country;
   this.indicatorId = options.indicatorId;
   this.chartTitle = options.chartTitle;
+  this.graphType = options.graphType;
   this.measurementUnit = options.measurementUnit;
   this.dataSource = options.dataSource;
   this.geographicalArea = options.geographicalArea;
@@ -142,7 +143,7 @@ var indicatorModel = function (options) {
           };
         })
       };
-    });    
+    });
 
     var extractUnique = function(prop) {
       return _.chain(that.data).pluck(prop).uniq().sortBy(function(year) {
@@ -168,7 +169,7 @@ var indicatorModel = function (options) {
 
       // only apply a rounding function for non-zero values:
       if(item.Value != 0) {
-        item.Value = that.roundingFunc(item.Value);        
+        item.Value = that.roundingFunc(item.Value);
       }
 
       // remove any undefined/null values:
@@ -270,7 +271,7 @@ var indicatorModel = function (options) {
     this.getData();
     this.onUnitsSelectedChanged.notify(selectedUnit);
   };
-  
+
   this.getCombinationData = function(obj) {
     var getCombinations = function(fields, arr, n) {
       var index = 0, ret = [];
@@ -290,7 +291,7 @@ var indicatorModel = function (options) {
                 value: elem[j],
                 field: field
               }].concat(childperm[k]));
-            }            
+            }
           }
         }
       }
@@ -300,8 +301,8 @@ var indicatorModel = function (options) {
     var	loop = 1,
         res = [],
         src = JSON.parse(JSON.stringify(obj));
-    
-    for(; loop <= src.length; loop++) { 
+
+    for(; loop <= src.length; loop++) {
       obj = JSON.parse(JSON.stringify(src));
       res = res.concat(getCombinations(_.pluck(obj, 'field'), _.pluck(obj, 'values'), loop));
     }
@@ -334,7 +335,7 @@ var indicatorModel = function (options) {
         }).join(', ');
       },
       getColor = function(datasetIndex) {
-        
+
         // offset if there is no headline data:
         if(!this.hasHeadline) {
           datasetIndex += 1;
@@ -359,7 +360,7 @@ var indicatorModel = function (options) {
           datasetIndex += 1;
         }
 
-        // 0 - 
+        // 0 -
         // the first dataset is the headline:
         return datasetIndex > colors.length ? [5, 5] : undefined;
       },
@@ -373,7 +374,7 @@ var indicatorModel = function (options) {
             borderColor: '#' + getColor(datasetIndex),
             backgroundColor: '#' + getColor(datasetIndex),
             pointBorderColor: '#' + getColor(datasetIndex),
-            borderDash: getBorderDash(datasetIndex),            
+            borderDash: getBorderDash(datasetIndex),
             data: _.map(that.years, function (year) {
               var found = _.findWhere(data, {
                 Year: year
@@ -385,7 +386,7 @@ var indicatorModel = function (options) {
         datasetIndex++;
         return ds;
       };
-    
+
     if (fields && !_.isArray(fields)) {
       fields = [].concat(fields);
     }
@@ -409,7 +410,7 @@ var indicatorModel = function (options) {
       }
       return matched;
     });
-    
+
     //}
 /*
     console.table(matchedData);
@@ -439,7 +440,7 @@ var indicatorModel = function (options) {
               //   fieldItemState.state = 'possible';
               // } else {
                // fieldItemValue.state = 'excluded';
-              // }  
+              // }
 
               // isSingleValueSelected() &&
               fieldItemValue.state = that.selectedFields[0].field == fieldItemState.field ? 'possible' : 'excluded';
@@ -461,7 +462,7 @@ var indicatorModel = function (options) {
           defaultState: (_.filter(fieldStates, function(fv) { return fv === 'default' || fv === 'selected'; }).length / maxFieldValueCount) * 100,
           excludedState: (_.filter(fieldStates, function(fv) { return fv === 'excluded'; }).length / maxFieldValueCount) * 100
         }
-      };      
+      };
     });
 */
 
@@ -487,7 +488,7 @@ var indicatorModel = function (options) {
     }
 
     // headline plot should use the specific unit, if any,
-    // but there may not be any headline data at all, or for the 
+    // but there may not be any headline data at all, or for the
     // specific unit:
     if(that.selectedUnit) {
       headline = _.where(headline, { Units : that.selectedUnit });
@@ -495,7 +496,7 @@ var indicatorModel = function (options) {
 
     // only add to the datasets if there is any headline data:
     if(headline.length) {
-      datasets.push(convertToDataset(headline));      
+      datasets.push(convertToDataset(headline));
     } else {
       this.hasHeadline = false;
     }
@@ -530,7 +531,7 @@ var indicatorModel = function (options) {
       datasetCountExceedsMax = true;
       filteredDatasets = filteredDatasets.slice(0, maxDatasetCount);
     }
-    
+
     _.chain(filteredDatasets)
       .sortBy(function(ds) { return ds.combinationDescription; })
       .each(function(ds) { datasets.push(convertToDataset(ds.data, ds.combinationDescription)); });
@@ -609,7 +610,7 @@ var indicatorView = function (model, options) {
 
   var chartHeight = screen.height < options.maxChartHeight ? screen.height : options.maxChartHeight;
 
-  $('.plot-container', this._rootElement).css('height', chartHeight + 'px'); 
+  $('.plot-container', this._rootElement).css('height', chartHeight + 'px');
 
   this._model.onDataComplete.attach(function (sender, args) {
 
@@ -718,7 +719,7 @@ var indicatorView = function (model, options) {
   $(this._rootElement).on('click', '#fields label', function (e) {
 
     if(!$(this).closest('.variable-options').hasClass('disallowed')) {
-      $(this).find(':checkbox').trigger('click');      
+      $(this).find(':checkbox').trigger('click');
     }
 
     e.preventDefault();
@@ -765,7 +766,7 @@ var indicatorView = function (model, options) {
     if($(this).parent().hasClass('excluded') || $(this).closest('.variable-selector').hasClass('disallowed')) {
       return;
     }
-    
+
     updateWithSelectedFields();
 
     e.stopPropagation();
@@ -788,9 +789,9 @@ var indicatorView = function (model, options) {
   this.initialiseSeries = function (args) {
     if(args.series.length) {
       var template = _.template($("#item_template").html());
-      
+
         $('<button id="clear" class="disabled">Clear selections <i class="fa fa-remove"></i></button>').insertBefore('#fields');
-    
+
         $('#fields').html(template({
             series: args.series,
             allowedFields: args.allowedFields,
@@ -824,7 +825,7 @@ var indicatorView = function (model, options) {
     var that = this;
 
     this._chartInstance = new Chart($(this._rootElement).find('canvas'), {
-      type: 'line',
+      type: this._model.graphType,
       data: chartInfo,
       options: {
         responsive: true,
@@ -849,12 +850,13 @@ var indicatorView = function (model, options) {
         layout: {
           padding: {
             top: 20,
-            bottom: 70
+            // default of 85, but do a rough line count based on 150 characters per line * 20 pixels per
+            // row
+            bottom: that._model.footnote ? (20 * (that._model.footnote.length / 150)) + 85 : 85
           }
         },
         legend: {
           display: true,
-          //usePointStyle: true,
           usePointStyle: false,
           position: 'bottom',
           padding: 20
@@ -874,20 +876,47 @@ var indicatorView = function (model, options) {
 
     Chart.pluginService.register({
       afterDraw: function(chart) {
-        var $canvas = $(that._rootElement).find('canvas');
+        var $canvas = $(that._rootElement).find('canvas'),
+            font = '12px Arial',
+            canvas = $canvas.get(0),
+            textRowHeight = 20,
+            ctx = canvas.getContext("2d");
 
-        function putTextOutputs(textOutputs, x0, textAlign) {
-          var textRowHeight = 20;
-          var x = x0;
+            ctx.font = font;
+            ctx.textAlign = 'left';
+            ctx.textBaseline = 'middle';
+            ctx.fillStyle = '#6e6e6e';
+
+            var getLinesFromText = function(text) {
+              var width = parseInt($canvas.css('width')), //width(),
+                  lines = [],
+                  line = '',
+                  lineTest = '',
+                  words = text.split(' ');
+
+              for (var i = 0, len = words.length; i < len; i++) {
+                lineTest = line + words[i] + ' ';
+
+                // Check total width of line or last word
+                if (ctx.measureText(lineTest).width > width) {
+                  // Record and reset the current line
+                  lines.push(line);
+                  line = words[i] + ' ';
+                } else {
+                  line = lineTest;
+                }
+              }
+
+              // catch left overs:
+              if (line.length > 0) {
+                lines.push(line.trim());
+              }
+
+              return lines;
+            };
+
+        function putTextOutputs(textOutputs, x) {
           var y = $canvas.height() - 10 - ((textOutputs.length - 1) * textRowHeight);
-
-          var canvas = $canvas.get(0);
-          var ctx = canvas.getContext("2d");
-
-          ctx.textAlign = textAlign;
-          ctx.textBaseline = 'middle';
-          ctx.font = '12px Arial';
-          ctx.fillStyle = '#6e6e6e';
 
           _.each(textOutputs, function(textOutput) {
             ctx.fillText(textOutput, x, y);
@@ -895,17 +924,24 @@ var indicatorView = function (model, options) {
           });
         }
 
-        var textOutputsLeft = [
+        var graphFooterItems = [
           'Source: ' + (that._model.dataSource ? that._model.dataSource : ''),
           'Geographical Area: ' + (that._model.geographicalArea ? that._model.geographicalArea : ''),
-          'Unit of Measurement: ' + (that._model.measurementUnit ? that._model.measurementUnit : ''),
-          (that._model.footnote ? 'Footnote: ' + that._model.footnote : '')
+          'Unit of Measurement: ' + (that._model.measurementUnit ? that._model.measurementUnit : '')
         ];
-        putTextOutputs(textOutputsLeft, 0, 'left');
 
-        //var textOutputsRight = [
-        //];
-        //putTextOutputs(textOutputsRight, $canvas.width(), 'right');
+        if(that._model.footnote) {
+          var footnoteRows = getLinesFromText('Footnote: ' + that._model.footnote);
+          graphFooterItems = graphFooterItems.concat(footnoteRows);
+
+          if(footnoteRows.length > 1) {
+            //that._chartInstance.options.layout.padding.bottom += textRowHeight * footnoteRows.length;
+            that._chartInstance.resize(parseInt($canvas.css('width')), parseInt($canvas.css('height')) + textRowHeight * footnoteRows.length);
+            that._chartInstance.resize();
+          }
+        }
+
+        putTextOutputs(graphFooterItems, 0);
       }
     });
   };

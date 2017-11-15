@@ -41,7 +41,7 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171113145218">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171115080657">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -84,6 +84,9 @@
             <a href="/publications">Publications</a>
         </li>
         <li class="nav-link" >
+          <a href="/guidance">Guidance</a>
+        </li>
+        <li class="nav-link" >
           <a href="/faq">FAQ</a>
         </li>
 <!--        <li class="nav-link" >
@@ -96,6 +99,7 @@
   </div>
 
 </header>
+
 
 
 
@@ -193,7 +197,7 @@
   </div>
 
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2008","Water body type":"Rivers and canals","Value":"32.24476148"},{"Year":"2008","Water body type":"Lakes","Value":"42.98724954"},{"Year":"2008","Water body type":"Estuaries and coastal","Value":"70.07874016"},{"Year":"2009","Water body type":null,"Value":"35.99519941"},{"Year":"2009","Water body type":"Rivers and canals","Value":"32.20262833"},{"Year":"2009","Water body type":"Lakes","Value":"43.15693431"},{"Year":"2009","Water body type":"Estuaries and coastal","Value":"72.70341207"},{"Year":"2010","Water body type":null,"Value":"36.18622805"},{"Year":"2010","Water body type":"Rivers and canals","Value":"32.73195876"},{"Year":"2010","Water body type":"Lakes","Value":"43.15693431"},{"Year":"2010","Water body type":"Estuaries and coastal","Value":"73.49081365"},{"Year":"2011","Water body type":null,"Value":"36.6722315"},{"Year":"2011","Water body type":"Rivers and canals","Value":"33.03187882"},{"Year":"2011","Water body type":"Lakes","Value":"37.8649635"},{"Year":"2011","Water body type":"Estuaries and coastal","Value":"74.54068241"},{"Year":"2012","Water body type":null,"Value":"36.48168909"},{"Year":"2012","Water body type":"Rivers and canals","Value":"33.20606401"},{"Year":"2012","Water body type":"Lakes","Value":"37.55697356"},{"Year":"2012","Water body type":"Estuaries and coastal","Value":"74.77003942"},{"Year":"2013","Water body type":null,"Value":"36.58831181"},{"Year":"2013","Water body type":"Rivers and canals","Value":"31.65777828"},{"Year":"2013","Water body type":"Lakes","Value":"38.01276208"},{"Year":"2013","Water body type":"Estuaries and coastal","Value":"74.77003942"},{"Year":"2014","Water body type":null,"Value":"34.72543754"},{"Year":"2014","Water body type":"Rivers and canals","Value":"30.9361369"},{"Year":"2014","Water body type":"Lakes","Value":"37.83044667"},{"Year":"2014","Water body type":"Estuaries and coastal","Value":"74.77003942"},{"Year":"2015","Water body type":null,"Value":"35.16716447"},{"Year":"2015","Water body type":"Rivers and canals","Value":"22.63286999"},{"Year":"2015","Water body type":"Lakes","Value":"24.5751634"},{"Year":"2015","Water body type":"Estuaries and coastal","Value":"29.36507937"},{"Year":"2016","Water body type":null,"Value":"34.94675702"},{"Year":"2016","Water body type":"Rivers and canals","Value":"31.60358433"},{"Year":"2016","Water body type":"Lakes","Value":"30.80524345"},{"Year":"2016","Water body type":"Estuaries and coastal","Value":"74.86702128"}]' data-indicatorid='indicator_6-3-2' data-country="United Kingdom"
-  data-edgesdata='[]' data-charttitle="Percentage of water bodies awarded ‘good’ or ‘high' under the Water Framework Directive" data-measurementunit="Percentage (%)" data-datasource="Joint Nature Conservation Committee (JNCC)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true">
+  data-edgesdata='[]' data-charttitle="Percentage of water bodies awarded ‘good’ or ‘high' under the Water Framework Directive" data-measurementunit="Percentage (%)" data-datasource="Joint Nature Conservation Committee (JNCC)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
   
 <div class='row'>
   <div class='col-xs-12'>
@@ -1498,7 +1502,7 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171113145218'></script>
+<script src='/assets/js/sdg.js?v=20171115080657'></script>
 <script>
 $(function() {
     $(window).scroll(function() {
@@ -1541,6 +1545,7 @@ $(function() {
         geographicalArea: domData.geographicalarea,
         showData: domData.showdata,
         footnote: domData.footnote,
+        graphType: domData.graphtype
       }),
       view  = new indicatorView(model, {
         rootElement: '#indicatorData',
@@ -1550,7 +1555,7 @@ $(function() {
       controller.initialise();
     }
 
-    
+
 });
 </script>
 
