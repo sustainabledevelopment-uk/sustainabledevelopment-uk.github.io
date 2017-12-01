@@ -17,7 +17,6 @@
         <title>
         Indicator 9.5.2 - Goal 9 - Industry, innovation and infrastructure
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-9">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/industry-innovation-and-infrastructure" title="Build resilient infrastructure, promote inclusive and sustainable industrialization and foster innovation">Goal 9</a></li>
-      <li class="active">Researchers (in full-time equivalent) per million inhabitants</li>
+      <li class="active">Indicator 9.5.2</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -195,34 +202,166 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"4692.245472"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3458.135117"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"472.8849731"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1576.268011"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"371.0389181"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"326.2699149"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"711.6733005"},{"Year":"2016","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1234.110355"},{"Year":"2016","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"630.8027193"},{"Year":"2016","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"603.3076357"},{"Year":"2016","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"5737.533833"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3985.894725"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"769.3573047"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1646.288736"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"497.410654"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"415.7803306"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"657.0576997"},{"Year":"2016","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1751.639108"},{"Year":"2016","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"1046.986884"},{"Year":"2016","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"704.6522242"},{"Year":"2016","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"3675.010625"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2944.54106"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"184.3681978"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1508.128251"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"248.0584833"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"239.1616808"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"764.8244475"},{"Year":"2016","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"730.4695648"},{"Year":"2016","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"225.7864202"},{"Year":"2016","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"504.6831446"},{"Year":"2015","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"4194.240516"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3215.435417"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"447.6731685"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1537.736139"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"460.8201505"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"203.5017662"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"565.7041929"},{"Year":"2015","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"978.8050991"},{"Year":"2015","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"365.8577791"},{"Year":"2015","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"612.9473199"},{"Year":"2015","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"4194.304843"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3240.087241"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"497.8418177"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1372.775117"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"636.7686175"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"199.2552015"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"533.4464868"},{"Year":"2015","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"954.2176022"},{"Year":"2015","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"472.775133"},{"Year":"2015","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"481.4424692"},{"Year":"2015","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"4194.173744"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3191.497509"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"398.9636752"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1697.896169"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"289.990289"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"207.6245712"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"597.0228047"},{"Year":"2015","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1002.676235"},{"Year":"2015","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"262.0507235"},{"Year":"2015","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"740.6255115"},{"Year":"2014","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"4340.772298"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3198.734303"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"450.0222921"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1570.604117"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"399.3696282"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"152.4378917"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"626.300374"},{"Year":"2014","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1142.037996"},{"Year":"2014","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"519.9019146"},{"Year":"2014","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"622.136081"},{"Year":"2014","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"5140.789926"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3705.979716"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"667.4267321"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1604.151658"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"596.3121308"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"158.5531648"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"679.5360296"},{"Year":"2014","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1434.810211"},{"Year":"2014","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"866.4910011"},{"Year":"2014","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"568.3192094"},{"Year":"2014","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"3565.375118"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2707.09996"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"239.3073804"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1538.091028"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"208.4870286"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"146.5109898"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"574.7035332"},{"Year":"2014","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"858.2751578"},{"Year":"2014","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"183.9770753"},{"Year":"2014","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"674.2980825"},{"Year":"2013","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"3902.461092"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2778.536074"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"395.6122466"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1139.025079"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"372.4317806"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"252.738836"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"618.7281318"},{"Year":"2013","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1123.925018"},{"Year":"2013","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"552.556169"},{"Year":"2013","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"571.3688486"},{"Year":"2013","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"4402.496037"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3074.015649"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"614.3718358"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1003.424315"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"567.8808891"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"306.3772418"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"581.9613668"},{"Year":"2013","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1328.480389"},{"Year":"2013","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"786.4454218"},{"Year":"2013","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"542.0349671"},{"Year":"2013","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"3418.391138"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2492.491166"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"183.8353074"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1270.299518"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"183.221295"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"200.8127498"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"654.3222957"},{"Year":"2013","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"925.8999725"},{"Year":"2013","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"326.1326771"},{"Year":"2013","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"599.7672954"},{"Year":"2012","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"3739.392512"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2628.223844"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"503.9164901"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1039.777098"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"294.0585511"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"213.8764618"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"576.5952437"},{"Year":"2012","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1111.168668"},{"Year":"2012","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"518.4993329"},{"Year":"2012","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"592.6693352"},{"Year":"2012","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"4470.701182"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3248.260542"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"691.1015991"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1066.989083"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"486.664281"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"216.7955252"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"786.7100543"},{"Year":"2012","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1222.440639"},{"Year":"2012","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"607.1168839"},{"Year":"2012","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"615.3237553"},{"Year":"2012","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"3032.342767"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2028.755465"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"322.9410931"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1013.466952"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"107.8425658"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"211.0540451"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"373.450809"},{"Year":"2012","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1003.587301"},{"Year":"2012","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"432.8213369"},{"Year":"2012","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"570.7659644"},{"Year":"2011","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"3757.551146"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2801.291299"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"436.1216147"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1103.150663"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"276.9214238"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"268.8626549"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"716.2349431"},{"Year":"2011","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"956.2598463"},{"Year":"2011","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"470.7427183"},{"Year":"2011","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"485.517128"},{"Year":"2011","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"4673.627344"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3274.661603"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"498.0824837"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1032.599047"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"445.7306028"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"337.16798"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"961.0814895"},{"Year":"2011","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1398.965742"},{"Year":"2011","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"715.497144"},{"Year":"2011","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"683.4685977"},{"Year":"2011","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"2872.509242"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2343.956357"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"376.2595655"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1171.310225"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"113.8316446"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"202.8713535"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"479.6835679"},{"Year":"2011","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"528.5528848"},{"Year":"2011","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"234.2806856"},{"Year":"2011","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"294.2721992"}]' data-indicatorid='indicator_9-5-2' data-country="United Kingdom"
-  data-edgesdata='[{"From":"Occupation category","To":"Occupation subcategory"}]' data-charttitle="Researchers per million population" data-measurementunit="Rate per million population" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Researchers per million population</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Researchers per million population</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"4692.245472"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3458.135117"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"472.8849731"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1576.268011"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"371.0389181"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"326.2699149"},{"Year":"2016","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"711.6733005"},{"Year":"2016","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1234.110355"},{"Year":"2016","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"630.8027193"},{"Year":"2016","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"603.3076357"},{"Year":"2016","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"5737.533833"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3985.894725"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"769.3573047"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1646.288736"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"497.410654"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"415.7803306"},{"Year":"2016","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"657.0576997"},{"Year":"2016","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1751.639108"},{"Year":"2016","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"1046.986884"},{"Year":"2016","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"704.6522242"},{"Year":"2016","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"3675.010625"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2944.54106"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"184.3681978"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1508.128251"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"248.0584833"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"239.1616808"},{"Year":"2016","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"764.8244475"},{"Year":"2016","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"730.4695648"},{"Year":"2016","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"225.7864202"},{"Year":"2016","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"504.6831446"},{"Year":"2015","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"4194.240516"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3215.435417"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"447.6731685"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1537.736139"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"460.8201505"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"203.5017662"},{"Year":"2015","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"565.7041929"},{"Year":"2015","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"978.8050991"},{"Year":"2015","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"365.8577791"},{"Year":"2015","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"612.9473199"},{"Year":"2015","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"4194.304843"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3240.087241"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"497.8418177"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1372.775117"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"636.7686175"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"199.2552015"},{"Year":"2015","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"533.4464868"},{"Year":"2015","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"954.2176022"},{"Year":"2015","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"472.775133"},{"Year":"2015","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"481.4424692"},{"Year":"2015","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"4194.173744"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3191.497509"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"398.9636752"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1697.896169"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"289.990289"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"207.6245712"},{"Year":"2015","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"597.0228047"},{"Year":"2015","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1002.676235"},{"Year":"2015","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"262.0507235"},{"Year":"2015","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"740.6255115"},{"Year":"2014","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"4340.772298"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3198.734303"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"450.0222921"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1570.604117"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"399.3696282"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"152.4378917"},{"Year":"2014","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"626.300374"},{"Year":"2014","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1142.037996"},{"Year":"2014","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"519.9019146"},{"Year":"2014","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"622.136081"},{"Year":"2014","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"5140.789926"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3705.979716"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"667.4267321"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1604.151658"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"596.3121308"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"158.5531648"},{"Year":"2014","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"679.5360296"},{"Year":"2014","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1434.810211"},{"Year":"2014","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"866.4910011"},{"Year":"2014","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"568.3192094"},{"Year":"2014","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"3565.375118"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2707.09996"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"239.3073804"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1538.091028"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"208.4870286"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"146.5109898"},{"Year":"2014","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"574.7035332"},{"Year":"2014","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"858.2751578"},{"Year":"2014","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"183.9770753"},{"Year":"2014","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"674.2980825"},{"Year":"2013","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"3902.461092"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2778.536074"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"395.6122466"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1139.025079"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"372.4317806"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"252.738836"},{"Year":"2013","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"618.7281318"},{"Year":"2013","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1123.925018"},{"Year":"2013","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"552.556169"},{"Year":"2013","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"571.3688486"},{"Year":"2013","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"4402.496037"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3074.015649"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"614.3718358"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1003.424315"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"567.8808891"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"306.3772418"},{"Year":"2013","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"581.9613668"},{"Year":"2013","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1328.480389"},{"Year":"2013","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"786.4454218"},{"Year":"2013","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"542.0349671"},{"Year":"2013","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"3418.391138"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2492.491166"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"183.8353074"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1270.299518"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"183.221295"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"200.8127498"},{"Year":"2013","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"654.3222957"},{"Year":"2013","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"925.8999725"},{"Year":"2013","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"326.1326771"},{"Year":"2013","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"599.7672954"},{"Year":"2012","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"3739.392512"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2628.223844"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"503.9164901"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1039.777098"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"294.0585511"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"213.8764618"},{"Year":"2012","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"576.5952437"},{"Year":"2012","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1111.168668"},{"Year":"2012","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"518.4993329"},{"Year":"2012","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"592.6693352"},{"Year":"2012","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"4470.701182"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3248.260542"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"691.1015991"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1066.989083"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"486.664281"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"216.7955252"},{"Year":"2012","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"786.7100543"},{"Year":"2012","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1222.440639"},{"Year":"2012","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"607.1168839"},{"Year":"2012","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"615.3237553"},{"Year":"2012","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"3032.342767"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2028.755465"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"322.9410931"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1013.466952"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"107.8425658"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"211.0540451"},{"Year":"2012","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"373.450809"},{"Year":"2012","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1003.587301"},{"Year":"2012","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"432.8213369"},{"Year":"2012","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"570.7659644"},{"Year":"2011","Sex":null,"Occupation category":null,"Occupation subcategory":null,"Value":"3757.551146"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2801.291299"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"436.1216147"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1103.150663"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"276.9214238"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"268.8626549"},{"Year":"2011","Sex":null,"Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"716.2349431"},{"Year":"2011","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"956.2598463"},{"Year":"2011","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"470.7427183"},{"Year":"2011","Sex":null,"Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"485.517128"},{"Year":"2011","Sex":"Male","Occupation category":null,"Occupation subcategory":null,"Value":"4673.627344"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"3274.661603"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"498.0824837"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1032.599047"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"445.7306028"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"337.16798"},{"Year":"2011","Sex":"Male","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"961.0814895"},{"Year":"2011","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"1398.965742"},{"Year":"2011","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"715.497144"},{"Year":"2011","Sex":"Male","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"683.4685977"},{"Year":"2011","Sex":"Female","Occupation category":null,"Occupation subcategory":null,"Value":"2872.509242"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":null,"Value":"2343.956357"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Chemical scientists","Value":"376.2595655"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Biological scientists and biochemists","Value":"1171.310225"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Physical scientists","Value":"113.8316446"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Social and humanities scientists","Value":"202.8713535"},{"Year":"2011","Sex":"Female","Occupation category":"Natural and social science professionals","Occupation subcategory":"Natural and social science professionals not elsewhere classified","Value":"479.6835679"},{"Year":"2011","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":null,"Value":"528.5528848"},{"Year":"2011","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Actuaries, economists and statisticians","Value":"234.2806856"},{"Year":"2011","Sex":"Female","Occupation category":"Business and research professionals","Occupation subcategory":"Business and related research professionals","Value":"294.2721992"}]' data-indicatorid='indicator_9-5-2' data-country="United Kingdom"
+  data-edgesdata='[{"From":"Occupation category","To":"Occupation subcategory"}]' data-charttitle="Researchers per million population" data-measurementunit="Rate per million population" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_9-5-2.csv" class="btn btn-primary btn-download" download="indicator_9-5-2.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_9-5-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_9-5-2.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Researchers per million population</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2016</td>    
+          
+          
+          
+          <td class="table-value">4692.245472</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">4194.240516</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">4340.772298</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">3902.461092</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td class="table-value">3739.392512</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td class="table-value">3757.5511460000002</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Office for National Statistics (ONS)</p>
+    
+    
+    <p>Geographical Area: United Kingdom</p>
+    
+    
+    <p>Units of Measure: Rate per million population</p>
+    
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -234,24 +373,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -259,106 +400,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Researchers per million population</h3>
-              
-              <a href="/data/indicator_9-5-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_9-5-2.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_9-5-2.csv' class='btn btn-primary btn-download' download='indicator_9-5-2.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Researchers per million population</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2016</td>
-      
-          <td>4692.245472</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>4194.240516</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>4340.772298</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>3902.461092</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>3739.392512</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>3757.5511460000002</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Office for National Statistics (ONS)</p>
-                
-                
-                <p>Geographical Area: United Kingdom</p>
-                
-                
-                <p>Units of Measure: Rate per million population</p>
-                
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -636,7 +688,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -849,7 +901,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1438,22 +1490,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1484,20 +1531,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1513,6 +1558,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1539,6 +1590,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1546,3 +1599,4 @@ $(function() {
 </body>
 </html>
 
+  

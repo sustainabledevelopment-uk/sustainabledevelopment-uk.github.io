@@ -17,7 +17,6 @@
         <title>
         Indicator 16.1.3 - Goal 16 - Peace and justice - strong institutions
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-16">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/peace-and-justice-strong-institutions" title="Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels">Goal 16</a></li>
-      <li class="active">Proportion of population subjected to physical, psychological or sexual violence in the previous 12 months</li>
+      <li class="active">Indicator 16.1.3</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -197,34 +204,276 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2002","Offence category":null,"Offence sub-category":null,"Value":"103.1982099"},{"Year":"2002","Offence category":"Violence against the person","Offence sub-category":null,"Value":"13.53594916"},{"Year":"2002","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.019996189"},{"Year":"2002","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"7.10930398"},{"Year":"2002","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"6.406648987"},{"Year":"2002","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.081971425"},{"Year":"2002","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.234816753"},{"Year":"2002","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.847154672"},{"Year":"2002","Offence category":"Robbery","Offence sub-category":null,"Value":"2.106016928"},{"Year":"2002","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.211344627"},{"Year":"2002","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.894672301"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":null,"Value":"65.18946589"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"16.99960607"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"20.52443567"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"2.835906463"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.866979394"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.937378354"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"17.02515994"},{"Year":"2002","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"21.2848065"},{"Year":"2002","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"1.0227659"},{"Year":"2002","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"20.2620406"},{"Year":"2003","Offence category":null,"Offence sub-category":null,"Value":"103.0937846"},{"Year":"2003","Offence category":"Violence against the person","Offence sub-category":null,"Value":"15.19419085"},{"Year":"2003","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.017185612"},{"Year":"2003","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"8.701755744"},{"Year":"2003","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"6.475249497"},{"Year":"2003","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.14847032"},{"Year":"2003","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.252309112"},{"Year":"2003","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.896161208"},{"Year":"2003","Offence category":"Robbery","Offence sub-category":null,"Value":"1.972086955"},{"Year":"2003","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.192197493"},{"Year":"2003","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.779889462"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":null,"Value":"61.7778443"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"15.58896564"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"18.7255869"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"2.607384266"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.004994359"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.764689093"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"17.08622403"},{"Year":"2003","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"23.00119218"},{"Year":"2003","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"1.093985848"},{"Year":"2003","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"21.90720633"},{"Year":"2004","Offence category":null,"Offence sub-category":null,"Value":"95.01775128"},{"Year":"2004","Offence category":"Violence against the person","Offence sub-category":null,"Value":"15.99737421"},{"Year":"2004","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.016419728"},{"Year":"2004","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"9.744370937"},{"Year":"2004","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"6.23658354"},{"Year":"2004","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.152483319"},{"Year":"2004","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.265080243"},{"Year":"2004","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.887403076"},{"Year":"2004","Offence category":"Robbery","Offence sub-category":null,"Value":"1.721612286"},{"Year":"2004","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.150085396"},{"Year":"2004","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.57152689"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":null,"Value":"53.6830907"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"12.87015374"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"15.51354081"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"2.309374238"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.004285095"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.318005681"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"15.66773114"},{"Year":"2004","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"22.46319077"},{"Year":"2004","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.914964762"},{"Year":"2004","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"21.54822601"},{"Year":"2005","Offence category":null,"Offence sub-category":null,"Value":"92.38101986"},{"Year":"2005","Offence category":"Violence against the person","Offence sub-category":null,"Value":"15.77877884"},{"Year":"2005","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.014373865"},{"Year":"2005","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"10.2253871"},{"Year":"2005","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.539017876"},{"Year":"2005","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.134237189"},{"Year":"2005","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.27173002"},{"Year":"2005","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.862507169"},{"Year":"2005","Offence category":"Robbery","Offence sub-category":null,"Value":"1.847493215"},{"Year":"2005","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.164810287"},{"Year":"2005","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.682682928"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":null,"Value":"51.53578165"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"12.13628336"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"14.91610235"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"2.330428746"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.129589727"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.568913258"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"14.45446422"},{"Year":"2005","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"22.08472897"},{"Year":"2005","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.860381191"},{"Year":"2005","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"21.22434778"},{"Year":"2006","Offence category":null,"Offence sub-category":null,"Value":"89.37353887"},{"Year":"2006","Offence category":"Violence against the person","Offence sub-category":null,"Value":"15.20970197"},{"Year":"2006","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.0141483"},{"Year":"2006","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"9.450709443"},{"Year":"2006","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.744844228"},{"Year":"2006","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.0460409"},{"Year":"2006","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.257095881"},{"Year":"2006","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.788945019"},{"Year":"2006","Offence category":"Robbery","Offence sub-category":null,"Value":"1.892213737"},{"Year":"2006","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.176461773"},{"Year":"2006","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.715751964"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":null,"Value":"49.2537024"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"11.61004233"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"14.27923663"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"2.143747358"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.063001258"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.49286264"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"13.66481219"},{"Year":"2006","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"21.97187986"},{"Year":"2006","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.804474551"},{"Year":"2006","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"21.16740531"},{"Year":"2007","Offence category":null,"Offence sub-category":null,"Value":"80.41548332"},{"Year":"2007","Offence category":"Violence against the person","Offence sub-category":null,"Value":"13.87890913"},{"Year":"2007","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.014364926"},{"Year":"2007","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"8.382573518"},{"Year":"2007","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.481970684"},{"Year":"2007","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.966917039"},{"Year":"2007","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.234898969"},{"Year":"2007","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.73201807"},{"Year":"2007","Offence category":"Robbery","Offence sub-category":null,"Value":"1.571300428"},{"Year":"2007","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.170025112"},{"Year":"2007","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.401275316"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":null,"Value":"44.90620297"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"10.8192912"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"12.16761091"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.884307522"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.927680329"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.387366065"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"12.71994694"},{"Year":"2007","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"19.09215376"},{"Year":"2007","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.728941195"},{"Year":"2007","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"18.36321256"},{"Year":"2008","Offence category":null,"Offence sub-category":null,"Value":"75.22386806"},{"Year":"2008","Offence category":"Violence against the person","Offence sub-category":null,"Value":"13.03625664"},{"Year":"2008","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.012208712"},{"Year":"2008","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"7.734200603"},{"Year":"2008","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.289847323"},{"Year":"2008","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.922732239"},{"Year":"2008","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.240791101"},{"Year":"2008","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.681941138"},{"Year":"2008","Offence category":"Robbery","Offence sub-category":null,"Value":"1.473319405"},{"Year":"2008","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.171914844"},{"Year":"2008","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.301404561"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":null,"Value":"42.68599605"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"10.6933607"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"10.88217284"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.648396746"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.915315226"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.897304287"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"11.64944625"},{"Year":"2008","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"17.10556373"},{"Year":"2008","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.640350617"},{"Year":"2008","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"16.46521311"},{"Year":"2009","Offence category":null,"Offence sub-category":null,"Value":"68.56799896"},{"Year":"2009","Offence category":"Violence against the person","Offence sub-category":null,"Value":"12.7459715"},{"Year":"2009","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.011305262"},{"Year":"2009","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"7.316400726"},{"Year":"2009","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.41826551"},{"Year":"2009","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.966526943"},{"Year":"2009","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.274863735"},{"Year":"2009","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.691663208"},{"Year":"2009","Offence category":"Robbery","Offence sub-category":null,"Value":"1.369486588"},{"Year":"2009","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.149192987"},{"Year":"2009","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.220293601"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":null,"Value":"38.88681828"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"9.858279427"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"9.02365936"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.682058841"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.002982401"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.612934824"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"10.70690343"},{"Year":"2009","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"14.59919565"},{"Year":"2009","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.594073271"},{"Year":"2009","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"14.00512238"},{"Year":"2010","Offence category":null,"Offence sub-category":null,"Value":"65.14218374"},{"Year":"2010","Offence category":"Violence against the person","Offence sub-category":null,"Value":"12.04821131"},{"Year":"2010","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.011568699"},{"Year":"2010","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"6.667426689"},{"Year":"2010","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.369215924"},{"Year":"2010","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.976550248"},{"Year":"2010","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.287714804"},{"Year":"2010","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.688835444"},{"Year":"2010","Offence category":"Robbery","Offence sub-category":null,"Value":"1.379354594"},{"Year":"2010","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.139928752"},{"Year":"2010","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.239425843"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":null,"Value":"38.15400284"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"9.46285156"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"8.140018839"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.681933094"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.972689434"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.538057371"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"11.35845254"},{"Year":"2010","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"12.58406475"},{"Year":"2010","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.527127123"},{"Year":"2010","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"12.05693762"},{"Year":"2011","Offence category":null,"Offence sub-category":null,"Value":"62.03635636"},{"Year":"2011","Offence category":"Violence against the person","Offence sub-category":null,"Value":"11.25323637"},{"Year":"2011","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.009929537"},{"Year":"2011","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"6.071292678"},{"Year":"2011","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.172014154"},{"Year":"2011","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.947346105"},{"Year":"2011","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.287974542"},{"Year":"2011","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.659371563"},{"Year":"2011","Offence category":"Robbery","Offence sub-category":null,"Value":"1.341080096"},{"Year":"2011","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.121560522"},{"Year":"2011","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.219519575"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":null,"Value":"37.25424193"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"8.996699605"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"7.495490006"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.806134382"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.081108951"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.536228869"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"11.33858012"},{"Year":"2011","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"11.24045187"},{"Year":"2011","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.488737938"},{"Year":"2011","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"10.75171393"},{"Year":"2012","Offence category":null,"Offence sub-category":null,"Value":"56.08864173"},{"Year":"2012","Offence category":"Violence against the person","Offence sub-category":null,"Value":"10.70199536"},{"Year":"2012","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.009933965"},{"Year":"2012","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"5.555988065"},{"Year":"2012","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.136073328"},{"Year":"2012","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.954212488"},{"Year":"2012","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.291503112"},{"Year":"2012","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.662709376"},{"Year":"2012","Offence category":"Robbery","Offence sub-category":null,"Value":"1.15994169"},{"Year":"2012","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.10895316"},{"Year":"2012","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.05098853"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":null,"Value":"33.84213332"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"8.185640233"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"6.896076328"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.953982351"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.731963583"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.351932326"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"9.722538494"},{"Year":"2012","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"9.430358876"},{"Year":"2012","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.34368313"},{"Year":"2012","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"9.086675746"},{"Year":"2013","Offence category":null,"Offence sub-category":null,"Value":"54.9405531"},{"Year":"2013","Offence category":"Violence against the person","Offence sub-category":null,"Value":"11.21883907"},{"Year":"2013","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.009422322"},{"Year":"2013","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"5.706780586"},{"Year":"2013","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.502636164"},{"Year":"2013","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.135487053"},{"Year":"2013","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.366834161"},{"Year":"2013","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.768652892"},{"Year":"2013","Offence category":"Robbery","Offence sub-category":null,"Value":"1.022277764"},{"Year":"2013","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.102337379"},{"Year":"2013","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"0.919940384"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":null,"Value":"32.61871825"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"7.835058661"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"6.57690464"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.737419644"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.726883614"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.675755866"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"9.066695828"},{"Year":"2013","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"8.945230958"},{"Year":"2013","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.32849079"},{"Year":"2013","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"8.616740168"},{"Year":"2014","Offence category":null,"Offence sub-category":null,"Value":"55.67161711"},{"Year":"2014","Offence category":"Violence against the person","Offence sub-category":null,"Value":"13.66455136"},{"Year":"2014","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.009447177"},{"Year":"2014","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"6.569124388"},{"Year":"2014","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"7.085979794"},{"Year":"2014","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.552322198"},{"Year":"2014","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.515994975"},{"Year":"2014","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"1.036327223"},{"Year":"2014","Offence category":"Robbery","Offence sub-category":null,"Value":"0.880554161"},{"Year":"2014","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.094787847"},{"Year":"2014","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"0.785766314"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":null,"Value":"30.73737376"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"7.214201516"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"6.138048648"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.376969949"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.638804255"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.724954151"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"8.644395245"},{"Year":"2014","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"8.836815628"},{"Year":"2014","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.343821052"},{"Year":"2014","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"8.492994576"},{"Year":"2015","Offence category":null,"Offence sub-category":null,"Value":"60.04373487"},{"Year":"2015","Offence category":"Violence against the person","Offence sub-category":null,"Value":"17.28600012"},{"Year":"2015","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.009998493"},{"Year":"2015","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"7.509808539"},{"Year":"2015","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"9.76619309"},{"Year":"2015","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.848693404"},{"Year":"2015","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.621840045"},{"Year":"2015","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"1.226853359"},{"Year":"2015","Offence category":"Robbery","Offence sub-category":null,"Value":"0.890283893"},{"Year":"2015","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.094550205"},{"Year":"2015","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"0.795733689"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":null,"Value":"30.62228214"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"6.985027031"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"6.379665338"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.448231133"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.507072435"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.858385044"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"8.443901158"},{"Year":"2015","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"9.396475312"},{"Year":"2015","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.382538145"},{"Year":"2015","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"9.013937167"},{"Year":"2016","Offence category":null,"Offence sub-category":null,"Value":"65.36669258"},{"Year":"2016","Offence category":"Violence against the person","Offence sub-category":null,"Value":"20.14665285"},{"Year":"2016","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.012490282"},{"Year":"2016","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"8.044191068"},{"Year":"2016","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"12.0899715"},{"Year":"2016","Offence category":"Sexual offences","Offence sub-category":null,"Value":"2.09038611"},{"Year":"2016","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.710235812"},{"Year":"2016","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"1.380150298"},{"Year":"2016","Offence category":"Robbery","Offence sub-category":null,"Value":"1.022337393"},{"Year":"2016","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.103671072"},{"Year":"2016","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"0.918666321"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":null,"Value":"32.37961475"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"7.100716939"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"7.022924765"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.527822406"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.627122743"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"6.374466615"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"8.726561285"},{"Year":"2016","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"9.727701477"},{"Year":"2016","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.416049063"},{"Year":"2016","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"9.311652414"}]' data-indicatorid='indicator_16-1-3' data-country="England and Wales"
-  data-edgesdata='[{"From":"Offence category","To":"Offence sub-category"}]' data-charttitle="Police recorded victim-based crime rate per 1,000 population" data-measurementunit="Rate per 1,000 population" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Police recorded victim-based crime rate per 1,000 population</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Police recorded victim-based crime rate per 1,000 population</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2002","Offence category":null,"Offence sub-category":null,"Value":"103.1982099"},{"Year":"2002","Offence category":"Violence against the person","Offence sub-category":null,"Value":"13.53594916"},{"Year":"2002","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.019996189"},{"Year":"2002","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"7.10930398"},{"Year":"2002","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"6.406648987"},{"Year":"2002","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.081971425"},{"Year":"2002","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.234816753"},{"Year":"2002","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.847154672"},{"Year":"2002","Offence category":"Robbery","Offence sub-category":null,"Value":"2.106016928"},{"Year":"2002","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.211344627"},{"Year":"2002","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.894672301"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":null,"Value":"65.18946589"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"16.99960607"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"20.52443567"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"2.835906463"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.866979394"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.937378354"},{"Year":"2002","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"17.02515994"},{"Year":"2002","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"21.2848065"},{"Year":"2002","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"1.0227659"},{"Year":"2002","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"20.2620406"},{"Year":"2003","Offence category":null,"Offence sub-category":null,"Value":"103.0937846"},{"Year":"2003","Offence category":"Violence against the person","Offence sub-category":null,"Value":"15.19419085"},{"Year":"2003","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.017185612"},{"Year":"2003","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"8.701755744"},{"Year":"2003","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"6.475249497"},{"Year":"2003","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.14847032"},{"Year":"2003","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.252309112"},{"Year":"2003","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.896161208"},{"Year":"2003","Offence category":"Robbery","Offence sub-category":null,"Value":"1.972086955"},{"Year":"2003","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.192197493"},{"Year":"2003","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.779889462"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":null,"Value":"61.7778443"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"15.58896564"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"18.7255869"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"2.607384266"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.004994359"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.764689093"},{"Year":"2003","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"17.08622403"},{"Year":"2003","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"23.00119218"},{"Year":"2003","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"1.093985848"},{"Year":"2003","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"21.90720633"},{"Year":"2004","Offence category":null,"Offence sub-category":null,"Value":"95.01775128"},{"Year":"2004","Offence category":"Violence against the person","Offence sub-category":null,"Value":"15.99737421"},{"Year":"2004","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.016419728"},{"Year":"2004","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"9.744370937"},{"Year":"2004","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"6.23658354"},{"Year":"2004","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.152483319"},{"Year":"2004","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.265080243"},{"Year":"2004","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.887403076"},{"Year":"2004","Offence category":"Robbery","Offence sub-category":null,"Value":"1.721612286"},{"Year":"2004","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.150085396"},{"Year":"2004","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.57152689"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":null,"Value":"53.6830907"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"12.87015374"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"15.51354081"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"2.309374238"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.004285095"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.318005681"},{"Year":"2004","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"15.66773114"},{"Year":"2004","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"22.46319077"},{"Year":"2004","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.914964762"},{"Year":"2004","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"21.54822601"},{"Year":"2005","Offence category":null,"Offence sub-category":null,"Value":"92.38101986"},{"Year":"2005","Offence category":"Violence against the person","Offence sub-category":null,"Value":"15.77877884"},{"Year":"2005","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.014373865"},{"Year":"2005","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"10.2253871"},{"Year":"2005","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.539017876"},{"Year":"2005","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.134237189"},{"Year":"2005","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.27173002"},{"Year":"2005","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.862507169"},{"Year":"2005","Offence category":"Robbery","Offence sub-category":null,"Value":"1.847493215"},{"Year":"2005","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.164810287"},{"Year":"2005","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.682682928"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":null,"Value":"51.53578165"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"12.13628336"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"14.91610235"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"2.330428746"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.129589727"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.568913258"},{"Year":"2005","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"14.45446422"},{"Year":"2005","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"22.08472897"},{"Year":"2005","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.860381191"},{"Year":"2005","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"21.22434778"},{"Year":"2006","Offence category":null,"Offence sub-category":null,"Value":"89.37353887"},{"Year":"2006","Offence category":"Violence against the person","Offence sub-category":null,"Value":"15.20970197"},{"Year":"2006","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.0141483"},{"Year":"2006","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"9.450709443"},{"Year":"2006","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.744844228"},{"Year":"2006","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.0460409"},{"Year":"2006","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.257095881"},{"Year":"2006","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.788945019"},{"Year":"2006","Offence category":"Robbery","Offence sub-category":null,"Value":"1.892213737"},{"Year":"2006","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.176461773"},{"Year":"2006","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.715751964"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":null,"Value":"49.2537024"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"11.61004233"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"14.27923663"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"2.143747358"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.063001258"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.49286264"},{"Year":"2006","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"13.66481219"},{"Year":"2006","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"21.97187986"},{"Year":"2006","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.804474551"},{"Year":"2006","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"21.16740531"},{"Year":"2007","Offence category":null,"Offence sub-category":null,"Value":"80.41548332"},{"Year":"2007","Offence category":"Violence against the person","Offence sub-category":null,"Value":"13.87890913"},{"Year":"2007","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.014364926"},{"Year":"2007","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"8.382573518"},{"Year":"2007","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.481970684"},{"Year":"2007","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.966917039"},{"Year":"2007","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.234898969"},{"Year":"2007","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.73201807"},{"Year":"2007","Offence category":"Robbery","Offence sub-category":null,"Value":"1.571300428"},{"Year":"2007","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.170025112"},{"Year":"2007","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.401275316"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":null,"Value":"44.90620297"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"10.8192912"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"12.16761091"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.884307522"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.927680329"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.387366065"},{"Year":"2007","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"12.71994694"},{"Year":"2007","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"19.09215376"},{"Year":"2007","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.728941195"},{"Year":"2007","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"18.36321256"},{"Year":"2008","Offence category":null,"Offence sub-category":null,"Value":"75.22386806"},{"Year":"2008","Offence category":"Violence against the person","Offence sub-category":null,"Value":"13.03625664"},{"Year":"2008","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.012208712"},{"Year":"2008","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"7.734200603"},{"Year":"2008","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.289847323"},{"Year":"2008","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.922732239"},{"Year":"2008","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.240791101"},{"Year":"2008","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.681941138"},{"Year":"2008","Offence category":"Robbery","Offence sub-category":null,"Value":"1.473319405"},{"Year":"2008","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.171914844"},{"Year":"2008","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.301404561"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":null,"Value":"42.68599605"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"10.6933607"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"10.88217284"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.648396746"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.915315226"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.897304287"},{"Year":"2008","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"11.64944625"},{"Year":"2008","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"17.10556373"},{"Year":"2008","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.640350617"},{"Year":"2008","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"16.46521311"},{"Year":"2009","Offence category":null,"Offence sub-category":null,"Value":"68.56799896"},{"Year":"2009","Offence category":"Violence against the person","Offence sub-category":null,"Value":"12.7459715"},{"Year":"2009","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.011305262"},{"Year":"2009","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"7.316400726"},{"Year":"2009","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.41826551"},{"Year":"2009","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.966526943"},{"Year":"2009","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.274863735"},{"Year":"2009","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.691663208"},{"Year":"2009","Offence category":"Robbery","Offence sub-category":null,"Value":"1.369486588"},{"Year":"2009","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.149192987"},{"Year":"2009","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.220293601"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":null,"Value":"38.88681828"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"9.858279427"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"9.02365936"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.682058841"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.002982401"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.612934824"},{"Year":"2009","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"10.70690343"},{"Year":"2009","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"14.59919565"},{"Year":"2009","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.594073271"},{"Year":"2009","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"14.00512238"},{"Year":"2010","Offence category":null,"Offence sub-category":null,"Value":"65.14218374"},{"Year":"2010","Offence category":"Violence against the person","Offence sub-category":null,"Value":"12.04821131"},{"Year":"2010","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.011568699"},{"Year":"2010","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"6.667426689"},{"Year":"2010","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.369215924"},{"Year":"2010","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.976550248"},{"Year":"2010","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.287714804"},{"Year":"2010","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.688835444"},{"Year":"2010","Offence category":"Robbery","Offence sub-category":null,"Value":"1.379354594"},{"Year":"2010","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.139928752"},{"Year":"2010","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.239425843"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":null,"Value":"38.15400284"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"9.46285156"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"8.140018839"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.681933094"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.972689434"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.538057371"},{"Year":"2010","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"11.35845254"},{"Year":"2010","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"12.58406475"},{"Year":"2010","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.527127123"},{"Year":"2010","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"12.05693762"},{"Year":"2011","Offence category":null,"Offence sub-category":null,"Value":"62.03635636"},{"Year":"2011","Offence category":"Violence against the person","Offence sub-category":null,"Value":"11.25323637"},{"Year":"2011","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.009929537"},{"Year":"2011","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"6.071292678"},{"Year":"2011","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.172014154"},{"Year":"2011","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.947346105"},{"Year":"2011","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.287974542"},{"Year":"2011","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.659371563"},{"Year":"2011","Offence category":"Robbery","Offence sub-category":null,"Value":"1.341080096"},{"Year":"2011","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.121560522"},{"Year":"2011","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.219519575"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":null,"Value":"37.25424193"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"8.996699605"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"7.495490006"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.806134382"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"2.081108951"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.536228869"},{"Year":"2011","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"11.33858012"},{"Year":"2011","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"11.24045187"},{"Year":"2011","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.488737938"},{"Year":"2011","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"10.75171393"},{"Year":"2012","Offence category":null,"Offence sub-category":null,"Value":"56.08864173"},{"Year":"2012","Offence category":"Violence against the person","Offence sub-category":null,"Value":"10.70199536"},{"Year":"2012","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.009933965"},{"Year":"2012","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"5.555988065"},{"Year":"2012","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.136073328"},{"Year":"2012","Offence category":"Sexual offences","Offence sub-category":null,"Value":"0.954212488"},{"Year":"2012","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.291503112"},{"Year":"2012","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.662709376"},{"Year":"2012","Offence category":"Robbery","Offence sub-category":null,"Value":"1.15994169"},{"Year":"2012","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.10895316"},{"Year":"2012","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"1.05098853"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":null,"Value":"33.84213332"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"8.185640233"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"6.896076328"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.953982351"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.731963583"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.351932326"},{"Year":"2012","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"9.722538494"},{"Year":"2012","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"9.430358876"},{"Year":"2012","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.34368313"},{"Year":"2012","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"9.086675746"},{"Year":"2013","Offence category":null,"Offence sub-category":null,"Value":"54.9405531"},{"Year":"2013","Offence category":"Violence against the person","Offence sub-category":null,"Value":"11.21883907"},{"Year":"2013","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.009422322"},{"Year":"2013","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"5.706780586"},{"Year":"2013","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"5.502636164"},{"Year":"2013","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.135487053"},{"Year":"2013","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.366834161"},{"Year":"2013","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"0.768652892"},{"Year":"2013","Offence category":"Robbery","Offence sub-category":null,"Value":"1.022277764"},{"Year":"2013","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.102337379"},{"Year":"2013","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"0.919940384"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":null,"Value":"32.61871825"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"7.835058661"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"6.57690464"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.737419644"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.726883614"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.675755866"},{"Year":"2013","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"9.066695828"},{"Year":"2013","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"8.945230958"},{"Year":"2013","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.32849079"},{"Year":"2013","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"8.616740168"},{"Year":"2014","Offence category":null,"Offence sub-category":null,"Value":"55.67161711"},{"Year":"2014","Offence category":"Violence against the person","Offence sub-category":null,"Value":"13.66455136"},{"Year":"2014","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.009447177"},{"Year":"2014","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"6.569124388"},{"Year":"2014","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"7.085979794"},{"Year":"2014","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.552322198"},{"Year":"2014","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.515994975"},{"Year":"2014","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"1.036327223"},{"Year":"2014","Offence category":"Robbery","Offence sub-category":null,"Value":"0.880554161"},{"Year":"2014","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.094787847"},{"Year":"2014","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"0.785766314"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":null,"Value":"30.73737376"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"7.214201516"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"6.138048648"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.376969949"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.638804255"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.724954151"},{"Year":"2014","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"8.644395245"},{"Year":"2014","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"8.836815628"},{"Year":"2014","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.343821052"},{"Year":"2014","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"8.492994576"},{"Year":"2015","Offence category":null,"Offence sub-category":null,"Value":"60.04373487"},{"Year":"2015","Offence category":"Violence against the person","Offence sub-category":null,"Value":"17.28600012"},{"Year":"2015","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.009998493"},{"Year":"2015","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"7.509808539"},{"Year":"2015","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"9.76619309"},{"Year":"2015","Offence category":"Sexual offences","Offence sub-category":null,"Value":"1.848693404"},{"Year":"2015","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.621840045"},{"Year":"2015","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"1.226853359"},{"Year":"2015","Offence category":"Robbery","Offence sub-category":null,"Value":"0.890283893"},{"Year":"2015","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.094550205"},{"Year":"2015","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"0.795733689"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":null,"Value":"30.62228214"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"6.985027031"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"6.379665338"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.448231133"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.507072435"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"5.858385044"},{"Year":"2015","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"8.443901158"},{"Year":"2015","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"9.396475312"},{"Year":"2015","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.382538145"},{"Year":"2015","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"9.013937167"},{"Year":"2016","Offence category":null,"Offence sub-category":null,"Value":"65.36669258"},{"Year":"2016","Offence category":"Violence against the person","Offence sub-category":null,"Value":"20.14665285"},{"Year":"2016","Offence category":"Violence against the person","Offence sub-category":"Homicide","Value":"0.012490282"},{"Year":"2016","Offence category":"Violence against the person","Offence sub-category":"Violence with injury","Value":"8.044191068"},{"Year":"2016","Offence category":"Violence against the person","Offence sub-category":"Violence without injury","Value":"12.0899715"},{"Year":"2016","Offence category":"Sexual offences","Offence sub-category":null,"Value":"2.09038611"},{"Year":"2016","Offence category":"Sexual offences","Offence sub-category":"Rape","Value":"0.710235812"},{"Year":"2016","Offence category":"Sexual offences","Offence sub-category":"Other sexual offences","Value":"1.380150298"},{"Year":"2016","Offence category":"Robbery","Offence sub-category":null,"Value":"1.022337393"},{"Year":"2016","Offence category":"Robbery","Offence sub-category":"Robbery of business property","Value":"0.103671072"},{"Year":"2016","Offence category":"Robbery","Offence sub-category":"Robbery of personal property","Value":"0.918666321"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":null,"Value":"32.37961475"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"Burglary","Value":"7.100716939"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"Vehicle offences","Value":"7.022924765"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"Theft from the person","Value":"1.527822406"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"Bicycle theft","Value":"1.627122743"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"Shoplifting","Value":"6.374466615"},{"Year":"2016","Offence category":"Theft offences","Offence sub-category":"All other theft offences","Value":"8.726561285"},{"Year":"2016","Offence category":"Criminal damage and arson","Offence sub-category":null,"Value":"9.727701477"},{"Year":"2016","Offence category":"Criminal damage and arson","Offence sub-category":"Arson","Value":"0.416049063"},{"Year":"2016","Offence category":"Criminal damage and arson","Offence sub-category":"Criminal damage","Value":"9.311652414"}]' data-indicatorid='indicator_16-1-3' data-country="England and Wales"
+  data-edgesdata='[{"From":"Offence category","To":"Offence sub-category"}]' data-charttitle="Police recorded victim-based crime rate per 1,000 population" data-measurementunit="Rate per 1,000 population" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_16-1-3.csv" class="btn btn-primary btn-download" download="indicator_16-1-3.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_16-1-3.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_16-1-3.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Police recorded victim-based crime rate per 1,000 population</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2002</td>    
+          
+          
+          
+          <td class="table-value">103.19820990000001</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2003</td>    
+          
+          
+          
+          <td class="table-value">103.09378459999999</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2004</td>    
+          
+          
+          
+          <td class="table-value">95.01775128</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2005</td>    
+          
+          
+          
+          <td class="table-value">92.38101986</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2006</td>    
+          
+          
+          
+          <td class="table-value">89.37353887</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2007</td>    
+          
+          
+          
+          <td class="table-value">80.41548332</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2008</td>    
+          
+          
+          
+          <td class="table-value">75.22386806</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>    
+          
+          
+          
+          <td class="table-value">68.56799896</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>    
+          
+          
+          
+          <td class="table-value">65.14218374</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td class="table-value">62.03635636</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td class="table-value">56.08864173</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">54.940553099999995</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">55.67161711</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">60.04373487</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>    
+          
+          
+          
+          <td class="table-value">65.36669258</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Office for National Statistics (ONS)</p>
+    
+    
+    <p>Geographical Area: England and Wales</p>
+    
+    
+    <p>Units of Measure: Rate per 1,000 population</p>
+    
+    
+    <p>Footnote: The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -236,24 +485,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -261,180 +512,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Police recorded victim-based crime rate per 1,000 population</h3>
-              
-              <a href="/data/indicator_16-1-3.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_16-1-3.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_16-1-3.csv' class='btn btn-primary btn-download' download='indicator_16-1-3.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Police recorded victim-based crime rate per 1,000 population</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2002</td>
-      
-          <td>103.19820990000001</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2003</td>
-      
-          <td>103.09378459999999</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2004</td>
-      
-          <td>95.01775128</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2005</td>
-      
-          <td>92.38101986</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2006</td>
-      
-          <td>89.37353887</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2007</td>
-      
-          <td>80.41548332</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2008</td>
-      
-          <td>75.22386806</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2009</td>
-      
-          <td>68.56799896</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2010</td>
-      
-          <td>65.14218374</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>62.03635636</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>56.08864173</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>54.940553099999995</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>55.67161711</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>60.04373487</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2016</td>
-      
-          <td>65.36669258</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Office for National Statistics (ONS)</p>
-                
-                
-                <p>Geographical Area: England and Wales</p>
-                
-                
-                <p>Units of Measure: Rate per 1,000 population</p>
-                
-                
-                <p>Footnote: The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -712,7 +800,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -925,7 +1013,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1514,22 +1602,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1560,20 +1643,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1589,6 +1670,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1615,6 +1702,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1622,3 +1711,4 @@ $(function() {
 </body>
 </html>
 
+  

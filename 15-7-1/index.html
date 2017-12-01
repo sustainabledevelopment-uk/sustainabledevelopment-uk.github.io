@@ -17,7 +17,6 @@
         <title>
         Indicator 15.7.1 - Goal 15 - Life on land
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,56 +170,205 @@
 </div>
 
 <div id="main-content" class="container goal-15">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/life-on-land" title="Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss">Goal 15</a></li>
-      <li class="active">Proportion of traded wildlife that was poached or illicitly trafficked</li>
+      <li class="active">Indicator 15.7.1</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
-        <p>We have not explored suitable data sources for this indicator.</p>
+        <p>This indicator is being used as an approximation of the UN SDG Indicator and has not been identified in collaboration with topic experts. We will work to identify or develop UK data to meet the global indicator specification.</p>
 
 <p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
 
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_15-7-1' data-country=""
-  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false" data-graphtype="line">
   
-    <div class="col-md-12">
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Number of endangered species seizures</h2>
+    </div>
+  </div>
   
-      <section>
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2013","Endangered species seizure":null,"Value":"569"},{"Year":"2013","Endangered species seizure":"Caviar and caviar extract","Value":"24"},{"Year":"2013","Endangered species seizure":"Live coral and coral derivatives","Value":"18"},{"Year":"2013","Endangered species seizure":"Ivory and items containing ivory","Value":"43"},{"Year":"2013","Endangered species seizure":"Live animals and birds","Value":"14"},{"Year":"2013","Endangered species seizure":"Live plants","Value":"6"},{"Year":"2013","Endangered species seizure":"Parts or derivatives of animals or birds","Value":"128"},{"Year":"2013","Endangered species seizure":"Parts or derivatives of plants","Value":"15"},{"Year":"2013","Endangered species seizure":"Timber or wood products","Value":"142"},{"Year":"2013","Endangered species seizure":"Preparations of oriental medicine which include parts and derivatives of endangered species","Value":"187"},{"Year":"2013","Endangered species seizure":"Butterflies","Value":"0"},{"Year":"2014","Endangered species seizure":null,"Value":"512"},{"Year":"2014","Endangered species seizure":"Caviar and caviar extract","Value":"22"},{"Year":"2014","Endangered species seizure":"Live coral and coral derivatives","Value":"14"},{"Year":"2014","Endangered species seizure":"Ivory and items containing ivory","Value":"40"},{"Year":"2014","Endangered species seizure":"Live animals and birds","Value":"23"},{"Year":"2014","Endangered species seizure":"Live plants","Value":"6"},{"Year":"2014","Endangered species seizure":"Parts or derivatives of animals or birds","Value":"140"},{"Year":"2014","Endangered species seizure":"Parts or derivatives of plants","Value":"35"},{"Year":"2014","Endangered species seizure":"Timber or wood products","Value":"33"},{"Year":"2014","Endangered species seizure":"Preparations of oriental medicine which include parts and derivatives of endangered species","Value":"210"},{"Year":"2014","Endangered species seizure":"Butterflies","Value":"0"},{"Year":"2015","Endangered species seizure":null,"Value":"854"},{"Year":"2015","Endangered species seizure":"Caviar and caviar extract","Value":"31"},{"Year":"2015","Endangered species seizure":"Live coral and coral derivatives","Value":"22"},{"Year":"2015","Endangered species seizure":"Ivory and items containing ivory","Value":"182"},{"Year":"2015","Endangered species seizure":"Live animals and birds","Value":"13"},{"Year":"2015","Endangered species seizure":"Live plants","Value":"45"},{"Year":"2015","Endangered species seizure":"Parts or derivatives of animals or birds","Value":"179"},{"Year":"2015","Endangered species seizure":"Parts or derivatives of plants","Value":"27"},{"Year":"2015","Endangered species seizure":"Timber or wood products","Value":"26"},{"Year":"2015","Endangered species seizure":"Preparations of oriental medicine which include parts and derivatives of endangered species","Value":"332"},{"Year":"2015","Endangered species seizure":"Butterflies","Value":"0"},{"Year":"2016","Endangered species seizure":null,"Value":"689"},{"Year":"2016","Endangered species seizure":"Caviar and caviar extract","Value":"20"},{"Year":"2016","Endangered species seizure":"Live coral and coral derivatives","Value":"16"},{"Year":"2016","Endangered species seizure":"Ivory and items containing ivory","Value":"161"},{"Year":"2016","Endangered species seizure":"Live animals and birds","Value":"12"},{"Year":"2016","Endangered species seizure":"Live plants","Value":"36"},{"Year":"2016","Endangered species seizure":"Parts or derivatives of animals or birds","Value":"220"},{"Year":"2016","Endangered species seizure":"Parts or derivatives of plants","Value":"69"},{"Year":"2016","Endangered species seizure":"Timber or wood products","Value":"18"},{"Year":"2016","Endangered species seizure":"Preparations of oriental medicine which include parts and derivatives of endangered species","Value":"141"},{"Year":"2016","Endangered species seizure":"Butterflies","Value":"0"}]' data-indicatorid='indicator_15-7-1' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Number of endangered species seizures" data-measurementunit="Number of seizures" data-datasource=" Border Force, UK Visas and Immigration, and Immigration Enforcement" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
+    
+    <div class="col-md-3">
+      <div id="toolbar">
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
+        <div id="fields"></div>
+      </div>
+      <div id="units"></div>
+    </div>
+    <div class="col-md-9">
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_15-7-1.csv" class="btn btn-primary btn-download" download="indicator_15-7-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_15-7-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_15-7-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Number of endangered species seizures</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">569</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">512</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">854</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>    
+          
+          
+          
+          <td class="table-value">689</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source:  Border Force, UK Visas and Immigration, and Immigration Enforcement</p>
+    
+    
+    <p>Geographical Area: United Kingdom</p>
+    
+    
+    <p>Units of Measure: Number of seizures</p>
+    
+    
+  </div>
+  
+</div>
+      
 
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
+    
+    
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
+
+    
+    <div class="plot-container">
+        
+<canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
+    </div>
+    
+
+
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
+        
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-          <li role="presentation" class="nav-item  active">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -220,18 +376,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
           <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -272,7 +427,7 @@
         <th scope="row">Actual Indicator Available </th>
         <td>
           
-            
+            Number of endangered species seizures
           
         </td>
         </tr>
@@ -298,7 +453,7 @@
         <th scope="row">Indicator Periodicity </th>
         <td>
           
-            
+            Annual
           
         </td>
         </tr>
@@ -311,7 +466,7 @@
         <th scope="row">Earliest Available Data </th>
         <td>
           
-            
+            2013
           
         </td>
         </tr>
@@ -324,7 +479,7 @@
         <th scope="row">Geographic Coverage </th>
         <td>
           
-            
+            United Kingdom
           
         </td>
         </tr>
@@ -509,7 +664,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -573,7 +728,7 @@
         <th scope="row">Units of Measure </th>
         <td>
           
-            
+            Number of seizures
           
         </td>
         </tr>
@@ -722,7 +877,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -819,7 +974,7 @@
         <th scope="row">UN Custodian Agency </th>
         <td>
           
-            UNODC,CITES
+            United Nations Office on Drugs and Crime (UNODC)
           
         </td>
         </tr>
@@ -845,7 +1000,7 @@
         <th scope="row">UNSD Indicator Code </th>
         <td>
           
-            C200206
+            
           
         </td>
         </tr>
@@ -858,7 +1013,7 @@
         <th scope="row">UN Indicator Notes </th>
         <td>
           
-            IAEG-SDG 3rd meeting: Lack of sufficient data coverageRepeat of 15.c.1
+            
           
         </td>
         </tr>
@@ -1100,7 +1255,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            
+             Border Force, UK Visas and Immigration, and Immigration Enforcement
           
         </td>
         </tr>
@@ -1113,7 +1268,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            
+            Annual
           
         </td>
         </tr>
@@ -1158,6 +1313,10 @@
             
 
             
+              <a href="https://www.gov.uk/search?q=border+force+transparency+data" target="_blank">
+                Border Force transparency data <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
             
           
         </td>
@@ -1175,7 +1334,7 @@
         <th scope="row">Release Date </th>
         <td>
           
-            
+            24-08-2017
           
         </td>
         </tr>
@@ -1307,22 +1466,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1353,20 +1507,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1382,6 +1534,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1408,6 +1566,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1415,3 +1575,4 @@ $(function() {
 </body>
 </html>
 
+  

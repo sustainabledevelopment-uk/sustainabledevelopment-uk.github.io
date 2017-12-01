@@ -17,7 +17,6 @@
         <title>
         Indicator 15.a.1 - Goal 15 - Life on land
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-15">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/life-on-land" title="Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss">Goal 15</a></li>
-      <li class="active">Official development assistance and public expenditure on conservation and sustainable use of biodiversity and ecosystems</li>
+      <li class="active">Indicator 15.a.1</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -195,34 +202,166 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"31549.0146"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"50964.53672"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"36302.12669"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"45021.57442"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"138599.6377"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"125670.3428"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"15952.90932"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"29282.31157"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"26600.03402"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"34872.73747"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"84031.78914"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"108130.0569"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"14908.77839"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"21079.79827"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"8881.483555"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"8918.959993"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"53660.0679"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"16366.23779"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"61.35035592"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"182.1107218"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"372.296695"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"657.9147955"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"600.6141332"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"361.3940735"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"115.689134"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"137.3880329"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"153.3420312"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"111.0472199"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"12.98548702"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"206.9934859"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"488.4241115"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"236.3538933"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"153.8240946"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"320.806542"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"284.3321679"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"605.660532"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"21.86328282"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"46.57423128"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"141.1462866"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"140.1084026"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"9.848913911"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"21756.86"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"22329.30151"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"20897.93183"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"26366.62716"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"27443.87751"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"117696.6043"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"111199.7353"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"16333.26"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"10103.14874"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"20707.77494"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"19563.40071"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"23046.08977"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"76673.90039"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"103246.9588"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"5423.6"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"12226.15277"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"145.40689"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"6803.22645"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"4397.78774"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"41013.25147"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"7459.41582"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"0"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"44.75"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"0"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"0"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"9.4524"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"493.36072"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"9219.713088"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"30066.60489"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"9935.499525"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"17577.69691"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"20903.03349"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"14470.60745"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"5849.760583"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"8574.536628"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"7036.633313"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"11826.6477"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"7357.88875"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"4883.098106"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"2682.625621"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"20934.39138"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"2078.257105"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"4521.172253"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"12646.81643"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"8906.821972"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"61.35035592"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"182.1107218"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"372.296695"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"657.9147955"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"600.6141332"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"361.3940735"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"115.689134"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"137.3880329"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"153.3420312"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"111.0472199"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"12.98548702"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"206.9934859"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"488.4241115"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"191.6038933"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"153.8240946"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"320.806542"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"274.8797679"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"112.299812"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"21.86328282"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"46.57423128"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"141.1462866"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"140.1084026"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"9.848913911"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"}]' data-indicatorid='indicator_15-a-1' data-country="United Kingdom"
-  data-edgesdata='[]' data-charttitle="Net official development assistance (ODA) to the forestry sector" data-measurementunit="GBP (£000s) " data-datasource="Department for International Development (DFID)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Net official development assistance (ODA) to the forestry sector</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Net official development assistance (ODA) to the forestry sector</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"31549.0146"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"50964.53672"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"36302.12669"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"45021.57442"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"138599.6377"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":null,"Value":"125670.3428"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"15952.90932"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"29282.31157"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"26600.03402"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"34872.73747"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"84031.78914"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"108130.0569"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"14908.77839"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"21079.79827"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"8881.483555"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"8918.959993"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"53660.0679"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry development (31220)","Value":"16366.23779"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"61.35035592"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"182.1107218"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"372.296695"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"657.9147955"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"600.6141332"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"361.3940735"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"115.689134"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"137.3880329"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"153.3420312"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"111.0472199"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"12.98548702"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry education or training (31281)","Value":"206.9934859"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"488.4241115"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"236.3538933"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"153.8240946"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"320.806542"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"284.3321679"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry research (31282)","Value":"605.660532"},{"Year":"2010","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"21.86328282"},{"Year":"2011","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"46.57423128"},{"Year":"2012","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"141.1462866"},{"Year":"2013","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"140.1084026"},{"Year":"2014","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"9.848913911"},{"Year":"2015","Flow of official development assistance":null,"Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"21756.86"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"22329.30151"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"20897.93183"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"26366.62716"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"27443.87751"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"117696.6043"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":null,"Value":"111199.7353"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"16333.26"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"10103.14874"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"20707.77494"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"19563.40071"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"23046.08977"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"76673.90039"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"103246.9588"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"5423.6"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"12226.15277"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"145.40689"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"6803.22645"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"4397.78774"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"41013.25147"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"7459.41582"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"0"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"0"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"0"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"44.75"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"0"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"0"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"9.4524"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"493.36072"},{"Year":"2009","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2011","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2012","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2013","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2014","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2015","Flow of official development assistance":"Bilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"9219.713088"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"30066.60489"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"9935.499525"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"17577.69691"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"20903.03349"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":null,"Value":"14470.60745"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"5849.760583"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"8574.536628"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"7036.633313"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"11826.6477"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"7357.88875"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry policy and administrative management (31210)","Value":"4883.098106"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"2682.625621"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"20934.39138"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"2078.257105"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"4521.172253"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"12646.81643"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry development (31220)","Value":"8906.821972"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"61.35035592"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"182.1107218"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"372.296695"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"657.9147955"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"600.6141332"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Fuelwood or charcoal (31261)","Value":"361.3940735"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"115.689134"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"137.3880329"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"153.3420312"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"111.0472199"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"12.98548702"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry education or training (31281)","Value":"206.9934859"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"488.4241115"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"191.6038933"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"153.8240946"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"320.806542"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"274.8797679"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry research (31282)","Value":"112.299812"},{"Year":"2010","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"21.86328282"},{"Year":"2011","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"46.57423128"},{"Year":"2012","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"141.1462866"},{"Year":"2013","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"140.1084026"},{"Year":"2014","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"9.848913911"},{"Year":"2015","Flow of official development assistance":"Multilateral","Aid description (CRS code)":"Forestry services (31291)","Value":"0"}]' data-indicatorid='indicator_15-a-1' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Net official development assistance (ODA) to the forestry sector" data-measurementunit="GBP (£000s) " data-datasource="Department for International Development (DFID)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_15-a-1.csv" class="btn btn-primary btn-download" download="indicator_15-a-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_15-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_15-a-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Net official development assistance (ODA) to the forestry sector</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2010</td>    
+          
+          
+          
+          <td class="table-value">31549.0146</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td class="table-value">50964.53672</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td class="table-value">36302.12669</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">45021.57442</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">138599.6377</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">125670.3428</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Department for International Development (DFID)</p>
+    
+    
+    <p>Geographical Area: United Kingdom</p>
+    
+    
+    <p>Units of Measure: GBP (£000s) </p>
+    
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -234,24 +373,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -259,106 +400,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Net official development assistance (ODA) to the forestry sector</h3>
-              
-              <a href="/data/indicator_15-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_15-a-1.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_15-a-1.csv' class='btn btn-primary btn-download' download='indicator_15-a-1.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Net official development assistance (ODA) to the forestry sector</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2010</td>
-      
-          <td>31549.0146</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>50964.53672</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>36302.12669</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>45021.57442</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>138599.6377</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>125670.3428</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Department for International Development (DFID)</p>
-                
-                
-                <p>Geographical Area: United Kingdom</p>
-                
-                
-                <p>Units of Measure: GBP (£000s) </p>
-                
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -636,7 +688,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -849,7 +901,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1438,22 +1490,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1484,20 +1531,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1513,6 +1558,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1539,6 +1590,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1546,3 +1599,4 @@ $(function() {
 </body>
 </html>
 
+  

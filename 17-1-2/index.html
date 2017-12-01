@@ -17,7 +17,6 @@
         <title>
         Indicator 17.1.2 - Goal 17 - Partnerships for the goals
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-17">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/partnerships-for-the-goals" title="Strengthen the means of implementation and revitalize the global partnership for sustainable development">Goal 17</a></li>
-      <li class="active">Proportion of domestic budget funded by domestic taxes</li>
+      <li class="active">Indicator 17.1.2</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -193,34 +200,300 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Branch of government":null,"Value":"77.76327083"},{"Year":"2001","Branch of government":null,"Value":"77.77899366"},{"Year":"2002","Branch of government":null,"Value":"78.20593126"},{"Year":"2003","Branch of government":null,"Value":"77.57799979"},{"Year":"2004","Branch of government":null,"Value":"77.22714751"},{"Year":"2005","Branch of government":null,"Value":"77.23573714"},{"Year":"2006","Branch of government":null,"Value":"77.99573577"},{"Year":"2007","Branch of government":null,"Value":"77.7456984"},{"Year":"2008","Branch of government":null,"Value":"76.22072301"},{"Year":"2009","Branch of government":null,"Value":"75.3866726"},{"Year":"2010","Branch of government":null,"Value":"77.28504915"},{"Year":"2011","Branch of government":null,"Value":"77.26711521"},{"Year":"2012","Branch of government":null,"Value":"76.73790646"},{"Year":"2013","Branch of government":null,"Value":"74.58281665"},{"Year":"2014","Branch of government":null,"Value":"76.22321817"},{"Year":"2015","Branch of government":null,"Value":"75.94990361"},{"Year":"2016","Branch of government":null,"Value":"75.39741128"},{"Year":"2000","Branch of government":"Central government","Value":"78.27571373"},{"Year":"2001","Branch of government":"Central government","Value":"77.79410468"},{"Year":"2002","Branch of government":"Central government","Value":"78.13375489"},{"Year":"2003","Branch of government":"Central government","Value":"76.94136927"},{"Year":"2004","Branch of government":"Central government","Value":"76.82339074"},{"Year":"2005","Branch of government":"Central government","Value":"77.07599336"},{"Year":"2006","Branch of government":"Central government","Value":"77.31339607"},{"Year":"2007","Branch of government":"Central government","Value":"77.46696477"},{"Year":"2008","Branch of government":"Central government","Value":"76.1628545"},{"Year":"2009","Branch of government":"Central government","Value":"75.44307941"},{"Year":"2010","Branch of government":"Central government","Value":"76.57076858"},{"Year":"2011","Branch of government":"Central government","Value":"76.92322967"},{"Year":"2012","Branch of government":"Central government","Value":"75.74248169"},{"Year":"2013","Branch of government":"Central government","Value":"74.14622447"},{"Year":"2014","Branch of government":"Central government","Value":"75.42398012"},{"Year":"2015","Branch of government":"Central government","Value":"75.47179101"},{"Year":"2016","Branch of government":"Central government","Value":"75.57497762"},{"Year":"2000","Branch of government":"Local government","Value":"68.19182149"},{"Year":"2001","Branch of government":"Local government","Value":"77.47573857"},{"Year":"2002","Branch of government":"Local government","Value":"79.57735849"},{"Year":"2003","Branch of government":"Local government","Value":"90.53179014"},{"Year":"2004","Branch of government":"Local government","Value":"84.9338777"},{"Year":"2005","Branch of government":"Local government","Value":"80.14338905"},{"Year":"2006","Branch of government":"Local government","Value":"92.3886219"},{"Year":"2007","Branch of government":"Local government","Value":"83.03195808"},{"Year":"2008","Branch of government":"Local government","Value":"77.20667826"},{"Year":"2009","Branch of government":"Local government","Value":"74.53693716"},{"Year":"2010","Branch of government":"Local government","Value":"90.98732879"},{"Year":"2011","Branch of government":"Local government","Value":"83.61606399"},{"Year":"2012","Branch of government":"Local government","Value":"98.37785521"},{"Year":"2013","Branch of government":"Local government","Value":"82.72593612"},{"Year":"2014","Branch of government":"Local government","Value":"92.61649714"},{"Year":"2015","Branch of government":"Local government","Value":"84.9790042"},{"Year":"2016","Branch of government":"Local government","Value":"72.51768724"}]' data-indicatorid='indicator_17-1-2' data-country="United Kingdom"
-  data-edgesdata='[]' data-charttitle="Percentage of domestic budget funded by domestic taxes" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Percentage of domestic budget funded by domestic taxes</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Percentage of domestic budget funded by domestic taxes</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Branch of government":null,"Value":"77.76327083"},{"Year":"2001","Branch of government":null,"Value":"77.77899366"},{"Year":"2002","Branch of government":null,"Value":"78.20593126"},{"Year":"2003","Branch of government":null,"Value":"77.57799979"},{"Year":"2004","Branch of government":null,"Value":"77.22714751"},{"Year":"2005","Branch of government":null,"Value":"77.23573714"},{"Year":"2006","Branch of government":null,"Value":"77.99573577"},{"Year":"2007","Branch of government":null,"Value":"77.7456984"},{"Year":"2008","Branch of government":null,"Value":"76.22072301"},{"Year":"2009","Branch of government":null,"Value":"75.3866726"},{"Year":"2010","Branch of government":null,"Value":"77.28504915"},{"Year":"2011","Branch of government":null,"Value":"77.26711521"},{"Year":"2012","Branch of government":null,"Value":"76.73790646"},{"Year":"2013","Branch of government":null,"Value":"74.58281665"},{"Year":"2014","Branch of government":null,"Value":"76.22321817"},{"Year":"2015","Branch of government":null,"Value":"75.94990361"},{"Year":"2016","Branch of government":null,"Value":"75.39741128"},{"Year":"2000","Branch of government":"Central government","Value":"78.27571373"},{"Year":"2001","Branch of government":"Central government","Value":"77.79410468"},{"Year":"2002","Branch of government":"Central government","Value":"78.13375489"},{"Year":"2003","Branch of government":"Central government","Value":"76.94136927"},{"Year":"2004","Branch of government":"Central government","Value":"76.82339074"},{"Year":"2005","Branch of government":"Central government","Value":"77.07599336"},{"Year":"2006","Branch of government":"Central government","Value":"77.31339607"},{"Year":"2007","Branch of government":"Central government","Value":"77.46696477"},{"Year":"2008","Branch of government":"Central government","Value":"76.1628545"},{"Year":"2009","Branch of government":"Central government","Value":"75.44307941"},{"Year":"2010","Branch of government":"Central government","Value":"76.57076858"},{"Year":"2011","Branch of government":"Central government","Value":"76.92322967"},{"Year":"2012","Branch of government":"Central government","Value":"75.74248169"},{"Year":"2013","Branch of government":"Central government","Value":"74.14622447"},{"Year":"2014","Branch of government":"Central government","Value":"75.42398012"},{"Year":"2015","Branch of government":"Central government","Value":"75.47179101"},{"Year":"2016","Branch of government":"Central government","Value":"75.57497762"},{"Year":"2000","Branch of government":"Local government","Value":"68.19182149"},{"Year":"2001","Branch of government":"Local government","Value":"77.47573857"},{"Year":"2002","Branch of government":"Local government","Value":"79.57735849"},{"Year":"2003","Branch of government":"Local government","Value":"90.53179014"},{"Year":"2004","Branch of government":"Local government","Value":"84.9338777"},{"Year":"2005","Branch of government":"Local government","Value":"80.14338905"},{"Year":"2006","Branch of government":"Local government","Value":"92.3886219"},{"Year":"2007","Branch of government":"Local government","Value":"83.03195808"},{"Year":"2008","Branch of government":"Local government","Value":"77.20667826"},{"Year":"2009","Branch of government":"Local government","Value":"74.53693716"},{"Year":"2010","Branch of government":"Local government","Value":"90.98732879"},{"Year":"2011","Branch of government":"Local government","Value":"83.61606399"},{"Year":"2012","Branch of government":"Local government","Value":"98.37785521"},{"Year":"2013","Branch of government":"Local government","Value":"82.72593612"},{"Year":"2014","Branch of government":"Local government","Value":"92.61649714"},{"Year":"2015","Branch of government":"Local government","Value":"84.9790042"},{"Year":"2016","Branch of government":"Local government","Value":"72.51768724"}]' data-indicatorid='indicator_17-1-2' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Percentage of domestic budget funded by domestic taxes" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_17-1-2.csv" class="btn btn-primary btn-download" download="indicator_17-1-2.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_17-1-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_17-1-2.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Percentage of domestic budget funded by domestic taxes</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2000</td>    
+          
+          
+          
+          <td class="table-value">77.76327083</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2001</td>    
+          
+          
+          
+          <td class="table-value">77.77899366</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2002</td>    
+          
+          
+          
+          <td class="table-value">78.20593126</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2003</td>    
+          
+          
+          
+          <td class="table-value">77.57799979</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2004</td>    
+          
+          
+          
+          <td class="table-value">77.22714751</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2005</td>    
+          
+          
+          
+          <td class="table-value">77.23573714</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2006</td>    
+          
+          
+          
+          <td class="table-value">77.99573577</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2007</td>    
+          
+          
+          
+          <td class="table-value">77.74569840000001</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2008</td>    
+          
+          
+          
+          <td class="table-value">76.22072301</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>    
+          
+          
+          
+          <td class="table-value">75.3866726</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>    
+          
+          
+          
+          <td class="table-value">77.28504915</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td class="table-value">77.26711521</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td class="table-value">76.73790646</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">74.58281665</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">76.22321817</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">75.94990361</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>    
+          
+          
+          
+          <td class="table-value">75.39741128</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Office for National Statistics (ONS)</p>
+    
+    
+    <p>Geographical Area: United Kingdom</p>
+    
+    
+    <p>Units of Measure: Percentage (%)</p>
+    
+    
+    <p>Footnote: The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -232,24 +505,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -257,196 +532,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Percentage of domestic budget funded by domestic taxes</h3>
-              
-              <a href="/data/indicator_17-1-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_17-1-2.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_17-1-2.csv' class='btn btn-primary btn-download' download='indicator_17-1-2.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Percentage of domestic budget funded by domestic taxes</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2000</td>
-      
-          <td>77.76327083</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2001</td>
-      
-          <td>77.77899366</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2002</td>
-      
-          <td>78.20593126</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2003</td>
-      
-          <td>77.57799979</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2004</td>
-      
-          <td>77.22714751</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2005</td>
-      
-          <td>77.23573714</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2006</td>
-      
-          <td>77.99573577</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2007</td>
-      
-          <td>77.74569840000001</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2008</td>
-      
-          <td>76.22072301</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2009</td>
-      
-          <td>75.3866726</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2010</td>
-      
-          <td>77.28504915</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>77.26711521</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>76.73790646</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>74.58281665</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>76.22321817</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>75.94990361</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2016</td>
-      
-          <td>75.39741128</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Office for National Statistics (ONS)</p>
-                
-                
-                <p>Geographical Area: United Kingdom</p>
-                
-                
-                <p>Units of Measure: Percentage (%)</p>
-                
-                
-                <p>Footnote: The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -724,7 +820,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -937,7 +1033,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1526,22 +1622,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1572,20 +1663,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1601,6 +1690,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1627,6 +1722,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1634,3 +1731,4 @@ $(function() {
 </body>
 </html>
 
+  

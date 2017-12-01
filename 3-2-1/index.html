@@ -17,7 +17,6 @@
         <title>
         Indicator 3.2.1 - Goal 3 - Good Health and Well-being
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-3">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/good-health-and-well-being" title="Ensure healthy lives and promote well-being for all at all ages">Goal 3</a></li>
-      <li class="active">Under-five mortality rate</li>
+      <li class="active">Indicator 3.2.1</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -195,34 +202,286 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Geography":null,"Sex":null,"Value":"6.55"},{"Year":"2000","Geography":null,"Sex":"Male","Value":"7.19"},{"Year":"2000","Geography":null,"Sex":"Female","Value":"5.88"},{"Year":"2000","Geography":"England and Wales","Sex":null,"Value":"6.55"},{"Year":"2000","Geography":"England and Wales","Sex":"Male","Value":"7.17"},{"Year":"2000","Geography":"England and Wales","Sex":"Female","Value":"5.89"},{"Year":"2000","Geography":"England","Sex":null,"Value":"6.49"},{"Year":"2000","Geography":"England","Sex":"Male","Value":"7.11"},{"Year":"2000","Geography":"England","Sex":"Female","Value":"5.85"},{"Year":"2000","Geography":"Wales","Sex":null,"Value":"6.23"},{"Year":"2000","Geography":"Wales","Sex":"Male","Value":"7.26"},{"Year":"2000","Geography":"Wales","Sex":"Female","Value":"5.12"},{"Year":"2000","Geography":"Scotland","Sex":null,"Value":"6.71"},{"Year":"2000","Geography":"Scotland","Sex":"Male","Value":"7.57"},{"Year":"2000","Geography":"Scotland","Sex":"Female","Value":"5.87"},{"Year":"2000","Geography":"Northern Ireland","Sex":null,"Value":"6.14"},{"Year":"2000","Geography":"Northern Ireland","Sex":"Male","Value":"6.56"},{"Year":"2000","Geography":"Northern Ireland","Sex":"Female","Value":"5.68"},{"Year":"2001","Geography":null,"Sex":null,"Value":"6.44"},{"Year":"2001","Geography":null,"Sex":"Male","Value":"6.97"},{"Year":"2001","Geography":null,"Sex":"Female","Value":"5.88"},{"Year":"2001","Geography":"England and Wales","Sex":null,"Value":"6.44"},{"Year":"2001","Geography":"England and Wales","Sex":"Male","Value":"6.98"},{"Year":"2001","Geography":"England and Wales","Sex":"Female","Value":"5.87"},{"Year":"2001","Geography":"England","Sex":null,"Value":"6.37"},{"Year":"2001","Geography":"England","Sex":"Male","Value":"6.92"},{"Year":"2001","Geography":"England","Sex":"Female","Value":"5.8"},{"Year":"2001","Geography":"Wales","Sex":null,"Value":"6.37"},{"Year":"2001","Geography":"Wales","Sex":"Male","Value":"7.05"},{"Year":"2001","Geography":"Wales","Sex":"Female","Value":"5.65"},{"Year":"2001","Geography":"Scotland","Sex":null,"Value":"6.32"},{"Year":"2001","Geography":"Scotland","Sex":"Male","Value":"6.61"},{"Year":"2001","Geography":"Scotland","Sex":"Female","Value":"6.02"},{"Year":"2001","Geography":"Northern Ireland","Sex":null,"Value":"6.74"},{"Year":"2001","Geography":"Northern Ireland","Sex":"Male","Value":"7.62"},{"Year":"2001","Geography":"Northern Ireland","Sex":"Female","Value":"5.81"},{"Year":"2002","Geography":null,"Sex":null,"Value":"6.19"},{"Year":"2002","Geography":null,"Sex":"Male","Value":"6.99"},{"Year":"2002","Geography":null,"Sex":"Female","Value":"5.35"},{"Year":"2002","Geography":"England and Wales","Sex":null,"Value":"6.17"},{"Year":"2002","Geography":"England and Wales","Sex":"Male","Value":"6.95"},{"Year":"2002","Geography":"England and Wales","Sex":"Female","Value":"5.34"},{"Year":"2002","Geography":"England","Sex":null,"Value":"6.16"},{"Year":"2002","Geography":"England","Sex":"Male","Value":"6.94"},{"Year":"2002","Geography":"England","Sex":"Female","Value":"5.33"},{"Year":"2002","Geography":"Wales","Sex":null,"Value":"5.33"},{"Year":"2002","Geography":"Wales","Sex":"Male","Value":"5.85"},{"Year":"2002","Geography":"Wales","Sex":"Female","Value":"4.78"},{"Year":"2002","Geography":"Scotland","Sex":null,"Value":"6.55"},{"Year":"2002","Geography":"Scotland","Sex":"Male","Value":"7.67"},{"Year":"2002","Geography":"Scotland","Sex":"Female","Value":"5.39"},{"Year":"2002","Geography":"Northern Ireland","Sex":null,"Value":"5.94"},{"Year":"2002","Geography":"Northern Ireland","Sex":"Male","Value":"6.53"},{"Year":"2002","Geography":"Northern Ireland","Sex":"Female","Value":"5.33"},{"Year":"2003","Geography":null,"Sex":null,"Value":"6.25"},{"Year":"2003","Geography":null,"Sex":"Male","Value":"6.67"},{"Year":"2003","Geography":null,"Sex":"Female","Value":"5.81"},{"Year":"2003","Geography":"England and Wales","Sex":null,"Value":"6.26"},{"Year":"2003","Geography":"England and Wales","Sex":"Male","Value":"6.64"},{"Year":"2003","Geography":"England and Wales","Sex":"Female","Value":"5.87"},{"Year":"2003","Geography":"England","Sex":null,"Value":"6.24"},{"Year":"2003","Geography":"England","Sex":"Male","Value":"6.62"},{"Year":"2003","Geography":"England","Sex":"Female","Value":"5.85"},{"Year":"2003","Geography":"Wales","Sex":null,"Value":"5.19"},{"Year":"2003","Geography":"Wales","Sex":"Male","Value":"5.52"},{"Year":"2003","Geography":"Wales","Sex":"Female","Value":"4.84"},{"Year":"2003","Geography":"Scotland","Sex":null,"Value":"6.18"},{"Year":"2003","Geography":"Scotland","Sex":"Male","Value":"6.73"},{"Year":"2003","Geography":"Scotland","Sex":"Female","Value":"5.6"},{"Year":"2003","Geography":"Northern Ireland","Sex":null,"Value":"6.03"},{"Year":"2003","Geography":"Northern Ireland","Sex":"Male","Value":"7.42"},{"Year":"2003","Geography":"Northern Ireland","Sex":"Female","Value":"4.53"},{"Year":"2004","Geography":null,"Sex":null,"Value":"5.86"},{"Year":"2004","Geography":null,"Sex":"Male","Value":"6.38"},{"Year":"2004","Geography":null,"Sex":"Female","Value":"5.3"},{"Year":"2004","Geography":"England and Wales","Sex":null,"Value":"5.84"},{"Year":"2004","Geography":"England and Wales","Sex":"Male","Value":"6.33"},{"Year":"2004","Geography":"England and Wales","Sex":"Female","Value":"5.32"},{"Year":"2004","Geography":"England","Sex":null,"Value":"5.78"},{"Year":"2004","Geography":"England","Sex":"Male","Value":"6.28"},{"Year":"2004","Geography":"England","Sex":"Female","Value":"5.26"},{"Year":"2004","Geography":"Wales","Sex":null,"Value":"5.63"},{"Year":"2004","Geography":"Wales","Sex":"Male","Value":"6.13"},{"Year":"2004","Geography":"Wales","Sex":"Female","Value":"5.1"},{"Year":"2004","Geography":"Scotland","Sex":null,"Value":"5.82"},{"Year":"2004","Geography":"Scotland","Sex":"Male","Value":"6.81"},{"Year":"2004","Geography":"Scotland","Sex":"Female","Value":"4.77"},{"Year":"2004","Geography":"Northern Ireland","Sex":null,"Value":"6.45"},{"Year":"2004","Geography":"Northern Ireland","Sex":"Male","Value":"6.71"},{"Year":"2004","Geography":"Northern Ireland","Sex":"Female","Value":"6.18"},{"Year":"2005","Geography":null,"Sex":null,"Value":"5.9"},{"Year":"2005","Geography":null,"Sex":"Male","Value":"6.58"},{"Year":"2005","Geography":null,"Sex":"Female","Value":"5.18"},{"Year":"2005","Geography":"England and Wales","Sex":null,"Value":"5.82"},{"Year":"2005","Geography":"England and Wales","Sex":"Male","Value":"6.51"},{"Year":"2005","Geography":"England and Wales","Sex":"Female","Value":"5.1"},{"Year":"2005","Geography":"England","Sex":null,"Value":"5.81"},{"Year":"2005","Geography":"England","Sex":"Male","Value":"6.49"},{"Year":"2005","Geography":"England","Sex":"Female","Value":"5.1"},{"Year":"2005","Geography":"Wales","Sex":null,"Value":"4.69"},{"Year":"2005","Geography":"Wales","Sex":"Male","Value":"5.48"},{"Year":"2005","Geography":"Wales","Sex":"Female","Value":"3.86"},{"Year":"2005","Geography":"Scotland","Sex":null,"Value":"6.33"},{"Year":"2005","Geography":"Scotland","Sex":"Male","Value":"6.84"},{"Year":"2005","Geography":"Scotland","Sex":"Female","Value":"5.78"},{"Year":"2005","Geography":"Northern Ireland","Sex":null,"Value":"6.99"},{"Year":"2005","Geography":"Northern Ireland","Sex":"Male","Value":"7.94"},{"Year":"2005","Geography":"Northern Ireland","Sex":"Female","Value":"6.01"},{"Year":"2006","Geography":null,"Sex":null,"Value":"5.75"},{"Year":"2006","Geography":null,"Sex":"Male","Value":"6.23"},{"Year":"2006","Geography":null,"Sex":"Female","Value":"5.25"},{"Year":"2006","Geography":"England and Wales","Sex":null,"Value":"5.77"},{"Year":"2006","Geography":"England and Wales","Sex":"Male","Value":"6.24"},{"Year":"2006","Geography":"England and Wales","Sex":"Female","Value":"5.29"},{"Year":"2006","Geography":"England","Sex":null,"Value":"5.75"},{"Year":"2006","Geography":"England","Sex":"Male","Value":"6.19"},{"Year":"2006","Geography":"England","Sex":"Female","Value":"5.28"},{"Year":"2006","Geography":"Wales","Sex":null,"Value":"4.85"},{"Year":"2006","Geography":"Wales","Sex":"Male","Value":"5.51"},{"Year":"2006","Geography":"Wales","Sex":"Female","Value":"4.15"},{"Year":"2006","Geography":"Scotland","Sex":null,"Value":"5.3"},{"Year":"2006","Geography":"Scotland","Sex":"Male","Value":"5.83"},{"Year":"2006","Geography":"Scotland","Sex":"Female","Value":"4.74"},{"Year":"2006","Geography":"Northern Ireland","Sex":null,"Value":"6.27"},{"Year":"2006","Geography":"Northern Ireland","Sex":"Male","Value":"7.08"},{"Year":"2006","Geography":"Northern Ireland","Sex":"Female","Value":"5.42"},{"Year":"2007","Geography":null,"Sex":null,"Value":"5.55"},{"Year":"2007","Geography":null,"Sex":"Male","Value":"6.15"},{"Year":"2007","Geography":null,"Sex":"Female","Value":"4.92"},{"Year":"2007","Geography":"England and Wales","Sex":null,"Value":"5.54"},{"Year":"2007","Geography":"England and Wales","Sex":"Male","Value":"6.14"},{"Year":"2007","Geography":"England and Wales","Sex":"Female","Value":"4.9"},{"Year":"2007","Geography":"England","Sex":null,"Value":"5.47"},{"Year":"2007","Geography":"England","Sex":"Male","Value":"6.02"},{"Year":"2007","Geography":"England","Sex":"Female","Value":"4.89"},{"Year":"2007","Geography":"Wales","Sex":null,"Value":"5.49"},{"Year":"2007","Geography":"Wales","Sex":"Male","Value":"6.8"},{"Year":"2007","Geography":"Wales","Sex":"Female","Value":"4.11"},{"Year":"2007","Geography":"Scotland","Sex":null,"Value":"5.59"},{"Year":"2007","Geography":"Scotland","Sex":"Male","Value":"6.03"},{"Year":"2007","Geography":"Scotland","Sex":"Female","Value":"5.13"},{"Year":"2007","Geography":"Northern Ireland","Sex":null,"Value":"5.85"},{"Year":"2007","Geography":"Northern Ireland","Sex":"Male","Value":"6.79"},{"Year":"2007","Geography":"Northern Ireland","Sex":"Female","Value":"4.86"},{"Year":"2008","Geography":null,"Sex":null,"Value":"5.32"},{"Year":"2008","Geography":null,"Sex":"Male","Value":"5.79"},{"Year":"2008","Geography":null,"Sex":"Female","Value":"4.83"},{"Year":"2008","Geography":"England and Wales","Sex":null,"Value":"5.35"},{"Year":"2008","Geography":"England and Wales","Sex":"Male","Value":"5.84"},{"Year":"2008","Geography":"England and Wales","Sex":"Female","Value":"4.84"},{"Year":"2008","Geography":"England","Sex":null,"Value":"5.31"},{"Year":"2008","Geography":"England","Sex":"Male","Value":"5.79"},{"Year":"2008","Geography":"England","Sex":"Female","Value":"4.81"},{"Year":"2008","Geography":"Wales","Sex":null,"Value":"4.57"},{"Year":"2008","Geography":"Wales","Sex":"Male","Value":"4.85"},{"Year":"2008","Geography":"Wales","Sex":"Female","Value":"4.28"},{"Year":"2008","Geography":"Scotland","Sex":null,"Value":"4.86"},{"Year":"2008","Geography":"Scotland","Sex":"Male","Value":"5.3"},{"Year":"2008","Geography":"Scotland","Sex":"Female","Value":"4.41"},{"Year":"2008","Geography":"Northern Ireland","Sex":null,"Value":"5.66"},{"Year":"2008","Geography":"Northern Ireland","Sex":"Male","Value":"5.76"},{"Year":"2008","Geography":"Northern Ireland","Sex":"Female","Value":"5.55"},{"Year":"2009","Geography":null,"Sex":null,"Value":"5.18"},{"Year":"2009","Geography":null,"Sex":"Male","Value":"5.55"},{"Year":"2009","Geography":null,"Sex":"Female","Value":"4.78"},{"Year":"2009","Geography":"England and Wales","Sex":null,"Value":"5.19"},{"Year":"2009","Geography":"England and Wales","Sex":"Male","Value":"5.54"},{"Year":"2009","Geography":"England and Wales","Sex":"Female","Value":"4.81"},{"Year":"2009","Geography":"England","Sex":null,"Value":"5.11"},{"Year":"2009","Geography":"England","Sex":"Male","Value":"5.45"},{"Year":"2009","Geography":"England","Sex":"Female","Value":"4.75"},{"Year":"2009","Geography":"Wales","Sex":null,"Value":"5.18"},{"Year":"2009","Geography":"Wales","Sex":"Male","Value":"5.6"},{"Year":"2009","Geography":"Wales","Sex":"Female","Value":"4.74"},{"Year":"2009","Geography":"Scotland","Sex":null,"Value":"4.67"},{"Year":"2009","Geography":"Scotland","Sex":"Male","Value":"5.4"},{"Year":"2009","Geography":"Scotland","Sex":"Female","Value":"3.91"},{"Year":"2009","Geography":"Northern Ireland","Sex":null,"Value":"6.14"},{"Year":"2009","Geography":"Northern Ireland","Sex":"Male","Value":"6.17"},{"Year":"2009","Geography":"Northern Ireland","Sex":"Female","Value":"6.11"},{"Year":"2010","Geography":null,"Sex":null,"Value":"4.9"},{"Year":"2010","Geography":null,"Sex":"Male","Value":"5.27"},{"Year":"2010","Geography":null,"Sex":"Female","Value":"4.51"},{"Year":"2010","Geography":"England and Wales","Sex":null,"Value":"4.88"},{"Year":"2010","Geography":"England and Wales","Sex":"Male","Value":"5.26"},{"Year":"2010","Geography":"England and Wales","Sex":"Female","Value":"4.49"},{"Year":"2010","Geography":"England","Sex":null,"Value":"4.87"},{"Year":"2010","Geography":"England","Sex":"Male","Value":"5.24"},{"Year":"2010","Geography":"England","Sex":"Female","Value":"4.48"},{"Year":"2010","Geography":"Wales","Sex":null,"Value":"4.31"},{"Year":"2010","Geography":"Wales","Sex":"Male","Value":"4.71"},{"Year":"2010","Geography":"Wales","Sex":"Female","Value":"3.89"},{"Year":"2010","Geography":"Scotland","Sex":null,"Value":"4.42"},{"Year":"2010","Geography":"Scotland","Sex":"Male","Value":"4.75"},{"Year":"2010","Geography":"Scotland","Sex":"Female","Value":"4.08"},{"Year":"2010","Geography":"Northern Ireland","Sex":null,"Value":"6.52"},{"Year":"2010","Geography":"Northern Ireland","Sex":"Male","Value":"6.81"},{"Year":"2010","Geography":"Northern Ireland","Sex":"Female","Value":"6.21"},{"Year":"2011","Geography":null,"Sex":null,"Value":"4.81"},{"Year":"2011","Geography":null,"Sex":"Male","Value":"5.43"},{"Year":"2011","Geography":null,"Sex":"Female","Value":"4.15"},{"Year":"2011","Geography":"England and Wales","Sex":null,"Value":"4.81"},{"Year":"2011","Geography":"England and Wales","Sex":"Male","Value":"5.42"},{"Year":"2011","Geography":"England and Wales","Sex":"Female","Value":"4.16"},{"Year":"2011","Geography":"England","Sex":null,"Value":"4.78"},{"Year":"2011","Geography":"England","Sex":"Male","Value":"5.38"},{"Year":"2011","Geography":"England","Sex":"Female","Value":"4.14"},{"Year":"2011","Geography":"Wales","Sex":null,"Value":"4.16"},{"Year":"2011","Geography":"Wales","Sex":"Male","Value":"4.79"},{"Year":"2011","Geography":"Wales","Sex":"Female","Value":"3.5"},{"Year":"2011","Geography":"Scotland","Sex":null,"Value":"4.69"},{"Year":"2011","Geography":"Scotland","Sex":"Male","Value":"5.25"},{"Year":"2011","Geography":"Scotland","Sex":"Female","Value":"4.11"},{"Year":"2011","Geography":"Northern Ireland","Sex":null,"Value":"5.06"},{"Year":"2011","Geography":"Northern Ireland","Sex":"Male","Value":"6.08"},{"Year":"2011","Geography":"Northern Ireland","Sex":"Female","Value":"4.02"},{"Year":"2012","Geography":null,"Sex":null,"Value":"4.58"},{"Year":"2012","Geography":null,"Sex":"Male","Value":"5.05"},{"Year":"2012","Geography":null,"Sex":"Female","Value":"4.08"},{"Year":"2012","Geography":"England and Wales","Sex":null,"Value":"4.61"},{"Year":"2012","Geography":"England and Wales","Sex":"Male","Value":"5.08"},{"Year":"2012","Geography":"England and Wales","Sex":"Female","Value":"4.12"},{"Year":"2012","Geography":"England","Sex":null,"Value":"4.56"},{"Year":"2012","Geography":"England","Sex":"Male","Value":"5.01"},{"Year":"2012","Geography":"England","Sex":"Female","Value":"4.08"},{"Year":"2012","Geography":"Wales","Sex":null,"Value":"4.65"},{"Year":"2012","Geography":"Wales","Sex":"Male","Value":"5.39"},{"Year":"2012","Geography":"Wales","Sex":"Female","Value":"3.88"},{"Year":"2012","Geography":"Scotland","Sex":null,"Value":"4.38"},{"Year":"2012","Geography":"Scotland","Sex":"Male","Value":"5.15"},{"Year":"2012","Geography":"Scotland","Sex":"Female","Value":"3.57"},{"Year":"2012","Geography":"Northern Ireland","Sex":null,"Value":"3.96"},{"Year":"2012","Geography":"Northern Ireland","Sex":"Male","Value":"4.0"},{"Year":"2012","Geography":"Northern Ireland","Sex":"Female","Value":"3.91"},{"Year":"2013","Geography":null,"Sex":null,"Value":"4.47"},{"Year":"2013","Geography":null,"Sex":"Male","Value":"4.86"},{"Year":"2013","Geography":null,"Sex":"Female","Value":"4.05"},{"Year":"2013","Geography":"England and Wales","Sex":null,"Value":"4.47"},{"Year":"2013","Geography":"England and Wales","Sex":"Male","Value":"4.89"},{"Year":"2013","Geography":"England and Wales","Sex":"Female","Value":"4.03"},{"Year":"2013","Geography":"England","Sex":null,"Value":"4.42"},{"Year":"2013","Geography":"England","Sex":"Male","Value":"4.87"},{"Year":"2013","Geography":"England","Sex":"Female","Value":"3.95"},{"Year":"2013","Geography":"Wales","Sex":null,"Value":"4.18"},{"Year":"2013","Geography":"Wales","Sex":"Male","Value":"4.14"},{"Year":"2013","Geography":"Wales","Sex":"Female","Value":"4.22"},{"Year":"2013","Geography":"Scotland","Sex":null,"Value":"4.03"},{"Year":"2013","Geography":"Scotland","Sex":"Male","Value":"4.13"},{"Year":"2013","Geography":"Scotland","Sex":"Female","Value":"3.94"},{"Year":"2013","Geography":"Northern Ireland","Sex":null,"Value":"5.31"},{"Year":"2013","Geography":"Northern Ireland","Sex":"Male","Value":"5.89"},{"Year":"2013","Geography":"Northern Ireland","Sex":"Female","Value":"4.71"},{"Year":"2014","Geography":null,"Sex":null,"Value":"4.23"},{"Year":"2014","Geography":null,"Sex":"Male","Value":"4.56"},{"Year":"2014","Geography":null,"Sex":"Female","Value":"3.88"},{"Year":"2014","Geography":"England and Wales","Sex":null,"Value":"4.2"},{"Year":"2014","Geography":"England and Wales","Sex":"Male","Value":"4.49"},{"Year":"2014","Geography":"England and Wales","Sex":"Female","Value":"3.89"},{"Year":"2014","Geography":"England","Sex":null,"Value":"4.19"},{"Year":"2014","Geography":"England","Sex":"Male","Value":"4.44"},{"Year":"2014","Geography":"England","Sex":"Female","Value":"3.91"},{"Year":"2014","Geography":"Wales","Sex":null,"Value":"3.67"},{"Year":"2014","Geography":"Wales","Sex":"Male","Value":"4.45"},{"Year":"2014","Geography":"Wales","Sex":"Female","Value":"2.83"},{"Year":"2014","Geography":"Scotland","Sex":null,"Value":"4.11"},{"Year":"2014","Geography":"Scotland","Sex":"Male","Value":"4.41"},{"Year":"2014","Geography":"Scotland","Sex":"Female","Value":"3.79"},{"Year":"2014","Geography":"Northern Ireland","Sex":null,"Value":"5.49"},{"Year":"2014","Geography":"Northern Ireland","Sex":"Male","Value":"6.94"},{"Year":"2014","Geography":"Northern Ireland","Sex":"Female","Value":"3.97"},{"Year":"2015","Geography":null,"Sex":null,"Value":"4.29"},{"Year":"2015","Geography":null,"Sex":"Male","Value":"4.85"},{"Year":"2015","Geography":null,"Sex":"Female","Value":"3.7"},{"Year":"2015","Geography":"England and Wales","Sex":null,"Value":"4.28"},{"Year":"2015","Geography":"England and Wales","Sex":"Male","Value":"4.84"},{"Year":"2015","Geography":"England and Wales","Sex":"Female","Value":"3.68"},{"Year":"2015","Geography":"England","Sex":null,"Value":"4.24"},{"Year":"2015","Geography":"England","Sex":"Male","Value":"4.78"},{"Year":"2015","Geography":"England","Sex":"Female","Value":"3.67"},{"Year":"2015","Geography":"Wales","Sex":null,"Value":"4.15"},{"Year":"2015","Geography":"Wales","Sex":"Male","Value":"5.02"},{"Year":"2015","Geography":"Wales","Sex":"Female","Value":"3.24"},{"Year":"2015","Geography":"Scotland","Sex":null,"Value":"3.83"},{"Year":"2015","Geography":"Scotland","Sex":"Male","Value":"4.27"},{"Year":"2015","Geography":"Scotland","Sex":"Female","Value":"3.37"},{"Year":"2015","Geography":"Northern Ireland","Sex":null,"Value":"5.7"},{"Year":"2015","Geography":"Northern Ireland","Sex":"Male","Value":"6.32"},{"Year":"2015","Geography":"Northern Ireland","Sex":"Female","Value":"5.03"}]' data-indicatorid='indicator_3-2-1' data-country="United Kingdom"
-  data-edgesdata='[]' data-charttitle="Number of deaths per 1,000 children younger than 5 years" data-measurementunit="Rate per 1,000 live births" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Number of deaths per 1,000 children younger than 5 years</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Number of deaths per 1,000 children younger than 5 years</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Geography":null,"Sex":null,"Value":"6.55"},{"Year":"2000","Geography":null,"Sex":"Male","Value":"7.19"},{"Year":"2000","Geography":null,"Sex":"Female","Value":"5.88"},{"Year":"2000","Geography":"England and Wales","Sex":null,"Value":"6.55"},{"Year":"2000","Geography":"England and Wales","Sex":"Male","Value":"7.17"},{"Year":"2000","Geography":"England and Wales","Sex":"Female","Value":"5.89"},{"Year":"2000","Geography":"England","Sex":null,"Value":"6.49"},{"Year":"2000","Geography":"England","Sex":"Male","Value":"7.11"},{"Year":"2000","Geography":"England","Sex":"Female","Value":"5.85"},{"Year":"2000","Geography":"Wales","Sex":null,"Value":"6.23"},{"Year":"2000","Geography":"Wales","Sex":"Male","Value":"7.26"},{"Year":"2000","Geography":"Wales","Sex":"Female","Value":"5.12"},{"Year":"2000","Geography":"Scotland","Sex":null,"Value":"6.71"},{"Year":"2000","Geography":"Scotland","Sex":"Male","Value":"7.57"},{"Year":"2000","Geography":"Scotland","Sex":"Female","Value":"5.87"},{"Year":"2000","Geography":"Northern Ireland","Sex":null,"Value":"6.14"},{"Year":"2000","Geography":"Northern Ireland","Sex":"Male","Value":"6.56"},{"Year":"2000","Geography":"Northern Ireland","Sex":"Female","Value":"5.68"},{"Year":"2001","Geography":null,"Sex":null,"Value":"6.44"},{"Year":"2001","Geography":null,"Sex":"Male","Value":"6.97"},{"Year":"2001","Geography":null,"Sex":"Female","Value":"5.88"},{"Year":"2001","Geography":"England and Wales","Sex":null,"Value":"6.44"},{"Year":"2001","Geography":"England and Wales","Sex":"Male","Value":"6.98"},{"Year":"2001","Geography":"England and Wales","Sex":"Female","Value":"5.87"},{"Year":"2001","Geography":"England","Sex":null,"Value":"6.37"},{"Year":"2001","Geography":"England","Sex":"Male","Value":"6.92"},{"Year":"2001","Geography":"England","Sex":"Female","Value":"5.8"},{"Year":"2001","Geography":"Wales","Sex":null,"Value":"6.37"},{"Year":"2001","Geography":"Wales","Sex":"Male","Value":"7.05"},{"Year":"2001","Geography":"Wales","Sex":"Female","Value":"5.65"},{"Year":"2001","Geography":"Scotland","Sex":null,"Value":"6.32"},{"Year":"2001","Geography":"Scotland","Sex":"Male","Value":"6.61"},{"Year":"2001","Geography":"Scotland","Sex":"Female","Value":"6.02"},{"Year":"2001","Geography":"Northern Ireland","Sex":null,"Value":"6.74"},{"Year":"2001","Geography":"Northern Ireland","Sex":"Male","Value":"7.62"},{"Year":"2001","Geography":"Northern Ireland","Sex":"Female","Value":"5.81"},{"Year":"2002","Geography":null,"Sex":null,"Value":"6.19"},{"Year":"2002","Geography":null,"Sex":"Male","Value":"6.99"},{"Year":"2002","Geography":null,"Sex":"Female","Value":"5.35"},{"Year":"2002","Geography":"England and Wales","Sex":null,"Value":"6.17"},{"Year":"2002","Geography":"England and Wales","Sex":"Male","Value":"6.95"},{"Year":"2002","Geography":"England and Wales","Sex":"Female","Value":"5.34"},{"Year":"2002","Geography":"England","Sex":null,"Value":"6.16"},{"Year":"2002","Geography":"England","Sex":"Male","Value":"6.94"},{"Year":"2002","Geography":"England","Sex":"Female","Value":"5.33"},{"Year":"2002","Geography":"Wales","Sex":null,"Value":"5.33"},{"Year":"2002","Geography":"Wales","Sex":"Male","Value":"5.85"},{"Year":"2002","Geography":"Wales","Sex":"Female","Value":"4.78"},{"Year":"2002","Geography":"Scotland","Sex":null,"Value":"6.55"},{"Year":"2002","Geography":"Scotland","Sex":"Male","Value":"7.67"},{"Year":"2002","Geography":"Scotland","Sex":"Female","Value":"5.39"},{"Year":"2002","Geography":"Northern Ireland","Sex":null,"Value":"5.94"},{"Year":"2002","Geography":"Northern Ireland","Sex":"Male","Value":"6.53"},{"Year":"2002","Geography":"Northern Ireland","Sex":"Female","Value":"5.33"},{"Year":"2003","Geography":null,"Sex":null,"Value":"6.25"},{"Year":"2003","Geography":null,"Sex":"Male","Value":"6.67"},{"Year":"2003","Geography":null,"Sex":"Female","Value":"5.81"},{"Year":"2003","Geography":"England and Wales","Sex":null,"Value":"6.26"},{"Year":"2003","Geography":"England and Wales","Sex":"Male","Value":"6.64"},{"Year":"2003","Geography":"England and Wales","Sex":"Female","Value":"5.87"},{"Year":"2003","Geography":"England","Sex":null,"Value":"6.24"},{"Year":"2003","Geography":"England","Sex":"Male","Value":"6.62"},{"Year":"2003","Geography":"England","Sex":"Female","Value":"5.85"},{"Year":"2003","Geography":"Wales","Sex":null,"Value":"5.19"},{"Year":"2003","Geography":"Wales","Sex":"Male","Value":"5.52"},{"Year":"2003","Geography":"Wales","Sex":"Female","Value":"4.84"},{"Year":"2003","Geography":"Scotland","Sex":null,"Value":"6.18"},{"Year":"2003","Geography":"Scotland","Sex":"Male","Value":"6.73"},{"Year":"2003","Geography":"Scotland","Sex":"Female","Value":"5.6"},{"Year":"2003","Geography":"Northern Ireland","Sex":null,"Value":"6.03"},{"Year":"2003","Geography":"Northern Ireland","Sex":"Male","Value":"7.42"},{"Year":"2003","Geography":"Northern Ireland","Sex":"Female","Value":"4.53"},{"Year":"2004","Geography":null,"Sex":null,"Value":"5.86"},{"Year":"2004","Geography":null,"Sex":"Male","Value":"6.38"},{"Year":"2004","Geography":null,"Sex":"Female","Value":"5.3"},{"Year":"2004","Geography":"England and Wales","Sex":null,"Value":"5.84"},{"Year":"2004","Geography":"England and Wales","Sex":"Male","Value":"6.33"},{"Year":"2004","Geography":"England and Wales","Sex":"Female","Value":"5.32"},{"Year":"2004","Geography":"England","Sex":null,"Value":"5.78"},{"Year":"2004","Geography":"England","Sex":"Male","Value":"6.28"},{"Year":"2004","Geography":"England","Sex":"Female","Value":"5.26"},{"Year":"2004","Geography":"Wales","Sex":null,"Value":"5.63"},{"Year":"2004","Geography":"Wales","Sex":"Male","Value":"6.13"},{"Year":"2004","Geography":"Wales","Sex":"Female","Value":"5.1"},{"Year":"2004","Geography":"Scotland","Sex":null,"Value":"5.82"},{"Year":"2004","Geography":"Scotland","Sex":"Male","Value":"6.81"},{"Year":"2004","Geography":"Scotland","Sex":"Female","Value":"4.77"},{"Year":"2004","Geography":"Northern Ireland","Sex":null,"Value":"6.45"},{"Year":"2004","Geography":"Northern Ireland","Sex":"Male","Value":"6.71"},{"Year":"2004","Geography":"Northern Ireland","Sex":"Female","Value":"6.18"},{"Year":"2005","Geography":null,"Sex":null,"Value":"5.9"},{"Year":"2005","Geography":null,"Sex":"Male","Value":"6.58"},{"Year":"2005","Geography":null,"Sex":"Female","Value":"5.18"},{"Year":"2005","Geography":"England and Wales","Sex":null,"Value":"5.82"},{"Year":"2005","Geography":"England and Wales","Sex":"Male","Value":"6.51"},{"Year":"2005","Geography":"England and Wales","Sex":"Female","Value":"5.1"},{"Year":"2005","Geography":"England","Sex":null,"Value":"5.81"},{"Year":"2005","Geography":"England","Sex":"Male","Value":"6.49"},{"Year":"2005","Geography":"England","Sex":"Female","Value":"5.1"},{"Year":"2005","Geography":"Wales","Sex":null,"Value":"4.69"},{"Year":"2005","Geography":"Wales","Sex":"Male","Value":"5.48"},{"Year":"2005","Geography":"Wales","Sex":"Female","Value":"3.86"},{"Year":"2005","Geography":"Scotland","Sex":null,"Value":"6.33"},{"Year":"2005","Geography":"Scotland","Sex":"Male","Value":"6.84"},{"Year":"2005","Geography":"Scotland","Sex":"Female","Value":"5.78"},{"Year":"2005","Geography":"Northern Ireland","Sex":null,"Value":"6.99"},{"Year":"2005","Geography":"Northern Ireland","Sex":"Male","Value":"7.94"},{"Year":"2005","Geography":"Northern Ireland","Sex":"Female","Value":"6.01"},{"Year":"2006","Geography":null,"Sex":null,"Value":"5.75"},{"Year":"2006","Geography":null,"Sex":"Male","Value":"6.23"},{"Year":"2006","Geography":null,"Sex":"Female","Value":"5.25"},{"Year":"2006","Geography":"England and Wales","Sex":null,"Value":"5.77"},{"Year":"2006","Geography":"England and Wales","Sex":"Male","Value":"6.24"},{"Year":"2006","Geography":"England and Wales","Sex":"Female","Value":"5.29"},{"Year":"2006","Geography":"England","Sex":null,"Value":"5.75"},{"Year":"2006","Geography":"England","Sex":"Male","Value":"6.19"},{"Year":"2006","Geography":"England","Sex":"Female","Value":"5.28"},{"Year":"2006","Geography":"Wales","Sex":null,"Value":"4.85"},{"Year":"2006","Geography":"Wales","Sex":"Male","Value":"5.51"},{"Year":"2006","Geography":"Wales","Sex":"Female","Value":"4.15"},{"Year":"2006","Geography":"Scotland","Sex":null,"Value":"5.3"},{"Year":"2006","Geography":"Scotland","Sex":"Male","Value":"5.83"},{"Year":"2006","Geography":"Scotland","Sex":"Female","Value":"4.74"},{"Year":"2006","Geography":"Northern Ireland","Sex":null,"Value":"6.27"},{"Year":"2006","Geography":"Northern Ireland","Sex":"Male","Value":"7.08"},{"Year":"2006","Geography":"Northern Ireland","Sex":"Female","Value":"5.42"},{"Year":"2007","Geography":null,"Sex":null,"Value":"5.55"},{"Year":"2007","Geography":null,"Sex":"Male","Value":"6.15"},{"Year":"2007","Geography":null,"Sex":"Female","Value":"4.92"},{"Year":"2007","Geography":"England and Wales","Sex":null,"Value":"5.54"},{"Year":"2007","Geography":"England and Wales","Sex":"Male","Value":"6.14"},{"Year":"2007","Geography":"England and Wales","Sex":"Female","Value":"4.9"},{"Year":"2007","Geography":"England","Sex":null,"Value":"5.47"},{"Year":"2007","Geography":"England","Sex":"Male","Value":"6.02"},{"Year":"2007","Geography":"England","Sex":"Female","Value":"4.89"},{"Year":"2007","Geography":"Wales","Sex":null,"Value":"5.49"},{"Year":"2007","Geography":"Wales","Sex":"Male","Value":"6.8"},{"Year":"2007","Geography":"Wales","Sex":"Female","Value":"4.11"},{"Year":"2007","Geography":"Scotland","Sex":null,"Value":"5.59"},{"Year":"2007","Geography":"Scotland","Sex":"Male","Value":"6.03"},{"Year":"2007","Geography":"Scotland","Sex":"Female","Value":"5.13"},{"Year":"2007","Geography":"Northern Ireland","Sex":null,"Value":"5.85"},{"Year":"2007","Geography":"Northern Ireland","Sex":"Male","Value":"6.79"},{"Year":"2007","Geography":"Northern Ireland","Sex":"Female","Value":"4.86"},{"Year":"2008","Geography":null,"Sex":null,"Value":"5.32"},{"Year":"2008","Geography":null,"Sex":"Male","Value":"5.79"},{"Year":"2008","Geography":null,"Sex":"Female","Value":"4.83"},{"Year":"2008","Geography":"England and Wales","Sex":null,"Value":"5.35"},{"Year":"2008","Geography":"England and Wales","Sex":"Male","Value":"5.84"},{"Year":"2008","Geography":"England and Wales","Sex":"Female","Value":"4.84"},{"Year":"2008","Geography":"England","Sex":null,"Value":"5.31"},{"Year":"2008","Geography":"England","Sex":"Male","Value":"5.79"},{"Year":"2008","Geography":"England","Sex":"Female","Value":"4.81"},{"Year":"2008","Geography":"Wales","Sex":null,"Value":"4.57"},{"Year":"2008","Geography":"Wales","Sex":"Male","Value":"4.85"},{"Year":"2008","Geography":"Wales","Sex":"Female","Value":"4.28"},{"Year":"2008","Geography":"Scotland","Sex":null,"Value":"4.86"},{"Year":"2008","Geography":"Scotland","Sex":"Male","Value":"5.3"},{"Year":"2008","Geography":"Scotland","Sex":"Female","Value":"4.41"},{"Year":"2008","Geography":"Northern Ireland","Sex":null,"Value":"5.66"},{"Year":"2008","Geography":"Northern Ireland","Sex":"Male","Value":"5.76"},{"Year":"2008","Geography":"Northern Ireland","Sex":"Female","Value":"5.55"},{"Year":"2009","Geography":null,"Sex":null,"Value":"5.18"},{"Year":"2009","Geography":null,"Sex":"Male","Value":"5.55"},{"Year":"2009","Geography":null,"Sex":"Female","Value":"4.78"},{"Year":"2009","Geography":"England and Wales","Sex":null,"Value":"5.19"},{"Year":"2009","Geography":"England and Wales","Sex":"Male","Value":"5.54"},{"Year":"2009","Geography":"England and Wales","Sex":"Female","Value":"4.81"},{"Year":"2009","Geography":"England","Sex":null,"Value":"5.11"},{"Year":"2009","Geography":"England","Sex":"Male","Value":"5.45"},{"Year":"2009","Geography":"England","Sex":"Female","Value":"4.75"},{"Year":"2009","Geography":"Wales","Sex":null,"Value":"5.18"},{"Year":"2009","Geography":"Wales","Sex":"Male","Value":"5.6"},{"Year":"2009","Geography":"Wales","Sex":"Female","Value":"4.74"},{"Year":"2009","Geography":"Scotland","Sex":null,"Value":"4.67"},{"Year":"2009","Geography":"Scotland","Sex":"Male","Value":"5.4"},{"Year":"2009","Geography":"Scotland","Sex":"Female","Value":"3.91"},{"Year":"2009","Geography":"Northern Ireland","Sex":null,"Value":"6.14"},{"Year":"2009","Geography":"Northern Ireland","Sex":"Male","Value":"6.17"},{"Year":"2009","Geography":"Northern Ireland","Sex":"Female","Value":"6.11"},{"Year":"2010","Geography":null,"Sex":null,"Value":"4.9"},{"Year":"2010","Geography":null,"Sex":"Male","Value":"5.27"},{"Year":"2010","Geography":null,"Sex":"Female","Value":"4.51"},{"Year":"2010","Geography":"England and Wales","Sex":null,"Value":"4.88"},{"Year":"2010","Geography":"England and Wales","Sex":"Male","Value":"5.26"},{"Year":"2010","Geography":"England and Wales","Sex":"Female","Value":"4.49"},{"Year":"2010","Geography":"England","Sex":null,"Value":"4.87"},{"Year":"2010","Geography":"England","Sex":"Male","Value":"5.24"},{"Year":"2010","Geography":"England","Sex":"Female","Value":"4.48"},{"Year":"2010","Geography":"Wales","Sex":null,"Value":"4.31"},{"Year":"2010","Geography":"Wales","Sex":"Male","Value":"4.71"},{"Year":"2010","Geography":"Wales","Sex":"Female","Value":"3.89"},{"Year":"2010","Geography":"Scotland","Sex":null,"Value":"4.42"},{"Year":"2010","Geography":"Scotland","Sex":"Male","Value":"4.75"},{"Year":"2010","Geography":"Scotland","Sex":"Female","Value":"4.08"},{"Year":"2010","Geography":"Northern Ireland","Sex":null,"Value":"6.52"},{"Year":"2010","Geography":"Northern Ireland","Sex":"Male","Value":"6.81"},{"Year":"2010","Geography":"Northern Ireland","Sex":"Female","Value":"6.21"},{"Year":"2011","Geography":null,"Sex":null,"Value":"4.81"},{"Year":"2011","Geography":null,"Sex":"Male","Value":"5.43"},{"Year":"2011","Geography":null,"Sex":"Female","Value":"4.15"},{"Year":"2011","Geography":"England and Wales","Sex":null,"Value":"4.81"},{"Year":"2011","Geography":"England and Wales","Sex":"Male","Value":"5.42"},{"Year":"2011","Geography":"England and Wales","Sex":"Female","Value":"4.16"},{"Year":"2011","Geography":"England","Sex":null,"Value":"4.78"},{"Year":"2011","Geography":"England","Sex":"Male","Value":"5.38"},{"Year":"2011","Geography":"England","Sex":"Female","Value":"4.14"},{"Year":"2011","Geography":"Wales","Sex":null,"Value":"4.16"},{"Year":"2011","Geography":"Wales","Sex":"Male","Value":"4.79"},{"Year":"2011","Geography":"Wales","Sex":"Female","Value":"3.5"},{"Year":"2011","Geography":"Scotland","Sex":null,"Value":"4.69"},{"Year":"2011","Geography":"Scotland","Sex":"Male","Value":"5.25"},{"Year":"2011","Geography":"Scotland","Sex":"Female","Value":"4.11"},{"Year":"2011","Geography":"Northern Ireland","Sex":null,"Value":"5.06"},{"Year":"2011","Geography":"Northern Ireland","Sex":"Male","Value":"6.08"},{"Year":"2011","Geography":"Northern Ireland","Sex":"Female","Value":"4.02"},{"Year":"2012","Geography":null,"Sex":null,"Value":"4.58"},{"Year":"2012","Geography":null,"Sex":"Male","Value":"5.05"},{"Year":"2012","Geography":null,"Sex":"Female","Value":"4.08"},{"Year":"2012","Geography":"England and Wales","Sex":null,"Value":"4.61"},{"Year":"2012","Geography":"England and Wales","Sex":"Male","Value":"5.08"},{"Year":"2012","Geography":"England and Wales","Sex":"Female","Value":"4.12"},{"Year":"2012","Geography":"England","Sex":null,"Value":"4.56"},{"Year":"2012","Geography":"England","Sex":"Male","Value":"5.01"},{"Year":"2012","Geography":"England","Sex":"Female","Value":"4.08"},{"Year":"2012","Geography":"Wales","Sex":null,"Value":"4.65"},{"Year":"2012","Geography":"Wales","Sex":"Male","Value":"5.39"},{"Year":"2012","Geography":"Wales","Sex":"Female","Value":"3.88"},{"Year":"2012","Geography":"Scotland","Sex":null,"Value":"4.38"},{"Year":"2012","Geography":"Scotland","Sex":"Male","Value":"5.15"},{"Year":"2012","Geography":"Scotland","Sex":"Female","Value":"3.57"},{"Year":"2012","Geography":"Northern Ireland","Sex":null,"Value":"3.96"},{"Year":"2012","Geography":"Northern Ireland","Sex":"Male","Value":"4.0"},{"Year":"2012","Geography":"Northern Ireland","Sex":"Female","Value":"3.91"},{"Year":"2013","Geography":null,"Sex":null,"Value":"4.47"},{"Year":"2013","Geography":null,"Sex":"Male","Value":"4.86"},{"Year":"2013","Geography":null,"Sex":"Female","Value":"4.05"},{"Year":"2013","Geography":"England and Wales","Sex":null,"Value":"4.47"},{"Year":"2013","Geography":"England and Wales","Sex":"Male","Value":"4.89"},{"Year":"2013","Geography":"England and Wales","Sex":"Female","Value":"4.03"},{"Year":"2013","Geography":"England","Sex":null,"Value":"4.42"},{"Year":"2013","Geography":"England","Sex":"Male","Value":"4.87"},{"Year":"2013","Geography":"England","Sex":"Female","Value":"3.95"},{"Year":"2013","Geography":"Wales","Sex":null,"Value":"4.18"},{"Year":"2013","Geography":"Wales","Sex":"Male","Value":"4.14"},{"Year":"2013","Geography":"Wales","Sex":"Female","Value":"4.22"},{"Year":"2013","Geography":"Scotland","Sex":null,"Value":"4.03"},{"Year":"2013","Geography":"Scotland","Sex":"Male","Value":"4.13"},{"Year":"2013","Geography":"Scotland","Sex":"Female","Value":"3.94"},{"Year":"2013","Geography":"Northern Ireland","Sex":null,"Value":"5.31"},{"Year":"2013","Geography":"Northern Ireland","Sex":"Male","Value":"5.89"},{"Year":"2013","Geography":"Northern Ireland","Sex":"Female","Value":"4.71"},{"Year":"2014","Geography":null,"Sex":null,"Value":"4.23"},{"Year":"2014","Geography":null,"Sex":"Male","Value":"4.56"},{"Year":"2014","Geography":null,"Sex":"Female","Value":"3.88"},{"Year":"2014","Geography":"England and Wales","Sex":null,"Value":"4.2"},{"Year":"2014","Geography":"England and Wales","Sex":"Male","Value":"4.49"},{"Year":"2014","Geography":"England and Wales","Sex":"Female","Value":"3.89"},{"Year":"2014","Geography":"England","Sex":null,"Value":"4.19"},{"Year":"2014","Geography":"England","Sex":"Male","Value":"4.44"},{"Year":"2014","Geography":"England","Sex":"Female","Value":"3.91"},{"Year":"2014","Geography":"Wales","Sex":null,"Value":"3.67"},{"Year":"2014","Geography":"Wales","Sex":"Male","Value":"4.45"},{"Year":"2014","Geography":"Wales","Sex":"Female","Value":"2.83"},{"Year":"2014","Geography":"Scotland","Sex":null,"Value":"4.11"},{"Year":"2014","Geography":"Scotland","Sex":"Male","Value":"4.41"},{"Year":"2014","Geography":"Scotland","Sex":"Female","Value":"3.79"},{"Year":"2014","Geography":"Northern Ireland","Sex":null,"Value":"5.49"},{"Year":"2014","Geography":"Northern Ireland","Sex":"Male","Value":"6.94"},{"Year":"2014","Geography":"Northern Ireland","Sex":"Female","Value":"3.97"},{"Year":"2015","Geography":null,"Sex":null,"Value":"4.29"},{"Year":"2015","Geography":null,"Sex":"Male","Value":"4.85"},{"Year":"2015","Geography":null,"Sex":"Female","Value":"3.7"},{"Year":"2015","Geography":"England and Wales","Sex":null,"Value":"4.28"},{"Year":"2015","Geography":"England and Wales","Sex":"Male","Value":"4.84"},{"Year":"2015","Geography":"England and Wales","Sex":"Female","Value":"3.68"},{"Year":"2015","Geography":"England","Sex":null,"Value":"4.24"},{"Year":"2015","Geography":"England","Sex":"Male","Value":"4.78"},{"Year":"2015","Geography":"England","Sex":"Female","Value":"3.67"},{"Year":"2015","Geography":"Wales","Sex":null,"Value":"4.15"},{"Year":"2015","Geography":"Wales","Sex":"Male","Value":"5.02"},{"Year":"2015","Geography":"Wales","Sex":"Female","Value":"3.24"},{"Year":"2015","Geography":"Scotland","Sex":null,"Value":"3.83"},{"Year":"2015","Geography":"Scotland","Sex":"Male","Value":"4.27"},{"Year":"2015","Geography":"Scotland","Sex":"Female","Value":"3.37"},{"Year":"2015","Geography":"Northern Ireland","Sex":null,"Value":"5.7"},{"Year":"2015","Geography":"Northern Ireland","Sex":"Male","Value":"6.32"},{"Year":"2015","Geography":"Northern Ireland","Sex":"Female","Value":"5.03"}]' data-indicatorid='indicator_3-2-1' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Number of deaths per 1,000 children younger than 5 years" data-measurementunit="Rate per 1,000 live births" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_3-2-1.csv" class="btn btn-primary btn-download" download="indicator_3-2-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_3-2-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-2-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Number of deaths per 1,000 children younger than 5 years</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2000</td>    
+          
+          
+          
+          <td class="table-value">6.55</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2001</td>    
+          
+          
+          
+          <td class="table-value">6.44</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2002</td>    
+          
+          
+          
+          <td class="table-value">6.19</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2003</td>    
+          
+          
+          
+          <td class="table-value">6.25</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2004</td>    
+          
+          
+          
+          <td class="table-value">5.86</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2005</td>    
+          
+          
+          
+          <td class="table-value">5.9</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2006</td>    
+          
+          
+          
+          <td class="table-value">5.75</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2007</td>    
+          
+          
+          
+          <td class="table-value">5.55</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2008</td>    
+          
+          
+          
+          <td class="table-value">5.32</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>    
+          
+          
+          
+          <td class="table-value">5.18</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>    
+          
+          
+          
+          <td class="table-value">4.9</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td class="table-value">4.81</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td class="table-value">4.58</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">4.47</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">4.23</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">4.29</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Office for National Statistics (ONS)</p>
+    
+    
+    <p>Geographical Area: United Kingdom</p>
+    
+    
+    <p>Units of Measure: Rate per 1,000 live births</p>
+    
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -234,24 +493,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -259,186 +520,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Number of deaths per 1,000 children younger than 5 years</h3>
-              
-              <a href="/data/indicator_3-2-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-2-1.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_3-2-1.csv' class='btn btn-primary btn-download' download='indicator_3-2-1.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Number of deaths per 1,000 children younger than 5 years</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2000</td>
-      
-          <td>6.55</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2001</td>
-      
-          <td>6.44</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2002</td>
-      
-          <td>6.19</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2003</td>
-      
-          <td>6.25</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2004</td>
-      
-          <td>5.86</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2005</td>
-      
-          <td>5.9</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2006</td>
-      
-          <td>5.75</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2007</td>
-      
-          <td>5.55</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2008</td>
-      
-          <td>5.32</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2009</td>
-      
-          <td>5.18</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2010</td>
-      
-          <td>4.9</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>4.81</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>4.58</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>4.47</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>4.23</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>4.29</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Office for National Statistics (ONS)</p>
-                
-                
-                <p>Geographical Area: United Kingdom</p>
-                
-                
-                <p>Units of Measure: Rate per 1,000 live births</p>
-                
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -716,7 +808,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -929,7 +1021,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1518,22 +1610,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1564,20 +1651,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1593,6 +1678,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1619,6 +1710,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1626,3 +1719,4 @@ $(function() {
 </body>
 </html>
 
+  

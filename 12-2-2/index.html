@@ -17,7 +17,6 @@
         <title>
         Indicator 12.2.2 - Goal 12 - Responsible consumption and production
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-12">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/responsible-consumption-and-production" title="Ensure sustainable consumption and production patterns">Goal 12</a></li>
-      <li class="active">Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP</li>
+      <li class="active">Indicator 12.2.2</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -195,34 +202,610 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.54356291"},{"Year":"2001","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.57532522"},{"Year":"2002","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.16273538"},{"Year":"2003","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.12291089"},{"Year":"2004","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.54444674"},{"Year":"2005","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.12691742"},{"Year":"2006","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"11.90200749"},{"Year":"2007","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"11.72258073"},{"Year":"2008","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"10.91887105"},{"Year":"2009","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"9.52343942"},{"Year":"2010","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"9.192942901"},{"Year":"2011","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"9.198323144"},{"Year":"2012","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"8.844401538"},{"Year":"2013","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"8.894198176"},{"Year":"2014","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"9.155023159"},{"Year":"2015","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"8.850832437"},{"Year":"2000","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"3.008888345"},{"Year":"2001","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.888048314"},{"Year":"2002","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.979528583"},{"Year":"2003","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.888853676"},{"Year":"2004","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.937561718"},{"Year":"2005","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.882360341"},{"Year":"2006","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.789559259"},{"Year":"2007","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.668992206"},{"Year":"2008","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.768044022"},{"Year":"2009","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.659779475"},{"Year":"2010","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.592780376"},{"Year":"2011","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.637799419"},{"Year":"2012","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.526933522"},{"Year":"2013","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.684110773"},{"Year":"2014","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.835425284"},{"Year":"2015","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.660704961"},{"Year":"2000","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.291260586"},{"Year":"2001","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.347226498"},{"Year":"2002","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.321064184"},{"Year":"2003","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.294603826"},{"Year":"2004","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.325956124"},{"Year":"2005","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.288840371"},{"Year":"2006","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.300816577"},{"Year":"2007","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.338338299"},{"Year":"2008","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.252588809"},{"Year":"2009","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.101679235"},{"Year":"2010","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.152721102"},{"Year":"2011","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.143801622"},{"Year":"2012","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.156712974"},{"Year":"2013","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.200294202"},{"Year":"2014","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.233683402"},{"Year":"2015","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.212222393"},{"Year":"2000","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"5.11667779"},{"Year":"2001","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"5.196237714"},{"Year":"2002","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.925296931"},{"Year":"2003","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.804601864"},{"Year":"2004","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.985506352"},{"Year":"2005","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.761552506"},{"Year":"2006","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.728295447"},{"Year":"2007","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.77165353"},{"Year":"2008","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.193373749"},{"Year":"2009","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.347117354"},{"Year":"2010","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.28747361"},{"Year":"2011","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.308979523"},{"Year":"2012","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.048297622"},{"Year":"2013","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.094947875"},{"Year":"2014","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.376853033"},{"Year":"2015","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.538855783"},{"Year":"2000","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.126736191"},{"Year":"2001","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.143812698"},{"Year":"2002","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.936845687"},{"Year":"2003","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.134851526"},{"Year":"2004","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.295422549"},{"Year":"2005","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.194164199"},{"Year":"2006","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.08333621"},{"Year":"2007","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.943596693"},{"Year":"2008","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.70486447"},{"Year":"2009","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.414863356"},{"Year":"2010","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.159967814"},{"Year":"2011","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.107742581"},{"Year":"2012","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.112457421"},{"Year":"2013","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"2.914845326"},{"Year":"2014","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"2.70906144"},{"Year":"2015","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"2.439049301"},{"Year":"2000","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"520.8390919"},{"Year":"2001","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"510.2596927"},{"Year":"2002","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"484.0247868"},{"Year":"2003","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"468.4064717"},{"Year":"2004","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"475.2298599"},{"Year":"2005","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"449.5971511"},{"Year":"2006","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"433.4323172"},{"Year":"2007","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"419.6262572"},{"Year":"2008","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"396.560615"},{"Year":"2009","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"364.0797552"},{"Year":"2010","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"347.604671"},{"Year":"2011","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"345.5068197"},{"Year":"2012","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"330.0830374"},{"Year":"2013","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"327.7655365"},{"Year":"2014","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"329.8344205"},{"Year":"2015","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"314.5074709"},{"Year":"2000","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"124.9363267"},{"Year":"2001","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"117.1862055"},{"Year":"2002","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"118.5724791"},{"Year":"2003","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"111.6198716"},{"Year":"2004","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"111.2856607"},{"Year":"2005","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"106.861534"},{"Year":"2006","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"101.5866554"},{"Year":"2007","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"95.54032817"},{"Year":"2008","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"100.5321186"},{"Year":"2009","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"101.6829968"},{"Year":"2010","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"98.03852577"},{"Year":"2011","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"99.08085137"},{"Year":"2012","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"94.30800812"},{"Year":"2013","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"98.91380766"},{"Year":"2014","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"102.1538492"},{"Year":"2015","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"94.54608862"},{"Year":"2000","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"12.09384449"},{"Year":"2001","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"14.08915342"},{"Year":"2002","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"12.77697969"},{"Year":"2003","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"11.38293764"},{"Year":"2004","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"12.34841888"},{"Year":"2005","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"10.70855878"},{"Year":"2006","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"10.95475919"},{"Year":"2007","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"12.11129506"},{"Year":"2008","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"9.173729859"},{"Year":"2009","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"3.887182907"},{"Year":"2010","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"5.774708815"},{"Year":"2011","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"5.401467219"},{"Year":"2012","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"5.848704877"},{"Year":"2013","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"7.38116412"},{"Year":"2014","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"8.419075325"},{"Year":"2015","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"7.541158249"},{"Year":"2000","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"212.456846"},{"Year":"2001","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"210.8439036"},{"Year":"2002","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"196.0057275"},{"Year":"2003","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"185.6407778"},{"Year":"2004","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"188.8693486"},{"Year":"2005","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"176.5312954"},{"Year":"2006","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"172.1891079"},{"Year":"2007","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"170.8080463"},{"Year":"2008","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"152.2984258"},{"Year":"2009","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"127.9598277"},{"Year":"2010","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"124.3063505"},{"Year":"2011","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"124.2916751"},{"Year":"2012","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"113.7659042"},{"Year":"2013","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"114.053817"},{"Year":"2014","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"121.6602453"},{"Year":"2015","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"125.7504975"},{"Year":"2000","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"171.3520748"},{"Year":"2001","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"168.1404303"},{"Year":"2002","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"156.6696006"},{"Year":"2003","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"159.7628846"},{"Year":"2004","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"162.7264317"},{"Year":"2005","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"155.4957629"},{"Year":"2006","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"148.7017948"},{"Year":"2007","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"141.1665877"},{"Year":"2008","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"134.5563407"},{"Year":"2009","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"130.5497478"},{"Year":"2010","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"119.4850859"},{"Year":"2011","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"116.7328261"},{"Year":"2012","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"116.1604202"},{"Year":"2013","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"107.4167478"},{"Year":"2014","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"97.60125066"},{"Year":"2015","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"86.66972654"}]' data-indicatorid='indicator_12-2-2' data-country="United Kingdom"
-  data-edgesdata='[]' data-charttitle="Domestic material consumption per capita and per gross domestic product (GDP)" data-measurementunit="Domestic material consumption per capita and per gross domestic product (GDP)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Domestic material consumption per capita and per gross domestic product (GDP)</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Domestic material consumption per capita and per gross domestic product (GDP)</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.54356291"},{"Year":"2001","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.57532522"},{"Year":"2002","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.16273538"},{"Year":"2003","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.12291089"},{"Year":"2004","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.54444674"},{"Year":"2005","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"12.12691742"},{"Year":"2006","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"11.90200749"},{"Year":"2007","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"11.72258073"},{"Year":"2008","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"10.91887105"},{"Year":"2009","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"9.52343942"},{"Year":"2010","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"9.192942901"},{"Year":"2011","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"9.198323144"},{"Year":"2012","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"8.844401538"},{"Year":"2013","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"8.894198176"},{"Year":"2014","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"9.155023159"},{"Year":"2015","Units":"Tonnes per capita","Domestic consumption category":null,"Value":"8.850832437"},{"Year":"2000","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"3.008888345"},{"Year":"2001","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.888048314"},{"Year":"2002","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.979528583"},{"Year":"2003","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.888853676"},{"Year":"2004","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.937561718"},{"Year":"2005","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.882360341"},{"Year":"2006","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.789559259"},{"Year":"2007","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.668992206"},{"Year":"2008","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.768044022"},{"Year":"2009","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.659779475"},{"Year":"2010","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.592780376"},{"Year":"2011","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.637799419"},{"Year":"2012","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.526933522"},{"Year":"2013","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.684110773"},{"Year":"2014","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.835425284"},{"Year":"2015","Units":"Tonnes per capita","Domestic consumption category":"Biomass","Value":"2.660704961"},{"Year":"2000","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.291260586"},{"Year":"2001","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.347226498"},{"Year":"2002","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.321064184"},{"Year":"2003","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.294603826"},{"Year":"2004","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.325956124"},{"Year":"2005","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.288840371"},{"Year":"2006","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.300816577"},{"Year":"2007","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.338338299"},{"Year":"2008","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.252588809"},{"Year":"2009","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.101679235"},{"Year":"2010","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.152721102"},{"Year":"2011","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.143801622"},{"Year":"2012","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.156712974"},{"Year":"2013","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.200294202"},{"Year":"2014","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.233683402"},{"Year":"2015","Units":"Tonnes per capita","Domestic consumption category":"Metal ores","Value":"0.212222393"},{"Year":"2000","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"5.11667779"},{"Year":"2001","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"5.196237714"},{"Year":"2002","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.925296931"},{"Year":"2003","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.804601864"},{"Year":"2004","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.985506352"},{"Year":"2005","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.761552506"},{"Year":"2006","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.728295447"},{"Year":"2007","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.77165353"},{"Year":"2008","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"4.193373749"},{"Year":"2009","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.347117354"},{"Year":"2010","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.28747361"},{"Year":"2011","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.308979523"},{"Year":"2012","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.048297622"},{"Year":"2013","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.094947875"},{"Year":"2014","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.376853033"},{"Year":"2015","Units":"Tonnes per capita","Domestic consumption category":"Non-metal minerals","Value":"3.538855783"},{"Year":"2000","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.126736191"},{"Year":"2001","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.143812698"},{"Year":"2002","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.936845687"},{"Year":"2003","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.134851526"},{"Year":"2004","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.295422549"},{"Year":"2005","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.194164199"},{"Year":"2006","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"4.08333621"},{"Year":"2007","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.943596693"},{"Year":"2008","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.70486447"},{"Year":"2009","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.414863356"},{"Year":"2010","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.159967814"},{"Year":"2011","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.107742581"},{"Year":"2012","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"3.112457421"},{"Year":"2013","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"2.914845326"},{"Year":"2014","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"2.70906144"},{"Year":"2015","Units":"Tonnes per capita","Domestic consumption category":"Fossil energy materials","Value":"2.439049301"},{"Year":"2000","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"520.8390919"},{"Year":"2001","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"510.2596927"},{"Year":"2002","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"484.0247868"},{"Year":"2003","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"468.4064717"},{"Year":"2004","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"475.2298599"},{"Year":"2005","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"449.5971511"},{"Year":"2006","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"433.4323172"},{"Year":"2007","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"419.6262572"},{"Year":"2008","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"396.560615"},{"Year":"2009","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"364.0797552"},{"Year":"2010","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"347.604671"},{"Year":"2011","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"345.5068197"},{"Year":"2012","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"330.0830374"},{"Year":"2013","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"327.7655365"},{"Year":"2014","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"329.8344205"},{"Year":"2015","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":null,"Value":"314.5074709"},{"Year":"2000","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"124.9363267"},{"Year":"2001","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"117.1862055"},{"Year":"2002","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"118.5724791"},{"Year":"2003","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"111.6198716"},{"Year":"2004","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"111.2856607"},{"Year":"2005","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"106.861534"},{"Year":"2006","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"101.5866554"},{"Year":"2007","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"95.54032817"},{"Year":"2008","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"100.5321186"},{"Year":"2009","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"101.6829968"},{"Year":"2010","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"98.03852577"},{"Year":"2011","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"99.08085137"},{"Year":"2012","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"94.30800812"},{"Year":"2013","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"98.91380766"},{"Year":"2014","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"102.1538492"},{"Year":"2015","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Biomass","Value":"94.54608862"},{"Year":"2000","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"12.09384449"},{"Year":"2001","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"14.08915342"},{"Year":"2002","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"12.77697969"},{"Year":"2003","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"11.38293764"},{"Year":"2004","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"12.34841888"},{"Year":"2005","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"10.70855878"},{"Year":"2006","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"10.95475919"},{"Year":"2007","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"12.11129506"},{"Year":"2008","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"9.173729859"},{"Year":"2009","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"3.887182907"},{"Year":"2010","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"5.774708815"},{"Year":"2011","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"5.401467219"},{"Year":"2012","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"5.848704877"},{"Year":"2013","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"7.38116412"},{"Year":"2014","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"8.419075325"},{"Year":"2015","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Metal ores","Value":"7.541158249"},{"Year":"2000","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"212.456846"},{"Year":"2001","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"210.8439036"},{"Year":"2002","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"196.0057275"},{"Year":"2003","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"185.6407778"},{"Year":"2004","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"188.8693486"},{"Year":"2005","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"176.5312954"},{"Year":"2006","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"172.1891079"},{"Year":"2007","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"170.8080463"},{"Year":"2008","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"152.2984258"},{"Year":"2009","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"127.9598277"},{"Year":"2010","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"124.3063505"},{"Year":"2011","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"124.2916751"},{"Year":"2012","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"113.7659042"},{"Year":"2013","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"114.053817"},{"Year":"2014","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"121.6602453"},{"Year":"2015","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Non-metal minerals","Value":"125.7504975"},{"Year":"2000","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"171.3520748"},{"Year":"2001","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"168.1404303"},{"Year":"2002","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"156.6696006"},{"Year":"2003","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"159.7628846"},{"Year":"2004","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"162.7264317"},{"Year":"2005","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"155.4957629"},{"Year":"2006","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"148.7017948"},{"Year":"2007","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"141.1665877"},{"Year":"2008","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"134.5563407"},{"Year":"2009","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"130.5497478"},{"Year":"2010","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"119.4850859"},{"Year":"2011","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"116.7328261"},{"Year":"2012","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"116.1604202"},{"Year":"2013","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"107.4167478"},{"Year":"2014","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"97.60125066"},{"Year":"2015","Units":"Tonnes per gross domestic product (£m)","Domestic consumption category":"Fossil energy materials","Value":"86.66972654"}]' data-indicatorid='indicator_12-2-2' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Domestic material consumption per capita and per gross domestic product (GDP)" data-measurementunit="Domestic material consumption per capita and per gross domestic product (GDP)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_12-2-2.csv" class="btn btn-primary btn-download" download="indicator_12-2-2.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_12-2-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_12-2-2.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Domestic material consumption per capita and per gross domestic product (GDP)</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col">Units</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2000</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">12.54356291</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2001</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">12.57532522</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2002</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">12.16273538</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2003</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">12.12291089</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2004</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">12.54444674</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2005</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">12.12691742</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2006</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">11.90200749</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2007</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">11.72258073</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2008</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">10.91887105</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">9.52343942</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">9.192942901</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">9.198323144</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">8.844401538</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">8.894198176</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">9.155023159</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td>Tonnes per capita</td>    
+          
+          
+          
+          <td class="table-value">8.850832437000001</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2000</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">520.8390919</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2001</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">510.2596927</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2002</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">484.02478679999996</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2003</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">468.4064717</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2004</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">475.22985989999995</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2005</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">449.5971511</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2006</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">433.4323172</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2007</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">419.6262572</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2008</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">396.560615</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">364.07975519999997</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">347.604671</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">345.5068197</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">330.08303739999997</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">327.7655365</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">329.8344205</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td>Tonnes per gross domestic product (£m)</td>    
+          
+          
+          
+          <td class="table-value">314.5074709</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Office for National Statistics (ONS)</p>
+    
+    
+    <p>Geographical Area: United Kingdom</p>
+    
+    
+    <p>Units of Measure: Domestic material consumption per capita and per gross domestic product (GDP)</p>
+    
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -234,24 +817,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -259,380 +844,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Domestic material consumption per capita and per gross domestic product (GDP)</h3>
-              
-              <a href="/data/indicator_12-2-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_12-2-2.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_12-2-2.csv' class='btn btn-primary btn-download' download='indicator_12-2-2.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Domestic material consumption per capita and per gross domestic product (GDP)</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Units</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2000</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>12.54356291</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2001</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>12.57532522</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2002</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>12.16273538</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2003</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>12.12291089</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2004</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>12.54444674</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2005</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>12.12691742</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2006</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>11.90200749</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2007</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>11.72258073</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2008</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>10.91887105</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2009</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>9.52343942</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2010</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>9.192942901</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>9.198323144</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>8.844401538</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>8.894198176</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>9.155023159</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>Tonnes per capita</td>
-      
-          <td>8.850832437000001</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2000</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>520.8390919</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2001</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>510.2596927</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2002</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>484.02478679999996</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2003</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>468.4064717</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2004</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>475.22985989999995</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2005</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>449.5971511</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2006</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>433.4323172</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2007</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>419.6262572</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2008</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>396.560615</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2009</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>364.07975519999997</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2010</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>347.604671</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>345.5068197</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>330.08303739999997</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>327.7655365</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>329.8344205</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>Tonnes per gross domestic product (£m)</td>
-      
-          <td>314.5074709</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Office for National Statistics (ONS)</p>
-                
-                
-                <p>Geographical Area: United Kingdom</p>
-                
-                
-                <p>Units of Measure: Domestic material consumption per capita and per gross domestic product (GDP)</p>
-                
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -910,7 +1132,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -1123,7 +1345,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -2272,22 +2494,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -2318,20 +2535,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -2347,6 +2562,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -2373,6 +2594,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -2380,3 +2603,4 @@ $(function() {
 </body>
 </html>
 
+  

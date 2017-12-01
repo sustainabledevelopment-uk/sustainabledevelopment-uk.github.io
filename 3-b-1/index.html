@@ -17,7 +17,6 @@
         <title>
         Indicator 3.b.1 - Goal 3 - Good Health and Well-being
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-3">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/good-health-and-well-being" title="Ensure healthy lives and promote well-being for all at all ages">Goal 3</a></li>
-      <li class="active">Proportion of the target population covered by all vaccines included in their national programme</li>
+      <li class="active">Indicator 3.b.1</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -197,34 +204,88 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2006","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"91.4171738"},{"Year":"2006","Age":"1","Vaccine":"Meningococcal group C","Value":"90.9051151"},{"Year":"2006","Age":"2","Vaccine":"Meningococcal group C","Value":"93.34935697"},{"Year":"2006","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"84.05678308"},{"Year":"2006","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"93.8070409"},{"Year":"2006","Age":"5","Vaccine":"Pertussis","Value":"93"},{"Year":"2006","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"93"},{"Year":"2006","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"87.30004215"},{"Year":"2007","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"91.10335842"},{"Year":"2007","Age":"1","Vaccine":"Meningococcal group C","Value":"90.9759075"},{"Year":"2007","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.36334798"},{"Year":"2007","Age":"2","Vaccine":"Meningococcal group C","Value":"93.25661057"},{"Year":"2007","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"85.24538468"},{"Year":"2007","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"93.27386759"},{"Year":"2007","Age":"5","Vaccine":"Pertussis","Value":"92.85629659"},{"Year":"2007","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"92.53533536"},{"Year":"2007","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"85.93057961"},{"Year":"2008","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"91.273284"},{"Year":"2008","Age":"1","Vaccine":"Meningococcal group C","Value":"90.27881918"},{"Year":"2008","Age":"1","Vaccine":"Pneumococcal disease","Value":"83.66101875"},{"Year":"2008","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.63020883"},{"Year":"2008","Age":"2","Vaccine":"Meningococcal group C","Value":"93.2360133"},{"Year":"2008","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"84.55129169"},{"Year":"2008","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"92.64305327"},{"Year":"2008","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"92.24783259"},{"Year":"2008","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"86.99647134"},{"Year":"2009","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"92.03012645"},{"Year":"2009","Age":"1","Vaccine":"Meningococcal group C","Value":"91.20297901"},{"Year":"2009","Age":"1","Vaccine":"Pneumococcal disease","Value":"91.26504182"},{"Year":"2009","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.8541566"},{"Year":"2009","Age":"2","Vaccine":"Meningococcal group C","Value":"91.85010478"},{"Year":"2009","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"84.8685534"},{"Year":"2009","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"92.52802928"},{"Year":"2009","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"90.93861779"},{"Year":"2009","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"88.85625161"},{"Year":"2010","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.61114579"},{"Year":"2010","Age":"1","Vaccine":"Meningococcal group C","Value":"92.68207941"},{"Year":"2010","Age":"1","Vaccine":"Pneumococcal disease","Value":"92.85053568"},{"Year":"2010","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"95.29378549"},{"Year":"2010","Age":"2","Vaccine":"Meningococcal group C","Value":"94.2018942"},{"Year":"2010","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"88.18380975"},{"Year":"2010","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"94.03672967"},{"Year":"2010","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"93.12908968"},{"Year":"2010","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"91.00956457"},{"Year":"2011","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"94.15002676"},{"Year":"2011","Age":"1","Vaccine":"Meningococcal group C","Value":"93.38698033"},{"Year":"2011","Age":"1","Vaccine":"Haemophilus influenzae b","Value":"93.58356077"},{"Year":"2011","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"95.97626157"},{"Year":"2011","Age":"2","Vaccine":"Meningococcal group C","Value":"94.77500746"},{"Year":"2011","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"89.12585847"},{"Year":"2011","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"94.69937551"},{"Year":"2011","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"94.18965667"},{"Year":"2011","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"91.92187535"},{"Year":"2012","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"94.66758771"},{"Year":"2012","Age":"1","Vaccine":"Meningococcal group C","Value":"93.89373941"},{"Year":"2012","Age":"1","Vaccine":"Pneumococcal disease","Value":"94.21624907"},{"Year":"2012","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"96.14239132"},{"Year":"2012","Age":"2","Vaccine":"Meningococcal group C","Value":"94.87619042"},{"Year":"2012","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"91.24827838"},{"Year":"2012","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.37022705"},{"Year":"2012","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"94.87876837"},{"Year":"2012","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"92.89776421"},{"Year":"2013","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"94.74058167"},{"Year":"2013","Age":"1","Vaccine":"Meningococcal group C","Value":"93.88998706"},{"Year":"2013","Age":"1","Vaccine":"Pneumococcal disease","Value":"94.42945911"},{"Year":"2013","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"96.2984827"},{"Year":"2013","Age":"2","Vaccine":"Meningococcal group C","Value":"95.14581977"},{"Year":"2013","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"92.32239752"},{"Year":"2013","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.80783559"},{"Year":"2013","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"95.39441887"},{"Year":"2013","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"93.8748894"},{"Year":"2014","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"94.33724759"},{"Year":"2014","Age":"1","Vaccine":"Pneumococcal disease","Value":"94.07369096"},{"Year":"2014","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"96.13803071"},{"Year":"2014","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"92.65428665"},{"Year":"2014","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.60094474"},{"Year":"2014","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"94.10716197"},{"Year":"2015","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"94.22824602"},{"Year":"2015","Age":"1","Vaccine":"Pneumococcal disease","Value":"93.88439299"},{"Year":"2015","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"95.74408419"},{"Year":"2015","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"92.29"},{"Year":"2015","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.55512959"},{"Year":"2015","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"94.37289582"},{"Year":"2016","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.55915265"},{"Year":"2016","Age":"1","Vaccine":"Pneumococcal disease","Value":"93.45012874"},{"Year":"2016","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"95.24251125"},{"Year":"2016","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"91.91506347"},{"Year":"2016","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.57022911"},{"Year":"2016","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"94.79622532"},{"Year":"2017","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.40648938"},{"Year":"2017","Age":"1","Vaccine":"Pneumococcal disease","Value":"93.51482605"},{"Year":"2017","Age":"1","Vaccine":"Rotavirus","Value":"89.64222706"},{"Year":"2017","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"95.14597013"},{"Year":"2017","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"91.60637891"},{"Year":"2017","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.59192832"},{"Year":"2017","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"95.00111061"}]' data-indicatorid='indicator_3-b-1' data-country="England"
-  data-edgesdata='[{"From":"Age","To":"Vaccine"}]' data-charttitle="Percentage of children vaccinated by their first, second, and fifth birthday" data-measurementunit="Percentage (%)" data-datasource="National Health Service (NHS) Digital" data-geographicalarea="England" data-footnote="The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Percentage of children vaccinated by their first, second, and fifth birthday</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Percentage of children vaccinated by their first, second, and fifth birthday</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2006","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"91.4171738"},{"Year":"2006","Age":"1","Vaccine":"Meningococcal group C","Value":"90.9051151"},{"Year":"2006","Age":"2","Vaccine":"Meningococcal group C","Value":"93.34935697"},{"Year":"2006","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"84.05678308"},{"Year":"2006","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"93.8070409"},{"Year":"2006","Age":"5","Vaccine":"Pertussis","Value":"93"},{"Year":"2006","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"93"},{"Year":"2006","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"87.30004215"},{"Year":"2007","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"91.10335842"},{"Year":"2007","Age":"1","Vaccine":"Meningococcal group C","Value":"90.9759075"},{"Year":"2007","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.36334798"},{"Year":"2007","Age":"2","Vaccine":"Meningococcal group C","Value":"93.25661057"},{"Year":"2007","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"85.24538468"},{"Year":"2007","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"93.27386759"},{"Year":"2007","Age":"5","Vaccine":"Pertussis","Value":"92.85629659"},{"Year":"2007","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"92.53533536"},{"Year":"2007","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"85.93057961"},{"Year":"2008","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"91.273284"},{"Year":"2008","Age":"1","Vaccine":"Meningococcal group C","Value":"90.27881918"},{"Year":"2008","Age":"1","Vaccine":"Pneumococcal disease","Value":"83.66101875"},{"Year":"2008","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.63020883"},{"Year":"2008","Age":"2","Vaccine":"Meningococcal group C","Value":"93.2360133"},{"Year":"2008","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"84.55129169"},{"Year":"2008","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"92.64305327"},{"Year":"2008","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"92.24783259"},{"Year":"2008","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"86.99647134"},{"Year":"2009","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"92.03012645"},{"Year":"2009","Age":"1","Vaccine":"Meningococcal group C","Value":"91.20297901"},{"Year":"2009","Age":"1","Vaccine":"Pneumococcal disease","Value":"91.26504182"},{"Year":"2009","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.8541566"},{"Year":"2009","Age":"2","Vaccine":"Meningococcal group C","Value":"91.85010478"},{"Year":"2009","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"84.8685534"},{"Year":"2009","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"92.52802928"},{"Year":"2009","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"90.93861779"},{"Year":"2009","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"88.85625161"},{"Year":"2010","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.61114579"},{"Year":"2010","Age":"1","Vaccine":"Meningococcal group C","Value":"92.68207941"},{"Year":"2010","Age":"1","Vaccine":"Pneumococcal disease","Value":"92.85053568"},{"Year":"2010","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"95.29378549"},{"Year":"2010","Age":"2","Vaccine":"Meningococcal group C","Value":"94.2018942"},{"Year":"2010","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"88.18380975"},{"Year":"2010","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"94.03672967"},{"Year":"2010","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"93.12908968"},{"Year":"2010","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"91.00956457"},{"Year":"2011","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"94.15002676"},{"Year":"2011","Age":"1","Vaccine":"Meningococcal group C","Value":"93.38698033"},{"Year":"2011","Age":"1","Vaccine":"Haemophilus influenzae b","Value":"93.58356077"},{"Year":"2011","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"95.97626157"},{"Year":"2011","Age":"2","Vaccine":"Meningococcal group C","Value":"94.77500746"},{"Year":"2011","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"89.12585847"},{"Year":"2011","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"94.69937551"},{"Year":"2011","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"94.18965667"},{"Year":"2011","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"91.92187535"},{"Year":"2012","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"94.66758771"},{"Year":"2012","Age":"1","Vaccine":"Meningococcal group C","Value":"93.89373941"},{"Year":"2012","Age":"1","Vaccine":"Pneumococcal disease","Value":"94.21624907"},{"Year":"2012","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"96.14239132"},{"Year":"2012","Age":"2","Vaccine":"Meningococcal group C","Value":"94.87619042"},{"Year":"2012","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"91.24827838"},{"Year":"2012","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.37022705"},{"Year":"2012","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"94.87876837"},{"Year":"2012","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"92.89776421"},{"Year":"2013","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"94.74058167"},{"Year":"2013","Age":"1","Vaccine":"Meningococcal group C","Value":"93.88998706"},{"Year":"2013","Age":"1","Vaccine":"Pneumococcal disease","Value":"94.42945911"},{"Year":"2013","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"96.2984827"},{"Year":"2013","Age":"2","Vaccine":"Meningococcal group C","Value":"95.14581977"},{"Year":"2013","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"92.32239752"},{"Year":"2013","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.80783559"},{"Year":"2013","Age":"5","Vaccine":"Haemophilus influenzae b","Value":"95.39441887"},{"Year":"2013","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"93.8748894"},{"Year":"2014","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"94.33724759"},{"Year":"2014","Age":"1","Vaccine":"Pneumococcal disease","Value":"94.07369096"},{"Year":"2014","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"96.13803071"},{"Year":"2014","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"92.65428665"},{"Year":"2014","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.60094474"},{"Year":"2014","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"94.10716197"},{"Year":"2015","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"94.22824602"},{"Year":"2015","Age":"1","Vaccine":"Pneumococcal disease","Value":"93.88439299"},{"Year":"2015","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"95.74408419"},{"Year":"2015","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"92.29"},{"Year":"2015","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.55512959"},{"Year":"2015","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"94.37289582"},{"Year":"2016","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.55915265"},{"Year":"2016","Age":"1","Vaccine":"Pneumococcal disease","Value":"93.45012874"},{"Year":"2016","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"95.24251125"},{"Year":"2016","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"91.91506347"},{"Year":"2016","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.57022911"},{"Year":"2016","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"94.79622532"},{"Year":"2017","Age":"1","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"93.40648938"},{"Year":"2017","Age":"1","Vaccine":"Pneumococcal disease","Value":"93.51482605"},{"Year":"2017","Age":"1","Vaccine":"Rotavirus","Value":"89.64222706"},{"Year":"2017","Age":"2","Vaccine":"Diphtheria, tetanus, polio, pertussis, haemophilus influenza b","Value":"95.14597013"},{"Year":"2017","Age":"2","Vaccine":"Measles, mumps, rubella","Value":"91.60637891"},{"Year":"2017","Age":"5","Vaccine":"Diphtheria, tetanus, polio","Value":"95.59192832"},{"Year":"2017","Age":"5","Vaccine":"Measles, mumps, rubella","Value":"95.00111061"}]' data-indicatorid='indicator_3-b-1' data-country="England"
+  data-edgesdata='[{"From":"Age","To":"Vaccine"}]' data-charttitle="Percentage of children vaccinated by their first, second, and fifth birthday" data-measurementunit="Percentage (%)" data-datasource="National Health Service (NHS) Digital" data-geographicalarea="England" data-footnote="The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_3-b-1.csv" class="btn btn-primary btn-download" download="indicator_3-b-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_3-b-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-b-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Percentage of children vaccinated by their first, second, and fifth birthday</caption>
+      <thead>
         
-          
+      </thead>
+      <tbody>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: National Health Service (NHS) Digital</p>
+    
+    
+    <p>Geographical Area: England</p>
+    
+    
+    <p>Units of Measure: Percentage (%)</p>
+    
+    
+    <p>Footnote: The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -236,24 +297,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -261,56 +324,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Percentage of children vaccinated by their first, second, and fifth birthday</h3>
-              
-              <a href="/data/indicator_3-b-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-b-1.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_3-b-1.csv' class='btn btn-primary btn-download' download='indicator_3-b-1.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Percentage of children vaccinated by their first, second, and fifth birthday</caption>
-  <thead>
-  
-  </thead>
-  <tbody>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: National Health Service (NHS) Digital</p>
-                
-                
-                <p>Geographical Area: England</p>
-                
-                
-                <p>Units of Measure: Percentage (%)</p>
-                
-                
-                <p>Footnote: The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -588,7 +612,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -801,7 +825,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1390,22 +1414,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1436,20 +1455,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1465,6 +1482,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1491,6 +1514,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1498,3 +1523,4 @@ $(function() {
 </body>
 </html>
 
+  

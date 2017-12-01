@@ -1,1 +1,7 @@
 From,To
+Country,Region
+Country,Sex
+Country,Learning category
+Region,Local authority
+Learning category,Learning sub-category (higher)
+Learning sub-category (higher),Learning sub-category (lower)

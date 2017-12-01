@@ -17,7 +17,6 @@
         <title>
         Indicator 6.a.1 - Goal 6 - Clean water and sanitation
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-6">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/clean-water-and-sanitation" title="Ensure availability and sustainable management of water and sanitation for all">Goal 6</a></li>
-      <li class="active">Amount of water- and sanitation-related official development assistance that is part of a government-coordinated spending plan</li>
+      <li class="active">Indicator 6.a.1</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -195,34 +202,166 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"73182.75"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"17135.47"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"0.08"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"401.05"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"0"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"0"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"52982.15"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"0"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"0"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"2500"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"164"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"0"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"220157.2884"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"33851.56761"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"8545.419889"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"39431.21816"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"19386.15675"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"7562.727538"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"81056.71411"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"8371.694675"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"7292.220087"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"6216.632861"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"8205.781206"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"237.1555409"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"92399.79452"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"13059.73697"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"4571.0202"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"1749.25768"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"93.515"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"0"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"65999.73079"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"743.09815"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"1399.67926"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"2887.28"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"1888.97647"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"7.5"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"127757.4939"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"20791.83065"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"3974.399689"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"37681.96048"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"19292.64175"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"7562.727538"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"15056.98332"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"7628.596525"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"5892.540827"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"3329.352861"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"6316.804736"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"229.6555409"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"235605.653"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"40506.93584"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"3865.922265"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"40217.16137"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"23764.54211"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"12446.23721"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"81676.98521"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"11247.53558"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"7559.249276"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"6799.871376"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"7370.97613"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"150.2366365"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"109656.1911"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"22103.40852"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"2079.00611"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"3062.05562"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"0"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"31.11"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"72040.36902"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"2806.21285"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"4517.24424"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"2100.42855"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"906.032122"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"10.324091"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"125949.4619"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"18403.52732"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"1786.916155"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"37155.10575"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"23764.54211"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"12415.12721"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"9636.616187"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"8441.322726"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"3042.005036"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"4699.442826"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"6464.944008"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"139.9125455"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"219389.8576"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"39762.72942"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"5555.502064"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"25868.35038"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"22689.49408"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"12532.57268"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"71843.32567"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"10620.72131"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"13540.58645"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"5380.615427"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"11396.35748"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"199.602688"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"106672.3223"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"18236.8216"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"1744.34583"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"1278.222"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"10000"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"19.89"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"61240.86309"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"2661.86015"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"9173.83967"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"1609.34507"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"700.534219"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"6.600649"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"112717.5354"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"21525.90782"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"3811.156234"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"24590.12838"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"12689.49408"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"12512.68268"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"10602.46258"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"7958.86116"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"4366.746785"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"3771.270357"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"10695.82326"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"193.002039"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"291950.2507"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"58827.39241"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"9699.259147"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"42469.4763"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"12412.65057"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"16811.30994"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"89003.99446"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"14649.72144"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"29460.49202"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"6904.318774"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"11331.10343"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"380.5322549"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"128337.5499"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"35152.72477"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"1330.37347"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"1762.597"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"-9458.121"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"0"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"70182.17275"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"2656.80807"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"26202.22875"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"11.936"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"269.63581"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"227.1943"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"163612.7008"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"23674.66764"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"8368.885677"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"40706.8793"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"21870.77157"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"16811.30994"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"18821.82171"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"11992.91337"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"3258.263267"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"6892.382774"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"11061.46762"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"153.3379549"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"389419.6586"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"81196.0847"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"8697.830507"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"32461.02695"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"37390.65814"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"19625.74991"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"106009.0657"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"33114.02635"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"45415.63229"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"14754.82403"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"10310.85996"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"443.8999766"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"180841.8484"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"29977.039"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"1260.91525"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"7884.44546"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"970.75"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"0"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"80941.04179"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"19464.55966"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"39142.11241"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"407.27787"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"624.797909"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"168.9091"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"208577.8101"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"51219.0457"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"7436.915257"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"24576.58149"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"36419.90814"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"19625.74991"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"25068.02396"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"13649.46669"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"6273.519881"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"14347.54616"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"9686.062046"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"274.9908766"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"349633.0768"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"69917.32523"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"7143.933344"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"21720.36868"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"38332.84809"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"15804.19309"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"59929.94193"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"53831.08765"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"57701.70352"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"11633.88632"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"12518.78037"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"1099.008524"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"182634.2934"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"21007.58388"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"1578.18877"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"2394.96958"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"9449.33183"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"32.756"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"41867.18666"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"46923.3333"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"54148.36605"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"3072.29477"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"1347.80659"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"812.476"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"166998.7833"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"48909.74135"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"5565.744574"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"19325.3991"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"28883.51626"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"15771.43709"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"18062.75527"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"6907.754349"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"3553.337466"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"8561.591554"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"11170.97378"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"286.5325236"}]' data-indicatorid='indicator_6-a-1' data-country="United Kingdom"
-  data-edgesdata='[]' data-charttitle="Net official development assistance (ODA) to the water and sanitation sectors" data-measurementunit="GBP (£000s)" data-datasource="Department for International Development (DFID)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Net official development assistance (ODA) to the water and sanitation sectors</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Net official development assistance (ODA) to the water and sanitation sectors</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"73182.75"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"17135.47"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"0.08"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"401.05"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"0"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"0"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"52982.15"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"0"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"0"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"2500"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"164"},{"Year":"2009","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"0"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"220157.2884"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"33851.56761"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"8545.419889"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"39431.21816"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"19386.15675"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"7562.727538"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"81056.71411"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"8371.694675"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"7292.220087"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"6216.632861"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"8205.781206"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"237.1555409"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"92399.79452"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"13059.73697"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"4571.0202"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"1749.25768"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"93.515"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"0"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"65999.73079"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"743.09815"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"1399.67926"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"2887.28"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"1888.97647"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"7.5"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"127757.4939"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"20791.83065"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"3974.399689"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"37681.96048"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"19292.64175"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"7562.727538"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"15056.98332"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"7628.596525"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"5892.540827"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"3329.352861"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"6316.804736"},{"Year":"2010","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"229.6555409"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"235605.653"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"40506.93584"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"3865.922265"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"40217.16137"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"23764.54211"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"12446.23721"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"81676.98521"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"11247.53558"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"7559.249276"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"6799.871376"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"7370.97613"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"150.2366365"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"109656.1911"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"22103.40852"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"2079.00611"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"3062.05562"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"0"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"31.11"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"72040.36902"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"2806.21285"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"4517.24424"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"2100.42855"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"906.032122"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"10.324091"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"125949.4619"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"18403.52732"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"1786.916155"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"37155.10575"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"23764.54211"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"12415.12721"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"9636.616187"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"8441.322726"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"3042.005036"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"4699.442826"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"6464.944008"},{"Year":"2011","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"139.9125455"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"219389.8576"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"39762.72942"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"5555.502064"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"25868.35038"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"22689.49408"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"12532.57268"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"71843.32567"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"10620.72131"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"13540.58645"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"5380.615427"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"11396.35748"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"199.602688"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"106672.3223"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"18236.8216"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"1744.34583"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"1278.222"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"10000"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"19.89"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"61240.86309"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"2661.86015"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"9173.83967"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"1609.34507"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"700.534219"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"6.600649"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"112717.5354"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"21525.90782"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"3811.156234"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"24590.12838"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"12689.49408"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"12512.68268"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"10602.46258"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"7958.86116"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"4366.746785"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"3771.270357"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"10695.82326"},{"Year":"2012","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"193.002039"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"291950.2507"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"58827.39241"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"9699.259147"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"42469.4763"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"12412.65057"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"16811.30994"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"89003.99446"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"14649.72144"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"29460.49202"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"6904.318774"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"11331.10343"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"380.5322549"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"128337.5499"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"35152.72477"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"1330.37347"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"1762.597"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"-9458.121"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"0"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"70182.17275"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"2656.80807"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"26202.22875"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"11.936"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"269.63581"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"227.1943"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"163612.7008"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"23674.66764"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"8368.885677"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"40706.8793"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"21870.77157"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"16811.30994"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"18821.82171"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"11992.91337"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"3258.263267"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"6892.382774"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"11061.46762"},{"Year":"2013","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"153.3379549"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"389419.6586"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"81196.0847"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"8697.830507"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"32461.02695"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"37390.65814"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"19625.74991"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"106009.0657"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"33114.02635"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"45415.63229"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"14754.82403"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"10310.85996"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"443.8999766"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"180841.8484"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"29977.039"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"1260.91525"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"7884.44546"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"970.75"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"0"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"80941.04179"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"19464.55966"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"39142.11241"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"407.27787"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"624.797909"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"168.9091"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"208577.8101"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"51219.0457"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"7436.915257"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"24576.58149"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"36419.90814"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"19625.74991"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"25068.02396"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"13649.46669"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"6273.519881"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"14347.54616"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"9686.062046"},{"Year":"2014","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"274.9908766"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":null,"Value":"349633.0768"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"69917.32523"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"7143.933344"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"21720.36868"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Water supply - large systems (14021)","Value":"38332.84809"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"15804.19309"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"59929.94193"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"53831.08765"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Basic sanitation (14032)","Value":"57701.70352"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"River basins development (14040)","Value":"11633.88632"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Waste management or disposal (14050)","Value":"12518.78037"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":null,"Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"1099.008524"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":null,"Value":"182634.2934"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"21007.58388"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"1578.18877"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"2394.96958"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"9449.33183"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"32.756"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"41867.18666"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"46923.3333"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"54148.36605"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"River basins development (14040)","Value":"3072.29477"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"1347.80659"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Bilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"812.476"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":null,"Value":"166998.7833"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water sector policy and administrative management (14010)","Value":"48909.74135"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water resources conservation (including data collection) (14015)","Value":"5565.744574"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply and sanitation - large systems (14020)","Value":"19325.3991"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Water supply - large systems (14021)","Value":"28883.51626"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Sanitation - large systems (14022)","Value":"15771.43709"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply and basic sanitation (14030)","Value":"18062.75527"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic drinking water supply (14031)","Value":"6907.754349"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Basic sanitation (14032)","Value":"3553.337466"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"River basins development (14040)","Value":"8561.591554"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Waste management or disposal (14050)","Value":"11170.97378"},{"Year":"2015","Flow of overseas developmend assistance (ODA)":"Multilateral","Aid description (CRS code)":"Education and training in water supply and sanitation (14081)","Value":"286.5325236"}]' data-indicatorid='indicator_6-a-1' data-country="United Kingdom"
+  data-edgesdata='[]' data-charttitle="Net official development assistance (ODA) to the water and sanitation sectors" data-measurementunit="GBP (£000s)" data-datasource="Department for International Development (DFID)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_6-a-1.csv" class="btn btn-primary btn-download" download="indicator_6-a-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_6-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_6-a-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Net official development assistance (ODA) to the water and sanitation sectors</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2010</td>    
+          
+          
+          
+          <td class="table-value">220157.2884</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td class="table-value">235605.65300000002</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td class="table-value">219389.8576</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">291950.2507</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">389419.6586</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">349633.0768</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Department for International Development (DFID)</p>
+    
+    
+    <p>Geographical Area: United Kingdom</p>
+    
+    
+    <p>Units of Measure: GBP (£000s)</p>
+    
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -234,24 +373,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -259,106 +400,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Net official development assistance (ODA) to the water and sanitation sectors</h3>
-              
-              <a href="/data/indicator_6-a-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_6-a-1.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_6-a-1.csv' class='btn btn-primary btn-download' download='indicator_6-a-1.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Net official development assistance (ODA) to the water and sanitation sectors</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2010</td>
-      
-          <td>220157.2884</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>235605.65300000002</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>219389.8576</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>291950.2507</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>389419.6586</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>349633.0768</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Department for International Development (DFID)</p>
-                
-                
-                <p>Geographical Area: United Kingdom</p>
-                
-                
-                <p>Units of Measure: GBP (£000s)</p>
-                
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -636,7 +688,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -849,7 +901,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1438,22 +1490,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1484,20 +1531,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1513,6 +1558,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1539,6 +1590,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1546,3 +1599,4 @@ $(function() {
 </body>
 </html>
 
+  

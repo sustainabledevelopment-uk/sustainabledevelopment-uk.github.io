@@ -17,7 +17,6 @@
         <title>
         Indicator 11.7.2 - Goal 11 - Sustainable Cities &amp; Communities
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-11">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/sustainable-cities-communities" title="Make cities and human settlements inclusive, safe, resilient and sustainable">Goal 11</a></li>
-      <li class="active">Proportion of persons victim of physical or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months</li>
+      <li class="active">Indicator 11.7.2</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -197,34 +204,240 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2004","Sex":"Male","Relationship to perpetrator":null,"Value":"1.16"},{"Year":"2004","Sex":"Female","Relationship to perpetrator":null,"Value":"3.43"},{"Year":"2004","Sex":null,"Relationship to perpetrator":null,"Value":"2.3"},{"Year":"2004","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.22"},{"Year":"2004","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.46"},{"Year":"2004","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.34"},{"Year":"2004","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2004","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.05"},{"Year":"2004","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2005","Sex":"Male","Relationship to perpetrator":null,"Value":"1.05"},{"Year":"2005","Sex":"Female","Relationship to perpetrator":null,"Value":"3.89"},{"Year":"2005","Sex":null,"Relationship to perpetrator":null,"Value":"2.52"},{"Year":"2005","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0"},{"Year":"2005","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.62"},{"Year":"2005","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.33"},{"Year":"2005","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2005","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2005","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2006","Sex":"Male","Relationship to perpetrator":null,"Value":"1.22"},{"Year":"2006","Sex":"Female","Relationship to perpetrator":null,"Value":"3.97"},{"Year":"2006","Sex":null,"Relationship to perpetrator":null,"Value":"2.62"},{"Year":"2006","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.13"},{"Year":"2006","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.54"},{"Year":"2006","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.35"},{"Year":"2006","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2006","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.06"},{"Year":"2006","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2007","Sex":"Male","Relationship to perpetrator":null,"Value":"0.74"},{"Year":"2007","Sex":"Female","Relationship to perpetrator":null,"Value":"3.54"},{"Year":"2007","Sex":null,"Relationship to perpetrator":null,"Value":"2.22"},{"Year":"2007","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.14"},{"Year":"2007","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.49"},{"Year":"2007","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.32"},{"Year":"2007","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2007","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.08"},{"Year":"2007","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2008","Sex":"Male","Relationship to perpetrator":null,"Value":"0.69"},{"Year":"2008","Sex":"Female","Relationship to perpetrator":null,"Value":"2.98"},{"Year":"2008","Sex":null,"Relationship to perpetrator":null,"Value":"1.89"},{"Year":"2008","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.18"},{"Year":"2008","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.27"},{"Year":"2008","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.22"},{"Year":"2008","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2008","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2008","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2009","Sex":"Male","Relationship to perpetrator":null,"Value":"1.02"},{"Year":"2009","Sex":"Female","Relationship to perpetrator":null,"Value":"2.75"},{"Year":"2009","Sex":null,"Relationship to perpetrator":null,"Value":"1.87"},{"Year":"2009","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.2"},{"Year":"2009","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.44"},{"Year":"2009","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.32"},{"Year":"2009","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0"},{"Year":"2009","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2009","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2010","Sex":"Male","Relationship to perpetrator":null,"Value":"0.85"},{"Year":"2010","Sex":"Female","Relationship to perpetrator":null,"Value":"2.92"},{"Year":"2010","Sex":null,"Relationship to perpetrator":null,"Value":"1.91"},{"Year":"2010","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.15"},{"Year":"2010","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.45"},{"Year":"2010","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.3"},{"Year":"2010","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0"},{"Year":"2010","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.09"},{"Year":"2010","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2011","Sex":"Male","Relationship to perpetrator":null,"Value":"0.8"},{"Year":"2011","Sex":"Female","Relationship to perpetrator":null,"Value":"3.35"},{"Year":"2011","Sex":null,"Relationship to perpetrator":null,"Value":"2.12"},{"Year":"2011","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0"},{"Year":"2011","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.4"},{"Year":"2011","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.21"},{"Year":"2011","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0"},{"Year":"2011","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2011","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2012","Sex":"Male","Relationship to perpetrator":null,"Value":"0.79"},{"Year":"2012","Sex":"Female","Relationship to perpetrator":null,"Value":"2.35"},{"Year":"2012","Sex":null,"Relationship to perpetrator":null,"Value":"1.57"},{"Year":"2012","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.12"},{"Year":"2012","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.24"},{"Year":"2012","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.18"},{"Year":"2012","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2012","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2012","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2013","Sex":"Male","Relationship to perpetrator":null,"Value":"0.67"},{"Year":"2013","Sex":"Female","Relationship to perpetrator":null,"Value":"1.81"},{"Year":"2013","Sex":null,"Relationship to perpetrator":null,"Value":"1.25"},{"Year":"2013","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.08"},{"Year":"2013","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.21"},{"Year":"2013","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.15"},{"Year":"2013","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2013","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2013","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2014","Sex":"Male","Relationship to perpetrator":null,"Value":"0.62"},{"Year":"2014","Sex":"Female","Relationship to perpetrator":null,"Value":"2.37"},{"Year":"2014","Sex":null,"Relationship to perpetrator":null,"Value":"1.51"},{"Year":"2014","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.04"},{"Year":"2014","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.33"},{"Year":"2014","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.19"},{"Year":"2014","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0"},{"Year":"2014","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2014","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2015","Sex":"Male","Relationship to perpetrator":null,"Value":"0.59"},{"Year":"2015","Sex":"Female","Relationship to perpetrator":null,"Value":"2.82"},{"Year":"2015","Sex":null,"Relationship to perpetrator":null,"Value":"1.72"},{"Year":"2015","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.07"},{"Year":"2015","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.38"},{"Year":"2015","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.23"},{"Year":"2015","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0"},{"Year":"2015","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2015","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.01"}]' data-indicatorid='indicator_11-7-2' data-country="England and Wales"
-  data-edgesdata='[]' data-charttitle="Percentage of persons who have experienced indecent exposure or unwanted sexual touching in the previous 12 months" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Percentage of persons who have experienced indecent exposure or unwanted sexual touching in the previous 12 months</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Percentage of persons who have experienced indecent exposure or unwanted sexual touching in the previous 12 months</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2004","Sex":"Male","Relationship to perpetrator":null,"Value":"1.16"},{"Year":"2004","Sex":"Female","Relationship to perpetrator":null,"Value":"3.43"},{"Year":"2004","Sex":null,"Relationship to perpetrator":null,"Value":"2.3"},{"Year":"2004","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.22"},{"Year":"2004","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.46"},{"Year":"2004","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.34"},{"Year":"2004","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2004","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.05"},{"Year":"2004","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2005","Sex":"Male","Relationship to perpetrator":null,"Value":"1.05"},{"Year":"2005","Sex":"Female","Relationship to perpetrator":null,"Value":"3.89"},{"Year":"2005","Sex":null,"Relationship to perpetrator":null,"Value":"2.52"},{"Year":"2005","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0"},{"Year":"2005","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.62"},{"Year":"2005","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.33"},{"Year":"2005","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2005","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2005","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2006","Sex":"Male","Relationship to perpetrator":null,"Value":"1.22"},{"Year":"2006","Sex":"Female","Relationship to perpetrator":null,"Value":"3.97"},{"Year":"2006","Sex":null,"Relationship to perpetrator":null,"Value":"2.62"},{"Year":"2006","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.13"},{"Year":"2006","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.54"},{"Year":"2006","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.35"},{"Year":"2006","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2006","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.06"},{"Year":"2006","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2007","Sex":"Male","Relationship to perpetrator":null,"Value":"0.74"},{"Year":"2007","Sex":"Female","Relationship to perpetrator":null,"Value":"3.54"},{"Year":"2007","Sex":null,"Relationship to perpetrator":null,"Value":"2.22"},{"Year":"2007","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.14"},{"Year":"2007","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.49"},{"Year":"2007","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.32"},{"Year":"2007","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2007","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.08"},{"Year":"2007","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2008","Sex":"Male","Relationship to perpetrator":null,"Value":"0.69"},{"Year":"2008","Sex":"Female","Relationship to perpetrator":null,"Value":"2.98"},{"Year":"2008","Sex":null,"Relationship to perpetrator":null,"Value":"1.89"},{"Year":"2008","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.18"},{"Year":"2008","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.27"},{"Year":"2008","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.22"},{"Year":"2008","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2008","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2008","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2009","Sex":"Male","Relationship to perpetrator":null,"Value":"1.02"},{"Year":"2009","Sex":"Female","Relationship to perpetrator":null,"Value":"2.75"},{"Year":"2009","Sex":null,"Relationship to perpetrator":null,"Value":"1.87"},{"Year":"2009","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.2"},{"Year":"2009","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.44"},{"Year":"2009","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.32"},{"Year":"2009","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0"},{"Year":"2009","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2009","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2010","Sex":"Male","Relationship to perpetrator":null,"Value":"0.85"},{"Year":"2010","Sex":"Female","Relationship to perpetrator":null,"Value":"2.92"},{"Year":"2010","Sex":null,"Relationship to perpetrator":null,"Value":"1.91"},{"Year":"2010","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.15"},{"Year":"2010","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.45"},{"Year":"2010","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.3"},{"Year":"2010","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0"},{"Year":"2010","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.09"},{"Year":"2010","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2011","Sex":"Male","Relationship to perpetrator":null,"Value":"0.8"},{"Year":"2011","Sex":"Female","Relationship to perpetrator":null,"Value":"3.35"},{"Year":"2011","Sex":null,"Relationship to perpetrator":null,"Value":"2.12"},{"Year":"2011","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0"},{"Year":"2011","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.4"},{"Year":"2011","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.21"},{"Year":"2011","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0"},{"Year":"2011","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2011","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2012","Sex":"Male","Relationship to perpetrator":null,"Value":"0.79"},{"Year":"2012","Sex":"Female","Relationship to perpetrator":null,"Value":"2.35"},{"Year":"2012","Sex":null,"Relationship to perpetrator":null,"Value":"1.57"},{"Year":"2012","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.12"},{"Year":"2012","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.24"},{"Year":"2012","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.18"},{"Year":"2012","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.01"},{"Year":"2012","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2012","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2013","Sex":"Male","Relationship to perpetrator":null,"Value":"0.67"},{"Year":"2013","Sex":"Female","Relationship to perpetrator":null,"Value":"1.81"},{"Year":"2013","Sex":null,"Relationship to perpetrator":null,"Value":"1.25"},{"Year":"2013","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.08"},{"Year":"2013","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.21"},{"Year":"2013","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.15"},{"Year":"2013","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0.03"},{"Year":"2013","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2013","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2014","Sex":"Male","Relationship to perpetrator":null,"Value":"0.62"},{"Year":"2014","Sex":"Female","Relationship to perpetrator":null,"Value":"2.37"},{"Year":"2014","Sex":null,"Relationship to perpetrator":null,"Value":"1.51"},{"Year":"2014","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.04"},{"Year":"2014","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.33"},{"Year":"2014","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.19"},{"Year":"2014","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0"},{"Year":"2014","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.04"},{"Year":"2014","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2015","Sex":"Male","Relationship to perpetrator":null,"Value":"0.59"},{"Year":"2015","Sex":"Female","Relationship to perpetrator":null,"Value":"2.82"},{"Year":"2015","Sex":null,"Relationship to perpetrator":null,"Value":"1.72"},{"Year":"2015","Sex":"Male","Relationship to perpetrator":"Partner","Value":"0.07"},{"Year":"2015","Sex":"Female","Relationship to perpetrator":"Partner","Value":"0.38"},{"Year":"2015","Sex":null,"Relationship to perpetrator":"Partner","Value":"0.23"},{"Year":"2015","Sex":"Male","Relationship to perpetrator":"Family member","Value":"0"},{"Year":"2015","Sex":"Female","Relationship to perpetrator":"Family member","Value":"0.02"},{"Year":"2015","Sex":null,"Relationship to perpetrator":"Family member","Value":"0.01"}]' data-indicatorid='indicator_11-7-2' data-country="England and Wales"
+  data-edgesdata='[]' data-charttitle="Percentage of persons who have experienced indecent exposure or unwanted sexual touching in the previous 12 months" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_11-7-2.csv" class="btn btn-primary btn-download" download="indicator_11-7-2.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_11-7-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_11-7-2.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Percentage of persons who have experienced indecent exposure or unwanted sexual touching in the previous 12 months</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2004</td>    
+          
+          
+          
+          <td class="table-value">2.3</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2005</td>    
+          
+          
+          
+          <td class="table-value">2.52</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2006</td>    
+          
+          
+          
+          <td class="table-value">2.62</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2007</td>    
+          
+          
+          
+          <td class="table-value">2.22</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2008</td>    
+          
+          
+          
+          <td class="table-value">1.89</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>    
+          
+          
+          
+          <td class="table-value">1.87</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>    
+          
+          
+          
+          <td class="table-value">1.91</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td class="table-value">2.12</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td class="table-value">1.57</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">1.25</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">1.51</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">1.72</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Office for National Statistics (ONS)</p>
+    
+    
+    <p>Geographical Area: England and Wales</p>
+    
+    
+    <p>Units of Measure: Percentage (%)</p>
+    
+    
+    <p>Footnote: The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -236,24 +449,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -261,156 +476,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Percentage of persons who have experienced indecent exposure or unwanted sexual touching in the previous 12 months</h3>
-              
-              <a href="/data/indicator_11-7-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_11-7-2.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_11-7-2.csv' class='btn btn-primary btn-download' download='indicator_11-7-2.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Percentage of persons who have experienced indecent exposure or unwanted sexual touching in the previous 12 months</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2004</td>
-      
-          <td>2.3</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2005</td>
-      
-          <td>2.52</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2006</td>
-      
-          <td>2.62</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2007</td>
-      
-          <td>2.22</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2008</td>
-      
-          <td>1.89</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2009</td>
-      
-          <td>1.87</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2010</td>
-      
-          <td>1.91</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>2.12</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>1.57</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>1.25</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>1.51</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>1.72</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Office for National Statistics (ONS)</p>
-                
-                
-                <p>Geographical Area: England and Wales</p>
-                
-                
-                <p>Units of Measure: Percentage (%)</p>
-                
-                
-                <p>Footnote: The period April to March is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -688,7 +764,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -901,7 +977,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1490,22 +1566,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1536,20 +1607,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1565,6 +1634,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1591,6 +1666,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1598,3 +1675,4 @@ $(function() {
 </body>
 </html>
 
+  

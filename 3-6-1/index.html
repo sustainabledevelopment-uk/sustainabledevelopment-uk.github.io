@@ -17,7 +17,6 @@
         <title>
         Indicator 3.6.1 - Goal 3 - Good Health and Well-being
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-3">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/good-health-and-well-being" title="Ensure healthy lives and promote well-being for all at all ages">Goal 3</a></li>
-      <li class="active">Death rate due to road traffic injuries</li>
+      <li class="active">Indicator 3.6.1</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -195,34 +202,202 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2008","Country":null,"Region":null,"Value":"4.27828765"},{"Year":"2009","Country":null,"Region":null,"Value":"3.753583733"},{"Year":"2010","Country":null,"Region":null,"Value":"3.035397032"},{"Year":"2011","Country":null,"Region":null,"Value":"3.097095525"},{"Year":"2012","Country":null,"Region":null,"Value":"2.82866337"},{"Year":"2013","Country":null,"Region":null,"Value":"2.761064929"},{"Year":"2014","Country":null,"Region":null,"Value":"2.870111213"},{"Year":"2015","Country":null,"Region":null,"Value":"2.770695746"},{"Year":"2016","Country":null,"Region":null,"Value":"2.833288397"},{"Year":"2008","Country":"England","Region":null,"Value":"4.097197964"},{"Year":"2009","Country":"England","Region":null,"Value":"3.601780966"},{"Year":"2010","Country":"England","Region":null,"Value":"2.950087857"},{"Year":"2011","Country":"England","Region":null,"Value":"3.001476259"},{"Year":"2012","Country":"England","Region":null,"Value":"2.787244105"},{"Year":"2013","Country":"England","Region":null,"Value":"2.654745683"},{"Year":"2014","Country":"England","Region":null,"Value":"2.710037079"},{"Year":"2015","Country":"England","Region":null,"Value":"2.670375623"},{"Year":"2016","Country":"England","Region":null,"Value":"2.710424277"},{"Year":"2008","Country":"England","Region":"North East","Value":"2.95799031"},{"Year":"2009","Country":"England","Region":"North East","Value":"2.83446602"},{"Year":"2010","Country":"England","Region":"North East","Value":"1.971496033"},{"Year":"2011","Country":"England","Region":"North East","Value":"2.233826996"},{"Year":"2012","Country":"England","Region":"North East","Value":"2.958909584"},{"Year":"2013","Country":"England","Region":"North East","Value":"2.91134086"},{"Year":"2014","Country":"England","Region":"North East","Value":"2.176644226"},{"Year":"2015","Country":"England","Region":"North East","Value":"2.362245825"},{"Year":"2016","Country":"England","Region":"North East","Value":"2.123747747"},{"Year":"2008","Country":"England","Region":"North West","Value":"3.865749559"},{"Year":"2009","Country":"England","Region":"North West","Value":"3.363795484"},{"Year":"2010","Country":"England","Region":"North West","Value":"2.763563863"},{"Year":"2011","Country":"England","Region":"North West","Value":"2.976206926"},{"Year":"2012","Country":"England","Region":"North West","Value":"2.329081748"},{"Year":"2013","Country":"England","Region":"North West","Value":"2.097628118"},{"Year":"2014","Country":"England","Region":"North West","Value":"2.565543683"},{"Year":"2015","Country":"England","Region":"North West","Value":"2.467299569"},{"Year":"2016","Country":"England","Region":"North West","Value":"2.57631181"},{"Year":"2008","Country":"England","Region":"Yorkshire and The Humber","Value":"4.308790221"},{"Year":"2009","Country":"England","Region":"Yorkshire and The Humber","Value":"3.924688858"},{"Year":"2010","Country":"England","Region":"Yorkshire and The Humber","Value":"3.235144786"},{"Year":"2011","Country":"England","Region":"Yorkshire and The Humber","Value":"3.271427091"},{"Year":"2012","Country":"England","Region":"Yorkshire and The Humber","Value":"2.708451554"},{"Year":"2013","Country":"England","Region":"Yorkshire and The Humber","Value":"3.091212694"},{"Year":"2014","Country":"England","Region":"Yorkshire and The Humber","Value":"2.947746345"},{"Year":"2015","Country":"England","Region":"Yorkshire and The Humber","Value":"2.764083096"},{"Year":"2016","Country":"England","Region":"Yorkshire and The Humber","Value":"2.543431395"},{"Year":"2008","Country":"England","Region":"East Midlands","Value":"5.516620226"},{"Year":"2009","Country":"England","Region":"East Midlands","Value":"5.076422522"},{"Year":"2010","Country":"England","Region":"East Midlands","Value":"4.060286603"},{"Year":"2011","Country":"England","Region":"East Midlands","Value":"4.121259351"},{"Year":"2012","Country":"England","Region":"East Midlands","Value":"3.721760323"},{"Year":"2013","Country":"England","Region":"East Midlands","Value":"3.218489089"},{"Year":"2014","Country":"England","Region":"East Midlands","Value":"3.644273219"},{"Year":"2015","Country":"England","Region":"East Midlands","Value":"3.72030332"},{"Year":"2016","Country":"England","Region":"East Midlands","Value":"4.042809757"},{"Year":"2008","Country":"England","Region":"West Midlands","Value":"4.093707698"},{"Year":"2009","Country":"England","Region":"West Midlands","Value":"4.052093277"},{"Year":"2010","Country":"England","Region":"West Midlands","Value":"2.802798343"},{"Year":"2011","Country":"England","Region":"West Midlands","Value":"3.387614205"},{"Year":"2012","Country":"England","Region":"West Midlands","Value":"3.119146616"},{"Year":"2013","Country":"England","Region":"West Midlands","Value":"2.749038189"},{"Year":"2014","Country":"England","Region":"West Midlands","Value":"2.730478653"},{"Year":"2015","Country":"England","Region":"West Midlands","Value":"2.834289689"},{"Year":"2016","Country":"England","Region":"West Midlands","Value":"2.672075637"},{"Year":"2008","Country":"England","Region":"East of England","Value":"4.607285818"},{"Year":"2009","Country":"England","Region":"East of England","Value":"4.085931131"},{"Year":"2010","Country":"England","Region":"East of England","Value":"3.392222546"},{"Year":"2011","Country":"England","Region":"East of England","Value":"3.39450377"},{"Year":"2012","Country":"England","Region":"East of England","Value":"3.165549075"},{"Year":"2013","Country":"England","Region":"East of England","Value":"2.989428173"},{"Year":"2014","Country":"England","Region":"East of England","Value":"3.123762645"},{"Year":"2015","Country":"England","Region":"East of England","Value":"3.19265308"},{"Year":"2016","Country":"England","Region":"East of England","Value":"3.47440732"},{"Year":"2008","Country":"England","Region":"London","Value":"2.624113866"},{"Year":"2009","Country":"England","Region":"London","Value":"2.329213856"},{"Year":"2010","Country":"England","Region":"London","Value":"1.562985526"},{"Year":"2011","Country":"England","Region":"London","Value":"1.937982843"},{"Year":"2012","Country":"England","Region":"London","Value":"1.624867649"},{"Year":"2013","Country":"England","Region":"London","Value":"1.580221238"},{"Year":"2014","Country":"England","Region":"London","Value":"1.510770564"},{"Year":"2015","Country":"England","Region":"London","Value":"1.567955961"},{"Year":"2016","Country":"England","Region":"London","Value":"1.319998015"},{"Year":"2008","Country":"England","Region":"South East","Value":"4.201082811"},{"Year":"2009","Country":"England","Region":"South East","Value":"3.462521502"},{"Year":"2010","Country":"England","Region":"South East","Value":"3.310883445"},{"Year":"2011","Country":"England","Region":"South East","Value":"2.9816993"},{"Year":"2012","Country":"England","Region":"South East","Value":"2.670567606"},{"Year":"2013","Country":"England","Region":"South East","Value":"2.672651587"},{"Year":"2014","Country":"England","Region":"South East","Value":"2.783469303"},{"Year":"2015","Country":"England","Region":"South East","Value":"2.626310739"},{"Year":"2016","Country":"England","Region":"South East","Value":"3.102047274"},{"Year":"2008","Country":"England","Region":"South West","Value":"5.033578967"},{"Year":"2009","Country":"England","Region":"South West","Value":"3.864681802"},{"Year":"2010","Country":"England","Region":"South West","Value":"3.649309007"},{"Year":"2011","Country":"England","Region":"South West","Value":"3.018394663"},{"Year":"2012","Country":"England","Region":"South West","Value":"3.820484426"},{"Year":"2013","Country":"England","Region":"South West","Value":"3.533177278"},{"Year":"2014","Country":"England","Region":"South West","Value":"3.411205312"},{"Year":"2015","Country":"England","Region":"South West","Value":"3.162023549"},{"Year":"2016","Country":"England","Region":"South West","Value":"2.955065063"},{"Year":"2008","Country":"Wales","Region":null,"Value":"4.725866684"},{"Year":"2009","Country":"Wales","Region":null,"Value":"4.146237125"},{"Year":"2010","Country":"Wales","Region":null,"Value":"2.918032787"},{"Year":"2011","Country":"Wales","Region":null,"Value":"3.949343952"},{"Year":"2012","Country":"Wales","Region":null,"Value":"3.02527569"},{"Year":"2013","Country":"Wales","Region":null,"Value":"3.60109006"},{"Year":"2014","Country":"Wales","Region":null,"Value":"3.331177232"},{"Year":"2015","Country":"Wales","Region":null,"Value":"3.38808041"},{"Year":"2016","Country":"Wales","Region":null,"Value":"3.308492869"},{"Year":"2008","Country":"Scotland","Region":null,"Value":"5.227853697"},{"Year":"2009","Country":"Scotland","Region":null,"Value":"4.128519276"},{"Year":"2010","Country":"Scotland","Region":null,"Value":"3.952719395"},{"Year":"2011","Country":"Scotland","Region":null,"Value":"3.509500179"},{"Year":"2012","Country":"Scotland","Region":null,"Value":"3.199337549"},{"Year":"2013","Country":"Scotland","Region":null,"Value":"3.228410008"},{"Year":"2014","Country":"Scotland","Region":null,"Value":"3.739995512"},{"Year":"2015","Country":"Scotland","Region":null,"Value":"3.015075377"},{"Year":"2016","Country":"Scotland","Region":null,"Value":"3.533961182"},{"Year":"2008","Country":"Northern Ireland","Region":null,"Value":"6.013938849"},{"Year":"2009","Country":"Northern Ireland","Region":null,"Value":"6.412758601"},{"Year":"2010","Country":"Northern Ireland","Region":null,"Value":"3.047429078"},{"Year":"2011","Country":"Northern Ireland","Region":null,"Value":"3.251942898"},{"Year":"2012","Country":"Northern Ireland","Region":null,"Value":"2.632156175"},{"Year":"2013","Country":"Northern Ireland","Region":null,"Value":"3.115264798"},{"Year":"2014","Country":"Northern Ireland","Region":null,"Value":"4.292311872"},{"Year":"2015","Country":"Northern Ireland","Region":null,"Value":"3.99654353"},{"Year":"2016","Country":"Northern Ireland","Region":null,"Value":"3.651790989"}]' data-indicatorid='indicator_3-6-1' data-country="United Kingdom"
-  data-edgesdata='[{"From":"Country","To":"Region"}]' data-charttitle="Number of deaths due to road traffic injuries per 100,000 population" data-measurementunit="Rate per 100,000 population" data-datasource="Department for Transport (DfT)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Number of deaths due to road traffic injuries per 100,000 population</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Number of deaths due to road traffic injuries per 100,000 population</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2008","Country":null,"Region":null,"Value":"4.27828765"},{"Year":"2009","Country":null,"Region":null,"Value":"3.753583733"},{"Year":"2010","Country":null,"Region":null,"Value":"3.035397032"},{"Year":"2011","Country":null,"Region":null,"Value":"3.097095525"},{"Year":"2012","Country":null,"Region":null,"Value":"2.82866337"},{"Year":"2013","Country":null,"Region":null,"Value":"2.761064929"},{"Year":"2014","Country":null,"Region":null,"Value":"2.870111213"},{"Year":"2015","Country":null,"Region":null,"Value":"2.770695746"},{"Year":"2016","Country":null,"Region":null,"Value":"2.833288397"},{"Year":"2008","Country":"England","Region":null,"Value":"4.097197964"},{"Year":"2009","Country":"England","Region":null,"Value":"3.601780966"},{"Year":"2010","Country":"England","Region":null,"Value":"2.950087857"},{"Year":"2011","Country":"England","Region":null,"Value":"3.001476259"},{"Year":"2012","Country":"England","Region":null,"Value":"2.787244105"},{"Year":"2013","Country":"England","Region":null,"Value":"2.654745683"},{"Year":"2014","Country":"England","Region":null,"Value":"2.710037079"},{"Year":"2015","Country":"England","Region":null,"Value":"2.670375623"},{"Year":"2016","Country":"England","Region":null,"Value":"2.710424277"},{"Year":"2008","Country":"England","Region":"North East","Value":"2.95799031"},{"Year":"2009","Country":"England","Region":"North East","Value":"2.83446602"},{"Year":"2010","Country":"England","Region":"North East","Value":"1.971496033"},{"Year":"2011","Country":"England","Region":"North East","Value":"2.233826996"},{"Year":"2012","Country":"England","Region":"North East","Value":"2.958909584"},{"Year":"2013","Country":"England","Region":"North East","Value":"2.91134086"},{"Year":"2014","Country":"England","Region":"North East","Value":"2.176644226"},{"Year":"2015","Country":"England","Region":"North East","Value":"2.362245825"},{"Year":"2016","Country":"England","Region":"North East","Value":"2.123747747"},{"Year":"2008","Country":"England","Region":"North West","Value":"3.865749559"},{"Year":"2009","Country":"England","Region":"North West","Value":"3.363795484"},{"Year":"2010","Country":"England","Region":"North West","Value":"2.763563863"},{"Year":"2011","Country":"England","Region":"North West","Value":"2.976206926"},{"Year":"2012","Country":"England","Region":"North West","Value":"2.329081748"},{"Year":"2013","Country":"England","Region":"North West","Value":"2.097628118"},{"Year":"2014","Country":"England","Region":"North West","Value":"2.565543683"},{"Year":"2015","Country":"England","Region":"North West","Value":"2.467299569"},{"Year":"2016","Country":"England","Region":"North West","Value":"2.57631181"},{"Year":"2008","Country":"England","Region":"Yorkshire and The Humber","Value":"4.308790221"},{"Year":"2009","Country":"England","Region":"Yorkshire and The Humber","Value":"3.924688858"},{"Year":"2010","Country":"England","Region":"Yorkshire and The Humber","Value":"3.235144786"},{"Year":"2011","Country":"England","Region":"Yorkshire and The Humber","Value":"3.271427091"},{"Year":"2012","Country":"England","Region":"Yorkshire and The Humber","Value":"2.708451554"},{"Year":"2013","Country":"England","Region":"Yorkshire and The Humber","Value":"3.091212694"},{"Year":"2014","Country":"England","Region":"Yorkshire and The Humber","Value":"2.947746345"},{"Year":"2015","Country":"England","Region":"Yorkshire and The Humber","Value":"2.764083096"},{"Year":"2016","Country":"England","Region":"Yorkshire and The Humber","Value":"2.543431395"},{"Year":"2008","Country":"England","Region":"East Midlands","Value":"5.516620226"},{"Year":"2009","Country":"England","Region":"East Midlands","Value":"5.076422522"},{"Year":"2010","Country":"England","Region":"East Midlands","Value":"4.060286603"},{"Year":"2011","Country":"England","Region":"East Midlands","Value":"4.121259351"},{"Year":"2012","Country":"England","Region":"East Midlands","Value":"3.721760323"},{"Year":"2013","Country":"England","Region":"East Midlands","Value":"3.218489089"},{"Year":"2014","Country":"England","Region":"East Midlands","Value":"3.644273219"},{"Year":"2015","Country":"England","Region":"East Midlands","Value":"3.72030332"},{"Year":"2016","Country":"England","Region":"East Midlands","Value":"4.042809757"},{"Year":"2008","Country":"England","Region":"West Midlands","Value":"4.093707698"},{"Year":"2009","Country":"England","Region":"West Midlands","Value":"4.052093277"},{"Year":"2010","Country":"England","Region":"West Midlands","Value":"2.802798343"},{"Year":"2011","Country":"England","Region":"West Midlands","Value":"3.387614205"},{"Year":"2012","Country":"England","Region":"West Midlands","Value":"3.119146616"},{"Year":"2013","Country":"England","Region":"West Midlands","Value":"2.749038189"},{"Year":"2014","Country":"England","Region":"West Midlands","Value":"2.730478653"},{"Year":"2015","Country":"England","Region":"West Midlands","Value":"2.834289689"},{"Year":"2016","Country":"England","Region":"West Midlands","Value":"2.672075637"},{"Year":"2008","Country":"England","Region":"East of England","Value":"4.607285818"},{"Year":"2009","Country":"England","Region":"East of England","Value":"4.085931131"},{"Year":"2010","Country":"England","Region":"East of England","Value":"3.392222546"},{"Year":"2011","Country":"England","Region":"East of England","Value":"3.39450377"},{"Year":"2012","Country":"England","Region":"East of England","Value":"3.165549075"},{"Year":"2013","Country":"England","Region":"East of England","Value":"2.989428173"},{"Year":"2014","Country":"England","Region":"East of England","Value":"3.123762645"},{"Year":"2015","Country":"England","Region":"East of England","Value":"3.19265308"},{"Year":"2016","Country":"England","Region":"East of England","Value":"3.47440732"},{"Year":"2008","Country":"England","Region":"London","Value":"2.624113866"},{"Year":"2009","Country":"England","Region":"London","Value":"2.329213856"},{"Year":"2010","Country":"England","Region":"London","Value":"1.562985526"},{"Year":"2011","Country":"England","Region":"London","Value":"1.937982843"},{"Year":"2012","Country":"England","Region":"London","Value":"1.624867649"},{"Year":"2013","Country":"England","Region":"London","Value":"1.580221238"},{"Year":"2014","Country":"England","Region":"London","Value":"1.510770564"},{"Year":"2015","Country":"England","Region":"London","Value":"1.567955961"},{"Year":"2016","Country":"England","Region":"London","Value":"1.319998015"},{"Year":"2008","Country":"England","Region":"South East","Value":"4.201082811"},{"Year":"2009","Country":"England","Region":"South East","Value":"3.462521502"},{"Year":"2010","Country":"England","Region":"South East","Value":"3.310883445"},{"Year":"2011","Country":"England","Region":"South East","Value":"2.9816993"},{"Year":"2012","Country":"England","Region":"South East","Value":"2.670567606"},{"Year":"2013","Country":"England","Region":"South East","Value":"2.672651587"},{"Year":"2014","Country":"England","Region":"South East","Value":"2.783469303"},{"Year":"2015","Country":"England","Region":"South East","Value":"2.626310739"},{"Year":"2016","Country":"England","Region":"South East","Value":"3.102047274"},{"Year":"2008","Country":"England","Region":"South West","Value":"5.033578967"},{"Year":"2009","Country":"England","Region":"South West","Value":"3.864681802"},{"Year":"2010","Country":"England","Region":"South West","Value":"3.649309007"},{"Year":"2011","Country":"England","Region":"South West","Value":"3.018394663"},{"Year":"2012","Country":"England","Region":"South West","Value":"3.820484426"},{"Year":"2013","Country":"England","Region":"South West","Value":"3.533177278"},{"Year":"2014","Country":"England","Region":"South West","Value":"3.411205312"},{"Year":"2015","Country":"England","Region":"South West","Value":"3.162023549"},{"Year":"2016","Country":"England","Region":"South West","Value":"2.955065063"},{"Year":"2008","Country":"Wales","Region":null,"Value":"4.725866684"},{"Year":"2009","Country":"Wales","Region":null,"Value":"4.146237125"},{"Year":"2010","Country":"Wales","Region":null,"Value":"2.918032787"},{"Year":"2011","Country":"Wales","Region":null,"Value":"3.949343952"},{"Year":"2012","Country":"Wales","Region":null,"Value":"3.02527569"},{"Year":"2013","Country":"Wales","Region":null,"Value":"3.60109006"},{"Year":"2014","Country":"Wales","Region":null,"Value":"3.331177232"},{"Year":"2015","Country":"Wales","Region":null,"Value":"3.38808041"},{"Year":"2016","Country":"Wales","Region":null,"Value":"3.308492869"},{"Year":"2008","Country":"Scotland","Region":null,"Value":"5.227853697"},{"Year":"2009","Country":"Scotland","Region":null,"Value":"4.128519276"},{"Year":"2010","Country":"Scotland","Region":null,"Value":"3.952719395"},{"Year":"2011","Country":"Scotland","Region":null,"Value":"3.509500179"},{"Year":"2012","Country":"Scotland","Region":null,"Value":"3.199337549"},{"Year":"2013","Country":"Scotland","Region":null,"Value":"3.228410008"},{"Year":"2014","Country":"Scotland","Region":null,"Value":"3.739995512"},{"Year":"2015","Country":"Scotland","Region":null,"Value":"3.015075377"},{"Year":"2016","Country":"Scotland","Region":null,"Value":"3.533961182"},{"Year":"2008","Country":"Northern Ireland","Region":null,"Value":"6.013938849"},{"Year":"2009","Country":"Northern Ireland","Region":null,"Value":"6.412758601"},{"Year":"2010","Country":"Northern Ireland","Region":null,"Value":"3.047429078"},{"Year":"2011","Country":"Northern Ireland","Region":null,"Value":"3.251942898"},{"Year":"2012","Country":"Northern Ireland","Region":null,"Value":"2.632156175"},{"Year":"2013","Country":"Northern Ireland","Region":null,"Value":"3.115264798"},{"Year":"2014","Country":"Northern Ireland","Region":null,"Value":"4.292311872"},{"Year":"2015","Country":"Northern Ireland","Region":null,"Value":"3.99654353"},{"Year":"2016","Country":"Northern Ireland","Region":null,"Value":"3.651790989"}]' data-indicatorid='indicator_3-6-1' data-country="United Kingdom"
+  data-edgesdata='[{"From":"Country","To":"Region"}]' data-charttitle="Number of deaths due to road traffic injuries per 100,000 population" data-measurementunit="Rate per 100,000 population" data-datasource="Department for Transport (DfT)" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_3-6-1.csv" class="btn btn-primary btn-download" download="indicator_3-6-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_3-6-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-6-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Number of deaths due to road traffic injuries per 100,000 population</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2008</td>    
+          
+          
+          
+          <td class="table-value">4.27828765</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2009</td>    
+          
+          
+          
+          <td class="table-value">3.753583733</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>    
+          
+          
+          
+          <td class="table-value">3.0353970319999997</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td class="table-value">3.097095525</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td class="table-value">2.82866337</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">2.761064929</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">2.870111213</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">2.7706957460000003</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>    
+          
+          
+          
+          <td class="table-value">2.833288397</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Department for Transport (DfT)</p>
+    
+    
+    <p>Geographical Area: United Kingdom</p>
+    
+    
+    <p>Units of Measure: Rate per 100,000 population</p>
+    
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -234,24 +409,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -259,130 +436,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Number of deaths due to road traffic injuries per 100,000 population</h3>
-              
-              <a href="/data/indicator_3-6-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-6-1.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_3-6-1.csv' class='btn btn-primary btn-download' download='indicator_3-6-1.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Number of deaths due to road traffic injuries per 100,000 population</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2008</td>
-      
-          <td>4.27828765</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2009</td>
-      
-          <td>3.753583733</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2010</td>
-      
-          <td>3.0353970319999997</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>3.097095525</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>2.82866337</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>2.761064929</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>2.870111213</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>2.7706957460000003</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2016</td>
-      
-          <td>2.833288397</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Department for Transport (DfT)</p>
-                
-                
-                <p>Geographical Area: United Kingdom</p>
-                
-                
-                <p>Units of Measure: Rate per 100,000 population</p>
-                
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -660,7 +724,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -873,7 +937,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1742,22 +1806,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1788,20 +1847,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1817,6 +1874,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1843,6 +1906,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1850,3 +1915,4 @@ $(function() {
 </body>
 </html>
 
+  

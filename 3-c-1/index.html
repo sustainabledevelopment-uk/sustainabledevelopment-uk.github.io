@@ -17,7 +17,6 @@
         <title>
         Indicator 3.c.1 - Goal 3 - Good Health and Well-being
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-3">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/good-health-and-well-being" title="Ensure healthy lives and promote well-being for all at all ages">Goal 3</a></li>
-      <li class="active">Health worker density and distribution</li>
+      <li class="active">Indicator 3.c.1</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -195,34 +202,168 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Sex":null,"Occupation category":null,"Occupation":null,"Value":"18.96035072"},{"Year":"2016","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"5.276664519"},{"Year":"2016","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"4.228012692"},{"Year":"2016","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.288553667"},{"Year":"2016","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.578828633"},{"Year":"2016","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.181269526"},{"Year":"2016","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"10.93212142"},{"Year":"2016","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"10.27863716"},{"Year":"2016","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.653484259"},{"Year":"2016","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.342993933"},{"Year":"2016","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.612706232"},{"Year":"2016","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.730287701"},{"Year":"2016","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.40857085"},{"Year":"2016","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.933827483"},{"Year":"2016","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.474743367"},{"Year":"2016","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"4.552713635"},{"Year":"2016","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"2.499051762"},{"Year":"2016","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"2.252586137"},{"Year":"2016","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.101724193"},{"Year":"2016","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.144741432"},{"Year":"2016","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"1.220964506"},{"Year":"2016","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"1.220964506"},{"Year":"2016","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.36709364"},{"Year":"2016","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.336095028"},{"Year":"2016","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.030998612"},{"Year":"2016","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.465603727"},{"Year":"2016","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.365265712"},{"Year":"2016","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.100338014"},{"Year":"2016","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"14.40763708"},{"Year":"2016","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.777612757"},{"Year":"2016","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.975426555"},{"Year":"2016","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.186829474"},{"Year":"2016","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.434087201"},{"Year":"2016","Sex":"Female","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.181269526"},{"Year":"2016","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.711156911"},{"Year":"2016","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"9.057672652"},{"Year":"2016","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.653484259"},{"Year":"2016","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.975900293"},{"Year":"2016","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.276611204"},{"Year":"2016","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.699289088"},{"Year":"2016","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.942967123"},{"Year":"2016","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.568561771"},{"Year":"2016","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.374405352"},{"Year":"2015","Sex":null,"Occupation category":null,"Occupation":null,"Value":"17.86442943"},{"Year":"2015","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"4.458654585"},{"Year":"2015","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"3.559007833"},{"Year":"2015","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.203041008"},{"Year":"2015","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.450284135"},{"Year":"2015","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.24632161"},{"Year":"2015","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"10.51757027"},{"Year":"2015","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"9.840976808"},{"Year":"2015","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.676593457"},{"Year":"2015","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.452572569"},{"Year":"2015","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.703194594"},{"Year":"2015","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.749377976"},{"Year":"2015","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.435632007"},{"Year":"2015","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"1.001366918"},{"Year":"2015","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.43426509"},{"Year":"2015","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"4.020933804"},{"Year":"2015","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"2.077653202"},{"Year":"2015","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.833451083"},{"Year":"2015","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.109291967"},{"Year":"2015","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.09385655"},{"Year":"2015","Sex":"Male","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.041053602"},{"Year":"2015","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"0.987467363"},{"Year":"2015","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"0.987467363"},{"Year":"2015","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.452649363"},{"Year":"2015","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.438135463"},{"Year":"2015","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.0145139"},{"Year":"2015","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.503163877"},{"Year":"2015","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.42845953"},{"Year":"2015","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.074704346"},{"Year":"2015","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"13.84349562"},{"Year":"2015","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.381001382"},{"Year":"2015","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.72555675"},{"Year":"2015","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.09374904"},{"Year":"2015","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.356427584"},{"Year":"2015","Sex":"Female","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.205268008"},{"Year":"2015","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.530102903"},{"Year":"2015","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"8.853509446"},{"Year":"2015","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.676593457"},{"Year":"2015","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.999923207"},{"Year":"2015","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.265059131"},{"Year":"2015","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.734864076"},{"Year":"2015","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.932468131"},{"Year":"2015","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.572907387"},{"Year":"2015","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.359560743"},{"Year":"2014","Sex":null,"Occupation category":null,"Occupation":null,"Value":"17.4683266"},{"Year":"2014","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"4.78090246"},{"Year":"2014","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"3.829833676"},{"Year":"2014","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.339289253"},{"Year":"2014","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.35921284"},{"Year":"2014","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.252566691"},{"Year":"2014","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.764260768"},{"Year":"2014","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"9.136706462"},{"Year":"2014","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.627554306"},{"Year":"2014","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.612959156"},{"Year":"2014","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.794203428"},{"Year":"2014","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.818755728"},{"Year":"2014","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.310204221"},{"Year":"2014","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.923884774"},{"Year":"2014","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.386319446"},{"Year":"2014","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"4.355896887"},{"Year":"2014","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"2.345085205"},{"Year":"2014","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"2.010873604"},{"Year":"2014","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.218462834"},{"Year":"2014","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.050621703"},{"Year":"2014","Sex":"Male","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.065127065"},{"Year":"2014","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"1.055129666"},{"Year":"2014","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"1.055129666"},{"Year":"2014","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.524871201"},{"Year":"2014","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.518477695"},{"Year":"2014","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.006393506"},{"Year":"2014","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.430810814"},{"Year":"2014","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.355760657"},{"Year":"2014","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.075050157"},{"Year":"2014","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"13.11242972"},{"Year":"2014","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.435817254"},{"Year":"2014","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.818960072"},{"Year":"2014","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.120826419"},{"Year":"2014","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.308591138"},{"Year":"2014","Sex":"Female","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.187439625"},{"Year":"2014","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"8.709131102"},{"Year":"2014","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"8.081576796"},{"Year":"2014","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.627554306"},{"Year":"2014","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.088087955"},{"Year":"2014","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.275725733"},{"Year":"2014","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.812362222"},{"Year":"2014","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.879393406"},{"Year":"2014","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.568124118"},{"Year":"2014","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.311269289"},{"Year":"2013","Sex":null,"Occupation category":null,"Occupation":null,"Value":"17.17017364"},{"Year":"2013","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"4.674950901"},{"Year":"2013","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"3.757778169"},{"Year":"2013","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.316742505"},{"Year":"2013","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.369311933"},{"Year":"2013","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.231118294"},{"Year":"2013","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.978769439"},{"Year":"2013","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"9.2538885"},{"Year":"2013","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.724880939"},{"Year":"2013","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.386413377"},{"Year":"2013","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.666664587"},{"Year":"2013","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.71974879"},{"Year":"2013","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.130039918"},{"Year":"2013","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.708392545"},{"Year":"2013","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.421647373"},{"Year":"2013","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"3.950225955"},{"Year":"2013","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"2.35609314"},{"Year":"2013","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"2.074339723"},{"Year":"2013","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.130175632"},{"Year":"2013","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.093501826"},{"Year":"2013","Sex":"Male","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.058075959"},{"Year":"2013","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"0.971068095"},{"Year":"2013","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"0.95829232"},{"Year":"2013","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.012775775"},{"Year":"2013","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.338285051"},{"Year":"2013","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.331202998"},{"Year":"2013","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.007082054"},{"Year":"2013","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.284779669"},{"Year":"2013","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.228372828"},{"Year":"2013","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.056406841"},{"Year":"2013","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"13.21994768"},{"Year":"2013","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.318857761"},{"Year":"2013","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.683438446"},{"Year":"2013","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.186566873"},{"Year":"2013","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.275810107"},{"Year":"2013","Sex":"Female","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.173042335"},{"Year":"2013","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.007701343"},{"Year":"2013","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"8.295596179"},{"Year":"2013","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.712105164"},{"Year":"2013","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.048128326"},{"Year":"2013","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.335461589"},{"Year":"2013","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.712666736"},{"Year":"2013","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.84526025"},{"Year":"2013","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.480019717"},{"Year":"2013","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.365240532"},{"Year":"2012","Sex":null,"Occupation category":null,"Occupation":null,"Value":"16.83633938"},{"Year":"2012","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"4.516364493"},{"Year":"2012","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"3.543709285"},{"Year":"2012","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.413484028"},{"Year":"2012","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.426701201"},{"Year":"2012","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.132469979"},{"Year":"2012","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.578384742"},{"Year":"2012","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"8.998351778"},{"Year":"2012","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.580032964"},{"Year":"2012","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.243199121"},{"Year":"2012","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.550914371"},{"Year":"2012","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.69228475"},{"Year":"2012","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.498391021"},{"Year":"2012","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.901200848"},{"Year":"2012","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.597190173"},{"Year":"2012","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"4.031284829"},{"Year":"2012","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"2.235899851"},{"Year":"2012","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.905093792"},{"Year":"2012","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.194239071"},{"Year":"2012","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.084169217"},{"Year":"2012","Sex":"Male","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.052397771"},{"Year":"2012","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"1.095534103"},{"Year":"2012","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"1.086633702"},{"Year":"2012","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.0089004"},{"Year":"2012","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.245208382"},{"Year":"2012","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.233702221"},{"Year":"2012","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.011506161"},{"Year":"2012","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.454642493"},{"Year":"2012","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.374460403"},{"Year":"2012","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.080182089"},{"Year":"2012","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"12.80505455"},{"Year":"2012","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.280464642"},{"Year":"2012","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.638615493"},{"Year":"2012","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.219244957"},{"Year":"2012","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.342531983"},{"Year":"2012","Sex":"Female","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.080072208"},{"Year":"2012","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"8.48285064"},{"Year":"2012","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"7.911718076"},{"Year":"2012","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.571132564"},{"Year":"2012","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.997990739"},{"Year":"2012","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.31721215"},{"Year":"2012","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.680778589"},{"Year":"2012","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.043748528"},{"Year":"2012","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.526740444"},{"Year":"2012","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.517008084"},{"Year":"2011","Sex":null,"Occupation category":null,"Occupation":null,"Value":"16.50955754"},{"Year":"2011","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"4.71022405"},{"Year":"2011","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"3.812145355"},{"Year":"2011","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.301619181"},{"Year":"2011","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.413304237"},{"Year":"2011","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.183155277"},{"Year":"2011","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.535135443"},{"Year":"2011","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"8.976552143"},{"Year":"2011","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.5585833"},{"Year":"2011","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.813856658"},{"Year":"2011","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.532811041"},{"Year":"2011","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.813856658"},{"Year":"2011","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.450341392"},{"Year":"2011","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.984528744"},{"Year":"2011","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.465812648"},{"Year":"2011","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"3.669110106"},{"Year":"2011","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"1.786787095"},{"Year":"2011","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"2.247669673"},{"Year":"2011","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.123220158"},{"Year":"2011","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.096152175"},{"Year":"2011","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"1.122349495"},{"Year":"2011","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"1.104493791"},{"Year":"2011","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.017855704"},{"Year":"2011","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.310720849"},{"Year":"2011","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.310720849"},{"Year":"2011","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.449252668"},{"Year":"2011","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.379078172"},{"Year":"2011","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.070174496"},{"Year":"2011","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"12.50983939"},{"Year":"2011","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.923436954"},{"Year":"2011","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.564475682"},{"Year":"2011","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.178399023"},{"Year":"2011","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.317152063"},{"Year":"2011","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"8.412785948"},{"Year":"2011","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"7.872058352"},{"Year":"2011","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.540727596"},{"Year":"2011","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.03594685"},{"Year":"2011","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.222090192"},{"Year":"2011","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.813856658"},{"Year":"2011","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.001088724"},{"Year":"2011","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.605450572"},{"Year":"2011","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.395638152"}]' data-indicatorid='indicator_3-c-1' data-country="United Kingdom"
-  data-edgesdata='[{"From":"Occupation category","To":"Occupation"}]' data-charttitle="Number of health workers per 1,000 population" data-measurementunit="Rate per 1,000 population" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="The period April to June is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Number of health workers per 1,000 population</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Number of health workers per 1,000 population</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2016","Sex":null,"Occupation category":null,"Occupation":null,"Value":"18.96035072"},{"Year":"2016","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"5.276664519"},{"Year":"2016","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"4.228012692"},{"Year":"2016","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.288553667"},{"Year":"2016","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.578828633"},{"Year":"2016","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.181269526"},{"Year":"2016","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"10.93212142"},{"Year":"2016","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"10.27863716"},{"Year":"2016","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.653484259"},{"Year":"2016","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.342993933"},{"Year":"2016","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.612706232"},{"Year":"2016","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.730287701"},{"Year":"2016","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.40857085"},{"Year":"2016","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.933827483"},{"Year":"2016","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.474743367"},{"Year":"2016","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"4.552713635"},{"Year":"2016","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"2.499051762"},{"Year":"2016","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"2.252586137"},{"Year":"2016","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.101724193"},{"Year":"2016","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.144741432"},{"Year":"2016","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"1.220964506"},{"Year":"2016","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"1.220964506"},{"Year":"2016","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.36709364"},{"Year":"2016","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.336095028"},{"Year":"2016","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.030998612"},{"Year":"2016","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.465603727"},{"Year":"2016","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.365265712"},{"Year":"2016","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.100338014"},{"Year":"2016","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"14.40763708"},{"Year":"2016","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.777612757"},{"Year":"2016","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.975426555"},{"Year":"2016","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.186829474"},{"Year":"2016","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.434087201"},{"Year":"2016","Sex":"Female","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.181269526"},{"Year":"2016","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.711156911"},{"Year":"2016","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"9.057672652"},{"Year":"2016","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.653484259"},{"Year":"2016","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.975900293"},{"Year":"2016","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.276611204"},{"Year":"2016","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.699289088"},{"Year":"2016","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.942967123"},{"Year":"2016","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.568561771"},{"Year":"2016","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.374405352"},{"Year":"2015","Sex":null,"Occupation category":null,"Occupation":null,"Value":"17.86442943"},{"Year":"2015","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"4.458654585"},{"Year":"2015","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"3.559007833"},{"Year":"2015","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.203041008"},{"Year":"2015","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.450284135"},{"Year":"2015","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.24632161"},{"Year":"2015","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"10.51757027"},{"Year":"2015","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"9.840976808"},{"Year":"2015","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.676593457"},{"Year":"2015","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.452572569"},{"Year":"2015","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.703194594"},{"Year":"2015","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.749377976"},{"Year":"2015","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.435632007"},{"Year":"2015","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"1.001366918"},{"Year":"2015","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.43426509"},{"Year":"2015","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"4.020933804"},{"Year":"2015","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"2.077653202"},{"Year":"2015","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.833451083"},{"Year":"2015","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.109291967"},{"Year":"2015","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.09385655"},{"Year":"2015","Sex":"Male","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.041053602"},{"Year":"2015","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"0.987467363"},{"Year":"2015","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"0.987467363"},{"Year":"2015","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.452649363"},{"Year":"2015","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.438135463"},{"Year":"2015","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.0145139"},{"Year":"2015","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.503163877"},{"Year":"2015","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.42845953"},{"Year":"2015","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.074704346"},{"Year":"2015","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"13.84349562"},{"Year":"2015","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.381001382"},{"Year":"2015","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.72555675"},{"Year":"2015","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.09374904"},{"Year":"2015","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.356427584"},{"Year":"2015","Sex":"Female","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.205268008"},{"Year":"2015","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.530102903"},{"Year":"2015","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"8.853509446"},{"Year":"2015","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.676593457"},{"Year":"2015","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.999923207"},{"Year":"2015","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.265059131"},{"Year":"2015","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.734864076"},{"Year":"2015","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.932468131"},{"Year":"2015","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.572907387"},{"Year":"2015","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.359560743"},{"Year":"2014","Sex":null,"Occupation category":null,"Occupation":null,"Value":"17.4683266"},{"Year":"2014","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"4.78090246"},{"Year":"2014","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"3.829833676"},{"Year":"2014","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.339289253"},{"Year":"2014","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.35921284"},{"Year":"2014","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.252566691"},{"Year":"2014","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.764260768"},{"Year":"2014","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"9.136706462"},{"Year":"2014","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.627554306"},{"Year":"2014","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.612959156"},{"Year":"2014","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.794203428"},{"Year":"2014","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.818755728"},{"Year":"2014","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.310204221"},{"Year":"2014","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.923884774"},{"Year":"2014","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.386319446"},{"Year":"2014","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"4.355896887"},{"Year":"2014","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"2.345085205"},{"Year":"2014","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"2.010873604"},{"Year":"2014","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.218462834"},{"Year":"2014","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.050621703"},{"Year":"2014","Sex":"Male","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.065127065"},{"Year":"2014","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"1.055129666"},{"Year":"2014","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"1.055129666"},{"Year":"2014","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.524871201"},{"Year":"2014","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.518477695"},{"Year":"2014","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.006393506"},{"Year":"2014","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.430810814"},{"Year":"2014","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.355760657"},{"Year":"2014","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.075050157"},{"Year":"2014","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"13.11242972"},{"Year":"2014","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.435817254"},{"Year":"2014","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.818960072"},{"Year":"2014","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.120826419"},{"Year":"2014","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.308591138"},{"Year":"2014","Sex":"Female","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.187439625"},{"Year":"2014","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"8.709131102"},{"Year":"2014","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"8.081576796"},{"Year":"2014","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.627554306"},{"Year":"2014","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.088087955"},{"Year":"2014","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.275725733"},{"Year":"2014","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.812362222"},{"Year":"2014","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.879393406"},{"Year":"2014","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.568124118"},{"Year":"2014","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.311269289"},{"Year":"2013","Sex":null,"Occupation category":null,"Occupation":null,"Value":"17.17017364"},{"Year":"2013","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"4.674950901"},{"Year":"2013","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"3.757778169"},{"Year":"2013","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.316742505"},{"Year":"2013","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.369311933"},{"Year":"2013","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.231118294"},{"Year":"2013","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.978769439"},{"Year":"2013","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"9.2538885"},{"Year":"2013","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.724880939"},{"Year":"2013","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.386413377"},{"Year":"2013","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.666664587"},{"Year":"2013","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.71974879"},{"Year":"2013","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.130039918"},{"Year":"2013","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.708392545"},{"Year":"2013","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.421647373"},{"Year":"2013","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"3.950225955"},{"Year":"2013","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"2.35609314"},{"Year":"2013","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"2.074339723"},{"Year":"2013","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.130175632"},{"Year":"2013","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.093501826"},{"Year":"2013","Sex":"Male","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.058075959"},{"Year":"2013","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"0.971068095"},{"Year":"2013","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"0.95829232"},{"Year":"2013","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.012775775"},{"Year":"2013","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.338285051"},{"Year":"2013","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.331202998"},{"Year":"2013","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.007082054"},{"Year":"2013","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.284779669"},{"Year":"2013","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.228372828"},{"Year":"2013","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.056406841"},{"Year":"2013","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"13.21994768"},{"Year":"2013","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.318857761"},{"Year":"2013","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.683438446"},{"Year":"2013","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.186566873"},{"Year":"2013","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.275810107"},{"Year":"2013","Sex":"Female","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.173042335"},{"Year":"2013","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.007701343"},{"Year":"2013","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"8.295596179"},{"Year":"2013","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.712105164"},{"Year":"2013","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.048128326"},{"Year":"2013","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.335461589"},{"Year":"2013","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.712666736"},{"Year":"2013","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.84526025"},{"Year":"2013","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.480019717"},{"Year":"2013","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.365240532"},{"Year":"2012","Sex":null,"Occupation category":null,"Occupation":null,"Value":"16.83633938"},{"Year":"2012","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"4.516364493"},{"Year":"2012","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"3.543709285"},{"Year":"2012","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.413484028"},{"Year":"2012","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.426701201"},{"Year":"2012","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.132469979"},{"Year":"2012","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.578384742"},{"Year":"2012","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"8.998351778"},{"Year":"2012","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.580032964"},{"Year":"2012","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.243199121"},{"Year":"2012","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.550914371"},{"Year":"2012","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.69228475"},{"Year":"2012","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.498391021"},{"Year":"2012","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.901200848"},{"Year":"2012","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.597190173"},{"Year":"2012","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"4.031284829"},{"Year":"2012","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"2.235899851"},{"Year":"2012","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.905093792"},{"Year":"2012","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.194239071"},{"Year":"2012","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.084169217"},{"Year":"2012","Sex":"Male","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.052397771"},{"Year":"2012","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"1.095534103"},{"Year":"2012","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"1.086633702"},{"Year":"2012","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.0089004"},{"Year":"2012","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.245208382"},{"Year":"2012","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.233702221"},{"Year":"2012","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.011506161"},{"Year":"2012","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.454642493"},{"Year":"2012","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.374460403"},{"Year":"2012","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.080182089"},{"Year":"2012","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"12.80505455"},{"Year":"2012","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.280464642"},{"Year":"2012","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.638615493"},{"Year":"2012","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.219244957"},{"Year":"2012","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.342531983"},{"Year":"2012","Sex":"Female","Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.080072208"},{"Year":"2012","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"8.48285064"},{"Year":"2012","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"7.911718076"},{"Year":"2012","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.571132564"},{"Year":"2012","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.997990739"},{"Year":"2012","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.31721215"},{"Year":"2012","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.680778589"},{"Year":"2012","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.043748528"},{"Year":"2012","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.526740444"},{"Year":"2012","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.517008084"},{"Year":"2011","Sex":null,"Occupation category":null,"Occupation":null,"Value":"16.50955754"},{"Year":"2011","Sex":null,"Occupation category":"Physicians","Occupation":null,"Value":"4.71022405"},{"Year":"2011","Sex":null,"Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"3.812145355"},{"Year":"2011","Sex":null,"Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.301619181"},{"Year":"2011","Sex":null,"Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.413304237"},{"Year":"2011","Sex":null,"Occupation category":"Physicians","Occupation":"Podiatrists","Value":"0.183155277"},{"Year":"2011","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"9.535135443"},{"Year":"2011","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"8.976552143"},{"Year":"2011","Sex":null,"Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.5585833"},{"Year":"2011","Sex":null,"Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.813856658"},{"Year":"2011","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.532811041"},{"Year":"2011","Sex":null,"Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.813856658"},{"Year":"2011","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.450341392"},{"Year":"2011","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.984528744"},{"Year":"2011","Sex":null,"Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.465812648"},{"Year":"2011","Sex":"Male","Occupation category":null,"Occupation":null,"Value":"3.669110106"},{"Year":"2011","Sex":"Male","Occupation category":"Physicians","Occupation":null,"Value":"1.786787095"},{"Year":"2011","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"2.247669673"},{"Year":"2011","Sex":"Male","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.123220158"},{"Year":"2011","Sex":"Male","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.096152175"},{"Year":"2011","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"1.122349495"},{"Year":"2011","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"1.104493791"},{"Year":"2011","Sex":"Male","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.017855704"},{"Year":"2011","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":null,"Value":"0.310720849"},{"Year":"2011","Sex":"Male","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.310720849"},{"Year":"2011","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"0.449252668"},{"Year":"2011","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.379078172"},{"Year":"2011","Sex":"Male","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.070174496"},{"Year":"2011","Sex":"Female","Occupation category":null,"Occupation":null,"Value":"12.50983939"},{"Year":"2011","Sex":"Female","Occupation category":"Physicians","Occupation":null,"Value":"2.923436954"},{"Year":"2011","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical practitioners","Value":"1.564475682"},{"Year":"2011","Sex":"Female","Occupation category":"Physicians","Occupation":"Ophthalmic opticians","Value":"0.178399023"},{"Year":"2011","Sex":"Female","Occupation category":"Physicians","Occupation":"Medical radiographers","Value":"0.317152063"},{"Year":"2011","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":null,"Value":"8.412785948"},{"Year":"2011","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Nurses","Value":"7.872058352"},{"Year":"2011","Sex":"Female","Occupation category":"Nursing and midwifery personnel","Occupation":"Midwives","Value":"0.540727596"},{"Year":"2011","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":null,"Value":"1.03594685"},{"Year":"2011","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental practitioners","Value":"0.222090192"},{"Year":"2011","Sex":"Female","Occupation category":"Dentistry personnel","Occupation":"Dental nurses","Value":"0.813856658"},{"Year":"2011","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":null,"Value":"1.001088724"},{"Year":"2011","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmacists","Value":"0.605450572"},{"Year":"2011","Sex":"Female","Occupation category":"Pharmaceutical personnel","Occupation":"Pharmaceutical technicians","Value":"0.395638152"}]' data-indicatorid='indicator_3-c-1' data-country="United Kingdom"
+  data-edgesdata='[{"From":"Occupation category","To":"Occupation"}]' data-charttitle="Number of health workers per 1,000 population" data-measurementunit="Rate per 1,000 population" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="The period April to June is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_3-c-1.csv" class="btn btn-primary btn-download" download="indicator_3-c-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_3-c-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-c-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Number of health workers per 1,000 population</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2016</td>    
+          
+          
+          
+          <td class="table-value">18.96035072</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">17.86442943</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">17.4683266</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">17.17017364</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td class="table-value">16.83633938</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td class="table-value">16.50955754</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Office for National Statistics (ONS)</p>
+    
+    
+    <p>Geographical Area: United Kingdom</p>
+    
+    
+    <p>Units of Measure: Rate per 1,000 population</p>
+    
+    
+    <p>Footnote: The period April to June is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -234,24 +375,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -259,108 +402,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Number of health workers per 1,000 population</h3>
-              
-              <a href="/data/indicator_3-c-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-c-1.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_3-c-1.csv' class='btn btn-primary btn-download' download='indicator_3-c-1.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Number of health workers per 1,000 population</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2016</td>
-      
-          <td>18.96035072</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>17.86442943</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>17.4683266</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>17.17017364</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>16.83633938</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>16.50955754</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Office for National Statistics (ONS)</p>
-                
-                
-                <p>Geographical Area: United Kingdom</p>
-                
-                
-                <p>Units of Measure: Rate per 1,000 population</p>
-                
-                
-                <p>Footnote: The period April to June is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -638,7 +690,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -851,7 +903,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1440,22 +1492,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1486,20 +1533,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1515,6 +1560,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1541,6 +1592,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1548,3 +1601,4 @@ $(function() {
 </body>
 </html>
 
+  

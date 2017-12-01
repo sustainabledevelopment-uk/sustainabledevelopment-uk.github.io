@@ -17,7 +17,6 @@
         <title>
         Indicator 5.5.2 - Goal 5 - Gender Equality
         </title>
-        <!-- <meta property="og:title" content="U.S. Data Federation"> -->
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -41,7 +40,8 @@
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20171123144549">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20171201171219">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -64,6 +64,10 @@
       <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
     </a>
 
+  <div class='hidden visible-xs float-right'>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul>
+  </div>
+
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
@@ -71,7 +75,7 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target" id="menu">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
         <li class="nav-link active" >
           <a href="/">Goals</a>
         </li>
@@ -126,6 +130,9 @@
         <div class="variable-hint">
           Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
+        <div class="no-data-hint">
+          No options available because of filters above
+        </div>
       <% }%>
 
     </div>
@@ -136,7 +143,7 @@
   <% if(units.length) { %>
     <h5>Units type</h5>
     <% _.each(units, function(unitsItem, index) { %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
+      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <% if(!index) { %>checked="checked"<% } %> /> <%=unitsItem%></label>
     <% }); %>
   <% } %>
 </script>
@@ -163,28 +170,28 @@
 </div>
 
 <div id="main-content" class="container goal-5">
-
   
   
   
   
-
-  
-  
-
   
   
   
   
-
+  
+  
+  
+  
+  
+  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
       <li><a href="/gender-equality" title="Achieve gender equality and empower all women and girls">Goal 5</a></li>
-      <li class="active">Proportion of women in managerial positions</li>
+      <li class="active">Indicator 5.5.2</li>
   
 </ol>
-
+  
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
@@ -195,34 +202,180 @@
       </div>
     </div>
   </div>
-
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2017","Occupation category":null,"Occupation sub-category":null,"Value":"33.02076812"},{"Year":"2016","Occupation category":null,"Occupation sub-category":null,"Value":"31.73203899"},{"Year":"2015","Occupation category":null,"Occupation sub-category":null,"Value":"29.21684395"},{"Year":"2014","Occupation category":null,"Occupation sub-category":null,"Value":"30.50533451"},{"Year":"2013","Occupation category":null,"Occupation sub-category":null,"Value":"30.26765312"},{"Year":"2012","Occupation category":null,"Occupation sub-category":null,"Value":"30.30929642"},{"Year":"2011","Occupation category":null,"Occupation sub-category":null,"Value":"30.05450457"},{"Year":"2017","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"35.49275391"},{"Year":"2017","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"36.14096642"},{"Year":"2017","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"11.80299131"},{"Year":"2017","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"13.57880163"},{"Year":"2017","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"9.097895756"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"39.26960654"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"41.29228556"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"27.67451897"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"37.41947983"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"39.95164228"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"58.61740407"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"18.13364854"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"44.34482865"},{"Year":"2017","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"29.35966266"},{"Year":"2017","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"29.35966266"},{"Year":"2017","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"20.82722524"},{"Year":"2017","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"16.56277238"},{"Year":"2017","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"24.95911059"},{"Year":"2017","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"62.447406"},{"Year":"2017","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"57.73240595"},{"Year":"2017","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"70.70035345"},{"Year":"2017","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"27.16659634"},{"Year":"2017","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in agriculture and horticulture","Value":"20.33297408"},{"Year":"2017","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in forestry, fishing and related services","Value":"43.77283066"},{"Year":"2017","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"79.75667149"},{"Year":"2017","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"87.17550386"},{"Year":"2017","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"76.32509502"},{"Year":"2016","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"23.5578164"},{"Year":"2016","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"20.24186339"},{"Year":"2016","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Elected officers and representatives","Value":"50.44074437"},{"Year":"2016","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"11.50587499"},{"Year":"2016","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"12.61993302"},{"Year":"2016","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"9.394191706"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"37.92701153"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"39.5516632"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"23.49188123"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"38.46749759"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"49.55293861"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"65.10829215"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"10.23565296"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"39.40025968"},{"Year":"2016","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"37.37312575"},{"Year":"2016","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"37.37312575"},{"Year":"2016","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"21.34834423"},{"Year":"2016","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"19.44966694"},{"Year":"2016","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"22.74319689"},{"Year":"2016","Occupation category":"Senior officers in protective services","Occupation sub-category":null,"Value":"11.35886782"},{"Year":"2016","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"66.48881569"},{"Year":"2016","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"61.00518532"},{"Year":"2016","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"73.44197708"},{"Year":"2016","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"40.38863643"},{"Year":"2016","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in agriculture and horticulture","Value":"23.43346109"},{"Year":"2016","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in forestry, fishing and related services","Value":"68.71416871"},{"Year":"2016","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"83.44880971"},{"Year":"2016","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"87.11090697"},{"Year":"2016","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"81.39640799"},{"Year":"2015","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"24.75089724"},{"Year":"2015","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"24.87536115"},{"Year":"2015","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"9.852113047"},{"Year":"2015","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"11.95718971"},{"Year":"2015","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"6.968423079"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"34.25722857"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"36.75021414"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"25.70277502"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"28.30352684"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"39.61301671"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"56.40661562"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"8.576176432"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"39.23340436"},{"Year":"2015","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"39.9138335"},{"Year":"2015","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"39.9138335"},{"Year":"2015","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"19.00276089"},{"Year":"2015","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"16.1317929"},{"Year":"2015","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"21.55651084"},{"Year":"2015","Occupation category":"Senior officers in protective services","Occupation sub-category":null,"Value":"17.40002809"},{"Year":"2015","Occupation category":"Senior officers in protective services","Occupation sub-category":"Officers in armed forces","Value":"22.43732033"},{"Year":"2015","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"69.35233898"},{"Year":"2015","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"64.87850845"},{"Year":"2015","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"76.85836086"},{"Year":"2015","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"27.3813436"},{"Year":"2015","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in forestry, fishing and related services","Value":"47.16620413"},{"Year":"2015","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"76.6846241"},{"Year":"2015","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"84.30479305"},{"Year":"2015","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"72.98054357"},{"Year":"2014","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"16.99708068"},{"Year":"2014","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"16.6885827"},{"Year":"2014","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"9.268029952"},{"Year":"2014","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"11.49291009"},{"Year":"2014","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"5.650745252"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"37.50352867"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"34.10862881"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"32.98488843"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"32.10709176"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"51.8328805"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"62.11228612"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"9.464485657"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"42.35311745"},{"Year":"2014","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"35.08264619"},{"Year":"2014","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"35.08264619"},{"Year":"2014","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"15.30571967"},{"Year":"2014","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"11.78974617"},{"Year":"2014","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"18.18192513"},{"Year":"2014","Occupation category":"Senior officers in protective services","Occupation sub-category":null,"Value":"18.63184526"},{"Year":"2014","Occupation category":"Senior officers in protective services","Occupation sub-category":"Senior police officers","Value":"28.44133317"},{"Year":"2014","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"71.335664"},{"Year":"2014","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"67.32916395"},{"Year":"2014","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"75.33043861"},{"Year":"2014","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"27.25996842"},{"Year":"2014","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in agriculture and horticulture","Value":"21.3182158"},{"Year":"2014","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"80.81399146"},{"Year":"2014","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"87.0403075"},{"Year":"2014","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"78.72236472"},{"Year":"2013","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"30.96140421"},{"Year":"2013","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"27.34342963"},{"Year":"2013","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Elected officers and representatives","Value":"57.90249552"},{"Year":"2013","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"8.438068986"},{"Year":"2013","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"9.307894089"},{"Year":"2013","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"5.613148684"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"37.56346204"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"39.49667069"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"26.52073434"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"26.48174587"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"65.09741156"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"61.19539695"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"14.8215773"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"33.94650225"},{"Year":"2013","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"37.46235406"},{"Year":"2013","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"37.46235406"},{"Year":"2013","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"12.87540853"},{"Year":"2013","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"11.31922796"},{"Year":"2013","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"14.02117436"},{"Year":"2013","Occupation category":"Senior officers in protective services","Occupation sub-category":null,"Value":"15.62889416"},{"Year":"2013","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"66.04211628"},{"Year":"2013","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"64.58129554"},{"Year":"2013","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"67.79909246"},{"Year":"2013","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"53.10836564"},{"Year":"2013","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in agriculture and horticulture","Value":"36.74530411"},{"Year":"2013","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in forestry, fishing and related services","Value":"76.43870556"},{"Year":"2013","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"75.48652971"},{"Year":"2013","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"87.18829812"},{"Year":"2013","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"71.26934985"},{"Year":"2012","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"21.80266771"},{"Year":"2012","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"20.32690885"},{"Year":"2012","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"9.262216338"},{"Year":"2012","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"11.5136515"},{"Year":"2012","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"4.760409273"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"37.98062735"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"42.07693787"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"22.65340021"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"40.01775974"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"32.70818048"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"62.96065097"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"14.71117527"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"35.33700705"},{"Year":"2012","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"35.538101"},{"Year":"2012","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"35.538101"},{"Year":"2012","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"14.93133695"},{"Year":"2012","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"12.33031196"},{"Year":"2012","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"17.08997742"},{"Year":"2012","Occupation category":"Senior officers in protective services","Occupation sub-category":null,"Value":"13.74422457"},{"Year":"2012","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"67.86336178"},{"Year":"2012","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"64.45592401"},{"Year":"2012","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"71.49646871"},{"Year":"2012","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"26.59864966"},{"Year":"2012","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in agriculture and horticulture","Value":"24.02608772"},{"Year":"2012","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"80.08927364"},{"Year":"2012","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"89.91201242"},{"Year":"2012","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"76.61395039"},{"Year":"2011","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"23.8556338"},{"Year":"2011","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"21.09265592"},{"Year":"2011","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"9.676679606"},{"Year":"2011","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"10.08729777"},{"Year":"2011","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"8.448571717"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"35.58370207"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"41.33310862"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"22.17970652"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"35.67384987"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"56.76905074"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"37.31339664"},{"Year":"2011","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"30.30299683"},{"Year":"2011","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"30.30299683"},{"Year":"2011","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"14.78806211"},{"Year":"2011","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"18.65182196"},{"Year":"2011","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"72.62258092"},{"Year":"2011","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"67.0402155"},{"Year":"2011","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"79.23467092"},{"Year":"2011","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"72.58976161"},{"Year":"2011","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"77.76048097"},{"Year":"2011","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"70.65018223"}]' data-indicatorid='indicator_5-5-2' data-country="United Kingdom"
-  data-edgesdata='[{"From":"Occupation category","To":"Occupation sub-category"}]' data-charttitle="Percentage of managerial positions held by women" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="The period April to June is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
   
-<div class='row'>
-  <div class='col-xs-12'>
-    <div class='col-sm-8 col-md-9'>
-      <h3>Percentage of managerial positions held by women</h3>
-    </div>
-    <div class='col-sm-4 col-md-3'>
-      <a role='button' class='btn btn-primary btn-download' href='#data'>Accessible graph alternative</a>
+  <div class="row">
+    <div class="col-xs-12">
+      <h2>Percentage of managerial positions held by women</h2>
     </div>
   </div>
-</div>
+  
+  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2017","Occupation category":null,"Occupation sub-category":null,"Value":"33.02076812"},{"Year":"2016","Occupation category":null,"Occupation sub-category":null,"Value":"31.73203899"},{"Year":"2015","Occupation category":null,"Occupation sub-category":null,"Value":"29.21684395"},{"Year":"2014","Occupation category":null,"Occupation sub-category":null,"Value":"30.50533451"},{"Year":"2013","Occupation category":null,"Occupation sub-category":null,"Value":"30.26765312"},{"Year":"2012","Occupation category":null,"Occupation sub-category":null,"Value":"30.30929642"},{"Year":"2011","Occupation category":null,"Occupation sub-category":null,"Value":"30.05450457"},{"Year":"2017","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"35.49275391"},{"Year":"2017","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"36.14096642"},{"Year":"2017","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"11.80299131"},{"Year":"2017","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"13.57880163"},{"Year":"2017","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"9.097895756"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"39.26960654"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"41.29228556"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"27.67451897"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"37.41947983"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"39.95164228"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"58.61740407"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"18.13364854"},{"Year":"2017","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"44.34482865"},{"Year":"2017","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"29.35966266"},{"Year":"2017","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"29.35966266"},{"Year":"2017","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"20.82722524"},{"Year":"2017","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"16.56277238"},{"Year":"2017","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"24.95911059"},{"Year":"2017","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"62.447406"},{"Year":"2017","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"57.73240595"},{"Year":"2017","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"70.70035345"},{"Year":"2017","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"27.16659634"},{"Year":"2017","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in agriculture and horticulture","Value":"20.33297408"},{"Year":"2017","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in forestry, fishing and related services","Value":"43.77283066"},{"Year":"2017","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"79.75667149"},{"Year":"2017","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"87.17550386"},{"Year":"2017","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"76.32509502"},{"Year":"2016","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"23.5578164"},{"Year":"2016","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"20.24186339"},{"Year":"2016","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Elected officers and representatives","Value":"50.44074437"},{"Year":"2016","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"11.50587499"},{"Year":"2016","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"12.61993302"},{"Year":"2016","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"9.394191706"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"37.92701153"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"39.5516632"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"23.49188123"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"38.46749759"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"49.55293861"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"65.10829215"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"10.23565296"},{"Year":"2016","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"39.40025968"},{"Year":"2016","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"37.37312575"},{"Year":"2016","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"37.37312575"},{"Year":"2016","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"21.34834423"},{"Year":"2016","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"19.44966694"},{"Year":"2016","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"22.74319689"},{"Year":"2016","Occupation category":"Senior officers in protective services","Occupation sub-category":null,"Value":"11.35886782"},{"Year":"2016","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"66.48881569"},{"Year":"2016","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"61.00518532"},{"Year":"2016","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"73.44197708"},{"Year":"2016","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"40.38863643"},{"Year":"2016","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in agriculture and horticulture","Value":"23.43346109"},{"Year":"2016","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in forestry, fishing and related services","Value":"68.71416871"},{"Year":"2016","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"83.44880971"},{"Year":"2016","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"87.11090697"},{"Year":"2016","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"81.39640799"},{"Year":"2015","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"24.75089724"},{"Year":"2015","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"24.87536115"},{"Year":"2015","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"9.852113047"},{"Year":"2015","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"11.95718971"},{"Year":"2015","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"6.968423079"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"34.25722857"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"36.75021414"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"25.70277502"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"28.30352684"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"39.61301671"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"56.40661562"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"8.576176432"},{"Year":"2015","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"39.23340436"},{"Year":"2015","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"39.9138335"},{"Year":"2015","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"39.9138335"},{"Year":"2015","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"19.00276089"},{"Year":"2015","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"16.1317929"},{"Year":"2015","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"21.55651084"},{"Year":"2015","Occupation category":"Senior officers in protective services","Occupation sub-category":null,"Value":"17.40002809"},{"Year":"2015","Occupation category":"Senior officers in protective services","Occupation sub-category":"Officers in armed forces","Value":"22.43732033"},{"Year":"2015","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"69.35233898"},{"Year":"2015","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"64.87850845"},{"Year":"2015","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"76.85836086"},{"Year":"2015","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"27.3813436"},{"Year":"2015","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in forestry, fishing and related services","Value":"47.16620413"},{"Year":"2015","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"76.6846241"},{"Year":"2015","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"84.30479305"},{"Year":"2015","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"72.98054357"},{"Year":"2014","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"16.99708068"},{"Year":"2014","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"16.6885827"},{"Year":"2014","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"9.268029952"},{"Year":"2014","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"11.49291009"},{"Year":"2014","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"5.650745252"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"37.50352867"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"34.10862881"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"32.98488843"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"32.10709176"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"51.8328805"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"62.11228612"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"9.464485657"},{"Year":"2014","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"42.35311745"},{"Year":"2014","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"35.08264619"},{"Year":"2014","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"35.08264619"},{"Year":"2014","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"15.30571967"},{"Year":"2014","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"11.78974617"},{"Year":"2014","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"18.18192513"},{"Year":"2014","Occupation category":"Senior officers in protective services","Occupation sub-category":null,"Value":"18.63184526"},{"Year":"2014","Occupation category":"Senior officers in protective services","Occupation sub-category":"Senior police officers","Value":"28.44133317"},{"Year":"2014","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"71.335664"},{"Year":"2014","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"67.32916395"},{"Year":"2014","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"75.33043861"},{"Year":"2014","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"27.25996842"},{"Year":"2014","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in agriculture and horticulture","Value":"21.3182158"},{"Year":"2014","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"80.81399146"},{"Year":"2014","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"87.0403075"},{"Year":"2014","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"78.72236472"},{"Year":"2013","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"30.96140421"},{"Year":"2013","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"27.34342963"},{"Year":"2013","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Elected officers and representatives","Value":"57.90249552"},{"Year":"2013","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"8.438068986"},{"Year":"2013","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"9.307894089"},{"Year":"2013","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"5.613148684"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"37.56346204"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"39.49667069"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"26.52073434"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"26.48174587"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"65.09741156"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"61.19539695"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"14.8215773"},{"Year":"2013","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"33.94650225"},{"Year":"2013","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"37.46235406"},{"Year":"2013","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"37.46235406"},{"Year":"2013","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"12.87540853"},{"Year":"2013","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"11.31922796"},{"Year":"2013","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"14.02117436"},{"Year":"2013","Occupation category":"Senior officers in protective services","Occupation sub-category":null,"Value":"15.62889416"},{"Year":"2013","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"66.04211628"},{"Year":"2013","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"64.58129554"},{"Year":"2013","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"67.79909246"},{"Year":"2013","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"53.10836564"},{"Year":"2013","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in agriculture and horticulture","Value":"36.74530411"},{"Year":"2013","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in forestry, fishing and related services","Value":"76.43870556"},{"Year":"2013","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"75.48652971"},{"Year":"2013","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"87.18829812"},{"Year":"2013","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"71.26934985"},{"Year":"2012","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"21.80266771"},{"Year":"2012","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"20.32690885"},{"Year":"2012","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"9.262216338"},{"Year":"2012","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"11.5136515"},{"Year":"2012","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"4.760409273"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"37.98062735"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"42.07693787"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"22.65340021"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"40.01775974"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Advertising and public relations directors","Value":"32.70818048"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"62.96065097"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Information technology and telecommunications directors","Value":"14.71117527"},{"Year":"2012","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"35.33700705"},{"Year":"2012","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"35.538101"},{"Year":"2012","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"35.538101"},{"Year":"2012","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"14.93133695"},{"Year":"2012","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in transport and distribution","Value":"12.33031196"},{"Year":"2012","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"17.08997742"},{"Year":"2012","Occupation category":"Senior officers in protective services","Occupation sub-category":null,"Value":"13.74422457"},{"Year":"2012","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"67.86336178"},{"Year":"2012","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"64.45592401"},{"Year":"2012","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"71.49646871"},{"Year":"2012","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":null,"Value":"26.59864966"},{"Year":"2012","Occupation category":"Managers and proprietors in agriculture related services","Occupation sub-category":"Managers and proprietors in agriculture and horticulture","Value":"24.02608772"},{"Year":"2012","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"80.08927364"},{"Year":"2012","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"89.91201242"},{"Year":"2012","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"76.61395039"},{"Year":"2011","Occupation category":"Chief executives and senior officials","Occupation sub-category":null,"Value":"23.8556338"},{"Year":"2011","Occupation category":"Chief executives and senior officials","Occupation sub-category":"Chief executives and senior officials","Value":"21.09265592"},{"Year":"2011","Occupation category":"Production managers and directors","Occupation sub-category":null,"Value":"9.676679606"},{"Year":"2011","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in manufacturing","Value":"10.08729777"},{"Year":"2011","Occupation category":"Production managers and directors","Occupation sub-category":"Production managers and directors in construction","Value":"8.448571717"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":null,"Value":"35.58370207"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":"Financial managers and directors","Value":"41.33310862"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":"Marketing and sales directors","Value":"22.17970652"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":"Purchasing managers and directors","Value":"35.67384987"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":"Human resource managers and directors","Value":"56.76905074"},{"Year":"2011","Occupation category":"Functional managers and directors","Occupation sub-category":"Functional managers and directors not elsewhere classified","Value":"37.31339664"},{"Year":"2011","Occupation category":"Financial institution managers and directors","Occupation sub-category":null,"Value":"30.30299683"},{"Year":"2011","Occupation category":"Financial institution managers and directors","Occupation sub-category":"Financial institution managers and directors","Value":"30.30299683"},{"Year":"2011","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":null,"Value":"14.78806211"},{"Year":"2011","Occupation category":"Managers and directors in transport and logistics","Occupation sub-category":"Managers and directors in storage and warehousing","Value":"18.65182196"},{"Year":"2011","Occupation category":"Health and social services managers and directors","Occupation sub-category":null,"Value":"72.62258092"},{"Year":"2011","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Health services and public health managers and directors","Value":"67.0402155"},{"Year":"2011","Occupation category":"Health and social services managers and directors","Occupation sub-category":"Social services managers and directors","Value":"79.23467092"},{"Year":"2011","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":null,"Value":"72.58976161"},{"Year":"2011","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Health care practice managers","Value":"77.76048097"},{"Year":"2011","Occupation category":"Managers and proprietors in health and care services","Occupation sub-category":"Residential, day and domiciliary care managers and proprietors","Value":"70.65018223"}]' data-indicatorid='indicator_5-5-2' data-country="United Kingdom"
+  data-edgesdata='[{"From":"Occupation category","To":"Occupation sub-category"}]' data-charttitle="Percentage of managerial positions held by women" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="United Kingdom" data-footnote="The period April to June is being used to report annual data. The date on the x axis is the year at the start of the period." data-showdata="true" data-graphtype="line">
+    
     <div class="col-md-3">
       <div id="toolbar">
-        <h4>Sub-categories</h4>
-        <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
         <div id="fields"></div>
       </div>
       <div id="units"></div>
     </div>
     <div class="col-md-9">
-  
-      <section>
+    
+      
+      
+       
+ 
 
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_5-5-2.csv" class="btn btn-primary btn-download" download="indicator_5-5-2.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_5-5-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_5-5-2.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Percentage of managerial positions held by women</caption>
+      <thead>
         
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
           
+          
+          <td>2017</td>    
+          
+          
+          
+          <td class="table-value">33.02076812</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>    
+          
+          
+          
+          <td class="table-value">31.73203899</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">29.21684395</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">30.50533451</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>    
+          
+          
+          
+          <td class="table-value">30.26765312</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>    
+          
+          
+          
+          <td class="table-value">30.30929642</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>    
+          
+          
+          
+          <td class="table-value">30.05450457</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Office for National Statistics (ONS)</p>
+    
+    
+    <p>Geographical Area: United Kingdom</p>
+    
+    
+    <p>Units of Measure: Percentage (%)</p>
+    
+    
+    <p>Footnote: The period April to June is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
+    
+  </div>
+  
+</div>
+      
+
+      <section>
+        
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
     
     
 
@@ -234,24 +387,26 @@
     <div class="plot-container">
         
 <canvas></canvas>
+
+        <div id="chartSelectionDownload"></div>
     </div>
     
 
 
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
-
+        
         <div class="alert alert-warning" role="alert">
           <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
         </div>
-
+        
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
-          
-            <li role="presentation" class="nav-item active">
-              <a class="nav-link" data-toggle="tab" href="#data" aria-controls="data" role="tab">Data</a>
-            </li>
-          
-          <li role="presentation" class="nav-item  ">
+          <li role="presentation" class="nav-item active">
             <a class="nav-link" data-toggle="tab" href="#metadata" aria-controls="metadata" role="tab">Metadata</a>
           </li>
           <li role="presentation" class="nav-item">
@@ -259,116 +414,17 @@
           </li>
           
         </ul>
-
+        
         <!-- Tab panes -->
         <div class="tab-content">
-          
-            <div role="tabpanel" class="tab-pane active" id="data">
-              
-                <h3>Percentage of managerial positions held by women</h3>
-              
-              <a href="/data/indicator_5-5-2.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_5-5-2.csv' tabindex='0' role='button'>Download source CSV</a>
-              <div id="datatables"> 
- 
-
-<a href='/data/headlines/headlines_5-5-2.csv' class='btn btn-primary btn-download' download='indicator_5-5-2.csv' tabindex='0' role='button'>Download headline CSV</a>
-
-<h4>Headline data</h4>
-
-<table class='table-responsive table table-hover dataTable no-footer' role='grid'>
-   <caption>Percentage of managerial positions held by women</caption>
-  <thead>
-  
-      <th scope="col">Year</th>
-  
-      <th scope="col">Value</th>
-  
-  </thead>
-  <tbody>
-  
-      <tr>
-      
-          <td>2017</td>
-      
-          <td>33.02076812</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2016</td>
-      
-          <td>31.73203899</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2015</td>
-      
-          <td>29.21684395</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2014</td>
-      
-          <td>30.50533451</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2013</td>
-      
-          <td>30.26765312</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2012</td>
-      
-          <td>30.30929642</td>
-      
-      </tr>
-  
-      <tr>
-      
-          <td>2011</td>
-      
-          <td>30.05450457</td>
-      
-      </tr>
-  
-  </tbody>
-</table>
-</div>
-              <div id="datatableFooter">
-                
-                <p>Source: Office for National Statistics (ONS)</p>
-                
-                
-                <p>Geographical Area: United Kingdom</p>
-                
-                
-                <p>Units of Measure: Percentage (%)</p>
-                
-                
-                <p>Footnote: The period April to June is being used to report annual data. The date on the x axis is the year at the start of the period.</p>
-                
-              </div>
-            </div>
-          
-          <div role="tabpanel" class="tab-pane " id="metadata">
+          <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
-            <div class="collapsible expanded" tabindex='0'>
-              <h3>National Metadata<span> (Collapse)</span></h3>
+            <div class="collapsible expanded">
+              <h3 tabindex='0'>National Metadata<span> (Collapse)</span></h3>
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                    SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                    should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
+                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
     
@@ -646,7 +702,7 @@
             </div>
             <!-- Method of Computation -->
             <div class="collapsible collapsed">
-              <h3>How the UK Indicator is Calculated<span> (Expand)</span></h3>
+              <h3 tabindex='0'>How the UK Indicator is Calculated<span> (Expand)</span></h3>
               <article>
                 <table class="table table-hover">
   
@@ -859,7 +915,7 @@
             </div>
             <!-- Global Metadata -->
             <div class="collapsible collapsed">
-              <h3>Global Metadata<span> (Expand)</span></h3>
+              <h3 tabindex='0'>Global Metadata<span> (Expand)</span></h3>
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -1448,22 +1504,17 @@
       </section>
     </div>
   </div>
-
-
-
-
-
-
 </div>
+
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
-      <div class="col-xs-7">
+      <div class="col-xs-9">
         Contact us at
         <a href="mailto:sustainabledevelopment@ons.gov.uk">sustainabledevelopment@ons.gov.uk</a>.
       </div>
-      <div class="col-xs-5 text-right">
-        <a href="/faq/">Frequently Asked Questions</a>
+      <div class="col-xs-3 text-right">
+        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1494,20 +1545,18 @@ ga('send', 'pageview');
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src='/assets/js/sdg.js?v=20171123144549'></script>
+<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
+<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
+<script src='/assets/js/sdg.js?v=20171201171219'></script>
+<script src="/assets/js/lib/classList.js"></script>
+<script src="/assets/js/lib/modernizr-custom.js"></script>
+<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script>
 $(function() {
-    $(window).scroll(function() {
-        if ($(".navbar").offset().top > 50) {
-            $("#main-nav").addClass("collapsed");
-        } else {
-            $("#main-nav").removeClass("collapsed");
-        }
-    });
-
-    $('#metadata .collapsible h3').click(function() {
+      $('#metadata .collapsible h3').click(function() {
       var $container = $(this).closest('div'),
           $article = $(this).next('article'),
           $span = $(this).find('span');
@@ -1523,6 +1572,12 @@ $(function() {
           $span.html(' (Collapse)');
         }
       });
+    });
+
+    $('#metadata .collapsible h3').keypress(function (e) {
+      if(e.which == 13) { // Enter key
+        $(this).trigger('click');
+      };
     });
 
     if($('#indicatorData').length) {
@@ -1549,6 +1604,8 @@ $(function() {
       controller.initialise();
     }
 
+    var switcher = new accessibilitySwitcher();
+
 
 });
 </script>
@@ -1556,3 +1613,4 @@ $(function() {
 </body>
 </html>
 
+  
