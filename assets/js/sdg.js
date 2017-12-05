@@ -216,7 +216,6 @@ var indicatorModel = function (options) {
   this.fieldsByUnit = undefined;
   this.dataHasUnitSpecificFields = false;
   this.fieldValueStatuses = [];
-  this.userInteraction = {};
   this.validParentsByChild = {};
 
   // initialise the field information, unique fields and unique values for each field:
@@ -368,12 +367,11 @@ var indicatorModel = function (options) {
 
   this.clearSelectedFields = function() {
     this.selectedFields = [];
-    this.userInteraction = {};
     this.getData();
     this.onFieldsCleared.notify();
   };
 
-  this.updateSelectedFields = function (fields, userInteraction) {
+  this.updateSelectedFields = function (fields) {
     this.selectedFields = fields;
 
     // update parent/child statuses:
@@ -425,7 +423,6 @@ var indicatorModel = function (options) {
     // remove duplicates:
     that.allowedFields = _.uniq(that.allowedFields);
 
-    this.userInteraction = userInteraction;
     this.getData();
     this.onSelectionUpdate.notify({
       selectedFields: fields,
@@ -898,11 +895,7 @@ var indicatorView = function (model, options) {
         field: key,
         values: _.pluck(value, 'value')
       };
-    }).value(), {
-      field: $(this).data('field'),
-      value: $(this).val(),
-      selected: $(this).is(':checked')
-    });
+    }).value());
   }
   
   $(this._rootElement).on('click', '.variable-options button', function(e) {
