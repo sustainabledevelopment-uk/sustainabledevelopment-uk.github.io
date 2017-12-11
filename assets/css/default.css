@@ -227,13 +227,11 @@ header {
         width: 50%;
         cursor: pointer; }
         .navbar .top-level li.active {
-          background: #3D3D3D; }
+          background: #58595B; }
         .navbar .top-level li span {
           color: #E5E6E7;
           display: block;
           padding: 15px; }
-        .navbar .top-level li:nth-child(2) {
-          border-left: 1px solid white; }
     .navbar .menu-target {
       background: #58595B; }
     .navbar ul.navbar-nav {
@@ -242,21 +240,23 @@ header {
       clear: left;
       margin: 0;
       font-size: 0.938em; }
-      .navbar ul.navbar-nav li a {
-        display: block;
-        background: #58595B;
-        padding: 6px 0 6px;
-        color: #E5E6E7; }
-        .navbar ul.navbar-nav li a:hover {
+      .navbar ul.navbar-nav li {
+        cursor: pointer; }
+        .navbar ul.navbar-nav li a {
+          display: block;
+          background: #58595B;
+          padding: 6px 0 6px;
           color: #E5E6E7; }
-      .navbar ul.navbar-nav li.active a {
-        border: none;
-        color: #fff;
-        font-weight: bold; }
-        .navbar ul.navbar-nav li.active a:hover {
-          color: #fff; }
-      .navbar ul.navbar-nav li:last-child {
-        padding-bottom: 10px; }
+          .navbar ul.navbar-nav li a:hover {
+            color: #E5E6E7; }
+        .navbar ul.navbar-nav li.active a {
+          border: none;
+          color: #fff;
+          font-weight: bold; }
+          .navbar ul.navbar-nav li.active a:hover {
+            color: #fff; }
+        .navbar ul.navbar-nav li:last-child {
+          padding-bottom: 10px; }
     .navbar #search {
       display: none;
       width: 100%;
@@ -514,6 +514,14 @@ h5 + .btn-download {
   @media only screen and (max-width: 480px) {
     .heading h1 {
       font-size: 0.938em; } }
+.heading h2 {
+  font-size: 1.5em; }
+  @media only screen and (min-width: 768px) {
+    .heading h2 {
+      font-size: 1.8em; } }
+  @media only screen and (min-width: 992px) {
+    .heading h2 {
+      font-size: 2.2em; } }
 @media only screen and (max-width: 480px) {
   .heading h3 {
     font-size: 0.813em; } }
@@ -763,6 +771,9 @@ h5 + .btn-download {
   #main-content .plot-container {
     margin-bottom: 4.5rem;
     padding: 10px; }
+  #main-content #chartSelectionDownload {
+    margin-top: -40px;
+    margin-bottom: 10px; }
   #main-content canvas {
     user-select: none;
     -moz-user-select: none;

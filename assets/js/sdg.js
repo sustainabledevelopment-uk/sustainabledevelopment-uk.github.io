@@ -332,7 +332,7 @@ var indicatorModel = function (options) {
     that.footerFields = {
       'Source': that.dataSource,
       'Geographical Area': that.geographicalArea,
-      'Units of Measure': that.measurementUnit,
+      'Unit of Measurement': that.measurementUnit,
       'Footnote': that.footnote,
     };
   }());
@@ -1503,12 +1503,12 @@ $(function() {
 
 $(function() {
 
-  var topLevelSearchLink = $('.top-level a:eq(1)');
+  var topLevelSearchLink = $('.top-level span:eq(1)');
 
   var resetForSmallerViewport = function() {
     topLevelSearchLink.text('Search');
     $('.top-level li').removeClass('active');
-    $('.top-level a').removeClass('open');
+    $('.top-level span').removeClass('open');
   };  
 
   $('.top-level span').click(function() {
@@ -1531,6 +1531,10 @@ $(function() {
       } else {
         $(this).text('Search');
       }
+    } else {
+      // menu click, always hide search:
+      topLevelSearchLink.removeClass('open');
+      topLevelSearchLink.text('Search');
     }
 
     if(!wasVisible) {
