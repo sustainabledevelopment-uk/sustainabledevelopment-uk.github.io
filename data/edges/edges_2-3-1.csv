@@ -1,2 +1,7 @@
 From,To
 Crop category,Crop
+Geographic Code,Crop category
+Geographic Code,Livestock
+Geographic Code,Geography
+Geographic Code,Timber category
+Geographic Code,Ownership
