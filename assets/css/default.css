@@ -404,14 +404,14 @@ h5 + .btn-download {
   background-color: #FD6925; }
 
 .goal-10.heading {
-  background-color: #DC1D67;
-  border-bottom: 5px solid #82113d; }
+  background-color: #DD1367;
+  border-bottom: 5px solid #7f0b3b; }
 .goal-10.goal-indicators div span {
-  border-color: #82113d;
-  color: #82113d; }
+  border-color: #7f0b3b;
+  color: #7f0b3b; }
 
 .goal-tiles #goal-10:hover {
-  background-color: #DC1D67; }
+  background-color: #DD1367; }
 
 .goal-11.heading {
   background-color: #FD9C27;
@@ -772,8 +772,40 @@ h5 + .btn-download {
     margin-bottom: 4.5rem;
     padding: 10px; }
   #main-content #chartSelectionDownload {
-    margin-top: -40px;
-    margin-bottom: 10px; }
+    margin-bottom: 10px;
+    clear: left; }
+  #main-content #legend {
+    padding-left: 0;
+    text-align: center;
+    margin-top: -32px; }
+    #main-content #legend li {
+      font-size: 13px;
+      list-style-type: none;
+      display: inline-block;
+      color: #666;
+      line-height: 18px;
+      cursor: pointer;
+      padding: 5px; }
+      #main-content #legend li:hover {
+        background: #eee; }
+      #main-content #legend li.notshown {
+        text-decoration: line-through; }
+    #main-content #legend .swatch {
+      display: inline-block;
+      width: 45px;
+      height: 15px;
+      margin-right: 3px; }
+      #main-content #legend .swatch.dashed {
+        background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAoAAAABCAYAAADn9T9+AAAAFklEQVQImWP8////fwY0wMjIyIguBgCaAgQCms5tJwAAAABJRU5ErkJggg==");
+        background-repeat: repeat;
+        background-position: -5px 0; }
+    #main-content #legend span {
+      vertical-align: middle;
+      line-height: 18px; }
+    #main-content #legend:after {
+      content: "";
+      display: table;
+      clear: both; }
   #main-content canvas {
     user-select: none;
     -moz-user-select: none;
@@ -825,7 +857,8 @@ h5 + .btn-download {
     background: none;
     border: none; }
     #main-content .nav-tabs .nav-item a {
-      border: none; }
+      border: none;
+      padding-left: 5px; }
       #main-content .nav-tabs .nav-item a:hover {
         background: none; }
     #main-content .nav-tabs .nav-item.active a {
@@ -833,8 +866,6 @@ h5 + .btn-download {
       border-bottom: 2px solid black; }
   #main-content .tab-content .tab-pane {
     padding-top: 1.5rem; }
-    #main-content .tab-content .tab-pane th {
-      width: 35%; }
     #main-content .tab-content .tab-pane #datatable {
       overflow-x: auto; }
   #main-content .tab-content h4 {
@@ -846,8 +877,22 @@ h5 + .btn-download {
       #main-content #selectionsTable div.dataTables_wrapper .row {
         margin-left: 0;
         margin-right: 0; }
-    #main-content #selectionsTable table th, #main-content #selectionsTable table td {
-      white-space: nowrap; }
+    #main-content #selectionsTable table th {
+      cursor: pointer; }
+      #main-content #selectionsTable table th span.sort {
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-color: transparent;
+        display: inline-block;
+        width: 24px;
+        height: 19px;
+        margin-bottom: -3px; }
+      #main-content #selectionsTable table th:hover {
+        text-decoration: underline; }
+      #main-content #selectionsTable table th.sorting_asc span.sort {
+        background-image: url(../img/sort_asc.png); }
+      #main-content #selectionsTable table th.sorting_desc span.sort {
+        background-image: url(../img/sort_desc.png); }
     #main-content #selectionsTable .table-footer-text p {
       font-size: 0.85em;
       margin: 0 0 5px; }

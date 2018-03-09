@@ -1,17 +1,13 @@
-Year,Value
-2001,1.65513241
-2002,1.640981297
-2003,1.5877512880000002
-2004,1.551260888
-2005,1.602514613
-2006,1.579575775
-2007,1.6131792619999998
-2008,1.620263231
-2009,1.686916198
-2010,1.6644842819999999
-2011,1.685957032
-2012,1.6272408369999998
-2013,1.66794764
-2014,1.6687700280000002
-2015,1.688778959
-2015,0.24456484
+Year,Units,Value
+2004,Funding research and development,1.24522705
+2005,Funding research and development,1.319055598
+2006,Funding research and development,1.339095137
+2007,Funding research and development,1.4051610190000001
+2008,Funding research and development,1.448934837
+2009,Funding research and development,1.5293893719999998
+2010,Funding research and development,1.535646141
+2011,Funding research and development,1.587627471
+2012,Funding research and development,1.553339078
+2013,Funding research and development,1.620270836
+2014,Funding research and development,1.648004491
+2015,Funding research and development,1.674452293
