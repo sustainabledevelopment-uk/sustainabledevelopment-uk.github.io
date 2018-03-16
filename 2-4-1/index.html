@@ -41,7 +41,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20180309160027">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20180316180226">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -195,11 +195,10 @@
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
-        <p><strong>Exploring data sources</strong></p>
-
-<p>We have not explored suitable data sources for this indicator.</p>
+        <p>Data follows the UN specification for this indicator; however it has not been identified in collaboration with topic experts. As with all indicators, this will be reviewed.</p>
 
 <p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+
 
       </div>
     </div>
@@ -207,20 +206,136 @@
   
   <div class="row">
     <div class="col-xs-12">
-      <h2></h2>
+      <h2>Proportion of agricultural area under productive and sustainable agriculture</h2>
     </div>
   </div>
   
   <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2015","Group":"A","Value":"1"},{"Year":"2015","Group":"B","Value":"3"},{"Year":"2015","Group":null,"Value":"2"},{"Year":"2016","Group":"A","Value":"1"},{"Year":"2016","Group":"B","Value":"3"},{"Year":"2016","Group":null,"Value":"2"}]' data-indicatorid='indicator_2-4-1' data-country=""
-  data-edgesdata='[]' data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false" data-graphtype="line">
+  data-edgesdata='[]' data-charttitle="Proportion of agricultural area under productive and sustainable agriculture" data-measurementunit="Percentage (%) / Hectares (000s)" data-datasource="Department for Environment, Food & Rural Affairs (Defra)" data-geographicalarea="" data-footnote="" data-showdata="true" data-graphtype="line">
     
-    <div class="col-md-12">
+    <div class="col-md-3">
+      <div id="toolbar">
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
+        <div id="fields"></div>
+      </div>
+      <div id="units"></div>
+    </div>
+    <div class="col-md-9">
     
       
+      
+       
+ 
+
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="/data/headlines/headlines_2-4-1.csv" class="btn btn-primary btn-download" download="indicator_2-4-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="/data/indicator_2-4-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_2-4-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption>Proportion of agricultural area under productive and sustainable agriculture</caption>
+      <thead>
+        
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">2</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>    
+          
+          
+          
+          <td class="table-value">2</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    <p>Source: Department for Environment, Food & Rural Affairs (Defra)</p>
+    
+    
+    
+    <p>Unit of Measurement: Percentage (%) / Hectares (000s)</p>
+    
+    
+  </div>
+  
+</div>
       
 
       <section>
         
+        
+        <ul class="nav nav-tabs data-view" role="tablist">
+          <li role="presentation" class="nav-item active">
+            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+          </li>
+          <li role="presentation" class="nav-item">
+            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+          </li>
+        </ul>
+        
+        <!-- Tab panes -->
+        <div class="tab-content data-view">
+          <div role="tabpanel" class="tab-pane active" id="chartview">
+            
+    
+    
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
+
+    
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
+    <div id="plotLegend"></div>
+
+    <div id="chartSelectionDownload"></div>    
+    
+
+
+          </div>
+          <div role="tabpanel" class="tab-pane" id="tableview">
+            <div id="selectionsTable"></div>
+          </div>
+        </div>
         
         
         <div class="alert alert-warning" role="alert">
@@ -246,7 +361,7 @@
           <div role="tabpanel" class="tab-pane active" id="metadata">
             <!-- National Metadata -->
             <div > <!-- formerly class="collapsible expanded" -->
-              <h3 tabindex='0'>National Metadata</h3>
+              <!-- <h3 tabindex='0'>National Metadata</h3> -->
               <article>
                 <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
                   SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
@@ -280,15 +395,9 @@
     
   
     
-  
-    
-  
-    
-  
-    
       
       <tr>
-        <th scope="row">Actual Indicator Available </th>
+        <th scope="row">Indicator available </th>
         <td>
           
             
@@ -301,7 +410,7 @@
     
       
       <tr>
-        <th scope="row">Actual Indicator Description </th>
+        <th scope="row">Indicator description </th>
         <td>
           
             
@@ -314,7 +423,7 @@
     
       
       <tr>
-        <th scope="row">Indicator Periodicity </th>
+        <th scope="row">Geographical coverage </th>
         <td>
           
             
@@ -327,10 +436,10 @@
     
       
       <tr>
-        <th scope="row">Earliest Available Data </th>
+        <th scope="row">Unit of measurement </th>
         <td>
           
-            
+            Percentage (%) / Hectares (000s)
           
         </td>
         </tr>
@@ -340,259 +449,10 @@
     
       
       <tr>
-        <th scope="row">Geographic Coverage </th>
+        <th scope="row">Definitions </th>
         <td>
           
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Release Date </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Next Release </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Statistical Classification </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Disaggregation </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Comments and Limitations </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Contact Details </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-</table>
-
-              </article>
-            </div>
-            <!-- Method of Computation -->
-            <div > <!-- formerly class="collapsible collapsed" -->
-              <h3 tabindex='0'>How the UK Indicator is Calculated</h3>
-              <article>
-                <table class="table table-hover">
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-      
-      <tr>
-        <th scope="row">Unit of Measurement </th>
-        <td>
-          
-            
+            Utilised agricultural area, abbreviated as UAA, is the total area taken up by arable land, permanent grassland, permanent crops and kitchen gardens used by the holding, regardless of the type of tenure or of whether it is used as a part of common land. Includes: arable land; permanent grassland; permanent crops; kitchen gardens (even if they only represent small areas of total UAA. Excludes: unutilised agricultural area (NUAA); special holding areas (SAA); wooded area (WA); other land (FA9) occupied by buildings, farmyards, tracks, ponds, etc. From: Http://ec.europa.eu/eurostat/statistics-explained/index.php/Glossary:Utilised_agricultural_area_(UAA).
           
         </td>
         </tr>
@@ -605,7 +465,7 @@
         <th scope="row">Calculations </th>
         <td>
           
-            
+            (Organic area / Utilised agricultural land) * 100
           
         </td>
         </tr>
@@ -615,7 +475,7 @@
     
       
       <tr>
-        <th scope="row">Numerator </th>
+        <th scope="row">Other information </th>
         <td>
           
             
@@ -628,20 +488,7 @@
     
       
       <tr>
-        <th scope="row">Denominator </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Definitions </th>
+        <th scope="row">Last updated </th>
         <td>
           
             
@@ -743,7 +590,7 @@
           <div role="tabpanel" class="tab-pane" id="globalmetadata">
             <!-- Global Metadata -->
             <div> <!-- formerly <div class="collapsible expanded"> -->
-              <h3 tabindex='0'>Global Metadata</h3>
+              <!-- <h3 tabindex='0'>Global Metadata</h3> -->
               <article>
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
@@ -759,7 +606,7 @@
     
       
       <tr>
-        <th scope="row">Indicator Name </th>
+        <th scope="row">Indicator name </th>
         <td>
           
             Proportion of agricultural area under productive and sustainable agriculture
@@ -772,7 +619,7 @@
     
       
       <tr>
-        <th scope="row">Indicator Number </th>
+        <th scope="row">Indicator number </th>
         <td>
           
             2.4.1
@@ -785,7 +632,7 @@
     
       
       <tr>
-        <th scope="row">Target Name </th>
+        <th scope="row">Target name </th>
         <td>
           
             By 2030, ensure sustainable food production systems and implement resilient agricultural practices that increase productivity and production, that help maintain ecosystems, that strengthen capacity for adaptation to climate change, extreme weather, drought, flooding and other disasters and that progressively improve land and soil quality
@@ -798,7 +645,7 @@
     
       
       <tr>
-        <th scope="row">Target Number </th>
+        <th scope="row">Target number </th>
         <td>
           
             2.4
@@ -811,7 +658,7 @@
     
       
       <tr>
-        <th scope="row">Global Indicator Description </th>
+        <th scope="row">Global indicator description </th>
         <td>
           
             
@@ -824,7 +671,7 @@
     
       
       <tr>
-        <th scope="row">UN Designated Tier </th>
+        <th scope="row">UN designated tier </th>
         <td>
           
             3
@@ -837,10 +684,10 @@
     
       
       <tr>
-        <th scope="row">UN Custodian Agency </th>
+        <th scope="row">UN custodian agency </th>
         <td>
           
-            FAO
+            Food and Agriculture Organization (FAO)
           
         </td>
         </tr>
@@ -850,46 +697,7 @@
     
       
       <tr>
-        <th scope="row">UN Partner Agency </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">UNSD Indicator Code </th>
-        <td>
-          
-            C020401
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">UN Indicator Notes </th>
-        <td>
-          
-            
-          
-        </td>
-        </tr>
-        
-      
-  
-    
-      
-      <tr>
-        <th scope="row">Link to UN Metadata </th>
+        <th scope="row">Link to UN metadata </th>
         <td>
           
             
@@ -898,10 +706,6 @@
             
 
             
-              <a href="http://unstats.un.org/sdgs/files/metadata-compilation/Metadata-Goal-2.pdf" target="_blank">
-                United Nations Sustainable Development Goals Metadata (pdf 232kB) <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
             
           
         </td>
@@ -912,22 +716,6 @@
     
       
       
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1040,14 +828,277 @@
 
 
 
-  <h3>UK Data Source Metadata</h3>
   <div class="row no-gutters">
   
    
     
     <div class="col-md-6">
-      <h4>Source 1</h4>
+      
+        <h4>Source 1</h4>
+      
       <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            Department for Environment, Food & Rural Affairs (Defra)
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            Annual
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest available data </th>
+        <td>
+          
+            1984
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical coverage </th>
+        <td>
+          
+            United Kingdom
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to data source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://www.gov.uk/government/statistical-data-sets/agriculture-in-the-united-kingdom" target="_blank">
+                Agriculture in the United Kingdom data sets <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release date </th>
+        <td>
+          
+            12-01-2018
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next release </th>
+        <td>
+          
+            To be announced
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical classification </th>
+        <td>
+          
+            Official Statistic
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other information </th>
+        <td>
+          
+            Data request and tables 2.1, 2.2, 11.2 and 12.1'
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+   
+    
+    <div class="col-md-6">
+      
+        <h4>Source 2</h4>
+      
+      <table class="table table-hover">
+  
+    
   
     
   
@@ -1121,7 +1172,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            
+            Department for Environment, Food & Rural Affairs (Defra)
           
         </td>
         </tr>
@@ -1134,7 +1185,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            
+            Annual
           
         </td>
         </tr>
@@ -1144,10 +1195,10 @@
     
       
       <tr>
-        <th scope="row">Earliest Available Data </th>
+        <th scope="row">Earliest available data </th>
         <td>
           
-            
+            2011
           
         </td>
         </tr>
@@ -1157,10 +1208,10 @@
     
       
       <tr>
-        <th scope="row">Geographical Coverage </th>
+        <th scope="row">Geographical coverage </th>
         <td>
           
-            
+            United Kingdom
           
         </td>
         </tr>
@@ -1170,7 +1221,7 @@
     
       
       <tr>
-        <th scope="row">Link to Data Source </th>
+        <th scope="row">Link to data source </th>
         <td>
           
             
@@ -1179,6 +1230,10 @@
             
 
             
+              <a href="https://www.gov.uk/government/statistical-data-sets/structure-of-the-agricultural-industry-in-england-and-the-uk-at-june" target="_blank">
+                Structure of the agricultural industry in England and the UK at June <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
             
           
         </td>
@@ -1193,10 +1248,10 @@
     
       
       <tr>
-        <th scope="row">Release Date </th>
+        <th scope="row">Release date </th>
         <td>
           
-            
+            16-01-2018
           
         </td>
         </tr>
@@ -1206,10 +1261,10 @@
     
       
       <tr>
-        <th scope="row">Next Release </th>
+        <th scope="row">Next release </th>
         <td>
           
-            
+            To be announced
           
         </td>
         </tr>
@@ -1219,10 +1274,10 @@
     
       
       <tr>
-        <th scope="row">Statistical Classification </th>
+        <th scope="row">Statistical classification </th>
         <td>
           
-            
+            Official Statistic
           
         </td>
         </tr>
@@ -1232,10 +1287,10 @@
     
       
       <tr>
-        <th scope="row">Contact Details </th>
+        <th scope="row">Contact details </th>
         <td>
           
-            
+            farming-statistics@defra.gsi.gov.uk
           
         </td>
         </tr>
@@ -1245,7 +1300,7 @@
     
       
       <tr>
-        <th scope="row">Other Information </th>
+        <th scope="row">Other information </th>
         <td>
           
             
@@ -1254,30 +1309,6 @@
         </tr>
         
       
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
-  
-    
   
     
   
@@ -1373,7 +1404,7 @@ ga('send', 'pageview');
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
 <script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
 <script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
-<script src='/assets/js/sdg.js?v=20180309160027'></script>
+<script src='/assets/js/sdg.js?v=20180316180226'></script>
 <script src="/assets/js/lib/classList.js"></script>
 <script src="/assets/js/lib/modernizr-custom.js"></script>
 <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
