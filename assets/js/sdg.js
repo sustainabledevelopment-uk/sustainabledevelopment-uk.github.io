@@ -159,11 +159,6 @@ var indicatorDataStore = function(dataUrl) {
   this.getData = function() {
     that = this;
     return new Promise(function(resolve, reject) {
-
-      // if(Modernizr.localStorage &&) {
-
-      // }
-
       $.getJSON(that.dataUrl, function(data) {
         resolve(data);
       }).fail(function(err) {
@@ -171,7 +166,6 @@ var indicatorDataStore = function(dataUrl) {
       });      
     });
   };
-
 };
 var indicatorModel = function (options) {
 
@@ -196,10 +190,21 @@ var indicatorModel = function (options) {
     return Math.round(value * mult) / mult;
   };
 
+  // json conversion:
+  var convertJsonFormat = function(data) {
+    var keys = _.keys(data);
+
+    return _.map(data[keys[0]], function(item, i) {
+      return _.object(keys, _.map(keys, function(k) {
+        return data[k][i];
+      }));
+    });
+  }
+
   // general members:
   var that = this;
-  this.data = options.data;
-  this.edgesData = options.edgesData;
+  this.data = convertJsonFormat(options.data);
+  this.edgesData = convertJsonFormat(options.edgesData);
   this.hasHeadline = true;
   this.country = options.country;
   this.indicatorId = options.indicatorId;
@@ -217,6 +222,10 @@ var indicatorModel = function (options) {
   this.dataHasUnitSpecificFields = false;
   this.fieldValueStatuses = [];
   this.validParentsByChild = {};
+  this.hasGeoData = false;
+  this.geoData = [];
+  this.geoCodeRegEx = options.geoCodeRegEx;
+  this.showMap = options.showMap;
 
   // initialise the field information, unique fields and unique values for each field:
   (function initialise() {
@@ -228,6 +237,15 @@ var indicatorModel = function (options) {
     };
 
     that.years = extractUnique('Year');
+
+    if(that.data[0].hasOwnProperty('GeoCode')) {
+      that.hasGeoData = true;
+
+      // Year, GeoCode, Value
+      that.geoData = _.filter(that.data, function(dataItem) {
+        return dataItem.GeoCode;
+      });
+    }
 
     if(that.data[0].hasOwnProperty('Units')) {
       that.units = extractUnique('Units');
@@ -258,8 +276,7 @@ var indicatorModel = function (options) {
     }
 
     that.fieldItemStates = _.map(_.filter(Object.keys(that.data[0]), function (key) {
-        // 'Value' may not be present, but 'Year' and '
-        return ['Year', 'Value', 'Units'].indexOf(key) === -1;
+        return ['Year', 'Value', 'Units', 'GeoCode'].indexOf(key) === -1;
       }), function(field) {
       return {
         field: field,
@@ -705,7 +722,11 @@ var indicatorModel = function (options) {
           return _.findWhere(that.fieldsByUnit, { unit : that.selectedUnit }).fields.indexOf(fis.field) != -1;
         }) : this.fieldItemStates,
         allowedFields: this.allowedFields,
-        edges: this.edgesData
+        edges: this.edgesData,
+        hasGeoData: this.hasGeoData,
+        geoData: this.geoData,
+        geoCodeRegEx: this.geoCodeRegEx,
+        showMap: this.showMap
       });
 
 
@@ -734,6 +755,19 @@ indicatorModel.prototype = {
   }
 };
 
+var mapView = function () {
+  
+  "use strict";
+  
+  this.initialise = function(geoData, geoCodeRegEx) {
+    $('.map').show();
+    $('#map').sdgMap({
+      geoData: geoData,
+      geoCodeRegEx: geoCodeRegEx
+    });
+  }
+};
+
 var indicatorView = function (model, options) {
   
   "use strict";
@@ -744,6 +778,7 @@ var indicatorView = function (model, options) {
   this._chartInstance = undefined;
   this._rootElement = options.rootElement;
   this._tableColumnDefs = options.tableColumnDefs;
+  this._mapView = undefined;
   this._legendElement = options.legendElement;
   
   var chartHeight = screen.height < options.maxChartHeight ? screen.height : options.maxChartHeight;
@@ -794,6 +829,11 @@ var indicatorView = function (model, options) {
   
   this._model.onSeriesComplete.attach(function(sender, args) {
     view_obj.initialiseSeries(args);
+
+    if(args.hasGeoData && args.showMap) {
+      view_obj._mapView = new mapView();
+      view_obj._mapView.initialise(args.geoData, args.geoCodeRegEx);
+    }
   });
 
   this._model.onSeriesSelectedChanged.attach(function(sender, args) {
@@ -1400,13 +1440,14 @@ var indicatorSearch = function(inputElement, indicatorDataStore) {
     $('#main-content h1 span').text(searchString);
     $('#main-content h1').show();
   
-    //this.getData().then(function() {
     this.indicatorDataStore.getData().then(function(data) {
 
       that.processData(data);
 
       var searchResults = _.filter(that.indicatorData, function(indicator) {
-        return indicator.title.toLowerCase().indexOf(searchString.toLowerCase()) != -1; 
+        return indicator.title.toLowerCase().indexOf(searchString.toLowerCase()) != -1 ||
+          indicator.description.toLowerCase().indexOf(searchString.toLowerCase()) != -1 ||
+          indicator.keywords.toLowerCase().indexOf(searchString.toLowerCase()) != -1;
       });
 
       // goal
@@ -1418,6 +1459,10 @@ var indicatorSearch = function(inputElement, indicatorDataStore) {
         var goal = _.findWhere(results, { goalId: result.goalId }),
             indicator = {
               parsedTitle: result.title.replace(new RegExp('(' + escapeRegExp(searchString) + ')', 'gi'), '<span class="match">$1</span>'),
+              parsedDescription: result.description.replace(new RegExp('(' + escapeRegExp(searchString) + ')', 'gi'), '<span class="match">$1</span>'),
+              parsedKeywords: result.keywords.replace(new RegExp('(' + escapeRegExp(searchString) + ')', 'gi'), '<span class="match">$1</span>'),
+              hasKeywords: result.keywords && result.keywords.length,
+              hasDescription: result.description && result.description.length,
               id: result.id,
               title: result.title,
               href: result.href,

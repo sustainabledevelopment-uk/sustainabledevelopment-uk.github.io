@@ -41,7 +41,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20180321110911">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20180406111610">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -210,8 +210,8 @@
     </div>
   </div>
   
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2013","Endangered species seizure":null,"Value":"569"},{"Year":"2013","Endangered species seizure":"Caviar and caviar extract","Value":"24"},{"Year":"2013","Endangered species seizure":"Live coral and coral derivatives","Value":"18"},{"Year":"2013","Endangered species seizure":"Ivory and items containing ivory","Value":"43"},{"Year":"2013","Endangered species seizure":"Live animals and birds","Value":"14"},{"Year":"2013","Endangered species seizure":"Live plants","Value":"6"},{"Year":"2013","Endangered species seizure":"Parts or derivatives of animals or birds","Value":"128"},{"Year":"2013","Endangered species seizure":"Parts or derivatives of plants","Value":"15"},{"Year":"2013","Endangered species seizure":"Timber or wood products","Value":"142"},{"Year":"2013","Endangered species seizure":"Preparations of oriental medicine which include parts and derivatives of endangered species","Value":"187"},{"Year":"2013","Endangered species seizure":"Butterflies","Value":"0"},{"Year":"2014","Endangered species seizure":null,"Value":"512"},{"Year":"2014","Endangered species seizure":"Caviar and caviar extract","Value":"22"},{"Year":"2014","Endangered species seizure":"Live coral and coral derivatives","Value":"14"},{"Year":"2014","Endangered species seizure":"Ivory and items containing ivory","Value":"40"},{"Year":"2014","Endangered species seizure":"Live animals and birds","Value":"23"},{"Year":"2014","Endangered species seizure":"Live plants","Value":"6"},{"Year":"2014","Endangered species seizure":"Parts or derivatives of animals or birds","Value":"140"},{"Year":"2014","Endangered species seizure":"Parts or derivatives of plants","Value":"35"},{"Year":"2014","Endangered species seizure":"Timber or wood products","Value":"33"},{"Year":"2014","Endangered species seizure":"Preparations of oriental medicine which include parts and derivatives of endangered species","Value":"210"},{"Year":"2014","Endangered species seizure":"Butterflies","Value":"0"},{"Year":"2015","Endangered species seizure":null,"Value":"854"},{"Year":"2015","Endangered species seizure":"Caviar and caviar extract","Value":"31"},{"Year":"2015","Endangered species seizure":"Live coral and coral derivatives","Value":"22"},{"Year":"2015","Endangered species seizure":"Ivory and items containing ivory","Value":"182"},{"Year":"2015","Endangered species seizure":"Live animals and birds","Value":"13"},{"Year":"2015","Endangered species seizure":"Live plants","Value":"45"},{"Year":"2015","Endangered species seizure":"Parts or derivatives of animals or birds","Value":"179"},{"Year":"2015","Endangered species seizure":"Parts or derivatives of plants","Value":"27"},{"Year":"2015","Endangered species seizure":"Timber or wood products","Value":"26"},{"Year":"2015","Endangered species seizure":"Preparations of oriental medicine which include parts and derivatives of endangered species","Value":"332"},{"Year":"2015","Endangered species seizure":"Butterflies","Value":"0"},{"Year":"2016","Endangered species seizure":null,"Value":"689"},{"Year":"2016","Endangered species seizure":"Caviar and caviar extract","Value":"20"},{"Year":"2016","Endangered species seizure":"Live coral and coral derivatives","Value":"16"},{"Year":"2016","Endangered species seizure":"Ivory and items containing ivory","Value":"161"},{"Year":"2016","Endangered species seizure":"Live animals and birds","Value":"12"},{"Year":"2016","Endangered species seizure":"Live plants","Value":"36"},{"Year":"2016","Endangered species seizure":"Parts or derivatives of animals or birds","Value":"220"},{"Year":"2016","Endangered species seizure":"Parts or derivatives of plants","Value":"69"},{"Year":"2016","Endangered species seizure":"Timber or wood products","Value":"18"},{"Year":"2016","Endangered species seizure":"Preparations of oriental medicine which include parts and derivatives of endangered species","Value":"141"},{"Year":"2016","Endangered species seizure":"Butterflies","Value":"0"},{"Year":"2017","Endangered species seizure":null,"Value":"1076"},{"Year":"2017","Endangered species seizure":"Caviar and caviar extract","Value":"28"},{"Year":"2017","Endangered species seizure":"Live coral and coral derivatives","Value":"21"},{"Year":"2017","Endangered species seizure":"Ivory and items containing ivory","Value":"176"},{"Year":"2017","Endangered species seizure":"Live animals and birds","Value":"13"},{"Year":"2017","Endangered species seizure":"Live plants","Value":"37"},{"Year":"2017","Endangered species seizure":"Parts or derivatives of animals or birds","Value":"168"},{"Year":"2017","Endangered species seizure":"Parts or derivatives of plants","Value":"171"},{"Year":"2017","Endangered species seizure":"Timber or wood products","Value":"401"},{"Year":"2017","Endangered species seizure":"Preparations of oriental medicine which include parts and derivatives of endangered species","Value":"69"},{"Year":"2017","Endangered species seizure":"Butterflies","Value":"1"}]' data-indicatorid='indicator_15-c-1' data-country="United Kingdom"
-  data-edgesdata='[]' data-charttitle="Convention of international trade of endangered species (CITES) seizures" data-measurementunit="Number of seizures" data-datasource="Border Force" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line">
+  <div class="row" id="indicatorData" data-indicatorid='indicator_15-c-1' data-country="United Kingdom"
+  data-charttitle="Convention of international trade of endangered species (CITES) seizures" data-measurementunit="Number of seizures" data-datasource="Border Force" data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line" data-geocoderegex="" data-showmap="">
     
     <div class="col-md-3">
       <div id="toolbar">
@@ -220,7 +220,9 @@
           <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         </span>
         <p>Click on the legend to remove individual lines from the chart.</p>
-        <div id="fields"></div>
+        <div id="fields">
+          <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+        </div>
       </div>
       <div id="units"></div>
     </div>
@@ -338,19 +340,24 @@
       <section>
         
         
-        <ul class="nav nav-tabs data-view" role="tablist">
-          <li role="presentation" class="nav-item active">
-            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
-          </li>
-          <li role="presentation" class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
-          </li>
-        </ul>
-        
-        <!-- Tab panes -->
-        <div class="tab-content data-view">
-          <div role="tabpanel" class="tab-pane active" id="chartview">
-            
+        <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+        <div class="async-loaded" style="display:none">
+          <ul class="nav nav-tabs data-view" role="tablist">
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+            </li>
+            <li role="presentation" class="nav-item map" style="display:none">
+              <a class="nav-link" data-toggle="tab" href="#mapview" aria-controls="mapview" role="tab">Map</a>
+            </li>
+          </ul>
+          
+          <!-- Tab panes -->
+          <div class="tab-content data-view">
+            <div role="tabpanel" class="tab-pane active" id="chartview">
+              
     
     
 
@@ -369,17 +376,19 @@
     
 
 
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tableview">
+              <div id="selectionsTable"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="mapview" class="map">
+              <div id="map">
+                <img src="/assets/img/loading.gif" alt="Loading map" />
+              </div>
+            </div>
           </div>
-          <div role="tabpanel" class="tab-pane" id="tableview">
-            <div id="selectionsTable"></div>
-          </div>
-        </div>
+        </div> 
         
-        
-        <div class="alert alert-warning" role="alert">
-          <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
-        </div>
-        
+               
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="nav-item active">
@@ -526,15 +535,132 @@
     
       
       <tr>
-        <th scope="row">Last updated </th>
+        <th scope="row">Data last updated </th>
         <td>
           
+            
+            
+            
+            
+
+            
+              <a href="https://github.com/datasciencecampus/sdg-indicators/commit/a5b4a5fc5ad22c364d01f51ef674f1bf52d7707c" target="_blank">
+                2018-03-06: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
             
           
         </td>
         </tr>
         
       
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Metadata last updated </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://github.com/datasciencecampus/sdg-indicators/commit/3cde3df6531304a42867e8ccd97eef2a99190896" target="_blank">
+                2018-03-16: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -855,6 +981,88 @@
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 </table>
 
               </article>
@@ -873,6 +1081,28 @@
     <div class="col-md-6">
       
       <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1122,6 +1352,66 @@
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 </table>
 
     </div>
@@ -1178,9 +1468,12 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+<script src="/assets/js/lib/d3-simple-slider.min.js"></script>
+<script src="/assets/js/plugins/jquery.sdgMap.js"></script>
 <script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
 <script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
-<script src='/assets/js/sdg.js?v=20180321110911'></script>
+<script src='/assets/js/sdg.js?v=20180406111610'></script>
 <script src="/assets/js/lib/classList.js"></script>
 <script src="/assets/js/lib/modernizr-custom.js"></script>
 <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
@@ -1189,31 +1482,46 @@ $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
 
-      var model = new indicatorModel({
-        data: domData.indicatordata,
-        country: domData.country,
-        indicatorId: domData.indicatorid,
-        chartTitle: domData.charttitle,
-        edgesData: domData.edgesdata,
-        measurementUnit: domData.measurementunit,
-        dataSource: domData.datasource,
-        geographicalArea: domData.geographicalarea,
-        showData: domData.showdata,
-        footnote: domData.footnote,
-        graphType: domData.graphtype
-      }),
-      view  = new indicatorView(model, {
-        rootElement: '#indicatorData',
-        legendElement: '#plotLegend',
-        maxChartHeight: 600,
-        tableColumnDefs: [
-          { maxCharCount: 25 }, // nowrap
-          { maxCharCount: 35, width: 200 },
-          { maxCharCount: Infinity, width: 250 }
-        ]
-      }),
-      controller = new indicatorController(model, view);
-      controller.initialise();
+      $('.async-loading').each(function(i, obj) {
+          $(obj).append($('<img />').attr('src', $(obj).data('img')));
+      });
+
+      $.ajax({ 
+        url: '/data/json/' + domData.indicatorid + '.json', 
+        success: function(res) { 
+
+          $('.async-loading').remove();
+          $('.async-loaded').show();
+
+          var model = new indicatorModel({
+            data: res.data,
+            edgesData: res.edges,
+            geoCodeRegEx: domData.geocoderegex,
+            showMap: domData.showmap,
+            country: domData.country,
+            indicatorId: domData.indicatorid,
+            chartTitle: domData.charttitle,
+            measurementUnit: domData.measurementunit,
+            dataSource: domData.datasource,
+            geographicalArea: domData.geographicalarea,
+            showData: domData.showdata,
+            footnote: domData.footnote,
+            graphType: domData.graphtype
+          }),
+          view  = new indicatorView(model, {
+            rootElement: '#indicatorData',
+            legendElement: '#plotLegend',
+            maxChartHeight: 600,
+            tableColumnDefs: [
+              { maxCharCount: 25 }, // nowrap
+              { maxCharCount: 35, width: 200 },
+              { maxCharCount: Infinity, width: 250 }
+            ]
+          }),
+          controller = new indicatorController(model, view);
+          controller.initialise();
+        }
+      });
     }
 
     var switcher = new accessibilitySwitcher();

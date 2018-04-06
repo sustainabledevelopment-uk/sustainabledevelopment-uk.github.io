@@ -34,6 +34,9 @@ header {
 .loader svg rect {
   fill: #FF6700; }
 
+.async-loading img {
+  margin-right: 4px; }
+
 .results div.row .col:nth-child(2) {
   padding-left: 0; }
 .results img {
@@ -43,6 +46,12 @@ header {
   border-bottom: 1px solid #cdcdcd;
   padding: 4px 0;
   padding: 4px 0; }
+.results p.description {
+  border: none; }
+.results p.keywords {
+  border: none;
+  font-style: italic;
+  color: #444; }
 .results h2 {
   font-size: 2rem;
   margin-bottom: 1.5rem;
@@ -552,7 +561,44 @@ h5 + .btn-download {
   font-family: 'Roboto', sans-serif;
   background: white;
   padding-top: 15px;
-  padding-bottom: 15px; }
+  padding-bottom: 15px;
+  /*
+      MAP STUFF
+  */
+  /*
+    #zoom {
+      position: absolute;
+      top: 12px;
+      right: 12px;
+    
+      a { 
+        background-color: white;
+        border: none;
+        text-indent: -9999px;
+        float: left;
+      }
+    }
+  
+    #zoom-in, #zoom-out {
+      background-color: black;
+      background-repeat: no-repeat;
+      background-image: url(../img/zoom.png);
+      display: block;
+      width: 18px;
+      height: 18px;
+    }
+  
+    #zoom-in {
+      background-position: 1px 1px;
+    }
+  
+    #zoom-out {
+      background-position: 1px -51px;
+    }
+  */
+  /*
+      /MAP STUFF
+  */ }
   #main-content .collapsible {
     border-top: 1px solid #e0e0e0;
     border-bottom: 1px solid #e0e0e0;
@@ -896,6 +942,76 @@ h5 + .btn-download {
     #main-content #selectionsTable .table-footer-text p {
       font-size: 0.85em;
       margin: 0 0 5px; }
+  #main-content #map {
+    position: relative;
+    width: 590px; }
+  #main-content g.tick line {
+    stroke: black; }
+  #main-content g.tick text {
+    fill: black; }
+  #main-content line.track {
+    stroke: black; }
+  #main-content g.parameter-value path {
+    stroke: black; }
+  #main-content .background {
+    fill: #e5f3ff;
+    pointer-events: all; }
+  #main-content .map-layer {
+    fill: #fff;
+    stroke: #aaa; }
+  #main-content .tooltip {
+    color: #222;
+    background: #fff;
+    border-radius: 3px;
+    box-shadow: 0px 0px 2px 0px #a6a6a6;
+    padding: .2em;
+    text-shadow: #f5f5f5 0 1px 0;
+    opacity: 0.9;
+    position: absolute;
+    min-width: 180px; }
+    #main-content .tooltip.hidden {
+      display: none; }
+    #main-content .tooltip h2 {
+      font-size: 13px;
+      margin: 4px 0; }
+    #main-content .tooltip table {
+      width: 100%; }
+  #main-content #resetButton {
+    position: absolute;
+    top: 13px;
+    right: 12px;
+    background: #444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    display: none; }
+    #main-content #resetButton:hover {
+      background: #000; }
+    #main-content #resetButton i {
+      font-size: 12px;
+      margin-right: 4px; }
+  #main-content #key {
+    display: block;
+    margin-top: -5px; }
+  #main-content #slider {
+    position: absolute;
+    top: 0; }
+  #main-content #infoPanel {
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    min-height: 100px;
+    background: rgba(0, 0, 0, 0.75);
+    width: 590px;
+    display: none;
+    padding: 10px;
+    color: white; }
+    #main-content #infoPanel h2 {
+      margin: 0 0 20px 0;
+      font-size: 20px; }
+    #main-content #infoPanel table {
+      width: 100%; }
   #main-content .statuses strong {
     font-weight: normal; }
   #main-content .statuses > div {

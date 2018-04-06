@@ -41,7 +41,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20180321110911">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20180406111610">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -197,7 +197,7 @@
       <div id="page-content">
         <p>Data follows the UN specification for this indicator; however it has not been identified in collaboration with topic experts. As with all indicators, this will be reviewed.</p>
 
-<p>Data availability within the UK is limited to United Kingdom for this indicator.</p>
+<p>Data availability within the UK is limited to England and Wales for this indicator.</p>
 
 <p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
 
@@ -207,12 +207,12 @@
   
   <div class="row">
     <div class="col-xs-12">
-      <h2>Live births per 1,000 women aged 15 to 19</h2>
+      <h2>Live births per 1,000 women aged 10 to 14 and 15 to 19</h2>
     </div>
   </div>
   
-  <div class="row" id="indicatorData" data-indicatordata='[{"Year":"2000","Units":"Mother aged 15 to 19 years at birth","Value":"29.0"},{"Year":"2001","Units":"Mother aged 15 to 19 years at birth","Value":"27.7"},{"Year":"2002","Units":"Mother aged 15 to 19 years at birth","Value":"26.8"},{"Year":"2003","Units":"Mother aged 15 to 19 years at birth","Value":"26.6"},{"Year":"2004","Units":"Mother aged 15 to 19 years at birth","Value":"26.6"},{"Year":"2005","Units":"Mother aged 15 to 19 years at birth","Value":"26.1"},{"Year":"2006","Units":"Mother aged 15 to 19 years at birth","Value":"26.2"},{"Year":"2007","Units":"Mother aged 15 to 19 years at birth","Value":"25.7"},{"Year":"2008","Units":"Mother aged 15 to 19 years at birth","Value":"25.6"},{"Year":"2009","Units":"Mother aged 15 to 19 years at birth","Value":"24.6"},{"Year":"2010","Units":"Mother aged 15 to 19 years at birth","Value":"23.2"},{"Year":"2011","Units":"Mother aged 15 to 19 years at birth","Value":"21.0"},{"Year":"2012","Units":"Mother aged 15 to 19 years at birth","Value":"19.8"},{"Year":"2013","Units":"Mother aged 15 to 19 years at birth","Value":"17.3"},{"Year":"2014","Units":"Mother aged 15 to 19 years at birth","Value":"15.5"},{"Year":"2015","Units":"Mother aged 15 to 19 years at birth","Value":"14.4"},{"Year":"2016","Units":"Mother aged 15 to 19 years at birth","Value":"13.7"},{"Year":"2000","Units":"Mother aged 10 to 14 years at birth","Value":"0.2"},{"Year":"2001","Units":"Mother aged 10 to 14 years at birth","Value":"0.2"},{"Year":"2002","Units":"Mother aged 10 to 14 years at birth","Value":"0.2"},{"Year":"2003","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2004","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2005","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2006","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2007","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2008","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2009","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2010","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2011","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2012","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2013","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2014","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2015","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"},{"Year":"2016","Units":"Mother aged 10 to 14 years at birth","Value":"0.1"}]' data-indicatorid='indicator_3-7-2' data-country="England and Wales"
-  data-edgesdata='[]' data-charttitle="Live births per 1,000 women aged 15 to 19" data-measurementunit="Live births per 1,000 women aged 15-19" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="" data-showdata="true" data-graphtype="line">
+  <div class="row" id="indicatorData" data-indicatorid='indicator_3-7-2' data-country="England and Wales"
+  data-charttitle="Live births per 1,000 women aged 10 to 14 and 15 to 19" data-measurementunit="Live births per 1,000 women aged 15-19" data-datasource="Office for National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="" data-showdata="true" data-graphtype="line" data-geocoderegex="" data-showmap="false">
     
     <div class="col-md-3">
       <div id="toolbar">
@@ -221,7 +221,9 @@
           <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
         </span>
         <p>Click on the legend to remove individual lines from the chart.</p>
-        <div id="fields"></div>
+        <div id="fields">
+          <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+        </div>
       </div>
       <div id="units"></div>
     </div>
@@ -242,7 +244,7 @@
     
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Live births per 1,000 women aged 15 to 19</caption>
+      <caption>Live births per 1,000 women aged 10 to 14 and 15 to 19</caption>
       <thead>
         
         
@@ -267,7 +269,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -283,7 +285,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -299,7 +301,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -315,7 +317,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -331,7 +333,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -347,7 +349,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -363,7 +365,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -379,7 +381,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -395,7 +397,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -411,7 +413,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -427,7 +429,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -443,7 +445,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -459,7 +461,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -475,7 +477,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -491,7 +493,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -507,7 +509,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -523,7 +525,7 @@
           
           
           
-          <td>Mother aged 15 to 19 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 15-19</td>    
           
           
           
@@ -539,7 +541,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -555,7 +557,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -571,7 +573,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -587,7 +589,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -603,7 +605,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -619,7 +621,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -635,7 +637,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -651,7 +653,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -667,7 +669,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -683,7 +685,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -699,7 +701,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -715,7 +717,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -731,7 +733,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -747,7 +749,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -763,7 +765,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -779,7 +781,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -795,7 +797,7 @@
           
           
           
-          <td>Mother aged 10 to 14 years at birth</td>    
+          <td>Live births per 1,000 to mothers aged 10-14</td>    
           
           
           
@@ -827,19 +829,24 @@
       <section>
         
         
-        <ul class="nav nav-tabs data-view" role="tablist">
-          <li role="presentation" class="nav-item active">
-            <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
-          </li>
-          <li role="presentation" class="nav-item">
-            <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
-          </li>
-        </ul>
-        
-        <!-- Tab panes -->
-        <div class="tab-content data-view">
-          <div role="tabpanel" class="tab-pane active" id="chartview">
-            
+        <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+        <div class="async-loaded" style="display:none">
+          <ul class="nav nav-tabs data-view" role="tablist">
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#chartview" aria-controls="chartview" role="tab">Chart</a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tableview" aria-controls="tableview" role="tab">Table</a>
+            </li>
+            <li role="presentation" class="nav-item map" style="display:none">
+              <a class="nav-link" data-toggle="tab" href="#mapview" aria-controls="mapview" role="tab">Map</a>
+            </li>
+          </ul>
+          
+          <!-- Tab panes -->
+          <div class="tab-content data-view">
+            <div role="tabpanel" class="tab-pane active" id="chartview">
+              
     
     
 
@@ -858,17 +865,19 @@
     
 
 
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tableview">
+              <div id="selectionsTable"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="mapview" class="map">
+              <div id="map">
+                <img src="/assets/img/loading.gif" alt="Loading map" />
+              </div>
+            </div>
           </div>
-          <div role="tabpanel" class="tab-pane" id="tableview">
-            <div id="selectionsTable"></div>
-          </div>
-        </div>
+        </div> 
         
-        
-        <div class="alert alert-warning" role="alert">
-          <i class="fa fa-info" aria-hidden="true"></i> See metadata tab for definitions and methodology information
-        </div>
-        
+               
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="nav-item active">
@@ -1015,15 +1024,132 @@
     
       
       <tr>
-        <th scope="row">Last updated </th>
+        <th scope="row">Data last updated </th>
         <td>
           
+            
+            
+            
+            
+
+            
+              <a href="https://github.com/datasciencecampus/sdg-indicators/commit/60d86bcbc00a02c45e3e916a26ed80a55dc9f9a5" target="_blank">
+                2018-04-06: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
             
           
         </td>
         </tr>
         
       
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Metadata last updated </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+              <a href="https://github.com/datasciencecampus/sdg-indicators/commit/7edd7785dbf3dbd87a09f4387f090728df8f279b" target="_blank">
+                2018-04-05: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1348,6 +1474,88 @@
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 </table>
 
               </article>
@@ -1365,7 +1573,31 @@
     
     <div class="col-md-6">
       
+        <h4>Source 1</h4>
+      
       <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
   
     
   
@@ -1611,6 +1843,404 @@
   
     
   
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+</table>
+
+    </div>
+    
+   
+    
+    <div class="col-md-6">
+      
+        <h4>Source 2</h4>
+      
+      <table class="table table-hover">
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+      
+      <tr>
+        <th scope="row">Organisation </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Periodicity </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Earliest available data </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Geographical coverage </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Link to data source </th>
+        <td>
+          
+            
+            
+            
+            
+
+            
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Release date </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Next release </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Statistical classification </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Contact details </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+      
+      <tr>
+        <th scope="row">Other information </th>
+        <td>
+          
+            
+          
+        </td>
+        </tr>
+        
+      
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
+    
+  
 </table>
 
     </div>
@@ -1667,9 +2297,12 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
+<script src="/assets/js/lib/d3-simple-slider.min.js"></script>
+<script src="/assets/js/plugins/jquery.sdgMap.js"></script>
 <script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
 <script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
-<script src='/assets/js/sdg.js?v=20180321110911'></script>
+<script src='/assets/js/sdg.js?v=20180406111610'></script>
 <script src="/assets/js/lib/classList.js"></script>
 <script src="/assets/js/lib/modernizr-custom.js"></script>
 <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
@@ -1678,31 +2311,46 @@ $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
 
-      var model = new indicatorModel({
-        data: domData.indicatordata,
-        country: domData.country,
-        indicatorId: domData.indicatorid,
-        chartTitle: domData.charttitle,
-        edgesData: domData.edgesdata,
-        measurementUnit: domData.measurementunit,
-        dataSource: domData.datasource,
-        geographicalArea: domData.geographicalarea,
-        showData: domData.showdata,
-        footnote: domData.footnote,
-        graphType: domData.graphtype
-      }),
-      view  = new indicatorView(model, {
-        rootElement: '#indicatorData',
-        legendElement: '#plotLegend',
-        maxChartHeight: 600,
-        tableColumnDefs: [
-          { maxCharCount: 25 }, // nowrap
-          { maxCharCount: 35, width: 200 },
-          { maxCharCount: Infinity, width: 250 }
-        ]
-      }),
-      controller = new indicatorController(model, view);
-      controller.initialise();
+      $('.async-loading').each(function(i, obj) {
+          $(obj).append($('<img />').attr('src', $(obj).data('img')));
+      });
+
+      $.ajax({ 
+        url: '/data/json/' + domData.indicatorid + '.json', 
+        success: function(res) { 
+
+          $('.async-loading').remove();
+          $('.async-loaded').show();
+
+          var model = new indicatorModel({
+            data: res.data,
+            edgesData: res.edges,
+            geoCodeRegEx: domData.geocoderegex,
+            showMap: domData.showmap,
+            country: domData.country,
+            indicatorId: domData.indicatorid,
+            chartTitle: domData.charttitle,
+            measurementUnit: domData.measurementunit,
+            dataSource: domData.datasource,
+            geographicalArea: domData.geographicalarea,
+            showData: domData.showdata,
+            footnote: domData.footnote,
+            graphType: domData.graphtype
+          }),
+          view  = new indicatorView(model, {
+            rootElement: '#indicatorData',
+            legendElement: '#plotLegend',
+            maxChartHeight: 600,
+            tableColumnDefs: [
+              { maxCharCount: 25 }, // nowrap
+              { maxCharCount: 35, width: 200 },
+              { maxCharCount: Infinity, width: 250 }
+            ]
+          }),
+          controller = new indicatorController(model, view);
+          controller.initialise();
+        }
+      });
     }
 
     var switcher = new accessibilitySwitcher();
