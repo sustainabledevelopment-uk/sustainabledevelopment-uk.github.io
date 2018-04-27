@@ -853,7 +853,7 @@
         {
           "id": "5.2.1",
           "title": "Proportion of ever-partnered women and girls aged 15 years and older subjected to physical, sexual or psychological violence by a current or former intimate partner in the previous 12 months, by form of violence and by age",
-          "description": "Percentage of partner abuse (non-physical abuse, threats, force, sexual assault or stalking) in the previous twelve months among women aged 16 to 59.",
+          "description": "Percentage of people who experienced partner abuse (non-physical abuse, threats, force, sexual assault or stalking) in the previous twelve months among women aged 16 to 59.",
           "keywords": "",
           "href": "/5-2-1",
           "status": "complete"
@@ -865,7 +865,7 @@
         {
           "id": "5.2.2",
           "title": "Proportion of women and girls aged 15 years and older subjected to sexual violence by persons other than an intimate partner in the previous 12 months, by age and place of occurrence",
-          "description": "Percentage of women experiencing domestic abuse, family abuse (non-physical abuse, threats, force, sexual assault or stalking), sexual assault or stalking in the previous twelve months among adults aged 16 to 59.",
+          "description": "Percentage of people who experienced domestic abuse, family abuse (non-physical abuse, threats, force, sexual assault or stalking), sexual assault or stalking in the previous twelve months among adults aged 16 to 59.",
           "keywords": "",
           "href": "/5-2-2",
           "status": "complete"
@@ -1228,7 +1228,7 @@
           "description": "",
           "keywords": "",
           "href": "/7-b-1",
-          "status": "inprogress"
+          "status": "complete"
         }
         
         
@@ -1684,7 +1684,7 @@
           "description": "",
           "keywords": "",
           "href": "/10-6-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -1744,7 +1744,7 @@
           "description": "",
           "keywords": "",
           "href": "/10-c-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         
         
@@ -2248,7 +2248,7 @@
           "description": "",
           "keywords": "",
           "href": "/14-2-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
@@ -2630,9 +2630,9 @@
           "id": "16.3.1",
           "title": "Proportion of victims of violence in the previous 12 months who reported their victimization to competent authorities or other officially recognized conflict resolution mechanisms",
           "description": "",
-          "keywords": "",
+          "keywords": "Crime",
           "href": "/16-3-1",
-          "status": "notstarted"
+          "status": "complete"
         }
         ,
         
