@@ -39,7 +39,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20180605144226">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20180605144830">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
     </head>
 <body>
@@ -107,84 +107,12 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
-        <img src="/assets/img/goals/15.png" alt="Life on land - Goal 15" />
+        <img src="/assets/img/goals/15.png" alt="Life on land - Goal " />
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
-        
-        
           
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-        
-          
-          
-        
-          
-
           <span class="hidden-sm hidden-md hidden-lg">Goal 15: </span>Protect, restore and promote sustainable use of terrestrial ecosystems, sustainably manage forests, combat desertification, and halt and reverse land degradation and halt biodiversity loss
-          
-        
-          
-          
-        
-        
-          
-          
-        
-        
         </h1>
       </div>
     </div>
@@ -195,19 +123,18 @@
 
   
 
-
-  
-  
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
-      <li class="active">Goal 15</li>
+      <li class="active">Goal </li>
   
 </ol>
 
   
   
 
+    
+    
     
 
     <div class="indicator-cards row no-gutters">
@@ -218,6 +145,8 @@
     
 
     
+    
+    
 
     
         <div class="col-md-6 col-lg-3">
@@ -226,6 +155,8 @@
     
     
 
+    
+    
     
 
     
@@ -236,6 +167,8 @@
     
 
     
+    
+    
 
     
         <div class="col-md-6 col-lg-3">
@@ -244,6 +177,8 @@
     </div>
     
 
+    
+    
     
 
     <div class="indicator-cards row no-gutters">
@@ -254,6 +189,8 @@
     
 
     
+    
+    
 
     
         <div class="col-md-6 col-lg-3">
@@ -262,6 +199,8 @@
     
     
 
+    
+    
     
 
     
@@ -272,6 +211,8 @@
     
 
     
+    
+    
 
     
         <div class="col-md-6 col-lg-3">
@@ -280,6 +221,8 @@
     </div>
     
 
+    
+    
     
 
     <div class="indicator-cards row no-gutters">
@@ -290,6 +233,8 @@
     
 
     
+    
+    
 
     
         <div class="col-md-6 col-lg-3">
@@ -298,6 +243,8 @@
     
     
 
+    
+    
     
 
     
@@ -308,6 +255,8 @@
     
 
     
+    
+    
 
     
         <div class="col-md-6 col-lg-3">
@@ -317,6 +266,8 @@
     
 
     
+    
+    
 
     <div class="indicator-cards row no-gutters">
         <div class="col-md-6 col-lg-3">
@@ -325,6 +276,8 @@
     
     
 
+    
+    
     
 
     
@@ -385,7 +338,7 @@ ga('send', 'pageview');
 <script src="/assets/js/plugins/jquery.sdgMap.js"></script>
 <script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
 <script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
-<script src='/assets/js/sdg.js?v=20180605144226'></script>
+<script src='/assets/js/sdg.js?v=20180605144830'></script>
 <script src="/assets/js/lib/classList.js"></script>
 <script src="/assets/js/lib/modernizr-custom.js"></script>
 <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
@@ -399,7 +352,7 @@ $(function() {
       });
 
       $.ajax({ 
-        url: '/data/json/' + domData.indicatorid + '.json', 
+        url: 'https://sustainabledevelopment-uk.github.io/sdg-data/comb/' + domData.id + '.json', 
         success: function(res) { 
 
           $('.async-loading').remove();
@@ -412,6 +365,7 @@ $(function() {
             showMap: domData.showmap,
             country: domData.country,
             indicatorId: domData.indicatorid,
+            shortIndicatorId: domData.id,
             chartTitle: domData.charttitle,
             measurementUnit: domData.measurementunit,
             dataSource: domData.datasource,
