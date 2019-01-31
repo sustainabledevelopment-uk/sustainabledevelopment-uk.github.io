@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
-    <head>
+    <head><script>var translations = {};</script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
         <!-- Basic Page Needs
         ================================================== -->
@@ -15,7 +15,7 @@
         
         
         <title>
-        Indicator 16.1.1 - Goal  - 
+        Indicator 16.1.1 - Goal  - No Poverty
         </title>
         <meta name="description" content="">
         <meta property="og:description" content="">
@@ -27,7 +27,7 @@
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
         <![endif]-->
-        
+
         <!-- Favicons ================================================== -->
         <!-- 128x128 -->
         <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
@@ -41,20 +41,27 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20190130181501">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20190131094256">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
-    </head>
-<body>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
+          integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
+          crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"></head>
+<body class="language-en">
 <!-- <div class="container"> -->
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
   <div class="container">
   <div class="alert alert-danger" role="alert">
-    <strong class="phase-tag">Alpha</strong> This is a development website. We welcome your
-    <a href="mailto:sustainabledevelopment@ons.gov.uk">feedback</a>.
+    <strong class="phase-tag">Alpha</strong>
+    This is a development website. We welcome your <a href="mailto:sustainabledevelopment@ons.gov.uk">feedback</a>.
   </div>
 </div>
+
 </div>
 
 <header role="banner">
@@ -65,8 +72,7 @@
     </a>
 
   <div class='hidden visible-xs float-right'>
-    <ul id='accessibility-nav' class='contrast-switcher'></ul>
-  </div>
+    <ul id='accessibility-nav' class='contrast-switcher'></ul></div>
 
     <nav class="navbar navbar-default" id="main-nav">
 
@@ -75,28 +81,26 @@
         <li><span data-target="search">Search</span></li>
       </ul>
 
-      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu">
-        <li class="nav-link active" >
-          <a href="/">Goals</a>
-        </li>
-        <li class="nav-link" >
-          <a href="/reporting-status">Reporting Status</a>
-        </li>
-        <li class="nav-link" >
-          <a href="/about">About</a>
-        <li class="nav-link" >
-            <a href="/publications">Publications</a>
-        </li>
-        <li class="nav-link" >
-          <a href="/guidance">Guidance</a>
-        </li>
-        <li class="nav-link" >
-          <a href="/faq">FAQ</a>
-        </li>
-<!--        <li class="nav-link" >
-          <a href="/news">News &amp; Events</a>
-        </li> -->
-      </ul>
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
+            <a href="/">Goals</a>
+          </li><li class="nav-link ">
+            <a href="/reporting-status/">Reporting Status</a>
+          </li><li class="nav-link ">
+            <a href="/about/">About</a>
+          </li><li class="nav-link ">
+            <a href="/publications/">Publications</a>
+          </li><li class="nav-link ">
+            <a href="/guidance/">Guidance</a>
+          </li><li class="nav-link ">
+            <a href="/faq/">FAQ</a>
+          </li></ul>
+
+      <div id="search" class="menu-target">
+  <label for="indicator_search">
+    <i class="fa fa-search" aria-hidden="true"></i><span>Search:</span>
+  </label>
+  <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?" />
+</div>
 
 
     </nav>
@@ -122,8 +126,7 @@
       </div>
       
       <% if(allowedFields.indexOf(seriesItem.field) == -1) { %> 
-        <div class="variable-hint">
-          Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
+        <div class="variable-hint">Available when '<%= _.findWhere(edges, { To: seriesItem.field }).From %>' is selected
         </div>
         <div class="no-data-hint">
           No options available because of filters above
@@ -143,14 +146,7 @@
   <% } %>
 </script>
 
-
-
-
-
-
-
-
-
+<script>translations['indicator'] = {"chart":"Chart","clear_all":"Clear all","clear_selections":"Clear selections","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","legend_help":"Click on the legend to remove individual lines from the chart.","loading_map":"Loading map","map":"Map","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country_name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country_adjective statistics, this table should be consulted for information on national methodology and other %country_adjective-specific metadata information.","no_data_hint":"No options available because of filters above","select_all":"Select all","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","sub_categories":"Sub-categories","table":"Table","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
 
 
 
@@ -171,13 +167,13 @@
     <div class="row">
       <div class="col-xs-4 col-md-3 col-lg-2">
         <a href="/peace-and-justice-strong-institutions" title="View this goal's indicator list">
-          <img src="/assets/img/goals/16.png" alt="Peace and justice - strong institutions - Goal " />
+          <img src="/assets/img/goals/en/16.png" alt="Peace and justice - strong institutions - Goal 16" />
         </a>
       </div>
       <div class="col-xs-8 col-md-9 col-lg-10">
         <h1>
           <a href="/peace-and-justice-strong-institutions">
-            <span class="hidden-sm hidden-md hidden-lg">Goal 16: </span>Number of victims of intentional homicide per 100,000 population, by sex and age
+            <span class="hidden-sm hidden-md hidden-lg">Goal 16: </span>Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels
           </a>
         </h1>
         <h2>Indicator 16.1.1: Number of victims of intentional homicide per 100,000 population, by sex and age</h2>
@@ -190,30 +186,31 @@
   <ol class="breadcrumb">
   <li><a href="/">Home</a></li>
   
-      <li><a href="/peace-and-justice-strong-institutions" title="Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels">Goal </a></li>
+      <li><a href="/peace-and-justice-strong-institutions" title="Promote peaceful and inclusive societies for sustainable development, provide access to justice for all and build effective, accountable and inclusive institutions at all levels">Goal 16</a></li>
       <li class="active">Indicator 16.1.1</li>
   
 </ol>
-  
+
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
-        <p>Data follows the UN specification for this indicator and has been indentified in collaboration with topic experts.</p>
+  <p>Data follows the UN specification for this indicator and has been indentified in collaboration with topic experts.</p>
 
 <p>Data availability within the UK is limited to England and Wales for this indicator.</p>
 
 <p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
 
-      </div>
+</div>
+
     </div>
   </div>
-  
+
   <div class="row">
     <div class="col-xs-12">
       <h2>Number of victims of homicide per 100,000 population, by sex and age</h2>
     </div>
   </div>
-  
+
   <div class="row" id="indicatorData" data-indicatorid='indicator_16-1-1' data-id="16-1-1" data-country="England and Wales"
   data-charttitle="Number of victims of homicide per 100,000 population, by sex and age" data-measurementunit="Rate per 100,000 population" data-datasource="Office of National Statistics (ONS)" data-geographicalarea="England and Wales" data-footnote="The period April to March is being used to report annual data. The date on the X axis is the year at the start of the period" data-showdata="true" data-graphtype="line" data-geocoderegex="" data-showmap="false">
     
@@ -232,7 +229,7 @@
     </div>
     <div class="col-md-9">
     
-      
+
       
        
  
@@ -408,7 +405,7 @@
       
 
       <section>
-        
+
         
         <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
         <div class="async-loaded" style="display:none">
@@ -422,7 +419,7 @@
             <li role="presentation" class="nav-item map" style="display:none">
               <a class="nav-link" data-toggle="tab" href="#mapview" aria-controls="mapview" role="tab">Map</a>
             </li></ul>
-          
+
           <!-- Tab panes -->
           <div class="tab-content data-view">
             <div role="tabpanel" class="tab-pane active" id="chartview">
@@ -441,8 +438,8 @@
     </div>
     <div id="plotLegend"></div>
 
-    <div id="chartSelectionDownload"></div>    
-    
+    <div id="chartSelectionDownload"></div>
+
 
 
             </div>
@@ -456,9 +453,9 @@
             </div>
             
           </div>
-        </div> 
+        </div>
         
-               
+
         <!-- Nav tabs -->
         <ul class="nav nav-tabs" role="tablist">
           <li role="presentation" class="nav-item active">
@@ -472,7 +469,7 @@
           </li>
           
         </ul>
-        
+
         <!-- Tab panes -->
         <div class="tab-content">
           <div role="tabpanel" class="tab-pane active" id="metadata">
@@ -480,40 +477,23 @@
             <div > <!-- formerly class="collapsible expanded" -->
               <!-- <h3 tabindex='0'>National Metadata</h3> -->
               <article>
-                <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global
-                  SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table
-                  should be consulted for information on national methodology and other UK-specific metadata information.</p>
+                <p>This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table should be consulted for information on national methodology and other UK-specific metadata information.</p>
                   <table class="table table-hover">
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
       
       <tr>
         <th scope="row">Indicator available </th>
@@ -526,7 +506,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Indicator description </th>
@@ -539,7 +518,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Geographical coverage </th>
@@ -552,7 +530,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Unit of measurement </th>
@@ -565,7 +542,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Definitions </th>
@@ -578,7 +554,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Calculations </th>
@@ -591,7 +566,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Other information </th>
@@ -604,7 +578,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Data last updated </th>
@@ -620,18 +593,16 @@
                 2018-09-24: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
-            
+
           
         </td>
         </tr>
         
       
   
-    
       
       
   
-    
       
       <tr>
         <th scope="row">Metadata last updated </th>
@@ -647,176 +618,95 @@
                 2018-10-11: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
-            
+
           
         </td>
         </tr>
         
       
   
-    
       
       
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
 </table>
 
@@ -831,15 +721,10 @@
                 <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
                 <table class="table table-hover">
   
-    
   
-    
   
-    
   
-    
   
-    
       
       <tr>
         <th scope="row">Indicator name </th>
@@ -852,7 +737,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Indicator number </th>
@@ -865,7 +749,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Indicator display order (within Goal page) </th>
@@ -878,7 +761,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Target name </th>
@@ -891,7 +773,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Target number </th>
@@ -904,7 +785,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Global indicator description </th>
@@ -917,7 +797,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">UN designated tier </th>
@@ -930,7 +809,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">UN custodian agency </th>
@@ -943,7 +821,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Link to UN metadata </th>
@@ -959,198 +836,106 @@
                 United Nations Sustainable Development Goals Metadata (PDF 222 KB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
-            
+
           
         </td>
         </tr>
         
       
   
-    
       
       
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
 </table>
 
@@ -1173,75 +958,40 @@
       
       <table class="table table-hover">
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
       
       <tr>
         <th scope="row">Organisation </th>
@@ -1254,7 +1004,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Periodicity </th>
@@ -1267,7 +1016,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Earliest available data </th>
@@ -1280,7 +1028,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Geographical coverage </th>
@@ -1293,7 +1040,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Link to data source </th>
@@ -1309,18 +1055,16 @@
                 Appendix tables: homicide in England and Wales <span class="visuallyhidden">opens in a new window</span>
               </a>
             
-            
+
           
         </td>
         </tr>
         
       
   
-    
       
       
   
-    
       
       <tr>
         <th scope="row">Release date </th>
@@ -1333,7 +1077,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Next release </th>
@@ -1346,7 +1089,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Statistical classification </th>
@@ -1359,7 +1101,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Contact details </th>
@@ -1372,7 +1113,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Other information </th>
@@ -1385,125 +1125,65 @@
         
       
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
 </table>
 
@@ -1517,99 +1197,52 @@
       
       <table class="table table-hover">
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
       
       <tr>
         <th scope="row">Organisation </th>
@@ -1622,7 +1255,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Periodicity </th>
@@ -1635,7 +1267,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Earliest available data </th>
@@ -1648,7 +1279,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Geographical coverage </th>
@@ -1661,7 +1291,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Link to data source </th>
@@ -1673,18 +1302,16 @@
             
 
             
-            
+
           
         </td>
         </tr>
         
       
   
-    
       
       
   
-    
       
       <tr>
         <th scope="row">Release date </th>
@@ -1697,7 +1324,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Next release </th>
@@ -1710,7 +1336,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Statistical classification </th>
@@ -1723,7 +1348,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Contact details </th>
@@ -1736,7 +1360,6 @@
         
       
   
-    
       
       <tr>
         <th scope="row">Other information </th>
@@ -1749,101 +1372,53 @@
         
       
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
-    
   
 </table>
 
@@ -1864,10 +1439,15 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-9">
-        <a href="mailto:sustainabledevelopment@ons.gov.uk">Contact us</a> | <a class="twitter-follow-button" href="https://twitter.com/StatsClaudie?ref_src=twsrc%5Etfw" data-show-count="false">@StatsClaudie</a>
+        <a href="mailto:sustainabledevelopment@ons.gov.uk">Contact us</a>
+        
+          | <a class="twitter-follow-button" href="https://twitter.com/StatsClaudie" data-show-count="false">
+              @StatsClaudie
+            </a>
+        
       </div>
       <div class="col-xs-3 text-right">
-        <a href="/faq/">FAQs</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
+        <a href="/faq/">FAQ</a> | <a href="/about/cookies-and-privacy/">Cookies</a>
       </div>
     </div>
   </div>
@@ -1901,15 +1481,19 @@ ga('send', 'pageview');
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.13.0/d3.min.js"></script>
-<script src="/assets/js/lib/d3-simple-slider.min.js"></script>
-<script src="/assets/js/plugins/jquery.sdgMap.js"></script>
-<script type="text/javascript"> window.loop11_key = "0104054b3b56d396b42e668dfe096cee161454a8"; </script>
-<script src="//cdn.loop11.com/my/loop11.js" type="text/javascript" async="async"></script>
-<script src='/assets/js/sdg.js?v=20190130181501'></script>
-<script src="/assets/js/lib/classList.js"></script>
-<script src="/assets/js/lib/modernizr-custom.js"></script>
 <script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
+<script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
+<script src="https://cdn.rawgit.com/nezasa/iso8601-js-period/master/iso8601.min.js"></script>
+<script src="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.min.js"></script>
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
+<script>
+  var remoteDataBaseUrl = 'https://sustainabledevelopment-uk.github.io/sdg-data';
+</script>
+<script src='/assets/js/sdg.js?v=20190131094256'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
@@ -1919,9 +1503,9 @@ $(function() {
           $(obj).append($('<img />').attr('src', $(obj).data('img')));
       });
 
-      $.ajax({ 
-        url: 'https://sustainabledevelopment-uk.github.io/sdg-data/comb/' + domData.id + '.json', 
-        success: function(res) { 
+      $.ajax({
+        url: 'https://sustainabledevelopment-uk.github.io/sdg-data/comb/' + domData.id + '.json',
+        success: function(res) {
 
           $('.async-loading').remove();
           $('.async-loaded').show();
@@ -1967,4 +1551,4 @@ $(function() {
 </body>
 </html>
 
-  
+
