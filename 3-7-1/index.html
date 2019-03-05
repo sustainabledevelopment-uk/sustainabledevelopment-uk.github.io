@@ -50,7 +50,7 @@
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20190304145256">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20190305183344">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -190,11 +190,7 @@
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
       <div id="page-content">
-  <p><strong>Exploring data sources</strong></p>
-
-<p>We are currently corresponding with topic experts about data for this indicator.</p>
-
-<p>The Sustainable Development Goals is a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
+  
 
 </div>
 
@@ -203,20 +199,169 @@
 
   <div class="row">
     <div class="col-xs-12">
-      <h2></h2>
+      <h2>The number of women using Sexual and Reproductive Health Services</h2>
     </div>
   </div>
 
-  <div class="row" id="indicatorData" data-indicatorid='indicator_3-7-1' data-id="3-7-1" data-country=""
-  data-charttitle="" data-measurementunit="" data-datasource="" data-geographicalarea="" data-footnote="" data-showdata="false" data-graphtype="line" data-geocoderegex="" data-showmap="">
+  <div class="row" id="indicatorData" data-indicatorid='indicator_3-7-1' data-id="3-7-1" data-country="England"
+  data-charttitle="The number of women using Sexual and Reproductive Health Services" data-measurementunit="Thousands of women" data-datasource="NHS Digital" data-geographicalarea="England" data-footnote="The data collection period runs from April to March.  The date on the X axis is the start of this period.  Other methods include the cap, diaphragm, spermicides (but only when used on their own) and vaginal ring." data-showdata="true" data-graphtype="line" data-geocoderegex="" data-showmap="false">
     
-    <div class="col-md-12">
+    <div class="col-md-3">
+      <div id="toolbar">
+        <span id="series-help">
+          <h4>Sub-categories</h4>
+          <p>Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.</p>
+        </span>
+        <p>Click on the legend to remove individual lines from the chart.</p>
+        <div id="fields">
+          <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+        </div>
+      </div>
+      <div id="units"></div>
+    </div>
+    <div class="col-md-9">
     
 
+      
+       
+ 
+
+<div id="headlineTable">
+  
+  <div id="datatables">
+    
+    <a href="https://sustainabledevelopment-uk.github.io/sdg-data/headline/3-7-1.csv" class="btn btn-primary btn-download" download="indicator_3-7-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="https://sustainabledevelopment-uk.github.io/sdg-data/data/3-7-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_3-7-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    
+    <h3>Headline data</h3>
+    <table class="table-responsive table table-hover dataTable no-footer" role="grid">
+      <caption></caption>
+      <thead>
+        
+        
+        <th scope="col">Year</th>
+        
+        
+        
+        <th scope="col" class="table-value">Value</th>
+        
+        
+      </thead>
+      <tbody>
+        
+        <tr>
+          
+          
+          <td>2014</td>    
+          
+          
+          
+          <td class="table-value">941.169</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>    
+          
+          
+          
+          <td class="table-value">905.753</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>    
+          
+          
+          
+          <td class="table-value">870.73</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>    
+          
+          
+          
+          <td class="table-value">792.636</td>
+          
+          
+        </tr>
+        
+      </tbody>
+    </table>
+  </div>
+  
+  <div id="datatableFooter">
+    
+    
+    
+    
+  </div>
+  
+</div>
       
 
       <section>
 
+        
+        <p class="async-loading" data-img="/assets/img/loading-small.gif"></p>
+        <div class="async-loaded" style="display:none">
+          <ul class="nav nav-tabs data-view" role="tablist">
+            <li role="presentation" class="nav-item active">
+              <a class="nav-link" data-toggle="tab" href="#chartview" onClick='ga("send", "event", "Tab change", "Change data view", "Change to Chart tab")' aria-controls="chartview" role="tab">Chart</a>
+            </li>
+            <li role="presentation" class="nav-item">
+              <a class="nav-link" data-toggle="tab" href="#tableview" onClick='ga("send", "event", "Tab change", "Change data view", "Change to Table tab")' aria-controls="tableview" role="tab">Table</a>
+            </li>
+            <li role="presentation" class="nav-item map" style="display:none">
+              <a class="nav-link" data-toggle="tab" href="#mapview" onClick='ga("send", "event", "Tab change", "Change data view", "Change to Map tab")' aria-controls="mapview" role="tab">Map</a>
+            </li></ul>
+
+          <!-- Tab panes -->
+          <div class="tab-content data-view">
+            <div role="tabpanel" class="tab-pane active" id="chartview">
+              
+    
+    
+
+    <div id="dataset-size-warning" style="display:none">
+      <i class="fa fa-bolt"></i> There are too many datasets to show on the chart. Not all will be shown until you remove some selections.
+    </div>
+
+    
+    <div class="plot-container">
+        
+<canvas></canvas>
+    </div>
+    <div id="plotLegend"></div>
+
+    <div id="chartSelectionDownload"></div>
+
+
+
+            </div>
+            <div role="tabpanel" class="tab-pane" id="tableview">
+              <div id="selectionsTable"></div>
+            </div>
+            <div role="tabpanel" class="tab-pane" id="mapview" class="map">
+              <div id="map">
+                <img src="/assets/img/loading.gif" alt="Loading map" />
+              </div>
+            </div>
+            
+          </div>
+        </div>
         
 
         <!-- Nav tabs -->
@@ -262,7 +407,7 @@
         <th scope="row">Indicator available </th>
         <td>
           
-            
+            Women using Sexual and Reproductive Health Services, by main method of contraception and age
           
         </td>
         </tr>
@@ -286,7 +431,7 @@
         <th scope="row">Geographical coverage </th>
         <td>
           
-            
+            England
           
         </td>
         </tr>
@@ -298,7 +443,7 @@
         <th scope="row">Unit of measurement </th>
         <td>
           
-            
+            Thousands of women
           
         </td>
         </tr>
@@ -310,7 +455,7 @@
         <th scope="row">Definitions </th>
         <td>
           
-            
+            SRH services include family planning services, community contraception clinics, integrated GUM and SRH services and young people’s services e.g. Brook advisory centres. LARC refers to long acting reversible contraceptives.  IUD refers to intrauterine device.  IUS refers to intrauterine system.
           
         </td>
         </tr>
@@ -334,7 +479,7 @@
         <th scope="row">Other information </th>
         <td>
           
-            
+            Please note - This analysis is not representative of the uptake of contraception methods across the whole population. Contraceptives can be obtained from other sources such as GPs or direct from pharmacies, whilst non-prescription items like condoms can be obtained easily without a visit to a medical specialist. This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has not been identified in collaboration with topic experts.
           
         </td>
         </tr>
@@ -352,8 +497,8 @@
             
 
             
-              <a href="https://github.com/ONSdigital/sdg-data/commit/28036fd333c12efa445e1a5baa723aea38b13c36" target="_blank">
-                2017-04-19: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/ONSdigital/sdg-data/commit/cedd5837f23368bcd4225e725b85bf06ab84e40b" target="_blank">
+                2019-02-21: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -377,8 +522,8 @@
             
 
             
-              <a href="https://github.com/ONSdigital/sdg-data/commit/07009d89304eef0f5fc8108de23f79212eb4ce6b" target="_blank">
-                2018-12-20: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/ONSdigital/sdg-data/commit/26e646569bdd39faf77e8f3f489271db910b60e1" target="_blank">
+                2019-02-20: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -493,7 +638,7 @@
         <th scope="row">Indicator name </th>
         <td>
           
-            Proportion of women of reproductive age (aged 15-49 years) who have their need for family planning satisfied with modern methods
+            3.7.1 Proportion of women of reproductive age (aged 15-49 years) who have their need for family planning satisfied with modern methods
           
         </td>
         </tr>
@@ -529,7 +674,7 @@
         <th scope="row">Target name </th>
         <td>
           
-            By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes
+            3.7 By 2030, ensure universal access to sexual and reproductive health-care services, including for family planning, information and education, and the integration of reproductive health into national strategies and programmes
           
         </td>
         </tr>
@@ -565,7 +710,7 @@
         <th scope="row">UN designated tier </th>
         <td>
           
-            1
+            1.0
           
         </td>
         </tr>
@@ -577,7 +722,7 @@
         <th scope="row">UN custodian agency </th>
         <td>
           
-            DESA Population Division
+            Department of Economic and Social Affairs (DESA), United Nations Population Fund (UNFPA)
           
         </td>
         </tr>
@@ -596,7 +741,7 @@
 
             
               <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-03-07-01.pdf" target="_blank">
-                United Nations Sustainable Development Goals Metadata (pdf 865kB) <span class="visuallyhidden">opens in a new window</span>
+                United Nations Sustainable Development Goals Metadata (PDF 357 KB) <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -758,7 +903,7 @@
         <th scope="row">Organisation </th>
         <td>
           
-            
+            NHS Digital
           
         </td>
         </tr>
@@ -770,7 +915,7 @@
         <th scope="row">Periodicity </th>
         <td>
           
-            
+            Annual
           
         </td>
         </tr>
@@ -782,7 +927,7 @@
         <th scope="row">Earliest available data </th>
         <td>
           
-            
+            2014
           
         </td>
         </tr>
@@ -794,7 +939,7 @@
         <th scope="row">Geographical coverage </th>
         <td>
           
-            
+            England
           
         </td>
         </tr>
@@ -812,6 +957,10 @@
             
 
             
+              <a href="https://digital.nhs.uk/data-and-information/publications/statistical/sexual-and-reproductive-health-services" target="_blank">
+                Sexual and Reproductive Health Services, England - 2016-17 <span class="visuallyhidden">opens in a new window</span>
+              </a>
+            
 
           
         </td>
@@ -827,7 +976,7 @@
         <th scope="row">Release date </th>
         <td>
           
-            
+            05/10/2017
           
         </td>
         </tr>
@@ -839,7 +988,7 @@
         <th scope="row">Next release </th>
         <td>
           
-            
+            TBC
           
         </td>
         </tr>
@@ -851,7 +1000,7 @@
         <th scope="row">Statistical classification </th>
         <td>
           
-            
+            National Statistic
           
         </td>
         </tr>
@@ -863,7 +1012,7 @@
         <th scope="row">Contact details </th>
         <td>
           
-            
+            enquiries@nhsdigital.nhs.uk
           
         </td>
         </tr>
@@ -1015,7 +1164,7 @@ ga('send', 'pageview');
 <script>
   var remoteDataBaseUrl = 'https://sustainabledevelopment-uk.github.io/sdg-data';
 </script>
-<script src='/assets/js/sdg.js?v=20190304145256'></script>
+<script src='/assets/js/sdg.js?v=20190305183344'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
