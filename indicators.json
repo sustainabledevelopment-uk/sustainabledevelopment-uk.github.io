@@ -206,10 +206,10 @@
       "indicators": [{
           "id": "3-3-5",
           "title": "Number of people requiring interventions against neglected tropical diseases",
-          "description": "",
+          "description": "Number of confirmed cases of dengue fever and chikungunya in England, Wales and Northern Ireland, and the number of confirmed cases of rabies in the UK.",
           "keywords": "",
           "href": "/3-3-5",
-          "status": "notstarted"
+          "status": "complete"
         },{
           "id": "3-8-1",
           "title": "Coverage of essential health services (defined as the average coverage of essential services based on tracer interventions that include reproductive, maternal, newborn and child health, infectious diseases, non-communicable diseases and service capacity and access, among the general and the most disadvantaged population)",
@@ -1579,8 +1579,8 @@
         },{
           "id": "16-1-1",
           "title": "Number of victims of intentional homicide per 100,000 population, by sex and age",
-          "description": "Number of victims of homicide per 100,000 population, by sex and age",
-          "keywords": "",
+          "description": "",
+          "keywords": "Crime, homicide",
           "href": "/16-1-1",
           "status": "complete"
         },{
