@@ -85,7 +85,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20190423164607">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20190424095627">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -179,7 +179,7 @@ var translations = {
         </div>
         <div class="col col-xs-9 col-md-10 indicator-cards">
           <% _.each(goal.indicators, function(indicator){ %>
-            <a href="<%=indicator.href%>"><span><%= indicator.id %><span class="status <%= indicator.status %>"><% if(indicator.status == 'notstarted') { %>Exploring data sources<% } else if(indicator.status == 'inprogress') { %>Statistics in progress<% } else if(indicator.status == 'complete') { %>Reported online<% } else if(indicator.status == 'notapplicable') { %><% } %></span></span> <%=indicator.parsedTitle%><% if(indicator.hasDescription) { %><p class="description"><%=indicator.parsedDescription%></p><%}%><% if(indicator.hasKeywords) { %><p class="keywords">Keywords: <%=indicator.parsedKeywords%></p><%}%></a>
+            <a href="<%=indicator.href%>"><span><%= indicator.id %><span class="status <%= indicator.status %>"><% if(indicator.status == 'notstarted') { %>Exploring data sources<% } else if(indicator.status == 'inprogress') { %>Statistics in progress<% } else if(indicator.status == 'complete') { %>Reported online<% } else if(indicator.status == 'notapplicable') { %>Not applicable<% } %></span></span> <%=indicator.parsedTitle%><% if(indicator.hasDescription) { %><p class="description"><%=indicator.parsedDescription%></p><%}%><% if(indicator.hasKeywords) { %><p class="keywords">Keywords: <%=indicator.parsedKeywords%></p><%}%></a>
           <% }); %>
         </div>
       </div>
@@ -234,7 +234,7 @@ var translations = {
 <script>
   var remoteDataBaseUrl = 'https://sustainabledevelopment-uk.github.io/sdg-data';
 </script>
-<script src='/assets/js/sdg.js?v=20190423164607'></script>
+<script src='/assets/js/sdg.js?v=20190424095627'></script>
 <script>
 $(function() {
     if($('#indicatorData').length) {
