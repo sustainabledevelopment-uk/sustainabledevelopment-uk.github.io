@@ -824,7 +824,7 @@
         },{
           "id": "8-8-1",
           "title": "Frequency rates of fatal and non-fatal occupational injuries, by sex and migrant status",
-          "description": "",
+          "description": "Rates of fatal injuries per 100,000 workers (employees and self employees) and rates of self-reported workplace non-fatal injury (per 100,000 workers)",
           "keywords": "",
           "href": "/8-8-1",
           "status": "complete"
@@ -1246,10 +1246,10 @@
         },{
           "id": "13-b-1",
           "title": "Number of least developed countries and small island developing States that are receiving specialized support, and amount of support, including finance, technology and capacity-building, for mechanisms for raising capacities for effective climate change-related planning and management, including focusing on women, youth and local and marginalized communities",
-          "description": "",
-          "keywords": "",
+          "description": "The UK's commitment to support least developed countries to improve climate change.",
+          "keywords": "climate change",
           "href": "/13-b-1",
-          "status": "notstarted"
+          "status": "complete"
         },{
           "id": "13-a-1",
           "title": "Mobilized amount of United States dollars per year between 2020 and 2025 accountable towards the $100 billion commitment",
@@ -1309,9 +1309,9 @@
           "id": "14-6-1",
           "title": "Progress by countries in the degree of implementation of international instruments aiming to combat illegal, unreported and unregulated fishing",
           "description": "",
-          "keywords": "",
+          "keywords": "Non-statistical, legislation, policy",
           "href": "/14-6-1",
-          "status": "notstarted"
+          "status": "complete"
         },{
           "id": "14-c-1",
           "title": "Number of countries making progress in ratifying, accepting and implementing through legal, policy and institutional frameworks, ocean-related instruments that implement international law, as reflected in the United Nations Convention on the Law of the Sea, for the conservation and sustainable use of the oceans and their resources",
@@ -1323,9 +1323,9 @@
           "id": "14-b-1",
           "title": "Progress by countries in the degree of application of a legal/regulatory/policy/institutional framework which recognizes and protects access rights for small-scale fisheries",
           "description": "",
-          "keywords": "",
+          "keywords": "Non-statistical, legislation, policy",
           "href": "/14-b-1",
-          "status": "notstarted"
+          "status": "complete"
         },{
           "id": "14-5-1",
           "title": "Coverage of protected areas in relation to marine areas",
@@ -1711,7 +1711,7 @@
         },{
           "id": "17-11-1",
           "title": "Developing countries’ and least developed countries’ share of global exports",
-          "description": "",
+          "description": "Developing countries' and least developed countries' share of UK imports, including both goods and services",
           "keywords": "",
           "href": "/17-11-1",
           "status": "complete"
