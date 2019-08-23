@@ -14,7 +14,8 @@
 <html lang="en" class="no-js">
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CString.prototype.includes"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
 // This is where we initialise any global variables, namespaced in "opensdg".
@@ -101,9 +102,17 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
         
+
+        
+        
         <title>
-        Indicator 2.2.2 - Goal 2 - Zero hunger
+          
+            
+        Indicator 2.2.2 - Goal 2 
+        
+          
         </title>
+        
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -125,22 +134,24 @@ var translations = {
         
 
         
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20190822221051">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20190823165427">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
-        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
-        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
 <!-- <div class="container"> -->
+
+<script>translations['header'] = {"disclaimer":"This is a development website. Please <a href=\"mailto:%email_address\">email us your feedback</a> or <a href=\"https://www.surveymonkey.co.uk/r/XFJZGVL\">complete a short survey</a>.","tag_line":"17 Goals to Transform our World","alpha":"Alpha","skip_link":"Skip to main content"};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
@@ -166,7 +177,13 @@ var translations = {
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
-        <li><span data-target="menu">Menu</span></li>
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">Menu</span>
+        </li>
         <li><span data-target="search">Search</span></li>
       </ul>
 
@@ -187,7 +204,7 @@ var translations = {
       <div id="search" class="menu-target">
   <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?q=" />
   <label for="indicator_search">
-    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button><span>Search:</span>
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indicator search></i></button><span>Search:</span>
   </label>
 </div>
 
@@ -272,6 +289,8 @@ var translations = {
 
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
+      
+
       <div id="page-content">
   <p>Select the following link to download this indicator data in an accessible format:<br /><a href="https://sustainabledevelopment-uk.github.io/sdg-data/data/2-2-2.csv">2.2.2 Prevalence of malnutrition (weight for height &gt;+2 or &lt;-2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight) (CSV 18.474 kB)</a></p>
 
@@ -285,9 +304,14 @@ var translations = {
       <h2>Percentage of children classified as underweight, overweight or obese</h2>
     </div>
   </div>
+  
+  
+  
+
+  
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_2-2-2' data-id="2-2-2" data-country="England, Scotland, Wales, Northern Ireland"
-  data-charttitle="Percentage of children classified as underweight, overweight or obese" data-measurementunit="Percentage (%)" data-datasource="NHS Digital"
+  data-charttitle="Percentage of children classified as underweight, overweight or obese" data-measurementunit="Percentage (%)" data-datasource="NHS Digital, Information Services Division and NHS Scotland, Health Northern Ireland, NHS Wales"
   data-geographicalarea="England, Scotland, Wales, Northern Ireland" data-footnote="" data-showdata="true" data-graphtype="line"
   data-geocoderegex="" data-showmap="false" data-startvalues="">
     
@@ -380,13 +404,20 @@ data-event-label="Change to Map tab"
     </div>
 
     
-    <div class="plot-container">
-        
+    <div id="selectionsChart">
+      <div id="chart-canvas">
+        <h3 class="chart-title">Percentage of children classified as underweight, overweight or obese</h3>
+        <div id="chart" class="plot-container">
+          
 <canvas></canvas>
 
+        </div>
+        <div id="plotLegend"></div>
+      </div>
+      <button id="btnSave" title="" class='btn btn-primary btn-download'>
+        
+      </button>
     </div>
-    <div id="plotLegend"></div>
-
     <div id="chartSelectionDownload"></div>
 
 
@@ -464,7 +495,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            Prevalence of underweight, overweight or obese children (aged 4 - 5 years) based on Body Mass Index (BMI) classifications
+            <p>Prevalence of underweight, overweight or obese children (aged 4 - 5 years) based on Body Mass Index (BMI) classifications</p>
+
           
         </td>
         </tr>
@@ -476,7 +508,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator description </th>
         <td>
           
-            Percentage of 4-5 year old children categorised as underweight, overweight or obese based on body mass index (BMI) classifications.
+            <p>Percentage of 4-5 year old children categorised as underweight, overweight or obese based on body mass index (BMI) classifications.</p>
+
           
         </td>
         </tr>
@@ -488,7 +521,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            England, Scotland, Wales, Northern Ireland
+            <p>England, Scotland, Wales, Northern Ireland</p>
+
           
         </td>
         </tr>
@@ -500,7 +534,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Unit of measurement </th>
         <td>
           
-            Percentage (%)
+            <p>Percentage (%)</p>
+
           
         </td>
         </tr>
@@ -512,7 +547,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Definitions </th>
         <td>
           
-            The prevalence of undernourishment (PoU) (French -pourcentage de sous-alimentation; Spanish -porcentaje de sub-alimentación; Italian -prevalenza di sotto-alimentazione) is an estimate of the proportion of the population whose habitual food consumption is insufficient to provide the dietary energy levels that are required to maintain a normal active and healthy life. It is expressed as a percentage.
+            <p>The prevalence of undernourishment (PoU) (French -pourcentage de sous-alimentation; Spanish -porcentaje de sub-alimentación; Italian -prevalenza di sotto-alimentazione) is an estimate of the proportion of the population whose habitual food consumption is insufficient to provide the dietary energy levels that are required to maintain a normal active and healthy life. It is expressed as a percentage.</p>
+
           
         </td>
         </tr>
@@ -524,7 +560,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Calculations </th>
         <td>
           
-            No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator. For insight into the details of potential calculations please refer to the original source metadata or source contact.
+            <p>No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator. For insight into the details of potential calculations please refer to the original source metadata or source contact.</p>
+
           
         </td>
         </tr>
@@ -536,7 +573,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has not been identified in collaboration with topic experts.
+            <p>This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has not been identified in collaboration with topic experts.</p>
+
           
         </td>
         </tr>
@@ -731,7 +769,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator name </th>
         <td>
           
-            2.2.2 Prevalence of malnutrition (weight for height >+2 or <-2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight)
+            <p>2.2.2 Prevalence of malnutrition (weight for height &gt;+2 or &lt;-2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight)</p>
+
           
         </td>
         </tr>
@@ -743,7 +782,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator number </th>
         <td>
           
-            2.2.2
+            <p>2.2.2</p>
+
           
         </td>
         </tr>
@@ -755,7 +795,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator display order (within Goal page) </th>
         <td>
           
-            02-02-02
+            <p>02-02-02</p>
+
           
         </td>
         </tr>
@@ -767,7 +808,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target name </th>
         <td>
           
-            2.2 By 2030, end all forms of malnutrition, including achieving, by 2025, the internationally agreed targets on stunting and wasting in children under 5 years of age, and address the nutritional needs of adolescent girls, pregnant and lactating women and older persons
+            <p>2.2 By 2030, end all forms of malnutrition, including achieving, by 2025, the internationally agreed targets on stunting and wasting in children under 5 years of age, and address the nutritional needs of adolescent girls, pregnant and lactating women and older persons</p>
+
           
         </td>
         </tr>
@@ -779,7 +821,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target number </th>
         <td>
           
-            2.2
+            <p>2.2</p>
+
           
         </td>
         </tr>
@@ -792,6 +835,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -803,7 +847,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN designated tier </th>
         <td>
           
-            Tier I
+            <p>Tier I</p>
+
           
         </td>
         </tr>
@@ -815,7 +860,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN custodian agency </th>
         <td>
           
-            United Nations Children's Fund (UNICEF), World Health Organisation (WHO), World Bank (WB)
+            <p>United Nations Children’s Fund (UNICEF), World Health Organisation (WHO), World Bank (WB)</p>
+
           
         </td>
         </tr>
@@ -1034,7 +1080,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            NHS Digital
+            <p>NHS Digital</p>
+
           
         </td>
         </tr>
@@ -1046,7 +1093,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1058,7 +1106,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2006/07
+            <p>2006/07</p>
+
           
         </td>
         </tr>
@@ -1070,7 +1119,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            England
+            <p>England</p>
+
           
         </td>
         </tr>
@@ -1107,7 +1157,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            11/10/2018
+            <p>11/10/2018</p>
+
           
         </td>
         </tr>
@@ -1119,7 +1170,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            TBA
+            <p>TBA</p>
+
           
         </td>
         </tr>
@@ -1131,7 +1183,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            Official Statistic
+            <p>Official Statistic</p>
+
           
         </td>
         </tr>
@@ -1143,7 +1196,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            enquiries@digital.nhs.uk
+            <p>enquiries@digital.nhs.uk</p>
+
           
         </td>
         </tr>
@@ -1156,6 +1210,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1321,7 +1376,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            Information Services Division and NHS Scotland
+            <p>Information Services Division and NHS Scotland</p>
+
           
         </td>
         </tr>
@@ -1333,7 +1389,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            annual
+            <p>annual</p>
+
           
         </td>
         </tr>
@@ -1345,7 +1402,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2006/2007
+            <p>2006/2007</p>
+
           
         </td>
         </tr>
@@ -1357,7 +1415,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            Scotland
+            <p>Scotland</p>
+
           
         </td>
         </tr>
@@ -1394,7 +1453,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            13/12/2016
+            <p>13/12/2016</p>
+
           
         </td>
         </tr>
@@ -1407,6 +1467,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1418,7 +1479,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            National Statistics
+            <p>National Statistics</p>
+
           
         </td>
         </tr>
@@ -1431,6 +1493,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1442,7 +1505,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            Report with data tables
+            <p>Report with data tables</p>
+
           
         </td>
         </tr>
@@ -1608,7 +1672,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            Health Northern Ireland
+            <p>Health Northern Ireland</p>
+
           
         </td>
         </tr>
@@ -1620,7 +1685,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1632,7 +1698,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2010/2011
+            <p>2010/2011</p>
+
           
         </td>
         </tr>
@@ -1644,7 +1711,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            Northern Ireland
+            <p>Northern Ireland</p>
+
           
         </td>
         </tr>
@@ -1681,7 +1749,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            26/10/2016
+            <p>26/10/2016</p>
+
           
         </td>
         </tr>
@@ -1694,6 +1763,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1705,7 +1775,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            Official Statistic
+            <p>Official Statistic</p>
+
           
         </td>
         </tr>
@@ -1718,6 +1789,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1730,6 +1802,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1895,7 +1968,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            NHS Wales
+            <p>NHS Wales</p>
+
           
         </td>
         </tr>
@@ -1907,7 +1981,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1919,7 +1994,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2012/2013
+            <p>2012/2013</p>
+
           
         </td>
         </tr>
@@ -1931,7 +2007,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            Wales
+            <p>Wales</p>
+
           
         </td>
         </tr>
@@ -1968,7 +2045,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            19/04/2018
+            <p>19/04/2018</p>
+
           
         </td>
         </tr>
@@ -1980,7 +2058,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            TBC
+            <p>TBC</p>
+
           
         </td>
         </tr>
@@ -1992,7 +2071,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            Official
+            <p>Official</p>
+
           
         </td>
         </tr>
@@ -2004,7 +2084,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            childmeasurementprogramme@wales.nhs.uk
+            <p>childmeasurementprogramme@wales.nhs.uk</p>
+
           
         </td>
         </tr>
@@ -2016,7 +2097,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            PDF file
+            <p>PDF file</p>
+
           
         </td>
         </tr>
@@ -2106,7 +2188,7 @@ data-event-label="Change to Sources tab"
           <ul>
             <li><a href="mailto:sustainabledevelopment@ons.gov.uk">Contact us</a></li>
             
-            <li><a class="twitter-follow-button" href="https://twitter.com/ONS" data-show-count="false">@ONS</a></li>
+            <li><a class="twitter-follow-button" href="https://twitter.com/ONS" data-show-count="false">: @ONS</a></li>
             
             
             <li><a href="/faq/">FAQ</a></li>
@@ -2131,7 +2213,6 @@ data-event-label="Change to Sources tab"
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
@@ -2141,7 +2222,9 @@ data-event-label="Change to Sources tab"
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/assets/js/sdg.js?v=20190822221051'></script><script src="/assets/js/custom.js?v=20190822221051"></script><script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src='/assets/js/sdg.js?v=20190823165427'></script><script src="/assets/js/custom.js?v=20190823165427"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -2177,7 +2260,7 @@ $(function() {
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',
             legendElement: '#plotLegend',
-            maxChartHeight: 600,
+            maxChartHeight: 420,
             tableColumnDefs: [
               { maxCharCount: 25 }, // nowrap
               { maxCharCount: 35, width: 200 },

@@ -14,7 +14,8 @@
 <html lang="en" class="no-js">
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CString.prototype.includes"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
 // This is where we initialise any global variables, namespaced in "opensdg".
@@ -101,9 +102,17 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
         
+
+        
+        
         <title>
-        Indicator 11.3.1 - Goal 11 - Sustainable cities &amp; communities
+          
+            
+        Indicator 11.3.1 - Goal 11 
+        
+          
         </title>
+        
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -125,22 +134,24 @@ var translations = {
         
 
         
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20190822221051">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20190823165427">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
-        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
-        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
 <!-- <div class="container"> -->
+
+<script>translations['header'] = {"disclaimer":"This is a development website. Please <a href=\"mailto:%email_address\">email us your feedback</a> or <a href=\"https://www.surveymonkey.co.uk/r/XFJZGVL\">complete a short survey</a>.","tag_line":"17 Goals to Transform our World","alpha":"Alpha","skip_link":"Skip to main content"};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
@@ -166,7 +177,13 @@ var translations = {
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
-        <li><span data-target="menu">Menu</span></li>
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">Menu</span>
+        </li>
         <li><span data-target="search">Search</span></li>
       </ul>
 
@@ -187,7 +204,7 @@ var translations = {
       <div id="search" class="menu-target">
   <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?q=" />
   <label for="indicator_search">
-    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button><span>Search:</span>
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indicator search></i></button><span>Search:</span>
   </label>
 </div>
 
@@ -272,6 +289,8 @@ var translations = {
 
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
+      
+
       <div id="page-content">
   <p>Select the following link to download this indicator data in an accessible format:<br /><a href="https://sustainabledevelopment-uk.github.io/sdg-data/data/11-3-1.csv">11.3.1 Ratio of land consumption rate to population growth rate (CSV 2114.318 kB)</a></p>
 
@@ -285,9 +304,14 @@ var translations = {
       <h2>Ratio of land consumption rate to population growth rate</h2>
     </div>
   </div>
+  
+  
+  
+
+  
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_11-3-1' data-id="11-3-1" data-country="Great Britain"
-  data-charttitle="Ratio of land consumption rate to population growth rate" data-measurementunit="" data-datasource="Ordnance Survey"
+  data-charttitle="Ratio of land consumption rate to population growth rate" data-measurementunit="" data-datasource="Ordnance Survey, ONS, National Records of Scotland"
   data-geographicalarea="Great Britain" data-footnote="" data-showdata="true" data-graphtype="line"
   data-geocoderegex="" data-showmap="true" data-startvalues="">
     
@@ -400,13 +424,20 @@ data-event-label="Change to Map tab"
     </div>
 
     
-    <div class="plot-container">
-        
+    <div id="selectionsChart">
+      <div id="chart-canvas">
+        <h3 class="chart-title">Ratio of land consumption rate to population growth rate</h3>
+        <div id="chart" class="plot-container">
+          
 <canvas></canvas>
 
+        </div>
+        <div id="plotLegend"></div>
+      </div>
+      <button id="btnSave" title="" class='btn btn-primary btn-download'>
+        
+      </button>
     </div>
-    <div id="plotLegend"></div>
-
     <div id="chartSelectionDownload"></div>
 
 
@@ -484,7 +515,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            Ratio of land consumption rate to population growth rate
+            <p>Ratio of land consumption rate to population growth rate</p>
+
           
         </td>
         </tr>
@@ -496,7 +528,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator description </th>
         <td>
           
-            Ratio of land consumption rate to population growth rate
+            <p>Ratio of land consumption rate to population growth rate</p>
+
           
         </td>
         </tr>
@@ -508,7 +541,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            Great Britain
+            <p>Great Britain</p>
+
           
         </td>
         </tr>
@@ -521,6 +555,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -533,6 +568,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -544,7 +580,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Calculations </th>
         <td>
           
-            LCRPGR=(((LN(Urb_(t+n)/Urb_t ))/y))/((LN(Pop_(t+n)/Pop_t )/y) )
+            <p>LCRPGR=(((LN(Urb_(t+n)/Urb_t ))/y))/((LN(Pop_(t+n)/Pop_t )/y) )</p>
+
           
         </td>
         </tr>
@@ -556,7 +593,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            The indicator is a comparison between 2013 and 2016 data on land consumption.  Data follows the UN specification for this indicator. This indicator has not been identified in collaboration with topic experts.
+            <p>The indicator is a comparison between 2013 and 2016 data on land consumption.  Data follows the UN specification for this indicator. This indicator has not been identified in collaboration with topic experts.</p>
+
           
         </td>
         </tr>
@@ -751,7 +789,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator name </th>
         <td>
           
-            11.3.1 Ratio of land consumption rate to population growth rate
+            <p>11.3.1 Ratio of land consumption rate to population growth rate</p>
+
           
         </td>
         </tr>
@@ -763,7 +802,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator number </th>
         <td>
           
-            11.3.1
+            <p>11.3.1</p>
+
           
         </td>
         </tr>
@@ -775,7 +815,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator display order (within Goal page) </th>
         <td>
           
-            11-03-01
+            <p>11-03-01</p>
+
           
         </td>
         </tr>
@@ -787,7 +828,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target name </th>
         <td>
           
-            11.3 By 2030, enhance inclusive and sustainable urbanization and capacity for participatory, integrated and sustainable human settlement planning and management in all countries
+            <p>11.3 By 2030, enhance inclusive and sustainable urbanization and capacity for participatory, integrated and sustainable human settlement planning and management in all countries</p>
+
           
         </td>
         </tr>
@@ -799,7 +841,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target number </th>
         <td>
           
-            11.3
+            <p>11.3</p>
+
           
         </td>
         </tr>
@@ -812,6 +855,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -823,7 +867,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN designated tier </th>
         <td>
           
-            Tier II
+            <p>Tier II</p>
+
           
         </td>
         </tr>
@@ -835,7 +880,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN custodian agency </th>
         <td>
           
-            United Nations Human Settlements Programme (UN-Habitat)
+            <p>United Nations Human Settlements Programme (UN-Habitat)</p>
+
           
         </td>
         </tr>
@@ -1054,7 +1100,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            Ordnance Survey
+            <p>Ordnance Survey</p>
+
           
         </td>
         </tr>
@@ -1066,7 +1113,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            N/A
+            <p>N/A</p>
+
           
         </td>
         </tr>
@@ -1078,7 +1126,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2013
+            <p>2013</p>
+
           
         </td>
         </tr>
@@ -1090,7 +1139,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            Great Britain
+            <p>Great Britain</p>
+
           
         </td>
         </tr>
@@ -1124,6 +1174,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1136,6 +1187,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1147,7 +1199,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            Official
+            <p>Official</p>
+
           
         </td>
         </tr>
@@ -1160,6 +1213,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1171,7 +1225,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            The data was provided under the MUO in place between ONS and OS
+            <p>The data was provided under the MUO in place between ONS and OS</p>
+
           
         </td>
         </tr>
@@ -1337,7 +1392,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            ONS
+            <p>ONS</p>
+
           
         </td>
         </tr>
@@ -1349,7 +1405,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1361,7 +1418,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2002
+            <p>2002</p>
+
           
         </td>
         </tr>
@@ -1373,7 +1431,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            England and Wales
+            <p>England and Wales</p>
+
           
         </td>
         </tr>
@@ -1410,7 +1469,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            26/10/2017
+            <p>26/10/2017</p>
+
           
         </td>
         </tr>
@@ -1422,7 +1482,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            01/10/2018
+            <p>01/10/2018</p>
+
           
         </td>
         </tr>
@@ -1434,7 +1495,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            Official
+            <p>Official</p>
+
           
         </td>
         </tr>
@@ -1447,6 +1509,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1459,6 +1522,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1624,7 +1688,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            National Records of Scotland
+            <p>National Records of Scotland</p>
+
           
         </td>
         </tr>
@@ -1636,7 +1701,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1648,7 +1714,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            1999
+            <p>1999</p>
+
           
         </td>
         </tr>
@@ -1660,7 +1727,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            Scotland
+            <p>Scotland</p>
+
           
         </td>
         </tr>
@@ -1697,7 +1765,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            30/06/2014
+            <p>30/06/2014</p>
+
           
         </td>
         </tr>
@@ -1710,6 +1779,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1721,7 +1791,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            Official
+            <p>Official</p>
+
           
         </td>
         </tr>
@@ -1734,6 +1805,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1746,6 +1818,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1911,7 +1984,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            National Records of Scotland
+            <p>National Records of Scotland</p>
+
           
         </td>
         </tr>
@@ -1923,7 +1997,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1935,7 +2010,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2011
+            <p>2011</p>
+
           
         </td>
         </tr>
@@ -1947,7 +2023,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            Council area
+            <p>Council area</p>
+
           
         </td>
         </tr>
@@ -1984,7 +2061,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            24/08/2017
+            <p>24/08/2017</p>
+
           
         </td>
         </tr>
@@ -1997,6 +2075,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -2008,7 +2087,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            Official
+            <p>Official</p>
+
           
         </td>
         </tr>
@@ -2020,7 +2100,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            kirsty.maclachlan@nrscotland.gov.uk
+            <p>kirsty.maclachlan@nrscotland.gov.uk</p>
+
           
         </td>
         </tr>
@@ -2033,6 +2114,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -2122,7 +2204,7 @@ data-event-label="Change to Sources tab"
           <ul>
             <li><a href="mailto:sustainabledevelopment@ons.gov.uk">Contact us</a></li>
             
-            <li><a class="twitter-follow-button" href="https://twitter.com/ONS" data-show-count="false">@ONS</a></li>
+            <li><a class="twitter-follow-button" href="https://twitter.com/ONS" data-show-count="false">: @ONS</a></li>
             
             
             <li><a href="/faq/">FAQ</a></li>
@@ -2147,7 +2229,6 @@ data-event-label="Change to Sources tab"
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
@@ -2157,7 +2238,9 @@ data-event-label="Change to Sources tab"
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/assets/js/sdg.js?v=20190822221051'></script><script src="/assets/js/custom.js?v=20190822221051"></script><script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src='/assets/js/sdg.js?v=20190823165427'></script><script src="/assets/js/custom.js?v=20190823165427"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -2193,7 +2276,7 @@ $(function() {
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',
             legendElement: '#plotLegend',
-            maxChartHeight: 600,
+            maxChartHeight: 420,
             tableColumnDefs: [
               { maxCharCount: 25 }, // nowrap
               { maxCharCount: 35, width: 200 },

@@ -14,7 +14,8 @@
 <html lang="en" class="no-js">
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CString.prototype.includes"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
 // This is where we initialise any global variables, namespaced in "opensdg".
@@ -101,9 +102,17 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
         
+
+        
+        
         <title>
-        Indicator 4.4.1 - Goal 4 - Quality education
+          
+            
+        Indicator 4.4.1 - Goal 4 
+        
+          
         </title>
+        
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -125,22 +134,24 @@ var translations = {
         
 
         
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20190822221051">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20190823165427">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
-        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
-        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
 <!-- <div class="container"> -->
+
+<script>translations['header'] = {"disclaimer":"This is a development website. Please <a href=\"mailto:%email_address\">email us your feedback</a> or <a href=\"https://www.surveymonkey.co.uk/r/XFJZGVL\">complete a short survey</a>.","tag_line":"17 Goals to Transform our World","alpha":"Alpha","skip_link":"Skip to main content"};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
@@ -166,7 +177,13 @@ var translations = {
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
-        <li><span data-target="menu">Menu</span></li>
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">Menu</span>
+        </li>
         <li><span data-target="search">Search</span></li>
       </ul>
 
@@ -187,7 +204,7 @@ var translations = {
       <div id="search" class="menu-target">
   <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?q=" />
   <label for="indicator_search">
-    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button><span>Search:</span>
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indicator search></i></button><span>Search:</span>
   </label>
 </div>
 
@@ -272,6 +289,8 @@ var translations = {
 
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
+      
+
       <div id="page-content">
   <p>Select the following link to download this indicator data in an accessible format:<br /><a href="https://sustainabledevelopment-uk.github.io/sdg-data/data/4-4-1.csv">4.4.1 Proportion of youth and adults with information and communications technology (ICT) skills, by type of skill (CSV 11.31 kB)</a></p>
 
@@ -285,6 +304,11 @@ var translations = {
       <h2>Percentage of population who have exercised information communication technology (ICT) skills in the previous 12 months</h2>
     </div>
   </div>
+  
+  
+  
+
+  
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_4-4-1' data-id="4-4-1" data-country="Great Britain"
   data-charttitle="Percentage of population who have exercised information communication technology (ICT) skills in the previous 12 months" data-measurementunit="Percentage (%)" data-datasource="Office for National Statistics (ONS)"
@@ -380,13 +404,20 @@ data-event-label="Change to Map tab"
     </div>
 
     
-    <div class="plot-container">
-        
+    <div id="selectionsChart">
+      <div id="chart-canvas">
+        <h3 class="chart-title">Percentage of population who have exercised information communication technology (ICT) skills in the previous 12 months</h3>
+        <div id="chart" class="plot-container">
+          
 <canvas></canvas>
 
+        </div>
+        <div id="plotLegend"></div>
+      </div>
+      <button id="btnSave" title="" class='btn btn-primary btn-download'>
+        
+      </button>
     </div>
-    <div id="plotLegend"></div>
-
     <div id="chartSelectionDownload"></div>
 
 
@@ -464,7 +495,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            Percentage of population who have exercised information and communication technology (ICT) skills in the previous 12 months, by type of skill
+            <p>Percentage of population who have exercised information and communication technology (ICT) skills in the previous 12 months, by type of skill</p>
+
           
         </td>
         </tr>
@@ -477,6 +509,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -488,7 +521,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            Great Britain
+            <p>Great Britain</p>
+
           
         </td>
         </tr>
@@ -500,7 +534,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Unit of measurement </th>
         <td>
           
-            Percentage (%)
+            <p>Percentage (%)</p>
+
           
         </td>
         </tr>
@@ -512,7 +547,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Definitions </th>
         <td>
           
-            Computer-related activities to measure ICT skills include - Copying or moving a file or folder; Using copy and paste tools to duplicate or move information within a document; Sending e-mails with attached files (e.g. document, picture, and video); Using basic arithmetic formulae in a spreadsheet; Connecting and installing new devices (e.g. modem, camera, printer); Finding, downloading, installing and configuring software; Creating electronic presentations with presentation software (including text, images, sound, video or charts); Transferring files between a computer and other devices; and Writing a computer program using a specialised programming language. A computer refers to a desktop computer, a laptop (portable) computer or a tablet (or similar handheld computer). It does not include equipment with some embedded computing abilities, such as smart TV sets or cell phones.
+            <p>Computer-related activities to measure ICT skills include - Copying or moving a file or folder; Using copy and paste tools to duplicate or move information within a document; Sending e-mails with attached files (e.g. document, picture, and video); Using basic arithmetic formulae in a spreadsheet; Connecting and installing new devices (e.g. modem, camera, printer); Finding, downloading, installing and configuring software; Creating electronic presentations with presentation software (including text, images, sound, video or charts); Transferring files between a computer and other devices; and Writing a computer program using a specialised programming language. A computer refers to a desktop computer, a laptop (portable) computer or a tablet (or similar handheld computer). It does not include equipment with some embedded computing abilities, such as smart TV sets or cell phones.</p>
+
           
         </td>
         </tr>
@@ -524,7 +560,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Calculations </th>
         <td>
           
-            The indicator is calculated as the percentage of people in a given population who have responded ‘yes’ to a selected number of variables e.g. the use of ICT skills in various subject areas or learning domains, the use of ICT skills inside or outside of school and/or workplace, the minimum amount of time spend using ICT skills inside and outside of school and/or workplace, availability of internet access inside or outside of school and/or workplace, etc.
+            <p>The indicator is calculated as the percentage of people in a given population who have responded ‘yes’ to a selected number of variables e.g. the use of ICT skills in various subject areas or learning domains, the use of ICT skills inside or outside of school and/or workplace, the minimum amount of time spend using ICT skills inside and outside of school and/or workplace, availability of internet access inside or outside of school and/or workplace, etc.</p>
+
           
         </td>
         </tr>
@@ -536,7 +573,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            Data follows the UN specification for this indicator. This indicator has been identified in collaboration with topic experts.
+            <p>Data follows the UN specification for this indicator. This indicator has been identified in collaboration with topic experts.</p>
+
           
         </td>
         </tr>
@@ -731,7 +769,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator name </th>
         <td>
           
-            4.4.1 Proportion of youth and adults with information and communications technology (ICT) skills, by type of skill
+            <p>4.4.1 Proportion of youth and adults with information and communications technology (ICT) skills, by type of skill</p>
+
           
         </td>
         </tr>
@@ -743,7 +782,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator number </th>
         <td>
           
-            4.4.1
+            <p>4.4.1</p>
+
           
         </td>
         </tr>
@@ -755,7 +795,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator display order (within Goal page) </th>
         <td>
           
-            04-04-01
+            <p>04-04-01</p>
+
           
         </td>
         </tr>
@@ -767,7 +808,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target name </th>
         <td>
           
-            4.4 By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs and entrepreneurship
+            <p>4.4 By 2030, substantially increase the number of youth and adults who have relevant skills, including technical and vocational skills, for employment, decent jobs and entrepreneurship</p>
+
           
         </td>
         </tr>
@@ -779,7 +821,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target number </th>
         <td>
           
-            4.4
+            <p>4.4</p>
+
           
         </td>
         </tr>
@@ -792,6 +835,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -803,7 +847,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN designated tier </th>
         <td>
           
-            Tier II
+            <p>Tier II</p>
+
           
         </td>
         </tr>
@@ -815,7 +860,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN custodian agency </th>
         <td>
           
-            United Nations Education and Scientific Cultural Organisation - Institute of Statistics (UNESCO-UIS)
+            <p>United Nations Education and Scientific Cultural Organisation - Institute of Statistics (UNESCO-UIS)</p>
+
           
         </td>
         </tr>
@@ -1032,7 +1078,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            Office for National Statistics (ONS)
+            <p>Office for National Statistics (ONS)</p>
+
           
         </td>
         </tr>
@@ -1044,7 +1091,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1056,7 +1104,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2015
+            <p>2015</p>
+
           
         </td>
         </tr>
@@ -1068,7 +1117,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            Great Britain
+            <p>Great Britain</p>
+
           
         </td>
         </tr>
@@ -1105,7 +1155,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            03/08/2017
+            <p>03/08/2017</p>
+
           
         </td>
         </tr>
@@ -1117,7 +1168,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            07/08/2018
+            <p>07/08/2018</p>
+
           
         </td>
         </tr>
@@ -1129,7 +1181,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            National Statistic
+            <p>National Statistic</p>
+
           
         </td>
         </tr>
@@ -1141,7 +1194,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            Cecil Prescott - esociety@ons.gsi.gov.uk
+            <p>Cecil Prescott - esociety@ons.gsi.gov.uk</p>
+
           
         </td>
         </tr>
@@ -1154,6 +1208,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1279,7 +1334,7 @@ data-event-label="Change to Sources tab"
           <ul>
             <li><a href="mailto:sustainabledevelopment@ons.gov.uk">Contact us</a></li>
             
-            <li><a class="twitter-follow-button" href="https://twitter.com/ONS" data-show-count="false">@ONS</a></li>
+            <li><a class="twitter-follow-button" href="https://twitter.com/ONS" data-show-count="false">: @ONS</a></li>
             
             
             <li><a href="/faq/">FAQ</a></li>
@@ -1304,7 +1359,6 @@ data-event-label="Change to Sources tab"
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
@@ -1314,7 +1368,9 @@ data-event-label="Change to Sources tab"
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/assets/js/sdg.js?v=20190822221051'></script><script src="/assets/js/custom.js?v=20190822221051"></script><script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src='/assets/js/sdg.js?v=20190823165427'></script><script src="/assets/js/custom.js?v=20190823165427"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -1350,7 +1406,7 @@ $(function() {
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',
             legendElement: '#plotLegend',
-            maxChartHeight: 600,
+            maxChartHeight: 420,
             tableColumnDefs: [
               { maxCharCount: 25 }, // nowrap
               { maxCharCount: 35, width: 200 },

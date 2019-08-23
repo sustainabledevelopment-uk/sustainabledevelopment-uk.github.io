@@ -14,7 +14,8 @@
 <html lang="en" class="no-js">
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CString.prototype.includes"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
 // This is where we initialise any global variables, namespaced in "opensdg".
@@ -101,9 +102,17 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
         
+
+        
+        
         <title>
-        Indicator 2.3.1 - Goal 2 - Zero hunger
+          
+            
+        Indicator 2.3.1 - Goal 2 
+        
+          
         </title>
+        
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -125,22 +134,24 @@ var translations = {
         
 
         
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20190822221051">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20190823165427">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
-        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
-        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
 <!-- <div class="container"> -->
+
+<script>translations['header'] = {"disclaimer":"This is a development website. Please <a href=\"mailto:%email_address\">email us your feedback</a> or <a href=\"https://www.surveymonkey.co.uk/r/XFJZGVL\">complete a short survey</a>.","tag_line":"17 Goals to Transform our World","alpha":"Alpha","skip_link":"Skip to main content"};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
@@ -166,7 +177,13 @@ var translations = {
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
-        <li><span data-target="menu">Menu</span></li>
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">Menu</span>
+        </li>
         <li><span data-target="search">Search</span></li>
       </ul>
 
@@ -187,7 +204,7 @@ var translations = {
       <div id="search" class="menu-target">
   <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?q=" />
   <label for="indicator_search">
-    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button><span>Search:</span>
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indicator search></i></button><span>Search:</span>
   </label>
 </div>
 
@@ -272,6 +289,8 @@ var translations = {
 
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
+      
+
       <div id="page-content">
   <p>Select the following link to download this indicator data in an accessible format:<br /><a href="https://sustainabledevelopment-uk.github.io/sdg-data/data/2-3-1.csv">2.3.1 Volume of production per labour unit by classes of farming/pastoral/forestry enterprise size (CSV 917.957 kB)</a></p>
 
@@ -285,9 +304,14 @@ var translations = {
       <h2>Livestock numbers (000s), land use for crop production (000s Hectares), and timber production (000s Green Tonnes)</h2>
     </div>
   </div>
+  
+  
+  
+
+  
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_2-3-1' data-id="2-3-1" data-country="United Kingdom"
-  data-charttitle="Livestock numbers (000s), land use for crop production (000s Hectares), and timber production (000s Green Tonnes)" data-measurementunit="Hectares (000s), Numbers (000s), Green tonnes (000s)" data-datasource="Department for Environment, Food & Rural Affairs (Defra)"
+  data-charttitle="Livestock numbers (000s), land use for crop production (000s Hectares), and timber production (000s Green Tonnes)" data-measurementunit="Hectares (000s), Numbers (000s), Green tonnes (000s)" data-datasource="Department for Environment, Food & Rural Affairs (Defra), Forestry Commission, Welsh Government"
   data-geographicalarea="United Kingdom" data-footnote="" data-showdata="true" data-graphtype="line"
   data-geocoderegex="" data-showmap="false" data-startvalues="">
     
@@ -380,13 +404,20 @@ data-event-label="Change to Map tab"
     </div>
 
     
-    <div class="plot-container">
-        
+    <div id="selectionsChart">
+      <div id="chart-canvas">
+        <h3 class="chart-title">Livestock numbers (000s), land use for crop production (000s Hectares), and timber production (000s Green Tonnes)</h3>
+        <div id="chart" class="plot-container">
+          
 <canvas></canvas>
 
+        </div>
+        <div id="plotLegend"></div>
+      </div>
+      <button id="btnSave" title="" class='btn btn-primary btn-download'>
+        
+      </button>
     </div>
-    <div id="plotLegend"></div>
-
     <div id="chartSelectionDownload"></div>
 
 
@@ -464,7 +495,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            Volume of production in agriculture and forestry
+            <p>Volume of production in agriculture and forestry</p>
+
           
         </td>
         </tr>
@@ -477,6 +509,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -488,7 +521,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            United Kingdom
+            <p>United Kingdom</p>
+
           
         </td>
         </tr>
@@ -500,7 +534,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Unit of measurement </th>
         <td>
           
-            Hectares (000s), Numbers (000s), Green tonnes (000s)
+            <p>Hectares (000s), Numbers (000s), Green tonnes (000s)</p>
+
           
         </td>
         </tr>
@@ -512,7 +547,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Definitions </th>
         <td>
           
-            AGRIS - International System for Agricultural Science and Technology; CAP - Common Agriculture Policy; CTS - Cattle Tracing System; IAEG -  Inter-Agency and Expert Group; IFAD - International Fund for Agricultural Development. Livestock is covered under the following definitions - Poultry - All other birds - N16 (e.g. guinea fowl, ostriches, game birds). Sheep & Lambs - Ewes intended for further breeding or slaughter - M1 & M4 (ewes and shearlings present on survey day that have produced lambs in the last 12 months). Ewes intended for first time breeding - M7 (female sheep not previously used for breeding but that have been or will be put to the ram this year). All farmed deer - P10 (deer kept for breeding, meat or other foodstuffs, skins or other by-products, or as breeding stock for these purposes - excludes parkland deer). Other livestock - Include donkeys, mules and hinnies; does not include cattle. Full definitions can be found - https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/618862/structure-june-guidance-14jun17.pdf AND https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/182225/defra-stats-foodfarm-landuselivestock-june-results-BovineRegisters.pdf.
+            <p>AGRIS - International System for Agricultural Science and Technology; CAP - Common Agriculture Policy; CTS - Cattle Tracing System; IAEG -  Inter-Agency and Expert Group; IFAD - International Fund for Agricultural Development. Livestock is covered under the following definitions - Poultry - All other birds - N16 (e.g. guinea fowl, ostriches, game birds). Sheep &amp; Lambs - Ewes intended for further breeding or slaughter - M1 &amp; M4 (ewes and shearlings present on survey day that have produced lambs in the last 12 months). Ewes intended for first time breeding - M7 (female sheep not previously used for breeding but that have been or will be put to the ram this year). All farmed deer - P10 (deer kept for breeding, meat or other foodstuffs, skins or other by-products, or as breeding stock for these purposes - excludes parkland deer). Other livestock - Include donkeys, mules and hinnies; does not include cattle. Full definitions can be found - https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/618862/structure-june-guidance-14jun17.pdf AND https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/182225/defra-stats-foodfarm-landuselivestock-june-results-BovineRegisters.pdf.</p>
+
           
         </td>
         </tr>
@@ -524,7 +560,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Calculations </th>
         <td>
           
-            No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator. For insight into the details of potential calculations please refer to the original source metadata or source contact.
+            <p>No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator. For insight into the details of potential calculations please refer to the original source metadata or source contact.</p>
+
           
         </td>
         </tr>
@@ -536,7 +573,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has not been identified in collaboration with topic experts.
+            <p>This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has not been identified in collaboration with topic experts.</p>
+
           
         </td>
         </tr>
@@ -731,7 +769,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator name </th>
         <td>
           
-            2.3.1 Volume of production per labour unit by classes of farming/pastoral/forestry enterprise size
+            <p>2.3.1 Volume of production per labour unit by classes of farming/pastoral/forestry enterprise size</p>
+
           
         </td>
         </tr>
@@ -743,7 +782,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator number </th>
         <td>
           
-            2.3.1
+            <p>2.3.1</p>
+
           
         </td>
         </tr>
@@ -755,7 +795,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator display order (within Goal page) </th>
         <td>
           
-            02-03-01
+            <p>02-03-01</p>
+
           
         </td>
         </tr>
@@ -767,7 +808,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target name </th>
         <td>
           
-            2.3 By 2030, double the agricultural productivity and incomes of small-scale food producers, in particular women, indigenous peoples, family farmers, pastoralists and fishers, including through secure and equal access to land, other productive resources and inputs, knowledge, financial services, markets and opportunities for value addition and non-farm employment
+            <p>2.3 By 2030, double the agricultural productivity and incomes of small-scale food producers, in particular women, indigenous peoples, family farmers, pastoralists and fishers, including through secure and equal access to land, other productive resources and inputs, knowledge, financial services, markets and opportunities for value addition and non-farm employment</p>
+
           
         </td>
         </tr>
@@ -779,7 +821,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target number </th>
         <td>
           
-            2.3
+            <p>2.3</p>
+
           
         </td>
         </tr>
@@ -792,6 +835,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -803,7 +847,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN designated tier </th>
         <td>
           
-            Tier II
+            <p>Tier II</p>
+
           
         </td>
         </tr>
@@ -815,7 +860,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN custodian agency </th>
         <td>
           
-            Food and Agriculture Organization (FAO)
+            <p>Food and Agriculture Organization (FAO)</p>
+
           
         </td>
         </tr>
@@ -1034,7 +1080,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            Department for Environment, Food & Rural Affairs (Defra)
+            <p>Department for Environment, Food &amp; Rural Affairs (Defra)</p>
+
           
         </td>
         </tr>
@@ -1046,7 +1093,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1058,7 +1106,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2013
+            <p>2013</p>
+
           
         </td>
         </tr>
@@ -1070,7 +1119,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            United Kingdom
+            <p>United Kingdom</p>
+
           
         </td>
         </tr>
@@ -1107,7 +1157,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            26/10/2017
+            <p>26/10/2017</p>
+
           
         </td>
         </tr>
@@ -1119,7 +1170,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            TBC
+            <p>TBC</p>
+
           
         </td>
         </tr>
@@ -1131,7 +1183,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            Official Statistic
+            <p>Official Statistic</p>
+
           
         </td>
         </tr>
@@ -1143,7 +1196,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            enviro.statistics@defra.gsi.gov.uk
+            <p>enviro.statistics@defra.gsi.gov.uk</p>
+
           
         </td>
         </tr>
@@ -1156,6 +1210,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1321,7 +1376,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            Forestry Commission
+            <p>Forestry Commission</p>
+
           
         </td>
         </tr>
@@ -1333,7 +1389,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1345,7 +1402,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            1976
+            <p>1976</p>
+
           
         </td>
         </tr>
@@ -1357,7 +1415,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            United Kingdom
+            <p>United Kingdom</p>
+
           
         </td>
         </tr>
@@ -1394,7 +1453,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            28/09/2017
+            <p>28/09/2017</p>
+
           
         </td>
         </tr>
@@ -1406,7 +1466,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            17/05/2018
+            <p>17/05/2018</p>
+
           
         </td>
         </tr>
@@ -1418,7 +1479,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            Official Statistic
+            <p>Official Statistic</p>
+
           
         </td>
         </tr>
@@ -1430,7 +1492,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            Forestry Commission, Silvan House, 231 Corstorphine Road, Edinb. EH12 7AT (0300 067 500)
+            <p>Forestry Commission, Silvan House, 231 Corstorphine Road, Edinb. EH12 7AT (0300 067 500)</p>
+
           
         </td>
         </tr>
@@ -1443,6 +1506,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1608,7 +1672,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            Welsh Government
+            <p>Welsh Government</p>
+
           
         </td>
         </tr>
@@ -1620,7 +1685,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1632,7 +1698,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2002
+            <p>2002</p>
+
           
         </td>
         </tr>
@@ -1644,7 +1711,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            Wales
+            <p>Wales</p>
+
           
         </td>
         </tr>
@@ -1681,7 +1749,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            11/07/2018
+            <p>11/07/2018</p>
+
           
         </td>
         </tr>
@@ -1694,6 +1763,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1705,7 +1775,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            Official Statistic
+            <p>Official Statistic</p>
+
           
         </td>
         </tr>
@@ -1717,7 +1788,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            stats.agric@gov.wales
+            <p>stats.agric@gov.wales</p>
+
           
         </td>
         </tr>
@@ -1729,7 +1801,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            stats.agric@gov.wales
+            <p>stats.agric@gov.wales</p>
+
           
         </td>
         </tr>
@@ -1831,7 +1904,7 @@ data-event-label="Change to Sources tab"
           <ul>
             <li><a href="mailto:sustainabledevelopment@ons.gov.uk">Contact us</a></li>
             
-            <li><a class="twitter-follow-button" href="https://twitter.com/ONS" data-show-count="false">@ONS</a></li>
+            <li><a class="twitter-follow-button" href="https://twitter.com/ONS" data-show-count="false">: @ONS</a></li>
             
             
             <li><a href="/faq/">FAQ</a></li>
@@ -1856,7 +1929,6 @@ data-event-label="Change to Sources tab"
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
@@ -1866,7 +1938,9 @@ data-event-label="Change to Sources tab"
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/assets/js/sdg.js?v=20190822221051'></script><script src="/assets/js/custom.js?v=20190822221051"></script><script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src='/assets/js/sdg.js?v=20190823165427'></script><script src="/assets/js/custom.js?v=20190823165427"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -1902,7 +1976,7 @@ $(function() {
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',
             legendElement: '#plotLegend',
-            maxChartHeight: 600,
+            maxChartHeight: 420,
             tableColumnDefs: [
               { maxCharCount: 25 }, // nowrap
               { maxCharCount: 35, width: 200 },

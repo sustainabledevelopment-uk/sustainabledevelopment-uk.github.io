@@ -14,7 +14,8 @@
 <html lang="en" class="no-js">
     <head>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"></script>
-        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Array.prototype.forEach%2CString.prototype.includes"></script>
+        <script crossorigin="anonymous" src="https://polyfill.io/v3/polyfill.min.js?features=Promise%2CArray.prototype.forEach%2CString.prototype.includes"></script>
+<script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.15.0/js/canvas-to-blob.min.js"></script>
 
         <script>
 // This is where we initialise any global variables, namespaced in "opensdg".
@@ -101,9 +102,17 @@ var translations = {
         <!-- Title and meta description
         ================================================== -->
         
+
+        
+        
         <title>
-        Indicator 4.1.1 - Goal 4 - Quality education
+          
+            
+        Indicator 4.1.1 - Goal 4 
+        
+          
         </title>
+        
         <meta name="description" content="">
         <meta property="og:description" content="">
         
@@ -125,22 +134,24 @@ var translations = {
         
 
         
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20190822221051">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20190823165427">
+        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css" />
-        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' />
-        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css" />
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
+        <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
+        <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
 <!-- <div class="container"> -->
+
+<script>translations['header'] = {"disclaimer":"This is a development website. Please <a href=\"mailto:%email_address\">email us your feedback</a> or <a href=\"https://www.surveymonkey.co.uk/r/XFJZGVL\">complete a short survey</a>.","tag_line":"17 Goals to Transform our World","alpha":"Alpha","skip_link":"Skip to main content"};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 <div id="disclaimer">
@@ -166,7 +177,13 @@ var translations = {
     <nav class="navbar navbar-default" id="main-nav">
 
       <ul class="top-level">
-        <li><span data-target="menu">Menu</span></li>
+        <li id="menuToggle"
+            aria-label="Menu toggle. Click to expand or collapse the menu."
+            aria-haspopup="true"
+            aria-expanded="false">
+          <span data-target="menu" tabindex="0"
+          role="navigation">Menu</span>
+        </li>
         <li><span data-target="search">Search</span></li>
       </ul>
 
@@ -187,7 +204,7 @@ var translations = {
       <div id="search" class="menu-target">
   <input id="indicator_search" title="Indicator search" placeholder="Indicator search" data-url="/indicators.json" data-pageurl="/search/?q=" />
   <label for="indicator_search">
-    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="true"></i></button><span>Search:</span>
+    <button id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false" aria-label=Indicator search></i></button><span>Search:</span>
   </label>
 </div>
 
@@ -272,6 +289,8 @@ var translations = {
 
   <div class="row" id="page-content-row">
     <div class="col-xs-12">
+      
+
       <div id="page-content">
   <p>Note that while headline data and the breadkdown by sex are for all schools, the breakdowns by all other characteristics (such as special educational needs or region) are only for state schools. For age 16 proficiency, ‘achieving grade 4 or above’ is used as it is the expected standard for students in that age group.<br /><br />Select the following link to download this indicator data in an accessible format:<br /><a href="https://sustainabledevelopment-uk.github.io/sdg-data/data/4-1-1.csv">4.1.1 Proportion of children and young people - (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex (CSV 57.484 kB)</a></p>
 
@@ -285,6 +304,11 @@ var translations = {
       <h2>Percentage of children achieving at least the expected proficiency level in reading and mathematics</h2>
     </div>
   </div>
+  
+  
+  
+
+  
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_4-1-1' data-id="4-1-1" data-country="England"
   data-charttitle="Percentage of children achieving at least the expected proficiency level in reading and mathematics" data-measurementunit="Percentage (%)" data-datasource="Department for Education (DfE)"
@@ -380,13 +404,20 @@ data-event-label="Change to Map tab"
     </div>
 
     
-    <div class="plot-container">
-        
+    <div id="selectionsChart">
+      <div id="chart-canvas">
+        <h3 class="chart-title">Percentage of children achieving at least the expected proficiency level in reading and mathematics</h3>
+        <div id="chart" class="plot-container">
+          
 <canvas></canvas>
 
+        </div>
+        <div id="plotLegend"></div>
+      </div>
+      <button id="btnSave" title="" class='btn btn-primary btn-download'>
+        
+      </button>
     </div>
-    <div id="plotLegend"></div>
-
     <div id="chartSelectionDownload"></div>
 
 
@@ -464,7 +495,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            Percentage of children and adolescents achieving at least the expected proficiency level in English and Mathematics at ages 7, 11 and 16
+            <p>Percentage of children and adolescents achieving at least the expected proficiency level in English and Mathematics at ages 7, 11 and 16</p>
+
           
         </td>
         </tr>
@@ -477,6 +509,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -488,7 +521,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            England
+            <p>England</p>
+
           
         </td>
         </tr>
@@ -500,7 +534,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Unit of measurement </th>
         <td>
           
-            Percentage (%)
+            <p>Percentage (%)</p>
+
           
         </td>
         </tr>
@@ -512,7 +547,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Definitions </th>
         <td>
           
-            At age 7, schools are categorised into infant schools (those with highest statutory pupil age of 7), primary schools (those with highest statutory pupil age between 8 and 11) and other schools (those with highest statutory pupil age greater than 11). At age 11, schools are categorised into primary schools (those with lowest statutory age below 7 and highest statutory age of 11), junior schools (those with lowest statutory age of 7 or above and highest statutory age of 11) and other schools (those with highest statutory age greater than 11 - this category includes middle and all-through schools. For age 16, minimum proficiency is defined for the purpose of this indicator as achieving a grade 4 or above.
+            <p>At age 7, schools are categorised into infant schools (those with highest statutory pupil age of 7), primary schools (those with highest statutory pupil age between 8 and 11) and other schools (those with highest statutory pupil age greater than 11). At age 11, schools are categorised into primary schools (those with lowest statutory age below 7 and highest statutory age of 11), junior schools (those with lowest statutory age of 7 or above and highest statutory age of 11) and other schools (those with highest statutory age greater than 11 - this category includes middle and all-through schools. For age 16, minimum proficiency is defined for the purpose of this indicator as achieving a grade 4 or above.</p>
+
           
         </td>
         </tr>
@@ -524,7 +560,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Calculations </th>
         <td>
           
-            No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator. For insight into the details of potential calculations please refer to the original source metadata or source contact.
+            <p>No calculations were performed in the data acquisition of this indicator as appropriate data was readily available in the final format specified by this indicator. For insight into the details of potential calculations please refer to the original source metadata or source contact.</p>
+
           
         </td>
         </tr>
@@ -536,7 +573,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            For ages 7 and 11, figures before 2016 are not comparable to figures from 2016 onwards due to a change in assesments. This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has been identified in collaboration with topic experts.
+            <p>For ages 7 and 11, figures before 2016 are not comparable to figures from 2016 onwards due to a change in assesments. This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has been identified in collaboration with topic experts.</p>
+
           
         </td>
         </tr>
@@ -731,7 +769,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator name </th>
         <td>
           
-            4.1.1 Proportion of children and young people - (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex
+            <p>4.1.1 Proportion of children and young people - (a) in grades 2/3; (b) at the end of primary; and (c) at the end of lower secondary achieving at least a minimum proficiency level in (i) reading and (ii) mathematics, by sex</p>
+
           
         </td>
         </tr>
@@ -743,7 +782,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator number </th>
         <td>
           
-            4.1.1
+            <p>4.1.1</p>
+
           
         </td>
         </tr>
@@ -755,7 +795,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator display order (within Goal page) </th>
         <td>
           
-            04-01-01
+            <p>04-01-01</p>
+
           
         </td>
         </tr>
@@ -767,7 +808,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target name </th>
         <td>
           
-            4.1 By 2030, ensure that all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and effective learning outcomes
+            <p>4.1 By 2030, ensure that all girls and boys complete free, equitable and quality primary and secondary education leading to relevant and effective learning outcomes</p>
+
           
         </td>
         </tr>
@@ -779,7 +821,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Target number </th>
         <td>
           
-            4.1
+            <p>4.1</p>
+
           
         </td>
         </tr>
@@ -792,6 +835,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -803,7 +847,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN designated tier </th>
         <td>
           
-            Tier II
+            <p>Tier II</p>
+
           
         </td>
         </tr>
@@ -815,7 +860,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN custodian agency </th>
         <td>
           
-            UNESCO Institute for Statistics
+            <p>UNESCO Institute for Statistics</p>
+
           
         </td>
         </tr>
@@ -1034,7 +1080,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            Department for Education (DfE)
+            <p>Department for Education (DfE)</p>
+
           
         </td>
         </tr>
@@ -1046,7 +1093,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1058,7 +1106,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2016
+            <p>2016</p>
+
           
         </td>
         </tr>
@@ -1070,7 +1119,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            England
+            <p>England</p>
+
           
         </td>
         </tr>
@@ -1107,7 +1157,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            13/12/2018
+            <p>13/12/2018</p>
+
           
         </td>
         </tr>
@@ -1119,7 +1170,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            TBA
+            <p>TBA</p>
+
           
         </td>
         </tr>
@@ -1131,7 +1183,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            National Statistic
+            <p>National Statistic</p>
+
           
         </td>
         </tr>
@@ -1143,7 +1196,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            primary.attainment@education.gov.uk
+            <p>primary.attainment@education.gov.uk</p>
+
           
         </td>
         </tr>
@@ -1155,7 +1209,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            Attainment at age 7 is based on teacher assessments.
+            <p>Attainment at age 7 is based on teacher assessments.</p>
+
           
         </td>
         </tr>
@@ -1321,7 +1376,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            Department for Education (DfE)
+            <p>Department for Education (DfE)</p>
+
           
         </td>
         </tr>
@@ -1333,7 +1389,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1345,7 +1402,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2016
+            <p>2016</p>
+
           
         </td>
         </tr>
@@ -1357,7 +1415,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            England
+            <p>England</p>
+
           
         </td>
         </tr>
@@ -1394,7 +1453,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            29/01/2019
+            <p>29/01/2019</p>
+
           
         </td>
         </tr>
@@ -1406,7 +1466,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            TBA
+            <p>TBA</p>
+
           
         </td>
         </tr>
@@ -1418,7 +1479,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            National Statistic
+            <p>National Statistic</p>
+
           
         </td>
         </tr>
@@ -1430,7 +1492,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            primary.attainment@education.gov.uk
+            <p>primary.attainment@education.gov.uk</p>
+
           
         </td>
         </tr>
@@ -1443,6 +1506,7 @@ data-event-label="Change to Sources tab"
         <td>
           
             
+
           
         </td>
         </tr>
@@ -1608,7 +1672,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            Department for Education (DfE)
+            <p>Department for Education (DfE)</p>
+
           
         </td>
         </tr>
@@ -1620,7 +1685,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            Annual
+            <p>Annual</p>
+
           
         </td>
         </tr>
@@ -1632,7 +1698,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            2017
+            <p>2017</p>
+
           
         </td>
         </tr>
@@ -1644,7 +1711,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            England
+            <p>England</p>
+
           
         </td>
         </tr>
@@ -1681,7 +1749,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            24/01/2019
+            <p>24/01/2019</p>
+
           
         </td>
         </tr>
@@ -1693,7 +1762,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            TBA
+            <p>TBA</p>
+
           
         </td>
         </tr>
@@ -1705,7 +1775,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            National Statistic
+            <p>National Statistic</p>
+
           
         </td>
         </tr>
@@ -1717,7 +1788,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            Attainment.STATISTICS@education.gov.uk
+            <p>Attainment.STATISTICS@education.gov.uk</p>
+
           
         </td>
         </tr>
@@ -1729,7 +1801,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            Further disaggregations available in the source data
+            <p>Further disaggregations available in the source data</p>
+
           
         </td>
         </tr>
@@ -1831,7 +1904,7 @@ data-event-label="Change to Sources tab"
           <ul>
             <li><a href="mailto:sustainabledevelopment@ons.gov.uk">Contact us</a></li>
             
-            <li><a class="twitter-follow-button" href="https://twitter.com/ONS" data-show-count="false">@ONS</a></li>
+            <li><a class="twitter-follow-button" href="https://twitter.com/ONS" data-show-count="false">: @ONS</a></li>
             
             
             <li><a href="/faq/">FAQ</a></li>
@@ -1856,7 +1929,6 @@ data-event-label="Change to Sources tab"
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.bundle.min.js"></script>
-<script src="//cdn.jsdelivr.net/bluebird/3.5.0/bluebird.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.3.4/dist/leaflet.js" integrity="sha512-nMMmRyTVoLYqjP9hrbed9S+FzjZHW5gY1TWCHA5ckwXZBadntCNs8kEqAWdrb9O7rxbCaA4lKTIWjDXZxflOcA==" crossorigin=""></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet.zoomshowhide@0.1.0/dist/leaflet-zoom-show-hide.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/chroma-js/1.4.0/chroma.min.js"></script>
@@ -1866,7 +1938,9 @@ data-event-label="Change to Sources tab"
 <script src="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
-<script src='/assets/js/sdg.js?v=20190822221051'></script><script src="/assets/js/custom.js?v=20190822221051"></script><script>
+<script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+<script src='/assets/js/sdg.js?v=20190823165427'></script><script src="/assets/js/custom.js?v=20190823165427"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -1902,7 +1976,7 @@ $(function() {
           view  = new indicatorView(model, {
             rootElement: '#indicatorData',
             legendElement: '#plotLegend',
-            maxChartHeight: 600,
+            maxChartHeight: 420,
             tableColumnDefs: [
               { maxCharCount: 25 }, // nowrap
               { maxCharCount: 35, width: 200 },
