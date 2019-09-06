@@ -186,8 +186,8 @@
         },{
           "id": "2-3-1",
           "title": "Volume of production per labour unit by classes of farming/pastoral/forestry enterprise size",
-          "description": "",
-          "keywords": "DEFRA",
+          "description": "Total factor productivity is a key measure of the economic performance of agriculture and an important driver of farm incomes. It represents how efficiently the agricultural industry uses the resources that are available to turn inputs into outputs.",
+          "keywords": "DEFRA, agriculture, productivity",
           "href": "/2-3-1",
           "status": "complete"
         },{
@@ -346,8 +346,8 @@
         },{
           "id": "3-a-1",
           "title": "Age-standardized prevalence of current tobacco use among persons aged 15 years and older",
-          "description": "A measure of people who are current cigarette smokers in relation to all persons aged 18 years and older.",
-          "keywords": "Population",
+          "description": "A measure of people who are current cigarette smokers in the UK in relation to all persons who are aged 18 years and older",
+          "keywords": "Smoking",
           "href": "/3-a-1",
           "status": "complete"
         },{
@@ -1481,7 +1481,7 @@
         },{
           "id": "16-6-2",
           "title": "Proportion of population satisfied with their last experience of public services",
-          "description": "Proportion of population satisfied with public services.",
+          "description": "Average quality rating of public services (in all respondents who rated at least three services). The mean quality rating is based on a rating on a scale from 1 to 10 of at least three of the following public services in the relevant country - Health services, Education system, Public transport, Childcare services, Long-term care services, Social housing, State pension system.",
           "keywords": "public services",
           "href": "/16-6-2",
           "status": "complete"
