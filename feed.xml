@@ -5,8 +5,8 @@
     <description>Data Platform Prototype</description>
     <link>/</link>
     <atom:link href="/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 04 Nov 2019 22:50:53 +0000</pubDate>
-    <lastBuildDate>Mon, 04 Nov 2019 22:50:53 +0000</lastBuildDate>
+    <pubDate>Tue, 05 Nov 2019 12:43:38 +0000</pubDate>
+    <lastBuildDate>Tue, 05 Nov 2019 12:43:38 +0000</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -273,7 +273,7 @@ We have also carried out some usability testing, too. We tasked people to use th
         <guid isPermaLink="true">/updates/2019/11/04/international-work.html</guid>
         
         
-        <category></category>
+        <category>International</category>
         
       </item>
     
@@ -347,7 +347,7 @@ We worked on a major cross-team project to produce data for how close people liv
         <guid isPermaLink="true">/updates/2019/11/04/funded-work.html</guid>
         
         
-        <category>Engagement</category>
+        <category>Data partners</category>
         
       </item>
     
@@ -355,7 +355,7 @@ We worked on a major cross-team project to produce data for how close people liv
         <title>Digital Accessibility Testing</title>
         <description>&lt;p&gt;The commitment to “leave no one behind” is central to the Sustainable Development Goals (SDGs). It extends to making our digital content accessible and functional for all users regardless of any disability or physical impairment.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://sustainabledevelopment-uk.github.io/public/blog/accessible_definition.png&quot; alt=&quot;Image showing the dictionary definitions of the word accessible.&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://sustainabledevelopment-uk.github.io/public/blog/accessible-definition.png&quot; alt=&quot;Image showing the dictionary definitions of the word accessible.&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We have labelled the site according to the generally accepted phases of site development:&lt;/p&gt;
 
@@ -385,7 +385,7 @@ The Digital Accessibility Centre tested the data site against the WCAG ‘AA’ 
         <guid isPermaLink="true">/updates/2019/11/04/accessibility.html</guid>
         
         
-        <category>accessibility</category>
+        <category>Accessibility</category>
         
       </item>
     
@@ -393,7 +393,7 @@ The Digital Accessibility Centre tested the data site against the WCAG ‘AA’ 
         <title>Building bridges and changing lives</title>
         <description>&lt;p&gt;We keep being told we need to bridge the gap between statistics and policy makers. So, Fiona and I went to a policy conference.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;https://sustainabledevelopment-uk.github.io/public/bloghlpf.jpg&quot; alt=&quot;Image of New York UN building lit up with SDG symbols&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://sustainabledevelopment-uk.github.io/public/blog/hlpf.jpg&quot; alt=&quot;Image of New York UN building lit up with SDG symbols&quot; height=&quot;300px&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;A big one.&lt;/p&gt;
 
@@ -441,7 +441,7 @@ The Digital Accessibility Centre tested the data site against the WCAG ‘AA’ 
         <guid isPermaLink="true">/updates/2019/11/04/HLPF.html</guid>
         
         
-        <category></category>
+        <category>International</category>
         
       </item>
     
