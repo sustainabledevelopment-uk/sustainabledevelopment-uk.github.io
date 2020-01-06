@@ -124,7 +124,7 @@
           "id": "2-1-2",
           "title": "Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)",
           "description": "The proportion of the population of England, Wales and Northern Ireland that are classified and having low or very low food security based on the USDA measure and suite of 10 questions",
-          "keywords": "FIES, food insecurity, UNSD, hunger, zero hunger",
+          "keywords": "FIES, food insecurity, UNSD, hunger, zero hunger, food security",
           "href": "/2-1-2",
           "status": "complete"
         },{
@@ -595,8 +595,8 @@
         },{
           "id": "6-3-2",
           "title": "Proportion of bodies of water with good ambient water quality",
-          "description": "The purpose of the Water Framework Directive is to establish a framework for the protection of inland surface waters, estuaries, coastal waters and groundwater. The framework for delivering the Directive is through River Basin Management Planning.  The UK has been split into several River Basin Districts. Each River Basin District has been characterised into smaller management units known as Water Bodies. The surface Water Bodies may be rivers, lakes, estuary or coastal. Surface water status is measured by both its ecological and chemical status. It is assessed against the scale of high, good, moderate, poor and bad. The results published each year relate to data reported in that year under the Water Framework Directive.",
-          "keywords": "DEFRA",
+          "description": "This indicator shows the percentage of surface water bodies in the UK awarded a good or high surface water status classification under the Water Framework Directive. The purpose of the Water Framework Directive is to establish a framework for the protection of inland surface waters, estuaries, coastal waters and groundwater. The framework for delivering the Directive is through River Basin Management Planning. The UK has been split into several River Basin Districts. Each River Basin District has been characterised into smaller management units known as Water Bodies. The surface Water Bodies may be rivers, lakes, estuary or coastal. Surface water status is measured by both its ecological and chemical status. It is assessed against the scale of high, good, moderate, poor and bad. The results published each year relate to data reported in that year under the Water Framework Directive.",
+          "keywords": "Water quality",
           "href": "/6-3-2",
           "status": "complete"
         },{
@@ -692,8 +692,8 @@
         },{
           "id": "7-2-1",
           "title": "Renewable energy share in the total final energy consumption",
-          "description": "",
-          "keywords": "",
+          "description": "Data on the UK's energy use from renewable and waste sources.",
+          "keywords": "Energy consumption, renewable",
           "href": "/7-2-1",
           "status": "complete"
         },{
@@ -755,7 +755,7 @@
           "id": "8-4-2",
           "title": "Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP",
           "description": "",
-          "keywords": "GDP, Population",
+          "keywords": "DMC, environment",
           "href": "/8-4-2",
           "status": "complete"
         },{
@@ -782,8 +782,8 @@
         },{
           "id": "8-4-1",
           "title": "Material footprint, material footprint per capita, and material footprint per GDP",
-          "description": "",
-          "keywords": "GDP, Population",
+          "description": "The UK’s material footprint, or raw material consumption, captures the amount of domestic and foreign extraction of materials needed to produce the products used by households, governments and charities in the UK.",
+          "keywords": "material footprint, environment",
           "href": "/8-4-1",
           "status": "complete"
         },{
@@ -1150,7 +1150,7 @@
           "id": "12-2-2",
           "title": "Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP",
           "description": "",
-          "keywords": "GDP",
+          "keywords": "DMC, environment",
           "href": "/12-2-2",
           "status": "complete"
         },{
@@ -1198,8 +1198,8 @@
         },{
           "id": "12-2-1",
           "title": "Material footprint, material footprint per capita, and material footprint per GDP",
-          "description": "",
-          "keywords": "GDP",
+          "description": "The UK’s material footprint, or raw material consumption, captures the amount of domestic and foreign extraction of materials needed to produce the products used by households, governments and charities in the UK.",
+          "keywords": "material footprint, environment",
           "href": "/12-2-1",
           "status": "complete"
         },{
@@ -1254,7 +1254,7 @@
           "id": "13-2-1",
           "title": "Number of countries that have communicated the establishment or operationalization of an integrated policy/strategy/plan which increases their ability to adapt to the adverse impacts of climate change, and foster climate resilience and low greenhouse gas emissions development in a manner that does not threaten food production (including a national adaptation plan, nationally determined contribution, national communication, biennial update report or other)",
           "description": "",
-          "keywords": "Non-statistical, legislation, policy, Sexual Health, Education",
+          "keywords": "Non-statistical, legislation, policy, education, climate change",
           "href": "/13-2-1",
           "status": "complete"
         },{
