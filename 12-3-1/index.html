@@ -137,7 +137,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/default.css?v=20200211234356">
+        <link rel="stylesheet" href="/assets/css/default.css?v=20200212234441">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -145,7 +145,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200211234356"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200212234441"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
@@ -304,7 +304,7 @@ var translations = {
 
   <div class="row">
     <div class="col-xs-12">
-      <h2>Food waste per capita</h2>
+      <h2>Food waste (tonnes and per capita)</h2>
     </div>
   </div>
 
@@ -314,8 +314,8 @@ var translations = {
   
 
   <div class="row" id="indicatorData" data-indicatorid='indicator_12-3-1' data-id="12-3-1" data-country="United Kingdom"
-  data-charttitle="Food waste per capita" data-measurementunit="Kg/capita" data-datasource="Waste and Resources Action Programme (WRAP), Waste and Resource Action Programme" data-copyright=""
-  data-geographicalarea="United Kingdom" data-footnote="Data on UK food waste includes estimates from waste from manufacturing.  Data for the retail sector is food and inedible waste combined as it cannot be easily split into food only and food and inedible waste." data-showdata="true" data-graphtype="line"
+  data-charttitle="Food waste (tonnes and per capita)" data-measurementunit="" data-datasource="Waste and Resource Action Programme" data-copyright=""
+  data-geographicalarea="United Kingdom" data-footnote="2009 Retail figures, 2011 Manufacturing and 2011 Hospitality and foodservice used as part of the 2007 12.3 baseline year totals" data-showdata="true" data-graphtype="line"
   data-geocoderegex="" data-showmap="false" data-startvalues="">
     
     <div id="indicator-sidebar" class="col-md-3">
@@ -409,7 +409,7 @@ data-event-label="Change to Map tab"
     
     <div id="selectionsChart">
       <div id="chart-canvas">
-        <h3 class="chart-title">Food waste per capita</h3>
+        <h3 class="chart-title">Food waste (tonnes and per capita)</h3>
         <div id="chart" class="plot-container">
           
 <canvas></canvas>
@@ -545,7 +545,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Unit of measurement </th>
         <td>
           
-            <p>Kg/capita</p>
+            
 
           
         </td>
@@ -601,7 +601,9 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>SDG 12.3 aims to reduce food loss and waste.  Current UK data is for food waste. This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has been identified in collaboration with topic experts.</p>
+            <p>SDG 12.3 aims to reduce food loss and waste.  Current UK data is for food waste.</p>
+<p>Hospitality and Food Services data are a modelled result, based on changes in the number and types of hospitality and food service sites, and the assumption that food waste per site has remained constant since 2011. Currently there is not a data source to enable a UK-level estimate for food waste from this sector to be robustly estimated.</p>
+<p>This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has been identified in collaboration with topic experts.</p>
 
           
         </td>
@@ -621,8 +623,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/ONSdigital/sdg-data/commit/42c14c98cb76ec28bee3e6b38c51835a4b60d419" target="_blank">
-                2019-04-26: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/ONSdigital/sdg-data/commit/091d6f23cac8081819280d6d5ddea2fd36286feb" target="_blank">
+                2020-02-12: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -648,8 +650,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/ONSdigital/sdg-data/commit/a79936c4cf996eb419ecf588797c395ec88b9bf0" target="_blank">
-                2019-11-04: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/ONSdigital/sdg-data/commit/091d6f23cac8081819280d6d5ddea2fd36286feb" target="_blank">
+                2020-02-12: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -847,7 +849,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">UN designated tier </th>
         <td>
           
-            <p>Tier II (a)/ Tier III (b)</p>
+            <p>Tier II</p>
 
           
         </td>
@@ -1041,625 +1043,7 @@ data-event-label="Change to Sources tab"
     
     <div class="col-md-6">
       
-        <h4>Source 1</h4>
-      
       <table class="table table-hover">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-      
-      
-      <tr>
-        <th scope="row">Organisation </th>
-        <td>
-          
-            <p>Waste and Resources Action Programme (WRAP)</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Periodicity </th>
-        <td>
-          
-            <p>TBC</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Earliest available data </th>
-        <td>
-          
-            <p>2007</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Geographical coverage </th>
-        <td>
-          
-            <p>UK</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Link to data source </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="http://www.wrap.org.uk/sites/files/wrap/Food%20Surplus%20and%20Waste%20in%20the%20UK%20Key%20Facts%20%2822%207%2019%29_0.pdf" target="_blank">
-                Food Surplus and Waste - key facts and figures <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Release date </th>
-        <td>
-          
-            <p>23/11/2018</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Next release </th>
-        <td>
-          
-            <p>01/12/2019</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Statistical classification </th>
-        <td>
-          
-            <p>Non-official</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Contact details </th>
-        <td>
-          
-            <p>info@wrap.org.uk</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Other information </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</table>
-
-    </div>
-    
-   
-    
-    <div class="col-md-6">
-      
-        <h4>Source 2</h4>
-      
-      <table class="table table-hover">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-      
-      
-      <tr>
-        <th scope="row">Organisation </th>
-        <td>
-          
-            <p>Waste and Resources Action Programme (WRAP)</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Periodicity </th>
-        <td>
-          
-            <p>N/A</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Earliest available data </th>
-        <td>
-          
-            <p>2007</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Geographical coverage </th>
-        <td>
-          
-            <p>UK</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Link to data source </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="http://www.wrap.org.uk/sites/files/wrap/Household%20food%20waste%20restated%20data%202007-2015%20FINAL.pdf" target="_blank">
-                Household foodwaste restated data <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Release date </th>
-        <td>
-          
-            <p>22/05/2018</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Next release </th>
-        <td>
-          
-            <p>01/12/2019</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Statistical classification </th>
-        <td>
-          
-            <p>Non-official</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Contact details </th>
-        <td>
-          
-            <p>info@wrap.org.uk</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Other information </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</table>
-
-    </div>
-    
-   
-    
-    <div class="col-md-6">
-      
-        <h4>Source 3</h4>
-      
-      <table class="table table-hover">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
   
   
   
@@ -1730,7 +1114,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            <p>2015</p>
+            <p>2007</p>
 
           
         </td>
@@ -1764,8 +1148,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="http://www.wrap.org.uk/sites/files/wrap/Courtauld%20Commitment%202025%20-%20baseline%20report%20for%202015.pdf" target="_blank">
-                Courtauld Commitment baseline report <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://wrap.org.uk/content/uk-progress-against-courtauld-2025-targets-and-un-sustainable-development-goal-123" target="_blank">
+                UK progress against Courtauld 2025 targets and UN Sustainable Development Goal 12.3 <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1785,7 +1169,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            <p>22/05/2018</p>
+            <p>24/01/2020</p>
 
           
         </td>
@@ -1799,7 +1183,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            <p>01/12/2019</p>
+            <p>TBC</p>
 
           
         </td>
@@ -1841,13 +1225,37 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            
+            <p>2009 Retail figures, 2011 Manufacturing and 2011 Hospitality and foodservice used as part of the 2007 12.3 baseline year totals</p>
 
           
         </td>
         </tr>
         
       
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   
   
@@ -1982,7 +1390,7 @@ data-event-label="Change to Sources tab"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
-<script src='/assets/js/sdg.js?v=20200211234356'></script><script src="/assets/js/custom.js?v=20200211234356"></script><script>
+<script src='/assets/js/sdg.js?v=20200212234441'></script><script src="/assets/js/custom.js?v=20200212234441"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
