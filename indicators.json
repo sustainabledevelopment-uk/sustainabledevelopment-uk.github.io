@@ -561,7 +561,7 @@
         },{
           "id": "5-3-2",
           "title": "Proportion of girls and women aged 15–49 years who have undergone female genital mutilation/cutting, by age",
-          "description": "Number of newly recorded cases of female genital mutilation/cutting and rate of newly recorded cases per 1,000,000 population",
+          "description": "Proportion of girls and women who have undergone female genital mutilation/cutting.",
           "keywords": "Population",
           "href": "/5-3-2",
           "status": "complete"
@@ -1017,10 +1017,10 @@
       "indicators": [{
           "id": "11-6-1",
           "title": "Proportion of urban solid waste regularly collected and with adequate final discharge out of total urban solid waste generated, by cities",
-          "description": "",
-          "keywords": "",
+          "description": "The reported data source measures the proportion of waste managed using each management type. This is disaggregated by English Region and Local Authority. This source has been identifed as an appropriate proxy for this indicator in collaboration with the topic expert.",
+          "keywords": "Waste disposal, Rubbish, Bins, Trash, Refuse, Cities, Local Authorities, LA, Local Authority",
           "href": "/11-6-1",
-          "status": "notstarted"
+          "status": "complete"
         },{
           "id": "11-7-2",
           "title": "Proportion of persons victim of physical or sexual harassment, by sex, age, disability status and place of occurrence, in the previous 12 months",
