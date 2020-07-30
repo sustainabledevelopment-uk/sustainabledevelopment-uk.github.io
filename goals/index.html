@@ -92,7 +92,7 @@ var translations = {
 
         <title>
           
-            Indicator 17.3.1 - Goal 17
+            U.K. Indicators For The Sustainable Development Goals
           
         </title>
 
@@ -131,7 +131,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20200730134301"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
-<body class="language-en layout-indicator">
+<body class="language-en layout-goals">
 <!-- <div class="container"> -->
 
 <script>translations['header'] = {"disclaimer":"This is a development website – your <a href=\"https://www.surveymonkey.co.uk/r/SDGfeedback\">feedback</a> will help us to improve it.","tag_line":"17 Goals to Transform our World","alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content"};</script>
@@ -181,7 +181,7 @@ var translations = {
 </div>
 
       
-      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link ">
+      <ul class="nav navbar-nav menu-target contrast-switcher" id="menu"><li class="nav-link active">
             <a href="/goals">Goals</a>
           </li><li class="nav-link ">
             <a href="/reporting-status/">Reporting Status</a>
@@ -202,731 +202,135 @@ var translations = {
 
 </header>
 
+<div id="main-content" class="container" role="main">
 
-<script type="text/template" id="item_template">
-  <% _.each(fields, function(fieldItem) { %>
-    <div class="variable-selector<% if(allowedFields.indexOf(fieldItem.field) == -1) { %> disallowed child<% }%>" data-field="<%=fieldItem.field%>">
-      <button class='accessBtn' tabindex='0' aria-expanded='false'><h5><%=translations.t(fieldItem.field)%><i class="fa fa-chevron-down"></i></h5></button>
-      <div class="bar">
-        <div class="selected"></div>
-      </div>
-      <div class="variable-options">
-        <div>
-          <button data-type="select">Select all</button>
-          <button data-type="clear">Clear all</button>
-        </div>
-        <% _.each(fieldItem.values, function(item) { %>
-          <label>
-            <input type="checkbox" <%=item.checked ? 'checked' : ''%> value="<%=item.value%>" data-field="<%=fieldItem.field%>" /><%=translations.t(item.value)%>
-          </label>
-        <% }); %>
-      </div>
+    <h1>
+  
+    UK data for the Sustainable Development Goals
+  
+</h1>
 
-      <% if(allowedFields.indexOf(fieldItem.field) == -1) { %>
-        <div class="variable-hint">Available when '<%= translations.t(_.findWhere(edges, { To: fieldItem.field }).From) %>' is selected
-        </div>
-        <div class="no-data-hint">
-          No options available because of filters above
-        </div>
-      <% }%>
 
+<div class="goals-page-description">
+  Click on each goal for UK Sustainable Development Goal global indicator data.
+</div>
+
+
+
+    <div class="goal-tiles">
+        <div class="row no-gutters">
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/1">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/1.png" id="goal-1" alt="No poverty - Goal 1" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/2">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/2.png" id="goal-2" alt="Zero hunger - Goal 2" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/3">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/3.png" id="goal-3" alt="Good health and well-being - Goal 3" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/4">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/4.png" id="goal-4" alt="Quality education - Goal 4" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/5">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/5.png" id="goal-5" alt="Gender equality - Goal 5" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/6">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/6.png" id="goal-6" alt="Clean water and sanitation - Goal 6" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/7">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/7.png" id="goal-7" alt="Affordable and clean energy - Goal 7" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/8">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/8.png" id="goal-8" alt="Decent jobs and economic growth - Goal 8" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/9">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/9.png" id="goal-9" alt="Industry, innovation and infrastructure - Goal 9" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/10">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/10.png" id="goal-10" alt="Reduced inequalities - Goal 10" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/11">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/11.png" id="goal-11" alt="Sustainable cities &amp; communities - Goal 11" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/12">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/12.png" id="goal-12" alt="Responsible consumption and production - Goal 12" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/13">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/13.png" id="goal-13" alt="Climate action - Goal 13" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/14">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/14.png" id="goal-14" alt="Life below water - Goal 14" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/15">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/15.png" id="goal-15" alt="Life on land - Goal 15" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/16">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/16.png" id="goal-16" alt="Peace and justice - strong institutions - Goal 16" />
+                </a>
+            </div>
+            
+            <div class="col-xs-4 col-md-2">
+                <a href="/17">
+                    <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/17.png" id="goal-17" alt="Partnerships for the goals - Goal 17" />
+                </a>
+            </div>
+            
+            
+            
+            <div class="col-xs-4 col-md-2">
+                <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/18.png" id="goal-18" alt="The Global Goals for Sustainable Development" />
+            </div>
+            
+        </div>
     </div>
-  <% }); %>
-</script>
-
-<script type="text/template" id="units_template">
-  <% if(units.length) { %>
-    <h4>Units type</h4>
-    <% _.each(units, function(unitsItem, index) { %>
-      <% var checked = (selectedUnit) ? (selectedUnit==unitsItem) : (index==0); %>
-      <label><input type="radio" name="unit" value="<%=unitsItem%>" tabindex=0 <%=checked ? 'checked' : ''%> /> <%=translations.t(unitsItem)%></label>
-    <% }); %>
-  <% } %>
-</script>
-
-<script>translations['indicator'] = {"chart":"Chart","clear_all":"Clear all","clear_selections":"Clear selections","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_chart_image":"Download Chart Image","download_chart_image_title":"Download chart as image","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_geojson":"Download GeoJSON","download_geojson_title":"Download as GeoJSON","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","legend_help":"Click on the legend to remove individual lines from the chart.","loading_map":"Loading map","map":"Map","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country_name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country_adjective statistics, this table should be consulted for information on national methodology and other %country_adjective-specific metadata information.","no_data_hint":"No options available because of filters above","select_all":"Select all","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","sub_categories":"Sub-categories","table":"Table","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
-
-<script>translations['data'] = null;</script>
-
-
-<div class="heading goal-banner indicator goal-17">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-4 col-md-3 col-lg-2 goal-icon">
-        <a href="/17" title="View this goal's indicator list">
-          <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/17.png" alt="Partnerships for the goals - Goal 17" />
-        </a>
-      </div>
-      <div class="col-xs-8 col-md-9 col-lg-10 indicator-details">
-        <div>
-          <h1>Indicator 17.3.1</h1>
-          <p class="lead-copy">Foreign direct investment (FDI), official development assistance and South-South cooperation as a proportion of total domestic budget</p>
-        </div>
-      </div>
-    </div>
-  </div>
 </div>
-
-<div id="main-content" class="container goal-17">
-  <ol class="breadcrumb">
-  <li><a href="/">Home</a></li>
-  <li><a href="/17" title="Strengthen the means of implementation and revitalize the Global Partnership for Sustainable Development">Goal 17</a></li>
-  <li class="active">Indicator 17.3.1</li>
-</ol>
-
-  
-
-  
-
-  
-
-<div class="row" id="page-content">
-  <div class="col-xs-12">
-    
-      <p><b>Exploring data sources</b><br /><br />
-      We are working to identify suitable data sources for this indicator.<br /><br />
-      The Sustainable Development Goals are a collaborative project, if you have any feedback or suggestions for data please contact us at <a href="mailto:SustainableDevelopment@ons.gov.uk">SustainableDevelopment@ons.gov.uk</a></p>
-    
-  </div>
-</div>
-
-
-  
-
-
-
-
-
-
-
-<div class="row"
-  id="indicatorData"
-  data-indicatorid='indicator_17-3-1'
-  data-id="17-3-1"
-  data-country="UK"
-  data-charttitle="Foreign direct investment (FDI), official development assistance and South-South cooperation as a proportion of total domestic budget"
-  data-charttitles="null"
-  data-measurementunit=""
-  data-datasource=""
-  data-copyright=""
-  data-geographicalarea=""
-  data-footnote=""
-  data-showdata="false"
-  data-graphtype="line"
-  data-geocoderegex=""
-  data-showmap=""
-  data-startvalues="null"
-  data-graphlimits="null"
-  data-stackeddisaggregation=""
->
-  
-  <div id="indicator-main" class="indicator-main col-md-12">
-  
-  <ul class="nav nav-tabs spacer medium" role="tablist">
-
-  <li role="presentation" class="nav-item active">
-  <a class="nav-link" data-toggle="tab" href="#national" aria-controls="national" role="tab" data-on="click"
-data-event-category="Tab change"
-data-event-action="Change metadata view"
-data-event-label="Change to National Metadata tab"
->National Metadata</a>
-</li>
-<li role="presentation" class="nav-item">
-  <a class="nav-link" data-toggle="tab" href="#global" aria-controls="global" role="tab" data-on="click"
-data-event-category="Tab change"
-data-event-action="Change metadata view"
-data-event-label="Change to Global Metadata tab"
->Global Metadata</a>
-</li>
-<li role="presentation" class="nav-item">
-  <a class="nav-link" data-toggle="tab" href="#sources" aria-controls="sources" role="tab" data-on="click"
-data-event-category="Tab change"
-data-event-action="Change metadata view"
-data-event-label="Change to Sources tab"
->Sources</a>
-</li>
-
-
-  
-</ul>
-
-<div class="tab-content">
-  
-    <div role="tabpanel" class="tab-pane active" id="national">
-  <!-- National Metadata -->
-  <div >
-    <article>
-      <p>
-        
-        
-        This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table should be consulted for information on national methodology and other UK-specific metadata information.
-      </p>
-      <table class="table">
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-      
-      
-      <tr>
-        <th scope="row">Indicator available </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Indicator description </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Geographical coverage </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Unit of measurement </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Definitions </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Available disaggregations </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Calculations </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Other information </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Data last updated </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/ONSdigital/sdg-data/commit/ccfd88debc741614a157035cc262e4049f923740" target="_blank">
-                2019-04-18: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Metadata last updated </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://github.com/ONSdigital/sdg-data/commit/7141a1e8a904c110721f533c298255df0f43c841" target="_blank">
-                2020-07-03: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</table>
-
-    </article>
-  </div>
-</div>
-<div role="tabpanel" class="tab-pane" id="global">
-  <!-- Global Metadata -->
-  <div>
-    <article>
-      <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
-      <table class="table">
-  
-  
-  
-  
-  
-      
-      
-      <tr>
-        <th scope="row">Indicator name </th>
-        <td>
-          
-            <p>Foreign direct investment (FDI), official development assistance and South-South cooperation as a proportion of total domestic budget</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-  
-  
-      
-      
-      <tr>
-        <th scope="row">Target name </th>
-        <td>
-          
-            <p>Mobilize additional financial resources for developing countries from multiple sources</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-  
-      
-      
-      <tr>
-        <th scope="row">Global indicator description </th>
-        <td>
-          
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">UN designated tier </th>
-        <td>
-          
-            <p>Tier I</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">UN custodian agency </th>
-        <td>
-          
-            <p>Organisation for Economic Co-operation and Development (OECD), United Nations Conference on Trade and Development (UNCTAD)</p>
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      <tr>
-        <th scope="row">Link to UN metadata </th>
-        <td>
-          
-            
-            
-            
-            
-
-            
-              <a href="https://unstats.un.org/sdgs/metadata/files/Metadata-17-03-01.pdf" target="_blank">
-                United Nations Sustainable Development Goals Metadata (PDF 203 KB) <span class="visuallyhidden">opens in a new window</span>
-              </a>
-            
-
-          
-        </td>
-        </tr>
-        
-      
-  
-      
-      
-      
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-</table>
-
-    </article>
-  </div>
-</div>
-<div role="tabpanel" class="tab-pane" id="sources">
-  <!-- Count the non-empty sources (up to 5) -->
-
-
-
-
-
-</div>
-
-  
-  
-</div>
-
-
-  </div>
-</div>
-
-</div>
-
 <footer role="contentinfo">
   <div class="container">
     <div class="row">
