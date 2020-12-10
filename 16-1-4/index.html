@@ -119,7 +119,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20201207140254">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20201210100327">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -127,7 +127,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20201207140254"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20201210100327"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-indicator">
@@ -331,7 +331,7 @@ var translations = {
   </div>
 </div>
 
-<div id="main-content" class="container goal-16">
+<div id="main-content" class="container goal-16" role="main">
   
 
   
@@ -364,6 +364,7 @@ var translations = {
   data-graphlimits="null"
   data-stackeddisaggregation=""
   data-graphannotations="null"
+  data-indicatordownloads="null"
 >
   
   <span role="status" class="sr-only" id="indicator-data-view-status"></span>
@@ -1047,7 +1048,7 @@ opensdg.annotationPresets = {
         //     description: 'Chart annotation showing a 2030 target of 15%'
         //
         description: function() {
-            var descriptionParts = ['Chart annotation'];
+            var descriptionParts = [translations.indicator.chart_annotation];
             if (this.label && this.label.content) {
                 descriptionParts.push(translations.t(this.label.content));
             }
@@ -1071,7 +1072,7 @@ opensdg.annotationPresets = {
         borderDash: [5, 5],
         label: {
             position: 'right',
-            content: '2030 Target',
+            content: translations.indicator.annotation_2030_target,
         },
     },
 };
@@ -1432,7 +1433,9 @@ data-event-label="Change to Sources tab"
         <th scope="row">Definitions </th>
         <td>
           
-            
+            <p>Disability Status - The <a href="https://gss.civilservice.gov.uk/policy-store/measuring-disability-for-the-equality-act-2010/">(GSS) harmonised "core" definition</a> identifies a person as disabled if they have a physical or mental health condition or illness that has lasted or is expected to last 12 months or more. It must reduce their ability to carry-out day-to-day activities. It is important to note that a person who has a long-term illness that does not reduce their ability to carry-out day-to-day activities is not disabled under the definition. The GSS harmonised questions are asked of the respondent in the survey, meaning that disability status is self-reported. The GSS definition is designed to reflect the definitions that appear in legal terms in the Disability Discrimination Act 1995 (DDA) for Northern Ireland and the 2010 Equality Act for Great Britain.</p>
+<p>
+</p>
 
           
         </td>
@@ -1477,7 +1480,7 @@ data-event-label="Change to Sources tab"
             <p>For details of the Crime Survey for England and Wales, see the <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/methodologies/crimeandjusticemethodology">user guide to crime statistics for England and Wales.</a></p>
 <p>The year format refers to the two years covered by the data, from April of the first year to March of the following year. For example, 2018/19 covers the period of April 2018 to March 2019.</p>
 <p>For further information on the quality of the estimates please refer to the source data which provides the unweighted base sizes of the samples.</p>
-<p>The definition of disability used is consistent with the core definition of disability under the Equality Act 2010. A person is considered to have a disability if they have a long-standing illness, disability or impairment which causes difficulty with day-to-day activities.</p>
+<p>The Washington Group on Disability Statistics are often used to provide a cross-nationally comparable population-based measures of disability. Please see the article <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/healthandsocialcare/disability/articles/measuringdisabilitycomparingapproaches/2019-08-06">Measuring disability - comparing approaches</a> for a comparison between the GSS Harmonised measure (used here) and the Washington Group measure.</p>
 <p>Data by disability status are available from 2006/07, however this is based on detailed breakdowns and does not align to the core definition under the 2010 Equality Act. This data are available in the <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/adhocs/009871percentageofadultswhofeltveryorfairlysafewhenwalkingaloneinthedarkbypersonalandhouseholdcharacteristicsyearendingmarch2018csew">2017/18 dataset</a> and <a href="https://www.ons.gov.uk/peoplepopulationandcommunity/crimeandjustice/adhocs/008580confidenceintervalsaroundcsewestimatesoftheproportionofpeoplewhofeelveryfairlysafewalkingaloneafterdark">2006/07 to 2016/17 dataset.</a></p>
 <p>This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has been identified in collaboration with topic experts.</p>
 
@@ -1499,8 +1502,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/ONSdigital/sdg-data/commit/193a1f91682f5ea1a52d1c513471aa4c01778fc3" target="_blank">
-                2020-12-02: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/ONSdigital/sdg-data/commit/b85586ab0ee1ebf18ce1c03d042035ae3e1e48f5" target="_blank">
+                2020-12-10: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1526,8 +1529,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/ONSdigital/sdg-data/commit/193a1f91682f5ea1a52d1c513471aa4c01778fc3" target="_blank">
-                2020-12-02: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/ONSdigital/sdg-data/commit/b85586ab0ee1ebf18ce1c03d042035ae3e1e48f5" target="_blank">
+                2020-12-10: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2588,7 +2591,7 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20201207140254'></script><script src="/assets/js/custom.js?v=20201207140254"></script><script>
+<script src='/assets/js/sdg.js?v=20201210100327'></script><script src="/assets/js/custom.js?v=20201210100327"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
