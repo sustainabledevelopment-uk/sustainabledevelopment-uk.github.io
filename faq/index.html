@@ -119,7 +119,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20201215171253">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20201217121249">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -127,7 +127,7 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20201215171253"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20201217121249"><!-- ShareThis BEGIN --><!-- ShareThis END -->
 
     </head>
 <body class="language-en layout-page">
@@ -226,10 +226,13 @@ var translations = {
 </header>
 <div id="top" tabindex=-1></div>
 
+
+
 <div id="main-content" class="container" role="main">
     <div>
         <h1>Frequently Asked Questions (FAQ)</h1>
-        <h2 id="table-of-contents">Table of contents</h2>
+        
+            <h2 id="table-of-contents">Table of contents</h2>
 <ul>
   <li>
     <p><a href="#how-often-will-new-data-be-added-to-this-site">How often will new data be added to this site?</a></p>
@@ -242,6 +245,9 @@ var translations = {
   </li>
   <li>
     <p><a href="#what-does-the-reporting-status-mean">What does the reporting status mean?</a></p>
+  </li>
+  <li>
+    <p><a href="#what-does-the-disaggregation-status-mean">What does the disaggregation status mean?</a></p>
   </li>
   <li>
     <p><a href="#who-uses-this-website">Who uses this website?</a></p>
@@ -278,14 +284,38 @@ var translations = {
 
 <ul>
   <li>
-    <p>Reported online – as a minimum the headline national data for this indicator is available on this website but the data might not be fully disaggregated yet. We are continuing to source additional disaggregation’s</p>
+    <p>Reported online: As a minimum the headline national data for this indicator is available on this website but the data might not be fully disaggregated yet. We are continuing to source additional disaggregation’s</p>
   </li>
   <li>
-    <p>Exploring data sources – we are still looking for a suitable data source for this indicator</p>
+    <p>Exploring data sources: We are still looking for a suitable data source for this indicator</p>
   </li>
 </ul>
 
 <p>Where there is additional information about the status of indicator data collection and reporting, this will be displayed at the top of the indicator page.</p>
+
+<h2 id="what-does-the-disaggregation-status-mean">What does the disaggregation status mean?</h2>
+<p>Many Sustainable Development Goals (SDG) indicators require specific breakdowns, or disaggregations, below the headline figure.</p>
+
+<p>Initially our aim is to report the disaggregations which are listed within the title of the indicator. For example, indicator 8.5.2 specifies unemployment rate ‘…by sex, age and persons with disabilities’.</p>
+
+<p>We show how much progress we have made on reporting these disaggregations on the ‘Disaggregation status’ tab of our <a href="/reporting-status">Reporting Status page</a>.</p>
+
+<p>The different disaggregation statuses we use are:</p>
+
+<ul>
+  <li>
+    <p>Fully disaggregated: All disaggregations specified in the indicator title are reported</p>
+  </li>
+  <li>
+    <p>Partially disaggregated: Some of the disaggregations specified in the indicator title are reported</p>
+  </li>
+  <li>
+    <p>Not disaggregated: None of the disaggregations specified in the indicator title are reported</p>
+  </li>
+  <li>
+    <p>Out of scope: Indicators where no disaggregation is specified in the indicator title</p>
+  </li>
+</ul>
 
 <h2 id="who-uses-this-website">Who uses this website?</h2>
 <p>An initial phase of user research has been carried out on the UK SDG data website. This research showed that the four main user types are:</p>
@@ -337,8 +367,12 @@ var translations = {
 <p>For more information, <a href="https://unstats.un.org/sdgs/iaeg-sdgs/tier-classification/">see the IAEG-SDGs Tier Classification for Global SDG Indicators</a>
 <br />
 <br />
+For further questions about the UK SDG data site please <a href="mailto:sustainabledevelopment@ons.gov.uk">contact us at sustainabledevelopment@ons.gov.uk</a>
+<br />
+<br />
 <a href="#table-of-contents">Back to top</a></p>
 
+        
     </div>
 </div>
 
@@ -409,7 +443,7 @@ var translations = {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20201215171253'></script><script src="/assets/js/custom.js?v=20201215171253"></script><script>
+<script src='/assets/js/sdg.js?v=20201217121249'></script><script src="/assets/js/custom.js?v=20201217121249"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
