@@ -117,8 +117,6 @@ var translations = {
         
         <link rel="canonical" href="/">
 
-        
-
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
         <![endif]-->
@@ -131,12 +129,10 @@ var translations = {
         -->
 
         
-
-        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20210709154830">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210719102754">
         <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
@@ -144,10 +140,14 @@ var translations = {
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20210709154830"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20210719102754"><!-- ShareThis BEGIN --><!-- ShareThis END -->
+
+        
 
     </head>
-<body class="language-en layout-indicator">
+<body class="language-en
+layout-indicator
+">
 <!-- <div class="container"> -->
 
 
@@ -174,12 +174,29 @@ var translations = {
     <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
 </a>
       <div class="mobile-widgets">
-    <ul id='accessibility-nav' class='contrast-switcher'></ul></div>
+    <ul id='accessibility-nav' class='contrast-switcher'>
+        
+
+    <li class="nav-link contrast contrast-high contrast-type-single">
+        <a title="Enable high contrast"
+           aria-label="Enable high contrast"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+    </ul></div>
     </div>
 
     <div class="search-and-desktop-widgets">
       <div id="search" class="menu-target">
-  <form action="/search">
+  <form action="/search/">
     <label class="sr-only" for="indicator_search">Search</label>
     <input type="text" name="q" id="indicator_search" title="Search" /><!--
     --><button aria-label="Search" id="search-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -187,7 +204,23 @@ var translations = {
 </div>
 
       <div class="navbar navbar-default widgets-without-menu">
-        <ul class="nav navbar-nav contrast-switcher"></ul>
+        <ul class="nav navbar-nav contrast-switcher">
+
+    <li class="nav-link contrast contrast-high contrast-type-single">
+        <a title="Enable high contrast"
+           aria-label="Enable high contrast"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+        </ul>
       </div>
     </div>
 
@@ -210,6 +243,24 @@ var translations = {
 </li><li class="nav-link ">
     <a href="/updates/">Updates</a>
 </li>
+
+
+
+    <li class="nav-link contrast contrast-high contrast-type-single">
+        <a title="Enable high contrast"
+           aria-label="Enable high contrast"
+           data-contrast-switch-to="high"
+           href="javascript:void(0)"
+           data-on="click"
+data-event-category="Accessibility"
+data-event-action="Change contrast setting"
+data-event-label="high"
+
+        >A</a>
+    </li>
+
+
+
 </ul>
 
     </li>
@@ -218,7 +269,7 @@ var translations = {
         aria-haspopup="true">
         <button data-target="search-mobile" aria-expanded="false">Search</button>
         <div id="search-mobile" class="menu-target">
-  <form action="/search">
+  <form action="/search/">
     <label class="sr-only" for="indicator_search-mobile">Search</label>
     <input type="text" name="q" id="indicator_search-mobile" title="Search" /><!--
     --><button aria-label="Search" id="search-mobile-btn" type="submit"><i class="fa fa-search" aria-hidden="false"></i></button>
@@ -240,6 +291,7 @@ var translations = {
 </li><li class="nav-link ">
     <a href="/updates/">Updates</a>
 </li>
+
 </ul>
 
     </div>
@@ -265,9 +317,6 @@ var translations = {
           <span class="sr-only">Show sub-categories: <%=translations.t(fieldItem.label)%></span>
         <% if(allowedFields.indexOf(fieldItem.field) == -1) { %></h6><% } else { %></h5><% } %>
       </button>
-      <div class="bar">
-        <div class="selected"></div>
-      </div>
       <div class="variable-options">
         <fieldset>
           <legend class="sr-only">Sub-categories - <%=translations.t(fieldItem.field)%></legend>
@@ -367,12 +416,6 @@ var translations = {
   
 
   
-<div class="row metadata-available-indicator">
-  <div class="col-xs-12">
-    <h2>Border Force Convention of International Trade of Endangered Species (CITES) seizures</h2>
-  </div>
-</div>
-
 
   
 
@@ -380,6 +423,7 @@ var translations = {
   
 
   
+
 
 
 <div class="row"
@@ -389,7 +433,7 @@ var translations = {
   data-country="United Kingdom"
   data-charttitle="Number of endangered species seizures"
   data-charttitles="null"
-  data-measurementunit="Number"
+  data-measurementunit="Number of seizures"
   data-showdata="true"
   data-graphtype="line"
   data-geocoderegex=""
@@ -399,6 +443,7 @@ var translations = {
   data-stackeddisaggregation=""
   data-graphannotations="null"
   data-indicatordownloads="null"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Import type&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;,&quot;Butterflies&quot;,&quot;Caviar and caviar extract&quot;,&quot;Ivory and items containing Ivory&quot;,&quot;Live animals and birds&quot;,&quot;Live coral and coral derivatives&quot;,&quot;Live plants&quot;,&quot;Parts or derivatives of animals or birds&quot;,&quot;Parts or derivatives of plants&quot;,&quot;Preparations of Oriental medicine which include parts and derivatives of endangered species&quot;,&quot;Timber or wood products&quot;]},&quot;title&quot;:&quot;Import type&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Unit measure&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit measure&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;},{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
 >
@@ -477,7 +522,7 @@ var translations = {
           
           
           
-          <td class="table-value">Number</td>
+          <td class="table-value">Number of times seized</td>
           
           
         </tr>
@@ -501,7 +546,7 @@ var translations = {
           
           
           
-          <td class="table-value">Number</td>
+          <td class="table-value">Number of times seized</td>
           
           
         </tr>
@@ -513,7 +558,7 @@ var translations = {
           
           
           
-          <td>854.0</td>
+          <td>858.0</td>
           
           
           
@@ -525,7 +570,7 @@ var translations = {
           
           
           
-          <td class="table-value">Number</td>
+          <td class="table-value">Number of times seized</td>
           
           
         </tr>
@@ -549,7 +594,7 @@ var translations = {
           
           
           
-          <td class="table-value">Number</td>
+          <td class="table-value">Number of times seized</td>
           
           
         </tr>
@@ -573,7 +618,7 @@ var translations = {
           
           
           
-          <td class="table-value">Number</td>
+          <td class="table-value">Number of times seized</td>
           
           
         </tr>
@@ -585,7 +630,7 @@ var translations = {
           
           
           
-          <td>804.0</td>
+          <td>1116.0</td>
           
           
           
@@ -597,7 +642,55 @@ var translations = {
           
           
           
-          <td class="table-value">Number</td>
+          <td class="table-value">Number of times seized</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>792.0</td>
+          
+          
+          
+          <td>Undefined</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Number of times seized</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>488.0</td>
+          
+          
+          
+          <td>Undefined</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Number of times seized</td>
           
           
         </tr>
@@ -614,8 +707,10 @@ var translations = {
     <p>Geographical Area: United Kingdom</p>
     
     
-    <p>Unit of Measurement: Number</p>
+    <p>Unit of Measurement: Number of seizures</p>
     
+    
+    <p>Footnote: Data for 2019 does not include any seizures made at Gatwick airport during Q4, due to a change in reporting systems. 2020 figures were impacted by the 2020 Covid-19 pandemic (see 'Other Information' below).</p>
     
   </div>
 
@@ -674,7 +769,7 @@ data-event-label="Change to Table tab"
 <script>
 // Add a chart alteration to support the chart_graph_limits metadata field.
 opensdg.chartConfigAlter(function(config, info) {
-  if (info.graphLimits && info.graphLimits.length > 0) {
+  if (info.graphLimits && Object.keys(info.graphLimits).length > 0) {
     var overrides = {
       options: {
         scales: {
@@ -908,11 +1003,14 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
         <dt>Unit of Measurement:</dt>
-        <dd>Number</dd>
+        <dd>Number of seizures</dd>
         
 
         
 
+        
+        <dt>Footnote:</dt>
+        <dd>Data for 2019 does not include any seizures made at Gatwick airport during Q4, due to a change in reporting systems. 2020 figures were impacted by the 2020 Covid-19 pandemic (see 'Other Information' below).</dd>
         
     <dl>
 </div>
@@ -953,11 +1051,14 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
         <dt>Unit of Measurement:</dt>
-        <dd>Number</dd>
+        <dd>Number of seizures</dd>
         
 
         
 
+        
+        <dt>Footnote:</dt>
+        <dd>Data for 2019 does not include any seizures made at Gatwick airport during Q4, due to a change in reporting systems. 2020 figures were impacted by the 2020 Covid-19 pandemic (see 'Other Information' below).</dd>
         
     <dl>
 </div>
@@ -1034,7 +1135,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            <p>Border Force Convention of International Trade of Endangered Species (CITES) seizures</p>
+            
 
           
         </td>
@@ -1048,7 +1149,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator description </th>
         <td>
           
-            
+            <p>This indicator provides the number of Border Force seizures of species, parts or derivatives of species, and products containing species that have been illegally imported.</p>
 
           
         </td>
@@ -1076,7 +1177,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Unit of measurement </th>
         <td>
           
-            <p>Number</p>
+            <p>Number of seizures</p>
 
           
         </td>
@@ -1090,7 +1191,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Definitions </th>
         <td>
           
-            <p>CITES (the Convention on International Trade in Endangered Species of Wild Fauna and Flora) is an international agreement between governments. Its aim is to ensure that international trade in specimens of wild animals and plants does not threaten their survival. CITES accords varying degrees of protection to more than 35,000 species of animals and plants, whether they are traded as live specimens, fur coats or dried herbs.</p>
+            <p>CITES (the Convention on International Trade in Endangered Species of Wild Fauna and Flora) - An international agreement between governments. Its aim is to ensure that international trade in specimens of wild animals and plants does not threaten their survival. CITES accords varying degrees of protection to more than 35,000 species of animals and plants, whether they are traded as live specimens, fur coats or dried herbs.</p>
 
           
         </td>
@@ -1118,7 +1219,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Calculations </th>
         <td>
           
-            <p>Figures provided in Border Force transparency data.</p>
+            <p>Figures provided in Border Force transparency data are given on a quarterly basis. The four quarters of each year have here been summed to provide an annual figure, as number of seizures is considerably volatile.</p>
 
           
         </td>
@@ -1132,7 +1233,12 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>For further information please see UNEP checklist of CITES species @ http://checklist.cites.org/#/en This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has not been identified in collaboration with topic experts.</p>
+            <p>The total number of seizures may not equate to the sum of the CITES seizures, due to the possibility of multiple seizures. A multiple seizure is where two or more category types (e.g. caviar and timber) are seized on a particular occasion. The occasion is counted once in the total number of seizures, but a seizure is counted against each category.</p>
+<p>Data for 2019 does not include any seizures made at Gatwick airport during Quarter 4, due to a change in reporting systems.</p>
+<p>Seizure numbers in 2020 were impacted by the Covid-19 pandemic - There were extremely large reductions in both number of passengers and amount of cargo. In addition, enforcement work was disrupted by a stay-at-home order between March and August, and changes to work practices on return.</p>
+<p><i>Volume</i> of seizures by type are also available in the source data.</p>
+<p>For further information on which species are protected by CITES please see <a href="http://checklist.cites.org/#/en">UNEP checklist of CITES species</a>, and for further information on trade in CITES species see the <a href="https://trade.cites.org/en/cites_trade/">CITES Trade Database</a>.</p>
+<p>This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has not been identified in collaboration with topic experts.</p>
 
           
         </td>
@@ -1152,8 +1258,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/ONSdigital/sdg-data/commit/f5c329ec4f93914b86d637f99b2d927f01512263" target="_blank">
-                2021-07-09: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/ONSdigital/sdg-data/commit/d320be627d02745a63e8f05c2d9ae4576a9cada3" target="_blank">
+                2021-07-19: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1179,8 +1285,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://github.com/ONSdigital/sdg-data/commit/f5c329ec4f93914b86d637f99b2d927f01512263" target="_blank">
-                2021-07-09: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://github.com/ONSdigital/sdg-data/commit/d320be627d02745a63e8f05c2d9ae4576a9cada3" target="_blank">
+                2021-07-19: see changes on GitHub <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1677,7 +1783,7 @@ data-event-label="Change to Sources tab"
 
             
               <a href="https://www.gov.uk/search?q=border+force+transparency+data" target="_blank">
-                Border Force transparency data <span class="visuallyhidden">opens in a new window</span>
+                Border Force transparency data - Februrary 2020 <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -1697,8 +1803,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            <p>28/02/2019</p>
-
+            26 February 2021
           
         </td>
         </tr>
@@ -1711,7 +1816,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            <p>01/05/2019</p>
+            <p>TBC</p>
 
           
         </td>
@@ -1753,7 +1858,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>Please note that the total number of seizures may not equate to the sum of the CITES seizures, this is due to the possibility of multiple seizures. A multiple seizure is where two or more category types (e.g. caviar and timber) are seized on a particular occasion. The occasion is counted once in the total number of seizures, but a seizure is counted against each category.</p>
+            <p>Table BF_04 Convention of international trade of endangered species (CITES) seizures.</p>
+<p>The stated release date refers to the publication the current data was taken from. The release is updated on quarterly basis.</p>
 
           
         </td>
@@ -1923,7 +2029,6 @@ data-event-label="Change to Sources tab"
 
 <!-- /.container </div> -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
@@ -1942,12 +2047,12 @@ data-event-label="Change to Sources tab"
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20210709154830'></script>
+<script src='/assets/js/sdg.js?v=20210719102754'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 
     
     
-    <script src="/assets/js/custom.js?v=20210709154830"></script><script>
+    <script src="/assets/js/custom.js?v=20210719102754"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -1987,6 +2092,7 @@ $(function() {
               stackedDisaggregation: domData.stackeddisaggregation,
               graphAnnotations: domData.graphannotations,
               indicatorDownloads: domData.indicatordownloads,
+              dataSchema: domData.dataschema,
               compositeBreakdownLabel: domData.compositebreakdownlabel,
               precision: domData.precision,
             }),
