@@ -833,9 +833,9 @@
           "id": "7-b-1",
           "title": "Installed renewable energy-generating capacity in developing countries (in watts per capita)",
           "description": "",
-          "keywords": "",
+          "keywords": "map",
           "href": "/7-b-1",
-          "status": "notstarted"
+          "status": "complete"
         }]
     }
   },
@@ -1411,7 +1411,7 @@
           "description": "",
           "keywords": "",
           "href": "/12-a-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "12-b-1",
