@@ -116,28 +116,46 @@ var translations = {
         <script src="/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        <!-- Favicons ================================================== -->
-        <!-- 128x128 -->
-        <link rel="shortcut icon" type="image/ico" href="/assets/img/favicons/favicon.ico">
-        <link rel="icon" type="image/png" href="/assets/img/favicons/favicon.png"><!-- 192x192, as recommended for Android
-        http://updates.html5rocks.com/2014/11/Support-for-theme-color-in-Chrome-39-for-Android
-        -->
+        
+
+
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
+<link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
+
 
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20210909131229">
-        <link href="https://fonts.googleapis.com/css?family=Open+Sans|Roboto" rel="stylesheet" crossorigin="">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20210916165255">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.rawgit.com/socib/Leaflet.TimeDimension/master/dist/leaflet.timedimension.control.min.css"  crossorigin=""/>
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin=""><link rel="stylesheet" href="/assets/css/custom.css?v=20210909131229"><!-- ShareThis BEGIN --><!-- ShareThis END -->
-
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/assets/css/custom.css?v=20210916165255">
         
+
+        <link rel="stylesheet" href="/assets/css/govuk.css">
+<!-- Hotjar Tracking Code for https://sdgdata.gov.uk/ -->
+
+<script type="text/plain" data-type="application/javascript" data-name="hotjar">
+(function(h,o,t,j,a,r){
+    h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+    h._hjSettings={hjid:2419641,hjsv:6};
+    a=o.getElementsByTagName('head')[0];
+    r=o.createElement('script');r.async=1;
+    r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+    a.appendChild(r);
+})(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+</script>
+
 
     </head>
 <body class="language-en
@@ -146,9 +164,74 @@ layout-reportingstatus
 <!-- <div class="container"> -->
 
 
+
+
 <script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
 <a class="sr-only sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
+
+<script>
+  document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+</script>
+<div id="cookie-banner" style="display: none" class="govuk-cookie-banner " data-nosnippet role="region" aria-label="Cookies on sdgdata.gov.uk">
+  <div class="govuk-cookie-banner__message govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h2 class="govuk-cookie-banner__heading govuk-heading-m">Cookies on sdgdata.gov.uk</h2>
+
+        <div class="govuk-cookie-banner__content">
+          <p>We use some essential cookies to make this service work.</p>
+          <p>We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-button-group">
+      <button id="cookie-accept" value="accept" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+        Accept analytics cookies
+      </button>
+      <button id="cookie-reject" value="reject" type="button" name="cookies" class="govuk-button" data-module="govuk-button">
+        Reject analytics cookies
+      </button>
+      <a class="govuk-link" href="/cookies">View cookies</a>
+    </div>
+  </div>
+</div>
+<div id="cookie-banner-accept" style="display: none" class="govuk-cookie-banner " data-nosnippet role="region" aria-label="Cookies on sdgdata.gov.uk">
+  <div class="govuk-cookie-banner__message govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-cookie-banner__content">
+          <p>You’ve accepted analytics cookies. You can <a class="govuk-link" href="/cookies">change your cookie settings</a> at any time.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-button-group">
+      <a id="hide-accept" href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Hide this message
+      </a>
+    </div>
+  </div>
+</div>
+<div id="cookie-banner-reject" style="display: none" class="govuk-cookie-banner " data-nosnippet role="region" aria-label="Cookies on sdgdata.gov.uk">
+  <div class="govuk-cookie-banner__message govuk-width-container">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <div class="govuk-cookie-banner__content">
+          <p>You’ve rejected analytics cookies. You can <a class="govuk-link" href="/cookies">change your cookie settings</a> at any time.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="govuk-button-group">
+      <a id="hide-reject" href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+          Hide this message
+      </a>
+    </div>
+  </div>
+</div>
+
 <div id="disclaimer">
   <div class="container">
   <div class="disclaimer-alert">
@@ -366,7 +449,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total"><span>247</span> indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                <span class="status complete"><span class="status-inner">202</span></span><strong>Reported online</strong><span class="value">82%</span>
+                <span class="status complete"><span class="status-inner">202</span></span><strong>Reported</strong><span class="value">82%</span>
             </div><div>
                 <span class="status notstarted"><span class="status-inner">45</span></span><strong>Exploring data sources</strong><span class="value">18%</span>
             </div><br style="clear:both;">
@@ -375,7 +458,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
             
             
-            <span class="complete" style="width:81.78137651821862%" title="Reported online: 82%"></span>
+            <span class="complete" style="width:81.78137651821862%" title="Reported: 82%"></span>
             
             
             <span class="notstarted" style="width:18.218623481781375%" title="Exploring data sources: 18%"></span></div>
@@ -395,7 +478,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">13 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">10</span></span><strong>Reported online</strong><span class="value">77%</span>
+                    <span class="status complete"><span class="status-inner">10</span></span><strong>Reported</strong><span class="value">77%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">3</span></span><strong>Exploring data sources</strong><span class="value">23%</span>
                 </div><br style="clear:both;">
@@ -404,7 +487,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:76.92307692307693%" title="Reported online: 77%"></span>
+                <span class="complete" style="width:76.92307692307693%" title="Reported: 77%"></span>
                 
                 
                 <span class="notstarted" style="width:23.076923076923077%" title="Exploring data sources: 23%"></span></div>
@@ -424,7 +507,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">14 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">9</span></span><strong>Reported online</strong><span class="value">64%</span>
+                    <span class="status complete"><span class="status-inner">9</span></span><strong>Reported</strong><span class="value">64%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">5</span></span><strong>Exploring data sources</strong><span class="value">36%</span>
                 </div><br style="clear:both;">
@@ -433,7 +516,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:64.28571428571429%" title="Reported online: 64%"></span>
+                <span class="complete" style="width:64.28571428571429%" title="Reported: 64%"></span>
                 
                 
                 <span class="notstarted" style="width:35.714285714285715%" title="Exploring data sources: 36%"></span></div>
@@ -453,7 +536,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">28 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">25</span></span><strong>Reported online</strong><span class="value">89%</span>
+                    <span class="status complete"><span class="status-inner">25</span></span><strong>Reported</strong><span class="value">89%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">3</span></span><strong>Exploring data sources</strong><span class="value">11%</span>
                 </div><br style="clear:both;">
@@ -462,7 +545,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:89.28571428571429%" title="Reported online: 89%"></span>
+                <span class="complete" style="width:89.28571428571429%" title="Reported: 89%"></span>
                 
                 
                 <span class="notstarted" style="width:10.714285714285714%" title="Exploring data sources: 11%"></span></div>
@@ -482,7 +565,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">12 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">12</span></span><strong>Reported online</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">12</span></span><strong>Reported</strong><span class="value">100%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">0</span></span><strong>Exploring data sources</strong><span class="value">0%</span>
                 </div><br style="clear:both;">
@@ -491,7 +574,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+                <span class="complete" style="width:100.0%" title="Reported: 100%"></span>
                 
                 
                 <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span></div>
@@ -511,7 +594,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">14 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">14</span></span><strong>Reported online</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">14</span></span><strong>Reported</strong><span class="value">100%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">0</span></span><strong>Exploring data sources</strong><span class="value">0%</span>
                 </div><br style="clear:both;">
@@ -520,7 +603,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+                <span class="complete" style="width:100.0%" title="Reported: 100%"></span>
                 
                 
                 <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span></div>
@@ -540,7 +623,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">11 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">9</span></span><strong>Reported online</strong><span class="value">82%</span>
+                    <span class="status complete"><span class="status-inner">9</span></span><strong>Reported</strong><span class="value">82%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">2</span></span><strong>Exploring data sources</strong><span class="value">18%</span>
                 </div><br style="clear:both;">
@@ -549,7 +632,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:81.81818181818181%" title="Reported online: 82%"></span>
+                <span class="complete" style="width:81.81818181818181%" title="Reported: 82%"></span>
                 
                 
                 <span class="notstarted" style="width:18.181818181818183%" title="Exploring data sources: 18%"></span></div>
@@ -569,7 +652,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">6 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">6</span></span><strong>Reported online</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">6</span></span><strong>Reported</strong><span class="value">100%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">0</span></span><strong>Exploring data sources</strong><span class="value">0%</span>
                 </div><br style="clear:both;">
@@ -578,7 +661,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+                <span class="complete" style="width:100.0%" title="Reported: 100%"></span>
                 
                 
                 <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span></div>
@@ -598,7 +681,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">16 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">14</span></span><strong>Reported online</strong><span class="value">88%</span>
+                    <span class="status complete"><span class="status-inner">14</span></span><strong>Reported</strong><span class="value">88%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">2</span></span><strong>Exploring data sources</strong><span class="value">13%</span>
                 </div><br style="clear:both;">
@@ -607,7 +690,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:87.5%" title="Reported online: 88%"></span>
+                <span class="complete" style="width:87.5%" title="Reported: 88%"></span>
                 
                 
                 <span class="notstarted" style="width:12.5%" title="Exploring data sources: 13%"></span></div>
@@ -627,7 +710,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">12 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">11</span></span><strong>Reported online</strong><span class="value">92%</span>
+                    <span class="status complete"><span class="status-inner">11</span></span><strong>Reported</strong><span class="value">92%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">1</span></span><strong>Exploring data sources</strong><span class="value">8%</span>
                 </div><br style="clear:both;">
@@ -636,7 +719,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:91.66666666666666%" title="Reported online: 92%"></span>
+                <span class="complete" style="width:91.66666666666666%" title="Reported: 92%"></span>
                 
                 
                 <span class="notstarted" style="width:8.333333333333332%" title="Exploring data sources: 8%"></span></div>
@@ -656,7 +739,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">14 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">9</span></span><strong>Reported online</strong><span class="value">64%</span>
+                    <span class="status complete"><span class="status-inner">9</span></span><strong>Reported</strong><span class="value">64%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">5</span></span><strong>Exploring data sources</strong><span class="value">36%</span>
                 </div><br style="clear:both;">
@@ -665,7 +748,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:64.28571428571429%" title="Reported online: 64%"></span>
+                <span class="complete" style="width:64.28571428571429%" title="Reported: 64%"></span>
                 
                 
                 <span class="notstarted" style="width:35.714285714285715%" title="Exploring data sources: 36%"></span></div>
@@ -685,7 +768,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">14 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">10</span></span><strong>Reported online</strong><span class="value">71%</span>
+                    <span class="status complete"><span class="status-inner">10</span></span><strong>Reported</strong><span class="value">71%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">4</span></span><strong>Exploring data sources</strong><span class="value">29%</span>
                 </div><br style="clear:both;">
@@ -694,7 +777,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:71.42857142857143%" title="Reported online: 71%"></span>
+                <span class="complete" style="width:71.42857142857143%" title="Reported: 71%"></span>
                 
                 
                 <span class="notstarted" style="width:28.57142857142857%" title="Exploring data sources: 29%"></span></div>
@@ -714,7 +797,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">13 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">10</span></span><strong>Reported online</strong><span class="value">77%</span>
+                    <span class="status complete"><span class="status-inner">10</span></span><strong>Reported</strong><span class="value">77%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">3</span></span><strong>Exploring data sources</strong><span class="value">23%</span>
                 </div><br style="clear:both;">
@@ -723,7 +806,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:76.92307692307693%" title="Reported online: 77%"></span>
+                <span class="complete" style="width:76.92307692307693%" title="Reported: 77%"></span>
                 
                 
                 <span class="notstarted" style="width:23.076923076923077%" title="Exploring data sources: 23%"></span></div>
@@ -743,7 +826,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">8 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">8</span></span><strong>Reported online</strong><span class="value">100%</span>
+                    <span class="status complete"><span class="status-inner">8</span></span><strong>Reported</strong><span class="value">100%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">0</span></span><strong>Exploring data sources</strong><span class="value">0%</span>
                 </div><br style="clear:both;">
@@ -752,7 +835,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:100.0%" title="Reported online: 100%"></span>
+                <span class="complete" style="width:100.0%" title="Reported: 100%"></span>
                 
                 
                 <span class="notstarted" style="width:0.0%" title="Exploring data sources: 0%"></span></div>
@@ -772,7 +855,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">10 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">6</span></span><strong>Reported online</strong><span class="value">60%</span>
+                    <span class="status complete"><span class="status-inner">6</span></span><strong>Reported</strong><span class="value">60%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">4</span></span><strong>Exploring data sources</strong><span class="value">40%</span>
                 </div><br style="clear:both;">
@@ -781,7 +864,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:60.0%" title="Reported online: 60%"></span>
+                <span class="complete" style="width:60.0%" title="Reported: 60%"></span>
                 
                 
                 <span class="notstarted" style="width:40.0%" title="Exploring data sources: 40%"></span></div>
@@ -801,7 +884,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">14 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">11</span></span><strong>Reported online</strong><span class="value">79%</span>
+                    <span class="status complete"><span class="status-inner">11</span></span><strong>Reported</strong><span class="value">79%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">3</span></span><strong>Exploring data sources</strong><span class="value">21%</span>
                 </div><br style="clear:both;">
@@ -810,7 +893,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:78.57142857142857%" title="Reported online: 79%"></span>
+                <span class="complete" style="width:78.57142857142857%" title="Reported: 79%"></span>
                 
                 
                 <span class="notstarted" style="width:21.428571428571427%" title="Exploring data sources: 21%"></span></div>
@@ -830,7 +913,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">24 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">18</span></span><strong>Reported online</strong><span class="value">75%</span>
+                    <span class="status complete"><span class="status-inner">18</span></span><strong>Reported</strong><span class="value">75%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">6</span></span><strong>Exploring data sources</strong><span class="value">25%</span>
                 </div><br style="clear:both;">
@@ -839,7 +922,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:75.0%" title="Reported online: 75%"></span>
+                <span class="complete" style="width:75.0%" title="Reported: 75%"></span>
                 
                 
                 <span class="notstarted" style="width:25.0%" title="Exploring data sources: 25%"></span></div>
@@ -859,7 +942,7 @@ data-event-label="Change reporting status view to disaggregations"
         <span class="total">24 indicators</span>
         <div class="summary">
             <div class="statuses"><div>
-                    <span class="status complete"><span class="status-inner">20</span></span><strong>Reported online</strong><span class="value">83%</span>
+                    <span class="status complete"><span class="status-inner">20</span></span><strong>Reported</strong><span class="value">83%</span>
                 </div><div>
                     <span class="status notstarted"><span class="status-inner">4</span></span><strong>Exploring data sources</strong><span class="value">17%</span>
                 </div><br style="clear:both;">
@@ -868,7 +951,7 @@ data-event-label="Change reporting status view to disaggregations"
         <div class="goal-stats">
                 
                 
-                <span class="complete" style="width:83.33333333333334%" title="Reported online: 83%"></span>
+                <span class="complete" style="width:83.33333333333334%" title="Reported: 83%"></span>
                 
                 
                 <span class="notstarted" style="width:16.666666666666664%" title="Exploring data sources: 17%"></span></div>
@@ -1615,7 +1698,12 @@ data-event-label="Change reporting status view to disaggregations"
                 </li>
               
                 <li>
-                <a href="/about/cookies-and-privacy/">Cookies</a>
+                <a href="/cookies-no-javascript/">Cookies</a>
+                
+                </li>
+              
+                <li>
+                <a href="/privacy-notice/">Privacy</a>
                 
                 </li>
               
@@ -1635,11 +1723,6 @@ data-event-label="Change reporting status view to disaggregations"
   </div>
 </footer>
 
-<!-- Digital Analytics Program roll-up, see https://analytics.usa.gov for data -->
-<!-- <script id="_fed_an_ua_tag" src="https://dap.digitalgov.gov/Universal-Federated-Analytics-Min.js?agency=GSA"></script> -->
-<!-- Google Analytics -->
-
-<!-- /.container </div> -->
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 <script src="//cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
@@ -1653,18 +1736,200 @@ data-event-label="Change reporting status view to disaggregations"
 <script src="https://cdnjs.cloudflare.com/ajax/libs/autotrack/2.4.1/autotrack.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.0.0-rc.3/dist/html2canvas.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/file-saver@2.0.2/dist/FileSaver.min.js"></script>
+
+
+<script>
+  
+
+
+var klaroConfig = {
+    noAutoLoad: true, // no autoload because we have a custom notice and form
+    storageMethod: 'cookie',
+    cookieName: 'cookie_settings',
+    cookieExpiresAfterDays: 365,
+    default: false,
+    services: [
+        {
+            name: 'contrast',
+            default: true,
+            cookies: ['contrast'],
+            required: true,
+        },
+        
+        {
+            name: 'google-analytics',
+            
+            cookies: ['_gat', '_gid', '_ga'],
+            
+        },
+        
+        
+        {
+            name: 'hotjar',
+            cookies: [
+                '_hjClosedSurveyInvites',
+                '_hjDonePolls',
+                '_hjMinimizedPolls',
+                '_hjDoneTestersWidgets',
+                '_hjIncludedInSample',
+                '_hjShownFeedbackMessage',
+                '_hjid',
+                '_hjRecordingLastActivity',
+                '_hjTLDTest',
+                '_hjUserAttributesHash',
+                '_hjCachedUserAttributes',
+                '_hjLocalStorageTest',
+                '_hjAbsoluteSessionInProgress',
+                '_hjFirstSeen',
+                '_hjIncludedInPageviewSample',
+            ],
+        },
+        
+    ],
+};
+
+  klaroConfig.lang = 'en';
+klaroConfig.translations = {
+    en: {
+        acceptAll: "Accept all",
+        acceptSelected: "Accept selected",
+        close: "Close",
+        consentModal: {
+            description: "Here you can change which cookies you're happy for us to use.",
+            title: "Cookie settings",
+        },
+        consentNotice: {
+            changeDescription: "The cookies used on this site have changed since you last visited, please renew your consent.",
+            description: "We use some essential cookies to make this service work. We’d also like to use {purposes} so we can understand how you use the service and make improvements.",
+            learnMore: "View cookies",
+            testing: "Testing mode!",
+        },
+        contextualConsent: {
+            acceptAlways: "Always",
+            acceptOnce: "Yes",
+            description: "Do you want to load external content supplied by {title}?",
+        },
+        decline: "Reject additional cookies",
+        ok: "Accept additional cookies",
+        poweredBy: "Realized with Klaro!",
+        privacyPolicy: {
+            name: "privacy policy",
+            text: "To learn more, please read our privacy policy.",
+        },
+        purposeItem: {
+            service: "service",
+            services: "services",
+        },
+        purposes: {
+            functional: {
+                description: "Essential cookies keep your information secure, and do things like remember your preferences and the choices you make whilst you use the website. They always need to be on.",
+                title: "Essential cookies",
+            },
+            analytics: {
+                description: "These services collect information about how you use the website. We use this data to help make the website better.",
+                title: "Analytics cookies",
+            },
+        },
+        save: "Save",
+        service: {
+            disableAll: {
+                description: "Use this switch to enable or disable all services.",
+                title: "Enable or disable all services",
+            },
+            optOut: {
+                description: "This services is loaded by default (but you can opt out)",
+                title: "(opt-out)",
+            },
+            purpose: "purpose",
+            purposes: "purposes",
+            required: {
+                description: "This service is always required",
+                title: "(always required)",
+            },
+        },
+    },
+};
+var allRequired = true;
+klaroConfig.services.forEach(function(service) {
+    if (!service.required) {
+        allRequired = false;
+    }
+    if (service.name === 'contrast') {
+        service.translations = {
+            en: {
+                description: "Retains active state of accessibility services",
+                title: "Accessibility mode",
+            },
+        }
+    }
+    else if (service.name === 'cookie_settings') {
+        service.translations = {
+            en: {
+                description: "Saves your cookie consent settings",
+                title: "Cookie settings",
+            },
+        }
+    }
+    else if (service.name === 'google-analytics') {
+        service.translations = {
+            en: {
+                description: "Collects information about page visits using Google Analytics",
+                title: "Google Analytics",
+            },
+        }
+    }
+});
+
+if (allRequired) {
+    klaroConfig.translations['en'].consentNotice.description = "We use some essential cookies to make this service work. They always need to be on.";
+    klaroConfig.translations['en'].ok = "OK";
+    klaroConfig.hideDeclineAll = true;
+    klaroConfig.hideLearnMore = true;
+}
+
+</script>
+<script src="https://cdn.kiprotect.com/klaro/v0.7/klaro-no-css.js"></script>
+<script>translations['cookies'] = translations['cookies'] || {};
+    translations['cookies']['cookie_settings'] = 'Cookie settings';</script>
+
+
+
+
+
+  <script type="text/plain" data-type="application/javascript" data-name="google-analytics">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-108503280-1', 'auto');
+ga('require', 'eventTracker', {
+    attributePrefix: 'data-'
+});
+// anonymize user IPs (chops off the last IP triplet)
+ga('set', 'anonymizeIp', true);
+// forces SSL even if the page were somehow loaded over http://
+ga('set', 'forceSSL', true);
+ga('send', 'pageview');
+</script>
+
+
+
 <script>translations['general'] = translations['general'] || {};
     translations['general']['hide'] = 'hide';</script>
 
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20210909131229'></script>
+<script src='/assets/js/sdg.js?v=20210916165255'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
-
+<script src="/assets/js/govuk.js"></script>
+<script>
+  window.GOVUKFrontend.initAll()
+</script>
     
     
-    <script src="/assets/js/custom.js?v=20210909131229"></script><script>
+    <script src="/assets/js/custom.js?v=20210916165255"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
@@ -1697,12 +1962,15 @@ $(function() {
               chartTitle: domData.charttitle,
               chartTitles: domData.charttitles,
               measurementUnit: domData.measurementunit,
+              xAxisLabel: domData.xaxislabel,
               showData: domData.showdata,
               graphType: domData.graphtype,
               startValues: domData.startvalues,
               graphLimits: domData.graphlimits,
               stackedDisaggregation: domData.stackeddisaggregation,
               graphAnnotations: domData.graphannotations,
+              graphTargetLines: domData.graphtargetlines,
+              graphSeriesBreaks: domData.graphseriesbreaks,
               indicatorDownloads: domData.indicatordownloads,
               dataSchema: domData.dataschema,
               compositeBreakdownLabel: domData.compositebreakdownlabel,
@@ -1730,12 +1998,6 @@ $(function() {
 
 
 });
-</script>
-
-
-
-<script>
-  initialiseGoogleAnalytics();
 </script>
 
 
