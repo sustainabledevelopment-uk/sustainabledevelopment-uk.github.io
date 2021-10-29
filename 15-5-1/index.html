@@ -136,7 +136,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20211025122901">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20211029104147">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -144,7 +144,7 @@ var translations = {
         <link rel="stylesheet" href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css'  crossorigin=""/>
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
-        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/assets/css/custom.css?v=20211025122901">
+        <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/><link rel="stylesheet" href="/assets/css/custom.css?v=20211029104147">
         
 
         <link rel="stylesheet" href="/assets/css/govuk.css">
@@ -544,7 +544,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Unit measure&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit measure&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;},{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;,&quot;Red List Index&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;&quot;,&quot;Index&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;},{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
 >
@@ -590,15 +590,19 @@ data-event-label="high"
         
         
         
+        <th scope="col">Units</th>
+        
+        
+        
+        <th scope="col">Series</th>
+        
+        
+        
         <th scope="col">Observation status</th>
         
         
         
-        <th scope="col">Unit multiplier</th>
-        
-        
-        
-        <th scope="col" class="table-value">Unit measure</th>
+        <th scope="col" class="table-value">Unit multiplier</th>
         
         
       </thead>
@@ -615,15 +619,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -639,15 +647,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -663,15 +675,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -687,15 +703,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -711,15 +731,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -735,15 +759,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -759,15 +787,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -783,15 +815,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -807,15 +843,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -831,15 +871,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -855,15 +899,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -879,15 +927,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -903,15 +955,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -927,15 +983,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -951,15 +1011,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -975,15 +1039,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -999,15 +1067,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1023,15 +1095,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1047,15 +1123,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1071,15 +1151,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1095,15 +1179,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1119,15 +1207,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1143,15 +1235,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1167,15 +1263,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1191,15 +1291,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1215,15 +1319,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1239,15 +1347,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1263,15 +1375,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1287,15 +1403,19 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Index</td>
           
           
           
-          <td>Units</td>
+          <td>Red List Index</td>
           
           
           
-          <td class="table-value">Index</td>
+          <td>Estimated value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1868,7 +1988,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Data last updated </th>
         <td>
           
-            08 October 2021
+            29 October 2021
           
         </td>
         </tr>
@@ -1881,7 +2001,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            08 October 2021
+            29 October 2021
           
         </td>
         </tr>
@@ -2809,7 +2929,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20211025122901'></script>
+<script src='/assets/js/sdg.js?v=20211029104147'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -2817,7 +2937,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20211025122901"></script><script>
+    <script src="/assets/js/custom.js?v=20211029104147"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
