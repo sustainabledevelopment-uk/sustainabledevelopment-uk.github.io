@@ -208,7 +208,7 @@
         {
           "id": "2-a-2",
           "title": "Total official flows (official development assistance plus other official flows) to the agriculture sector",
-          "description": "",
+          "description": "The UN specification requires the total frows from ODA and Other Official Flows (OOF), which is not available here.  The flows covered by OOF are defined as all additional loans, grants and equity investments received by developing countries. These additional flows cover the same technologies and other activities (research and development, technical assistance, etc.) as listed in the CRS codes but exclude all flows extracted from the OECD/ CRS codes. The reported indicator only covers the ODA part, so it is likely an underestimation.",
           "keywords": "ODA",
           "href": "/2-a-2",
           "status": "complete"
@@ -240,8 +240,8 @@
         {
           "id": "3-1-1",
           "title": "Maternal mortality ratio",
-          "description": "",
-          "keywords": "Births, Health",
+          "description": "Maternal mortality rate per 100,000 maternities is the recommended series for UK data. Maternal mortality ratio is included as internationally comparable data. Maternal mortality ratio uses number of live births as the denominator.",
+          "keywords": "Births, Health, Pregnancy, Pregnant",
           "href": "/3-1-1",
           "status": "complete"
         },
@@ -744,7 +744,7 @@
         {
           "id": "6-5-1",
           "title": "Degree of integrated water resources management",
-          "description": "",
+          "description": "Degree of integrated water resources management implementation, measured from 0 (implementation not yet started) to 100 (fully implemented).",
           "keywords": "DEFRA",
           "href": "/6-5-1",
           "status": "complete"
@@ -824,7 +824,7 @@
         {
           "id": "7-a-1",
           "title": "International financial flows to developing countries in support of clean energy research and development and renewable energy production, including in hybrid systems",
-          "description": "",
+          "description": "The UN specification requires the total flows from ODA and Other Official Flows (OOF), which is not available here.  The flows covered by OOF are defined as all additional loans, grants and equity investments received by developing countries. These additional flows cover the same technologies and other activities (research and development, technical assistance, etc.) as listed in the CRS codes but exclude all flows extracted from the OECD/ CRS codes. The reported indicator only covers the ODA part, so it is likely an underestimation.",
           "keywords": "ODA",
           "href": "/7-a-1",
           "status": "complete"
@@ -1056,7 +1056,7 @@
         {
           "id": "9-a-1",
           "title": "Total official international support (official development assistance plus other official flows) to infrastructure",
-          "description": "Net total Official Development Assistance (ODA) under ALL DAC codes in the 200 series.",
+          "description": "The UN specification requires the total flows from ODA and Other Official Flows (OOF), which is not available here. The flows covered by OOF are defined as all additional loans, grants and equity investments received by developing countries. These additional flows cover the same technologies and other activities (research and development, technical assistance, etc.) as listed in the CRS codes but exclude all flows extracted from the OECD/ CRS codes. The reported indicator only covers the ODA part, so it is likely an underestimation.",
           "keywords": "ODA",
           "href": "/9-a-1",
           "status": "complete"
@@ -2008,7 +2008,7 @@
         {
           "id": "17-9-1",
           "title": "Dollar value of financial and technical assistance (including through North-South, South‐South and triangular cooperation) committed to developing countries",
-          "description": "Total ODA and OOF flows to developing countries quantify the public effort (excluding export credits) that donors provide to developing countries.",
+          "description": "The sum of all ODA flows that the UK provides to developing countries, disaggregated by recipient country income group. The UN specifications for this indicator requires the total sum of ODA and Other Official Flows (OOF), but the data displayed here only reflects ODA disbursements.",
           "keywords": "ODA",
           "href": "/17-9-1",
           "status": "complete"
