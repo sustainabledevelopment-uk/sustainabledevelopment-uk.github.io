@@ -136,7 +136,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20211209144818">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20211209155905">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -522,7 +522,7 @@ data-event-label="high"
 
 <div class="row" id="page-content">
   <div class="col-xs-12">
-    <p>The methodology used to compile this data differs from the labour share published in the <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/bulletins/labourproductivity/octobertodecember2018">Labour Productivity national statistic release</a>, because it excludes the impact of the self-employed.  Further information can be found in the <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity/bulletins/labourproductivity/octobertodecember2018">Labour productivity, UK</a> release and this <a href="https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures/methodologies/estimatingtheimpactoftheselfemployedinthelabourshare">article</a>.</p>
+    <p>The calculation of labour share here differs from the published <a href="https://www.ons.gov.uk/economy/economicoutputandproductivity/productivitymeasures/bulletins/labourcostsandlabourincomeuk/2021">Labour costs and labour income statistic release</a>. The published labour share of income takes total employment costs as a share of employee compensations, gross operating surplus and mixed income.</p>
 
   </div>
 </div>
@@ -539,7 +539,7 @@ data-event-label="high"
   data-indicatorid='indicator_10-4-1'
   data-id="10-4-1"
   data-country="United Kingdom"
-  data-charttitle="Labour share of GDP, comprising wages and salaries and employers social contributions"
+  data-charttitle="Labour share of GDP, comprising wages, salaries and employers social contributions"
   data-charttitles="null"
   data-measurementunit="Percentage (%)"
   data-xaxislabel=""
@@ -554,7 +554,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Unit measure&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit measure&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Labour share of GDP&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage (%)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
 >
@@ -588,7 +588,7 @@ data-event-label="high"
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Labour share of GDP, comprising wages and salaries and employers social contributions</caption>
+      <caption>Labour share of GDP, comprising wages, salaries and employers social contributions</caption>
       <thead>
         
         
@@ -600,15 +600,19 @@ data-event-label="high"
         
         
         
+        <th scope="col">Units</th>
+        
+        
+        
+        <th scope="col">Series</th>
+        
+        
+        
         <th scope="col">Observation status</th>
         
         
         
-        <th scope="col">Unit multiplier</th>
-        
-        
-        
-        <th scope="col" class="table-value">Unit measure</th>
+        <th scope="col" class="table-value">Unit multiplier</th>
         
         
       </thead>
@@ -621,19 +625,23 @@ data-event-label="high"
           
           
           
-          <td>48.9</td>
+          <td>48.7</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -645,19 +653,23 @@ data-event-label="high"
           
           
           
-          <td>49.9</td>
+          <td>49.7</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -669,19 +681,23 @@ data-event-label="high"
           
           
           
-          <td>49.3</td>
+          <td>49.1</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -693,19 +709,23 @@ data-event-label="high"
           
           
           
-          <td>49.1</td>
+          <td>48.8</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -717,19 +737,23 @@ data-event-label="high"
           
           
           
-          <td>49.8</td>
+          <td>49.5</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -741,19 +765,23 @@ data-event-label="high"
           
           
           
-          <td>49.6</td>
+          <td>49.4</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -765,19 +793,23 @@ data-event-label="high"
           
           
           
-          <td>50.1</td>
+          <td>50.0</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -789,19 +821,23 @@ data-event-label="high"
           
           
           
-          <td>50.7</td>
+          <td>50.6</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -813,19 +849,23 @@ data-event-label="high"
           
           
           
-          <td>50.1</td>
+          <td>49.8</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -837,19 +877,23 @@ data-event-label="high"
           
           
           
-          <td>51.0</td>
+          <td>50.6</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -861,19 +905,23 @@ data-event-label="high"
           
           
           
-          <td>50.6</td>
+          <td>50.2</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -885,19 +933,23 @@ data-event-label="high"
           
           
           
-          <td>49.9</td>
+          <td>49.4</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -909,19 +961,23 @@ data-event-label="high"
           
           
           
-          <td>49.2</td>
+          <td>48.8</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -933,19 +989,23 @@ data-event-label="high"
           
           
           
-          <td>49.4</td>
+          <td>49.0</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -957,19 +1017,23 @@ data-event-label="high"
           
           
           
-          <td>48.6</td>
+          <td>48.0</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -981,19 +1045,23 @@ data-event-label="high"
           
           
           
-          <td>48.5</td>
+          <td>48.0</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1005,19 +1073,23 @@ data-event-label="high"
           
           
           
-          <td>48.5</td>
+          <td>47.9</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1029,19 +1101,23 @@ data-event-label="high"
           
           
           
-          <td>48.7</td>
+          <td>48.0</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1053,19 +1129,79 @@ data-event-label="high"
           
           
           
-          <td>49.2</td>
+          <td>48.2</td>
           
           
           
-          <td>Undefined</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Units</td>
+          <td>Labour share of GDP</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>48.7</td>
+          
+          
+          
+          <td>Percentage (%)</td>
+          
+          
+          
+          <td>Labour share of GDP</td>
+          
+          
+          
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>52.2</td>
+          
+          
+          
+          <td>Percentage (%)</td>
+          
+          
+          
+          <td>Labour share of GDP</td>
+          
+          
+          
+          <td>Normal Value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1129,7 +1265,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Labour share of GDP, comprising wages and salaries and employers social contributions</h4>
+          <h4 id="chart-heading" class="chart-title">Labour share of GDP, comprising wages, salaries and employers social contributions</h4>
           <div id="chart" class="plot-container">
             
 <canvas
@@ -1615,7 +1751,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>Labour Share of GDP seeks to inform about the relative share of GDP which accrues to workers as compared to the share which accrues to capital in each reference period.  In Periods of economic recession this figure provides an indication of the extent to which falling output reduces labour income relative to profits. If Labour income falls at a greater rate than profits the labour income share will be expected to fall. Increased production and GDP often lead to improved living standards, depending on the distribution of real income and public policy among other factors, which are reflected in this indicator.  Data follows the UN specification for this indicator. This indicator has been identified in collaboration with topic experts.</p>
+            <p>Labour share of GDP seeks to inform about the relative share of GDP which accrues to workers as compared to the share which accrues to capital in each reference period.  In periods of economic recession this figure provides an indication of the extent to which falling output reduces labour income relative to profits. If labour income falls at a greater rate than profits the labour income share will be expected to fall. Increased production and GDP often lead to improved living standards, depending on the distribution of real income and public policy among other factors, which are reflected in this indicator.  Data follows the UN specification for this indicator. This indicator has been identified in collaboration with topic experts.</p>
 
           
         </td>
@@ -1629,7 +1765,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Data last updated </th>
         <td>
           
-            03 December 2021
+            09 December 2021
           
         </td>
         </tr>
@@ -1642,7 +1778,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            03 December 2021
+            09 December 2021
           
         </td>
         </tr>
@@ -2079,7 +2215,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            <p>Quarterly</p>
+            <p>Annually</p>
 
           
         </td>
@@ -2127,7 +2263,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/labourproductivity" target="_blank">
+              <a href="https://www.ons.gov.uk/economy/grossdomesticproductgdp/timeseries/ihxp/ukea" target="_blank">
                 UK Economic Accounts time series - Compenastion of employees as % of Gross Domestic Product <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -2148,7 +2284,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            30 September 2019
+            29 September 2021
           
         </td>
         </tr>
@@ -2161,7 +2297,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            <p>20/12/2019</p>
+            <p>29/12/2021</p>
 
           
         </td>
@@ -2566,7 +2702,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20211209144818'></script>
+<script src='/assets/js/sdg.js?v=20211209155905'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -2574,7 +2710,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20211209144818"></script><script>
+    <script src="/assets/js/custom.js?v=20211209155905"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
