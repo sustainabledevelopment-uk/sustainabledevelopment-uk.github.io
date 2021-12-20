@@ -136,10 +136,10 @@
         {
           "id": "2-2-1",
           "title": "Prevalence of stunting (height for age <-2 standard deviation from the median of the World Health Organization (WHO) Child Growth Standards) among children under 5 years of age",
-          "description": "",
+          "description": "Analysis of NCMP data of children who were 4 years old at time of measurement in Reception using WHO growth standards, by sex, rural/urban classification, deprivation and ethnic group, academic year 2006-2007 to 2019-2020",
           "keywords": "",
           "href": "/2-2-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "2-2-2",
@@ -960,7 +960,7 @@
         {
           "id": "8-a-1",
           "title": "Aid for Trade commitments and disbursements",
-          "description": "",
+          "description": "The UN specification requires the total flows from ODA and Other Official Flows (OOF) for aid for trade, which is not available here.  The flows covered by OOF are defined as all additional loans, grants and equity investments received by developing countries. These additional flows cover the same technologies and other activities (research and development, technical assistance, etc.) as listed in the CRS codes but exclude all flows extracted from the OECD/ CRS codes. The reported indicator only covers the ODA part, so it is likely an underestimation.",
           "keywords": "ODA",
           "href": "/8-a-1",
           "status": "complete"
@@ -1192,7 +1192,7 @@
         {
           "id": "10-c-1",
           "title": "Remittance costs as a proportion of the amount remitted",
-          "description": "",
+          "description": "This indicator provides remittance costs as a percentage of the amount remitted",
           "keywords": "",
           "href": "/10-c-1",
           "status": "complete"
