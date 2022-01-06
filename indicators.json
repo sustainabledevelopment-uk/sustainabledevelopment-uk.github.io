@@ -153,9 +153,9 @@
           "id": "2-2-3",
           "title": "Prevalence of anaemia in women aged 15 to 49 years, by pregnancy status (percentage)",
           "description": "",
-          "keywords": "",
+          "keywords": "Anaemia;",
           "href": "/2-2-3",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "2-3-1",
@@ -264,8 +264,8 @@
         {
           "id": "3-2-2",
           "title": "Neonatal mortality rate",
-          "description": "Probability that a child born in a specific year or period will die during the first 28 completed days of life if subject to age-specific mortality rates of that period, expressed per 1000 live births. Neonatal deaths (deaths among live births during the first 28 completed days of life) may be subdivided into early neonatal deaths, occurring during the first 7 days of life, and late neonatal deaths, occurring after the 7th day but before the 28th completed day of life.",
-          "keywords": "map",
+          "description": "These data show the number of neonatal deaths per 1,000 live births in the UK. These statististics are derived from information recorded when births and deaths are registered in England and Wales as part of civil registration, a legal requirement. Data presented by the UN may differ as a Beyesian model is used for the international methodology.",
+          "keywords": "map, map",
           "href": "/3-2-2",
           "status": "complete"
         },
@@ -536,8 +536,8 @@
         {
           "id": "4-7-1",
           "title": "Extent to which (i) global citizenship education and (ii) education for sustainable development are mainstreamed in (a) national education policies; (b) curricula; (c) teacher education; and (d) student assessment",
-          "description": "",
-          "keywords": "Non-statistical, legislation, policy",
+          "description": "Indicator 4.7.1/12.8.1/13.3.1 measures the extent to which countries mainstream Global Citizenship Education (GCED) and Education for Sustainable Development (ESD) in their education systems.",
+          "keywords": "",
           "href": "/4-7-1",
           "status": "complete"
         },
