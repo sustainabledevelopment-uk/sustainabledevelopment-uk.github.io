@@ -136,7 +136,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20220125164352">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20220127153809">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -532,6 +532,12 @@ data-event-label="high"
   
 
   
+<div class="row metadata-available-indicator">
+  <div class="col-xs-12">
+    <h2>Malaria incidence per 100,000 population</h2>
+  </div>
+</div>
+
 
   
 
@@ -564,7 +570,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Rate per 100,000 population&quot;,&quot;Number of cases&quot;,&quot;Percentage (%) of total cases&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Country&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;England&quot;,&quot;Northern Ireland&quot;,&quot;Scotland&quot;,&quot;Wales&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Country&quot;},{&quot;name&quot;:&quot;Country of birth&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Born in Africa&quot;,&quot;Born in UK&quot;,&quot;Born in Indian subcontinent&quot;,&quot;Born in Europe (non-UK)&quot;,&quot;Other country of birth&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Country of birth&quot;},{&quot;name&quot;:&quot;Sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Age&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;4 and under&quot;,&quot;5 to 9&quot;,&quot;10 to 14&quot;,&quot;15 to 19&quot;,&quot;20 to 24&quot;,&quot;25 to 29&quot;,&quot;30 to 34&quot;,&quot;35 to 39&quot;,&quot;40 to 44&quot;,&quot;45 to 49&quot;,&quot;50 to 54&quot;,&quot;55 to 59&quot;,&quot;60 to 64&quot;,&quot;65 to 69&quot;,&quot;70 and over&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age&quot;},{&quot;name&quot;:&quot;Ethnic Group&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;White British&quot;,&quot;Indian/Pakistani/Bangladesh (ISC)/ISC descent&quot;,&quot;Black African/African descent&quot;,&quot;Other/Mixed&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Ethnic Group&quot;},{&quot;name&quot;:&quot;Fatality&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Fatal&quot;,&quot;Non-fatal&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Fatality&quot;},{&quot;name&quot;:&quot;Malaria species&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;P. falciparum&quot;,&quot;P. malariae&quot;,&quot;P. knowlesi&quot;,&quot;P. ovale&quot;,&quot;P. unspecified&quot;,&quot;P. vivax&quot;,&quot;Mixed&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Malaria species&quot;},{&quot;name&quot;:&quot;Region&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;East&quot;,&quot;East Midlands&quot;,&quot;London&quot;,&quot;North East&quot;,&quot;North West&quot;,&quot;South East&quot;,&quot;South West&quot;,&quot;West Midlands&quot;,&quot;Yorkshire and The Humber&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Region&quot;},{&quot;name&quot;:&quot;Region of travel&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Western Africa&quot;,&quot;Eastern Africa&quot;,&quot;Middle Africa&quot;,&quot;Northern Africa&quot;,&quot;Southern Africa&quot;,&quot;Africa unspecified&quot;,&quot;Southern Asia&quot;,&quot;South-Eastern Asia&quot;,&quot;Western Asia&quot;,&quot;Caribbean&quot;,&quot;Central America&quot;,&quot;South America&quot;,&quot;Oceania&quot;,&quot;Not stated&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Region of travel&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Unit measure&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit measure&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Rate per 100,000 population&quot;,&quot;Number of cases&quot;,&quot;Percentage (%) of total cases&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Country&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;England&quot;,&quot;Northern Ireland&quot;,&quot;Scotland&quot;,&quot;Wales&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Country&quot;},{&quot;name&quot;:&quot;Country of birth&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Born in Africa&quot;,&quot;Born in UK&quot;,&quot;Born in Indian subcontinent&quot;,&quot;Born in Europe (non-UK)&quot;,&quot;Other country of birth&quot;,&quot;Born in Southern Asia&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Country of birth&quot;},{&quot;name&quot;:&quot;Sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Age&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;4 and under&quot;,&quot;5 to 9&quot;,&quot;10 to 14&quot;,&quot;15 to 19&quot;,&quot;20 to 24&quot;,&quot;25 to 29&quot;,&quot;30 to 34&quot;,&quot;35 to 39&quot;,&quot;40 to 44&quot;,&quot;45 to 49&quot;,&quot;50 to 54&quot;,&quot;55 to 59&quot;,&quot;60 to 64&quot;,&quot;65 to 69&quot;,&quot;70 and over&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age&quot;},{&quot;name&quot;:&quot;Ethnic Group&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;White British&quot;,&quot;Indian/Pakistani/Bangladesh (ISC)/ISC descent&quot;,&quot;Black African/African descent&quot;,&quot;Other/Mixed&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Ethnic Group&quot;},{&quot;name&quot;:&quot;Fatality&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Fatal&quot;,&quot;Non-fatal&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Fatality&quot;},{&quot;name&quot;:&quot;Malaria species&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;P. falciparum&quot;,&quot;P. malariae&quot;,&quot;P. knowlesi&quot;,&quot;P. ovale&quot;,&quot;P. unspecified&quot;,&quot;P. vivax&quot;,&quot;Mixed&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Malaria species&quot;},{&quot;name&quot;:&quot;Region&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;East&quot;,&quot;East Midlands&quot;,&quot;London&quot;,&quot;North East&quot;,&quot;North West&quot;,&quot;South East&quot;,&quot;South West&quot;,&quot;West Midlands&quot;,&quot;Yorkshire and The Humber&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Region&quot;},{&quot;name&quot;:&quot;Region of travel&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Western Africa&quot;,&quot;Eastern Africa&quot;,&quot;Middle Africa&quot;,&quot;Northern Africa&quot;,&quot;Southern Africa&quot;,&quot;Africa unspecified&quot;,&quot;Southern Asia&quot;,&quot;South-Eastern Asia&quot;,&quot;Western Asia&quot;,&quot;Caribbean&quot;,&quot;Central America&quot;,&quot;South America&quot;,&quot;Oceania&quot;,&quot;Not stated&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Region of travel&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Rate per 100,000 population&quot;,&quot;Number&quot;,&quot;Percentage (%)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
 >
@@ -614,6 +620,10 @@ data-event-label="high"
         
         
         
+        <th scope="col">Series</th>
+        
+        
+        
         <th scope="col">GeoCode</th>
         
         
@@ -622,11 +632,7 @@ data-event-label="high"
         
         
         
-        <th scope="col">Unit multiplier</th>
-        
-        
-        
-        <th scope="col" class="table-value">Unit measure</th>
+        <th scope="col" class="table-value">Unit multiplier</th>
         
         
       </thead>
@@ -647,19 +653,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -679,19 +685,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -711,19 +717,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -743,19 +749,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -775,19 +781,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -807,19 +813,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -839,19 +845,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -871,19 +877,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -903,19 +909,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -935,19 +941,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -967,19 +973,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -999,19 +1005,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1031,19 +1037,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1063,19 +1069,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1095,19 +1101,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1127,19 +1133,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1159,19 +1165,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1191,19 +1197,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1223,19 +1229,51 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
+          <td class="table-value">Units</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
           
           
           
-          <td class="table-value">Rate per 100,000 population</td>
+          <td>2.573476304</td>
+          
+          
+          
+          <td>Rate per 100,000 population</td>
+          
+          
+          
+          <td>Rate per 100,000 population</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1255,19 +1293,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1287,19 +1325,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1319,19 +1357,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1351,19 +1389,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1383,19 +1421,19 @@ data-event-label="high"
           
           
           
+          <td>Rate per 100,000 population</td>
+          
+          
+          
           <td></td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Rate per 100,000 population</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1411,6 +1449,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1419,15 +1461,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1443,6 +1481,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1451,15 +1493,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1475,6 +1513,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1483,15 +1525,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1507,6 +1545,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1515,15 +1557,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1539,6 +1577,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1547,15 +1589,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1571,6 +1609,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1579,15 +1621,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1603,6 +1641,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1611,15 +1653,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1635,6 +1673,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1643,15 +1685,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1667,6 +1705,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1675,15 +1717,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1699,6 +1737,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1707,15 +1749,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1731,6 +1769,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1739,15 +1781,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1763,6 +1801,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1771,15 +1813,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1795,6 +1833,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1803,15 +1845,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1827,6 +1865,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1835,15 +1877,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1859,6 +1897,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1867,15 +1909,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1891,6 +1929,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1899,15 +1941,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1923,6 +1961,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1931,15 +1973,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1955,6 +1993,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1963,15 +2005,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1987,6 +2025,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -1995,15 +2037,43 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
+          <td class="table-value">Units</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
           
           
           
-          <td class="table-value">Number</td>
+          <td>1719.0</td>
+          
+          
+          
+          <td>Number</td>
+          
+          
+          
+          <td>Number of cases</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2019,6 +2089,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -2027,15 +2101,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2051,6 +2121,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -2059,15 +2133,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2083,6 +2153,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -2091,15 +2165,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2115,6 +2185,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -2123,15 +2197,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2147,6 +2217,10 @@ data-event-label="high"
           
           
           
+          <td>Number</td>
+          
+          
+          
           <td>Number of cases</td>
           
           
@@ -2155,15 +2229,11 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2174,7 +2244,7 @@ data-event-label="high"
 
   <div id="datatableFooter">
     
-    <p>Source: Public Health England (PHE)</p>
+    <p>Source: United Kingdom Health Security Agency (UKHSA)</p>
     
     
     <p>Geographical Area: United Kingdom</p>
@@ -2550,7 +2620,7 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
         <dt>Source:</dt>
-        <dd>Public Health England (PHE), Office for National Statistics (ONS)</dd>
+        <dd>United Kingdom Health Security Agency (UKHSA), Office for National Statistics (ONS)</dd>
         
 
         
@@ -2601,7 +2671,7 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
         <dt>Source:</dt>
-        <dd>Public Health England (PHE), Office for National Statistics (ONS)</dd>
+        <dd>United Kingdom Health Security Agency (UKHSA), Office for National Statistics (ONS)</dd>
         
 
         
@@ -2643,7 +2713,7 @@ opensdg.chartConfigAlter(function(config, info) {
     <dl>
         
         <dt>Source:</dt>
-        <dd>Public Health England (PHE), Office for National Statistics (ONS)</dd>
+        <dd>United Kingdom Health Security Agency (UKHSA), Office for National Statistics (ONS)</dd>
         
 
         
@@ -2737,7 +2807,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            
+            <p>Malaria incidence per 100,000 population</p>
 
           
         </td>
@@ -2857,7 +2927,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Data last updated </th>
         <td>
           
-            25 January 2022
+            27 January 2022
           
         </td>
         </tr>
@@ -2870,7 +2940,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            25 January 2022
+            27 January 2022
           
         </td>
         </tr>
@@ -3295,7 +3365,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p>Public Health England (PHE)</p>
+            <p>United Kingdom Health Security Agency (UKHSA)</p>
 
           
         </td>
@@ -3358,7 +3428,7 @@ data-event-label="Change to Sources tab"
 
             
               <a href="https://www.gov.uk/government/publications/imported-malaria-in-the-uk-statistics" target="_blank">
-                Imported Malaria in the UK <span class="visuallyhidden">opens in a new window</span>
+                Discontinued <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -3391,7 +3461,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            <p>TBC</p>
+            
 
           
         </td>
@@ -3433,7 +3503,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            
+            <p>2000-2018 tables only.</p>
 
           
         </td>
@@ -3628,7 +3698,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            <p>1898</p>
+            <p>1981</p>
 
           
         </td>
@@ -3683,7 +3753,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            24 June 2020
+            25 June 2021
           
         </td>
         </tr>
@@ -3696,7 +3766,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            <p>01/06/2021</p>
+            <p>01/09/2022</p>
 
           
         </td>
@@ -3905,7 +3975,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p>Public Health England (PHE)</p>
+            <p>United Kingdom Health Security Agency (UKHSA)</p>
 
           
         </td>
@@ -3988,7 +4058,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            05 July 2019
+            02 June 2021
           
         </td>
         </tr>
@@ -4391,7 +4461,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20220125164352'></script>
+<script src='/assets/js/sdg.js?v=20220127153809'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -4399,7 +4469,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20220125164352"></script><script>
+    <script src="/assets/js/custom.js?v=20220127153809"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
