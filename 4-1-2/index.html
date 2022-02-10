@@ -136,7 +136,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20220203131249">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20220210151735">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -532,6 +532,12 @@ data-event-label="high"
   
 
   
+<div class="row metadata-available-indicator">
+  <div class="col-xs-12">
+    <h2>Completion rate for primary and lower secondary education is used. For upper secondary education completion rate a proxy for GCSE attainment at KS4 (in state-funded schools) is used.</h2>
+  </div>
+</div>
+
 
   
 
@@ -1063,7 +1069,7 @@ data-event-label="high"
     <p>Unit of Measurement: Percentage (%)</p>
     
     
-    <p>Footnote: <p>Primary and Lower secondary completion rates do not adjust for students who drop out during the final year of education. Thus this rate is a proxy that should be taken as an upper estimate of the actual completion rate.</p></p>
+    <p>Footnote: <p>Primary and Lower secondary completion rates do not adjust for students who drop out during the final year of education. Thus this rate is a proxy that should be taken as an upper estimate of the actual completion rate.</p> <p>Please note the y axis does not go to 100% for ease of visualisation.</p></p>
     
   </div>
 
@@ -1424,7 +1430,7 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
         <dt>Footnote:</dt>
-        <dd><p>Primary and Lower secondary completion rates do not adjust for students who drop out during the final year of education. Thus this rate is a proxy that should be taken as an upper estimate of the actual completion rate.</p></dd>
+        <dd><p>Primary and Lower secondary completion rates do not adjust for students who drop out during the final year of education. Thus this rate is a proxy that should be taken as an upper estimate of the actual completion rate.</p> <p>Please note the y axis does not go to 100% for ease of visualisation.</p></dd>
         
 
         
@@ -1478,7 +1484,7 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
         <dt>Footnote:</dt>
-        <dd><p>Primary and Lower secondary completion rates do not adjust for students who drop out during the final year of education. Thus this rate is a proxy that should be taken as an upper estimate of the actual completion rate.</p></dd>
+        <dd><p>Primary and Lower secondary completion rates do not adjust for students who drop out during the final year of education. Thus this rate is a proxy that should be taken as an upper estimate of the actual completion rate.</p> <p>Please note the y axis does not go to 100% for ease of visualisation.</p></dd>
         
 
         
@@ -1559,7 +1565,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            
+            <p>Completion rate for primary and lower secondary education is used. For upper secondary education completion rate a proxy for GCSE attainment at KS4 (in state-funded schools) is used.</p>
 
           
         </td>
@@ -1674,7 +1680,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Data last updated </th>
         <td>
           
-            03 February 2022
+            10 February 2022
           
         </td>
         </tr>
@@ -1687,7 +1693,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            03 February 2022
+            10 February 2022
           
         </td>
         </tr>
@@ -3201,7 +3207,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20220203131249'></script>
+<script src='/assets/js/sdg.js?v=20220210151735'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -3209,7 +3215,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20220203131249"></script><script>
+    <script src="/assets/js/custom.js?v=20220210151735"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
