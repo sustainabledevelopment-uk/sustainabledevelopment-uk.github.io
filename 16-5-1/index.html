@@ -136,7 +136,7 @@ var translations = {
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" crossorigin="">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20220210151735">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20220218123104">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -570,7 +570,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Corruption offence type&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Requesting, agreeing to receive and accepting bribes&quot;,&quot;Offering, promising or giving bribes&quot;,&quot;Misconduct in a public office&quot;,&quot;Commercial organisation - failure to prevent associate bribing another with intent to obtain or retain business or advantage&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Corruption offence type&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Unit measure&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit measure&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Corruption offence type&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Requesting, agreeing to receive and accepting bribes&quot;,&quot;Offering, promising or giving bribes&quot;,&quot;Misconduct in a public office&quot;,&quot;Commercial organisation - failure to prevent associate bribing another with intent to obtain or retain business or advantage&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Corruption offence type&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Unit measure&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit measure&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
 >
@@ -633,35 +633,11 @@ data-event-label="high"
         <tr>
           
           
-          <td>Year ending March 2018</td>
+          <td>2017/18</td>
           
           
           
-          <td>105.0</td>
-          
-          
-          
-          <td>Normal Value</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Number of offences</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>Year ending March 2019</td>
-          
-          
-          
-          <td>143.0</td>
+          <td>105</td>
           
           
           
@@ -681,11 +657,11 @@ data-event-label="high"
         <tr>
           
           
-          <td>Year ending March 2020</td>
+          <td>2018/19</td>
           
           
           
-          <td>109.0</td>
+          <td>143</td>
           
           
           
@@ -705,11 +681,35 @@ data-event-label="high"
         <tr>
           
           
-          <td>Year ending March 2021</td>
+          <td>2019/20</td>
           
           
           
-          <td>120.0</td>
+          <td>109</td>
+          
+          
+          
+          <td>Normal Value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Number of offences</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020/21</td>
+          
+          
+          
+          <td>120</td>
           
           
           
@@ -741,7 +741,7 @@ data-event-label="high"
     <p>Unit of Measurement: Number of offences</p>
     
     
-    <p>Footnote: 1. Police recorded crime data are not designated as National Statistics. 2. Due to small numbers, any differences should be interpreted with caution. 3. Police recorded crime supplied by the Home Office is updated regularly so data may have changed and superseded previous publications from the data source.</p>
+    <p>Footnote: 1. Police recorded crime data are not designated as National Statistics. 2. Due to small numbers, any differences should be interpreted with caution. 3. Police recorded crime supplied by the Home Office is updated regularly so data may have changed and superseded previous publications from the data source. 4. Each year runs from April 1st to March 31st.</p>
     
   </div>
 
@@ -1102,7 +1102,7 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
         <dt>Footnote:</dt>
-        <dd>1. Police recorded crime data are not designated as National Statistics. 2. Due to small numbers, any differences should be interpreted with caution. 3. Police recorded crime supplied by the Home Office is updated regularly so data may have changed and superseded previous publications from the data source.</dd>
+        <dd>1. Police recorded crime data are not designated as National Statistics. 2. Due to small numbers, any differences should be interpreted with caution. 3. Police recorded crime supplied by the Home Office is updated regularly so data may have changed and superseded previous publications from the data source. 4. Each year runs from April 1st to March 31st.</dd>
         
 
         
@@ -1156,7 +1156,7 @@ opensdg.chartConfigAlter(function(config, info) {
 
         
         <dt>Footnote:</dt>
-        <dd>1. Police recorded crime data are not designated as National Statistics. 2. Due to small numbers, any differences should be interpreted with caution. 3. Police recorded crime supplied by the Home Office is updated regularly so data may have changed and superseded previous publications from the data source.</dd>
+        <dd>1. Police recorded crime data are not designated as National Statistics. 2. Due to small numbers, any differences should be interpreted with caution. 3. Police recorded crime supplied by the Home Office is updated regularly so data may have changed and superseded previous publications from the data source. 4. Each year runs from April 1st to March 31st.</dd>
         
 
         
@@ -1350,7 +1350,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Data last updated </th>
         <td>
           
-            10 February 2022
+            18 February 2022
           
         </td>
         </tr>
@@ -1363,7 +1363,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            10 February 2022
+            18 February 2022
           
         </td>
         </tr>
@@ -2287,7 +2287,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20220210151735'></script>
+<script src='/assets/js/sdg.js?v=20220218123104'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -2295,7 +2295,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20220210151735"></script><script>
+    <script src="/assets/js/custom.js?v=20220218123104"></script><script>
 $(function() {
     if($('#indicatorData').length) {
       var domData = $('#indicatorData').data();
