@@ -144,7 +144,7 @@
         {
           "id": "2-2-2",
           "title": "Prevalence of malnutrition (weight for height >+2 or <-2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight)",
-          "description": "Percentage of 4-5 year old children categorised as underweight, overweight or obese based on body mass index (BMI) classifications.",
+          "description": "Prevalence of malnutrition based on WHO Child Growth Standards is reported under the WHO Child Growth Standards series. Prevalence of malnutrition based on BMI classification data is reported under the BMI classifcations series.",
           "keywords": "Nutrition, health",
           "href": "/2-2-2",
           "status": "complete"
@@ -248,7 +248,7 @@
         {
           "id": "3-1-2",
           "title": "Proportion of births attended by skilled health personnel",
-          "description": "Percentage of births occurring within a medical facility, by age",
+          "description": "Percentage of births occurring within either an NHS or non-NHS medical facility, by age of mother and number of previous live born children.    This indicator is a proxy indicator. We are reporting data on births occurring within medical facilities and have not included home births. Home births will on many occasions have a skilled health professional present. There will be some home births which occur without a midwife but an ambulance is sent, arriving just before or soon after the birth.",
           "keywords": "map",
           "href": "/3-1-2",
           "status": "complete"
@@ -1131,7 +1131,7 @@
           "description": "",
           "keywords": "",
           "href": "/10-5-1",
-          "status": "notstarted"
+          "status": "complete"
         },
         {
           "id": "10-6-1",
