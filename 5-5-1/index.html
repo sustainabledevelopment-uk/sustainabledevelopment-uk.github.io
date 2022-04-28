@@ -139,7 +139,7 @@ var translations = {
         
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20220413133401">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20220428102424">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -400,6 +400,12 @@ data-event-label="high"
   
 
   
+<div class="row metadata-available-indicator">
+  <div class="col-xs-12">
+    <h2>5.5.1 - Proportion of seats held by women in (a) national parliaments and (b) local governments</h2>
+  </div>
+</div>
+
 
   
 
@@ -407,20 +413,18 @@ data-event-label="high"
 
 <div class="row" id="page-content">
   <div class="col-xs-12">
-    <p>The data shows the percentage of women who hold seats in national parliament, devolved parliaments and assemblies, and local authority councils for all countries of the UK. 
+    <p>The data shows the percentage of women who hold seats in national parliament, devolved parliaments and assemblies, and local authority councils for all countries of the UK where data are available.
 The data are presented in nine categories. The House of Commons and House of Lords are representative of the entirety of the UK. In contrast, the data for local authority councillors are separated by country as are the devolved parliament and assembly seats of Scotland, Wales and Northern Ireland.</p>
 
-<p>•	Since 1918, when women were first permitted to stand as MPs, the UK has had a total of 491 elected female members to the House of Commons (up to end of August 2019).</p>
+<p>•	 Since 1918, when women were first permitted to stand as MPs, the UK has had a total of Since 1918, 559 different women have been elected to the House of Commons (as of 04/03/2022).</p>
 
-<p>•	Until 1997 there had never been more than 10% of seats held by women. Data for 2017 shows that 32% of seats in the House of Commons were occupied by female MPs, a record high.</p>
+<p>•	 Until 1997 there had never been more than 10% of seats held by women. There are currently 225 female MPs in the House of Commons. At 35%, this is an all-time high.</p>
 
-<p>•	Of the 782 members of the House of Lords in 2017, 206 were women, making up 26%.</p>
+<p>•	 There are 229 female Members of the House of Lords, making up 28%.</p>
 
-<p>•	Since its devolution in 1999, the Welsh Government has consistently had at least 40% female Assembly Members.</p>
+<p>• Six ministers in the current Cabinet (27%) are women. The highest proportion of women in Cabinet was 36% between 2006 and 2007.</p>
 
-<p>•	Women have made up between 30-40% of seats in the Scottish Parliament since 1999. In 2016 the figure stood at 35%.</p>
-
-<p>•	Northern Ireland’s female Assembly Members rose from 13% in 1998 to 30% in 2017.</p>
+<p>• 43% of Members of the Welsh Parliament are women, along with 45% of the Scottish Parliament and 36% of the Northern Ireland Assembly.</p>
 
 <p>See the <a href="https://researchbriefings.files.parliament.uk/documents/SN01250/SN01250.pdf">House of Commons Library Briefing Paper</a> for more information.</p>
 
@@ -436,13 +440,13 @@ The data are presented in nine categories. The House of Commons and House of Lor
   id="indicatorData"
   data-indicatorid='indicator_5-5-1'
   data-id="5-5-1"
-  data-country="UK"
-  data-charttitle="Proportion of seats held by women in national parliaments and local governments"
-  data-charttitles="null"
+  data-country="United Kingdom"
+  data-charttitle="Proportion of seats held by women in (a) national parliaments and (b) local governments"
+  data-charttitles="[{&quot;~ series&quot;:&quot;House of Commons&quot;,&quot;title&quot;:&quot;Proportion of seats held by women in the House of Commons&quot;},{&quot;series&quot;:&quot;House of Lords&quot;,&quot;title&quot;:&quot;Proportion of seats held by women in the House of Lords&quot;},{&quot;series&quot;:&quot;Devolved administration&quot;,&quot;title&quot;:&quot;Proportion of seats held by women in devolved administration&quot;},{&quot;series&quot;:&quot;Local Government&quot;,&quot;title&quot;:&quot;Proportion of seats held by women in local Government&quot;}]"
   data-measurementunit="Percentage (%)"
   data-xaxislabel=""
   data-showdata="true"
-  data-graphtype="bar"
+  data-graphtype="line"
   data-graphtypes="null"
   data-geocoderegex=""
   data-showmap="false"
@@ -453,7 +457,7 @@ The data are presented in nine categories. The House of Commons and House of Lor
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;House of Commons&quot;,&quot;House of Lords&quot;,&quot;Welsh Assembly&quot;,&quot;Scottish Parliament&quot;,&quot;Northern Ireland Assembly&quot;,&quot;English Local Authority Councillors&quot;,&quot;Welsh Local Authority Councillors&quot;,&quot;Northern Ireland Local Authority Councils&quot;,&quot;Scottish Local Authority Councils&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Unit measure&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit measure&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;House of Commons&quot;,&quot;House of Lords&quot;,&quot;Devolved administration&quot;,&quot;Local Government&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Legislative authority&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Senedd Cymru/Welsh Parliament&quot;,&quot;Scottish Parliament/Pàrlamaid na h-Alba&quot;,&quot;Northern Ireland Assembly&quot;,&quot;English Local Authority Councillors&quot;,&quot;Welsh Local Authority Councillors&quot;,&quot;Northern Ireland Local Authority Councillors&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Legislative authority&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Percentage (%)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
 >
@@ -487,7 +491,7 @@ The data are presented in nine categories. The House of Commons and House of Lor
 
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
-      <caption>Proportion of seats held by women in national parliaments and local governments</caption>
+      <caption>Proportion of seats held by women in (a) national parliaments and (b) local governments</caption>
       <thead>
         
         
@@ -503,15 +507,15 @@ The data are presented in nine categories. The House of Commons and House of Lor
         
         
         
+        <th scope="col">Series</th>
+        
+        
+        
         <th scope="col">Observation status</th>
         
         
         
-        <th scope="col">Unit multiplier</th>
-        
-        
-        
-        <th scope="col" class="table-value">Unit measure</th>
+        <th scope="col" class="table-value">Unit multiplier</th>
         
         
       </thead>
@@ -528,19 +532,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -556,19 +560,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -584,19 +588,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -612,19 +616,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -640,19 +644,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -668,19 +672,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -696,19 +700,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -724,19 +728,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -752,19 +756,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -780,19 +784,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -808,19 +812,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -836,19 +840,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -864,19 +868,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -892,19 +896,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -920,19 +924,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -948,19 +952,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -976,19 +980,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1004,19 +1008,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1032,19 +1036,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1060,19 +1064,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1088,19 +1092,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1116,19 +1120,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1144,19 +1148,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1172,19 +1176,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1200,19 +1204,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1228,19 +1232,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1256,19 +1260,47 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Commons</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
+          <td class="table-value">Units</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
+          <td>34.0</td>
+          
+          
+          
+          <td>Percentage (%)</td>
+          
+          
+          
+          <td>House of Commons</td>
+          
+          
+          
+          <td>Normal value</td>
+          
+          
+          
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1284,19 +1316,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1312,19 +1344,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1340,19 +1372,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1368,19 +1400,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1396,19 +1428,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1424,19 +1456,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1452,19 +1484,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1480,19 +1512,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1508,19 +1540,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1536,19 +1568,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1564,19 +1596,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1592,19 +1624,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1620,19 +1652,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1648,19 +1680,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1676,19 +1708,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1704,19 +1736,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1732,19 +1764,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1760,19 +1792,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1788,19 +1820,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1816,19 +1848,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1844,19 +1876,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1872,19 +1904,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1900,19 +1932,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1928,19 +1960,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1956,19 +1988,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -1984,19 +2016,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2012,19 +2044,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2040,19 +2072,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2068,19 +2100,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2096,19 +2128,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2124,19 +2156,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2152,19 +2184,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2180,19 +2212,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2208,19 +2240,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2236,19 +2268,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2264,19 +2296,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2292,19 +2324,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2320,19 +2352,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2348,19 +2380,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2376,19 +2408,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2404,19 +2436,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2432,19 +2464,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2460,19 +2492,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2488,19 +2520,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2516,19 +2548,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2544,19 +2576,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2572,19 +2604,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2600,19 +2632,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2628,19 +2660,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2656,19 +2688,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2684,19 +2716,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2712,19 +2744,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2740,19 +2772,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2768,19 +2800,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2796,19 +2828,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2824,19 +2856,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2852,19 +2884,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -2880,663 +2912,19 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
+          <td>Percentage (%)</td>
+          
+          
+          
           <td>House of Lords</td>
           
           
           
-          <td>Undefined</td>
+          <td>Normal value</td>
           
           
           
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>1999</td>
-          
-          
-          
-          <td>40.0</td>
-          
-          
-          
-          <td>Welsh Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2003</td>
-          
-          
-          
-          <td>50.0</td>
-          
-          
-          
-          <td>Welsh Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2007</td>
-          
-          
-          
-          <td>46.6666666667</td>
-          
-          
-          
-          <td>Welsh Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2011</td>
-          
-          
-          
-          <td>41.6666666667</td>
-          
-          
-          
-          <td>Welsh Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2016</td>
-          
-          
-          
-          <td>41.6666666667</td>
-          
-          
-          
-          <td>Welsh Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>1999</td>
-          
-          
-          
-          <td>37.2093023256</td>
-          
-          
-          
-          <td>Scottish Parliament</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2003</td>
-          
-          
-          
-          <td>39.5348837209</td>
-          
-          
-          
-          <td>Scottish Parliament</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2007</td>
-          
-          
-          
-          <td>33.3333333333</td>
-          
-          
-          
-          <td>Scottish Parliament</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2011</td>
-          
-          
-          
-          <td>34.8837209302</td>
-          
-          
-          
-          <td>Scottish Parliament</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2016</td>
-          
-          
-          
-          <td>34.8837209302</td>
-          
-          
-          
-          <td>Scottish Parliament</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>1998</td>
-          
-          
-          
-          <td>12.962962963</td>
-          
-          
-          
-          <td>Northern Ireland Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2003</td>
-          
-          
-          
-          <td>16.6666666667</td>
-          
-          
-          
-          <td>Northern Ireland Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2007</td>
-          
-          
-          
-          <td>16.6666666667</td>
-          
-          
-          
-          <td>Northern Ireland Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2011</td>
-          
-          
-          
-          <td>18.5185185185</td>
-          
-          
-          
-          <td>Northern Ireland Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2016</td>
-          
-          
-          
-          <td>27.7777777778</td>
-          
-          
-          
-          <td>Northern Ireland Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2017</td>
-          
-          
-          
-          <td>30.0</td>
-          
-          
-          
-          <td>Northern Ireland Assembly</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>1997</td>
-          
-          
-          
-          <td>27.8</td>
-          
-          
-          
-          <td>English Local Authority Councillors</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2001</td>
-          
-          
-          
-          <td>28.5</td>
-          
-          
-          
-          <td>English Local Authority Councillors</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2004</td>
-          
-          
-          
-          <td>29.1</td>
-          
-          
-          
-          <td>English Local Authority Councillors</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2006</td>
-          
-          
-          
-          <td>29.3</td>
-          
-          
-          
-          <td>English Local Authority Councillors</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2008</td>
-          
-          
-          
-          <td>30.8</td>
-          
-          
-          
-          <td>English Local Authority Councillors</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2010</td>
-          
-          
-          
-          <td>30.6</td>
-          
-          
-          
-          <td>English Local Authority Councillors</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2013</td>
-          
-          
-          
-          <td>31.7</td>
-          
-          
-          
-          <td>English Local Authority Councillors</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -3548,107 +2936,23 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
-          <td>35.7</td>
+          <td>26.2195121951</td>
           
           
           
-          <td>English Local Authority Councillors</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Undefined</td>
+          <td>House of Lords</td>
           
           
           
-          <td>Units</td>
+          <td>Normal value</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2004</td>
-          
-          
-          
-          <td>22.0</td>
-          
-          
-          
-          <td>Welsh Local Authority Councillors</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2008</td>
-          
-          
-          
-          <td>25.0</td>
-          
-          
-          
-          <td>Welsh Local Authority Councillors</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2012</td>
-          
-          
-          
-          <td>26.0</td>
-          
-          
-          
-          <td>Welsh Local Authority Councillors</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -3660,51 +2964,23 @@ The data are presented in nine categories. The House of Commons and House of Lor
           
           
           
-          <td>28.0</td>
+          <td>26.6666666667</td>
           
           
           
-          <td>Welsh Local Authority Councillors</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Undefined</td>
+          <td>House of Lords</td>
           
           
           
-          <td>Units</td>
+          <td>Normal value</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2005</td>
-          
-          
-          
-          <td>21.0</td>
-          
-          
-          
-          <td>Northern Ireland Local Authority Councils</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -3712,55 +2988,27 @@ The data are presented in nine categories. The House of Commons and House of Lor
         <tr>
           
           
-          <td>2011</td>
+          <td>2020</td>
           
           
           
-          <td>23.5</td>
+          <td>27.3736128237</td>
           
           
           
-          <td>Northern Ireland Local Authority Councils</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Undefined</td>
+          <td>House of Lords</td>
           
           
           
-          <td>Units</td>
+          <td>Normal value</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2014</td>
-          
-          
-          
-          <td>25.11</td>
-          
-          
-          
-          <td>Northern Ireland Local Authority Councils</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -3768,55 +3016,27 @@ The data are presented in nine categories. The House of Commons and House of Lor
         <tr>
           
           
-          <td>2019</td>
+          <td>2021</td>
           
           
           
-          <td>26.2</td>
+          <td>27.6621787026</td>
           
           
           
-          <td>Northern Ireland Local Authority Councils</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Undefined</td>
+          <td>House of Lords</td>
           
           
           
-          <td>Units</td>
+          <td>Normal value</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>1995</td>
-          
-          
-          
-          <td>23.0</td>
-          
-          
-          
-          <td>Scottish Local Authority Councils</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -3824,139 +3044,27 @@ The data are presented in nine categories. The House of Commons and House of Lor
         <tr>
           
           
-          <td>1999</td>
+          <td>2022</td>
           
           
           
-          <td>24.5</td>
+          <td>27.9951100244</td>
           
           
           
-          <td>Scottish Local Authority Councils</td>
+          <td>Percentage (%)</td>
           
           
           
-          <td>Undefined</td>
+          <td>House of Lords</td>
           
           
           
-          <td>Units</td>
+          <td>Normal value</td>
           
           
           
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2003</td>
-          
-          
-          
-          <td>23.3</td>
-          
-          
-          
-          <td>Scottish Local Authority Councils</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2007</td>
-          
-          
-          
-          <td>21.8</td>
-          
-          
-          
-          <td>Scottish Local Authority Councils</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2012</td>
-          
-          
-          
-          <td>24.3</td>
-          
-          
-          
-          <td>Scottish Local Authority Councils</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2017</td>
-          
-          
-          
-          <td>28.9</td>
-          
-          
-          
-          <td>Scottish Local Authority Councils</td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td>Units</td>
-          
-          
-          
-          <td class="table-value">Percentage (%)</td>
+          <td class="table-value">Units</td>
           
           
         </tr>
@@ -3970,13 +3078,13 @@ The data are presented in nine categories. The House of Commons and House of Lor
     <p>Source: House of Commons Library</p>
     
     
-    <p>Geographical Area: </p>
+    <p>Geographical Area: United Kingdom</p>
     
     
     <p>Unit of Measurement: Percentage (%)</p>
     
     
-    <p>Footnote: 1) Data for the House of Commons are only available for the general election years. 2) In 1974 there were two General elections in February (labelled a) and October (labelled b). 3) Data for the Scottish Parliament, the Welsh Assembly and the Northern Ireland Assembly are calculated at the beginning of an assembly, and do not take into account changes during the course of that assembly. This also applies for Local Authority areas. Years on graph axis represent years in which any election was held. 4) The x-axis is not spaced evenly by year.</p>
+    <p>Footnote: <p> 1) Data for the House of Commons are only available for the general election years. </p><p>2) In 1974 there were two General elections in February (labelled a) and October (labelled b).</p><p> 3) Data for the Scottish Parliament/Pàrlamaid na h-Alba, the Senedd Cymru/Welsh Parliament and the Northern Ireland Assembly are calculated at the beginning of an assembly, and do not take into account changes during the course of that assembly. </p><p> 4) Years on graph axis represent years in which any election was held.</p><p> 5) The x-axis is not spaced evenly by year.</p></p>
     
   </div>
 
@@ -4061,7 +3169,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Proportion of seats held by women in national parliaments and local governments</h4>
+          <h4 id="chart-heading" class="chart-title">Proportion of seats held by women in the House of Commons</h4>
           <div id="chart" class="plot-container">
             
               <canvas
@@ -4083,9 +3191,12 @@ data-event-label="Change to Table tab"
     <dl>
         
         <dt>Source:</dt>
-        <dd>House of Commons Library, House of Lords Library, National Assembly for Wales, The Scottish Parliament, Norther Ireland Assembly, Local Government Association, Local Government Commission, Northern Ireland Assembly, Lincoln University</dd>
+        <dd>House of Commons Library, House of Lords Library, Senedd Research, Scottish Parliament/Pàrlamaid na h-Alba, Northern Ireland Assembly, Local Government Association, Local Government Commission, OSCAR</dd>
         
 
+        
+        <dt>Geographical Area:</dt>
+        <dd>United Kingdom</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data">Unit of Measurement:</dt>
@@ -4095,7 +3206,7 @@ data-event-label="Change to Table tab"
 
         
         <dt>Footnote:</dt>
-        <dd>1) Data for the House of Commons are only available for the general election years. 2) In 1974 there were two General elections in February (labelled a) and October (labelled b). 3) Data for the Scottish Parliament, the Welsh Assembly and the Northern Ireland Assembly are calculated at the beginning of an assembly, and do not take into account changes during the course of that assembly. This also applies for Local Authority areas. Years on graph axis represent years in which any election was held. 4) The x-axis is not spaced evenly by year.</dd>
+        <dd><p> 1) Data for the House of Commons are only available for the general election years. </p><p>2) In 1974 there were two General elections in February (labelled a) and October (labelled b).</p><p> 3) Data for the Scottish Parliament/Pàrlamaid na h-Alba, the Senedd Cymru/Welsh Parliament and the Northern Ireland Assembly are calculated at the beginning of an assembly, and do not take into account changes during the course of that assembly. </p><p> 4) Years on graph axis represent years in which any election was held.</p><p> 5) The x-axis is not spaced evenly by year.</p></dd>
         
 
         
@@ -4154,9 +3265,12 @@ data-event-label="Change to Table tab"
     <dl>
         
         <dt>Source:</dt>
-        <dd>House of Commons Library, House of Lords Library, National Assembly for Wales, The Scottish Parliament, Norther Ireland Assembly, Local Government Association, Local Government Commission, Northern Ireland Assembly, Lincoln University</dd>
+        <dd>House of Commons Library, House of Lords Library, Senedd Research, Scottish Parliament/Pàrlamaid na h-Alba, Northern Ireland Assembly, Local Government Association, Local Government Commission, OSCAR</dd>
         
 
+        
+        <dt>Geographical Area:</dt>
+        <dd>United Kingdom</dd>
         
 
         <dt class="data-controlled-footer-field unit-from-data">Unit of Measurement:</dt>
@@ -4166,7 +3280,7 @@ data-event-label="Change to Table tab"
 
         
         <dt>Footnote:</dt>
-        <dd>1) Data for the House of Commons are only available for the general election years. 2) In 1974 there were two General elections in February (labelled a) and October (labelled b). 3) Data for the Scottish Parliament, the Welsh Assembly and the Northern Ireland Assembly are calculated at the beginning of an assembly, and do not take into account changes during the course of that assembly. This also applies for Local Authority areas. Years on graph axis represent years in which any election was held. 4) The x-axis is not spaced evenly by year.</dd>
+        <dd><p> 1) Data for the House of Commons are only available for the general election years. </p><p>2) In 1974 there were two General elections in February (labelled a) and October (labelled b).</p><p> 3) Data for the Scottish Parliament/Pàrlamaid na h-Alba, the Senedd Cymru/Welsh Parliament and the Northern Ireland Assembly are calculated at the beginning of an assembly, and do not take into account changes during the course of that assembly. </p><p> 4) Years on graph axis represent years in which any election was held.</p><p> 5) The x-axis is not spaced evenly by year.</p></dd>
         
 
         
@@ -4271,7 +3385,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator available </th>
         <td>
           
-            
+            <p>5.5.1 - Proportion of seats held by women in (a) national parliaments and (b) local governments</p>
 
           
         </td>
@@ -4285,7 +3399,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Indicator description </th>
         <td>
           
-            <p>Percentage of seats held in Parliament by members who are women</p>
+            <p>Percentage of seats held in Parliament and Local Government by members who are women</p>
 
           
         </td>
@@ -4299,7 +3413,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            
+            <p>United Kingdom</p>
 
           
         </td>
@@ -4383,7 +3497,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Data last updated </th>
         <td>
           
-            10 March 2022
+            28 April 2022
           
         </td>
         </tr>
@@ -4396,7 +3510,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            10 March 2022
+            28 April 2022
           
         </td>
         </tr>
@@ -4883,7 +3997,7 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://researchbriefings.parliament.uk/ResearchBriefing/Summary/SN01250" target="_blank">
+              <a href="https://commonslibrary.parliament.uk/research-briefings/sn01250/" target="_blank">
                 Women in Parliament and Government <span class="visuallyhidden">opens in a new window</span>
               </a>
             
@@ -4904,7 +4018,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            20 July 2018
+            04 March 2022
           
         </td>
         </tr>
@@ -5264,7 +4378,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>The underlying data from this report has been acquired from the author.</p>
+            <p>The underlying data from this report and more recent data has been acquired from the author.</p>
 
           
         </td>
@@ -5431,7 +4545,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p>National Assembly for Wales</p>
+            <p>Senedd Research</p>
 
           
         </td>
@@ -5569,7 +4683,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            
+            <p>Senedd Cymru/Welsh Parliament data for 1999, 2003, 2007, 2011, 2016. Data for 2021 was taken from Source 1.</p>
 
           
         </td>
@@ -5736,7 +4850,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p>The Scottish Parliament</p>
+            <p>Scottish Parliament/Pàrlamaid na h-Alba</p>
 
           
         </td>
@@ -5798,8 +4912,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="https://www.parliament.scot/parliamentarybusiness/15445.aspx" target="_blank">
-                Female MSPs - Current Session <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://www.parliament.scot/chamber-and-committees/research-prepared-for-parliament/fact-sheets" target="_blank">
+                Female MSPs - Current session fact sheets <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -5819,7 +4933,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            04 August 2017
+            13 October 2021
           
         </td>
         </tr>
@@ -6041,7 +5155,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p>Norther Ireland Assembly</p>
+            <p>Northern Ireland Assembly</p>
 
           
         </td>
@@ -6484,7 +5598,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>Data for 1997 and 2001 are available from previous <a href="https://www.nfer.ac.uk/search/?searchTerm=Census+of+Local+Authority+Councillors+">Census of Local Authority Councillors 2008-2013</a> reports.</p>
+            <p>Data for 2001 are available from previous <a href="https://www.nfer.ac.uk/search/?searchTerm=Census+of+Local+Authority+Councillors+">Census of Local Authority Councillors 2008-2013</a> reports. Discontinuous data for England based on Census of Local Authority Councillors 2018; numbers may not add up as some respondents did not disclose information.</p>
 
           
         </td>
@@ -6734,7 +5848,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            00/04/2017
+            01 April 2017
           
         </td>
         </tr>
@@ -6789,7 +5903,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>2019 data for Welsh local authority councillors is from Source 1.</p>
+            <p>Welsh local authority data for 2004, 2008 and 2012. 2017 data for Welsh local authority councillors is from Source 1.</p>
 
           
         </td>
@@ -7039,7 +6153,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            01 January 1970
+            18 June 2014
           
         </td>
         </tr>
@@ -7094,7 +6208,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>2019 data for Northern Irish local authority councillors is from Source 1.</p>
+            <p>Northern Ireland local authority data for 2005, 2011 and 2014. 2019 data for Northern Irish local authority councillors is from Source 1.</p>
 
           
         </td>
@@ -7261,7 +6375,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p>Lincoln University</p>
+            <p>OSCAR</p>
 
           
         </td>
@@ -7275,7 +6389,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            <p>Discontinuous</p>
+            <p>Continuous</p>
 
           
         </td>
@@ -7289,7 +6403,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            <p>1995</p>
+            <p>2019</p>
 
           
         </td>
@@ -7303,7 +6417,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Geographical coverage </th>
         <td>
           
-            <p>Scotland</p>
+            <p>England and Wales</p>
 
           
         </td>
@@ -7323,8 +6437,8 @@ data-event-label="Change to Sources tab"
             
 
             
-              <a href="http://eprints.lincoln.ac.uk/16698/1/Women%20in%20Scottish%20Local%20Elections%201974-2012%20150209.pdf" target="_blank">
-                Scottish Local Authority Councils <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://www.oscar-research.co.uk/data-intelligence/genderanalysis.php" target="_blank">
+                UK Political Gender Analysis - Historical Analysis of Councillor Gender Across Local Government in England and Wales <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -7344,7 +6458,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            00/04/2016
+            24 February 2022
           
         </td>
         </tr>
@@ -7357,7 +6471,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            <p>TBC</p>
+            <p>N/A</p>
 
           
         </td>
@@ -7385,7 +6499,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            
+            <p>admin@oscar-research.co.uk</p>
 
           
         </td>
@@ -7399,7 +6513,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>2017 data for Scottish local authority councillors is from Source 1.</p>
+            <p>Local authority data for England and Wales for 2019 - 2021, data reflects gender breakdown at June of each year reported. Data are based on historical analysis of public sector database maintained by Oscar Research Ltd. Please be aware that data from 2019 to 2021 does not cover 100% of all council seats in England but is based on analysis of a large sample of council seats (approximately 90%). This is as the data used for these years excludes councils that are outside of Local Government Association (LGA) membership and has had duplicated seats removed (cases when they are held by the same person, typically in areas where there are district and county councils). Although this data  represents the gender profile of councillors overall, comparison of total numbers of council seats should be interpreted with caution.</p>
 
           
         </td>
@@ -7679,7 +6793,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20220413133401'></script>
+<script src='/assets/js/sdg.js?v=20220428102424'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -7687,7 +6801,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20220413133401"></script><script>
+    <script src="/assets/js/custom.js?v=20220428102424"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
