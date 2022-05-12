@@ -128,7 +128,7 @@
         {
           "id": "2-1-2",
           "title": "Prevalence of moderate or severe food insecurity in the population, based on the Food Insecurity Experience Scale (FIES)",
-          "description": "The proportion of households in the United Kingdom that are classified and having low or very low food security. The questions used are based on a suite of food security questions developed by the <a href='https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the- us/survey-tools/#household'>US Department of Agriculture (USDA)</a>. Questions are asked of the ‘last 30 days'. This is an important difference to the UN metadata and other UK measures of food insecurity, which use questions based on ‘the last 12 months’. The question set is presented in table 9.10 of the source data.",
+          "description": "The proportion of households in the United Kingdom that are classified and having low or very low food security. The questions used are based on a suite of food security questions developed by the <a href='https://www.ers.usda.gov/topics/food-nutrition-assistance/food-security-in-the- u-s/survey-tools/#household'>US Department of Agriculture (USDA)</a>. Questions are asked of the ‘last 30 days'. This is an important difference to the UN metadata and other UK measures of food insecurity, which use questions based on ‘the last 12 months’. The question set is presented in table 9.10 of the source data.",
           "keywords": "FIES, food insecurity, UNSD, hunger, zero hunger, food security",
           "href": "/2-1-2",
           "status": "complete"
@@ -256,7 +256,7 @@
         {
           "id": "3-2-1",
           "title": "Under‐5 mortality rate",
-          "description": "The average number of expected deaths before the age of 5 per 1,000 live births for a specific year.",
+          "description": "Number of deaths before the age of 5 for each year per 1,000 live births in the same year.",
           "keywords": "",
           "href": "/3-2-1",
           "status": "complete"
@@ -264,7 +264,7 @@
         {
           "id": "3-2-2",
           "title": "Neonatal mortality rate",
-          "description": "These data show the number of neonatal deaths per 1,000 live births in the UK. These statististics are derived from information recorded when births and deaths are registered in England and Wales as part of civil registration, a legal requirement. Data presented by the UN may differ as a Beyesian model is used for the international methodology.",
+          "description": "These data show the number of neonatal deaths per 1,000 live births in the UK. These statististics are derived from information recorded when births and deaths are registered in England and Wales as part of civil registration, a legal requirement. Data presented by the UN may differ as a Bayesian model is used for the international methodology.",
           "keywords": "map, map",
           "href": "/3-2-2",
           "status": "complete"
@@ -2024,7 +2024,7 @@
         {
           "id": "17-11-1",
           "title": "Developing countries’ and least developed countries’ share of global exports",
-          "description": "Developing countries' and least developed countries' share of UK imports, including both goods and services",
+          "description": "This indicator is not directly relevant to the UK as it is a developed country. We therefore report developing countries' and least developed countries' share of UK imports, including both goods and services. This provides an indication of the UK's trade engagement with these countries.",
           "keywords": "",
           "href": "/17-11-1",
           "status": "complete"
