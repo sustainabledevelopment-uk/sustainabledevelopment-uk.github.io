@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'http://uk-sdg-feature-branches.s3-website.eu-west-2.amazonaws.com/feature-2.0.0-data/en',
+  remoteDataBaseUrl: 'https://sdgdata.gov.uk/sdg-data/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -109,8 +109,6 @@ var translations = {
         <meta name="description" content="">
         <meta property="og:description" content="">
         
-        <meta name="robots" content="noindex, nofollow">
-        
         <link rel="canonical" href="/">
 
         <!--[if IE 9]>
@@ -128,7 +126,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20220704094317">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20220704155103">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -137,6 +135,23 @@ var translations = {
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
+          <!-- Global site tag (gtag.js) - Google Analytics -->
+<script
+    type="text/plain" data-type="application/javascript" data-name="google-analytics"
+    async
+    data-src="https://www.googletagmanager.com/gtag/js?id=G-JP2PR9QKW9"></script>
+<script type="text/plain" data-type="application/javascript" data-name="google-analytics">
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-JP2PR9QKW9', {
+    'anonymize_ip': true,
+    'forceSSL': true,
+  });
+</script>
+
+        
         
 
         <!--[if IE]>
@@ -497,9 +512,9 @@ data-event-label="high"
   <div id="datatables">
 
     
-    <a href="http://uk-sdg-feature-branches.s3-website.eu-west-2.amazonaws.com/feature-2.0.0-data/en/headline/archived-8-9-2.csv" class="btn btn-primary btn-download" download="indicator_archived-8-9-2.csv" tabindex="0" role="button">Download Headline CSV</a>
+    <a href="https://sdgdata.gov.uk/sdg-data/en/headline/archived-8-9-2.csv" class="btn btn-primary btn-download" download="indicator_archived-8-9-2.csv" tabindex="0" role="button">Download Headline CSV</a>
     
-    <a href="http://uk-sdg-feature-branches.s3-website.eu-west-2.amazonaws.com/feature-2.0.0-data/en/data/archived-8-9-2.csv" class="btn btn-primary btn-download" download='indicator_archived-8-9-2.csv' tabindex='0' role='button'>Download Source CSV</a>
+    <a href="https://sdgdata.gov.uk/sdg-data/en/data/archived-8-9-2.csv" class="btn btn-primary btn-download" download='indicator_archived-8-9-2.csv' tabindex='0' role='button'>Download Source CSV</a>
 
     <p class="no-js-disaggregation-hint">Download source CSV for disaggregations</p>
 
@@ -997,10 +1012,6 @@ data-event-label="Change to Sources tab"
 
     
     
-        <li role="presentation" class="nav-item">
-            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#edit" aria-controls="edit" role="tab">Edit</a>
-        </li>
-    
 </ul>
 
 <div class="tab-content">
@@ -1161,7 +1172,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            27 June 2022
+            08 April 2021
           
         </td>
         </tr>
@@ -1836,22 +1847,6 @@ data-event-label="Change to Sources tab"
 </div>
     
     
-        <div role="tabpanel" class="tab-pane" id="edit">
-            <div class="edit-container">
-  
-  <a class="btn btn-primary" href="http://prose.io/#//edit//data/indicator_archived-8-9-2.csv">Edit Data</a>
-  
-
-  
-  <a class="btn btn-primary" href="http://prose.io/#//edit//meta/archived-8-9-2.md">Edit Metadata</a>
-  
-
-  
-
-</div>
-
-        </div>
-    
 </div>
   
 </div>
@@ -1894,10 +1889,6 @@ data-event-label="Change to Sources tab"
                         </li>
                         
                         
-                        
-                        <li>
-                            <a href="/config">Configuration</a>
-                        </li>
                         </ul>
                 </div>
             </div>
@@ -2088,6 +2079,23 @@ if (allRequired) {
 
 
 
+  <script type="text/plain" data-type="application/javascript" data-name="google-analytics">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-108503280-1', 'auto');
+ga('require', 'eventTracker', {
+    attributePrefix: 'data-'
+});
+// anonymize user IPs (chops off the last IP triplet)
+ga('set', 'anonymizeIp', true);
+// forces SSL even if the page were somehow loaded over http://
+ga('set', 'forceSSL', true);
+ga('send', 'pageview');
+</script>
+
 
 
 
@@ -2097,7 +2105,7 @@ if (allRequired) {
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20220704094317'></script>
+<script src='/assets/js/sdg.js?v=20220704155103'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -2105,7 +2113,7 @@ if (allRequired) {
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20220704094317"></script><script>
+    <script src="/assets/js/custom.js?v=20220704155103"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
