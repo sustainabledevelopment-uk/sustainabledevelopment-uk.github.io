@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://sdgdata.gov.uk/sdg-data/en',
+  remoteDataBaseUrl: 'http://uk-sdg-feature-branches.s3-website.eu-west-2.amazonaws.com/feature-2.0.0-data/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -40,10 +40,6 @@ var opensdg = {
 
   language: 'en',
 };
-
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
 
 </script>
 
@@ -110,31 +106,26 @@ var translations = {
         <meta name="description" content="">
         <meta property="og:description" content="">
         
+        <meta name="robots" content="noindex, nofollow">
+        
         <link rel="canonical" href="/">
 
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        
-
-
-
-
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
 
 
         
-        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20220624154215">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20220704094317">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -143,24 +134,11 @@ var translations = {
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-<script
-    type="text/plain" data-type="application/javascript" data-name="google-analytics"
-    async
-    data-src="https://www.googletagmanager.com/gtag/js?id=G-JP2PR9QKW9"></script>
-<script type="text/plain" data-type="application/javascript" data-name="google-analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JP2PR9QKW9', {
-    'anonymize_ip': true,
-    'forceSSL': true,
-  });
-</script>
-
         
-        
+
+        <!--[if IE]>
+        <link rel="stylesheet" href="/assets/css/ie.css">
+        <![endif]-->
 
         <link rel="stylesheet" href="/assets/css/govuk.css">
 <!-- Hotjar Tracking Code for https://sdgdata.gov.uk/ -->
@@ -179,15 +157,13 @@ var translations = {
 
     </head>
 <body class="language-en
-layout-reportingstatus-bootstrap5
+layout-reportingstatus
 ">
 <!-- <div class="container"> -->
 
 
 
-
-
-<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
+<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 
@@ -253,6 +229,10 @@ layout-reportingstatus-bootstrap5
   </div>
 </div>
 
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title">This internet browser is no longer supported</h2>
+    <p class="internet-explorer-message-body">We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.</p>
+</div>
 <div id="disclaimer">
     
 <div class="container">
@@ -329,23 +309,32 @@ data-event-label="high"
 
 
 
-
+<div class="container">
+  <nav>
+    <ol aria-label="breadcrumb" class="breadcrumb" style="--bs-breadcrumb-divider: '&rsaquo;';">
+        <li class="breadcrumb-item" >
+            <a href="/">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Reporting Status</li>
+    </ol>
+</nav>
+</div>
 <div id="main-content" class="container reportingstatus" role="main">
 
   <h1>
   
-    Reporting status
+    
   
 </h1>
 
 
 <div class="reporting-status-description">
   
-<p>Reporting status provides an overview of how much Sustainable Development Goal (SDG) data the UK reports. For more information, see <a href="https://sdgdata.gov.uk/faq/#what-does-the-reporting-status-mean">What does the reporting status mean?</a></p>
+<p>Reporting status provides an overview of how much Sustainable Development Goal (SDG) data the UK reports. For more information, see <a href="https://onsdigital.github.io/sdg-indicators/faq/#what-does-the-reporting-status-mean">What does the reporting status mean?</a></p>
 
-<p>Disaggregation status provides an overview of how many of the SDG indicators are disaggregated. For more information, see <a href="https://sdgdata.gov.uk/faq/#what-does-the-disaggregation-status-mean">What does the disaggregation status mean?</a></p>
+<p>Disaggregation status provides an overview of how many of the SDG indicators are disaggregated. For more information, see <a href="https://onsdigital.github.io/sdg-indicators/faq/#what-does-the-disaggregation-status-mean">What does the disaggregation status mean?</a></p>
 
-<p>For details about all available disaggregations and how each indicator is disaggregated, see the <a href="https://sdgdata.gov.uk/sdg-data/disaggregations.html">UK disaggregation report</a>.</p>
+<p>For details about all available disaggregations and how each indicator is disaggregated, see the <a href="https://onsdigital.github.io/sdg-data/disaggregations.html">UK disaggregation report</a>.</p>
 
 <p>Note: These percentages have been rounded. As a result, adding them together may not equal exactly 100%.</p>
 
@@ -357,7 +346,7 @@ data-event-label="high"
   
   <ul class="nav nav-tabs reporting-status-view" role="tablist">
     <li role="presentation" class="nav-item active">
-      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#goalsview" aria-controls="goals" role="tab" data-on="click"
+      <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#goalsview" aria-controls="goalsview" role="tab" data-on="click"
 data-event-category="Tab change"
 data-event-action="Change reporting status view"
 data-event-label="Change reporting status view to goals"
@@ -367,7 +356,7 @@ data-event-label="Change reporting status view to goals"
 
     
       <li role="presentation" class="nav-item">
-        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#disaggregationsview" aria-controls="disaggregations" role="tab" data-on="click"
+        <button class="nav-link" data-bs-toggle="tab" data-bs-target="#disaggregationsview" aria-controls="disaggregationsview" role="tab" data-on="click"
 data-event-category="Tab change"
 data-event-action="Change reporting status view"
 data-event-label="Change reporting status view to disaggregations"
@@ -709,12 +698,12 @@ data-event-label="Change reporting status view to disaggregations"
 </div><div class="goal reporting-status-item">
     <div class="frame goal-tiles">
         <a href="/8">
-        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/8.svg" alt="Decent jobs and economic growth - Goal 8" width="100" height="100" class="goal-icon-8 goal-icon-image goal-icon-image-svg"/>
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/8.svg" alt="Decent work and economic growth - Goal 8" width="100" height="100" class="goal-icon-8 goal-icon-image goal-icon-image-svg"/>
         </a>
     </div>
     <div class="details">
         <h3 class="status-goal">
-            <a href="/8">Decent jobs and economic growth</a>
+            <a href="/8">Decent work and economic growth</a>
         </h3>
         <span class="total">16 indicators</span>
         <div class="summary">
@@ -832,12 +821,12 @@ data-event-label="Change reporting status view to disaggregations"
 </div><div class="goal reporting-status-item">
     <div class="frame goal-tiles">
         <a href="/11">
-        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/11.svg" alt="Sustainable cities &amp; communities - Goal 11" width="100" height="100" class="goal-icon-11 goal-icon-image goal-icon-image-svg"/>
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/11.svg" alt="Sustainable cities and communities - Goal 11" width="100" height="100" class="goal-icon-11 goal-icon-image goal-icon-image-svg"/>
         </a>
     </div>
     <div class="details">
         <h3 class="status-goal">
-            <a href="/11">Sustainable cities & communities</a>
+            <a href="/11">Sustainable cities and communities</a>
         </h3>
         <span class="total">14 indicators</span>
         <div class="summary">
@@ -1037,12 +1026,12 @@ data-event-label="Change reporting status view to disaggregations"
 </div><div class="goal reporting-status-item">
     <div class="frame goal-tiles">
         <a href="/16">
-        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/16.svg" alt="Peace and justice - strong institutions - Goal 16" width="100" height="100" class="goal-icon-16 goal-icon-image goal-icon-image-svg"/>
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/16.svg" alt="Peace, justice and strong institutions - Goal 16" width="100" height="100" class="goal-icon-16 goal-icon-image goal-icon-image-svg"/>
         </a>
     </div>
     <div class="details">
         <h3 class="status-goal">
-            <a href="/16">Peace and justice - strong institutions</a>
+            <a href="/16">Peace, justice and strong institutions</a>
         </h3>
         <span class="total">24 indicators</span>
         <div class="summary">
@@ -1627,12 +1616,12 @@ data-event-label="Change reporting status view to disaggregations"
 </div><div class="goal reporting-status-item">
     <div class="frame goal-tiles">
         <a href="/8">
-        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/8.svg" alt="Decent jobs and economic growth - Goal 8" width="100" height="100" class="goal-icon-8 goal-icon-image goal-icon-image-svg"/>
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/8.svg" alt="Decent work and economic growth - Goal 8" width="100" height="100" class="goal-icon-8 goal-icon-image goal-icon-image-svg"/>
         </a>
     </div>
     <div class="details">
         <h3 class="status-goal">
-            <a href="/8">Decent jobs and economic growth</a>
+            <a href="/8">Decent work and economic growth</a>
         </h3>
         <span class="total">16 indicators</span>
         <div class="summary">
@@ -1816,12 +1805,12 @@ data-event-label="Change reporting status view to disaggregations"
 </div><div class="goal reporting-status-item">
     <div class="frame goal-tiles">
         <a href="/11">
-        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/11.svg" alt="Sustainable cities &amp; communities - Goal 11" width="100" height="100" class="goal-icon-11 goal-icon-image goal-icon-image-svg"/>
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/11.svg" alt="Sustainable cities and communities - Goal 11" width="100" height="100" class="goal-icon-11 goal-icon-image goal-icon-image-svg"/>
         </a>
     </div>
     <div class="details">
         <h3 class="status-goal">
-            <a href="/11">Sustainable cities & communities</a>
+            <a href="/11">Sustainable cities and communities</a>
         </h3>
         <span class="total">14 indicators</span>
         <div class="summary">
@@ -2131,12 +2120,12 @@ data-event-label="Change reporting status view to disaggregations"
 </div><div class="goal reporting-status-item">
     <div class="frame goal-tiles">
         <a href="/16">
-        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/16.svg" alt="Peace and justice - strong institutions - Goal 16" width="100" height="100" class="goal-icon-16 goal-icon-image goal-icon-image-svg"/>
+        <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/16.svg" alt="Peace, justice and strong institutions - Goal 16" width="100" height="100" class="goal-icon-16 goal-icon-image goal-icon-image-svg"/>
         </a>
     </div>
     <div class="details">
         <h3 class="status-goal">
-            <a href="/16">Peace and justice - strong institutions</a>
+            <a href="/16">Peace, justice and strong institutions</a>
         </h3>
         <span class="total">24 indicators</span>
         <div class="summary">
@@ -2265,9 +2254,8 @@ data-event-label="Change reporting status view to disaggregations"
   
 
   </div>
-
+  <a href="#top">Back to top</a>
 </div>
-
 <footer role="contentinfo">
     <div class="container">
         <div class="row">
@@ -2301,6 +2289,10 @@ data-event-label="Change reporting status view to disaggregations"
                         </li>
                         
                         
+                        
+                        <li>
+                            <a href="/config">Configuration</a>
+                        </li>
                         </ul>
                 </div>
             </div>
@@ -2320,16 +2312,12 @@ data-event-label="Change reporting status view to disaggregations"
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
@@ -2495,23 +2483,6 @@ if (allRequired) {
 
 
 
-  <script type="text/plain" data-type="application/javascript" data-name="google-analytics">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-108503280-1', 'auto');
-ga('require', 'eventTracker', {
-    attributePrefix: 'data-'
-});
-// anonymize user IPs (chops off the last IP triplet)
-ga('set', 'anonymizeIp', true);
-// forces SSL even if the page were somehow loaded over http://
-ga('set', 'forceSSL', true);
-ga('send', 'pageview');
-</script>
-
 
 
 
@@ -2521,7 +2492,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20220624154215'></script>
+<script src='/assets/js/sdg.js?v=20220704094317'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -2529,7 +2500,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20220624154215"></script><script>
+    <script src="/assets/js/custom.js?v=20220704094317"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -2537,4 +2508,3 @@ ga('send', 'pageview');
 
 </body>
 </html>
-

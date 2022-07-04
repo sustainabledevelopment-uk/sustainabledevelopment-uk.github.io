@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://sdgdata.gov.uk/sdg-data/en',
+  remoteDataBaseUrl: 'http://uk-sdg-feature-branches.s3-website.eu-west-2.amazonaws.com/feature-2.0.0-data/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -40,10 +40,6 @@ var opensdg = {
 
   language: 'en',
 };
-
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
 
 </script>
 
@@ -110,31 +106,26 @@ var translations = {
         <meta name="description" content="">
         <meta property="og:description" content="">
         
+        <meta name="robots" content="noindex, nofollow">
+        
         <link rel="canonical" href="/">
 
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        
-
-
-
-
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
 
 
         
-        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20220624154215">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20220704094317">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -143,24 +134,11 @@ var translations = {
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-<script
-    type="text/plain" data-type="application/javascript" data-name="google-analytics"
-    async
-    data-src="https://www.googletagmanager.com/gtag/js?id=G-JP2PR9QKW9"></script>
-<script type="text/plain" data-type="application/javascript" data-name="google-analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JP2PR9QKW9', {
-    'anonymize_ip': true,
-    'forceSSL': true,
-  });
-</script>
-
         
-        
+
+        <!--[if IE]>
+        <link rel="stylesheet" href="/assets/css/ie.css">
+        <![endif]-->
 
         <link rel="stylesheet" href="/assets/css/govuk.css">
 <!-- Hotjar Tracking Code for https://sdgdata.gov.uk/ -->
@@ -185,9 +163,7 @@ layout-post
 
 
 
-
-
-<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
+<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 
@@ -253,6 +229,10 @@ layout-post
   </div>
 </div>
 
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title">This internet browser is no longer supported</h2>
+    <p class="internet-explorer-message-body">We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.</p>
+</div>
 <div id="disclaimer">
     
 <div class="container">
@@ -324,9 +304,7 @@ data-event-label="high"
 
 <div class="container">
   
-  
 
-  
 </div>
 
 
@@ -339,7 +317,10 @@ data-event-label="high"
           <time class="post-date" datetime="2022-03-18T00:00:00+00:00" itemprop="datePublished">18 March 2022</time><ul class="post-categories"><li>Data sources</li></ul><span class="post-author" itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">SDGs team</span></span></div>
 
         <div class="post-content" itemprop="articleBody">
-          <p>In July 2021 we published a detailed outline of our approach to assessing the quality and suitability of statistics from non-official sources for SDG reporting. We produced a <a href="https://www.ons.gov.uk/economy/environmentalaccounts/methodologies/uksustainabledevelopmentgoalsuseofnonofficialsources">transparent protocol</a> with a simple scoring system based on the pillars of the UKSA <a href="https://code.statisticsauthority.gov.uk/the-code/">Code of Practice for Statistics</a> and critical SDG characteristics. Putting this protocol in place was the result of collaborative work and feedback from across the GSS. It allows us to expand our breadth of sources beyond official statistics without compromising on quality. As a result, more vulnerable populations and environments could be highlighted as we fill outstanding headline and disaggregation gaps, making sure no-one and no-where is left behind.</p>
+          
+
+
+    <p>In July 2021 we published a detailed outline of our approach to assessing the quality and suitability of statistics from non-official sources for SDG reporting. We produced a <a href="https://www.ons.gov.uk/economy/environmentalaccounts/methodologies/uksustainabledevelopmentgoalsuseofnonofficialsources">transparent protocol</a> with a simple scoring system based on the pillars of the UKSA <a href="https://code.statisticsauthority.gov.uk/the-code/">Code of Practice for Statistics</a> and critical SDG characteristics. Putting this protocol in place was the result of collaborative work and feedback from across the GSS. It allows us to expand our breadth of sources beyond official statistics without compromising on quality. As a result, more vulnerable populations and environments could be highlighted as we fill outstanding headline and disaggregation gaps, making sure no-one and no-where is left behind.</p>
 
 <p>In brief, the structure of the protocol includes an initial pass or fail gateway with the following essential criteria:</p>
 
@@ -369,13 +350,14 @@ data-event-label="high"
 
 <p>This protocol for assessment of non-official sources has gathered much interest internationally, and we have shared lessons learnt and appropriate resources with other National Statistical Institutes and through dissemination across various UN forums. This work continues to evolve, so we will update and refine in the future as necessary as we implement it. We also plan to publish a version for assessment of non-official qualitative sources relevant to SDGs. Some user research has already been done in this area, and we know there is an appetite for contextual information around indicators. As always, we welcome any feedback and suggestions.</p>
 
+
+
         </div>
       </article>
     </div>
     
   </div>
 </div>
-
 
 
 
@@ -413,6 +395,10 @@ data-event-label="high"
                         </li>
                         
                         
+                        
+                        <li>
+                            <a href="/config">Configuration</a>
+                        </li>
                         </ul>
                 </div>
             </div>
@@ -432,16 +418,12 @@ data-event-label="high"
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
@@ -607,23 +589,6 @@ if (allRequired) {
 
 
 
-  <script type="text/plain" data-type="application/javascript" data-name="google-analytics">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-108503280-1', 'auto');
-ga('require', 'eventTracker', {
-    attributePrefix: 'data-'
-});
-// anonymize user IPs (chops off the last IP triplet)
-ga('set', 'anonymizeIp', true);
-// forces SSL even if the page were somehow loaded over http://
-ga('set', 'forceSSL', true);
-ga('send', 'pageview');
-</script>
-
 
 
 
@@ -633,7 +598,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20220624154215'></script>
+<script src='/assets/js/sdg.js?v=20220704094317'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -641,7 +606,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20220624154215"></script><script>
+    <script src="/assets/js/custom.js?v=20220704094317"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -649,4 +614,3 @@ ga('send', 'pageview');
 
 </body>
 </html>
-

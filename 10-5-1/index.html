@@ -11,7 +11,7 @@
 var opensdg = {
 
   // A base URL for asynchronous calls to SDG data.
-  remoteDataBaseUrl: 'https://sdgdata.gov.uk/sdg-data/en',
+  remoteDataBaseUrl: 'http://uk-sdg-feature-branches.s3-website.eu-west-2.amazonaws.com/feature-2.0.0-data/en',
 
   chartConfigAlterations: [],
   // A hook which can be used to modify the configuration for Chart.js.
@@ -40,10 +40,6 @@ var opensdg = {
 
   language: 'en',
 };
-
-// For backwards compatibility, some of these might need to be global.
-// @TODO: Remove these eventually.
-var remoteDataBaseUrl = opensdg.remoteDataBaseUrl;
 
 </script>
 
@@ -115,31 +111,26 @@ var translations = {
         <meta name="description" content="">
         <meta property="og:description" content="">
         
+        <meta name="robots" content="noindex, nofollow">
+        
         <link rel="canonical" href="/">
 
         <!--[if IE 9]>
         <script src="/assets/js/lib/classList.js"></script>
         <![endif]-->
 
-        
-
-
-
-
-<link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicons/apple-touch-icon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicons/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicons/favicon-16x16.png">
 <link rel="icon" type="image/x-icon" href="/assets/img/favicons/favicon.ico" />
 
 
         
-        
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
-        
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20220624154215">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20220704094317">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -148,24 +139,11 @@ var translations = {
         <link rel="stylesheet" href="https://bowercdn.net/c/leaflet.zoomhome-latest/dist/leaflet.zoomhome.css"  crossorigin=""/>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet-search@2.9.7/dist/leaflet-search.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.kiprotect.com/klaro/v0.7/klaro.min.css" crossorigin=""/>
-          <!-- Global site tag (gtag.js) - Google Analytics -->
-<script
-    type="text/plain" data-type="application/javascript" data-name="google-analytics"
-    async
-    data-src="https://www.googletagmanager.com/gtag/js?id=G-JP2PR9QKW9"></script>
-<script type="text/plain" data-type="application/javascript" data-name="google-analytics">
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-JP2PR9QKW9', {
-    'anonymize_ip': true,
-    'forceSSL': true,
-  });
-</script>
-
         
-        
+
+        <!--[if IE]>
+        <link rel="stylesheet" href="/assets/css/ie.css">
+        <![endif]-->
 
         <link rel="stylesheet" href="/assets/css/govuk.css">
 <!-- Hotjar Tracking Code for https://sdgdata.gov.uk/ -->
@@ -184,15 +162,13 @@ var translations = {
 
     </head>
 <body class="language-en
-layout-indicator-bootstrap5
+layout-indicator
 ">
 <!-- <div class="container"> -->
 
 
 
-
-
-<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_address\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
+<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 
@@ -258,6 +234,10 @@ layout-indicator-bootstrap5
   </div>
 </div>
 
+<div class="container internet-explorer-message">
+    <h2 class="internet-explorer-message-title">This internet browser is no longer supported</h2>
+    <p class="internet-explorer-message-body">We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.</p>
+</div>
 <div id="disclaimer">
     
 <div class="container">
@@ -333,9 +313,6 @@ data-event-label="high"
     <div class="variable-selector
       <% if(allowedFields.indexOf(fieldItem.field) == -1) { %> disallowed <% }%>
       <% if (typeof childFields !== 'undefined' && childFields.indexOf(fieldItem.field) !== -1) { %> child <% }%>
-      <% // @deprecated start %>
-      <% if (typeof childFields === 'undefined' && allowedFields.indexOf(fieldItem.field) == -1) { %> child <% }%>
-      <% // @deprecated end %>
       "
       data-field="<%=fieldItem.field%>"
     >
@@ -410,9 +387,9 @@ data-event-label="high"
   
 </script>
 
-<script>translations['indicator'] = {"annotation_2030_target":"2030 indicator target","annotation_series_break":"Series break","announce_data_added":"Chart and table updated to include data.","announce_data_not_available":"Chart and table shows no data.","announce_data_removed":"Chart and table updated to exclude data.","chart":"Chart","chart_annotation":"Chart annotation","clear_all":"Clear all","clear_selections":"Clear selections","data_keyboard_navigation":"Press enter to browse data points with left and right arrow keys.","data_not_available":"This data is not available. Please choose alternative data to display.","data_tabular_alternative":"For tabular data alternative see Table tab.","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_chart_image":"Download Chart Image","download_chart_image_title":"Download chart as image","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_geojson":"Download GeoJSON","download_geojson_title":"Download as GeoJSON","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_sdmx":"Download Source SDMX","download_source_sdmx_title":"Download source data as SDMX","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_configuration":"Edit Configuration","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","legend_help":"Click on the legend to remove individual lines from the chart.","loading":"Loading","loading_map":"Loading map","map":"Map","map_search":"Search","map_search_hide":"Hide search","map_search_show":"Show search","map_year_slider":"Year slider","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country_name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country_adjective statistics, this table should be consulted for information on national methodology and other %country_adjective-specific metadata information.","next":"Next indicator","no_data_hint":"No options available because of filters above","plot_legend_description":"Plot legend: list of lines included in chart","previous":"Previous indicator","select_all":"Select all","series":"Series","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","status":"Indicator status","sub_categories":"Sub-categories","sub_categories_show":"Show sub-categories:","table":"Table","table_column_sort":"Click to sort by this column","tags":"Tags","unit":"Unit","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
+<script>translations['indicator'] = {"annotation_2030_target":"2030 indicator target","annotation_series_break":"Series break","announce_data_added":"Chart and table updated to include data.","announce_data_not_available":"Chart and table shows no data.","announce_data_removed":"Chart and table updated to exclude data.","apply":"Apply","cancel":"Cancel","change_breakdowns":"Change breakdowns","chart":"Chart","chart_annotation":"Chart annotation","clear_all":"Clear all","clear_selections":"Clear selections","data_keyboard_navigation":"Press enter to browse data points with left and right arrow keys.","data_not_available":"This data is not available. Please choose alternative data to display.","data_tabular_alternative":"For tabular data alternative see Table tab.","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_chart_image":"Download Chart Image","download_chart_image_title":"Download chart as image","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_geojson":"Download GeoJSON","download_geojson_title":"Download as GeoJSON","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_for_disaggregations":"Download source CSV for disaggregations","download_source_sdmx":"Download Source SDMX","download_source_sdmx_title":"Download source data as SDMX","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_configuration":"Edit Configuration","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","headline_data":"Headline data","legend_help":"Click on the legend to remove individual lines from the chart.","loading":"Loading","loading_map":"Loading map","map":"Map","map_search":"Search","map_search_hide":"Hide search","map_search_show":"Show search","map_year_slider":"Year slider","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country.name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country.adjective statistics, this table should be consulted for information on national methodology and other %country.adjective-specific metadata information.","next":"Next indicator","no_data_hint":"No options available because of filters above","no_headline_data":"No headline data available","plot_legend_description":"Plot legend: list of lines included in chart","previous":"Previous indicator","select_all":"Select all","series":"Series","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","status":"Indicator status","sub_categories":"Sub-categories","sub_categories_show":"Show sub-categories:","table":"Table","table_column_sort":"Click to sort by this column","tags":"Tags","unit":"Unit","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
 
-<script>translations['data'] = null;</script>
+<script>translations['data'] = {"Year":"Year"};</script>
 
 
 <div class="container">
@@ -521,14 +498,20 @@ data-event-label="high"
     
 
 
+
+
 <div id="headlineTable">
 
   <div id="datatables">
 
-    <a href="https://sdgdata.gov.uk/sdg-data/en/headline/10-5-1.csv" class="btn btn-primary btn-download" download="indicator_10-5-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="http://uk-sdg-feature-branches.s3-website.eu-west-2.amazonaws.com/feature-2.0.0-data/en/headline/10-5-1.csv" class="btn btn-primary btn-download" download="indicator_10-5-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    
+    <a href="http://uk-sdg-feature-branches.s3-website.eu-west-2.amazonaws.com/feature-2.0.0-data/en/data/10-5-1.csv" class="btn btn-primary btn-download" download='indicator_10-5-1.csv' tabindex='0' role='button'>Download Source CSV</a>
 
-    <a href="https://sdgdata.gov.uk/sdg-data/en/data/10-5-1.csv" class="btn btn-primary btn-download" style='float:left;margin-right:1em' download='indicator_10-5-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    <p class="no-js-disaggregation-hint">Download source CSV for disaggregations</p>
 
+    
     <h3>Headline data</h3>
     <table class="table-responsive table table-hover dataTable no-footer" role="grid">
       <caption>Financial Soundness Indicators</caption>
@@ -3279,8 +3262,10 @@ data-event-label="high"
         
       </tbody>
     </table>
+    
   </div>
 
+  
   <div id="datatableFooter">
     
     <p>Source: International monetary fund (IMF)</p>
@@ -3295,6 +3280,7 @@ data-event-label="high"
     <p>Footnote: Values are rounded to 2dp.  Y axis does not go to 100% for ease of visualisation.</p>
     
   </div>
+  
 
 </div>
 
@@ -3373,21 +3359,18 @@ data-event-label="Change to Table tab"
     </div>
 
     
-    
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
           <h4 id="chart-heading" class="chart-title">Financial Soundness Indicators</h4>
           <div id="chart" class="plot-container">
-            
-              <canvas
+            <canvas
     role="img"
     aria-labelledby="chart-heading"
     aria-describedby="table-alternative chart-annotations"
     tabindex="0"
  ></canvas>
 
-            
           </div>
           <div id="plotLegend"></div>
           
@@ -3440,7 +3423,7 @@ data-event-label="Change to Table tab"
         ></dd>
         
         
-    <dl>
+    </dl>
 </div>
 
         </div>
@@ -3514,7 +3497,7 @@ data-event-label="Change to Table tab"
         ></dd>
         
         
-    <dl>
+    </dl>
 </div>
 
 <div id="tableSelectionDownload" class="clearfix"></div>
@@ -3557,6 +3540,10 @@ data-event-label="Change to Sources tab"
 </li>
 
     
+    
+        <li role="presentation" class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#edit" aria-controls="edit" role="tab">Edit</a>
+        </li>
     
 </ul>
 
@@ -3712,7 +3699,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Data last updated </th>
         <td>
           
-            21 March 2022
+            27 June 2022
           
         </td>
         </tr>
@@ -3725,7 +3712,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            21 March 2022
+            27 June 2022
           
         </td>
         </tr>
@@ -4400,14 +4387,30 @@ data-event-label="Change to Sources tab"
 </div>
     
     
+        <div role="tabpanel" class="tab-pane" id="edit">
+            <div class="edit-container">
+  
+  <a class="btn btn-primary" href="http://prose.io/#//edit//data/indicator_10-5-1.csv">Edit Data</a>
+  
+
+  
+  <a class="btn btn-primary" href="http://prose.io/#//edit//meta/10-5-1.md">Edit Metadata</a>
+  
+
+  
+
+</div>
+
+        </div>
+    
 </div>
   
 </div>
   </div>
 </div>
 
+  <a href="#top">Back to top</a>
 </div>
-
 
 <footer role="contentinfo">
     <div class="container">
@@ -4442,6 +4445,10 @@ data-event-label="Change to Sources tab"
                         </li>
                         
                         
+                        
+                        <li>
+                            <a href="/config">Configuration</a>
+                        </li>
                         </ul>
                 </div>
             </div>
@@ -4461,16 +4468,12 @@ data-event-label="Change to Sources tab"
 </footer>
 
 <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
-
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
-
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
 
@@ -4636,23 +4639,6 @@ if (allRequired) {
 
 
 
-  <script type="text/plain" data-type="application/javascript" data-name="google-analytics">
-(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
-
-ga('create', 'UA-108503280-1', 'auto');
-ga('require', 'eventTracker', {
-    attributePrefix: 'data-'
-});
-// anonymize user IPs (chops off the last IP triplet)
-ga('set', 'anonymizeIp', true);
-// forces SSL even if the page were somehow loaded over http://
-ga('set', 'forceSSL', true);
-ga('send', 'pageview');
-</script>
-
 
 
 
@@ -4662,7 +4648,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20220624154215'></script>
+<script src='/assets/js/sdg.js?v=20220704094317'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -4670,7 +4656,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20220624154215"></script><script>
+    <script src="/assets/js/custom.js?v=20220704094317"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
@@ -4678,4 +4664,3 @@ ga('send', 'pageview');
 
 </body>
 </html>
-
