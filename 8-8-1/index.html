@@ -26,8 +26,9 @@ var opensdg = {
   },
 
   // A hook which can be replaced to alter whether/how the values that are
-  // displayed on indicator tables/graphs get rounded.
-  dataRounding: function(value) {
+  // displayed on indicator tables/graphs get rounded. A "context" parameter
+  // is also passed which contains additional information.
+  dataRounding: function(value, context) {
     // Alterations go here.
     return value;
   },
@@ -37,6 +38,9 @@ var opensdg = {
   dataDisplayAlter: function(callback) {
     this.dataDisplayAlterations.push(callback);
   },
+
+  // Disaggregations which should be ignored on indicator pages.
+  ignoredDisaggregations: ["Activity (default)","Age (default)","Urbanisation (default)"],
 
   language: 'en',
 };
@@ -128,7 +132,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20221027123130">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20221110093513">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -183,7 +187,7 @@ layout-indicator
 
 
 
-<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
+<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","enable_high_contrast":"Enable high contrast","hide_menu":"Hide navigation menu","high_contrast":"High contrast","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.","internet_explorer_message_title":"This internet browser is no longer supported","logo_title":"Go to homepage","show_menu":"Show navigation menu","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 
@@ -271,10 +275,10 @@ layout-indicator
 <header role="banner" class="">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
-            <a class="navbar-brand" href="/" id="home">
+            <a class="navbar-brand" href="/" id="home" aria-label="Go to homepage" title="Go to homepage">
     <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
 </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Show navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="d-flex flex-wrap w-100 justify-content-between">
@@ -300,7 +304,7 @@ layout-indicator
         <label class="visually-hidden" for="indicator_search">Search</label>
         <input class="form-control" type="search" name="q" id="indicator_search" title="Search">
         <span class="input-group-append">
-            <button class="btn btn-outline-secondary ms-n5" aria-label="Search" id="search-btn" type="submit">
+            <button class="btn btn-outline-secondary ms-n5" aria-label="Site search" id="search-btn" type="submit">
                 <i class="fa fa-search"></i>
             </button>
         </span>
@@ -403,7 +407,7 @@ data-event-label="high"
   
 </script>
 
-<script>translations['indicator'] = {"annotation_2030_target":"2030 indicator target","annotation_series_break":"Series break","announce_data_added":"Chart and table updated to include data.","announce_data_not_available":"Chart and table shows no data.","announce_data_removed":"Chart and table updated to exclude data.","apply":"Apply","cancel":"Cancel","change_breakdowns":"Change breakdowns","chart":"Chart","chart_annotation":"Chart annotation","clear_all":"Clear all","clear_selections":"Clear selections","data_keyboard_navigation":"Press enter to browse data points with left and right arrow keys.","data_not_available":"This data is not available. Please choose alternative data to display.","data_tabular_alternative":"For tabular data alternative see Table tab.","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_chart_image":"Download Chart Image","download_chart_image_title":"Download chart as image","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_geojson":"Download GeoJSON","download_geojson_title":"Download as GeoJSON","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_for_disaggregations":"Download source CSV for disaggregations","download_source_sdmx":"Download Source SDMX","download_source_sdmx_title":"Download source data as SDMX","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_configuration":"Edit Configuration","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","headline_data":"Headline data","legend_help":"Click on the legend to remove individual lines from the chart.","loading":"Loading","loading_map":"Loading map","map":"Map","map_search":"Search","map_search_hide":"Hide search","map_search_show":"Show search","map_year_slider":"Year slider","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country.name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country.adjective statistics, this table should be consulted for information on national methodology and other %country.adjective-specific metadata information.","next":"Next indicator","no_data_hint":"No options available because of filters above","no_headline_data":"No headline data available","plot_legend_description":"Plot legend: list of lines included in chart","previous":"Previous indicator","select_all":"Select all","series":"Series","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","status":"Indicator status","sub_categories":"Sub-categories","sub_categories_show":"Show sub-categories:","table":"Table","table_column_sort":"Click to sort by this column","tags":"Tags","unit":"Unit","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
+<script>translations['indicator'] = {"annotation_2030_target":"2030 indicator target","annotation_series_break":"Series break","announce_data_added":"Chart and table updated to include data.","announce_data_not_available":"Chart and table shows no data.","announce_data_removed":"Chart and table updated to exclude data.","apply":"Apply","cancel":"Cancel","change_breakdowns":"Change breakdowns","chart":"Chart","chart_annotation":"Chart annotation","clear_all":"Clear all","clear_selections":"Clear selections","data_keyboard_navigation":"Press enter to browse data points with left and right arrow keys.","data_not_available":"This data is not available. Please choose alternative data to display.","data_tabular_alternative":"For tabular data alternative see Table tab.","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download chart data (.csv)","download_chart_image":"Download chart image (.png)","download_chart_image_title":"Download chart image as PNG","download_csv":"Download data (.csv)","download_csv_title":"Download data as CSV","download_geojson":"Download map data (.geojson)","download_geojson_title":"Download map data as GeoJSON","download_headline":"Download headline data (.csv)","download_headline_title":"Download headline data as CSV","download_source":"Download source data (.csv)","download_source_for_disaggregations":"Download source data for disaggregations (.csv)","download_source_sdmx":"Download source SDMX (.xml)","download_source_sdmx_title":"Download source data as SDMX","download_source_title":"Download source data as CSV","download_table":"Download table data (.csv)","edit":"Edit Indicator","edit_configuration":"Edit Configuration","edit_data":"Edit Data","edit_metadata":"Edit Metadata","empty_metadata_placeholder":"Not available for this indicator","empty_metadata_placeholder_sources":"Not available for this source","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","headline_data":"Headline data","legend_help":"Click on the legend to remove individual lines from the chart.","loading":"Loading","loading_map":"Loading map","map":"Map","map_fullscreen":"View map fullscreen","map_fullscreen_exit":"Exit fullscreen map","map_search":"Map search","map_search_cancel":"Clear map search","map_search_hide":"Hide map search","map_search_show":"Show map search","map_slider_back":"View map data for previous time period","map_slider_forward":"View map data for next time period","map_slider_keyboard":"View map data throughout time period by using left and right arrow keys","map_slider_mouse":"Navigate map data by time period","map_year_slider":"Year slider","map_zoom_home":"Reset to default map zoom","map_zoom_in":"Zoom in on map","map_zoom_out":"Zoom out on map","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country.name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country.adjective statistics, this table should be consulted for information on national methodology and other %country.adjective-specific metadata information.","next":"Next indicator","no_data_hint":"No options available because of filters above","no_headline_data":"No headline data available","plot_legend_description":"Plot legend: list of lines included in chart","previous":"Previous indicator","select_all":"Select all","series":"Series","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","status":"Indicator status","sub_categories":"Sub-categories","sub_categories_show":"Show sub-categories:","table":"Table","table_column_sort":"Click to sort by this column","tags":"Tags","total":"Total","unit":"Unit","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
 
 <script>translations['data'] = {"Year":"Year"};</script>
 
@@ -417,7 +421,11 @@ data-event-label="high"
             <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="/8" title="Promote sustained, inclusive and sustainable economic growth, full and productive employment and decent work for all">Goal 8</a>
+            <a href="/8"
+               title="Goal 8 - Decent work and economic growth"
+               aria-label="Goal  - ">
+               Goal 8
+            </a>
         </li>
         <li class="breadcrumb-item active">Indicator 8.8.1</li>
         
@@ -432,7 +440,7 @@ data-event-label="high"
         <div class="row">
             
             <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
-                <a href="/8" title="View this goal's indicator list">
+                <a href="/8" aria-label="View targets and indicators for Goal 8" title="View targets and indicators for Goal 8">
                     <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/8.svg"
                         alt="Decent work and economic growth - Goal 8"
                         id="goal-8"
@@ -459,7 +467,7 @@ data-event-label="high"
   
 <div class="row metadata-available-indicator">
   <div class="col-xs-12">
-    <h2>Rates of fatal and non-fatal occupational injuries, by sex</h2>
+    <h2>Rates of fatal and non-fatal occupational injuries (excluding injuries arising from road traffic accidents)</h2>
   </div>
 </div>
 
@@ -467,13 +475,6 @@ data-event-label="high"
   
 
   
-
-<div class="row" id="page-content">
-  <div class="col-xs-12">
-    <p>PLEASE NOTE - Age categories differ for fatal and non-fatal injuries</p>
-
-  </div>
-</div>
 
 
 
@@ -488,7 +489,7 @@ data-event-label="high"
   data-id="8-8-1"
   data-country="Great Britain"
   data-charttitle="Fatal and non-fatal occupational injuries per 100,000 workers, by sex and migrant status"
-  data-charttitles="[{&quot;series&quot;:&quot;Fatal injury&quot;,&quot;title&quot;:&quot;Rate of fatal injury in the workplace per 100,000 workers, Great Britain&quot;},{&quot;series&quot;:&quot;Non-fatal injury&quot;,&quot;title&quot;:&quot;Rate of non-fatal injury in the workplace per 100,000 workers, Great Britain&quot;}]"
+  data-charttitles="[{&quot;series&quot;:&quot;Fatal injury&quot;,&quot;title&quot;:&quot;Rate of fatal occupational injuries (excluding injuries arising from road traffic accidents) per 100,000 workers, Great Britain&quot;},{&quot;series&quot;:&quot;Non-fatal injury&quot;,&quot;title&quot;:&quot;Rate of non-fatal occupational injuries (excluding injuries arising from road traffic accidents) per 100,000 workers, Great Britain&quot;}]"
   data-measurementunit="Rate per 100,000 workers"
   data-xaxislabel=""
   data-showdata="true"
@@ -503,7 +504,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Rate per 100,000 workers&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Non-fatal injury&quot;,&quot;Fatal injury&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Age&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;16 to 19&quot;,&quot;16 to 24&quot;,&quot;20 to 24&quot;,&quot;25 to 34&quot;,&quot;35 to 44&quot;,&quot;45 to 54&quot;,&quot;55 and over&quot;,&quot;55 to 59&quot;,&quot;60 to 64&quot;,&quot;65 and over&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age&quot;},{&quot;name&quot;:&quot;Sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Country&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;England&quot;,&quot;England and Wales&quot;,&quot;Scotland&quot;,&quot;Wales&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Country&quot;},{&quot;name&quot;:&quot;Region&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;East&quot;,&quot;East Midlands&quot;,&quot;London&quot;,&quot;North East&quot;,&quot;North West&quot;,&quot;South East&quot;,&quot;South West&quot;,&quot;West Midlands&quot;,&quot;Yorkshire and The Humber&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Region&quot;},{&quot;name&quot;:&quot;Industry sector&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Accommodation and food service activities&quot;,&quot;Activities of households as employers; undifferentiated goods-and services-producing activities of households for own use&quot;,&quot;Administrative and support service activities&quot;,&quot;Agriculture, forestry and fishing&quot;,&quot;Arts, entertainment and recreation&quot;,&quot;Construction&quot;,&quot;Education&quot;,&quot;Electricity, gas, steam and air conditioning supply&quot;,&quot;Financial and insurance activities&quot;,&quot;Gas, electricity and water supply; sewerage, waste and recycling&quot;,&quot;Human health and social work activities&quot;,&quot;Information and communication&quot;,&quot;Manufacturing&quot;,&quot;Mining and quarrying&quot;,&quot;Other service activities&quot;,&quot;Professional, scientific and technical activities&quot;,&quot;Public administration and defence; compulsory social security&quot;,&quot;Real estate activities&quot;,&quot;Service industries&quot;,&quot;Transportation and storage&quot;,&quot;Water supply; sewerage, waste management and remediation activities&quot;,&quot;Wholesale and retail trade; repair of motor vehicles and motorcycles&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Industry sector&quot;},{&quot;name&quot;:&quot;Occupation&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Administrative and secretarial occupations&quot;,&quot;Associate professional and technical occupations&quot;,&quot;Caring, leisure and other service occupations&quot;,&quot;Elementary occupations&quot;,&quot;Managers, directors and senior officials&quot;,&quot;Process, plant and machine operatives&quot;,&quot;Professional occupations&quot;,&quot;Sales and customer service occupations&quot;,&quot;Skilled trades occupations&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Occupation&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Fatal injury&quot;,&quot;Non-fatal injury&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Age&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;16 to 19&quot;,&quot;16 to 24&quot;,&quot;20 to 24&quot;,&quot;25 to 34&quot;,&quot;35 to 44&quot;,&quot;45 to 54&quot;,&quot;55 to 59&quot;,&quot;55 and over&quot;,&quot;60 to 64&quot;,&quot;65 and over&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Age&quot;},{&quot;name&quot;:&quot;Sex&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Female&quot;,&quot;Male&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Sex&quot;},{&quot;name&quot;:&quot;Country&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;England&quot;,&quot;England and Wales&quot;,&quot;Scotland&quot;,&quot;Wales&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Country&quot;},{&quot;name&quot;:&quot;Region&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;North East&quot;,&quot;North West&quot;,&quot;Yorkshire and The Humber&quot;,&quot;East Midlands&quot;,&quot;West Midlands&quot;,&quot;East&quot;,&quot;London&quot;,&quot;South East&quot;,&quot;South West&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Region&quot;},{&quot;name&quot;:&quot;Industry sector&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Agriculture, forestry and fishing&quot;,&quot;Construction&quot;,&quot;Gas, electricity and water supply; sewerage, waste and recycling&quot;,&quot;Manufacturing&quot;,&quot;Mining and quarrying&quot;,&quot;Service industries&quot;,&quot;Accommodation and food service activities&quot;,&quot;Activities of households as employers; undifferentiated goods-and services-producing activities of households for own use&quot;,&quot;Administrative and support service activities&quot;,&quot;Arts, entertainment and recreation&quot;,&quot;Education&quot;,&quot;Financial and insurance activities&quot;,&quot;Human health and social work activities&quot;,&quot;Information and communication&quot;,&quot;Other service activities&quot;,&quot;Professional, scientific and technical activities&quot;,&quot;Public administration and defence; compulsory social security&quot;,&quot;Real estate activities&quot;,&quot;Transportation and storage&quot;,&quot;Water supply; sewerage, waste management and remediation activities&quot;,&quot;Wholesale and retail trade; repair of motor vehicles and motorcycles&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Industry sector&quot;},{&quot;name&quot;:&quot;Occupation&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Administrative and secretarial occupations&quot;,&quot;Associate professional occupations&quot;,&quot;Caring, leisure and other service occupations&quot;,&quot;Elementary occupations&quot;,&quot;Managers, directors and senior officials&quot;,&quot;Process, plant and machine operatives&quot;,&quot;Professional occupations&quot;,&quot;Sales and customer service occupations&quot;,&quot;Skilled trades occupations&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Occupation&quot;},{&quot;name&quot;:&quot;Unit measure&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit measure&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;GeoCode&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;GeoCode&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
 >
@@ -534,11 +535,11 @@ data-event-label="high"
   <div id="datatables">
 
     
-    <a href="https://sdgdata.gov.uk/sdg-data/en/headline/8-8-1.csv" class="btn btn-primary btn-download" download="indicator_8-8-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    <a href="https://sdgdata.gov.uk/sdg-data/en/headline/8-8-1.csv" class="btn btn-primary btn-download" download="indicator_8-8-1.csv" tabindex="0" role="button">Download headline data (.csv)</a>
     
-    <a href="https://sdgdata.gov.uk/sdg-data/en/data/8-8-1.csv" class="btn btn-primary btn-download" download='indicator_8-8-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    <a href="https://sdgdata.gov.uk/sdg-data/en/data/8-8-1.csv" class="btn btn-primary btn-download" download='indicator_8-8-1.csv' tabindex='0' role='button'>Download source data (.csv)</a>
 
-    <p class="no-js-disaggregation-hint">Download source CSV for disaggregations</p>
+    <p class="no-js-disaggregation-hint">Download source data for disaggregations (.csv)</p>
 
     
     <h3>Headline data</h3>
@@ -555,10 +556,6 @@ data-event-label="high"
         
         
         
-        <th scope="col">Units</th>
-        
-        
-        
         <th scope="col">Series</th>
         
         
@@ -571,43 +568,15 @@ data-event-label="high"
         
         
         
-        <th scope="col" class="table-value">Unit multiplier</th>
+        <th scope="col">Unit multiplier</th>
+        
+        
+        
+        <th scope="col" class="table-value">Unit measure</th>
         
         
       </thead>
       <tbody>
-        
-        <tr>
-          
-          
-          <td>2016/17</td>
-          
-          
-          
-          <td>0.42</td>
-          
-          
-          
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
-          <td>Fatal injury</td>
-          
-          
-          
-          <td></td>
-          
-          
-          
-          <td>Undefined</td>
-          
-          
-          
-          <td class="table-value">Units</td>
-          
-          
-        </tr>
         
         <tr>
           
@@ -620,10 +589,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -632,11 +597,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -652,10 +621,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -664,11 +629,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -684,10 +653,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -696,11 +661,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -716,10 +685,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -728,11 +693,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -748,10 +717,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -760,11 +725,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -780,10 +749,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -792,11 +757,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -812,10 +781,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -824,11 +789,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -844,10 +813,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -856,11 +821,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -876,10 +845,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -888,11 +853,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -908,10 +877,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -920,11 +885,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -940,10 +909,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -952,11 +917,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -972,7 +941,35 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
+          <td>Fatal injury</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Normal Value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016/17</td>
+          
+          
+          
+          <td>0.42</td>
           
           
           
@@ -984,11 +981,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1004,10 +1005,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Fatal injury</td>
           
           
@@ -1016,11 +1013,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1032,11 +1033,7 @@ data-event-label="high"
           
           
           
-          <td>0.45</td>
-          
-          
-          
-          <td>Rate per 100,000 workers</td>
+          <td>0.46</td>
           
           
           
@@ -1048,11 +1045,79 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019/20</td>
+          
+          
+          
+          <td>0.34</td>
+          
+          
+          
+          <td>Fatal injury</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Normal Value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020/21</td>
+          
+          
+          
+          <td>0.44</td>
+          
+          
+          
+          <td>Fatal injury</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Provisional value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1068,10 +1133,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1080,11 +1141,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1100,10 +1165,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1112,11 +1173,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1132,10 +1197,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1144,11 +1205,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1164,10 +1229,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1176,11 +1237,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1196,10 +1261,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1208,11 +1269,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1228,10 +1293,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1240,11 +1301,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1260,10 +1325,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1272,11 +1333,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1292,10 +1357,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1304,11 +1365,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1324,10 +1389,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1336,11 +1397,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1356,10 +1421,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1368,11 +1429,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1388,10 +1453,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1400,11 +1461,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1420,10 +1485,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1432,11 +1493,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1452,10 +1517,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1464,11 +1525,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1484,10 +1549,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1496,11 +1557,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1516,10 +1581,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1528,11 +1589,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1548,10 +1613,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1560,11 +1621,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1580,10 +1645,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1592,11 +1653,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1612,10 +1677,6 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
-          
-          
-          
           <td>Non-fatal injury</td>
           
           
@@ -1624,11 +1685,15 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1644,7 +1709,35 @@ data-event-label="high"
           
           
           
-          <td>Rate per 100,000 workers</td>
+          <td>Non-fatal injury</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Normal Value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019/20</td>
+          
+          
+          
+          <td>2160.0</td>
           
           
           
@@ -1656,11 +1749,47 @@ data-event-label="high"
           
           
           
-          <td>Undefined</td>
+          <td>Normal Value</td>
           
           
           
-          <td class="table-value">Units</td>
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020/21</td>
+          
+          
+          
+          <td>1410.0</td>
+          
+          
+          
+          <td>Non-fatal injury</td>
+          
+          
+          
+          <td></td>
+          
+          
+          
+          <td>Provisional value</td>
+          
+          
+          
+          <td>Units</td>
+          
+          
+          
+          <td class="table-value">Rate per 100,000 workers</td>
           
           
         </tr>
@@ -1682,7 +1811,7 @@ data-event-label="high"
     <p>Unit of Measurement: Rate per 100,000 workers</p>
     
     
-    <p>Footnote: 1.The rate for the most recent year is a provisional estimate. 2. The rate of fatal injury for some of the detailed groupings are based on small numbers and are susceptible to considerable year-on-year variation.  3. Non-fatal injury estimates are based on the Labour Force Survey and are subject to sampling uncertainty. Details, in the form of 95% confidence intervals, can be found in the source data (see 'Sources' tab below). 4. Non-fatal injuries broken down by age, sex, country, English regions, industry sector and occupation are based on averaged rates over a non- overlapping 3 year period to enable a large enough sample size. For example, 2001/02 to 2003/04 figures are displayed at the mid-year point (i.e. 2002/03).</p>
+    <p>Footnote: <p>1. Estimates of fatal injuries for 2020/2021 are provisional. </p><p>2. The rate of fatal injury for some of the detailed groupings are based on small numbers and are susceptible to considerable year-on-year variation.</p><p>3. Non-fatal injury estimates are based on the Labour Force Survey and are subject to sampling uncertainty. Details, in the form of 95% confidence intervals, can be found in the source data (see 'Sources' tab below)</p><p>4. The breakdowns of non-fatal injury rates by age, sex, country, English regions, industry sector and occupation are averaged over non-overlapping 3 year periods to enable a large enough sample size. For example, 2001/02 to 2003/04 figures are displayed at the mid-year point (2002/03). Estimates where numbers are too small to provide reliable estimates are not shown. </p><p>5.The coronavirus (COVID-19) pandemic and the government’s response has impacted recent trends in health and safety statistics published by HSE.  See Other Information below.</p></p>
     
   </div>
   
@@ -1767,7 +1896,7 @@ data-event-label="Change to Table tab"
     <div id="selectionsChart">
       <figure role="group">
         <div id="chart-canvas">
-          <h4 id="chart-heading" class="chart-title">Rate of fatal injury in the workplace per 100,000 workers, Great Britain</h4>
+          <h4 id="chart-heading" class="chart-title">Rate of fatal occupational injuries (excluding injuries arising from road traffic accidents) per 100,000 workers, Great Britain</h4>
           <div id="chart" class="plot-container">
             <canvas
     role="img"
@@ -1802,7 +1931,7 @@ data-event-label="Change to Table tab"
 
         
         <dt>Footnote:</dt>
-        <dd>1.The rate for the most recent year is a provisional estimate. 2. The rate of fatal injury for some of the detailed groupings are based on small numbers and are susceptible to considerable year-on-year variation.  3. Non-fatal injury estimates are based on the Labour Force Survey and are subject to sampling uncertainty. Details, in the form of 95% confidence intervals, can be found in the source data (see 'Sources' tab below). 4. Non-fatal injuries broken down by age, sex, country, English regions, industry sector and occupation are based on averaged rates over a non- overlapping 3 year period to enable a large enough sample size. For example, 2001/02 to 2003/04 figures are displayed at the mid-year point (i.e. 2002/03).</dd>
+        <dd><p>1. Estimates of fatal injuries for 2020/2021 are provisional. </p><p>2. The rate of fatal injury for some of the detailed groupings are based on small numbers and are susceptible to considerable year-on-year variation.</p><p>3. Non-fatal injury estimates are based on the Labour Force Survey and are subject to sampling uncertainty. Details, in the form of 95% confidence intervals, can be found in the source data (see 'Sources' tab below)</p><p>4. The breakdowns of non-fatal injury rates by age, sex, country, English regions, industry sector and occupation are averaged over non-overlapping 3 year periods to enable a large enough sample size. For example, 2001/02 to 2003/04 figures are displayed at the mid-year point (2002/03). Estimates where numbers are too small to provide reliable estimates are not shown. </p><p>5.The coronavirus (COVID-19) pandemic and the government’s response has impacted recent trends in health and safety statistics published by HSE.  See Other Information below.</p></dd>
         
 
         
@@ -1834,9 +1963,13 @@ data-event-label="Change to Table tab"
         </div>
       </figure>
       <div id="chartSelectionDownload" class="clearfix">
-        <button id="btnSave" title="Download chart as image" class='btn btn-primary btn-download'>
-          Download Chart Image
-        </button><!-- 
+        <button
+          id="btnSave"
+          title="Download chart image as PNG"
+          aria-label="Download chart image as PNG"
+          class='btn btn-primary btn-download'>
+          Download chart image (.png)
+        </button><!--
    --></div>
     </div>
 
@@ -1876,7 +2009,7 @@ data-event-label="Change to Table tab"
 
         
         <dt>Footnote:</dt>
-        <dd>1.The rate for the most recent year is a provisional estimate. 2. The rate of fatal injury for some of the detailed groupings are based on small numbers and are susceptible to considerable year-on-year variation.  3. Non-fatal injury estimates are based on the Labour Force Survey and are subject to sampling uncertainty. Details, in the form of 95% confidence intervals, can be found in the source data (see 'Sources' tab below). 4. Non-fatal injuries broken down by age, sex, country, English regions, industry sector and occupation are based on averaged rates over a non- overlapping 3 year period to enable a large enough sample size. For example, 2001/02 to 2003/04 figures are displayed at the mid-year point (i.e. 2002/03).</dd>
+        <dd><p>1. Estimates of fatal injuries for 2020/2021 are provisional. </p><p>2. The rate of fatal injury for some of the detailed groupings are based on small numbers and are susceptible to considerable year-on-year variation.</p><p>3. Non-fatal injury estimates are based on the Labour Force Survey and are subject to sampling uncertainty. Details, in the form of 95% confidence intervals, can be found in the source data (see 'Sources' tab below)</p><p>4. The breakdowns of non-fatal injury rates by age, sex, country, English regions, industry sector and occupation are averaged over non-overlapping 3 year periods to enable a large enough sample size. For example, 2001/02 to 2003/04 figures are displayed at the mid-year point (2002/03). Estimates where numbers are too small to provide reliable estimates are not shown. </p><p>5.The coronavirus (COVID-19) pandemic and the government’s response has impacted recent trends in health and safety statistics published by HSE.  See Other Information below.</p></dd>
         
 
         
@@ -1959,7 +2092,8 @@ data-event-label="Change to Sources tab"
                 
                 This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table should be consulted for information on national methodology and other UK-specific metadata information.
             </p>
-            <table class="table">
+            <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -1975,13 +2109,15 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
         <th scope="row">Indicator available </th>
         <td>
           
-            <p>Rates of fatal and non-fatal occupational injuries, by sex</p>
+            <p>Rates of fatal and non-fatal occupational injuries (excluding injuries arising from road traffic accidents)</p>
 
           
         </td>
@@ -1989,13 +2125,15 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
         <th scope="row">Indicator description </th>
         <td>
           
-            <p>Rates of fatal injuries per 100,000 workers (employees and self employees) and rates of self-reported workplace non-fatal injury (per 100,000 workers)</p>
+            <p>Rates of fatal work-related injuries per 100,000 workers (employees and self-employed) and rates of self-reported workplace non-fatal injury (per 100,000 workers). This differs from the UN metadata as injuries from road traffic accidents are not included. In addition, data are not broken down by migrant status.</p>
 
           
         </td>
@@ -2003,6 +2141,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -2019,6 +2159,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Unit of measurement </th>
         <td>
@@ -2033,11 +2175,13 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Definitions </th>
         <td>
           
-            <p>Occupational injury - Any personal injury, disease or death resulting from an occupational accident. Fatal occupational injury  - An occupational injury leading to death within one year of the day of the occupational accident.</p>
+            <p>Occupational injury - Any personal injury resulting from an occupational accident. Fatal occupational injury - An occupational injury leading to death within one year of the day of the occupational accident.</p>
 
           
         </td>
@@ -2045,14 +2189,24 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
         <th scope="row">Available disaggregations </th>
         <td>
           
-            <p>Detailed breakdowns of fatal injury rates by country/region, age and sex are presented for the last five-years only.</p>
-<p>Non-fatal injury rates are not provided for sub-groups where  sample numbers are too small to provide reliable estimates.</p>
+            <p>Fatal and non-fatal injuries are broken down by country and regions of England, sex, age, sex by age, and industry sector. Non-fatal injuries are additionally broken down by occupation.</p>
+<p>For fatal injuries, country/region reflects the location of where the injury occurred; for non-fatal injuries country/region reflects the injured person’s usual place of residence. It should be noted that country and regional differences in injury rates are strongly affected by differences in employment profiles.</p>
+<p>Fatal injuries are available at a more disaggregated breakdown by age than non-fatal injuries. For fatal injuries, breakdowns by age, sex and country/region are presented from 2014/15 onwards. (Industry breakdowns are presented from 2004/05).</p>
+<p>For non-fatal injuries occupation breakdowns are presented from 2013/14 onwards. (All other breakdowns are presented from 2001/02).</p>
+<p>For non-fatal injuries, industry and occupation data is restricted to the current or most recent job as information is not available for previously held jobs.</p>
+<p>Industry sector is based on <a href="https://www.ons.gov.uk/methodology/classificationsandstandards/ukstandardindustrialclassificationofeconomicactivities/uksic2007">Standard Industrial Classification (SIC 2007) codes</a>, which are given in the source data. This is the current system used in UK official statistics for classifying businesses by type of activity they are engaged in. NOTE - In the fatal injury data, agriculture, forestry and fishing does not include sea fishing.</p>
+<p>Occupation is based on <a href="https://www.ons.gov.uk/methodology/classificationsandstandards/standardoccupationalclassificationsoc/soc2020">Standard Occupation Codes (SOC2020)</a>. This is the system used in UK official statistics for classifying workers by the type of job they are engaged in.</p>
+<p>Non-fatal injury rates are not provided for groups where sample numbers are too small to provide reliable estimates.</p>
+<p>
+</p>
 
           
         </td>
@@ -2060,13 +2214,15 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
         <th scope="row">Calculations </th>
         <td>
           
-            <p>Incidence rates are calculated by dividing the number of workers in the reference group with an injury (fatal or non-fatal) by the employment total.  This is then multiplied by a factor of 100,000 to give a rate per 100,000 workers, in line with international standards.</p>
+            <p>Data is presented in the same format as in the source data. Rates have been calculated in the source data by dividing the number of workers in the reference group with an injury (fatal or non-fatal) by the employment total.  This is then multiplied by a factor of 100,000 to give a rate per 100,000 workers, in line with international standards. More details can be found in the source data (see ‘Sources’ tab).</p>
 
           
         </td>
@@ -2074,16 +2230,19 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
         <th scope="row">Other information </th>
         <td>
           
-            <p>Data for fatal and non-fatal workplace injuries do not include road traffic accidents. </p>
-<p>Rates for non-fatal injuries are based on self-reported non-fatal injury in the workplace (using the Labour Force Survey). Fatal injury rates are based on the count of fatal injuries reportable under the Reporting of Injuries, Diseases and Dangerous Occurrences Regulations (RIDDOR).  </p>
-<p>Variations in rate between different sub-groups of age, sex and geography may reflect differences in their employment profile.  </p>
-<p>This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has been identified in collaboration with topic experts.</p>
+            <p>Fatal injury rates are based on the count of fatal injuries reportable under the Reporting of Injuries, Diseases and Dangerous Occurrences Regulations (RIDDOR).</p>
+<p>Rates for non-fatal injuries are based on self-reported non-fatal injury in the workplace (using the Labour Force Survey). </p>
+<p>The coronavirus (COVID-19) pandemic and the government’s response has impacted recent trends in health and safety statistics published by HSE. More details can be found in the <a href="https://www.hse.gov.uk/statistics/coronavirus/covid-19.pdf">HSE technical report on the impact of the coronavirus pandemic on health and safety statistics (PDF 0.8MB).</a></p>
+<p> This indicator is being used as an approximation of the UN SDG Indicator. Where possible, we will work to identify or develop UK data to meet the global indicator specification. This indicator has been identified in collaboration with topic experts.
+</p>
 
           
         </td>
@@ -2093,24 +2252,28 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Data last updated </th>
         <td>
           
-            22 November 2021
+            17 October 2022
           
         </td>
         </tr>
         
       
   
+      
+      
       
       
       <tr>
         <th scope="row">Metadata last updated </th>
         <td>
           
-            21 September 2021
+            25 August 2022
           
         </td>
         </tr>
@@ -2233,6 +2396,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
         </article>
@@ -2243,12 +2407,15 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
-            <table class="table">
+            <table class="table metadata-content">
+  <tbody>
   
   
   
   
   
+      
+      
       
       
       <tr>
@@ -2267,6 +2434,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Target name </th>
         <td>
@@ -2282,11 +2451,20 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+        
+          
+          
+          
+          
+        
+      
+      
       <tr>
         <th scope="row">Global indicator description </th>
         <td>
           
-            
+            <p><span class="empty-metadata-placeholder">Not available for this indicator</span></p>
 
           
         </td>
@@ -2294,6 +2472,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -2310,6 +2490,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">UN custodian agency </th>
         <td>
@@ -2324,6 +2506,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to UN metadata </th>
         <td>
@@ -2332,7 +2516,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="https://unstats.un.org/sdgs/metadata/?Text=&Goal=8&Target=8.8" target="_blank">
                 United Nations Sustainable Development Goals metadata for target 8.8 <span class="visuallyhidden">opens in a new window</span>
@@ -2348,6 +2531,8 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
   
   
@@ -2475,6 +2660,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
         </article>
@@ -2494,7 +2680,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 1</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -2529,6 +2716,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -2545,6 +2734,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -2557,6 +2748,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -2573,6 +2766,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -2587,6 +2782,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -2595,7 +2792,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="http://www.hse.gov.uk/statistics/tables/index.htm" target="_blank">
                 Fatal injuries in the workplace <span class="visuallyhidden">opens in a new window</span>
@@ -2611,14 +2807,18 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
         <th scope="row">Release date </th>
         <td>
           
-            30 October 2019
+            16 December 2021
           
         </td>
         </tr>
@@ -2627,11 +2827,13 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Next release </th>
         <td>
           
-            
+            <p>23/11/2022</p>
 
           
         </td>
@@ -2639,6 +2841,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -2655,6 +2859,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Contact details </th>
         <td>
@@ -2667,6 +2873,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -2777,6 +2985,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -2787,7 +2996,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 2</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -2834,6 +3044,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -2850,6 +3062,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -2862,6 +3076,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -2878,6 +3094,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -2892,6 +3110,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -2900,7 +3120,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="http://www.hse.gov.uk/statistics/lfs/index.htm" target="_blank">
                 Non-fatal injuries in the workplace <span class="visuallyhidden">opens in a new window</span>
@@ -2916,14 +3135,18 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
         <th scope="row">Release date </th>
         <td>
           
-            30 October 2019
+            16 December 2021
           
         </td>
         </tr>
@@ -2932,11 +3155,13 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Next release </th>
         <td>
           
-            
+            <p>23/11/2022</p>
 
           
         </td>
@@ -2944,6 +3169,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -2960,6 +3187,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Contact details </th>
         <td>
@@ -2974,11 +3203,13 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Other information </th>
         <td>
           
-            <p>Data are acquired from the Labour Force Survey. See - LFSINJSUM; LFSINJREG; LFSINJAGE</p>
+            <p>Data are acquired from the Labour Force Survey. See - LFSINJSUM; LFSINJREG; LFSINJAGE; LFSINJIND; LFSINJOCC</p>
 
           
         </td>
@@ -3070,6 +3301,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -3081,7 +3313,7 @@ data-event-label="Change to Sources tab"
     
     
 </div>
-  
+
 </div>
   </div>
 </div>
@@ -3140,12 +3372,12 @@ data-event-label="Change to Sources tab"
     </div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
@@ -3338,7 +3570,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20221027123130'></script>
+<script src='/assets/js/sdg.js?v=20221110093513'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -3346,7 +3578,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20221027123130"></script><script>
+    <script src="/assets/js/custom.js?v=20221110093513"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>

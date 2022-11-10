@@ -26,8 +26,9 @@ var opensdg = {
   },
 
   // A hook which can be replaced to alter whether/how the values that are
-  // displayed on indicator tables/graphs get rounded.
-  dataRounding: function(value) {
+  // displayed on indicator tables/graphs get rounded. A "context" parameter
+  // is also passed which contains additional information.
+  dataRounding: function(value, context) {
     // Alterations go here.
     return value;
   },
@@ -37,6 +38,9 @@ var opensdg = {
   dataDisplayAlter: function(callback) {
     this.dataDisplayAlterations.push(callback);
   },
+
+  // Disaggregations which should be ignored on indicator pages.
+  ignoredDisaggregations: ["Activity (default)","Age (default)","Urbanisation (default)"],
 
   language: 'en',
 };
@@ -128,7 +132,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20221027123130">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20221110093513">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -183,7 +187,7 @@ layout-indicator
 
 
 
-<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","enable_high_contrast":"Enable high contrast","high_contrast":"High contrast","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.","internet_explorer_message_title":"This internet browser is no longer supported","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
+<script>translations['header'] = {"alpha":"Alpha","default_contrast":"Default contrast","disable_high_contrast":"Disable high contrast","disclaimer":"This is a development website. We welcome your <a href=\"mailto:%email_contacts.suggestions\">feedback</a>.","enable_high_contrast":"Enable high contrast","hide_menu":"Hide navigation menu","high_contrast":"High contrast","internet_explorer_message":"We have detected that you are using Internet Explorer to visit this website. Internet Explorer is now being phased out by Microsoft. As a result, this website no longer supports any version of Internet Explorer. Some features on this site will not work. You should use a modern browser such as Edge, Chrome, Firefox, or Safari. If you have difficulty installing or accessing a different browser, please contact your IT support team.","internet_explorer_message_title":"This internet browser is no longer supported","logo_title":"Go to homepage","show_menu":"Show navigation menu","skip_link":"Skip to main content","tag_line":"17 Goals to Transform our World","toggle_menu":"Menu toggle. Click to expand or collapse the menu.","toggle_search":"Search toggle. Click to expand or collapse the search bar."};</script>
 
 <a class="sr-only-focusable" id="skiplink" href="#main-content" tabindex="0">Skip to main content</a>
 
@@ -271,10 +275,10 @@ layout-indicator
 <header role="banner" class="">
     <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light flex-wrap align-items-start">
-            <a class="navbar-brand" href="/" id="home">
+            <a class="navbar-brand" href="/" id="home" aria-label="Go to homepage" title="Go to homepage">
     <img src="/assets/img/SDG_logo.png" alt="Sustainable Development Goals - 17 Goals to Transform our World" />
 </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Show navigation menu">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="d-flex flex-wrap w-100 justify-content-between">
@@ -300,7 +304,7 @@ layout-indicator
         <label class="visually-hidden" for="indicator_search">Search</label>
         <input class="form-control" type="search" name="q" id="indicator_search" title="Search">
         <span class="input-group-append">
-            <button class="btn btn-outline-secondary ms-n5" aria-label="Search" id="search-btn" type="submit">
+            <button class="btn btn-outline-secondary ms-n5" aria-label="Site search" id="search-btn" type="submit">
                 <i class="fa fa-search"></i>
             </button>
         </span>
@@ -403,7 +407,7 @@ data-event-label="high"
   
 </script>
 
-<script>translations['indicator'] = {"annotation_2030_target":"2030 indicator target","annotation_series_break":"Series break","announce_data_added":"Chart and table updated to include data.","announce_data_not_available":"Chart and table shows no data.","announce_data_removed":"Chart and table updated to exclude data.","apply":"Apply","cancel":"Cancel","change_breakdowns":"Change breakdowns","chart":"Chart","chart_annotation":"Chart annotation","clear_all":"Clear all","clear_selections":"Clear selections","data_keyboard_navigation":"Press enter to browse data points with left and right arrow keys.","data_not_available":"This data is not available. Please choose alternative data to display.","data_tabular_alternative":"For tabular data alternative see Table tab.","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download Chart CSV","download_chart_image":"Download Chart Image","download_chart_image_title":"Download chart as image","download_csv":"Download CSV","download_csv_title":"Download as CSV","download_geojson":"Download GeoJSON","download_geojson_title":"Download as GeoJSON","download_headline":"Download Headline CSV","download_headline_title":"Download headline data as CSV","download_source":"Download Source CSV","download_source_for_disaggregations":"Download source CSV for disaggregations","download_source_sdmx":"Download Source SDMX","download_source_sdmx_title":"Download source data as SDMX","download_source_title":"Download source data as CSV","download_table":"Download Table CSV","edit":"Edit","edit_configuration":"Edit Configuration","edit_data":"Edit Data","edit_metadata":"Edit Metadata","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","headline_data":"Headline data","legend_help":"Click on the legend to remove individual lines from the chart.","loading":"Loading","loading_map":"Loading map","map":"Map","map_search":"Search","map_search_hide":"Hide search","map_search_show":"Show search","map_year_slider":"Year slider","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country.name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country.adjective statistics, this table should be consulted for information on national methodology and other %country.adjective-specific metadata information.","next":"Next indicator","no_data_hint":"No options available because of filters above","no_headline_data":"No headline data available","plot_legend_description":"Plot legend: list of lines included in chart","previous":"Previous indicator","select_all":"Select all","series":"Series","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","status":"Indicator status","sub_categories":"Sub-categories","sub_categories_show":"Show sub-categories:","table":"Table","table_column_sort":"Click to sort by this column","tags":"Tags","unit":"Unit","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
+<script>translations['indicator'] = {"annotation_2030_target":"2030 indicator target","annotation_series_break":"Series break","announce_data_added":"Chart and table updated to include data.","announce_data_not_available":"Chart and table shows no data.","announce_data_removed":"Chart and table updated to exclude data.","apply":"Apply","cancel":"Cancel","change_breakdowns":"Change breakdowns","chart":"Chart","chart_annotation":"Chart annotation","clear_all":"Clear all","clear_selections":"Clear selections","data_keyboard_navigation":"Press enter to browse data points with left and right arrow keys.","data_not_available":"This data is not available. Please choose alternative data to display.","data_tabular_alternative":"For tabular data alternative see Table tab.","dataset_size_warning":"There are too many datasets to show on the chart. Not all will be shown until you remove some selections.","download_chart":"Download chart data (.csv)","download_chart_image":"Download chart image (.png)","download_chart_image_title":"Download chart image as PNG","download_csv":"Download data (.csv)","download_csv_title":"Download data as CSV","download_geojson":"Download map data (.geojson)","download_geojson_title":"Download map data as GeoJSON","download_headline":"Download headline data (.csv)","download_headline_title":"Download headline data as CSV","download_source":"Download source data (.csv)","download_source_for_disaggregations":"Download source data for disaggregations (.csv)","download_source_sdmx":"Download source SDMX (.xml)","download_source_sdmx_title":"Download source data as SDMX","download_source_title":"Download source data as CSV","download_table":"Download table data (.csv)","edit":"Edit Indicator","edit_configuration":"Edit Configuration","edit_data":"Edit Data","edit_metadata":"Edit Metadata","empty_metadata_placeholder":"Not available for this indicator","empty_metadata_placeholder_sources":"Not available for this source","footnote":"Footnote","geographical_area":"Geographical Area","global_metadata":"Global Metadata","global_metadata_blurb":"This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href=\"https://unstats.un.org/sdgs/metadata/\">Complete global metadata</a> is provided by the UN Statistics Division.","headline_data":"Headline data","legend_help":"Click on the legend to remove individual lines from the chart.","loading":"Loading","loading_map":"Loading map","map":"Map","map_fullscreen":"View map fullscreen","map_fullscreen_exit":"Exit fullscreen map","map_search":"Map search","map_search_cancel":"Clear map search","map_search_hide":"Hide map search","map_search_show":"Show map search","map_slider_back":"View map data for previous time period","map_slider_forward":"View map data for next time period","map_slider_keyboard":"View map data throughout time period by using left and right arrow keys","map_slider_mouse":"Navigate map data by time period","map_year_slider":"Year slider","map_zoom_home":"Reset to default map zoom","map_zoom_in":"Zoom in on map","map_zoom_out":"Zoom out on map","national_metadata":"National Metadata","national_metadata_blurb":"This table provides metadata for the actual indicator available from %country.name statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from %country.adjective statistics, this table should be consulted for information on national methodology and other %country.adjective-specific metadata information.","next":"Next indicator","no_data_hint":"No options available because of filters above","no_headline_data":"No headline data available","plot_legend_description":"Plot legend: list of lines included in chart","previous":"Previous indicator","select_all":"Select all","series":"Series","series_help":"Choose categories from the dropdowns below to see different breakdowns of the data. Some will not be available until a higher level is chosen.","source":"Source","sources":"Sources","status":"Indicator status","sub_categories":"Sub-categories","sub_categories_show":"Show sub-categories:","table":"Table","table_column_sort":"Click to sort by this column","tags":"Tags","total":"Total","unit":"Unit","unit_of_measurement":"Unit of Measurement","units_type":"Units type","variable_hint":"Available when '%field' is selected","view_indicator_list":"View this goal's indicator list"};</script>
 
 <script>translations['data'] = {"Year":"Year"};</script>
 
@@ -417,7 +421,11 @@ data-event-label="high"
             <a href="/">Home</a>
         </li>
         <li class="breadcrumb-item">
-            <a href="/5" title="Achieve gender equality and empower all women and girls">Goal 5</a>
+            <a href="/5"
+               title="Goal 5 - Gender equality"
+               aria-label="Goal  - ">
+               Goal 5
+            </a>
         </li>
         <li class="breadcrumb-item active">Indicator 5.5.1</li>
         
@@ -432,7 +440,7 @@ data-event-label="high"
         <div class="row">
             
             <div class="col-4 col-md-3 col-lg-2 goal-icon goal-tiles">
-                <a href="/5" title="View this goal's indicator list">
+                <a href="/5" aria-label="View targets and indicators for Goal 5" title="View targets and indicators for Goal 5">
                     <img src="https://open-sdg.github.io/sdg-translations/assets/img/goals/en/5.svg"
                         alt="Gender equality - Goal 5"
                         id="goal-5"
@@ -547,11 +555,11 @@ The data are presented in nine categories. The House of Commons and House of Lor
   <div id="datatables">
 
     
-    <a href="https://sdgdata.gov.uk/sdg-data/en/headline/5-5-1.csv" class="btn btn-primary btn-download" download="indicator_5-5-1.csv" tabindex="0" role="button">Download Headline CSV</a>
+    <a href="https://sdgdata.gov.uk/sdg-data/en/headline/5-5-1.csv" class="btn btn-primary btn-download" download="indicator_5-5-1.csv" tabindex="0" role="button">Download headline data (.csv)</a>
     
-    <a href="https://sdgdata.gov.uk/sdg-data/en/data/5-5-1.csv" class="btn btn-primary btn-download" download='indicator_5-5-1.csv' tabindex='0' role='button'>Download Source CSV</a>
+    <a href="https://sdgdata.gov.uk/sdg-data/en/data/5-5-1.csv" class="btn btn-primary btn-download" download='indicator_5-5-1.csv' tabindex='0' role='button'>Download source data (.csv)</a>
 
-    <p class="no-js-disaggregation-hint">Download source CSV for disaggregations</p>
+    <p class="no-js-disaggregation-hint">Download source data for disaggregations (.csv)</p>
 
     
     <h3>Headline data</h3>
@@ -3303,9 +3311,13 @@ data-event-label="Change to Table tab"
         </div>
       </figure>
       <div id="chartSelectionDownload" class="clearfix">
-        <button id="btnSave" title="Download chart as image" class='btn btn-primary btn-download'>
-          Download Chart Image
-        </button><!-- 
+        <button
+          id="btnSave"
+          title="Download chart image as PNG"
+          aria-label="Download chart image as PNG"
+          class='btn btn-primary btn-download'>
+          Download chart image (.png)
+        </button><!--
    --></div>
     </div>
 
@@ -3428,7 +3440,8 @@ data-event-label="Change to Sources tab"
                 
                 This table provides metadata for the actual indicator available from UK statistics closest to the corresponding global SDG indicator. Please note that even when the global SDG indicator is fully available from UK statistics, this table should be consulted for information on national methodology and other UK-specific metadata information.
             </p>
-            <table class="table">
+            <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -3444,6 +3457,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -3460,6 +3475,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Indicator description </th>
         <td>
@@ -3472,6 +3489,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -3488,6 +3507,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Unit of measurement </th>
         <td>
@@ -3500,6 +3521,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -3516,11 +3539,20 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+        
+          
+          
+          
+          
+        
+      
+      
       <tr>
         <th scope="row">Available disaggregations </th>
         <td>
           
-            
+            <p><span class="empty-metadata-placeholder">Not available for this indicator</span></p>
 
           
         </td>
@@ -3528,6 +3560,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -3544,6 +3578,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Other information </th>
         <td>
@@ -3558,6 +3594,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Data last updated </th>
         <td>
@@ -3569,6 +3607,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -3698,6 +3738,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
         </article>
@@ -3708,12 +3749,15 @@ data-event-label="Change to Sources tab"
     <div>
         <article>
             <p>This table provides information on metadata for SDG indicators as defined by the UN Statistical Commission. <a href="https://unstats.un.org/sdgs/metadata/">Complete global metadata</a> is provided by the UN Statistics Division.</p>
-            <table class="table">
+            <table class="table metadata-content">
+  <tbody>
   
   
   
   
   
+      
+      
       
       
       <tr>
@@ -3732,6 +3776,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Target name </th>
         <td>
@@ -3747,11 +3793,20 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+        
+          
+          
+          
+          
+        
+      
+      
       <tr>
         <th scope="row">Global indicator description </th>
         <td>
           
-            
+            <p><span class="empty-metadata-placeholder">Not available for this indicator</span></p>
 
           
         </td>
@@ -3759,6 +3814,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -3775,6 +3832,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">UN custodian agency </th>
         <td>
@@ -3789,6 +3848,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to UN metadata </th>
         <td>
@@ -3797,7 +3858,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="https://unstats.un.org/sdgs/metadata/?Text=&Goal=5&Target=5.5" target="_blank">
                 United Nations Sustainable Development Goals metadata for target 5.5 <span class="visuallyhidden">opens in a new window</span>
@@ -3813,6 +3873,8 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
   
   
@@ -3940,6 +4002,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
         </article>
@@ -3959,7 +4022,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 1</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -3994,6 +4058,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -4010,6 +4076,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -4022,6 +4090,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -4038,6 +4108,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -4052,6 +4124,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -4060,7 +4134,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="https://commonslibrary.parliament.uk/research-briefings/sn01250/" target="_blank">
                 Women in Parliament and Government <span class="visuallyhidden">opens in a new window</span>
@@ -4076,7 +4149,11 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
@@ -4090,6 +4167,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -4106,6 +4185,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Statistical classification </th>
         <td>
@@ -4120,6 +4201,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Contact details </th>
         <td>
@@ -4132,6 +4215,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -4242,6 +4327,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -4252,7 +4338,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 2</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -4299,6 +4386,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -4315,6 +4404,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -4327,6 +4418,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -4343,6 +4436,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -4357,6 +4452,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -4365,7 +4462,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="https://researchbriefings.parliament.uk/ResearchBriefing/Summary/LLN-2015-0017" target="_blank">
                 Women in the House of Lords <span class="visuallyhidden">opens in a new window</span>
@@ -4381,7 +4477,11 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
@@ -4395,6 +4495,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -4411,6 +4513,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Statistical classification </th>
         <td>
@@ -4425,6 +4529,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Contact details </th>
         <td>
@@ -4437,6 +4543,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -4535,6 +4643,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -4545,7 +4654,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 3</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -4604,6 +4714,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -4620,6 +4732,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -4632,6 +4746,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -4648,6 +4764,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -4662,6 +4780,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -4670,7 +4790,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="https://seneddresearch.blog/2016/05/27/assembly-election-2016-womens-political-representation/" target="_blank">
                 Assembly Election 2016 - Women's Policital Representation <span class="visuallyhidden">opens in a new window</span>
@@ -4686,7 +4805,11 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
@@ -4700,6 +4823,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -4716,6 +4841,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Statistical classification </th>
         <td>
@@ -4730,6 +4857,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Contact details </th>
         <td>
@@ -4742,6 +4871,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -4828,6 +4959,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -4838,7 +4970,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 4</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -4909,6 +5042,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -4925,6 +5060,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -4937,6 +5074,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -4953,6 +5092,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -4967,6 +5108,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -4975,7 +5118,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="https://www.parliament.scot/chamber-and-committees/research-prepared-for-parliament/fact-sheets" target="_blank">
                 Female MSPs - Current session fact sheets <span class="visuallyhidden">opens in a new window</span>
@@ -4991,7 +5133,11 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
@@ -5005,6 +5151,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -5021,6 +5169,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Statistical classification </th>
         <td>
@@ -5033,6 +5183,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -5049,11 +5201,20 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+        
+          
+          
+          
+          
+        
+      
+      
       <tr>
         <th scope="row">Other information </th>
         <td>
           
-            
+            <p><span class="empty-metadata-placeholder">Not available for this source</span></p>
 
           
         </td>
@@ -5121,6 +5282,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -5131,7 +5293,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 5</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -5214,6 +5377,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -5230,6 +5395,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -5242,6 +5409,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -5258,6 +5427,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -5272,6 +5443,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -5280,7 +5453,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="http://aims.niassembly.gov.uk/mlas/search.aspx" target="_blank">
                 Northern Ireland Assembly MLA search <span class="visuallyhidden">opens in a new window</span>
@@ -5296,7 +5468,11 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
@@ -5310,6 +5486,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -5326,6 +5504,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Statistical classification </th>
         <td>
@@ -5340,6 +5520,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Contact details </th>
         <td>
@@ -5352,6 +5534,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -5414,6 +5598,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -5424,7 +5609,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 6</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -5519,6 +5705,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -5535,6 +5723,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -5547,6 +5737,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -5563,6 +5755,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -5577,6 +5771,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -5585,7 +5781,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="https://www.local.gov.uk/sites/default/files/documents/Councillors%27%20Census%202018%20-%20report%20FINAL.pdf" target="_blank">
                 Census of Local Authority Councillors 2018 <span class="visuallyhidden">opens in a new window</span>
@@ -5601,7 +5796,11 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
@@ -5615,6 +5814,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -5631,6 +5832,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Statistical classification </th>
         <td>
@@ -5645,11 +5848,20 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+        
+          
+          
+          
+          
+        
+      
+      
       <tr>
         <th scope="row">Contact details </th>
         <td>
           
-            
+            <p><span class="empty-metadata-placeholder">Not available for this source</span></p>
 
           
         </td>
@@ -5657,6 +5869,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -5707,6 +5921,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -5717,7 +5932,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 7</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -5824,6 +6040,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -5840,6 +6058,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -5852,6 +6072,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -5868,6 +6090,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -5882,6 +6106,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -5890,7 +6116,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="https://www.lgiu.org.uk/report/does-local-government-work-for-women/" target="_blank">
                 Interim report for the Local Government Commission <span class="visuallyhidden">opens in a new window</span>
@@ -5906,7 +6131,11 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
@@ -5920,6 +6149,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -5936,6 +6167,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Statistical classification </th>
         <td>
@@ -5950,11 +6183,20 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+        
+          
+          
+          
+          
+        
+      
+      
       <tr>
         <th scope="row">Contact details </th>
         <td>
           
-            
+            <p><span class="empty-metadata-placeholder">Not available for this source</span></p>
 
           
         </td>
@@ -5962,6 +6204,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -6000,6 +6244,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -6010,7 +6255,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 8</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -6129,6 +6375,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -6145,6 +6393,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -6157,6 +6407,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -6173,6 +6425,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -6187,6 +6441,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -6195,7 +6451,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="http://www.niassembly.gov.uk/globalassets/documents/raise/publications/2014/assembly_exec_review/7814.pdf" target="_blank">
                 Northern Ireland Assembly report <span class="visuallyhidden">opens in a new window</span>
@@ -6211,7 +6466,11 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
@@ -6225,6 +6484,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -6241,6 +6502,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Statistical classification </th>
         <td>
@@ -6255,11 +6518,20 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+        
+          
+          
+          
+          
+        
+      
+      
       <tr>
         <th scope="row">Contact details </th>
         <td>
           
-            
+            <p><span class="empty-metadata-placeholder">Not available for this source</span></p>
 
           
         </td>
@@ -6267,6 +6539,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -6293,6 +6567,7 @@ data-event-label="Change to Sources tab"
   
   
   
+  </tbody>
 </table>
 
     </div>
@@ -6303,7 +6578,8 @@ data-event-label="Change to Sources tab"
       
         <h4>Source 9</h4>
       
-      <table class="table">
+      <table class="table metadata-content">
+  <tbody>
   
   
   
@@ -6434,6 +6710,8 @@ data-event-label="Change to Sources tab"
   
   
   
+      
+      
       
       
       <tr>
@@ -6450,6 +6728,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Periodicity </th>
         <td>
@@ -6462,6 +6742,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -6478,6 +6760,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Geographical coverage </th>
         <td>
@@ -6492,6 +6776,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Link to data source </th>
         <td>
@@ -6500,7 +6786,6 @@ data-event-label="Change to Sources tab"
             
             
             
-
             
               <a href="https://www.oscar-research.co.uk/data-intelligence/genderanalysis.php" target="_blank">
                 UK Political Gender Analysis - Historical Analysis of Councillor Gender Across Local Government in England and Wales <span class="visuallyhidden">opens in a new window</span>
@@ -6516,7 +6801,11 @@ data-event-label="Change to Sources tab"
       
       
       
+      
+      
   
+      
+      
       
       
       <tr>
@@ -6530,6 +6819,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -6546,6 +6837,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Statistical classification </th>
         <td>
@@ -6558,6 +6851,8 @@ data-event-label="Change to Sources tab"
         
       
   
+      
+      
       
       
       <tr>
@@ -6574,6 +6869,8 @@ data-event-label="Change to Sources tab"
   
       
       
+      
+      
       <tr>
         <th scope="row">Other information </th>
         <td>
@@ -6586,6 +6883,7 @@ data-event-label="Change to Sources tab"
         
       
   
+  </tbody>
 </table>
 
     </div>
@@ -6597,7 +6895,7 @@ data-event-label="Change to Sources tab"
     
     
 </div>
-  
+
 </div>
   </div>
 </div>
@@ -6656,12 +6954,12 @@ data-event-label="Change to Sources tab"
     </div>
 </footer>
 
-<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.11.5/js/dataTables.bootstrap5.min.js"></script>
 <script src="//cdn.datatables.net/fixedcolumns/3.2.3/js/dataTables.fixedColumns.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.20/lodash.min.js" integrity="sha512-90vH1Z83AJY9DmlWa8WkjkV79yfS2n2Oxhsi2dZbIv0nC4E6m5AbH8Nh156kkM7JePmqD6tcZsfad1ueoaovww==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.21/lodash.min.js" integrity="sha512-WFN04846sdKMIP5LKNphMaWzU7YpMyCU245etK3g/2ARYbPK9Ub18eG+ljU96qKRCWh+quCY7yefSmlkQw1ANQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" integrity="sha256-Y26AMvaIfrZ1EQU49pf6H4QzVTrOI8m9wQYKkftBt4s=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/patternomaly@1.3.2/dist/patternomaly.js"></script>
 
@@ -6854,7 +7152,7 @@ ga('send', 'pageview');
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20221027123130'></script>
+<script src='/assets/js/sdg.js?v=20221110093513'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -6862,7 +7160,7 @@ ga('send', 'pageview');
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20221027123130"></script><script>
+    <script src="/assets/js/custom.js?v=20221110093513"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
