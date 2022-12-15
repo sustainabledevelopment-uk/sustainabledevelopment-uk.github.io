@@ -104,7 +104,7 @@
         {
           "id": "1-b-1",
           "title": "Pro-poor public social spending",
-          "description": "Proportion of government spending (cash benefits, education and the National Health Service) on the monetary poor, UK, from financial year ending 2001 to 2020.",
+          "description": "Proportion of government spending (cash benefits, education and the National Health Service) on the monetary poor, UK, from financial year ending 2001 to 2021.",
           "keywords": "",
           "href": "/1-b-1",
           "status": "complete"
@@ -360,8 +360,8 @@
         {
           "id": "3-7-2",
           "title": "Adolescent birth rate (aged 10–14 years; aged 15–19 years) per 1,000 women in that age group",
-          "description": "",
-          "keywords": "Population, births",
+          "description": "The number of live births to mothers of a particular age per 1,000 women of that age in the population",
+          "keywords": "Population, births, map",
           "href": "/3-7-2",
           "status": "complete"
         },
@@ -1353,7 +1353,7 @@
           "id": "12-2-2",
           "title": "Domestic material consumption, domestic material consumption per capita, and domestic material consumption per GDP",
           "description": "",
-          "keywords": "Domestic material consumption, environment",
+          "keywords": "DMC, environment",
           "href": "/12-2-2",
           "status": "complete"
         },
