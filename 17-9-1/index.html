@@ -132,7 +132,7 @@ var translations = {
         <link res="stylesheet" href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap5.min.css">
         <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" crossorigin="">
         <link rel="stylesheet" href="https://cdn.datatables.net/fixedcolumns/3.2.3/css/fixedColumns.dataTables.min.css" crossorigin="">
-        <link rel="stylesheet" href="/assets/css/style.css?v=20230302203205">
+        <link rel="stylesheet" href="/assets/css/style.css?v=20230310101726">
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.4/dist/leaflet.css"
           integrity="sha512-puBpdR0798OZvTTbP4A8Ix/l+A4dHDD0DGqYW6RQ+9jxkRFclaxxQb/SJAWZfWAkuyeQUytO7+7N4QKrDh+drA=="
           crossorigin=""/>
@@ -499,7 +499,7 @@ data-event-label="high"
   data-country="United Kingdom"
   data-charttitle="Net Official Development Assistance (ODA)"
   data-charttitles="null"
-  data-measurementunit="GBP, USD at average 2020 rate"
+  data-measurementunit="GBP, constant USD at 2020 prices"
   data-xaxislabel=""
   data-showdata="true"
   data-graphtype="line"
@@ -513,7 +513,7 @@ data-event-label="high"
   data-graphtargetlines="null"
   data-graphseriesbreaks="null"
   data-indicatordownloads="null"
-  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Country income classification&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;LDCs&quot;,&quot;LMICs&quot;,&quot;Other LICs&quot;,&quot;UMICs&quot;,&quot;Unspecified&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Country income classification&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Unit multiplier&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Unit multiplier&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;GBP (£ thousands)&quot;,&quot;USD ($ thousands)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
+  data-dataschema="{&quot;fields&quot;:[{&quot;name&quot;:&quot;Year&quot;,&quot;type&quot;:&quot;integer&quot;,&quot;title&quot;:&quot;Year&quot;},{&quot;name&quot;:&quot;Series&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;Net Official Development Assistance (ODA) flows to developing countries&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Series&quot;},{&quot;name&quot;:&quot;Country income classification&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;LDCs&quot;,&quot;LMICs&quot;,&quot;Other LICs&quot;,&quot;UMICs&quot;,&quot;Unspecified&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Country income classification&quot;},{&quot;name&quot;:&quot;Observation status&quot;,&quot;type&quot;:&quot;string&quot;,&quot;title&quot;:&quot;Observation status&quot;},{&quot;name&quot;:&quot;Units&quot;,&quot;type&quot;:&quot;string&quot;,&quot;constraints&quot;:{&quot;enum&quot;:[&quot;GBP (£ thousands)&quot;,&quot;Constant USD ($ thousands)&quot;,&quot;&quot;]},&quot;title&quot;:&quot;Units&quot;},{&quot;name&quot;:&quot;Value&quot;,&quot;type&quot;:&quot;number&quot;,&quot;title&quot;:&quot;Value&quot;}]}"
   data-compositebreakdownlabel=""
   data-precision="null"
 >
@@ -569,11 +569,11 @@ data-event-label="high"
         
         
         
-        <th scope="col">Observation status</th>
+        <th scope="col">Series</th>
         
         
         
-        <th scope="col" class="table-value">Unit multiplier</th>
+        <th scope="col" class="table-value">Observation status</th>
         
         
       </thead>
@@ -586,7 +586,7 @@ data-event-label="high"
           
           
           
-          <td>7300976.23729</td>
+          <td>7300976.237</td>
           
           
           
@@ -594,275 +594,11 @@ data-event-label="high"
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2010</td>
-          
-          
-          
-          <td>8528781.042926</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2011</td>
-          
-          
-          
-          <td>8628623.087848</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2012</td>
-          
-          
-          
-          <td>8801919.047428</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2013</td>
-          
-          
-          
-          <td>11406860.450048</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2014</td>
-          
-          
-          
-          <td>11700471.985494</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2015</td>
-          
-          
-          
-          <td>12135596.438392</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2016</td>
-          
-          
-          
-          <td>13377131.388472</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2017</td>
-          
-          
-          
-          <td>14051283.26613</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2018</td>
-          
-          
-          
-          <td>14542075.879546</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2019</td>
-          
-          
-          
-          <td>15176498.042114</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
-          
-          
-        </tr>
-        
-        <tr>
-          
-          
-          <td>2020</td>
-          
-          
-          
-          <td>14478645.748766</td>
-          
-          
-          
-          <td>GBP (£ thousands)</td>
-          
-          
-          
-          <td>Definition differs</td>
-          
-          
-          
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -874,19 +610,19 @@ data-event-label="high"
           
           
           
-          <td>9368612.707690528</td>
+          <td>11746714.019</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>Constant USD ($ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -898,19 +634,43 @@ data-event-label="high"
           
           
           
-          <td>10944131.834282642</td>
+          <td>8528781.043</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2010</td>
+          
+          
+          
+          <td>13535876.582</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -922,19 +682,43 @@ data-event-label="high"
           
           
           
-          <td>11072249.146326551</td>
+          <td>8628623.088</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2011</td>
+          
+          
+          
+          <td>13416960.856</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -946,19 +730,43 @@ data-event-label="high"
           
           
           
-          <td>11294622.521659609</td>
+          <td>8801919.048</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2012</td>
+          
+          
+          
+          <td>13469315.426</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -970,19 +778,43 @@ data-event-label="high"
           
           
           
-          <td>14637283.329501592</td>
+          <td>11406860.45</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2013</td>
+          
+          
+          
+          <td>17073341.865</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -994,19 +826,43 @@ data-event-label="high"
           
           
           
-          <td>15014045.6517859</td>
+          <td>11700471.982</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2014</td>
+          
+          
+          
+          <td>17238650.031</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -1018,19 +874,43 @@ data-event-label="high"
           
           
           
-          <td>15572397.349744614</td>
+          <td>12135596.438</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2015</td>
+          
+          
+          
+          <td>17788764.566</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -1042,19 +922,43 @@ data-event-label="high"
           
           
           
-          <td>17165534.99768727</td>
+          <td>13377131.232</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2016</td>
+          
+          
+          
+          <td>19242821.312</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -1066,19 +970,43 @@ data-event-label="high"
           
           
           
-          <td>18030606.68709801</td>
+          <td>14051240.106</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2017</td>
+          
+          
+          
+          <td>19851465.89</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -1090,19 +1018,43 @@ data-event-label="high"
           
           
           
-          <td>18660391.768633425</td>
+          <td>14542017.178</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2018</td>
+          
+          
+          
+          <td>20142182.261</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -1114,19 +1066,43 @@ data-event-label="high"
           
           
           
-          <td>19474482.287640683</td>
+          <td>15175654.882</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2019</td>
+          
+          
+          
+          <td>20604630.729</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -1138,19 +1114,91 @@ data-event-label="high"
           
           
           
-          <td>18578998.224816527</td>
+          <td>14477015.286</td>
           
           
           
-          <td>USD ($ thousands)</td>
+          <td>GBP (£ thousands)</td>
           
           
           
-          <td>Definition differs</td>
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
           
           
           
-          <td class="table-value">Thousands</td>
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2020</td>
+          
+          
+          
+          <td>18567417.322</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>11422700.595</td>
+          
+          
+          
+          <td>GBP (£ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
+          
+          
+        </tr>
+        
+        <tr>
+          
+          
+          <td>2021</td>
+          
+          
+          
+          <td>14533434.249</td>
+          
+          
+          
+          <td>Constant USD ($ thousands)</td>
+          
+          
+          
+          <td>Net Official Development Assistance (ODA) flows to developing countries</td>
+          
+          
+          
+          <td class="table-value">Definition differs</td>
           
           
         </tr>
@@ -1169,7 +1217,7 @@ data-event-label="high"
     <p>Geographical Area: United Kingdom</p>
     
     
-    <p>Unit of Measurement: GBP, USD at average 2020 rate</p>
+    <p>Unit of Measurement: GBP, constant USD at 2020 prices</p>
     
     
   </div>
@@ -1275,7 +1323,7 @@ data-event-label="Change to Table tab"
     <dl>
         
         <dt>Source:</dt>
-        <dd>Foreign, Commonwealth & Development Office (FCDO), Office for National Statistics</dd>
+        <dd>Foreign, Commonwealth & Development Office (FCDO), Organisation for Economic Co-operation and Development (OECD)</dd>
         
 
         
@@ -1350,7 +1398,7 @@ data-event-label="Change to Table tab"
     <dl>
         
         <dt>Source:</dt>
-        <dd>Foreign, Commonwealth & Development Office (FCDO), Office for National Statistics</dd>
+        <dd>Foreign, Commonwealth & Development Office (FCDO), Organisation for Economic Co-operation and Development (OECD)</dd>
         
 
         
@@ -1518,7 +1566,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Unit of measurement </th>
         <td>
           
-            <p>GBP, USD at average 2020 rate</p>
+            <p>GBP, constant USD at 2020 prices</p>
 
           
         </td>
@@ -1546,19 +1594,12 @@ data-event-label="Change to Sources tab"
       
       
       
-        
-          
-          
-          
-          
-        
-      
       
       <tr>
         <th scope="row">Available disaggregations </th>
         <td>
           
-            <p><span class="empty-metadata-placeholder">Not available for this indicator</span></p>
+            <p>Recipient country income classification</p>
 
           
         </td>
@@ -1574,7 +1615,8 @@ data-event-label="Change to Sources tab"
         <th scope="row">Calculations </th>
         <td>
           
-            <p>Net ODA flows are summed together for the respective year, and disaggregated by country income group (see Source 1). The dollar value is calculated based on average annual exchange rate for 2020 as specified by the Average Sterling exchange rate - US Dollar (see Source 2)</p>
+            <p>Net bilateral ODA flows are summed together for the respective year, and disaggregated by country income group (see Source 1).</p>
+<p>The constant USD conversion was done using methodology specified by the <a href="https://www.oecd.org/dac/financing-sustainable- development/development-finance-standards/informationnoteonthedacdeflators.htm">OECD</a>. The GBP values were converted with the USD exchange rate for the respective year, and then a deflator with base year 2020 was applied to transform the current USD values to constant 2020 USD values (see Source 2).</p>
 
           
         </td>
@@ -1606,7 +1648,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Data last updated </th>
         <td>
           
-            11 November 2021
+            10 March 2023
           
         </td>
         </tr>
@@ -1621,7 +1663,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Metadata last updated </th>
         <td>
           
-            11 November 2021
+            10 March 2023
           
         </td>
         </tr>
@@ -2141,8 +2183,8 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www.gov.uk/government/statistics/statistics-on-international-development-final-uk-aid-spend-2020" target="_blank">
-                Statistics on International Development (SID) Final UK Aid Spend 2020 <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://www.gov.uk/government/statistics/statistics-on-international-development-final-uk-aid-spend-2021" target="_blank">
+                Statistics on International Development (SID) Final UK Aid Spend 2021 <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2166,7 +2208,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            29 September 2021
+            23 November 2022
           
         </td>
         </tr>
@@ -2181,7 +2223,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Next release </th>
         <td>
           
-            <p>Spring 2022: We plan to update indicator data within 4 months of data being released</p>
+            <p>Autumn 2023: We plan to update indicator data within 4 months of data being released</p>
 
           
         </td>
@@ -2400,7 +2442,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Organisation </th>
         <td>
           
-            <p>Office for National Statistics</p>
+            <p>Organisation for Economic Co-operation and Development (OECD)</p>
 
           
         </td>
@@ -2416,7 +2458,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Periodicity </th>
         <td>
           
-            <p>Monthly</p>
+            <p>Annual</p>
 
           
         </td>
@@ -2432,7 +2474,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Earliest available data </th>
         <td>
           
-            <p>1997</p>
+            <p>1960</p>
 
           
         </td>
@@ -2469,8 +2511,8 @@ data-event-label="Change to Sources tab"
             
             
             
-              <a href="https://www.ons.gov.uk/economy/nationalaccounts/balanceofpayments/timeseries/auss/mret" target="_blank">
-                Average Sterling exchange rate US Dollar <span class="visuallyhidden">opens in a new window</span>
+              <a href="https://www.oecd.org/dac/financing-sustainable-development/development-finance-data/" target="_blank">
+                Development finance data <span class="visuallyhidden">opens in a new window</span>
               </a>
             
 
@@ -2494,7 +2536,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Release date </th>
         <td>
           
-            12 August 2021
+            22 December 2022
           
         </td>
         </tr>
@@ -2525,7 +2567,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Statistical classification </th>
         <td>
           
-            <p>Official statistics</p>
+            <p>Official international</p>
 
           
         </td>
@@ -2541,7 +2583,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Contact details </th>
         <td>
           
-            <p>trade@ons.gov.uk</p>
+            <p>dac.contact@oecd.org</p>
 
           
         </td>
@@ -2557,7 +2599,7 @@ data-event-label="Change to Sources tab"
         <th scope="row">Other information </th>
         <td>
           
-            <p>The source periodicity is monthly, but the indicator is updated annually and the release date reflects the release of the dataset used for the latest indicator update</p>
+            <p>Data tables section, tables “Deflators for Resource Flows from DAC Countries (2020=100).xls” and “Annual Exchange Rates for DAC Donor Countries from 1960 to 2021.xls”</p>
 
           
         </td>
@@ -2923,7 +2965,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <script>translations['search'] = translations['search'] || {};
     translations['search']['search'] = 'Search';</script>
 
-<script src='/assets/js/sdg.js?v=20230302203205'></script>
+<script src='/assets/js/sdg.js?v=20230310101726'></script>
 <script src="//cdn.loop11.com/embed.js" type="text/javascript" async="async"></script>
 <script src="/assets/js/govuk.js"></script>
 <script>
@@ -2931,7 +2973,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </script>
     
     
-    <script src="/assets/js/custom.js?v=20230302203205"></script><script>
+    <script src="/assets/js/custom.js?v=20230310101726"></script><script>
     new indicatorInit();
     new accessibilitySwitcher();
 </script>
