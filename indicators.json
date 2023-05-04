@@ -136,7 +136,7 @@
         {
           "id": "2-2-1",
           "title": "Prevalence of stunting (height for age <-2 standard deviation from the median of the World Health Organization (WHO) Child Growth Standards) among children under 5 years of age",
-          "description": "Analysis of NCMP data of children who were 4 years old at time of measurement in Reception using WHO growth standards, by sex, rural/urban classification, deprivation and ethnic group, academic year 2006-2007 to 2019-2020",
+          "description": "Analysis of National Child Measurement Programme (NCMP) data of children who were 4 years old at time of measurement in Reception using WHO growth standards, by sex, rural/urban classification, deprivation and ethnic group, academic year 2006 to 2007 up to 2021 to 2022.",
           "keywords": "",
           "href": "/2-2-1/",
           "status": "complete"
@@ -144,7 +144,7 @@
         {
           "id": "2-2-2",
           "title": "Prevalence of malnutrition (weight for height >+2 or <-2 standard deviation from the median of the WHO Child Growth Standards) among children under 5 years of age, by type (wasting and overweight)",
-          "description": "Prevalence of malnutrition based on WHO Child Growth Standards is reported under the WHO Child Growth Standards series. Prevalence of malnutrition based on BMI classification data is reported under the BMI classifcations series.",
+          "description": "Prevalence of malnutrition based on WHO Child Growth Standards is reported under the WHO Child Growth Standards series. This is an estimate of the proportion of the population whose habitual food consumption does not provide the dietary energy levels that are required to maintain a normal active and healthy life. It is expressed as a percentage. Prevalence of malnutrition based on Body Mass Index (BMI) classification data is reported under the BMI classifcations series.",
           "keywords": "Nutrition, health",
           "href": "/2-2-2/",
           "status": "complete"
@@ -265,7 +265,7 @@
           "id": "3-2-2",
           "title": "Neonatal mortality rate",
           "description": "These data show the number of neonatal deaths per 1,000 live births in the UK. These statististics are derived from information recorded when births and deaths are registered in England and Wales as part of civil registration, a legal requirement. Data presented by the UN may differ as a Bayesian model is used for the international methodology.",
-          "keywords": "map, map",
+          "keywords": "map",
           "href": "/3-2-2/",
           "status": "complete"
         },
@@ -393,7 +393,7 @@
           "id": "3-9-2",
           "title": "Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (exposure to unsafe Water, Sanitation and Hygiene for All (WASH) services)",
           "description": "The indicator expresses the number of deaths from inadequate water, sanitation and hygiene (with focus on WASH services) which could be prevented by improving those services and practices. It is based on both the WASH service provision in the country, as well as the related health outcomes, and therefore provides important information on the actual disease caused by the risks measured in 6.1, 6.2 and 6.3.",
-          "keywords": "Population",
+          "keywords": "Population, map",
           "href": "/3-9-2/",
           "status": "complete"
         },
@@ -401,7 +401,7 @@
           "id": "3-9-3",
           "title": "Mortality rate attributed to unintentional poisoning",
           "description": "",
-          "keywords": "Population",
+          "keywords": "Population, map",
           "href": "/3-9-3/",
           "status": "complete"
         },
@@ -736,7 +736,7 @@
         {
           "id": "6-4-2",
           "title": "Level of water stress: freshwater withdrawal as a proportion of available freshwater resources",
-          "description": "",
+          "description": "This indicator provides an estimate of pressure by all sectors on the country’s renewable freshwater resources. A low level of water stress indicates a situation where the combined withdrawal by all sectors is marginal in relation to the resources, and has therefore little potential impact on the sustainability of the resources or on the potential competition between users. A high level of water stress indicates a  situation where the combined withdrawal by all sectors represents a substantial share of the total renewable freshwater resources, with potentially larger impacts on the sustainability of the resources and potential situations of conflicts and competition between users.",
           "keywords": "Water",
           "href": "/6-4-2/",
           "status": "complete"
@@ -1552,7 +1552,7 @@
         {
           "id": "14-5-1",
           "title": "Coverage of protected areas in relation to marine areas",
-          "description": "<p>Data for 'Coverage of protected areas in relation to marine area', and 'Protected marine area' encompass UK waters including the the extended continental shelf. This is a larger area that the Exclusive Economic Zone (EEZ), which is what is asked for in the global metadata for this indicator. The data displayed here are therefore a proxy for the indicator. Data for the EEZ only are available for 2020 on <a href='https://www.ibat-alliance.org/country_profiles/GBR'>IBAT</a> and in the <a href='https://unstats.un.org/sdgs/UNSDG/IndDatabasePage'>UN SDG indicator database</a>.</p><p>Data for 'Average proportion of Marine Key Biodiversity Areas (KBAs) covered by protected areas' cover a smaller area than the other series, as they only encompass the Exclusive Economic Zone. These data are therefore not a proxy.</p>",
+          "description": "<p>Data for 'Coverage of protected areas in relation to marine area', and 'Protected marine area' encompass UK waters including the the extended continental shelf. This is a larger area that the Exclusive Economic Zone (EEZ), which is what is asked for in the global metadata for this indicator. The data displayed here are therefore a proxy for the indicator. Data for the EEZ only are available for 2022 on <a href='https://www.ibat-alliance.org/country_profiles/GBR'>IBAT</a>.</p><p>Data for 'Average proportion of Marine Key Biodiversity Areas (KBAs) covered by protected areas' cover a smaller area than the other series, as they only encompass the Exclusive Economic Zone. These data are therefore not a proxy.</p>",
           "keywords": "",
           "href": "/14-5-1/",
           "status": "complete"
@@ -1984,7 +1984,7 @@
         {
           "id": "17-6-1",
           "title": "Fixed Internet broadband subscriptions per 100 inhabitants, by speed",
-          "description": "",
+          "description": "The indicator 'Fixed Internet broadband subscriptions, by speed' refers to the number of fixed-broadband subscriptions to the public Internet, split by advertised download speed. Fixed Internet broadband subscriptions refer to subscriptions to high-speed access to the public Internet (a TCP/IP connection), at downstream speeds equal to, or greater than, 256 Kbit/s. This includes cable modem, DSL, fibre-to-the-home/building, other fixed (wired) broadband subscriptions, satellite broadband and terrestrial fixed wireless broadband. This total is measured irrespective of the method of payment. It excludes subscriptions that have access to data communications (including the Internet) via mobile-cellular networks. It should include fixed WiMAX and any other fixed wireless technologies. It includes both residential subscriptions and subscriptions for organizations.",
           "keywords": "Internet, broadband",
           "href": "/17-6-1/",
           "status": "complete"
@@ -2048,7 +2048,7 @@
         {
           "id": "17-14-1",
           "title": "Number of countries with mechanisms in place to enhance policy coherence of sustainable development",
-          "description": "",
+          "description": "Enhancing policy coherence for sustainable development is important for achieving sustainable development. Policy coherence aims, as a minimum, to identify trade-offs and mitigate negative impacts between policies. At a more ambitious level, it should also aim to foster synergies and produce policies that mutually reinforce each other.",
           "keywords": "Legislation, policy",
           "href": "/17-14-1/",
           "status": "complete"
@@ -2104,7 +2104,7 @@
         {
           "id": "17-19-1",
           "title": "Dollar value of all resources made available to strengthen statistical capacity in developing countries",
-          "description": "",
+          "description": "The indicator aims to provide a snapshot of the US dollar value of ongoing statistical support in developing countries.",
           "keywords": "ODA",
           "href": "/17-19-1/",
           "status": "complete"
