@@ -392,7 +392,7 @@
         {
           "id": "3-9-2",
           "title": "Mortality rate attributed to unsafe water, unsafe sanitation and lack of hygiene (exposure to unsafe Water, Sanitation and Hygiene for All (WASH) services)",
-          "description": "The indicator expresses the number of deaths from inadequate water, sanitation and hygiene (with focus on WASH services) which could be prevented by improving those services and practices. It is based on both the WASH service provision in the country, as well as the related health outcomes, and therefore provides important information on the actual disease caused by the risks measured in 6.1, 6.2 and 6.3.",
+          "description": "The indicator expresses the number of deaths from inadequate water, sanitation and hygiene (with focus on WASH services) which could be prevented by improving those services and practices. It is based on both the WASH service provision in the country, as well as the related health outcomes, and therefore provides important information on the actual disease caused by the risks measured in SDG targets <a href='https://unstats.un.org/sdgs/metadata/?Text=&Goal=6&Target=6.1'> 6.1</a>, <a href='https://unstats.un.org/sdgs/metadata/?Text=&Goal=6&Target=6.2'> 6.2</a>, and <a href='https://unstats.un.org/sdgs/metadata/?Text=&Goal=6&Target=6.3'> 6.3</a>.",
           "keywords": "Population, map",
           "href": "/3-9-2/",
           "status": "complete"
@@ -584,8 +584,8 @@
         {
           "id": "5-2-1",
           "title": "Proportion of ever-partnered women and girls aged 15 years and older subjected to physical, sexual or psychological violence by a current or former intimate partner in the previous 12 months, by form of violence and by age",
-          "description": "Percentage of partner abuse (non-physical abuse, threats, force, sexual assault or stalking) in the last 12 months among women aged 16 to 74.",
-          "keywords": "Crime, violence, map",
+          "description": "</p><p>Percentage of partner abuse (non-physical abuse, threats, force, sexual assault or stalking) in the last 12 months among women aged 16 and over. </p><p>Prior to April 2017, data are only presented for people aged between 16 and 59. From April 2017 to March 2020, the upper age limit for the self-completion module was increased to ask all respondents aged 16 to 74. From October 2021, the upper age limit for the self-completion module was removed. Prior series, with upper age limits, are included here to allow for comparisons to be made over a longer time period and can be viewed by changing the Series button. </p><p>",
+          "keywords": "Crime, violence",
           "href": "/5-2-1/",
           "status": "complete"
         },
