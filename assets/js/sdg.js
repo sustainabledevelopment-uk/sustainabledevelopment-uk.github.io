@@ -1,3 +1,8 @@
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/service-worker.js');
+    });
+}
 /**
  * This function returns a javascript object containing autotrack.js properties.
  *
